@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiat Egea Sedan 2026 | Yan Yana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#EEF1F5; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#101820; --muted:#566170; --line:#D6DCE4;
+  --a:#2456C9; --a-tint:#E1E9FB; --on-a:#FFFFFF;
+  --warn:#C25400; --warn-tint:#FCE8D4; --warn-ink:#8F3F00;
+  --focus:#2456C9;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+    --a:#7B9DF2; --a-tint:#1E2C4B; --on-a:#0E1319;
+    --warn:#F59A50; --warn-tint:#3A2918; --warn-ink:#F5B57F; --focus:#7B9DF2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+  --a:#7B9DF2; --a-tint:#1E2C4B; --on-a:#0E1319;
+  --warn:#F59A50; --warn-tint:#3A2918; --warn-ink:#F5B57F; --focus:#7B9DF2;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;height:56px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+.notice{background:var(--warn-tint);color:var(--warn-ink);font-size:.88rem;padding:8px 0;border-bottom:1px solid var(--line)}
+
+.crumbs{margin-top:16px;font-size:.88rem;color:var(--muted)}
+.crumbs ol{display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.crumbs li + li::before{content:"/";margin:0 8px}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+
+.hero{display:grid;gap:16px;padding:12px 0 4px}
+h1{font-weight:700;font-size:clamp(2.1rem,6vw,3.5rem);line-height:1.05;letter-spacing:-.025em;margin-top:8px}
+.sub{color:var(--muted);margin-top:8px;font-size:1.05rem}
+.picks{display:grid;gap:12px;margin-top:20px}
+.pl{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.95rem;min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer}
+.chip:hover{background:var(--surface2)}
+.chip[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:var(--on-a);font-weight:600}
+.art{margin:0}
+.art svg{width:100%;height:auto;max-width:520px;display:block}
+.art figcaption{font-size:.8rem;color:var(--muted);margin-top:4px}
+
+.keystats{display:grid;grid-template-columns:1fr 1fr;margin:20px 0 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);background:var(--surface)}
+.ks{padding:12px 14px;border-bottom:1px solid var(--line);margin:0}
+.ks:nth-child(odd){border-right:1px solid var(--line)}
+.ks:last-child{grid-column:1/-1;border-bottom:0;border-right:0}
+.ks dt{font-size:.85rem;color:var(--muted)}
+.ks dd{margin:0;font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1.2;font-variant-numeric:tabular-nums}
+.ks dd small{font-family:var(--body);font-weight:400;font-size:.82rem;color:var(--muted);margin-left:4px}
+
+.subnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;gap:2px;overflow-x:auto;margin-top:16px;background:var(--bg);border-bottom:1px solid var(--line)}
+.subnav a{flex:none;padding:13px 14px 10px;color:var(--muted);text-decoration:none;font-weight:500;border-bottom:3px solid transparent}
+.subnav a:hover{color:var(--ink)}
+.subnav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--a)}
+
+.layout{display:grid;gap:24px;margin-top:20px}
+.rail{display:grid;gap:16px;align-content:start}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+.box h2{font-size:1.1rem;margin-bottom:10px}
+.score-num{font-family:var(--display);font-weight:700;font-size:3rem;line-height:1;letter-spacing:-.03em}
+.score-num small{font-family:var(--body);font-size:1rem;font-weight:400;color:var(--muted);letter-spacing:0;margin-left:4px}
+.score-meta{color:var(--muted);font-size:.9rem;margin:4px 0 12px}
+.subs{display:grid;gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.subs li{display:grid;grid-template-columns:110px 1fr 28px;gap:8px;align-items:center;font-size:.88rem}
+.meter{height:8px;background:var(--surface2);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--a)}
+.subs b{font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
+.box label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+
+.btn{font:inherit;font-weight:500;min-height:44px;padding:0 16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.btn:hover{background:var(--surface2)}
+.btn.primary{background:var(--a);border-color:var(--a);color:var(--on-a);font-weight:600}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.small{min-height:36px;padding:0 12px;font-size:.88rem}
+.btn[aria-pressed="true"]{background:var(--a-tint);border-color:var(--a)}
+.box .btn{width:100%;margin-top:8px}
+select,input[type=text],input[type=number],textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--surface2);border:1px solid var(--line);border-radius:6px}
+select,input[type=text],input[type=number]{height:44px;padding:0 10px}
+textarea{padding:10px;min-height:110px;resize:vertical}
+
+.sec{padding:28px 0 12px;scroll-margin-top:calc(env(safe-area-inset-top,0px) + 56px)}
+.sec + .sec{border-top:1px solid var(--line)}
+.sec:first-child{padding-top:8px}
+.sec > h2{font-size:clamp(1.5rem,3.5vw,1.9rem);line-height:1.15}
+.lead{color:var(--muted);margin-top:6px;max-width:64ch}
+.caution{margin:16px 0 0;padding:12px 14px;background:var(--surface2);border-left:4px solid var(--warn);font-size:.92rem;max-width:72ch}
+.block{margin-top:28px}
+.block h3{font-size:1.15rem}
+.block .src{color:var(--muted);font-size:.85rem;margin-top:2px}
+.problem-grid{display:grid;gap:8px 40px}
+
+.recalls{margin-top:8px}
+details.recall{border-bottom:1px solid var(--line)}
+details.recall summary{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:12px 0;cursor:pointer}
+.rdate{font-size:.85rem;color:var(--muted);min-width:84px}
+.rtitle{font-weight:600;flex:1 1 240px}
+.tag{display:inline-block;font-size:.78rem;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--warn-tint);color:var(--warn-ink)}
+.tag.ok{background:var(--a-tint);color:var(--ink)}
+.rbody{padding:0 0 14px;display:grid;gap:6px;font-size:.93rem;max-width:72ch}
+.rbody .src{color:var(--muted);font-size:.82rem}
+
+.bars{display:grid;gap:2px;margin:10px 0 0;padding:0;list-style:none}
+.bar{display:grid;grid-template-columns:minmax(104px,150px) 1fr auto;gap:10px;align-items:center;width:100%;padding:7px 6px;font:inherit;font-size:.92rem;color:inherit;text-align:left;background:none;border:0;border-radius:4px}
+.bt{height:10px;background:var(--surface2);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.bt i{display:block;height:100%;background:var(--warn)}
+.bn{font-variant-numeric:tabular-nums;font-weight:600;min-width:2.5em;text-align:right}
+button.bar{cursor:pointer}
+button.bar:hover{background:var(--surface2)}
+button.bar[aria-pressed="true"]{background:var(--warn-tint)}
+.note{font-size:.85rem;color:var(--muted);margin-top:8px}
+.emptystate{padding:20px;border:1px dashed var(--line);border-radius:6px;color:var(--muted);margin-top:12px}
+.emptystate .btn{width:auto;margin-top:10px;display:inline-block}
+
+.adslot{margin:28px 0 0;min-height:90px;display:grid;place-items:center;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.85rem}
+.sponsor{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.sponsor p{max-width:52ch}
+.sponsor .tag{margin-bottom:6px}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:16px}
+.toolbar .grow{flex:1 1 auto}
+.toolbar select{width:auto;min-width:170px}
+.activefilter{display:inline-flex;align-items:center;gap:8px;padding:6px 6px 6px 12px;border-radius:6px;background:var(--warn-tint);color:var(--warn-ink);font-size:.9rem}
+.activefilter button{font:inherit;font-size:.85rem;border:0;background:var(--surface);color:var(--ink);border-radius:4px;min-height:32px;padding:0 10px;cursor:pointer}
+.review{padding:20px 0;border-bottom:1px solid var(--line)}
+.rhead{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;justify-content:space-between}
+.who{font-weight:600}
+.own{color:var(--muted);font-size:.88rem}
+.rrating{display:flex;align-items:center;gap:8px;font-size:.9rem}
+.rrating .meter{width:64px}
+.rrating b{font-variant-numeric:tabular-nums}
+.review h4{font-size:1.1rem;margin:10px 0 4px}
+.review .body{max-width:70ch}
+.pc{display:grid;gap:10px 28px;margin-top:10px;font-size:.92rem}
+.pc h5{font:600 .88rem var(--body);margin:0 0 2px;color:var(--muted)}
+.pc ul{margin:0;padding:0;list-style:none}
+.pc li{padding-left:18px;position:relative}
+.pc .pro li::before{content:"+";position:absolute;left:2px;font-weight:700;color:var(--a)}
+.pc .con li::before{content:"\2212";position:absolute;left:2px;font-weight:700;color:var(--warn)}
+.rprob{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;align-items:center;font-size:.88rem;color:var(--muted)}
+.rfoot{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:12px}
+.rdated{color:var(--muted);font-size:.85rem}
+.pending{margin-top:10px;font-size:.88rem;color:var(--warn-ink);background:var(--warn-tint);padding:6px 10px;border-radius:4px;display:inline-block}
+
+.specs{display:grid;gap:24px 48px;margin-top:16px}
+.specgroup h3{font-size:1.05rem;margin-bottom:4px}
+.specgroup dl{margin:0}
+.specgroup dl div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.specgroup dt{color:var(--muted)}
+.specgroup dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+
+.rivals{list-style:none;margin:14px 0 0;padding:0}
+.rivals li{display:grid;gap:8px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.rivals .rn b{display:block}
+.rivals .rn span{color:var(--muted);font-size:.88rem}
+.rnums{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.9rem;font-variant-numeric:tabular-nums}
+
+footer{margin:40px 0 48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;max-width:72ch}
+
+dialog{width:calc(100% - 24px);max-width:600px;max-height:92vh;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(8,12,18,.6)}
+.dform{padding:20px 20px 24px;display:grid;gap:16px}
+.dform h2{font-size:1.4rem}
+.dform .grid2{display:grid;gap:12px 14px}
+.dform label,.dform legend{font-size:.88rem;color:var(--muted);display:block;margin-bottom:4px;padding:0}
+.dform fieldset{border:0;margin:0;padding:0;min-width:0}
+.seg{display:flex;gap:6px}
+.segopt{position:relative;margin:0 !important}
+.segopt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.segopt span{display:grid;place-items:center;min-width:46px;min-height:44px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink);font-weight:600}
+.segopt input:checked + span{background:var(--a);border-color:var(--a);color:var(--on-a)}
+.segopt input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
+.pchips{display:flex;flex-wrap:wrap;gap:8px}
+.pchip{position:relative;margin:0 !important}
+.pchip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pchip span{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink);font-size:.92rem}
+.pchip input:checked + span{background:var(--warn-tint);border-color:var(--warn);color:var(--warn-ink);font-weight:600}
+.pchip input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
+.check{display:flex !important;gap:10px;align-items:flex-start;color:var(--ink) !important;font-size:.88rem !important}
+.check input{width:20px;height:20px;margin:2px 0 0;flex:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.actions .btn{width:auto;margin:0}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);max-width:calc(100% - 32px);padding:12px 18px;border-radius:6px;background:var(--ink);color:var(--bg);font-size:.92rem;opacity:0;pointer-events:none;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: no-preference){ .toast{transition:opacity .2s,transform .2s} }
+
+@media (min-width:560px){
+  .pc{grid-template-columns:1fr 1fr}
+  .dform .grid2{grid-template-columns:1fr 1fr}
+}
+@media (min-width:760px){
+  .wrap{padding:0 24px}
+  .hero{grid-template-columns:1.15fr .85fr;align-items:center;gap:32px}
+  .keystats{grid-template-columns:repeat(5,1fr)}
+  .ks,.ks:nth-child(odd),.ks:last-child{border:0;grid-column:auto}
+  .ks + .ks{border-left:1px solid var(--line)}
+  .problem-grid{grid-template-columns:1fr 1fr}
+  .specs{grid-template-columns:1fr 1fr}
+  .rivals li{grid-template-columns:1.2fr 1.4fr auto}
+}
+@media (min-width:980px){
+  .layout{grid-template-columns:minmax(0,1fr) 300px;gap:44px}
+  .content{grid-column:1;grid-row:1}
+  .rail{grid-column:2;grid-row:1;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px)}
+}
+</style>
+</head>
+<body>
+
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Yan Yana</a></div></header>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler gerçek ve kaynaklıdır (aşağıda linkli). Sahip yorumları, şikayet dağılımı ve geri çağırma kayıtları ise tasarımı göstermek için hazırlanmış örnek verilerdir, gerçek değildir.</div></div>
+
+<main class="wrap">
+  <nav class="crumbs" aria-label="Sayfa yolu">
+    <ol>
+      <li><a href="#">Ana sayfa</a></li>
+      <li><a href="#">Fiat</a></li>
+      <li><a href="#">Egea Sedan</a></li>
+      <li aria-current="page" id="crumbYear"></li>
+    </ol>
+  </nav>
+
+  <section class="hero" aria-label="Araç özeti">
+    <div>
+      <h1 id="title"></h1>
+      <p class="sub" id="subtitle"></p>
+      <p class="src" id="heroSrc" style="font-size:.85rem;color:var(--muted);margin-top:4px"></p>
+      <div class="picks">
+        <div role="group" aria-labelledby="yilLbl"><span class="pl" id="yilLbl">Model yılı</span><div class="chips" id="years"></div></div>
+        <div role="group" aria-labelledby="verLbl"><span class="pl" id="verLbl">Versiyon</span><div class="chips" id="versions"></div></div>
+      </div>
+    </div>
+    <figure class="art">
+      <svg viewBox="0 0 480 190" role="img" aria-label="Araç fotoğrafı için ayrılan alan, örnek çizim">
+        <line x1="10" y1="176" x2="470" y2="176" stroke="var(--line)" stroke-width="2"/>
+        <path d="M44 146 L44 114 Q44 102 56 98 L112 90 L128 66 Q138 50 176 46 L292 46 Q332 48 352 76 L420 90 Q440 94 440 114 L440 146 Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M138 84 L150 66 Q158 58 178 56 L200 56 L200 84 Z" fill="var(--a-tint)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M210 56 L288 56 Q318 58 334 80 L338 84 L210 84 Z" fill="var(--a-tint)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="205" y1="56" x2="205" y2="140" stroke="var(--ink)" stroke-width="1.5"/>
+        <rect x="422" y="102" width="16" height="9" rx="2" fill="var(--a)"/>
+        <rect x="45" y="104" width="9" height="12" rx="2" fill="var(--warn)"/>
+        <circle cx="120" cy="148" r="30" fill="var(--ink)"/><circle cx="120" cy="148" r="13" fill="var(--surface2)"/>
+        <circle cx="370" cy="148" r="30" fill="var(--ink)"/><circle cx="370" cy="148" r="13" fill="var(--surface2)"/>
+      </svg>
+      <figcaption>Bu bir örnek çizimdir — telif hakları nedeniyle üretici fotoğrafını doğrudan burada göstermiyoruz. Gerçek fotoğraflar ve (varsa) 360° görünüm aşağıdaki linklerde:<br><a id="fotoLink" href="#" target="_blank" rel="noopener" style="color:var(--a);font-weight:600">Gerçek fotoğraf galerisini gör ↗</a><span id="turWrap"><br><a id="turLink" href="#" target="_blank" rel="noopener" style="color:var(--a);font-weight:600">360° / sanal turu gör ↗</a></span></figcaption>
+    </figure>
+  </section>
+
+  <dl class="keystats" id="keystats"></dl>
+
+  <nav class="subnav" aria-label="Sayfa bölümleri" id="subnav">
+    <a href="#artilar">Artı & eksi</a>
+    <a href="#sorunlar">Sorunlar</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#fiyatvergi">Fiyat & vergi</a>
+    <a href="#bakim">Bakım</a>
+    <a href="#teknik">Teknik özellikler</a>
+    <a href="#karsilastir">Karşılaştır</a>
+  </nav>
+
+  <div class="layout">
+    <aside class="rail" aria-label="Puanlar ve karşılaştırma">
+      <section class="box" aria-labelledby="sysScoreT">
+        <h2 id="sysScoreT">Sistem puanı</h2>
+        <div id="sysScoreBody"></div>
+        <p class="note" style="margin-top:0">Kullanıcı yorumlarından bağımsız; belirli kriterlere göre otomatik hesaplanır.</p>
+      </section>
+      <section class="box" aria-labelledby="scoreT">
+        <h2 id="scoreT">Sahip puanı</h2>
+        <div id="scoreBody"></div>
+        <button class="btn primary js-write" type="button">Yorum yaz</button>
+      </section>
+      <section class="box" aria-labelledby="cmpT">
+        <h2 id="cmpT">Karşılaştır</h2>
+        <label for="cmpSel">Bu aracı şununla karşılaştır</label>
+        <select id="cmpSel"></select>
+        <button class="btn" type="button" id="cmpGo">Karşılaştırmayı aç</button>
+      </section>
+    </aside>
+
+    <div class="content">
+      <section class="sec" id="artilar" aria-labelledby="artilarT">
+        <h2 id="artilarT">Artılar ve dikkat edilecekler</h2>
+        <p class="lead">Rakiplerine göre öne çıkanlar, dikkat çeken eksikler ve küçük konfor detayları — hepsi kaynaklı.</p>
+        <div id="odulBlock"></div>
+        <div class="pc block" id="artiEksiBlock"></div>
+        <div class="block" id="ncapVsBlock"></div>
+        <div class="block" id="kucukDetayBlock">
+          <h3>Küçük konfor detayları</h3>
+          <div id="kucukDetayList"></div>
+        </div>
+      </section>
+
+      <section class="sec" id="sorunlar" aria-labelledby="sorunlarT">
+        <h2 id="sorunlarT">Bilinen sorunlar ve geri çağırmalar</h2>
+        <p class="lead">Resmi kayıtlar ve sahip yorumları yan yana. Sayılar kesin hüküm vermez, nelere dikkat edeceğini gösterir.</p>
+        <p class="caution">Şikayetleri araç sahipleri yazar ve kurumlar bunları doğrulamaz. Bir parçanın çok şikayet alması, o parçanın kronik sorunu olduğunu tek başına kanıtlamaz.</p>
+
+        <div class="block">
+          <h3>Geri çağırmalar</h3>
+          <p class="src">Kaynak: NHTSA (ABD) ve marka duyuruları</p>
+          <div class="recalls" id="recalls"></div>
+        </div>
+
+        <div class="problem-grid block">
+          <div id="officialBlock"></div>
+          <div id="userBlock"></div>
+        </div>
+      </section>
+
+      <div class="adslot" role="complementary" aria-label="Reklam alanı">Reklam alanı</div>
+
+      <section class="sec" id="yorumlar" aria-labelledby="yorumlarT">
+        <h2 id="yorumlarT">Sahip yorumları</h2>
+        <p class="lead" id="reviewLead"></p>
+        <div class="toolbar">
+          <label for="sortSel" class="sr" style="position:absolute;left:-9999px">Sırala</label>
+          <select id="sortSel" aria-label="Yorumları sırala">
+            <option value="yeni">En yeni</option>
+            <option value="faydali">En faydalı</option>
+            <option value="yuksek">En yüksek puan</option>
+            <option value="dusuk">En düşük puan</option>
+          </select>
+          <span id="filterTag"></span>
+          <span class="grow"></span>
+          <button class="btn primary js-write" type="button">Yorum yaz</button>
+        </div>
+        <div id="reviews"></div>
+        <div class="sponsor">
+          <div>
+            <span class="tag ok">Sponsorlu bağlantı</span>
+            <p>Bu araç için sigorta ve kasko tekliflerini karşılaştır.</p>
+          </div>
+          <button class="btn" type="button" id="sponsorBtn">Teklif al</button>
+        </div>
+      </section>
+
+      <section class="sec" id="fiyatvergi" aria-labelledby="fiyatvergiT">
+        <h2 id="fiyatvergiT">Fiyat, vergi ve garanti</h2>
+        <div class="keystats" id="fiyatStats" style="margin-top:8px"></div>
+        <div class="block" id="fiyatDetay"></div>
+      </section>
+
+      <section class="sec" id="bakim" aria-labelledby="bakimT">
+        <h2 id="bakimT">Bakım</h2>
+        <p class="lead" id="bakimLead"></p>
+        <div class="block" id="bakimNoktalari"></div>
+      </section>
+
+      <section class="sec" id="teknik" aria-labelledby="teknikT">
+        <h2 id="teknikT">Teknik özellikler</h2>
+        <div class="specs" id="specs"></div>
+      </section>
+
+      <section class="sec" id="karsilastir" aria-labelledby="karsilastirT">
+        <h2 id="karsilastirT">Rakipleriyle karşılaştır</h2>
+        <p class="lead">Veritabanımızdaki diğer araçlarla tüm özellikleri satır satır yan yana gör. Segmentler her zaman birebir örtüşmeyebilir, kapsam büyüdükçe daha yakın rakipler eklenecek.</p>
+        <ul class="rivals" id="rivals"></ul>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Bu sayfadaki teknik değerler ve tüm kullanıcı içerikleri örnek veridir. Gerçek yayında geri çağırma ve şikayet kayıtlarının kaynağı ile güncelleme tarihi her bölümde gösterilecek.
+  </footer>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlgT">
+  <form class="dform" id="rf">
+    <h2 id="dlgT">Yorum yaz</h2>
+    <p class="own" id="dlgCar"></p>
+    <div>
+      <label for="f-nick">Takma ad (gerçek adını yazmak zorunda değilsin)</label>
+      <input type="text" id="f-nick" name="nick" maxlength="30" required autocomplete="off">
+    </div>
+    <fieldset>
+      <legend>Genel puan</legend>
+      <div class="seg" id="f-puan"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Ayrıntılı puanlar (isteğe bağlı, 1 en kötü, 5 en iyi)</legend>
+      <div class="grid2" id="f-subs"></div>
+    </fieldset>
+    <div class="grid2">
+      <div><label for="f-ay">Kaç aydır kullanıyorsun?</label><input type="number" id="f-ay" name="ay" min="0" max="600" required inputmode="numeric"></div>
+      <div><label for="f-km">Toplam kilometre</label><input type="number" id="f-km" name="km" min="0" max="999999" required inputmode="numeric"></div>
+    </div>
+    <div>
+      <label for="f-baslik">Yorum başlığı</label>
+      <input type="text" id="f-baslik" name="baslik" maxlength="80" required autocomplete="off">
+    </div>
+    <div class="grid2">
+      <div><label for="f-arti">Artılar (virgülle ayır)</label><input type="text" id="f-arti" name="arti" autocomplete="off"></div>
+      <div><label for="f-eksi">Eksiler (virgülle ayır)</label><input type="text" id="f-eksi" name="eksi" autocomplete="off"></div>
+    </div>
+    <fieldset>
+      <legend>Yaşadığın sorunlar</legend>
+      <div class="pchips" id="f-sorun"></div>
+    </fieldset>
+    <div>
+      <label for="f-metin">Yorumun</label>
+      <textarea id="f-metin" name="metin" minlength="30" required></textarea>
+    </div>
+    <label class="check"><input type="checkbox" id="f-kvkk" required><span>Yorumumda başkasına ait kişisel veri bulunmadığını ve yorumumun yayınlanmasına izin verdiğimi onaylıyorum. Aydınlatma metnini okudum.</span></label>
+    <div class="actions">
+      <button class="btn" type="button" id="dlgCancel">Vazgeç</button>
+      <button class="btn primary" type="submit">Yorumu gönder</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ---------- Örnek veri ---------- */
+const MTV_URL = 'mtv-hesaplama.html';
+const CARS = {
+ 'egea-1.6-multijet':{id:'egea-1.6-multijet',marka:'Fiat',model:'Egea Sedan',yil:2026,versiyon:'1.6 Multijet 130 HP',
+  kaynakAd:'fiat.com.tr',kaynakUrl:'https://www.fiat.com.tr/modeller/egea/sedan',
+  fotoUrl:'https://www.sifiraracal.com/fiat-modelleri/egea-resimleri',
+  sanalTurUrl:null,
+  s:{
+  kasa:'Sedan',yakit:'Dizel',cekis:'Önden çekiş',
+  cc:1598,guc_hp:130,tork_nm:320,sifirYuz_sn:9.8,hiz_kmh:209,emisyon_normu:'Euro 6D-Final',
+  tuketim_sehir_ici:5.0,tuketim_sehir_disi:4.1,tuketim_l100km:4.5,
+  ncap_yildiz:3,ncap_test_yili:2016,liste_fiyati_tl:1499900,mtv_yillik_tl:10016,
+  garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,
+  bakim_araligi_km:10000,bakim_araligi_ay:12},
+  ncapNot:'2016 testi, temel donanım — eski test, güncel protokollerle birebir kıyaslanamaz.',
+  ncapKaynak:'https://www.euroncap.com/en/results/fiat/tipo/44199',
+  agirBakim:[
+   {km:40000,islem:'Fren hidrolik değişimi, filtre kontrolleri',kaynak:'egeaylageziyorum.com'},
+   {km:60000,islem:'Triger ZİNCİR kontrolü (dizel motorda zincir kullanılır, kayışa göre daha uzun ömürlü)',kaynak:'egeaylageziyorum.com'},
+   {km:100000,islem:'Kapsamlı revizyon',kaynak:'egeaylageziyorum.com'}
+  ],
+  kucukDetaylar:[
+   {ozellik:'Gözlük gözü',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
+   {ozellik:'Soğutmalı torpido',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
+   {ozellik:'Kolçak altı soğutma',deger:'Yok',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
+  ],
+  gucluYanlar:[],
+  dikkatEdilecekler:[
+   {metin:'Sahip forumlarında sık tekrarlanan şikayet: temel versiyonlarda gözlük gözü, soğutmalı torpido ve camlarda uzaktan kumanda özelliği yok.',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
+  ],
+  odul:[],
+  sistemPuani:{toplam:4.9,kriterler:[
+   {ad:'Güvenlik',puan:1.2,max:2,aciklama:'Euro NCAP 3 yıldız (2016, eski test)'},
+   {ad:'Performans',puan:0.6,max:2,aciklama:'0-100: 9.8 sn'},
+   {ad:'Verimlilik',puan:1.75,max:2,aciklama:'Ortalama tüketim: 4.5 l/100km'},
+   {ad:'Garanti',puan:0.33,max:2,aciklama:'3 yıl / 60.000 km'}
+  ],veriYokKriterler:['Konfor donanımı — tam versiyon donanım listesi netleşmedi']}},
+ 'egea-1.4-fire':{id:'egea-1.4-fire',marka:'Fiat',model:'Egea Sedan',yil:2026,versiyon:'1.4 Fire 95 HP',
+  kaynakAd:'sifiraracal.com',kaynakUrl:'https://www.sifiraracal.com/fiat-modelleri/egea',
+  fotoUrl:'https://www.sifiraracal.com/fiat-modelleri/egea-resimleri',
+  sanalTurUrl:null,
+  s:{
+  kasa:'Sedan',yakit:'Benzin',sanziman:'Manuel, 6 ileri',cekis:'Önden çekiş',
+  cc:1368,guc_hp:95,tork_nm:127,sifirYuz_sn:11.8,hiz_kmh:186,
+  tuketim_sehir_ici:7.6,tuketim_sehir_disi:5.6,tuketim_l100km:6.6,
+  ncap_yildiz:3,ncap_test_yili:2016,liste_fiyati_tl:null,mtv_yillik_tl:10016,
+  garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,
+  bakim_araligi_km:10000,bakim_araligi_ay:12},
+  ncapNot:'2016 testi, temel donanım — eski test, güncel protokollerle birebir kıyaslanamaz.',
+  ncapKaynak:'https://www.euroncap.com/en/results/fiat/tipo/44199',
+  fiyatNot:'Eylül 2026 güncel fiyat listelerinde bu motor seçeneği yer almıyor, muhtemelen sınırlı satışta.',
+  agirBakim:[
+   {km:40000,islem:'Buji, fren hidrolik değişimi',kaynak:'egeaylageziyorum.com'},
+   {km:60000,islem:'Triger KAYIŞ değişimi (benzinli motorda kayış sistemi kullanılır, kritik — atlanırsa motor arızası riski)',kaynak:'egeaylageziyorum.com'},
+   {km:100000,islem:'Kapsamlı revizyon',kaynak:'egeaylageziyorum.com'}
+  ],
+  kucukDetaylar:[
+   {ozellik:'Gözlük gözü',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
+   {ozellik:'Soğutmalı torpido',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
+   {ozellik:'Kolçak altı soğutma',deger:'Yok',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
+  ],
+  gucluYanlar:[],
+  dikkatEdilecekler:[
+   {metin:'Sahip forumlarında sık tekrarlanan şikayet: temel versiyonlarda gözlük gözü, soğutmalı torpido ve camlarda uzaktan kumanda özelliği yok.',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
+  ],
+  odul:[],
+  sistemPuani:{toplam:2.9,kriterler:[
+   {ad:'Güvenlik',puan:1.2,max:2,aciklama:'Euro NCAP 3 yıldız (2016, eski test)'},
+   {ad:'Performans',puan:0.1,max:2,aciklama:'0-100: 11.8 sn'},
+   {ad:'Verimlilik',puan:0.7,max:2,aciklama:'Ortalama tüketim: 6.6 l/100km'},
+   {ad:'Garanti',puan:0.33,max:2,aciklama:'3 yıl / 60.000 km'}
+  ],veriYokKriterler:['Konfor donanımı — tam versiyon donanım listesi netleşmedi']}}
+};
+const RIVALS = [
+ {ad:'Fiat Egea Sedan 1.4 Fire 95 HP',ver:'Aynı model, benzinli motor',guc:95,tuketim:6.6,bagaj:null,ncap:3,fiyat:null,id:'egea-1.4-fire'},
+ {ad:'Renault Clio (6. nesil) 1.2 TCe',ver:'2026, 115 PS',guc:115,tuketim:5.0,bagaj:391,ncap:4,fiyat:1799000,id:'clio6-1.2-tce'},
+ {ad:'Togg T10X V1 RWD',ver:'2026, elektrikli SUV',guc:218,tuketim:null,bagaj:null,ncap:5,fiyat:1909048,id:'togg-t10x-v1'}
+];
+const RECALLS = {
+ 'egea-1.6-multijet':[
+  {tarih:'2025-11',parca:'Şanzıman',baslik:'Çift kavramalı şanzıman yazılım kontrolü',
+   ozet:'Örnek kayıt: belirli üretim tarihli araçlarda şanzıman kontrol ünitesi yazılımı güncellenecek.',
+   cozum:'Yetkili serviste yazılım güncellemesi, ücretsiz.',kaynak:'Örnek kayıt, Sanayi ve Teknoloji Bakanlığı gönüllü geri çağırma biçiminde'}
+ ],
+ 'egea-1.4-fire':null
+};
+const OFFICIAL = {
+ 'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
+ 'egea-1.4-fire':null
+};
+const PROBLEMS = {motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
+const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
+
+const REVIEWS = {
+ 'egea-1.6-multijet':[
+  {id:'r1',ad:'Mert K.',tarih:'2026-08-14',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:3},ay:14,km:21000,
+   baslik:'Şehir içinde de uzun yolda da dengeli',arti:['Yol tutuşu','Dizel motor ekonomik','Kabin sessiz'],eksi:['Ekran menüleri karışık'],
+   metin:'Neredeyse bir buçuk yıldır kullanıyorum. Hafta içi şehir, hafta sonu şehirlerarası gidiyorum. Tüketim beklediğimden iyi. Multimedya ekranı bir iki kez kendiliğinden yeniden başladı, yazılım güncellemesinden sonra görmedim.',
+   sorun:['multimedya'],faydali:12},
+  {id:'r2',ad:'Elif T.',tarih:'2026-07-30',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:4},ay:8,km:9500,
+   baslik:'Beklentimi karşıladı',arti:['Fiyat/performans','İç mekan kalitesi'],eksi:['Bagaj eşiği biraz yüksek'],
+   metin:'İlk arabam değil ama en memnun kaldığım oldu. Uzun yolda dizel motor gerçekten tasarruflu. Şimdilik hiçbir sorun yaşamadım.',
+   sorun:[],faydali:7},
+  {id:'r3',ad:'Baran S.',tarih:'2026-06-21',puan:3,sub:{konfor:4,yakit:4,guven:3,perf:4,donanim:3},ay:26,km:48000,
+   baslik:'Kullanışlı ama şanzıman bazen tereddüt ediyor',arti:['Sürüş keyfi','Yakıt ekonomisi'],eksi:['Düşük hızda şanzıman tereddütü'],
+   metin:'Düşük hızda trafikte şanzıman bazen tereddüt ediyordu, serviste yapılan yazılım güncellemesinden sonra azaldı. Periyodik bakım maliyetleri beklediğimden yüksek çıktı.',
+   sorun:['sanziman','multimedya'],faydali:15},
+  {id:'r4',ad:'Selin A.',tarih:'2026-05-09',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:4},ay:11,km:15200,
+   baslik:'Günlük kullanım için ideal',arti:['Park etmesi kolay','Yakıt tüketimi'],eksi:['Arka diz mesafesi'],
+   metin:'Şehir içi kullanıyorum, geri görüş kamerası çok işime yarıyor. Arka koltukta uzun boylu biri için alan dar kalıyor.',
+   sorun:[],faydali:3},
+  {id:'r5',ad:'Okan D.',tarih:'2026-03-02',puan:2,sub:{konfor:3,yakit:3,guven:2,perf:3,donanim:3},ay:30,km:62000,
+   baslik:'Ekran ve şanzıman sorunları can sıktı',arti:['Motor performansı'],eksi:['Ekran donması','Şanzıman arızası'],
+   metin:'Ekran birkaç kez donup kapandı, şanzıman da düşük hızda sarsıntılı çalıştı. Servis güncelleme yaptı, sorun tamamen bitmedi.',
+   sorun:['multimedya','sanziman'],faydali:21},
+  {id:'r6',ad:'Deniz Y.',tarih:'2026-01-18',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:4},ay:6,km:7800,
+   baslik:'Sakin ve ekonomik',arti:['Yakıt tüketimi','Sessizlik'],eksi:[],
+   metin:'Altı aydır kullanıyorum, uzun yolda yorulmuyorum. İlk servis sorunsuz geçti.',
+   sorun:[],faydali:2}
+ ],
+ 'egea-1.4-fire':[]
+};
+
+/* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
+const GROUPS = [
+ {name:'Genel',rows:[
+  ['segment','Segment'],['kasa','Kasa tipi'],['yakit','Yakıt tipi'],
+  ['sanziman','Şanzıman'],['cekis','Çekiş'],['koltuk','Koltuk sayısı'],['kapi','Kapı sayısı']]},
+ {name:'Motor ve performans',rows:[
+  ['cc','Motor hacmi','cc'],['silindir','Silindir sayısı'],['besleme','Besleme tipi'],
+  ['guc_hp','Beygir gücü','HP'],['tork_nm','Azami tork','Nm'],
+  ['sifirYuz_sn','0-100 km/s hızlanma','sn'],['hiz_kmh','Azami hız','km/s']]},
+ {name:'Yakıt ve tüketim',rows:[
+  ['tuketim_sehir_ici','Şehir içi tüketim','l/100km'],['tuketim_sehir_disi','Şehir dışı tüketim','l/100km'],
+  ['tuketim_l100km','Ortalama yakıt tüketimi','l/100km'],['co2_gkm','CO₂ emisyonu','g/km'],
+  ['emisyon_normu','Emisyon normu'],['depo_l','Yakıt deposu','L']]},
+ {name:'Elektrikli / hibrit',rows:[
+  ['batarya_kwh','Batarya kapasitesi','kWh'],['batarya_tipi','Batarya tipi'],
+  ['menzil_km_wltp','Menzil (WLTP)','km'],['ac_sarj_dk','AC şarj süresi','dk'],
+  ['dc_hizli_sarj_dk_20_80','DC hızlı şarj (%20-80)','dk'],['elektrik_tuketim_kwh100km','Ortalama elektrik tüketimi','kWh/100km']]},
+ {name:'Boyutlar ve ağırlık',rows:[
+  ['uzunluk_mm','Uzunluk','mm'],['genislik_mm','Genişlik','mm'],['yukseklik_mm','Yükseklik','mm'],
+  ['dingil_mm','Dingil mesafesi','mm'],['yerden_yukseklik_mm','Yerden yükseklik','mm'],
+  ['agirlik_kg','Boş ağırlık','kg'],['istiap_kg','Azami yük (istiap haddi)','kg'],
+  ['bagaj_l','Bagaj hacmi','L'],['jant_inch','Jant çapı','"']]},
+ {name:'Güvenlik',rows:[
+  ['airbag_sayisi','Hava yastığı sayısı'],['ncap_yildiz','Euro NCAP puanı'],['ncap_test_yili','NCAP test yılı'],
+  ['abs','ABS'],['esp','ESP / ESC'],['yokus_kalkis','Yokuş kalkış desteği'],
+  ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],
+  ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['geri_gorus_kamera','Geri görüş kamerası']]},
+ {name:'Konfor ve donanım',rows:[
+  ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],
+  ['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
+  ['start_stop','Start-stop sistemi']]},
+ {name:'Multimedya ve bağlantı',rows:[
+  ['ekran_inch','Dokunmatik ekran boyutu','"'],['carplay_android_auto','Apple CarPlay / Android Auto'],
+  ['ses_sistemi','Ses sistemi'],['dijital_gosterge','Dijital gösterge paneli']]},
+ {name:'Fiyat ve vergi',rows:[
+  ['liste_fiyati_tl','Güncel liste fiyatı','TL'],['mtv_yillik_tl','Yıllık MTV (1-3 yaş bandı)','TL']]},
+ {name:'Garanti ve bakım',rows:[
+  ['garanti_yil','Araç garantisi','yıl'],['garanti_km','Araç garantisi','km'],
+  ['batarya_garanti_yil','Batarya garantisi','yıl'],
+  ['boya_garanti_yil','Boya garantisi','yıl'],['pas_garanti_yil','Paslanmazlık garantisi','yıl'],
+  ['bakim_araligi_km','Standart bakım aralığı','km'],['bakim_araligi_ay','Standart bakım aralığı','ay']]}
+];
+
+/* ---------- Yardımcılar ---------- */
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const esc = s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dec = n=>(String(n).split('.')[1]||'').length;
+const nf = (n,d=0)=>n.toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmtVal = (v,unit)=> typeof v==='number' ? nf(v,dec(v))+(unit?' '+unit:'') : String(v);
+const avg = a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+const fmtDate = iso=>new Date(iso+'T12:00:00').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+const fmtMonth = ym=>new Date(ym+'-15T12:00:00').toLocaleDateString('tr-TR',{month:'long',year:'numeric'});
+
+const state = {carId:'egea-1.6-multijet',sort:'yeni',filter:null};
+const helped = new Set();
+const reviews = JSON.parse(JSON.stringify(REVIEWS));
+const car = ()=>CARS[state.carId];
+const published = ()=>reviews[state.carId].filter(r=>r.durum!=='bekliyor');
+
+let toastTimer;
+function toast(msg){
+  const t=$('#toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),3400);
+}
+
+/* ---------- Render ---------- */
+function renderHero(){
+  const c=car();
+  $('#title').textContent=c.marka+' '+c.model;
+  $('#subtitle').textContent=c.yil+' model, '+c.versiyon;
+  $('#heroSrc').innerHTML = c.kaynakUrl ? `Kaynak: <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener" style="color:inherit">${esc(c.kaynakAd)}</a> ↗` : '';
+  $('#crumbYear').textContent=c.yil;
+  document.title=c.marka+' '+c.model+' '+c.yil+' | Yan Yana';
+  const years=[...new Set(Object.values(CARS).map(x=>x.yil))].sort((a,b)=>b-a);
+  $('#years').innerHTML=years.map(y=>`<button type="button" class="chip" data-year="${y}" aria-pressed="${y===c.yil}">${y}</button>`).join('');
+  const vers=Object.values(CARS).filter(x=>x.yil===c.yil);
+  $('#versions').innerHTML=vers.map(v=>`<button type="button" class="chip" data-id="${v.id}" aria-pressed="${v.id===c.id}">${esc(v.versiyon)}</button>`).join('');
+  const s=c.s;
+  const items=[['Beygir gücü',s.guc_hp,'HP'],['Azami tork',s.tork_nm,'Nm'],['0-100 km/s',s.sifirYuz_sn,'sn'],['Ortalama tüketim',s.tuketim_l100km,'l/100 km'],['Bagaj',s.bagaj_l,'L']];
+  $('#keystats').innerHTML=items.map(([l,v,u])=>`<div class="ks"><dt>${l}</dt><dd>${v==null?'—':nf(v,dec(v))}<small>${u}</small></dd></div>`).join('');
+  $('#fotoLink').href=c.fotoUrl||c.kaynakUrl||'#';
+  const turEl=$('#turWrap'), turA=$('#turLink');
+  if(c.sanalTurUrl){ turEl.hidden=false; turA.href=c.sanalTurUrl; } else { turEl.hidden=true; }
+}
+
+function renderSistemPuani(){
+  const c=car(), sp=c.sistemPuani;
+  if(!sp){ $('#sysScoreBody').innerHTML='<p class="score-meta">Henüz hesaplanmadı.</p>'; return; }
+  const subs=sp.kriterler.map(k=>`<li><span>${esc(k.ad)}</span><span class="meter" aria-hidden="true"><i style="width:${k.puan/k.max*100}%"></i></span><b>${nf(k.puan,2)}</b></li>`).join('');
+  const veriYok=sp.veriYokKriterler&&sp.veriYokKriterler.length
+    ? `<p class="note">Veri yok: ${sp.veriYokKriterler.map(esc).join('; ')}. Bu kriterler toplama katılmadı.</p>` : '';
+  $('#sysScoreBody').innerHTML=`<div class="score-num">${nf(sp.toplam,1)}<small>/ 10</small></div><p class="score-meta">${sp.kriterler.length} kriterden hesaplandı</p><ul class="subs">${subs}</ul>${veriYok}`;
+}
+
+function renderArtilar(){
+  const c=car();
+  $('#odulBlock').innerHTML = c.odul&&c.odul.length
+    ? `<div class="block"><h3>Ödüller</h3><ul>${c.odul.map(o=>`<li>${esc(o.ad)} (${esc(o.yil)}) — <a class="src" href="${esc(o.kaynak)}" target="_blank" rel="noopener">kaynak</a></li>`).join('')}</ul></div>`
+    : `<p class="note">Bu araç için doğrulanmış bir ödül bulunamadı — bulunamayınca boş bırakıyoruz, uydurmuyoruz.</p>`;
+
+  const pro=(c.gucluYanlar||[]).map(g=>`<li>${esc(g.metin)} <a class="src" href="${esc(g.kaynak)}" target="_blank" rel="noopener">↗</a></li>`).join('');
+  const con=(c.dikkatEdilecekler||[]).map(g=>`<li>${esc(g.metin)} <a class="src" href="${esc(g.kaynak)}" target="_blank" rel="noopener">↗</a></li>`).join('');
+  $('#artiEksiBlock').innerHTML = (pro||con)
+    ? `${pro?`<div class="pro"><h5>Öne çıkanlar</h5><ul>${pro}</ul></div>`:'<div class="pro"><h5>Öne çıkanlar</h5><p class="note">Bu versiyon için henüz editöryel bir öne çıkan not eklenmedi.</p></div>'}${con?`<div class="con"><h5>Dikkat edilecekler</h5><ul>${con}</ul></div>`:''}`
+    : '<p class="note">Henüz not eklenmedi.</p>';
+
+  const others=RIVALS.map(r=>r.ncap).filter(n=>n!=null);
+  const my=c.s.ncap_yildiz;
+  let ncapMsg='';
+  if(my!=null && others.length){
+    const best=Math.max(my,...others), worst=Math.min(my,...others);
+    if(my===best && my>worst) ncapMsg=`<p>Bu versiyonun Euro NCAP puanı (${my} yıldız), karşılaştırmadaki diğer araçlar arasında <b>en yüksek</b> — ancak testin yapıldığı yılın farklı olabileceğini unutma.</p>`;
+    else if(my===worst && my<best) ncapMsg=`<p>Bu versiyonun Euro NCAP puanı (${my} yıldız), karşılaştırmadaki diğer araçlara göre <b>daha düşük</b> (en yükseği ${best} yıldız). ${c.ncapNot?esc(c.ncapNot):''}</p>`;
+    else ncapMsg=`<p>Bu versiyonun Euro NCAP puanı: ${my} yıldız. ${c.ncapNot?esc(c.ncapNot):''}</p>`;
+  }
+  $('#ncapVsBlock').innerHTML = ncapMsg ? `<h3>NCAP karşılaştırması</h3>${ncapMsg}<p class="src">Kaynak: <a href="${esc(c.ncapKaynak||'')}" target="_blank" rel="noopener">Euro NCAP</a></p>` : '';
+
+  const kd=c.kucukDetaylar||[];
+  $('#kucukDetayList').innerHTML = kd.length
+    ? `<ul class="bars" style="display:grid;gap:0">${kd.map(d=>`<li style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.93rem"><span>${esc(d.ozellik)}</span><span style="color:var(--muted);text-align:right">${esc(d.deger)}</span></li>`).join('')}</ul><p class="src">Kaynak: sahip forumları (egeaclub.com) — resmi donanım listesiyle teyit önerilir.</p>`
+    : '<p class="note">Henüz bilgi eklenmedi.</p>';
+}
+
+function renderFiyatVergi(){
+  const c=car(), s=c.s;
+  const items=[
+    ['Liste fiyatı',s.liste_fiyati_tl,'TL'],
+    ['Yıllık MTV (1-3 yaş)',s.mtv_yillik_tl,'TL'],
+    ['Araç garantisi',s.garanti_yil,'yıl'],
+    ['Garanti km',s.garanti_km,'km']
+  ];
+  $('#fiyatStats').innerHTML=items.map(([l,v,u])=>`<div class="ks"><dt>${l}</dt><dd>${v==null?'—':nf(v)}<small>${u}</small></dd></div>`).join('');
+  const fiyatNot = c.fiyatNot ? `<p class="note">${esc(c.fiyatNot)}</p>` : '';
+  $('#fiyatDetay').innerHTML = `
+    <p class="lead">Yıllık MTV tutarı, bu aracın motor hacmi ve liste fiyatına göre resmi 2026 tarifesinden otomatik hesaplanmıştır (1-3 yaş bandı varsayılmıştır — araç 2026 model olduğu için).
+    Boya garantisi ${s.boya_garanti_yil!=null?s.boya_garanti_yil+' yıl':'—'}, paslanmazlık garantisi ${s.pas_garanti_yil!=null?s.pas_garanti_yil+' yıl':'—'}.</p>
+    ${fiyatNot}
+    <a class="btn" href="${MTV_URL}" target="_blank" rel="noopener" style="display:inline-block;width:auto;margin-top:10px">Farklı bir yaş/değer için MTV hesapla →</a>
+    <p class="src" style="margin-top:10px">Kaynak: fiyat — ${esc(c.kaynakAd)}; MTV — <a href="https://www.muhasebetr.com/motorlu-tasitlar-vergisi-mtv/" target="_blank" rel="noopener">muhasebetr.com</a> (2026 tarifesi, GİB ile teyit önerilir); garanti — <a href="https://www.fiat.com.tr/owners/garanti/garanti-suresi-kapsami" target="_blank" rel="noopener">fiat.com.tr</a>.</p>`;
+}
+
+function renderBakim(){
+  const c=car(), s=c.s;
+  $('#bakimLead').textContent = s.bakim_araligi_km
+    ? `Standart bakım aralığı: her ${nf(s.bakim_araligi_km)} km veya ${s.bakim_araligi_ay} ayda bir (hangisi önce dolarsa).`
+    : 'Bu versiyon için bakım aralığı bilgisi henüz eklenmedi.';
+  const ab=c.agirBakim||[];
+  $('#bakimNoktalari').innerHTML = ab.length
+    ? `<h3>Ağır bakım noktaları</h3><ul class="bars" style="display:grid;gap:0">${ab.map(b=>`<li style="padding:10px 0;border-bottom:1px solid var(--line)"><b>${nf(b.km)} km</b> — ${esc(b.islem)}</li>`).join('')}</ul><p class="src">Kaynak: ${esc(ab[0].kaynak)} (ikincil/topluluk kaynağı, resmi bakım kitapçığıyla teyit önerilir).</p>`
+    : '';
+}
+
+function renderScore(){
+  const pub=published(), n=pub.length;
+  if(!n){
+    $('#scoreBody').innerHTML='<p class="score-meta">Bu versiyon için henüz yorum yok. İlk yorumu sen yaz.</p>';
+    return;
+  }
+  const a=avg(pub.map(r=>r.puan));
+  let subs='';
+  Object.entries(SUBS).forEach(([k,l])=>{
+    const vals=pub.map(r=>r.sub&&r.sub[k]).filter(v=>typeof v==='number');
+    if(!vals.length) return;
+    const m=avg(vals);
+    subs+=`<li><span>${l}</span><span class="meter" aria-hidden="true"><i style="width:${m/5*100}%"></i></span><b>${nf(m,1)}</b></li>`;
+  });
+  $('#scoreBody').innerHTML=`<div class="score-num">${nf(a,1)}<small>/ 5</small></div><p class="score-meta">${n} sahip yorumuna göre</p><ul class="subs">${subs}</ul>`;
+}
+
+function renderProblems(){
+  const id=state.carId;
+  const rc=RECALLS[id];
+  if(rc===null) $('#recalls').innerHTML='<div class="emptystate">Bu model yılı için geri çağırma verisi henüz eklenmedi.</div>';
+  else if(!rc.length) $('#recalls').innerHTML='<div class="emptystate">Bu model yılı için kayıtlı geri çağırma bulunamadı.</div>';
+  else $('#recalls').innerHTML=rc.map(r=>`<details class="recall"><summary><span class="rdate">${fmtMonth(r.tarih)}</span><span class="rtitle">${esc(r.baslik)}</span><span class="tag">${esc(r.parca)}</span></summary><div class="rbody"><p>${esc(r.ozet)}</p><p><b>Çözüm:</b> ${esc(r.cozum)}</p><p class="src">Kaynak: ${esc(r.kaynak)}</p></div></details>`).join('');
+
+  const off=OFFICIAL[id];
+  if(!off) $('#officialBlock').innerHTML='<h3>Resmi şikayetler</h3><p class="src">Kaynak: NHTSA (ABD)</p><div class="emptystate">Bu model yılı için şikayet verisi henüz eklenmedi.</div>';
+  else{
+    const max=Math.max(...off.bilesenler.map(b=>b[1]));
+    $('#officialBlock').innerHTML=`<h3>Resmi şikayetler</h3><p class="src">Kaynak: NHTSA (ABD), toplam ${off.toplam} şikayet</p><ul class="bars">${off.bilesenler.map(([l,n])=>`<li class="bar"><span>${esc(l)}</span><span class="bt"><i style="width:${n/max*100}%"></i></span><span class="bn">${n}</span></li>`).join('')}</ul><p class="note">Şikayet sayısı, o parça için bildirilen kayıt adedidir.</p>`;
+  }
+
+  const pub=published(), n=pub.length;
+  if(!n){
+    $('#userBlock').innerHTML='<h3>Sahiplerin bildirdiği sorunlar</h3><p class="src">Kaynak: Yan Yana sahip yorumları</p><div class="emptystate">Henüz yorum olmadığı için bu bölüm boş. Yorum yazanların işaretlediği sorunlar burada görünür.</div>';
+    return;
+  }
+  const counts={};
+  pub.forEach(r=>r.sorun.forEach(k=>counts[k]=(counts[k]||0)+1));
+  const list=Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+  const withProblem=pub.filter(r=>r.sorun.length).length;
+  const bars=list.length
+    ? `<ul class="bars">${list.map(([k,c])=>`<li><button type="button" class="bar" data-prob="${k}" aria-pressed="${state.filter===k}"><span>${esc(PROBLEMS[k])}</span><span class="bt"><i style="width:${c/n*100}%"></i></span><span class="bn">${c} / ${n}</span></button></li>`).join('')}</ul><p class="note">Bir satıra dokun, o sorunu bildiren yorumları gör.</p>`
+    : '<div class="emptystate">Yorum yazanların hiçbiri sorun bildirmedi.</div>';
+  $('#userBlock').innerHTML=`<h3>Sahiplerin bildirdiği sorunlar</h3><p class="src">Kaynak: Yan Yana sahip yorumları. Sorun bildiren yorum: ${withProblem} / ${n}</p>${bars}${n<10?`<p class="note">Yorum sayısı az (${n}). Bu oranlar henüz güvenilir bir eğilim göstermez.</p>`:''}`;
+}
+
+function renderReviews(){
+  const all=reviews[state.carId], pub=published();
+  $('#reviewLead').textContent = pub.length ? `${pub.length} yorum. Her yorum sahibinin kullanım süresi ve kilometresiyle birlikte gösterilir.` : 'Yorumlar burada görünür.';
+  $('#filterTag').innerHTML = state.filter ? `<span class="activefilter">Filtre: ${esc(PROBLEMS[state.filter])} sorunu<button type="button" id="clearFilter">Kaldır</button></span>` : '';
+  let list=all.filter(r=>!state.filter || r.sorun.includes(state.filter));
+  const pend=list.filter(r=>r.durum==='bekliyor'), rest=list.filter(r=>r.durum!=='bekliyor');
+  const sorters={yeni:(a,b)=>b.tarih.localeCompare(a.tarih),faydali:(a,b)=>b.faydali-a.faydali,yuksek:(a,b)=>b.puan-a.puan,dusuk:(a,b)=>a.puan-b.puan};
+  rest.sort(sorters[state.sort]);
+  list=[...pend,...rest];
+  if(!list.length){
+    $('#reviews').innerHTML=`<div class="emptystate">${all.length?'Bu filtreyle eşleşen yorum yok.':'Bu versiyon için henüz yorum yok. Aracı kullanıyorsan ilk yorumu sen yaz, diğer alıcılara yardımı olur.'}${all.length?'':'<br><button class="btn primary js-write" type="button">Yorum yaz</button>'}</div>`;
+    return;
+  }
+  $('#reviews').innerHTML=list.map(r=>{
+    const isP=r.durum==='bekliyor';
+    const isH=helped.has(r.id);
+    return `<article class="review">
+      <div class="rhead"><div><span class="who">${esc(r.ad)}</span> <span class="own">Kullanım: ${r.ay} ay, ${nf(r.km)} km</span></div>
+      <div class="rrating"><span class="meter" aria-hidden="true"><i style="width:${r.puan/5*100}%"></i></span><b>${r.puan}/5</b></div></div>
+      <h4>${esc(r.baslik)}</h4>
+      <p class="body">${esc(r.metin)}</p>
+      ${(r.arti.length||r.eksi.length)?`<div class="pc">${r.arti.length?`<div class="pro"><h5>Artılar</h5><ul>${r.arti.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}${r.eksi.length?`<div class="con"><h5>Eksiler</h5><ul>${r.eksi.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}</div>`:''}
+      ${r.sorun.length?`<div class="rprob"><span>Bildirilen sorunlar:</span>${r.sorun.map(k=>`<span class="tag">${esc(PROBLEMS[k])}</span>`).join('')}</div>`:''}
+      ${isP?'<p class="pending">Onay bekliyor. Moderasyondan sonra yayınlanır, şimdilik yalnızca sen görüyorsun.</p>':''}
+      <div class="rfoot"><span class="rdated">${fmtDate(r.tarih)}</span>${isP?'':`<button type="button" class="btn small" data-help="${r.id}" aria-pressed="${isH}">Faydalı (${r.faydali+(isH?1:0)})</button>`}</div>
+    </article>`;
+  }).join('');
+}
+
+function renderSpecs(){
+  const s=car().s;
+  $('#specs').innerHTML=GROUPS.map(g=>{
+    const rows=g.rows.filter(([k])=>s[k]!=null&&s[k]!=='').map(([k,l,u])=>`<div><dt>${esc(l)}</dt><dd>${esc(fmtVal(s[k],u))}</dd></div>`).join('');
+    return rows?`<div class="specgroup"><h3>${esc(g.name)}</h3><dl>${rows}</dl></div>`:'';
+  }).join('');
+}
+
+function renderRivals(){
+  $('#cmpSel').innerHTML=RIVALS.map((r,i)=>`<option value="${i}">${esc(r.ad)}</option>`).join('');
+  $('#rivals').innerHTML=RIVALS.map((r,i)=>`<li><div class="rn"><b>${esc(r.ad)}</b><span>${esc(r.ver)}</span></div><div class="rnums"><span>${r.guc!=null?r.guc+' HP':'—'}</span><span>${r.tuketim!=null?nf(r.tuketim,1)+' l/100 km':'—'}</span><span>${r.bagaj!=null?r.bagaj+' L bagaj':'—'}</span></div><button type="button" class="btn small" data-rival="${i}">Karşılaştır</button></li>`).join('');
+}
+
+function renderAll(){ renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); }
+
+/* ---------- Yorum formu ---------- */
+function buildForm(){
+  $('#f-puan').innerHTML=[1,2,3,4,5].map(n=>`<label class="segopt"><input type="radio" name="puan" value="${n}" ${n===1?'required':''}><span>${n}</span></label>`).join('');
+  $('#f-subs').innerHTML=Object.entries(SUBS).map(([k,l])=>`<div><label for="s-${k}">${l}</label><select id="s-${k}" name="sub-${k}"><option value="">Seçme</option>${[1,2,3,4,5].map(n=>`<option value="${n}">${n}</option>`).join('')}</select></div>`).join('');
+  $('#f-sorun').innerHTML=Object.entries(PROBLEMS).map(([k,l])=>`<label class="pchip"><input type="checkbox" name="sorun" value="${k}"><span>${l}</span></label>`).join('')+`<label class="pchip"><input type="checkbox" id="f-none"><span>Sorun yaşamadım</span></label>`;
+  const none=$('#f-none');
+  none.addEventListener('change',()=>{ if(none.checked) $$('input[name="sorun"]').forEach(i=>i.checked=false); });
+  $$('input[name="sorun"]').forEach(i=>i.addEventListener('change',()=>{ if(i.checked) none.checked=false; }));
+}
+function openForm(){
+  const c=car();
+  $('#dlgCar').textContent=`${c.marka} ${c.model} ${c.yil}, ${c.versiyon}`;
+  $('#dlg').showModal();
+}
+$('#rf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target, fd=new FormData(f);
+  const subs={};
+  Object.keys(SUBS).forEach(k=>{ const v=fd.get('sub-'+k); if(v) subs[k]=Number(v); });
+  const split=s=>String(s||'').split(',').map(x=>x.trim()).filter(Boolean).slice(0,6);
+  const r={id:'n'+Date.now(),ad:String(fd.get('nick')).trim(),tarih:new Date().toISOString().slice(0,10),puan:Number(fd.get('puan')),sub:subs,
+    ay:Number(fd.get('ay')),km:Number(fd.get('km')),baslik:String(fd.get('baslik')).trim(),arti:split(fd.get('arti')),eksi:split(fd.get('eksi')),
+    metin:String(fd.get('metin')).trim(),sorun:fd.getAll('sorun'),faydali:0,durum:'bekliyor'};
+  reviews[state.carId].unshift(r);
+  f.reset();
+  $('#dlg').close();
+  renderReviews();
+  $('#yorumlar').scrollIntoView({block:'start'});
+  toast('Yorumun moderasyona gönderildi. Onaydan sonra yayınlanacak.');
+});
+$('#dlgCancel').addEventListener('click',()=>$('#dlg').close());
+
+/* ---------- Olaylar ---------- */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button');
+  if(!t) return;
+  if(t.classList.contains('js-write')) return openForm();
+  if(t.dataset.year){
+    const first=Object.values(CARS).find(c=>c.yil===Number(t.dataset.year));
+    state.carId=first.id; state.filter=null; return renderAll();
+  }
+  if(t.dataset.id){ state.carId=t.dataset.id; state.filter=null; return renderAll(); }
+  if(t.dataset.prob){
+    state.filter = state.filter===t.dataset.prob ? null : t.dataset.prob;
+    renderProblems(); renderReviews();
+    if(state.filter) $('#yorumlar').scrollIntoView({block:'start'});
+    return;
+  }
+  if(t.id==='clearFilter'){ state.filter=null; renderProblems(); return renderReviews(); }
+  if(t.dataset.help){
+    const id=t.dataset.help;
+    helped.has(id)?helped.delete(id):helped.add(id);
+    return renderReviews();
+  }
+  if(t.dataset.rival!==undefined){ toast('Bu düğme, '+RIVALS[t.dataset.rival].ad+' ile karşılaştırma sayfasını açacak.'); return; }
+  if(t.id==='cmpGo'){ toast('Bu düğme, seçtiğin araçla karşılaştırma sayfasını açacak.'); return; }
+  if(t.id==='sponsorBtn'){ toast('Bu düğme, ortak firmanın teklif sayfasına yönlendirecek.'); return; }
+});
+$('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderReviews(); });
+
+/* Bölüm takibi */
+(function(){
+  const links=$$('#subnav a');
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        links.forEach(a=>a.removeAttribute('aria-current'));
+        map.get(en.target.id)?.setAttribute('aria-current','true');
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  map.forEach((_,id)=>{ const el=document.getElementById(id); if(el) io.observe(el); });
+})();
+
+/* Ana sayfadan gelen derin bağlantı: #egea-1.6-multijet gibi bir token varsa o versiyonu aç. */
+(function(){
+  const token = location.hash.slice(1);
+  if(token && CARS[token]) state.carId = token;
+})();
+
+buildForm();
+renderRivals();
+renderAll();
+</script>
+</body>
+</html>
+
+</body>
+</html>

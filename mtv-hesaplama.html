@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MTV Hesaplama | Yan Yana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#EEF1F5; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#101820; --muted:#566170; --line:#D6DCE4;
+  --a:#2456C9; --a-tint:#E1E9FB; --on-a:#FFFFFF;
+  --b:#D9620C; --b-tint:#FCE8D4;
+  --good:#1C7C4C; --good-tint:#E1F3E8;
+  --warn:#C25400; --warn-tint:#FCE8D4; --warn-ink:#8F3F00;
+  --focus:#2456C9;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+    --a:#7B9DF2; --a-tint:#1E2C4B; --on-a:#0E1319;
+    --b:#F59A50; --b-tint:#3A2918;
+    --good:#5FBE8B; --good-tint:#123023;
+    --warn:#F59A50; --warn-tint:#3A2918; --warn-ink:#F5B57F; --focus:#7B9DF2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+  --a:#7B9DF2; --a-tint:#1E2C4B; --on-a:#0E1319;
+  --b:#F59A50; --b-tint:#3A2918;
+  --good:#5FBE8B; --good-tint:#123023;
+  --warn:#F59A50; --warn-tint:#3A2918; --warn-ink:#F5B57F; --focus:#7B9DF2;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:840px;margin:0 auto;padding:0 16px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:1100px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+.backlink{font-size:.9rem;color:var(--muted);text-decoration:none}
+.backlink:hover{color:var(--ink)}
+.notice{background:var(--warn-tint);color:var(--warn-ink);font-size:.85rem;padding:8px 0;border-bottom:1px solid var(--line)}
+.notice .wrap{max-width:1100px}
+
+h1{font-weight:700;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.08;letter-spacing:-.02em;margin-top:20px}
+.lead{color:var(--muted);margin-top:8px;font-size:1.02rem;max-width:60ch}
+
+.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;margin-top:20px}
+.box h2{font-size:1.15rem;margin-bottom:4px}
+.box .hint{color:var(--muted);font-size:.88rem;margin-bottom:14px}
+
+.seg{display:flex;gap:6px;margin-bottom:16px}
+.segbtn{flex:1;font:inherit;font-weight:600;min-height:46px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink);cursor:pointer}
+.segbtn[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:var(--on-a)}
+
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:5px}
+select,input[type=number]{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--surface2);border:1px solid var(--line);border-radius:6px;height:46px;padding:0 12px}
+.rowfields{display:grid;gap:12px}
+@media (min-width:520px){ .rowfields.two{grid-template-columns:1fr 1fr} }
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.92rem;min-height:42px;padding:0 14px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:var(--on-a);font-weight:600}
+
+.btn{font:inherit;font-weight:600;min-height:48px;padding:0 20px;color:var(--on-a);background:var(--a);border:1px solid var(--a);border-radius:6px;cursor:pointer;width:100%;margin-top:6px}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:var(--surface2);color:var(--ink);border-color:var(--line);font-weight:500}
+
+.result{margin-top:18px;padding:18px;background:var(--a-tint);border-radius:8px;display:none}
+.result.show{display:block}
+.result .amt{font-family:var(--display);font-weight:800;font-size:2.6rem;letter-spacing:-.02em}
+.result .amt small{font-family:var(--body);font-size:1rem;font-weight:400;color:var(--muted);margin-left:6px}
+.result .meta{color:var(--muted);font-size:.9rem;margin-top:6px}
+.result.warn{background:var(--warn-tint)}
+
+.carpick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.carbtn{font:inherit;font-size:.88rem;min-height:38px;padding:0 12px;border:1px solid var(--line);border-radius:20px;background:var(--surface2);color:var(--ink);cursor:pointer;text-align:left}
+.carbtn:hover{background:var(--a-tint)}
+
+.src{font-size:.82rem;color:var(--muted);margin-top:14px}
+.src a{color:inherit}
+
+details{margin-top:20px;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:14px 16px}
+summary{cursor:pointer;font-weight:600;font-family:var(--display)}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.85rem}
+th,td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600}
+
+footer{margin:40px 0 48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;max-width:72ch}
+</style>
+</head>
+<body>
+
+
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Yan Yana</a><a class="backlink" href="index.html">← Ana sayfa</a></div></header>
+<div class="notice"><div class="wrap">Bu hesaplayıcı ikincil kaynaklardan derlenen 2026 MTV tarifesini kullanır. Kesin tutar için <a href="https://www.gib.gov.tr/" target="_blank" rel="noopener">GİB Dijital Vergi Dairesi</a>'ni kontrol edin — resmi beyan/ödeme yerine geçmez.</div></div>
+
+<main class="wrap">
+  <h1>MTV Hesaplama</h1>
+  <p class="lead">2026 yılı Motorlu Taşıtlar Vergisi tarifesine göre yıllık vergini tahmini olarak hesapla. Benzinli/dizel araçlar motor hacmi + taşıt değerine, elektrikli araçlar motor gücüne göre vergilendirilir.</p>
+
+  <section class="box">
+    <h2>Aracının vergisini hesapla</h2>
+    <p class="hint">Yakıt tipini seç, bilgileri gir.</p>
+
+    <div class="seg" role="group" aria-label="Yakıt tipi">
+      <button class="segbtn" type="button" id="tabIce" aria-pressed="true">Benzinli / Dizel</button>
+      <button class="segbtn" type="button" id="tabEv" aria-pressed="false">Elektrikli</button>
+    </div>
+
+    <div id="paneIce">
+      <div class="rowfields two">
+        <div class="field">
+          <label for="ccInput">Motor hacmi (cc)</label>
+          <input type="number" id="ccInput" placeholder="ör. 1598" min="0" step="1">
+        </div>
+        <div class="field">
+          <label for="degerInput">Güncel liste fiyatı (TL, KDV dahil)</label>
+          <input type="number" id="degerInput" placeholder="ör. 1499900" min="0" step="1000">
+        </div>
+      </div>
+    </div>
+
+    <div id="paneEv" style="display:none">
+      <div class="rowfields two">
+        <div class="field">
+          <label for="kwInput">Motor gücü (kW)</label>
+          <input type="number" id="kwInput" placeholder="ör. 163" min="0" step="1">
+        </div>
+        <div class="field">
+          <label for="hpHelper">…veya beygir gücü (HP) — otomatik kW'ye çevrilir</label>
+          <input type="number" id="hpHelper" placeholder="ör. 218" min="0" step="1">
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label id="yasLbl">Yaş grubu</label>
+      <div class="chips" role="group" aria-labelledby="yasLbl" id="yasChips"></div>
+    </div>
+
+    <button class="btn" type="button" id="hesaplaBtn">Vergiyi hesapla</button>
+
+    <div class="result" id="result" role="status" aria-live="polite"></div>
+  </section>
+
+  <section class="box">
+    <h2>Veritabanımızdaki araçlardan hızlı seç</h2>
+    <p class="hint">Bilgileri otomatik doldurur.</p>
+    <div class="carpick" id="carPick"></div>
+  </section>
+
+  <details>
+    <summary>Nasıl hesaplanıyor? (metodoloji ve kaynak)</summary>
+    <p class="src" style="margin-top:10px">
+      Benzinli/dizel araçlarda (I) sayılı tarife kullanılır: motor hacmi bandı × taşıt değeri bandı × yaş grubuna göre sabit TL tutarı. Elektrikli araçlarda motor gücü (kW) esas alınır, taşıt değeri etkisi yoktur.<br><br>
+      "Taşıt değeri", ÖTV matrahına yakın bir tabandır ve KDV dahil liste fiyatından biraz düşük olabilir; bu hesaplayıcı basitlik için KDV dahil liste fiyatını doğrudan kullanır, bu yüzden sonuç <b>gerçek tutara yakın bir tahmindir</b>, birebir garanti edilmez.<br><br>
+      Kaynaklar: <a href="https://www.muhasebetr.com/motorlu-tasitlar-vergisi-mtv/" target="_blank" rel="noopener">muhasebetr.com</a> (benzinli/dizel tarife), <a href="https://www.elektrikliarac.com/news/article/elektrikli-araclarda-2026-mtv-tutarlari-aciklandi" target="_blank" rel="noopener">elektrikliarac.com</a> (elektrikli tarife). İkisi de ikincil derlemedir, resmi Resmi Gazete metniyle (31.12.2025, 5. mükerrer) birebir teyit edilmemiştir.
+    </p>
+    <table id="tableIce"></table>
+    <p class="src" style="margin-top:16px">Elektrikli araç tarifesi (kW bazlı, yıllık TL):</p>
+    <table id="tableEv"></table>
+  </details>
+
+  <footer>Yan Yana · MTV hesaplayıcı, resmi beyan yerine geçmez, sadece tahmini bilgi amaçlıdır.</footer>
+</main>
+
+<script>
+const TARIFE = {
+  yakit: [
+    {cc_min:0,cc_max:1300,bantlar:[
+      {deger_max:309100,"1_3":5750,"4_6":4010,"7_11":2238,"12_15":1689,"16+":593},
+      {deger_max:541500,"1_3":6319,"4_6":4409,"7_11":2459,"12_15":1861,"16+":655},
+      {deger_max:null,"1_3":6902,"4_6":4807,"7_11":2693,"12_15":2032,"16+":706}
+    ]},
+    {cc_min:1301,cc_max:1600,bantlar:[
+      {deger_max:309100,"1_3":10016,"4_6":7510,"7_11":4354,"12_15":3077,"16+":1181},
+      {deger_max:541500,"1_3":11023,"4_6":8264,"7_11":4794,"12_15":3375,"16+":1290},
+      {deger_max:null,"1_3":12028,"4_6":9012,"7_11":5220,"12_15":3685,"16+":1408}
+    ]},
+    {cc_min:1601,cc_max:1800,bantlar:[
+      {deger_max:775100,"1_3":19472,"4_6":15226,"7_11":8948,"12_15":5458,"16+":2113},
+      {deger_max:null,"1_3":21251,"4_6":16600,"7_11":9775,"12_15":5964,"16+":2307}
+    ]},
+    {cc_min:1801,cc_max:2000,bantlar:[
+      {deger_max:775100,"1_3":30679,"4_6":23625,"7_11":13886,"12_15":8264,"16+":3248},
+      {deger_max:null,"1_3":33474,"4_6":25784,"7_11":15147,"12_15":9012,"16+":3547}
+    ]},
+    {cc_min:2001,cc_max:2500,bantlar:[
+      {deger_max:968100,"1_3":46027,"4_6":33413,"7_11":20874,"12_15":12465,"16+":4930},
+      {deger_max:null,"1_3":50217,"4_6":36448,"7_11":22768,"12_15":13606,"16+":5378}
+    ]},
+    {cc_min:2501,cc_max:3000,bantlar:[
+      {deger_max:1937500,"1_3":64175,"4_6":55837,"7_11":34878,"12_15":18758,"16+":6875},
+      {deger_max:null,"1_3":70018,"4_6":60905,"7_11":38053,"12_15":20466,"16+":7503}
+    ]},
+    {cc_min:3001,cc_max:3500,bantlar:[
+      {deger_max:1937500,"1_3":97744,"4_6":87954,"7_11":52976,"12_15":26443,"16+":9684},
+      {deger_max:null,"1_3":106641,"4_6":95940,"7_11":57791,"12_15":28839,"16+":10578}
+    ]},
+    {cc_min:3501,cc_max:4000,bantlar:[
+      {deger_max:3101800,"1_3":153684,"4_6":132712,"7_11":78152,"12_15":34878,"16+":13886},
+      {deger_max:null,"1_3":167671,"4_6":144770,"7_11":85271,"12_15":38053,"16+":15147}
+    ]},
+    {cc_min:4001,cc_max:null,bantlar:[
+      {deger_max:3683200,"1_3":251554,"4_6":188627,"7_11":111714,"12_15":50206,"16+":19472},
+      {deger_max:null,"1_3":274415,"4_6":205781,"7_11":121873,"12_15":54769,"16+":21251}
+    ]}
+  ],
+  elektrik: [
+    {kw_min:0,kw_max:70,"1_3":1437,"4_6":1002,"7_11":559},
+    {kw_min:71,kw_max:85,"1_3":2504,"4_6":1877,"7_11":1088},
+    {kw_min:86,kw_max:105,"1_3":4426,"4_6":3457,"7_11":2036},
+    {kw_min:106,kw_max:120,"1_3":6974,"4_6":5369,"7_11":3156},
+    {kw_min:121,kw_max:150,"1_3":10460,"4_6":7593,"7_11":4744},
+    {kw_min:151,kw_max:180,"1_3":14586,"4_6":12688,"7_11":7926},
+    {kw_min:181,kw_max:210,"1_3":22214,"4_6":19988,"7_11":12039},
+    {kw_min:211,kw_max:240,"1_3":34930,"4_6":30161,"7_11":17762},
+    {kw_min:241,kw_max:300,"1_3":57170,"4_6":42871,"7_11":25388},
+    {kw_min:301,kw_max:null,"1_3":62888,"4_6":null,"7_11":null}
+  ]
+};
+
+const CARS = [
+  {ad:'Fiat Egea Sedan 1.4 Fire 95 HP', tip:'ice', cc:1368, fiyat:null},
+  {ad:'Fiat Egea Sedan 1.6 Multijet 130 HP', tip:'ice', cc:1598, fiyat:1499900},
+  {ad:'Renault Clio 1.2 TCe 115 PS', tip:'ice', cc:null, fiyat:1799000},
+  {ad:'Togg T10X V1 RWD Standart Menzil', tip:'ev', kw:163, fiyat:1909048}
+];
+
+let mode = 'ice';
+let yas = '1_3';
+const $=s=>document.querySelector(s);
+const nf=n=>n==null?'—':n.toLocaleString('tr-TR');
+
+function hpToKw(hp){ return hp*0.7457; }
+
+function buildYasChips(){
+  const opts = mode==='ice'
+    ? [['1_3','1-3 yaş'],['4_6','4-6 yaş'],['7_11','7-11 yaş'],['12_15','12-15 yaş'],['16+','16+ yaş']]
+    : [['1_3','1-3 yaş'],['4_6','4-6 yaş'],['7_11','7-11 yaş']];
+  if(!opts.find(o=>o[0]===yas)) yas = '1_3';
+  $('#yasChips').innerHTML = opts.map(([k,l])=>`<button type="button" class="chip" data-yas="${k}" aria-pressed="${k===yas}">${l}</button>`).join('');
+  $$('.chip').forEach(b=>b.addEventListener('click',()=>{ yas=b.dataset.yas; buildYasChips(); }));
+}
+function $$(s){ return Array.from(document.querySelectorAll(s)); }
+
+function setMode(m){
+  mode = m;
+  $('#tabIce').setAttribute('aria-pressed', m==='ice');
+  $('#tabEv').setAttribute('aria-pressed', m==='ev');
+  $('#paneIce').style.display = m==='ice' ? '' : 'none';
+  $('#paneEv').style.display = m==='ev' ? '' : 'none';
+  $('#result').classList.remove('show');
+  buildYasChips();
+}
+
+function findIceRow(cc){
+  return TARIFE.yakit.find(r => cc >= r.cc_min && (r.cc_max===null || cc <= r.cc_max));
+}
+function findEvRow(kw){
+  return TARIFE.elektrik.find(r => kw >= r.kw_min && (r.kw_max===null || kw <= r.kw_max));
+}
+
+function hesapla(){
+  const res = $('#result');
+  if(mode==='ice'){
+    const cc = parseFloat($('#ccInput').value);
+    const deger = parseFloat($('#degerInput').value);
+    if(!cc || cc<=0){ res.className='result show warn'; res.innerHTML = 'Önce motor hacmini (cc) gir.'; return; }
+    const row = findIceRow(cc);
+    if(!row){ res.className='result show warn'; res.innerHTML = 'Bu motor hacmi için tarife bulunamadı.'; return; }
+    let bandIdx = row.bantlar.findIndex(b => b.deger_max===null || (deger && deger<=b.deger_max));
+    if(bandIdx===-1) bandIdx = row.bantlar.length-1;
+    const band = row.bantlar[bandIdx];
+    const floor = bandIdx>0 ? row.bantlar[bandIdx-1].deger_max : 0;
+    const degerLabel = band.deger_max===null ? `${nf(floor)} TL üzeri` : `${nf(floor)}–${nf(band.deger_max)} TL arası`;
+    const tutar = band[yas];
+    res.className='result show';
+    res.innerHTML = `<div class="amt">${nf(tutar)}<small>TL / yıl</small></div><p class="meta">${nf(row.cc_min)}–${row.cc_max?nf(row.cc_max):'ve üzeri'} cc bandı${deger?`, taşıt değeri ${degerLabel} bandı`:' (liste fiyatı girilmedi, en düşük değer bandı varsayıldı)'}</p>`;
+  } else {
+    let kw = parseFloat($('#kwInput').value);
+    const hp = parseFloat($('#hpHelper').value);
+    if(!kw && hp) kw = hpToKw(hp);
+    if(!kw || kw<=0){ res.className='result show warn'; res.innerHTML = 'Motor gücünü (kW veya HP) gir.'; return; }
+    const row = findEvRow(kw);
+    if(!row || row[yas]==null){ res.className='result show warn'; res.innerHTML = 'Bu güç/yaş kombinasyonu için veri yok — kaynakta bu bant boş.'; return; }
+    res.className='result show';
+    res.innerHTML = `<div class="amt">${nf(row[yas])}<small>TL / yıl</small></div><p class="meta">${nf(row.kw_min)}–${row.kw_max?nf(row.kw_max):'ve üzeri'} kW bandı (≈ ${Math.round(kw)} kW)</p>`;
+  }
+}
+
+function buildCarPicks(){
+  $('#carPick').innerHTML = CARS.map((c,i)=>`<button type="button" class="carbtn" data-i="${i}">${c.ad}</button>`).join('');
+  $$('.carbtn').forEach(b=>b.addEventListener('click',()=>{
+    const c = CARS[+b.dataset.i];
+    setMode(c.tip);
+    if(c.tip==='ice'){
+      $('#ccInput').value = c.cc || '';
+      $('#degerInput').value = c.fiyat || '';
+      if(!c.cc){ $('#result').className='result show warn'; $('#result').innerHTML = 'Bu aracın motor hacmi doğrulanamadı, MTV otomatik hesaplanamıyor — bildiğin cc değerini elle gir.'; return; }
+    } else {
+      $('#kwInput').value = c.kw || '';
+      $('#hpHelper').value = '';
+    }
+    hesapla();
+  }));
+}
+
+function buildTables(){
+  $('#tableIce').innerHTML = '<tr><th>Motor hacmi</th><th>Taşıt değeri</th><th>1-3</th><th>4-6</th><th>7-11</th><th>12-15</th><th>16+</th></tr>' +
+    TARIFE.yakit.map(r=>r.bantlar.map(b=>`<tr><td>${nf(r.cc_min)}–${r.cc_max?nf(r.cc_max):'+'} cc</td><td>${b.deger_max?'≤ '+nf(b.deger_max):'üzeri'}</td><td>${nf(b['1_3'])}</td><td>${nf(b['4_6'])}</td><td>${nf(b['7_11'])}</td><td>${nf(b['12_15'])}</td><td>${nf(b['16+'])}</td></tr>`).join('')).join('');
+  $('#tableEv').innerHTML = '<tr><th>Motor gücü</th><th>1-3</th><th>4-6</th><th>7-11</th></tr>' +
+    TARIFE.elektrik.map(r=>`<tr><td>${nf(r.kw_min)}–${r.kw_max?nf(r.kw_max):'+'} kW</td><td>${nf(r['1_3'])}</td><td>${nf(r['4_6'])}</td><td>${nf(r['7_11'])}</td></tr>`).join('');
+}
+
+$('#tabIce').addEventListener('click',()=>setMode('ice'));
+$('#tabEv').addEventListener('click',()=>setMode('ev'));
+$('#hesaplaBtn').addEventListener('click',hesapla);
+
+setMode('ice');
+buildCarPicks();
+buildTables();
+</script>
+
+</body>
+</html>

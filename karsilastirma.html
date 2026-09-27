@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yan Yana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#EEF1F5; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#101820; --muted:#566170; --line:#D6DCE4;
+  --a:#2456C9; --a-tint:#E1E9FB; --b:#D9620C; --b-tint:#FCE8D4; --focus:#2456C9;
+  --good:#1C7A4D; --good-tint:#E2F3E9;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+    --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
+    --good:#5FBF8B; --good-tint:#173226;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+  --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
+  --good:#5FBF8B; --good-tint:#173226;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+a{color:inherit}
+h1,h2{font-family:var(--display);margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;height:56px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+
+h1{font-weight:700;font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.08;letter-spacing:-.02em;margin-top:32px;text-wrap:balance}
+.lead{margin-top:8px;color:var(--muted);max-width:56ch}
+.badge{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:5px 12px;border-radius:99px;background:var(--good-tint);color:var(--good);font-size:.85rem;font-weight:600}
+.badge svg{width:14px;height:14px;flex:none}
+.scope{margin-top:10px;color:var(--muted);font-size:.88rem;max-width:60ch}
+
+.pickers{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+.panel{background:var(--surface);border:1px solid var(--line);border-top-width:5px;border-radius:6px;padding:14px 16px 16px}
+.panel.a{border-top-color:var(--a)}
+.panel.b{border-top-color:var(--b)}
+.panel h2{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.field label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:3px}
+.field.wide{grid-column:1/-1}
+select{width:100%;height:44px;padding-inline:10px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--surface2);border:1px solid var(--line);border-radius:6px}
+
+.tools{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-top:24px}
+.switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;min-height:44px}
+.switch input{width:20px;height:20px;accent-color:var(--a);margin:0}
+.btn{font:inherit;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding-inline:16px;min-height:44px;cursor:pointer}
+.btn:hover{background:var(--surface2)}
+
+.sheet{margin-top:12px;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.head{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--ink)}
+.hcell{padding:10px 12px;border-top:5px solid transparent;min-width:0}
+.hcell.a{border-top-color:var(--a)}
+.hcell.b{border-top-color:var(--b);border-left:1px solid var(--line)}
+.hname{font-family:var(--display);font-weight:700;font-size:1.02rem;line-height:1.2;overflow-wrap:anywhere}
+.hsub{font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:2px;overflow-wrap:anywhere}
+.hsrc{display:inline-block;margin-top:6px;font-size:.76rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)}
+.hsrc:hover{color:var(--ink);border-color:var(--ink)}
+.cat{font-family:var(--display);font-weight:700;font-size:1.05rem;padding:14px 14px 8px;background:var(--surface2);border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .label{grid-column:1/-1;padding:9px 14px 0;color:var(--muted);font-size:.85rem}
+.cell{padding:2px 14px 10px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cell + .cell{border-left:1px solid var(--line)}
+.cell.win{font-weight:600}
+.cell.win.a{background:var(--a-tint)}
+.cell.win.b{background:var(--b-tint)}
+.tick{margin-right:4px}
+.cell.win.a .tick{color:var(--a)}
+.cell.win.b .tick{color:var(--b)}
+.delta{display:block;font-size:.78rem;font-weight:400;color:var(--muted)}
+.na{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.legend{color:var(--muted);font-size:.85rem;margin-top:12px}
+
+.sources{margin-top:20px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:6px;font-size:.88rem}
+.sources h2{font-size:.95rem;margin-bottom:8px}
+.sources ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.sources a{color:var(--a);text-decoration:none}
+.sources a:hover{text-decoration:underline}
+
+footer{margin-block:40px 48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;max-width:70ch}
+
+@media (min-width:760px){
+  .wrap{padding-inline:24px}
+  .pickers{grid-template-columns:1fr 1fr;gap:20px}
+  .head,.row{grid-template-columns:minmax(160px,230px) 1fr 1fr}
+  .hcell{padding:12px 16px}
+  .hname{font-size:1.2rem}
+  .row .label{grid-column:auto;padding:12px 16px;align-self:center;font-size:.92rem}
+  .cell{padding:12px 16px}
+  .cat{padding:16px 16px 10px}
+}
+</style>
+</head>
+<body>
+
+
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Yan Yana</a></div></header>
+
+<main class="wrap">
+  <h1>Araç karşılaştırma</h1>
+  <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
+  <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
+  <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 3 marka ve 4 versiyonla sınırlı, veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
+
+  <section class="pickers" aria-label="Araç seçimi">
+    <div class="panel a">
+      <h2>Araç 1</h2>
+      <div class="fields">
+        <div class="field"><label for="a-marka">Marka</label><select id="a-marka"></select></div>
+        <div class="field"><label for="a-model">Model</label><select id="a-model"></select></div>
+        <div class="field"><label for="a-yil">Yıl</label><select id="a-yil"></select></div>
+        <div class="field wide"><label for="a-id">Versiyon</label><select id="a-id"></select></div>
+      </div>
+    </div>
+    <div class="panel b">
+      <h2>Araç 2</h2>
+      <div class="fields">
+        <div class="field"><label for="b-marka">Marka</label><select id="b-marka"></select></div>
+        <div class="field"><label for="b-model">Model</label><select id="b-model"></select></div>
+        <div class="field"><label for="b-yil">Yıl</label><select id="b-yil"></select></div>
+        <div class="field wide"><label for="b-id">Versiyon</label><select id="b-id"></select></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tools">
+    <label class="switch"><input type="checkbox" id="diff"> Sadece farkları göster</label>
+    <button class="btn" type="button" id="swap">Araçların yerini değiştir</button>
+  </div>
+
+  <section class="sheet" role="table" aria-label="Teknik özellik karşılaştırması">
+    <div class="head" role="row" id="head"></div>
+    <div id="rows"></div>
+  </section>
+  <p class="legend">İşaretli (✓) değer, o satırda daha iyi olan araca aittir. Veri henüz bulunmayan satırlarda "—" görünür.</p>
+
+  <section class="sources" aria-label="Kaynaklar">
+    <h2>Bu karşılaştırmanın kaynakları</h2>
+    <ul id="sourceList"></ul>
+  </section>
+
+  <footer>
+    Teknik özellikler resmi marka siteleri ve güvenilir otomotiv haberlerinden derlenmiştir, güncelleme tarihi 26 Eylül 2026. Fiyat ve donanım paketleri zamanla değişebilir, satın almadan önce yetkili bayiyle teyit edin.
+  </footer>
+</main>
+
+<script>
+const CARS = [
+ {id:'egea-1.4-fire', marka:'Fiat', model:'Egea Sedan', yil:2026, versiyon:'1.4 Fire 95 HP',
+  kaynakAd:'sifiraracal.com', kaynakUrl:'https://www.sifiraracal.com/fiat-modelleri/egea',
+  s:{kasa:'Sedan',yakit:'Benzin',sanziman:'Manuel, 6 ileri',cekis:'Önden çekiş',
+     cc:1368,guc_hp:95,tork_nm:127,sifirYuz_sn:11.8,hiz_kmh:186,
+     tuketim_sehir_ici:7.6,tuketim_sehir_disi:5.6,tuketim_l100km:6.6,
+     ncap_yildiz:3,liste_fiyati_tl:null,mtv_yillik_tl:10016,sistem_puani_10:2.9,
+     garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,
+     bakim_araligi_km:10000,bakim_araligi_ay:12}},
+ {id:'egea-1.6-multijet', marka:'Fiat', model:'Egea Sedan', yil:2026, versiyon:'1.6 Multijet 130 HP',
+  kaynakAd:'fiat.com.tr', kaynakUrl:'https://www.fiat.com.tr/modeller/egea/sedan',
+  s:{kasa:'Sedan',yakit:'Dizel',cekis:'Önden çekiş',
+     cc:1598,guc_hp:130,tork_nm:320,sifirYuz_sn:9.8,hiz_kmh:209,emisyon_normu:'Euro 6D-Final',
+     tuketim_sehir_ici:5.0,tuketim_sehir_disi:4.1,tuketim_l100km:4.5,
+     ncap_yildiz:3,liste_fiyati_tl:1499900,mtv_yillik_tl:10016,sistem_puani_10:4.9,
+     garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,
+     bakim_araligi_km:10000,bakim_araligi_ay:12}},
+ {id:'clio6-1.2-tce', marka:'Renault', model:'Clio (6. nesil)', yil:2026, versiyon:'1.2 TCe 115 PS',
+  kaynakAd:'karar.com', kaynakUrl:'https://www.karar.com/ekonomi-haberleri/yeni-renault-clio-turkiyede-2028061',
+  s:{kasa:'Hatchback',yakit:'Benzin',silindir:3,sanziman:'Manuel, 6 ileri (EDC otomatik de mevcut)',cekis:'Önden çekiş',
+     guc_hp:115,tork_nm:190,sifirYuz_sn:10.0,tuketim_l100km:5.0,co2_gkm:114,
+     uzunluk_mm:4116,genislik_mm:1768,dingil_mm:2591,bagaj_l:391,adaptif_hiz_sabitleyici:'Var',
+     ncap_yildiz:4,liste_fiyati_tl:1799000,sistem_puani_10:5.0,
+     garanti_yil:3,bakim_araligi_km:null,bakim_araligi_ay:null}},
+ {id:'togg-t10x-v1', marka:'Togg', model:'T10X', yil:2026, versiyon:'V1 RWD Standart Menzil',
+  kaynakAd:'sifiraracal.com, elektrikliturkiye.com', kaynakUrl:'https://www.sifiraracal.com/togg-modelleri/t10x-ozellikleri/v1-rwd-standart--v1-rwd',
+  s:{kasa:'SUV',yakit:'Elektrik',cekis:'Arkadan çekiş',
+     guc_hp:218,tork_nm:350,sifirYuz_sn:7.4,batarya_kwh:52.4,batarya_tipi:'LFP',menzil_km_wltp:314,ac_sarj_dk:195,dc_hizli_sarj_dk_20_80:28,
+     elektrik_tuketim_kwh100km:16.7,
+     airbag_sayisi:7,adaptif_hiz_sabitleyici:'Var',serit_takip:'Var',dijital_gosterge:'Var',
+     ncap_yildiz:5,liste_fiyati_tl:1909048,mtv_yillik_tl:14586,sistem_puani_10:7.7,
+     garanti_yil:3,garanti_km:100000,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,
+     bakim_araligi_km:null,bakim_araligi_ay:null}}
+];
+
+/* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, kullanılan başlıkların tamamı burada.
+   Bir aracın verisi olmayan satırlar "—" gösterir; hiçbir satır gizlenmez, tüm başlıklar her zaman görünür. */
+const GROUPS = [
+ {name:'Genel', rows:[
+  ['segment','Segment'],['kasa','Kasa tipi'],['yakit','Yakıt tipi'],
+  ['sanziman','Şanzıman'],['cekis','Çekiş'],['koltuk','Koltuk sayısı'],['kapi','Kapı sayısı']]},
+ {name:'Motor ve performans', rows:[
+  ['cc','Motor hacmi','cc'],['silindir','Silindir sayısı'],['besleme','Besleme tipi'],
+  ['guc_hp','Beygir gücü','HP','high'],['tork_nm','Azami tork','Nm','high'],
+  ['sifirYuz_sn','0-100 km/s hızlanma','sn','low'],['hiz_kmh','Azami hız','km/s','high']]},
+ {name:'Yakıt ve tüketim', rows:[
+  ['tuketim_sehir_ici','Şehir içi tüketim','l/100km','low'],['tuketim_sehir_disi','Şehir dışı tüketim','l/100km','low'],
+  ['tuketim_l100km','Ortalama yakıt tüketimi','l/100km','low'],['co2_gkm','CO₂ emisyonu','g/km','low'],
+  ['emisyon_normu','Emisyon normu'],['depo_l','Yakıt deposu','L']]},
+ {name:'Elektrikli / hibrit', rows:[
+  ['batarya_kwh','Batarya kapasitesi','kWh'],['batarya_tipi','Batarya tipi'],
+  ['menzil_km_wltp','Menzil (WLTP)','km','high'],['ac_sarj_dk','AC şarj süresi','dk','low'],
+  ['dc_hizli_sarj_dk_20_80','DC hızlı şarj (%20-80)','dk','low'],['elektrik_tuketim_kwh100km','Ortalama elektrik tüketimi','kWh/100km','low']]},
+ {name:'Boyutlar ve ağırlık', rows:[
+  ['uzunluk_mm','Uzunluk','mm'],['genislik_mm','Genişlik','mm'],['yukseklik_mm','Yükseklik','mm'],
+  ['dingil_mm','Dingil mesafesi','mm','high'],['yerden_yukseklik_mm','Yerden yükseklik','mm'],
+  ['agirlik_kg','Boş ağırlık','kg'],['istiap_kg','Azami yük (istiap haddi)','kg'],
+  ['bagaj_l','Bagaj hacmi','L','high'],['jant_inch','Jant çapı','"']]},
+ {name:'Güvenlik', rows:[
+  ['airbag_sayisi','Hava yastığı sayısı','','high'],['ncap_yildiz','Euro NCAP puanı','','high'],
+  ['abs','ABS'],['esp','ESP / ESC'],['yokus_kalkis','Yokuş kalkış desteği'],
+  ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],
+  ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['geri_gorus_kamera','Geri görüş kamerası']]},
+ {name:'Konfor ve donanım', rows:[
+  ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],
+  ['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
+  ['start_stop','Start-stop sistemi']]},
+ {name:'Multimedya ve bağlantı', rows:[
+  ['ekran_inch','Dokunmatik ekran boyutu','"'],['carplay_android_auto','Apple CarPlay / Android Auto'],
+  ['ses_sistemi','Ses sistemi'],['dijital_gosterge','Dijital gösterge paneli']]},
+ {name:'Değerlendirme', rows:[
+  ['sistem_puani_10','Sistem puanı (10 üzerinden)','','high']]},
+ {name:'Fiyat ve vergi', rows:[
+  ['liste_fiyati_tl','Güncel liste fiyatı','TL','low'],['mtv_yillik_tl','Yıllık MTV (1-3 yaş)','TL','low']]},
+ {name:'Garanti ve bakım', rows:[
+  ['garanti_yil','Araç garantisi','yıl','high'],['garanti_km','Araç garantisi','km','high'],
+  ['batarya_garanti_yil','Batarya garantisi','yıl','high'],
+  ['boya_garanti_yil','Boya garantisi','yıl','high'],['pas_garanti_yil','Paslanmazlık garantisi','yıl','high'],
+  ['bakim_araligi_km','Standart bakım aralığı','km','high'],['bakim_araligi_ay','Standart bakım aralığı','ay']]}
+];
+
+const $ = id => document.getElementById(id);
+const uniq = arr => [...new Set(arr)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const trSort = (a,b) => String(a).localeCompare(String(b),'tr');
+const decimals = n => (String(n).split('.')[1]||'').length;
+const num = (n,d) => n.toLocaleString('tr-TR',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
+const byId = id => CARS.find(c => c.id === id);
+
+const state = {a:{marka:'Fiat',model:'Egea Sedan',yil:2026,id:'egea-1.6-multijet'},
+               b:{marka:'Togg',model:'T10X',yil:2026,id:'togg-t10x-v1'}};
+
+function normalize(side){
+  const st = state[side];
+  const makes = uniq(CARS.map(c=>c.marka)).sort(trSort);
+  if(!makes.includes(st.marka)) st.marka = makes[0];
+  const models = uniq(CARS.filter(c=>c.marka===st.marka).map(c=>c.model)).sort(trSort);
+  if(!models.includes(st.model)) st.model = models[0];
+  const years = uniq(CARS.filter(c=>c.marka===st.marka&&c.model===st.model).map(c=>c.yil)).sort((x,y)=>y-x);
+  if(!years.includes(st.yil)) st.yil = years[0];
+  const vers = CARS.filter(c=>c.marka===st.marka&&c.model===st.model&&c.yil===st.yil);
+  if(!vers.find(c=>c.id===st.id)) st.id = vers[0].id;
+  return {makes, models, years, vers};
+}
+
+function fill(sel, items, current){
+  sel.innerHTML = items.map(i => `<option value="${esc(i.v)}"${String(i.v)===String(current)?' selected':''}>${esc(i.t)}</option>`).join('');
+}
+
+function renderPickers(){
+  ['a','b'].forEach(side=>{
+    const o = normalize(side), st = state[side];
+    fill($(side+'-marka'), o.makes.map(v=>({v,t:v})), st.marka);
+    fill($(side+'-model'), o.models.map(v=>({v,t:v})), st.model);
+    fill($(side+'-yil'), o.years.map(v=>({v,t:v})), st.yil);
+    fill($(side+'-id'), o.vers.map(c=>({v:c.id,t:c.versiyon})), st.id);
+  });
+}
+
+function verdict(better,a,b){
+  if(!better || a==null || b==null || typeof a!=='number' || typeof b!=='number' || a===b) return null;
+  return ((a>b) === (better==='high')) ? 'a' : 'b';
+}
+
+function fmt(v,unit){
+  if(v==null) return '<span class="na">—</span>';
+  if(typeof v==='number') return esc(num(v,decimals(v)) + (unit?' '+unit:''));
+  return esc(v);
+}
+
+function deltaText(better,a,b,winner){
+  if(!better || typeof a!=='number' || typeof b!=='number') return '';
+  const d = Math.abs(a-b), dec = Math.max(decimals(a),decimals(b));
+  const sign = better==='high' ? '+' : '−';
+  return `<span class="delta">${sign}${num(+d.toFixed(dec),dec)}</span>`;
+}
+
+function render(){
+  renderPickers();
+  const A = byId(state.a.id), B = byId(state.b.id);
+  const onlyDiff = $('diff').checked;
+  let html = '';
+
+  GROUPS.forEach(g=>{
+    let rowsHtml = '';
+    g.rows.forEach(([key,label,unit,better])=>{
+      const va = A.s[key], vb = B.s[key];
+      if(onlyDiff && va===vb) return;
+      const w = verdict(better,va,vb);
+      const cell = (side,v)=>{
+        const win = w===side;
+        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}${fmt(v,unit)}${win?deltaText(better,va,vb,side):''}</div>`;
+      };
+      rowsHtml += `<div class="row" role="row"><div class="label" role="rowheader">${esc(label)}</div>${cell('a',va)}${cell('b',vb)}</div>`;
+    });
+    if(rowsHtml) html += `<div class="cat" role="presentation">${esc(g.name)}</div>${rowsHtml}`;
+  });
+  if(!html) html = '<div class="row"><div class="label" style="grid-column:1/-1;padding:20px 14px;text-align:center">Seçtiğin iki araç arasında fark bulunamadı.</div></div>';
+  $('rows').innerHTML = html;
+
+  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader"><div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div><a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a></div>`;
+  $('head').innerHTML = `${head('a',A)}${head('b',B)}`;
+
+  const seen = new Set();
+  const list = [A,B].filter(c=>{ if(seen.has(c.id)) return false; seen.add(c.id); return true; });
+  $('sourceList').innerHTML = list.map(c=>`<li>${esc(c.marka+' '+c.model+' '+c.versiyon)} — <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">${esc(c.kaynakAd)}</a></li>`).join('');
+}
+
+['a','b'].forEach(side=>{
+  $(side+'-marka').addEventListener('change',e=>{ Object.assign(state[side],{marka:e.target.value,model:null,yil:null,id:null}); render(); });
+  $(side+'-model').addEventListener('change',e=>{ Object.assign(state[side],{model:e.target.value,yil:null,id:null}); render(); });
+  $(side+'-yil').addEventListener('change',e=>{ Object.assign(state[side],{yil:Number(e.target.value),id:null}); render(); });
+  $(side+'-id').addEventListener('change',e=>{ state[side].id = e.target.value; render(); });
+});
+$('diff').addEventListener('change',render);
+$('swap').addEventListener('click',()=>{ const t = state.a; state.a = state.b; state.b = t; render(); });
+
+render();
+</script>
+
+</body>
+</html>

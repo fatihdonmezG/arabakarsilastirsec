@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yan Yana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#EEF1F5; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#101820; --muted:#566170; --line:#D6DCE4;
+  --a:#2456C9; --a-tint:#E1E9FB; --b:#D9620C; --b-tint:#FCE8D4; --focus:#2456C9;
+  --good:#1C7A4D; --good-tint:#E2F3E9;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+    --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
+    --good:#5FBF8B; --good-tint:#173226;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
+  --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
+  --good:#5FBF8B; --good-tint:#173226;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+.nav{display:flex;gap:4px;align-items:center}
+.nav a{font-size:.92rem;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:6px;color:var(--muted)}
+.nav a:hover{color:var(--ink);background:var(--surface2)}
+.nav a.cta{color:#fff;background:var(--a);font-weight:600}
+.nav a.cta:hover{filter:brightness(1.08);background:var(--a)}
+
+.hero{padding-block:56px 40px}
+.kicker{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;background:var(--a-tint);color:var(--a);font-size:.82rem;font-weight:600}
+h1{font-weight:800;font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.04;letter-spacing:-.03em;margin-top:16px;max-width:16ch}
+.lead{margin-top:18px;color:var(--muted);font-size:1.15rem;max-width:52ch;line-height:1.5}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:7px;padding:13px 22px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn:hover{background:var(--surface2)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{filter:brightness(1.15)}
+.btn svg{width:16px;height:16px;flex:none}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:44px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.stat{background:var(--surface);padding:18px 20px}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:1.9rem;letter-spacing:-.02em}
+.stat span{font-size:.85rem;color:var(--muted)}
+
+.section{padding-block:48px}
+.section-head{max-width:56ch}
+.eyebrow{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--a)}
+h2{font-weight:700;font-size:clamp(1.6rem,4vw,2.1rem);margin-top:8px}
+.section-lead{color:var(--muted);margin-top:8px}
+
+.features{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+.feature{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line);border-radius:8px;padding:22px}
+.feature.f1{border-top-color:var(--a)}
+.feature.f2{border-top-color:var(--b)}
+.feature.f3{border-top-color:var(--good)}
+.ficon{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;margin-bottom:14px}
+.f1 .ficon{background:var(--a-tint);color:var(--a)}
+.f2 .ficon{background:var(--b-tint);color:var(--b)}
+.f3 .ficon{background:var(--good-tint);color:var(--good)}
+.ficon svg{width:20px;height:20px}
+.feature h3{font-size:1.1rem}
+.feature p{color:var(--muted);font-size:.94rem;margin-top:8px;line-height:1.5}
+.tag-new{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:600;color:var(--good);background:var(--good-tint);padding:3px 9px;border-radius:99px}
+
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+.car-card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;text-decoration:none;color:var(--ink)}
+.car-card:hover{border-color:var(--a)}
+.cc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cc-fuel{font-size:.74rem;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--surface2);color:var(--muted);white-space:nowrap}
+.cc-name{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25}
+.cc-ver{font-size:.85rem;color:var(--muted);margin-top:2px}
+.cc-stat{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.3rem;font-family:var(--display)}
+.cc-stat small{font-family:var(--body);font-weight:400;font-size:.78rem;color:var(--muted);margin-left:3px}
+.cc-src{font-size:.78rem;color:var(--muted);margin-top:auto}
+.cc-cta{display:flex;align-items:center;gap:6px;font-size:.86rem;font-weight:600;color:var(--a);margin-top:4px}
+
+.scope-box{margin-top:32px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:8px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.scope-box p{color:var(--muted);font-size:.9rem;max-width:56ch}
+.scope-box strong{color:var(--ink)}
+
+footer{padding-block:32px 44px;border-top:1px solid var(--line);margin-top:24px}
+footer p{color:var(--muted);font-size:.85rem;max-width:64ch}
+
+@media (min-width:640px){
+  .features{grid-template-columns:repeat(3,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:760px){
+  .wrap{padding-inline:24px}
+  .nav a:not(.cta){display:inline-flex}
+}
+@media (max-width:639px){
+  .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Yan Yana</a>
+    <nav class="nav" aria-label="Site">
+      <a href="karsilastirma.html">Karşılaştır</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="mtv-hesaplama.html">MTV hesapla</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştırmaya başla</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="kicker">Türkiye'nin araç karşılaştırma sitesi</span>
+    <h1>Aracı almadan önce gerçeği gör.</h1>
+    <p class="lead">Her marka, her model, her yıl; teknik özellikler yan yana. Üstüne bilinen sorunlar, geri çağırmalar ve gerçek sahip yorumları — diğer sitelerin göstermediği kısım.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="karsilastirma.html">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h12M4 10h8M4 14h4"/></svg>
+        İki aracı karşılaştır
+      </a>
+      <a class="btn" href="arac-detay.html">
+        Örnek detay sayfasını gör
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>54</b><span>karşılaştırma başlığı, 9 kategoride</span></div>
+      <div class="stat"><b>3</b><span>marka, veritabanına eklendi</span></div>
+      <div class="stat"><b>%100</b><span>kaynağı linkli, doğrulanabilir veri</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">Neden Yan Yana</span>
+      <h2>Diğer karşılaştırma siteleri sadece kağıt üstündeki rakamları gösterir</h2>
+      <p class="section-lead">Biz de gösteriyoruz, ama asıl fark aracın gerçek kullanımda nasıl davrandığını da görebilmen.</p>
+    </div>
+    <div class="features">
+      <div class="feature f1">
+        <div class="ficon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h12M4 10h8M4 14h4"/></svg></div>
+        <h3>Yan yana karşılaştırma</h3>
+        <p>Motor, performans, tüketim, boyutlar, güvenlik, donanım, multimedya, garanti — 9 kategoride 54 başlık, her seçtiğin çift için otomatik hizalanır.</p>
+      </div>
+      <div class="feature f2">
+        <div class="ficon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3 2 17h16z"/><path d="M10 8v4"/><circle cx="10" cy="14.5" r=".5" fill="currentColor"/></svg></div>
+        <h3>Bilinen sorunlar</h3>
+        <p>Resmi geri çağırma kayıtları ve şikayet dağılımı, parça bazında. Bir modelin hangi noktada sık arıza yaptığını almadan önce gör.</p>
+        <span class="tag-new">Yakında canlı veri</span>
+      </div>
+      <div class="feature f3">
+        <div class="ficon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L2.8 8.2l5-.7z"/></svg></div>
+        <h3>Gerçek sahip yorumları</h3>
+        <p>Kullanım süresi ve kilometresiyle birlikte, yorumu yazanın işaretlediği sorunlarla eşleşmiş. Reklam değil, sahiden kullanan insanların sözü.</p>
+        <span class="tag-new">Yorum formu hazır</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">Veritabanı</span>
+      <h2>Şu an karşılaştırabileceğin araçlar</h2>
+      <p class="section-lead">Her kartın kaynağı linkli; kapsam her hafta büyüyor.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <div class="scope-box">
+    <p><strong>Kapsam:</strong> 3 marka, 4 versiyon, hepsi resmi marka sitesi ya da lansman haberinden alındı. "Her marka, her model, her yıl" hedefine doğru elle büyütülüyor.</p>
+    <a class="btn" href="karsilastirma.html">Tüm başlıkları gör →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Yan Yana, henüz geliştirme aşamasında bir projedir. Teknik özellikler kaynaklıdır; sahip yorumu ve geri çağırma örnekleri şu an tasarımı göstermek içindir.</p>
+  </div>
+</footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CMP_URL = 'karsilastirma.html';
+const DETAY_URL = 'arac-detay.html';
+
+const CARDS = [
+ {marka:'Fiat', model:'Egea Sedan', versiyon:'1.6 Multijet 130 HP', yakit:'Dizel', statLabel:'Tork', stat:'320', statUnit:'Nm',
+  kaynak:'fiat.com.tr', href:DETAY_URL+'#egea-1.6-multijet', cta:'Detayları gör'},
+ {marka:'Fiat', model:'Egea Sedan', versiyon:'1.4 Fire 95 HP', yakit:'Benzin', statLabel:'Güç', stat:'95', statUnit:'HP',
+  kaynak:'sifiraracal.com', href:DETAY_URL+'#egea-1.4-fire', cta:'Detayları gör'},
+ {marka:'Renault', model:'Clio (6. nesil)', versiyon:'1.2 TCe 115 PS', yakit:'Benzin', statLabel:'Tüketim', stat:'5,0', statUnit:'l/100km',
+  kaynak:'karar.com', href:CMP_URL, cta:'Karşılaştırmada gör'},
+ {marka:'Togg', model:'T10X', versiyon:'V1 RWD Standart Menzil', yakit:'Elektrik', statLabel:'Menzil', stat:'314', statUnit:'km',
+  kaynak:'sifiraracal.com', href:CMP_URL, cta:'Karşılaştırmada gör'}
+];
+
+document.getElementById('cards').innerHTML = CARDS.map(c => `
+  <a class="car-card" href="${esc(c.href)}">
+    <div class="cc-top">
+      <div><div class="cc-name">${esc(c.marka+' '+c.model)}</div><div class="cc-ver">${esc(c.versiyon)}</div></div>
+      <span class="cc-fuel">${esc(c.yakit)}</span>
+    </div>
+    <div class="cc-stat">${esc(c.stat)}<small> ${esc(c.statUnit)} · ${esc(c.statLabel)}</small></div>
+    <div class="cc-src">Kaynak: ${esc(c.kaynak)}</div>
+    <div class="cc-cta">${esc(c.cta)} →</div>
+  </a>
+`).join('');
+</script>
+
+</body>
+</html>
