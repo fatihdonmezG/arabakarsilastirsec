@@ -300,8 +300,13 @@ function hesapla(){
     if(!cc || cc<=0){ res.className='result show warn'; res.innerHTML = 'Önce motor hacmini (cc) gir.'; return; }
     const row = findIceRow(cc);
     if(!row){ res.className='result show warn'; res.innerHTML = 'Bu motor hacmi için tarife bulunamadı.'; return; }
-    let bandIdx = row.bantlar.findIndex(b => b.deger_max===null || (deger && deger<=b.deger_max));
-    if(bandIdx===-1) bandIdx = row.bantlar.length-1;
+    let bandIdx;
+    if(deger){
+      bandIdx = row.bantlar.findIndex(b => deger<=b.deger_max || b.deger_max===null);
+      if(bandIdx===-1) bandIdx = row.bantlar.length-1;
+    } else {
+      bandIdx = 0;
+    }
     const band = row.bantlar[bandIdx];
     const floor = bandIdx>0 ? row.bantlar[bandIdx-1].deger_max : 0;
     const degerLabel = band.deger_max===null ? `${nf(floor)} TL üzeri` : `${nf(floor)}–${nf(band.deger_max)} TL arası`;
