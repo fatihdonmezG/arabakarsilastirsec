@@ -7,7 +7,7 @@
       "guvenlik": "Euro NCAP yıldız sayısı / 5 × 2. NCAP verisi yoksa kriter hesaba katılmaz.",
       "performans": "0-100 km/s hızlanma süresine dayalı: (12 - süre) / 7 × 2, 0-2 arasına sınırlanır (5 sn = 2 puan, 12 sn ve üzeri = 0 puan).",
       "verimlilik": "İçten yanmalılarda ortalama l/100km'ye göre (8 - tüketim)/4×2; elektriklilerde kWh/100km'ye göre (20 - tüketim)/8×2.",
-      "konfor_donanim": "Bilinen konfor/donanım maddelerinin (klima, ısıtmalı koltuk, panoramik tavan, anahtarsız giriş, start-stop, adaptif hız sabitleyici, şerit takip, CarPlay/Android Auto, dijital gösterge — 9 madde) kaçının 'Var' olduğu oranı × 2. Tam versiyon donanım listesi netleşmeden güvenilir sayılmaz.",
+      "konfor_donanim": "Bilinen konfor/donanım maddelerinin (klima, ısıtmalı koltuk, panoramik tavan, anahtarsız giriş, start-stop, adaptif hız sabitleyici, şerit takip, CarPlay/Android Auto, dijital gösterge — 9 madde) kaçının 'Var' olduğu oranı × 2. Tam versiyon donanım listesi netleşmeden güvenilir sayılmaz. Tam elektrikli araçlarda start-stop maddesi mimari olarak uygulanamayacağı için 9 maddelik listeden çıkarılır, kalan 8 madde üzerinden hesaplanır.",
       "garanti": "(garanti yılı - 2) / 6 × 2, 0-2 arasına sınırlanır (2 yıl = 0 puan, 8 yıl = 2 puan). Elektrikli araçlarda batarya garantisi esas alınır."
     }
   },
@@ -622,27 +622,130 @@
         "liste_fiyati_tl": 1799000,
         "mtv_yillik_tl": null,
         "garanti_yil": 3,
-        "garanti_km": null,
-        "bakim_araligi_km": null,
-        "bakim_araligi_ay": null
+        "garanti_km": 100000,
+        "bakim_araligi_km": 15000,
+        "bakim_araligi_ay": 12
       },
       "_cc_notu": "Motor hacmi (cc) güvenilir şekilde doğrulanamadı, bu yüzden MTV otomatik hesaplanamıyor — hesaplayıcıda elle girilebilir.",
       "kucuk_detaylar": [
         {
-          "ozellik": "Kablosuz telefon şarjı",
-          "deger": "Esprit Alpine donanımında var; bizim izlediğimiz Evolution Plus versiyonunda olup olmadığı doğrulanamadı",
+          "ozellik": "Açılır/panoramik tavan (tüm donanımlarda)",
+          "deger": "En üst donanım seviyesi Esprit Alpine'de bile açılır/panoramik tavan seçeneği bulunmuyor; forum kullanıcıları bunu eksiklik olarak not ediyor.",
+          "kaynak": "https://forum.donanimhaber.com/yeni-renault-clio-6-ana-konu--162088137"
+        },
+        {
+          "ozellik": "Evolution (giriş) donanımı - geri görüş kamerası",
+          "deger": "Giriş seviyesi Evolution donanımında geri görüş kamerası yok, klima manuel (otomatik değil), ortam aydınlatması yok, ses sistemi temel seviyede.",
           "kaynak": "https://www.otokokpit.com/yeni-kasa-renault-clio-6-teknik-ozellikleri/"
+        },
+        {
+          "ozellik": "Vites kolu - silecek kolu yakınlığı",
+          "deger": "Vites kolunun silecek koluna çok yakın konumlandırılması, ilk kullanımda sürücülerde karışıklığa yol açıyor.",
+          "kaynak": "https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"
+        },
+        {
+          "ozellik": "Bagaj hacmi farkı (benzinli vs hibrit)",
+          "deger": "1.2 TCe (benzinli) versiyonun bagaj hacmi 391 litre; tam hibrit E-Tech versiyona göre 82 litre daha fazla (hibrit versiyonda batarya nedeniyle bagaj küçülüyor).",
+          "kaynak": "https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"
+        },
+        {
+          "ozellik": "Evolution Plus donanımının fiyat/donanım karşılığı olan trim adı",
+          "deger": "Veritabanındaki 1.799.000 TL liste fiyatı, resmi Renault Türkiye sitesinde ve DonanımHaber fiyat haberinde 'Evolution Plus TCe EDC 115 hp' donanımının fiyatıyla birebir eşleşiyor; bu nedenle bu araştırmadaki donanım bulguları bu trim'e aittir.",
+          "kaynak": "https://www.donanimhaber.com/yeni-renault-clio-2026-turkiye-fiyati-aciklandi--201848"
         }
       ],
-      "agir_bakim_noktalari": [],
+      "agir_bakim_noktalari": [
+        {
+          "km": 80000,
+          "islem": "Renault'nun genel 'ağır bakım' kuralı: 4 yıl veya 80.000 km'de bir yapılır. Bu bakımda tüm kayışlar (varsa), bujiler, yağ filtresi, hava filtresi, polen filtresi, motor yağı, fren hidroliği ve kayış gergi rulmanı değiştirilir. Not: Bu, Renault'nun genel/model-bağımsız servis kuralı olarak yayınlanmıştır; Clio 6'ya özel bir kaynak değildir.",
+          "kaynak": "https://korkmazhaber.com/renault-yetkili-servis-yillik-ve-4-yil-agir-bakim-fiyatlari-ve-degisecek-parca-listesi-21574.htm"
+        },
+        {
+          "km": 60000,
+          "islem": "Renault'nun 1.0 TCe 3 silindirli motorunda (Clio 6'nın 1.2 TCe 115 motorunun temelini oluşturan motor ailesi - Clio 5'te kullanılan versiyon) 60.000 km'de bujilerin değiştirilmesi 'özellikle önemli' olarak belirtiliyor; bu kilometrede ayrıca tüm filtreler ve fren balataları da kontrol ediliyor. Not: Doğrudan Clio 6 1.2 TCe 115 motoru için değil, akraba 1.0 TCe (Clio 5) motoru için yayınlanmış bir kaynaktır.",
+          "kaynak": "https://parcaekseni.com/renault-clio-5-1-0-tce-bakim-periyotlari/"
+        },
+        {
+          "km": 30000,
+          "islem": "1.0 TCe motor ailesinde (Clio 5) 30.000 km'de yakıt filtresi değişimi ve fren balata kontrolü yapılıyor, motor yağı/yağ filtresi/hava filtresi/polen filtresi de bu kilometrede yenileniyor. Not: Clio 5 1.0 TCe kaynağıdır, Clio 6 1.2 TCe için doğrudan teyit edilmemiştir.",
+          "kaynak": "https://parcaekseni.com/renault-clio-5-1-0-tce-bakim-periyotlari/"
+        },
+        {
+          "km": null,
+          "islem": "Triger tipi (kayış mı zincir mi?): Clio 6'nın 1.2 TCe 115 motoruna dair doğrudan bir kaynak bulunamadı. Ancak bu motorun türediği kabul edilen Clio 5'in 1.0 TCe (H4D kod) 3 silindirli motorunda triger ZİNCİR (chain) kullanılıyor - yedek parça kataloglarında 'triger zincir seti' olarak satılıyor, kayış seti değil. Zincirli sistemlerde sabit bir 'değişim kilometresi' yayınlanmaz, genelde arıza belirtisi (soğukta zincir sesi, gerginlik) çıkana kadar ömür boyu kullanılır.",
+          "kaynak": "https://www.cetinrenault.com/urun/clio-5-1-0-h4d-triger-zincir-seti-130c17039r"
+        }
+      ],
       "guclu_yanlar": [
         {
-          "metin": "Euro NCAP'ten 4 yıldız — Egea'nın eski (2016) 3 yıldızından daha güncel ve güvenilir bir test.",
-          "kaynak": "https://www.euroncap.com/en/results/renault/clio/59039"
+          "metin": "İç mekan malzeme ve teknoloji kalitesi, önceki nesil Clio 5'e göre belirgin şekilde iyileşti; kullanıcılar C-segment araçlarla rekabet edebilecek seviyede olduğunu belirtiyor.",
+          "kaynak": "https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"
+        },
+        {
+          "metin": "Arka koltuk konforu gerçekten iyi; 1.84 metre boyundaki yolcular bile rahat oturabiliyor (önceki nesle göre belirgin iyileşme).",
+          "kaynak": "https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"
+        },
+        {
+          "metin": "1.2 TCe motor, önceki 1.0 TCe ünitesine göre daha yumuşak ve titreşimsiz çalışıyor; iç mekan kalite hissi yükseltilmiş, yumuşak dokulu yüzeyler kullanılmış.",
+          "kaynak": "https://www.otomobil.com.tr/yeni-renault-clio-6-test-surusu/"
+        },
+        {
+          "metin": "205/40 R18 lastiklerle beklenenden daha iyi sürüş konforu sağlanıyor; süspansiyon konfor ve dinamik sürüş arasında iyi bir denge kuruyor.",
+          "kaynak": "https://www.otomobil.com.tr/yeni-renault-clio-6-test-surusu/"
+        },
+        {
+          "metin": "Şasi/süspansiyon dengesi aracın güçlü yönlerinden biri; hafif araç kütlesiyle birlikte 115 beygirlik güç yeterli geliyor, gerçek dünya tüketimi 5-6 L/100km bandında kalıyor.",
+          "kaynak": "https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"
+        },
+        {
+          "metin": "Bu fiyat segmentinde adaptif hız sabitleyici ve şerit takip asistanı gibi gelişmiş sürüş destek sistemlerinin artık standart/erişilebilir olması olumlu karşılanıyor.",
+          "kaynak": "https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"
         }
       ],
-      "dikkat_edilecekler": [],
-      "odul": [],
+      "dikkat_edilecekler": [
+        {
+          "metin": "Şehir içi düşük hızlarda 3 silindirli 1.2 TCe motor pürüzsüzlükten uzak; rölantide metalik sesler ve titreşim hissediliyor.",
+          "kaynak": "https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"
+        },
+        {
+          "metin": "Start-stop sistemi motoru yeniden çalıştırırken belirgin sarsıntılar (jolt) yaratıyor; sistem ayrı bir butonla kolayca devre dışı bırakılabiliyor.",
+          "kaynak": "https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"
+        },
+        {
+          "metin": "İç mekanda sert plastik kullanımı hakim; hibrit E-Tech versiyona kıyasla daha az cilalı/lüks bir izlenim veriyor.",
+          "kaynak": "https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"
+        },
+        {
+          "metin": "Arka cam küçük, görüş açısını kısıtlıyor; arkada yolcular için tavan tutunma kolu (handle) bulunmuyor.",
+          "kaynak": "https://www.otomobil.com.tr/yeni-renault-clio-6-test-surusu/"
+        },
+        {
+          "metin": "Bagaj kaplama malzemesi kalitesi zayıf bulundu; sürücü koltuğunun bacak desteği (legrest) pozisyonu çok alçak ve ayarlanamıyor.",
+          "kaynak": "https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"
+        },
+        {
+          "metin": "Fiyatlandırma B-segmenti için yüksek bulunuyor; bazı kullanıcılar fiyatı 'absürt' olarak nitelendiriyor ve takas tekliflerinin araç değerinin altında kaldığından şikayet ediyor.",
+          "kaynak": "https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"
+        },
+        {
+          "metin": "Ön-arka tasarım orantısı bazı kullanıcılar tarafından tutarsız bulunuyor ('arkasıyla önünün tutarsızlığı'); elektronik donanımın güvenilirliği konusunda şüpheci yorumlar mevcut ('zannetmiyorum ki elektroniği halletmiş olsunlar').",
+          "kaynak": "https://eksisozluk.com/renault-clio-6--8024435"
+        },
+        {
+          "metin": "En üst donanım seviyesi Esprit Alpine'de dahi açılır/panoramik tavan seçeneği yok; forum kullanıcıları bunu eksiklik olarak belirtiyor.",
+          "kaynak": "https://forum.donanimhaber.com/yeni-renault-clio-6-ana-konu--162088137"
+        },
+        {
+          "metin": "[NOT: Bu madde Clio 6 değil, önceki nesil Clio 5'e aittir - referans amaçlı eklenmiştir] Clio 5 sahipleri arasında start-stop sisteminin aralıklarla devre dışı kaldığı ve 'start stop kontrol ettirin' hata mesajı verdiği yaygın bir şikayet konusu; Renault Ar-Ge yetkilisine göre sorun ABS beyni ile araç beyni arasındaki uyumsuzluktan kaynaklanıyor. Clio 6 için bu sorunun geçerli olup olmadığına dair bir kaynak bulunamadı.",
+          "kaynak": "https://www.renaultfanclub.com/threads/start-stop-arizasi-renaultun-bize-sattigi-ayipli-clio-5-sahipleri-platformu.105562/"
+        }
+      ],
+      "odul": [
+        {
+          "metin": "Renault Clio (yeni nesil), Otomotiv Gazetecileri Derneği (OGD) tarafından düzenlenen 11. 'Türkiye'de Yılın Otomobili 2026' yarışmasını kazandı. 67 otomotiv gazetecisinin oylamasıyla, Şubat 2025-Şubat 2026 arası yarışan 33 araç arasından finale kalan 7 modeli geride bırakarak 3.360 puanla birinci oldu (24 Haziran 2026, Anadolu Ajansı haberi). Distribütör MAİS, bu ödülün Clio için ikinci kez kazanılan 'Yılın Otomobili' unvanı olduğunu belirtti. Not: Haberde 'yeni Clio' ifadesi kullanılıyor; 2026 lansmanı zamanlaması nedeniyle bu ödülün Clio 6'ya ait olduğu değerlendiriliyor, ancak haber metninde nesil adı (Clio 6) açıkça geçmiyor.",
+          "kaynak": "https://www.aa.com.tr/tr/ekonomi/turkiyede-yilin-otomobili-2026-yarismasinin-kazanani-renault-clio-oldu/3976062"
+        }
+      ],
       "degerlendirme": {
         "sistem_puani": {
           "kriterler": {
@@ -650,10 +753,10 @@
               "puan": 1.6,
               "max": 2,
               "veri_var": true,
-              "aciklama": "Euro NCAP 4 yıldız (2025 testi)"
+              "aciklama": "Euro NCAP 4 yıldız (2025 testi)."
             },
             "performans": {
-              "puan": 0.6,
+              "puan": 0.57,
               "max": 2,
               "veri_var": true,
               "aciklama": "0-100: 10.0 sn"
@@ -668,13 +771,13 @@
               "puan": null,
               "max": 2,
               "veri_var": false,
-              "aciklama": "Tam donanım listesi netleşmeden puanlanmadı."
+              "aciklama": "8/9 madde teyitli (klima, anahtarsız giriş, start-stop, adaptif hız sabitleyici, şerit takip, CarPlay/Android Auto, dijital gösterge: Var; açılır tavan: Yok); koltuk ısıtması hiçbir kaynakta doğrulanamadı, tam liste netleşmediği için bu kriter puanlanmadı."
             },
             "garanti": {
               "puan": 0.33,
               "max": 2,
               "veri_var": true,
-              "aciklama": "2 yıl sınırsız km + 3. yıl 100.000 km sınırlı (toplam 3 yıl kabul edildi)"
+              "aciklama": "3 yıl / 100.000 km"
             }
           },
           "toplam_10_uzerinden": 5.0,
@@ -686,7 +789,20 @@
         }
       },
       "kaynak_ad": "karar.com",
-      "kaynak_url": "https://www.karar.com/ekonomi-haberleri/yeni-renault-clio-turkiyede-2028061"
+      "kaynak_url": "https://www.karar.com/ekonomi-haberleri/yeni-renault-clio-turkiyede-2028061",
+      "geri_cagirma_notu": "Renault Clio 6 (2026 model) için doğrudan/spesifik bir geri çağırma (recall) kaydına rastlanmadı. Araştırma sırasında bulunan tek ilgili duyuru, Mayıs 2024 sonrası üretilen Clio 5 modellerini (bir önceki nesil) kapsayan ve AB güvenlik standartlarına uyum amacıyla mevcut 4 hava yastığına ek olarak 2 perde hava yastığı takılmasını içeren, Renault'nun Haziran 2026'da duyurulan gönüllü kampanyasıdır. Bu kampanya açıkça Clio 5'e (2024 sonrası üretim) yöneliktir; Clio 6'yı (2026 model) kapsadığına dair hiçbir bilgiye rastlanmadı. Kaynaklar: https://www.yozgatcamlik.com/renault-clio-sahiplerine-kritik-uyari-binlerce-arac-geri-cagriliyor ve https://www.ilerigazetesi.com.tr/renault-turkiyede-binlerce-aracini-geri-cagiriyor-renault-port-uygulamanizi-kontrol-edin . T.C. Sanayi ve Teknoloji Bakanlığı'nın resmi 'Gönüllü Geri Çağırma Faaliyetleri' sayfası (sanayi.gov.tr/piyasa-gozetimi-ve-denetimleri/geri-cagirma-faaliyetleri) bu araştırma sırasında erişim engeli nedeniyle doğrudan taranamadı; bu nedenle bakanlık kaydı bağımsız olarak teyit edilememiştir.",
+      "ncap_detay": "Euro NCAP test yılı: 2025. Genel puan: 4 yıldız. Detaylı skorlar (euroncap.com resmi sonuç sayfasından, https://www.euroncap.com/en/results/renault/clio/59039 ): Yetişkin Yolcu Koruması (Adult Occupant) %79, Çocuk Yolcu Koruması (Child Occupant) %82, Diğer Trafik Kullanıcıları/Yaya Koruması (Vulnerable Road Users) %80, Güvenlik Destek Sistemleri (Safety Assist) %73. Notlar: Ön çarpışma testinde sürücü göğüs korumasının 'zayıf (weak)', yolcu tarafının 'sınırda (marginal)' değerlendirildiği belirtiliyor; yan çarpışma testinde ise tüm kritik bölgelerde maksimum puan alınarak 'iyi' korunma sağlandığı raporlanıyor. Yayalar için otonom acil frenleme sistemi yeterli, bisikletliler için iyi performans gösteriyor; ancak aktif kaput (pop-up bonnet) sistemi bulunmuyor.",
+      "donanim_bulgulari": {
+        "trim_adi": "Evolution Plus (1.2 TCe 115 EDC) - veritabanındaki 1.799.000 TL liste fiyatıyla eşleşen donanım seviyesi",
+        "klima": "Var (manuel klima; otomatik klima değil)",
+        "koltuk_isitma": "Bilinmiyor (incelenen resmi sayfa ve test sürüşü kaynaklarının hiçbirinde bu donanımdan bahsedilmiyor)",
+        "acilir_tavan": "Yok (forum kaynağına göre en üst donanım Esprit Alpine'de bile bulunmuyor, dolayısıyla Evolution Plus'ta da yok)",
+        "anahtarsiz_giris": "Var (anahtarsız giriş ve çalıştırma sistemi - resmi Renault Türkiye sayfasında teyitli)",
+        "start_stop": "Var (drive.gr test sürüşünde doğrulandı; ayrı bir buton ile devre dışı bırakılabiliyor)",
+        "serit_takip": "Var (şerit takip asistanı - resmi Renault Türkiye teknik özellikler sayfasında teyitli)",
+        "carplay_android_auto": "Var (kablosuz akıllı telefon yansıtma / Apple CarPlay ve Android Auto uyumluluğu, Evolution donanım kademesinden itibaren mevcut)",
+        "dijital_gosterge": "Var (7 inç dijital gösterge ekranı; üst donanım Esprit Alpine'de 10,1 inç dijital gösterge sunuluyor)"
+      }
     },
     {
       "id": "togg-t10x-2026-v1-rwd-standart",
@@ -722,41 +838,125 @@
         "batarya_garanti_yil": 8,
         "boya_garanti_yil": 3,
         "pas_garanti_yil": 12,
-        "bakim_araligi_km": null,
-        "bakim_araligi_ay": null
+        "bakim_araligi_km": 40000,
+        "bakim_araligi_ay": 24,
+        "klima": "Var",
+        "koltuk_isitma": "Yok",
+        "acilir_tavan": "Yok",
+        "anahtarsiz_giris": "Var",
+        "carplay_android_auto": "Yok"
       },
       "_elektrik_tuketim_notu": "Doğrudan kaynaklanmadı; batarya kapasitesi ve WLTP menzilinden hesaplandı (52.4 kWh / 314 km × 100).",
       "_mtv_notu": "218 HP ≈ 163 kW motor gücü, 151-180 kW bandına giriyor (tek motorlu/RWD versiyon).",
       "kucuk_detaylar": [
         {
-          "ozellik": "Soğutmalı / hareketli ön kol dayama",
-          "deger": "Var (V1 standart)",
-          "kaynak": "https://www.log.com.tr/togg-t10x-donanim-paketleri-hangi-seviyede-hangi-ozellikler-var/"
+          "ozellik": "AC şarj gücü",
+          "deger": "V1 RWD Standart Menzil'de 11 kW AC şarj kapasitesi var; üst donanım V2 modellerinde 22 kW AC şarj sunuluyor",
+          "kaynak": "https://webrazzi.com/2023/03/14/togg-t10-paket-farklar/"
         },
         {
-          "ozellik": "Kablosuz telefon şarjı",
-          "deger": "V1'de standart değil, ek paketle alınabiliyor",
-          "kaynak": "https://www.log.com.tr/togg-t10x-donanim-paketleri-hangi-seviyede-hangi-ozellikler-var/"
+          "ozellik": "Koltuk/direksiyon ısıtma ve ses sistemi",
+          "deger": "V1 RWD Standart Menzil'de koltuk ısıtması, direksiyon ısıtması, Meridian ses sistemi ve akustik cam bulunmuyor; bu özellikler üst donanım seviyelerinde mevcut",
+          "kaynak": "https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"
+        },
+        {
+          "ozellik": "Isı pompası (heat pump)",
+          "deger": "Togg yetkilileri fabrika açılışında ailenin hiçbir versiyonunda (V1 RWD Standart Menzil dahil) ısı pompası sunulmayacağını açıkça belirtti; kabin ısıtması doğrudan batarya enerjisiyle sağlanıyor",
+          "kaynak": "https://www.log.com.tr/togg-t10x-icin-menzili-dogrudan-etkileyen-isi-pompasi-sunulacak-mi-ozel-haber/"
+        },
+        {
+          "ozellik": "Yedek lastik",
+          "deger": "Araçta yedek lastik bulunmuyor, bunun yerine tamir kiti veriliyor (bir owner, otoyolda lastik patladığında bunun sorun yarattığını bildirmiş)",
+          "kaynak": "https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"
+        },
+        {
+          "ozellik": "Emniyet kemeri yükseklik ayarı",
+          "deger": "Ön koltuklarda emniyet kemeri yükseklik ayarı bulunmadığı bir kullanıcı tarafından bildirilmiş",
+          "kaynak": "https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"
         }
       ],
-      "agir_bakim_noktalari": [],
-      "guclu_yanlar": [
+      "agir_bakim_noktalari": [
         {
-          "metin": "Euro NCAP'ten 5 yıldız — karşılaştırmadaki en yüksek puan.",
-          "kaynak": "https://www.euroncap.com/en/results/togg/t10x/56128"
+          "km": 40000,
+          "islem": "Periyodik bakım (40.000 km veya 2 yılda bir, hangisi önce dolarsa): kabin filtresi değişimi, soğutma sıvısı seviye/yoğunluk kontrolü, fren hidroliği (fren sıvısı) periyodik değişimi, 12V akü testi, süspansiyon ve yüksek voltaj batarya bağlantı/izolasyon kontrolü",
+          "kaynak": "https://t10x.net/threads/togg-t10x-periyodik-bakim-rehberi-detayli-ve-bilgilendirici.33/"
         },
         {
-          "metin": "Batarya garantisi 8 yıl / 160.000 km — segmentte güçlü bir güvence.",
-          "kaynak": "https://x.com/TOGG_Team/status/1911374186326397120"
+          "km": 80000,
+          "islem": "İkinci periyodik bakım basamağı (80.000 km / 4. yıl) - aynı kontrol ve bakım kalemleri (fren hidroliği, soğutma sıvısı, 12V akü, kabin filtresi vb.) tekrarlanıyor",
+          "kaynak": "https://t10x.net/threads/togg-t10x-periyodik-bakim-rehberi-detayli-ve-bilgilendirici.33/"
+        }
+      ],
+      "guclu_yanlar": [
+        {
+          "metin": "Uzun süreli bir Togg T10X kullanıcısı süspansiyon konforunu 'bugüne kadar kullandığım en başarılı ve konforlu araçtı' sözleriyle övüyor",
+          "kaynak": "https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"
+        },
+        {
+          "metin": "Aynı kullanıcı farların gece sürüşünde çok iyi görüş sağladığını belirtiyor ('farlar mükemmel, gece sürüşlerinde çok iyi bir görüş sağlıyor')",
+          "kaynak": "https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"
+        },
+        {
+          "metin": "DonanımHaber forumunda bir sahibi iç mekan malzeme kalitesini (ön konsolda yumuşak plastik ve deri kaplama) ve yüksek çözünürlüklü dokunmatik ekranları övüyor, genel yapı kalitesini VW Group standartlarıyla kıyaslıyor",
+          "kaynak": "https://forum.donanimhaber.com/togg-t10x-kullanici-incelemesi--158490587"
+        },
+        {
+          "metin": "Aynı kullanıcı, önceki Hyundai Tucson'una kıyasla T10X'in yol tutuşunun daha iyi olduğunu ve düşük ağırlık merkezinin sürüş dinamiğine olumlu katkı sağladığını belirtiyor",
+          "kaynak": "https://forum.donanimhaber.com/togg-t10x-kullanici-incelemesi--158490587"
+        },
+        {
+          "metin": "LFP batarya sayesinde günlük %100 şarj yapılabiliyor (ömür kaygısı olmadan) ve 3. seviye rejeneratif frenleme sayesinde şehir içi sürüşün neredeyse fren pedalına dokunmadan yapılabildiği bildiriliyor",
+          "kaynak": "https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"
         }
       ],
       "dikkat_edilecekler": [
         {
-          "metin": "Kablosuz telefon şarjı V1'de standart değil, ek paket gerektiriyor — bu fiyat segmentindeki bazı rakiplerde standarttır.",
-          "kaynak": "https://www.log.com.tr/togg-t10x-donanim-paketleri-hangi-seviyede-hangi-ozellikler-var/"
+          "metin": "Yazılım güncellemeleri sonrası kamera arızaları (togcam / yan ayna kamerası), dil ayarının kendiliğinden değişmesi ve hatalı uyarı ışıkları gibi tekrarlayan sorunlar bildiriliyor",
+          "kaynak": "https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"
+        },
+        {
+          "metin": "Şikayetvar'da yazılım güncellemesi sonrası ekran kararması, sürücü destek (ADAS) sistemlerinin devre dışı kalması ve 'güncelleme kontrolü başarısız' hatası gibi çok sayıda şikayet bulunuyor",
+          "kaynak": "https://www.sikayetvar.com/togg/t10x/yazilim-guncelleme"
+        },
+        {
+          "metin": "Araçta ısı pompası bulunmadığından kabin ısıtması doğrudan batarya enerjisiyle sağlanıyor; bu durum özellikle soğuk havalarda gerçek menzili belirgin şekilde düşürüyor",
+          "kaynak": "https://www.log.com.tr/togg-t10x-icin-menzili-dogrudan-etkileyen-isi-pompasi-sunulacak-mi-ozel-haber/"
+        },
+        {
+          "metin": "V1 RWD Standart Menzil'de gerçek kullanımda 20-25°C'de karma sürüşte yaklaşık 250-280 km, 0°C altında ısıtıcı kullanımıyla ise yaklaşık 200-220 km menzil bildiriliyor; bu değerler 314 km'lik WLTP rakamının altında kalıyor",
+          "kaynak": "https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"
+        },
+        {
+          "metin": "12V akü ile ilgili tekrarlayan arıza şikayetleri var; bir kullanıcı yaklaşık 1 yıl içinde 12 kez aracının yolda kaldığını bildiriyor, başka kullanıcılar ise aracın 12V aküyü düzgün şarj etmediğini belirtiyor",
+          "kaynak": "https://www.sikayetvar.com/togg/t10x/12v-aku-sorunu"
+        },
+        {
+          "metin": "Lastik basınç sensörlerinin (TPMS) sürekli hatalı uyarı verdiğine dair yaygın şikayetler var; bazı kullanıcılar servislerin bunu 'kullanıcı hatası' olarak nitelendirdiğini, sorunun kalıcı çözülmediğini bildiriyor",
+          "kaynak": "https://www.sikayetvar.com/togg/t10x/lastik"
+        },
+        {
+          "metin": "Servis randevusu bekleme süreleri ve müşteri hizmetlerine ulaşım konusunda tekrarlayan şikayetler var; bir forum başlığında kaza sonrası servis/onarım süresinin en az 2 ay olduğu aktarılıyor",
+          "kaynak": "https://forum.donanimhaber.com/togg-un-kaza-icin-servis-suresinin-en-az-2-ay-olmasi-rezaleti--159015295"
+        },
+        {
+          "metin": "Togg kendi işletim sistemini (Trumore) kullandığı için Apple CarPlay ve Android Auto hiçbir versiyonda (V1 dahil) desteklenmiyor",
+          "kaynak": "https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"
         }
       ],
-      "odul": [],
+      "odul": [
+        {
+          "metin": "Togg T10X, Otomotiv Gazetecileri Derneği (OGD) tarafından düzenlenen yarışmanın 9. senesinde (2024) 63 gazetecinin oylamasıyla 2.630 puan alarak 'Türkiye'de Yılın Otomobili' seçildi",
+          "kaynak": "https://www.dunya.com/sektorler/otomotiv/turkiyenin-otomobil-oscari-sahibini-buldu-togg-t10xe-yilin-otomobili-odulu-haberi-733863"
+        },
+        {
+          "metin": "Aynı OGD yarışmasında Togg'un Trumore Dijital Deneyim Platformu 'Yılın İnovasyonu' ödülünü kazandı (bu doğrudan T10X aracının kendisi için değil, yazılım/dijital deneyim platformu için verildi)",
+          "kaynak": "https://www.dunya.com/sektorler/otomotiv/turkiyenin-otomobil-oscari-sahibini-buldu-togg-t10xe-yilin-otomobili-odulu-haberi-733863"
+        },
+        {
+          "metin": "NOT (doğrulama): Togg markasının aldığı iF Design Award (2021, 'Professional Concept' kategorisi) üretim T10X modeline değil, ondan önceki 'C-SUV' konsept aracına aittir; bu nedenle doğrudan T10X'in bir ödülü olarak sayılmamalıdır. Araştırmada üretim T10X'e ait doğrulanmış bir Red Dot veya CES tasarım/inovasyon ödülü bulunamamıştır.",
+          "kaynak": "https://www.dailysabah.com/business/automotive/togg-becomes-1st-turkish-brand-to-win-if-design-award-in-mobility"
+        }
+      ],
       "degerlendirme": {
         "sistem_puani": {
           "kriterler": {
@@ -764,10 +964,10 @@
               "puan": 2.0,
               "max": 2,
               "veri_var": true,
-              "aciklama": "Euro NCAP 5 yıldız (2025 testi)"
+              "aciklama": "Euro NCAP 5 yıldız (2025 testi)."
             },
             "performans": {
-              "puan": 1.3,
+              "puan": 1.31,
               "max": 2,
               "veri_var": true,
               "aciklama": "0-100: 7.4 sn"
@@ -776,23 +976,23 @@
               "puan": 0.83,
               "max": 2,
               "veri_var": true,
-              "aciklama": "Ortalama elektrik tüketimi: ~16.7 kWh/100km (hesaplanmış)"
+              "aciklama": "Ortalama elektrik tüketimi: 16.7 kWh/100km"
             },
             "konfor_donanim": {
-              "puan": null,
+              "puan": 1.25,
               "max": 2,
-              "veri_var": false,
-              "aciklama": "Tam donanım listesi netleşmeden puanlanmadı."
+              "veri_var": true,
+              "aciklama": "Elektrikli araç olduğu için start-stop maddesi 9'luk listeden çıkarıldı (mimari olarak uygulanamaz); kalan 8 maddeden 5'i 'Var': klima, anahtarsız giriş, adaptif hız sabitleyici, şerit takip, dijital gösterge. Koltuk ısıtma, açılır tavan ve CarPlay/Android Auto (hiçbir versiyonda) yok."
             },
             "garanti": {
               "puan": 2.0,
               "max": 2,
               "veri_var": true,
-              "aciklama": "Batarya garantisi: 8 yıl / 160.000 km"
+              "aciklama": "Batarya garantisi: 8 yıl (araç garantisi ayrıca 3 yıl / 100.000 km)."
             }
           },
-          "toplam_10_uzerinden": 7.7,
-          "hesaplanan_kriter_sayisi": 4
+          "toplam_10_uzerinden": 7.4,
+          "hesaplanan_kriter_sayisi": 5
         },
         "kullanici_puani": {
           "ortalama": null,
@@ -800,7 +1000,19 @@
         }
       },
       "kaynak_ad": "sifiraracal.com, elektrikliturkiye.com",
-      "kaynak_url": "https://www.sifiraracal.com/togg-modelleri/t10x-ozellikleri/v1-rwd-standart--v1-rwd"
+      "kaynak_url": "https://www.sifiraracal.com/togg-modelleri/t10x-ozellikleri/v1-rwd-standart--v1-rwd",
+      "geri_cagirma_notu": "Togg T10X için resmi/doğrulanmış bir geri çağırma (recall) duyurusu bulunamadı. Sanayi ve Teknoloji Bakanlığı'nın 'Otomotiv Gönüllü Geri Çağırma' e-Devlet portalı (turkiye.gov.tr/sanayi-otomotiv-gonullu-geri-cagirma-4581) kimlik doğrulaması gerektirdiği için kayıt listesi tam olarak taranamadı, ancak genel web ve haber taramasında (2023-2025 dönemi kapsayan çok sayıda arama) Togg/T10X'e yönelik herhangi bir resmi geri çağırma haberi tespit edilmedi. Bunun yerine Togg, düzenli OTA (kablosuz) yazılım güncellemeleri yayınlıyor (örn. OTA 1.4 ve OTA 1.5 - togg.com.tr/en/t10x-ota-1-4, togg.com.tr/en/t10x-ota-1-5) ve bu güncellemeler bazı yazılım kaynaklı sorunları (kamera, ekran, ADAS davranışları) gideriyor; ancak bunlar üretici tarafından resmi bir 'recall/geri çağırma' olarak değil, rutin yazılım iyileştirmesi olarak sunuluyor. Sonuç: doğrulanmış bir resmi geri çağırma kaydı bulunamamıştır; sadece rutin OTA güncellemeleri mevcuttur.",
+      "ncap_detay": "Euro NCAP'in resmi sonuç sayfasına göre (euroncap.com/en/results/togg/t10x/56128): Test yılı 2025, genel puan 5 yıldız. Kategori bazlı skorlar: Yetişkin Yolcu Koruması (Adult Occupant) %94, Çocuk Yolcu Koruması (Child Occupant) %85, Güvenlik Açısından Kırılgan Yol Kullanıcıları/Yaya Koruması (Vulnerable Road Users) %79, Sürüş Destek Sistemleri (Safety Assist) %80. Test özetinde ön ofset ve yan darbe testlerinde tam puan alındığı, yolcu kompartımanının ön ofset testinde sabit kaldığı, sürücü ve ön yolcu için kritik vücut bölgelerinde iyi koruma sağlandığı belirtiliyor.",
+      "gercek_menzil_notu": "Türkçe kaynaklara göre V1 RWD Standart Menzil (314 km WLTP) için gerçek kullanım tahminleri WLTP'nin altında kalıyor: ılık havada (20-25°C) karma şehir/otoyol kullanımında yaklaşık 250-280 km, 0°C altında ısıtıcı kullanımıyla yaklaşık 200-220 km bildiriliyor (elektrikliturkiye.com V1 incelemesi). Ayrı bir kaynak (elektrikliturkiye.com gerçek menzil sayfası), otoyol hızlarında (~120 km/sa) menzilin WLTP'ye göre yaklaşık %25-30 azaldığını, kışın ise WLTP'nin %55-65'ine kadar düşebileceğini tahmin ediyor; ancak bu kaynak kendi rakamlarının bağımsız laboratuvar testi olmadığını, üretici verileri ve tipik kullanıcı raporlarından türetilen TAHMİNLER olduğunu açıkça belirtiyor. Isı pompasının hiçbir versiyonda bulunmaması (log.com.tr kaynağı doğrulanmıştır) bu düşüşün başlıca teknik nedeni olarak gösteriliyor.",
+      "donanim_bulgulari": {
+        "trim_adi": "V1 RWD Standart Menzil",
+        "klima": "Var (çift bölgeli otomatik klima)",
+        "koltuk_isitma": "Yok (bu trim'de bulunmuyor; üst donanım seviyelerinde mevcut)",
+        "acilir_tavan": "Yok (panoramik tavan sadece üst donanımlarda opsiyonel/standart)",
+        "anahtarsiz_giris": "Var (Keyless Go / anahtarsız çalıştırma)",
+        "carplay_android_auto": "Yok (hiçbir versiyonda desteklenmiyor)",
+        "not": "Togg kendi işletim sistemi olan Trumore'u kullanıyor; Apple CarPlay ve Android Auto hiçbir versiyonda (V1 RWD Standart Menzil dahil) desteklenmiyor (kaynak: elektrikliturkiye.com V1 incelemesi, eksiseyler.com sahip yorumu). Ayrıca ısı pompası da hiçbir versiyonda bulunmuyor; kabin ısıtması doğrudan batarya enerjisiyle sağlanıyor ve bu soğuk havada menzili düşürüyor (kaynak: log.com.tr özel haberi). Start-stop sistemi tam elektrikli bir araç olduğu için geçerli değildir (n/a)."
+      }
     },
     {
       "id": "fiat-egea-cross-1-6-multijet-street-130hp-2026",
