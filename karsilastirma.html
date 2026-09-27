@@ -12,6 +12,7 @@
   color-scheme: light;
   --bg:#EEF1F5; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#101820; --muted:#566170; --line:#D6DCE4;
   --a:#2456C9; --a-tint:#E1E9FB; --b:#D9620C; --b-tint:#FCE8D4; --focus:#2456C9;
+  --c:#7A3FE0; --c-tint:#ECE4FB; --d:#0E8F7C; --d-tint:#DCF3EF;
   --good:#1C7A4D; --good-tint:#E2F3E9;
   --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -21,6 +22,7 @@
     color-scheme: dark;
     --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
     --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
+    --c:#B79CF2; --c-tint:#2C2447; --d:#5FD9C4; --d-tint:#163330;
     --good:#5FBF8B; --good-tint:#173226;
   }
 }
@@ -28,6 +30,7 @@
   color-scheme: dark;
   --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
   --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
+  --c:#B79CF2; --c-tint:#2C2447; --d:#5FD9C4; --d-tint:#163330;
   --good:#5FBF8B; --good-tint:#173226;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -54,15 +57,22 @@ h1{font-weight:700;font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.08;letter-sp
 .badge svg{width:14px;height:14px;flex:none}
 .scope{margin-top:10px;color:var(--muted);font-size:.88rem;max-width:60ch}
 
+:root{--cols:2}
 .pickers{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
-.panel{background:var(--surface);border:1px solid var(--line);border-top-width:5px;border-radius:6px;padding:14px 16px 16px}
+.panel{position:relative;background:var(--surface);border:1px solid var(--line);border-top-width:5px;border-radius:6px;padding:14px 16px 16px}
 .panel.a{border-top-color:var(--a)}
 .panel.b{border-top-color:var(--b)}
-.panel h2{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+.panel.c{border-top-color:var(--c)}
+.panel.d{border-top-color:var(--d)}
+.panel h2{font-size:1.05rem;font-weight:700;margin-bottom:10px;padding-right:28px}
+.panel .rm{position:absolute;top:12px;right:12px;width:28px;height:28px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--muted);font-size:1rem;line-height:1;cursor:pointer}
+.panel .rm:hover{color:var(--ink);background:var(--line)}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
 .field label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:3px}
 .field.wide{grid-column:1/-1}
 select{width:100%;height:44px;padding-inline:10px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--surface2);border:1px solid var(--line);border-radius:6px}
+.addcard{display:flex;align-items:center;justify-content:center;min-height:120px;border:1px dashed var(--line);border-radius:6px;background:transparent;color:var(--muted);font:inherit;font-weight:600;cursor:pointer}
+.addcard:hover{color:var(--ink);border-color:var(--muted);background:var(--surface)}
 
 .tools{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-top:24px}
 .switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;min-height:44px}
@@ -70,17 +80,20 @@ select{width:100%;height:44px;padding-inline:10px;font:inherit;font-size:.95rem;
 .btn{font:inherit;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding-inline:16px;min-height:44px;cursor:pointer}
 .btn:hover{background:var(--surface2)}
 
-.sheet{margin-top:12px;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.head{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--ink)}
+.sheet{margin-top:12px;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto}
+.head{display:grid;grid-template-columns:repeat(var(--cols),1fr);border-bottom:2px solid var(--ink)}
 .hcell{padding:10px 12px;border-top:5px solid transparent;min-width:0}
 .hcell.a{border-top-color:var(--a)}
-.hcell.b{border-top-color:var(--b);border-left:1px solid var(--line)}
+.hcell.b{border-top-color:var(--b)}
+.hcell.c{border-top-color:var(--c)}
+.hcell.d{border-top-color:var(--d)}
+.hcell + .hcell{border-left:1px solid var(--line)}
 .hname{font-family:var(--display);font-weight:700;font-size:1.02rem;line-height:1.2;overflow-wrap:anywhere}
 .hsub{font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:2px;overflow-wrap:anywhere}
 .hsrc{display:inline-block;margin-top:6px;font-size:.76rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)}
 .hsrc:hover{color:var(--ink);border-color:var(--ink)}
 .cat{font-family:var(--display);font-weight:700;font-size:1.05rem;padding:14px 14px 8px;background:var(--surface2);border-bottom:1px solid var(--line)}
-.row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:repeat(var(--cols),1fr);border-bottom:1px solid var(--line)}
 .row:last-child{border-bottom:0}
 .row .label{grid-column:1/-1;padding:9px 14px 0;color:var(--muted);font-size:.85rem}
 .cell{padding:2px 14px 10px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
@@ -88,9 +101,13 @@ select{width:100%;height:44px;padding-inline:10px;font:inherit;font-size:.95rem;
 .cell.win{font-weight:600}
 .cell.win.a{background:var(--a-tint)}
 .cell.win.b{background:var(--b-tint)}
+.cell.win.c{background:var(--c-tint)}
+.cell.win.d{background:var(--d-tint)}
 .tick{margin-right:4px}
 .cell.win.a .tick{color:var(--a)}
 .cell.win.b .tick{color:var(--b)}
+.cell.win.c .tick{color:var(--c)}
+.cell.win.d .tick{color:var(--d)}
 .delta{display:block;font-size:.78rem;font-weight:400;color:var(--muted)}
 .na{color:var(--muted)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -104,10 +121,12 @@ select{width:100%;height:44px;padding-inline:10px;font:inherit;font-size:.95rem;
 
 footer{margin-block:40px 48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;max-width:70ch}
 
+@media (min-width:640px){
+  .pickers{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+}
 @media (min-width:760px){
   .wrap{padding-inline:24px}
-  .pickers{grid-template-columns:1fr 1fr;gap:20px}
-  .head,.row{grid-template-columns:minmax(160px,230px) 1fr 1fr}
+  .head,.row{grid-template-columns:minmax(160px,230px) repeat(var(--cols),1fr)}
   .hcell{padding:12px 16px}
   .hname{font-size:1.2rem}
   .row .label{grid-column:auto;padding:12px 16px;align-self:center;font-size:.92rem}
@@ -137,30 +156,11 @@ footer{margin-block:40px 48px;padding-top:16px;border-top:1px solid var(--line);
   <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
   <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 27 marka ve 294 versiyonu kapsıyor, veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
 
-  <section class="pickers" aria-label="Araç seçimi">
-    <div class="panel a">
-      <h2>Araç 1</h2>
-      <div class="fields">
-        <div class="field"><label for="a-marka">Marka</label><select id="a-marka"></select></div>
-        <div class="field"><label for="a-model">Model</label><select id="a-model"></select></div>
-        <div class="field"><label for="a-yil">Yıl</label><select id="a-yil"></select></div>
-        <div class="field wide"><label for="a-id">Versiyon</label><select id="a-id"></select></div>
-      </div>
-    </div>
-    <div class="panel b">
-      <h2>Araç 2</h2>
-      <div class="fields">
-        <div class="field"><label for="b-marka">Marka</label><select id="b-marka"></select></div>
-        <div class="field"><label for="b-model">Model</label><select id="b-model"></select></div>
-        <div class="field"><label for="b-yil">Yıl</label><select id="b-yil"></select></div>
-        <div class="field wide"><label for="b-id">Versiyon</label><select id="b-id"></select></div>
-      </div>
-    </div>
-  </section>
+  <section class="pickers" id="pickers" aria-label="Araç seçimi"></section>
 
   <div class="tools">
     <label class="switch"><input type="checkbox" id="diff"> Sadece farkları göster</label>
-    <button class="btn" type="button" id="swap">Araçların yerini değiştir</button>
+    <button class="btn" type="button" id="swap">Sırayı ters çevir</button>
   </div>
 
   <section class="sheet" role="table" aria-label="Teknik özellik karşılaştırması">
@@ -1112,6 +1112,7 @@ const GROUPS = [
 ];
 
 const $ = id => document.getElementById(id);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
 const uniq = arr => [...new Set(arr)];
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const trSort = (a,b) => String(a).localeCompare(String(b),'tr');
@@ -1119,8 +1120,16 @@ const decimals = n => (String(n).split('.')[1]||'').length;
 const num = (n,d) => n.toLocaleString('tr-TR',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
 const byId = id => CARS.find(c => c.id === id);
 
-const state = {a:{marka:'Fiat',model:'Egea Sedan',yil:2026,id:'egea-sedan-2026-1.6-multijet-130'},
-               b:{marka:'Togg',model:'T10X',yil:2026,id:'togg-t10x-2026-v1-rwd-standart'}};
+const SIDE_KEYS = ['a','b','c','d'];
+const MAX_SIDES = 4, MIN_SIDES = 2;
+
+const state = {
+  a:{marka:'Fiat',model:'Egea Sedan',yil:2026,id:'egea-sedan-2026-1.6-multijet-130'},
+  b:{marka:'Togg',model:'T10X',yil:2026,id:'togg-t10x-2026-v1-rwd-standart'},
+  c:{marka:null,model:null,yil:null,id:null},
+  d:{marka:null,model:null,yil:null,id:null}
+};
+let sides = ['a','b'];
 
 function normalize(side){
   const st = state[side];
@@ -1139,19 +1148,66 @@ function fill(sel, items, current){
   sel.innerHTML = items.map(i => `<option value="${esc(i.v)}"${String(i.v)===String(current)?' selected':''}>${esc(i.t)}</option>`).join('');
 }
 
-function renderPickers(){
-  ['a','b'].forEach(side=>{
+function addSide(){
+  if(sides.length>=MAX_SIDES) return;
+  const side = SIDE_KEYS.find(k=>!sides.includes(k));
+  if(!state[side].marka){
+    const used = sides.map(s=>state[s].id);
+    const c = CARS.find(c=>!used.includes(c.id)) || CARS[0];
+    state[side] = {marka:c.marka, model:c.model, yil:c.yil, id:c.id};
+  }
+  sides = [...sides, side];
+  render();
+}
+
+function removeSide(side){
+  if(sides.length<=MIN_SIDES) return;
+  sides = sides.filter(s=>s!==side);
+  render();
+}
+
+function renderPickerPanels(){
+  document.documentElement.style.setProperty('--cols', sides.length);
+  const panel = (side,i) => {
+    const rm = sides.length>MIN_SIDES ? `<button type="button" class="rm" data-rm="${side}" aria-label="Araç ${i+1} kaldır">✕</button>` : '';
+    return `<div class="panel ${side}">${rm}<h2>Araç ${i+1}</h2><div class="fields">
+      <div class="field"><label for="${side}-marka">Marka</label><select id="${side}-marka" data-side="${side}" data-field="marka"></select></div>
+      <div class="field"><label for="${side}-model">Model</label><select id="${side}-model" data-side="${side}" data-field="model"></select></div>
+      <div class="field"><label for="${side}-yil">Yıl</label><select id="${side}-yil" data-side="${side}" data-field="yil"></select></div>
+      <div class="field wide"><label for="${side}-id">Versiyon</label><select id="${side}-id" data-side="${side}" data-field="id"></select></div>
+    </div></div>`;
+  };
+  const addCard = sides.length<MAX_SIDES ? `<button type="button" class="addcard" id="addSide">+ Araç ekle (en fazla 4)</button>` : '';
+  $('pickers').innerHTML = sides.map(panel).join('') + addCard;
+
+  sides.forEach(side=>{
     const o = normalize(side), st = state[side];
     fill($(side+'-marka'), o.makes.map(v=>({v,t:v})), st.marka);
     fill($(side+'-model'), o.models.map(v=>({v,t:v})), st.model);
     fill($(side+'-yil'), o.years.map(v=>({v,t:v})), st.yil);
     fill($(side+'-id'), o.vers.map(c=>({v:c.id,t:c.versiyon})), st.id);
   });
+
+  if($('addSide')) $('addSide').addEventListener('click', addSide);
+  $$('.panel .rm').forEach(b=>b.addEventListener('click', ()=>removeSide(b.dataset.rm)));
+  $$('.panel select').forEach(sel=>{
+    sel.addEventListener('change', e=>{
+      const side = e.target.dataset.side, field = e.target.dataset.field;
+      if(field==='marka') Object.assign(state[side],{marka:e.target.value,model:null,yil:null,id:null});
+      else if(field==='model') Object.assign(state[side],{model:e.target.value,yil:null,id:null});
+      else if(field==='yil') Object.assign(state[side],{yil:Number(e.target.value),id:null});
+      else state[side].id = e.target.value;
+      render();
+    });
+  });
 }
 
-function verdict(better,a,b){
-  if(!better || a==null || b==null || typeof a!=='number' || typeof b!=='number' || a===b) return null;
-  return ((a>b) === (better==='high')) ? 'a' : 'b';
+function pickWinners(better, entries){
+  if(!better) return new Set();
+  const nums = entries.filter(e=>typeof e.v==='number');
+  if(nums.length<2 || nums.every(e=>e.v===nums[0].v)) return new Set();
+  const best = better==='high' ? Math.max(...nums.map(e=>e.v)) : Math.min(...nums.map(e=>e.v));
+  return new Set(nums.filter(e=>e.v===best).map(e=>e.side));
 }
 
 function fmt(v,unit){
@@ -1160,52 +1216,52 @@ function fmt(v,unit){
   return esc(v);
 }
 
-function deltaText(better,a,b,winner){
-  if(!better || typeof a!=='number' || typeof b!=='number') return '';
-  const d = Math.abs(a-b), dec = Math.max(decimals(a),decimals(b));
+function deltaText(better,v,rivalVals){
+  if(!better || typeof v!=='number') return '';
+  const rivals = rivalVals.filter(x=>typeof x==='number');
+  if(!rivals.length) return '';
+  const runnerUp = better==='high' ? Math.max(...rivals) : Math.min(...rivals);
+  const d = Math.abs(v-runnerUp);
+  if(d===0) return '';
+  const dec = Math.max(decimals(v), decimals(runnerUp));
   const sign = better==='high' ? '+' : '−';
   return `<span class="delta">${sign}${num(+d.toFixed(dec),dec)}</span>`;
 }
 
 function render(){
-  renderPickers();
-  const A = byId(state.a.id), B = byId(state.b.id);
+  renderPickerPanels();
+  const cars = sides.map(s=>byId(state[s].id));
   const onlyDiff = $('diff').checked;
   let html = '';
 
   GROUPS.forEach(g=>{
     let rowsHtml = '';
     g.rows.forEach(([key,label,unit,better])=>{
-      const va = A.s[key], vb = B.s[key];
-      if(onlyDiff && va===vb) return;
-      const w = verdict(better,va,vb);
-      const cell = (side,v)=>{
-        const win = w===side;
-        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}${fmt(v,unit)}${win?deltaText(better,va,vb,side):''}</div>`;
-      };
-      rowsHtml += `<div class="row" role="row"><div class="label" role="rowheader">${esc(label)}</div>${cell('a',va)}${cell('b',vb)}</div>`;
+      const entries = sides.map((s,i)=>({side:s, v:cars[i].s[key]}));
+      if(onlyDiff && entries.every(e=>e.v===entries[0].v)) return;
+      const winners = pickWinners(better, entries);
+      const cellsHtml = entries.map(({side,v})=>{
+        const win = winners.has(side);
+        const rivalVals = entries.filter(e=>e.side!==side).map(e=>e.v);
+        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}${fmt(v,unit)}${win?deltaText(better,v,rivalVals):''}</div>`;
+      }).join('');
+      rowsHtml += `<div class="row" role="row"><div class="label" role="rowheader">${esc(label)}</div>${cellsHtml}</div>`;
     });
     if(rowsHtml) html += `<div class="cat" role="presentation">${esc(g.name)}</div>${rowsHtml}`;
   });
-  if(!html) html = '<div class="row"><div class="label" style="grid-column:1/-1;padding:20px 14px;text-align:center">Seçtiğin iki araç arasında fark bulunamadı.</div></div>';
+  if(!html) html = '<div class="row"><div class="label" style="grid-column:1/-1;padding:20px 14px;text-align:center">Seçili araçlar arasında fark bulunamadı.</div></div>';
   $('rows').innerHTML = html;
 
   const head = (side,c)=>`<div class="hcell ${side}" role="columnheader"><div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div><a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a></div>`;
-  $('head').innerHTML = `${head('a',A)}${head('b',B)}`;
+  $('head').innerHTML = sides.map((s,i)=>head(s,cars[i])).join('');
 
   const seen = new Set();
-  const list = [A,B].filter(c=>{ if(seen.has(c.id)) return false; seen.add(c.id); return true; });
+  const list = cars.filter(c=>{ if(seen.has(c.id)) return false; seen.add(c.id); return true; });
   $('sourceList').innerHTML = list.map(c=>`<li>${esc(c.marka+' '+c.model+' '+c.versiyon)} — <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">${esc(c.kaynakAd)}</a></li>`).join('');
 }
 
-['a','b'].forEach(side=>{
-  $(side+'-marka').addEventListener('change',e=>{ Object.assign(state[side],{marka:e.target.value,model:null,yil:null,id:null}); render(); });
-  $(side+'-model').addEventListener('change',e=>{ Object.assign(state[side],{model:e.target.value,yil:null,id:null}); render(); });
-  $(side+'-yil').addEventListener('change',e=>{ Object.assign(state[side],{yil:Number(e.target.value),id:null}); render(); });
-  $(side+'-id').addEventListener('change',e=>{ state[side].id = e.target.value; render(); });
-});
 $('diff').addEventListener('change',render);
-$('swap').addEventListener('click',()=>{ const t = state.a; state.a = state.b; state.b = t; render(); });
+$('swap').addEventListener('click',()=>{ sides = [...sides].reverse(); render(); });
 
 render();
 </script>
