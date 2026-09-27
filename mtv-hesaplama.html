@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MTV Hesaplama | Yan Yana</title>
+<title>MTV Hesaplama | Araba Karşılaştır ve Seç</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -47,11 +47,15 @@ p{margin:0}
 .wrap{max-width:840px;margin:0 auto;padding:0 16px}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
-.top{border-bottom:1px solid var(--line);background:var(--surface)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:1100px}
-.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
-.backlink{font-size:.9rem;color:var(--muted);text-decoration:none}
-.backlink:hover{color:var(--ink)}
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:1100px;gap:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:.92rem;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:6px;color:var(--muted)}
+.nav a:hover{color:var(--ink);background:var(--surface2)}
+.nav a[aria-current]{color:var(--ink);font-weight:700}
+.nav a.cta{color:#fff;background:var(--a);font-weight:600}
+.nav a.cta:hover{filter:brightness(1.08);background:var(--a)}
 .notice{background:var(--warn-tint);color:var(--warn-ink);font-size:.85rem;padding:8px 0;border-bottom:1px solid var(--line)}
 .notice .wrap{max-width:1100px}
 
@@ -107,7 +111,17 @@ footer{margin:40px 0 48px;padding-top:16px;border-top:1px solid var(--line);colo
 <body>
 
 
-<header class="top"><div class="wrap"><a class="brand" href="index.html">Yan Yana</a><a class="backlink" href="index.html">← Ana sayfa</a></div></header>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="karsilastirma.html">Karşılaştır</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="mtv-hesaplama.html" aria-current="page">MTV hesapla</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştırmaya başla</a>
+    </nav>
+  </div>
+</header>
 <div class="notice"><div class="wrap">Bu hesaplayıcı ikincil kaynaklardan derlenen 2026 MTV tarifesini kullanır. Kesin tutar için <a href="https://www.gib.gov.tr/" target="_blank" rel="noopener">GİB Dijital Vergi Dairesi</a>'ni kontrol edin — resmi beyan/ödeme yerine geçmez.</div></div>
 
 <main class="wrap">
@@ -177,7 +191,7 @@ footer{margin:40px 0 48px;padding-top:16px;border-top:1px solid var(--line);colo
     <table id="tableEv"></table>
   </details>
 
-  <footer>Yan Yana · MTV hesaplayıcı, resmi beyan yerine geçmez, sadece tahmini bilgi amaçlıdır.</footer>
+  <footer>Araba Karşılaştır ve Seç · MTV hesaplayıcı, resmi beyan yerine geçmez, sadece tahmini bilgi amaçlıdır.</footer>
 </main>
 
 <script>

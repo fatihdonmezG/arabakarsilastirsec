@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Yan Yana</title>
+<title>Araba Karşılaştır ve Seç</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -38,9 +38,15 @@ p{margin:0}
 .wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
-.top{border-bottom:1px solid var(--line);background:var(--surface)}
-.top .wrap{display:flex;align-items:center;height:56px}
-.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:.92rem;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:6px;color:var(--muted)}
+.nav a:hover{color:var(--ink);background:var(--surface2)}
+.nav a[aria-current]{color:var(--ink);font-weight:700}
+.nav a.cta{color:#fff;background:var(--a);font-weight:600}
+.nav a.cta:hover{filter:brightness(1.08);background:var(--a)}
 
 h1{font-weight:700;font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.08;letter-spacing:-.02em;margin-top:32px;text-wrap:balance}
 .lead{margin-top:8px;color:var(--muted);max-width:56ch}
@@ -113,7 +119,17 @@ footer{margin-block:40px 48px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 
 
-<header class="top"><div class="wrap"><a class="brand" href="index.html">Yan Yana</a></div></header>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="karsilastirma.html" aria-current="page">Karşılaştır</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="mtv-hesaplama.html">MTV hesapla</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştırmaya başla</a>
+    </nav>
+  </div>
+</header>
 
 <main class="wrap">
   <h1>Araç karşılaştırma</h1>
