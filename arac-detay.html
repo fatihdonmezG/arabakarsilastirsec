@@ -998,6 +998,12 @@ $('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderRe
   if(token && CARS[token]) state.carId = token;
 })();
 
+/* Sayfa zaten açıkken sadece # kısmı değişirse (tarayıcı tam yeniden yüklemez) yine de doğru aracı göster. */
+window.addEventListener('hashchange', ()=>{
+  const token = location.hash.slice(1);
+  if(token && CARS[token] && token !== state.carId){ state.carId = token; state.filter = null; renderAll(); }
+});
+
 buildForm();
 renderRivals();
 renderAll();
