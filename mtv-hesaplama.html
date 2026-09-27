@@ -122,7 +122,7 @@ footer{margin:40px 0 48px;padding-top:16px;border-top:1px solid var(--line);colo
     </nav>
   </div>
 </header>
-<div class="notice"><div class="wrap">Bu hesaplayıcı ikincil kaynaklardan derlenen 2026 MTV tarifesini kullanır. Kesin tutar için <a href="https://www.gib.gov.tr/" target="_blank" rel="noopener">GİB Dijital Vergi Dairesi</a>'ni kontrol edin — resmi beyan/ödeme yerine geçmez.</div></div>
+<div class="notice"><div class="wrap">Bu hesaplayıcı ikincil kaynaklardan derlenen 2026 MTV tarifesini kullanır. Elektrikli araç tutarlarında kaynaklar birbiriyle küçük farklar gösteriyor (aşağıda açıklandı), benzinli/dizel tarafında böyle bir çelişki bulunamadı. Kesin tutar için <a href="https://www.gib.gov.tr/" target="_blank" rel="noopener">GİB Dijital Vergi Dairesi</a>'ni kontrol edin — resmi beyan/ödeme yerine geçmez.</div></div>
 
 <main class="wrap">
   <h1>MTV Hesaplama</h1>
@@ -182,9 +182,10 @@ footer{margin:40px 0 48px;padding-top:16px;border-top:1px solid var(--line);colo
   <details>
     <summary>Nasıl hesaplanıyor? (metodoloji ve kaynak)</summary>
     <p class="src" style="margin-top:10px">
-      Benzinli/dizel araçlarda (I) sayılı tarife kullanılır: motor hacmi bandı × taşıt değeri bandı × yaş grubuna göre sabit TL tutarı. Elektrikli araçlarda motor gücü (kW) esas alınır, taşıt değeri etkisi yoktur.<br><br>
+      Benzinli/dizel araçlarda (I) sayılı tarife kullanılır: motor hacmi bandı × taşıt değeri bandı × yaş grubuna göre sabit TL tutarı. Elektrikli araçlarda motor gücü (kW) esas alınır; kanun metnine göre taşıt değeri bandı elektrikli araçlarda uygulanmıyor (yalnızca kW bandı × yaş grubu).<br><br>
       "Taşıt değeri", ÖTV matrahına yakın bir tabandır ve KDV dahil liste fiyatından biraz düşük olabilir; bu hesaplayıcı basitlik için KDV dahil liste fiyatını doğrudan kullanır, bu yüzden sonuç <b>gerçek tutara yakın bir tahmindir</b>, birebir garanti edilmez.<br><br>
-      Kaynaklar: <a href="https://www.muhasebetr.com/motorlu-tasitlar-vergisi-mtv/" target="_blank" rel="noopener">muhasebetr.com</a> (benzinli/dizel tarife), <a href="https://www.elektrikliarac.com/news/article/elektrikli-araclarda-2026-mtv-tutarlari-aciklandi" target="_blank" rel="noopener">elektrikliarac.com</a> (elektrikli tarife). İkisi de ikincil derlemedir, resmi Resmi Gazete metniyle (31.12.2025, 5. mükerrer) birebir teyit edilmemiştir.
+      <b>Elektrikli tarifede bilinen belirsizlik:</b> Buradaki kW bandı tutarları <a href="https://www.elektrikliarac.com/news/article/elektrikli-araclarda-2026-mtv-tutarlari-aciklandi" target="_blank" rel="noopener">elektrikliarac.com</a> kaynaklıdır ve bağımsız bir ikinci kaynakla (watmobilite.com) birebir örtüşüyor. Ancak bazı bayi/hukuk kaynakları aynı araç için (ör. Togg T10X, 160 kW) farklı bir tutar veriyor — aradaki fark yaklaşık %10. Resmi Tebliğ metnine (Resmi Gazete, 31.12.2025, 5. mükerrer) doğrudan erişilemediği için bu fark şu an kesin olarak çözülemedi; elektrikli araç sonucunu GİB'den teyit etmeden kullanmayın.<br><br>
+      Kaynaklar: <a href="https://www.muhasebetr.com/motorlu-tasitlar-vergisi-mtv/" target="_blank" rel="noopener">muhasebetr.com</a> (benzinli/dizel tarife), <a href="https://www.elektrikliarac.com/news/article/elektrikli-araclarda-2026-mtv-tutarlari-aciklandi" target="_blank" rel="noopener">elektrikliarac.com</a> (elektrikli tarife). İkisi de ikincil derlemedir, resmi Resmi Gazete metniyle birebir teyit edilmemiştir.
     </p>
     <table id="tableIce"></table>
     <p class="src" style="margin-top:16px">Elektrikli araç tarifesi (kW bazlı, yıllık TL):</p>
