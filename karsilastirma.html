@@ -10,32 +10,33 @@
 <style>
 :root{
   color-scheme: dark;
-  --bg:#0D0E12; --surface:#15161B; --surface2:#121319; --ink:#F5F4F0; --muted:#8B8E97; --line:#26272E; --line-strong:#34363F;
+  --bg:#1C1E22; --surface:#212328; --surface2:#26282E; --ink:#F5F4F0; --muted:#9296A0; --line:#34363D; --line-strong:#45474F;
+  --divider:rgba(245,244,240,.16);
   --accent:#C9A961; --accent-soft:#E7D2A0; --accent-grad:linear-gradient(120deg,#E7D2A0 0%,#C9A961 50%,#9C824F 100%); --on-accent:#1B1508;
   --focus:#C9A961;
   --good:#C9A961; --good-tint:rgba(201,169,97,.12);
-  --win-tint:rgba(201,169,97,.07);
+  --win-tint:rgba(201,169,97,.08);
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-body{background:radial-gradient(ellipse 1100px 540px at 50% -180px, rgba(201,169,97,.10), transparent 60%), linear-gradient(180deg,#0D0E12 0%,#0A0B0E 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body{background:radial-gradient(ellipse 1100px 540px at 50% -180px, rgba(201,169,97,.11), transparent 60%), linear-gradient(180deg,#1D1F24 0%,#191B1F 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
 a{color:inherit}
 h1,h2{font-family:var(--display);margin:0;letter-spacing:-.01em}
 p{margin:0}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 
-.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:#0D0E12}
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--divider);background:#1C1E22}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
 .brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.08rem;letter-spacing:-.005em;text-decoration:none;white-space:nowrap;color:var(--ink)}
 .brandmark{flex:none;width:30px;height:30px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:14px;color:var(--on-accent);background:var(--accent-grad)}
 .nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:9px 14px;border-radius:2px;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
-.nav a[aria-current]{color:var(--ink);font-weight:600}
-.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:20px;text-transform:uppercase;font-size:.76rem;letter-spacing:.07em;margin-left:10px;border-radius:2px}
-.nav a.cta:hover{filter:brightness(1.07)}
+.nav a[aria-current],.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:20px;text-transform:uppercase;font-size:.76rem;letter-spacing:.07em;border-radius:2px}
+.nav a[aria-current]:hover,.nav a.cta:hover{filter:brightness(1.07)}
+.nav a.cta{margin-left:10px}
 
 h1{font-weight:800;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.04;letter-spacing:-.02em;margin-top:72px;text-wrap:balance}
 .rule{width:64px;height:3px;background:var(--accent-grad);margin-top:24px;border-radius:2px}
@@ -45,7 +46,7 @@ h1{font-weight:800;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.04;letter-
 .scope{margin-top:16px;color:var(--muted);font-size:.89rem;max-width:64ch;line-height:1.65}
 
 :root{--cols:2}
-.pickers{display:grid;grid-template-columns:1fr;gap:1px;margin-top:64px;background:var(--line);border:1px solid var(--line)}
+.pickers{display:grid;grid-template-columns:1fr;gap:1px;margin-top:64px;background:var(--line);border:1px solid var(--divider)}
 .panel{position:relative;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);padding:28px 28px 26px}
 .panel h2{font-size:.76rem;font-weight:700;margin-bottom:20px;padding-right:28px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--body)}
 .panel .rm{position:absolute;top:24px;right:24px;width:26px;height:26px;border:1px solid var(--line-strong);border-radius:2px;background:transparent;color:var(--muted);font-size:.9rem;line-height:1;cursor:pointer}
@@ -55,6 +56,9 @@ h1{font-weight:800;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.04;letter-
 .field.wide{grid-column:1/-1}
 select{width:100%;height:50px;padding-inline:14px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:2px}
 select:focus-visible{border-color:var(--accent)}
+.yilrow{display:flex;align-items:center;gap:10px}
+.yilrow select{flex:1}
+.brandlogo{flex:none;width:38px;height:38px;object-fit:contain;background:#F2F0EA;border-radius:4px;padding:6px}
 .addcard{display:flex;align-items:center;justify-content:center;min-height:168px;border:1px dashed var(--line-strong);background:var(--surface);color:var(--muted);font:inherit;font-weight:600;font-size:.86rem;cursor:pointer;letter-spacing:.02em}
 .addcard:hover{color:var(--accent-soft);border-color:var(--accent)}
 
@@ -64,15 +68,15 @@ select:focus-visible{border-color:var(--accent)}
 .btn{font:inherit;font-weight:600;font-size:.86rem;color:var(--ink);background:transparent;border:1px solid var(--line-strong);border-radius:2px;padding-inline:18px;min-height:44px;cursor:pointer;letter-spacing:.01em}
 .btn:hover{border-color:var(--accent);color:var(--accent-soft)}
 
-.sheet{margin-top:20px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--line);overflow-x:auto}
-.head{display:grid;grid-template-columns:repeat(var(--cols),1fr);border-bottom:1px solid var(--line-strong)}
+.sheet{margin-top:20px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);overflow-x:auto}
+.head{display:grid;grid-template-columns:repeat(var(--cols),1fr);border-bottom:1px solid var(--divider)}
 .hcell{padding:22px 24px;min-width:0}
 .hcell + .hcell{border-left:1px solid var(--line)}
 .hname{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25;overflow-wrap:anywhere;color:var(--ink)}
 .hsub{font-size:.82rem;color:var(--muted);line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
 .hsrc{display:inline-block;margin-top:10px;font-size:.76rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line-strong)}
 .hsrc:hover{color:var(--accent-soft);border-color:var(--accent-soft)}
-.cat{font-family:var(--body);font-weight:700;font-size:.75rem;padding:36px 24px 12px;color:var(--accent-soft);text-transform:uppercase;letter-spacing:.12em;border-top:1px solid var(--line)}
+.cat{font-family:var(--body);font-weight:700;font-size:.75rem;padding:36px 24px 12px;color:var(--accent-soft);text-transform:uppercase;letter-spacing:.12em;border-top:1px solid var(--divider)}
 .row{display:grid;grid-template-columns:repeat(var(--cols),1fr);border-bottom:1px solid var(--line)}
 .row:last-child{border-bottom:0}
 .row .label{grid-column:1/-1;padding:12px 24px 0;color:var(--muted);font-size:.87rem}
@@ -87,13 +91,13 @@ select:focus-visible{border-color:var(--accent)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .legend{color:var(--muted);font-size:.85rem;margin-top:16px}
 
-.sources{margin-top:64px;padding:28px;background:var(--surface);border:1px solid var(--line);font-size:.88rem}
+.sources{margin-top:64px;padding:28px;background:var(--surface);border:1px solid var(--divider);font-size:.88rem}
 .sources h2{font-size:.76rem;margin-bottom:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-family:var(--body)}
 .sources ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
 .sources a{color:var(--accent-soft);text-decoration:none}
 .sources a:hover{text-decoration:underline}
 
-footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;max-width:70ch;line-height:1.6}
+footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divider);color:var(--muted);font-size:.85rem;max-width:70ch;line-height:1.6}
 
 @media (min-width:640px){
   .pickers{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -1097,6 +1101,15 @@ const byId = id => CARS.find(c => c.id === id);
 const SIDE_KEYS = ['a','b','c','d'];
 const MAX_SIDES = 4, MIN_SIDES = 2;
 
+const MARKA_LOGO = {
+  'Alfa Romeo':'alfa-romeo-logo.svg','BYD':'byd-logo.svg','Chery':'chery-logo.png','Citroën':'citroen-logo.svg',
+  'Cupra':'cupra-logo.svg','Dacia':'dacia-logo.svg','Fiat':'fiat-logo.svg','Ford':'ford-logo.png','Honda':'honda-logo.png',
+  'Hyundai':'hyundai-logo.svg','Jaecoo':'jaecoo-logo.svg','Jeep':'jeep-logo.svg','Kia':'kia-logo.svg','MG':'mg-logo.png',
+  'Mitsubishi':'mitsubishi-logo.svg','Nissan':'nissan-logo.svg','Omoda':'omoda-logo.png','Opel':'opel-logo.svg',
+  'Peugeot':'peugeot-logo.svg','Renault':'renault-logo.svg','Seat':'seat-logo.svg','Skoda':'skoda-logo.svg',
+  'Suzuki':'suzuki-logo.svg','Togg':'togg-logo.svg','Toyota':'toyota-logo.svg','Volkswagen':'volkswagen-logo.svg','Volvo':'volvo-logo.svg'
+};
+
 const state = {
   a:{marka:'Fiat',model:'Egea Sedan',yil:2026,id:'egea-sedan-2026-1.6-multijet-130'},
   b:{marka:'Togg',model:'T10X',yil:2026,id:'togg-t10x-2026-v1-rwd-standart'},
@@ -1147,7 +1160,7 @@ function renderPickerPanels(){
     return `<div class="panel ${side}">${rm}<h2>Araç ${i+1}</h2><div class="fields">
       <div class="field"><label for="${side}-marka">Marka</label><select id="${side}-marka" data-side="${side}" data-field="marka"></select></div>
       <div class="field"><label for="${side}-model">Model</label><select id="${side}-model" data-side="${side}" data-field="model"></select></div>
-      <div class="field"><label for="${side}-yil">Yıl</label><select id="${side}-yil" data-side="${side}" data-field="yil"></select></div>
+      <div class="field"><label for="${side}-yil">Yıl</label><div class="yilrow"><img class="brandlogo" id="${side}-logo" alt="" aria-hidden="true"><select id="${side}-yil" data-side="${side}" data-field="yil"></select></div></div>
       <div class="field wide"><label for="${side}-id">Versiyon</label><select id="${side}-id" data-side="${side}" data-field="id"></select></div>
     </div></div>`;
   };
@@ -1160,6 +1173,10 @@ function renderPickerPanels(){
     fill($(side+'-model'), o.models.map(v=>({v,t:v})), st.model);
     fill($(side+'-yil'), o.years.map(v=>({v,t:v})), st.yil);
     fill($(side+'-id'), o.vers.map(c=>({v:c.id,t:c.versiyon})), st.id);
+    const logoEl = $(side+'-logo');
+    const logoFile = MARKA_LOGO[st.marka];
+    if(logoFile){ logoEl.src = 'assets/logos/'+logoFile; logoEl.alt = st.marka+' amblemi'; logoEl.style.visibility = 'visible'; }
+    else { logoEl.removeAttribute('src'); logoEl.style.visibility = 'hidden'; }
   });
 
   if($('addSide')) $('addSide').addEventListener('click', addSide);
