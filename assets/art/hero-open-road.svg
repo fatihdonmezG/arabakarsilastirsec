@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0E0F13"/>
+      <stop offset="48%" stop-color="#16151A"/>
+      <stop offset="78%" stop-color="#2b2318"/>
+      <stop offset="100%" stop-color="#4a3a22"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="60%" r="46%">
+      <stop offset="0%"  stop-color="#E7D2A0" stop-opacity="0.5"/>
+      <stop offset="38%" stop-color="#C9A961" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#C9A961" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="road2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#332a1c"/>
+      <stop offset="32%"  stop-color="#131217"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#292735"/>
+      <stop offset="100%" stop-color="#1a1922"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1b23"/>
+      <stop offset="100%" stop-color="#121218"/>
+    </linearGradient>
+    <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121117"/>
+      <stop offset="100%" stop-color="#0a0a0d"/>
+    </linearGradient>
+    <filter id="soft3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="soft4" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="2400" height="760" fill="url(#sky2)"/>
+  <rect x="0" y="0" width="2400" height="760" fill="url(#glow2)"/>
+
+  <!-- far hill ridge -->
+  <path d="M0,452 C260,398 520,430 800,404 C1080,378 1180,412 1350,420 C1620,434 1900,392 2160,410 C2280,418 2350,428 2400,424 L2400,470 L0,470 Z" fill="url(#hillFar)" opacity="0.85"/>
+
+  <!-- mid hill ridge -->
+  <path d="M0,486 C300,450 560,478 860,456 C1120,438 1300,466 1560,452 C1840,438 2100,466 2400,448 L2400,520 L0,520 Z" fill="url(#hillMid)"/>
+
+  <!-- horizon haze -->
+  <rect x="0" y="418" width="2400" height="36" fill="url(#glow2)" opacity="0.55"/>
+
+  <!-- near foreground hill masses, framing the edges like a vignette -->
+  <path d="M0,760 L0,520 C120,500 220,540 360,528 C480,518 540,548 620,556 L620,760 Z" fill="url(#hillNear)"/>
+  <path d="M2400,760 L2400,510 C2280,492 2200,536 2060,522 C1940,510 1870,542 1790,552 L1790,760 Z" fill="url(#hillNear)"/>
+
+  <!-- road -->
+  <polygon points="0,760 2400,760 1350,432 950,432" fill="url(#road2)"/>
+  <polygon points="0,760 2400,760 1350,432 950,432" fill="url(#glow2)" opacity="0.3"/>
+
+  <!-- road edge lines -->
+  <polygon points="0,760 46,760 962,432 953,432" fill="#C9A961" opacity="0.16"/>
+  <polygon points="2354,760 2400,760 1350,432 1341,432" fill="#C9A961" opacity="0.16"/>
+
+  <!-- centerline dashes, perspective -->
+  <g fill="#E7D2A0" opacity="0.55">
+    <rect x="1128" y="710" width="30" height="42"/>
+    <rect x="1138" y="630" width="22" height="33"/>
+    <rect x="1146" y="565" width="16" height="24"/>
+    <rect x="1152" y="515" width="11" height="17"/>
+    <rect x="1157" y="478" width="7"  height="11"/>
+    <rect x="1160" y="450" width="4"  height="6"/>
+  </g>
+
+  <!-- birds, distant -->
+  <g stroke="#5b5a63" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6">
+    <path d="M1740,220 q10,-10 20,0 q10,-10 20,0"/>
+    <path d="M1800,250 q8,-8 16,0 q8,-8 16,0"/>
+    <path d="M1680,260 q7,-7 14,0 q7,-7 14,0"/>
+  </g>
+</svg>

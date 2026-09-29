@@ -6,101 +6,92 @@
 <title>Araba Karşılaştır ve Seç</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  color-scheme: light;
-  --bg:#EEF1F5; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#101820; --muted:#566170; --line:#D6DCE4;
-  --a:#2456C9; --a-tint:#E1E9FB; --b:#D9620C; --b-tint:#FCE8D4; --focus:#2456C9;
-  --good:#1C7A4D; --good-tint:#E2F3E9;
-  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  color-scheme: dark;
+  --bg:#1C1E22; --surface:#212328; --surface2:#26282E; --ink:#F5F4F0; --muted:#9296A0; --line:#34363D; --line-strong:#45474F;
+  --divider:rgba(245,244,240,.16);
+  --accent:#C9A961; --accent-soft:#E7D2A0; --accent-grad:linear-gradient(120deg,#E7D2A0 0%,#C9A961 50%,#9C824F 100%); --on-accent:#1B1508;
+  --focus:#C9A961;
+  --good:#C9A961; --good-tint:rgba(201,169,97,.12);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    color-scheme: dark;
-    --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
-    --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
-    --good:#5FBF8B; --good-tint:#173226;
-  }
-}
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --bg:#0E1319; --surface:#161D25; --surface2:#1C252F; --ink:#E8EDF2; --muted:#98A5B3; --line:#2B3541;
-  --a:#7B9DF2; --a-tint:#1E2C4B; --b:#F59A50; --b-tint:#3A2918; --focus:#7B9DF2;
-  --good:#5FBF8B; --good-tint:#173226;
-}
 *,*::before,*::after{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+body{margin:0;background:radial-gradient(ellipse 1100px 540px at 50% -180px, rgba(201,169,97,.11), transparent 60%), linear-gradient(180deg,#1D1F24 0%,#191B1F 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
 a{color:inherit}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
 p{margin:0}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:16px}
-:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 
-.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:var(--surface)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-.brand{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
-.nav{display:flex;gap:4px;align-items:center}
-.nav a{font-size:.92rem;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:6px;color:var(--muted)}
-.nav a:hover{color:var(--ink);background:var(--surface2)}
-.nav a.cta{color:#fff;background:var(--a);font-weight:600}
-.nav a.cta:hover{filter:brightness(1.08);background:var(--a)}
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--divider);background:#1C1E22}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.08rem;letter-spacing:-.005em;text-decoration:none;white-space:nowrap;color:var(--ink)}
+.brandmark{flex:none;width:30px;height:30px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:14px;color:var(--on-accent);background:var(--accent-grad)}
+.nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:9px 14px;border-radius:2px;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:20px;text-transform:uppercase;font-size:.76rem;letter-spacing:.07em;border-radius:2px}
+.nav a.cta:hover{filter:brightness(1.07)}
+.nav a.cta{margin-left:10px}
 
-.hero{padding-block:56px 40px}
-.kicker{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;background:var(--a-tint);color:var(--a);font-size:.82rem;font-weight:600}
-h1{font-weight:800;font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.04;letter-spacing:-.03em;margin-top:16px;max-width:16ch}
-.lead{margin-top:18px;color:var(--muted);font-size:1.15rem;max-width:52ch;line-height:1.5}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:7px;padding:13px 22px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
-.btn:hover{background:var(--surface2)}
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn.primary:hover{filter:brightness(1.15)}
+.hero{position:relative;border-bottom:1px solid var(--divider);background:
+    linear-gradient(100deg, var(--bg) 0%, rgba(28,30,34,.95) 30%, rgba(28,30,34,.68) 56%, rgba(28,30,34,.22) 82%, rgba(28,30,34,.05) 100%),
+    linear-gradient(180deg, rgba(20,21,25,.12) 0%, transparent 28%, rgba(20,21,25,.5) 100%),
+    url('assets/art/hero-open-road.svg') center 60%/cover no-repeat,
+    var(--bg)}
+.hero-inner{padding-block:88px 76px}
+.kicker{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:99px;border:1px solid rgba(201,169,97,.32);background:var(--good-tint);color:var(--accent-soft);font-size:.82rem;font-weight:600}
+h1{font-weight:800;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.05;letter-spacing:-.02em;margin-top:22px;max-width:17ch;text-wrap:balance}
+.rule{width:64px;height:3px;background:var(--accent-grad);margin-top:22px;border-radius:2px}
+.lead{margin-top:20px;color:var(--muted);font-size:1.1rem;max-width:52ch;line-height:1.6;font-weight:300}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:2px;padding:14px 22px;border:1px solid var(--line-strong);color:var(--ink);background:transparent;letter-spacing:.01em}
+.btn:hover{border-color:var(--accent);color:var(--accent-soft)}
+.btn.primary{background:var(--accent-grad);color:var(--on-accent);border-color:transparent;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.84rem}
+.btn.primary:hover{filter:brightness(1.07);color:var(--on-accent)}
 .btn svg{width:16px;height:16px;flex:none}
 
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:44px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.stat{background:var(--surface);padding:18px 20px}
-.stat b{display:block;font-family:var(--display);font-weight:800;font-size:1.9rem;letter-spacing:-.02em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider)}
+.stat{padding:20px 22px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:1.9rem;letter-spacing:-.02em;color:var(--accent-soft)}
 .stat span{font-size:.85rem;color:var(--muted)}
 
-.section{padding-block:48px}
+.section{padding-block:56px}
 .section-head{max-width:56ch}
-.eyebrow{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--a)}
-h2{font-weight:700;font-size:clamp(1.6rem,4vw,2.1rem);margin-top:8px}
-.section-lead{color:var(--muted);margin-top:8px}
+.eyebrow{font-family:var(--body);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-soft)}
+h2{font-weight:700;font-size:clamp(1.6rem,4vw,2.1rem);margin-top:10px}
+.section-lead{color:var(--muted);margin-top:10px;font-weight:300;line-height:1.6}
 
-.features{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
-.feature{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line);border-radius:8px;padding:22px}
-.feature.f1{border-top-color:var(--a)}
-.feature.f2{border-top-color:var(--b)}
-.feature.f3{border-top-color:var(--good)}
-.ficon{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;margin-bottom:14px}
-.f1 .ficon{background:var(--a-tint);color:var(--a)}
-.f2 .ficon{background:var(--b-tint);color:var(--b)}
-.f3 .ficon{background:var(--good-tint);color:var(--good)}
-.ficon svg{width:20px;height:20px}
-.feature h3{font-size:1.1rem}
-.feature p{color:var(--muted);font-size:.94rem;margin-top:8px;line-height:1.5}
-.tag-new{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:600;color:var(--good);background:var(--good-tint);padding:3px 9px;border-radius:99px}
+.features{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+.feature{background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);border-top:2px solid var(--accent);padding:24px}
+.ficon{width:38px;height:38px;border-radius:2px;display:grid;place-items:center;margin-bottom:16px;background:var(--good-tint);color:var(--accent-soft)}
+.ficon svg{width:19px;height:19px}
+.feature h3{font-size:1.08rem;font-weight:700}
+.feature p{color:var(--muted);font-size:.92rem;margin-top:10px;line-height:1.55}
+.tag-new{display:inline-block;margin-top:14px;font-size:.72rem;font-weight:700;color:var(--muted);background:var(--surface2);border:1px solid var(--line-strong);padding:3px 10px;border-radius:2px;text-transform:uppercase;letter-spacing:.05em}
 
 .cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
-.car-card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;text-decoration:none;color:var(--ink)}
-.car-card:hover{border-color:var(--a)}
+.car-card{display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);padding:20px;text-decoration:none;color:var(--ink)}
+.car-card:hover{border-color:var(--accent)}
 .cc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.cc-fuel{font-size:.74rem;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--surface2);color:var(--muted);white-space:nowrap}
-.cc-name{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25}
+.cc-fuel{font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:2px;background:var(--surface2);border:1px solid var(--line-strong);color:var(--muted);white-space:nowrap}
+.cc-name{font-family:var(--display);font-weight:700;font-size:1.08rem;line-height:1.25}
 .cc-ver{font-size:.85rem;color:var(--muted);margin-top:2px}
-.cc-stat{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.3rem;font-family:var(--display)}
+.cc-stat{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.3rem;font-family:var(--display);color:var(--accent-soft)}
 .cc-stat small{font-family:var(--body);font-weight:400;font-size:.78rem;color:var(--muted);margin-left:3px}
 .cc-src{font-size:.78rem;color:var(--muted);margin-top:auto}
-.cc-cta{display:flex;align-items:center;gap:6px;font-size:.86rem;font-weight:600;color:var(--a);margin-top:4px}
+.cc-cta{display:flex;align-items:center;gap:6px;font-size:.86rem;font-weight:600;color:var(--accent-soft);margin-top:4px}
 
-.scope-box{margin-top:32px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:8px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.scope-box{margin-top:32px;padding:22px 24px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
 .scope-box p{color:var(--muted);font-size:.9rem;max-width:56ch}
 .scope-box strong{color:var(--ink)}
 
-footer{padding-block:32px 44px;border-top:1px solid var(--line);margin-top:24px}
-footer p{color:var(--muted);font-size:.85rem;max-width:64ch}
+footer{padding-block:40px 56px;border-top:1px solid var(--divider);margin-top:24px}
+footer p{color:var(--muted);font-size:.85rem;max-width:64ch;line-height:1.6}
 
 @media (min-width:640px){
   .features{grid-template-columns:repeat(3,1fr)}
@@ -112,15 +103,16 @@ footer p{color:var(--muted);font-size:.85rem;max-width:64ch}
 }
 @media (max-width:639px){
   .stats{grid-template-columns:1fr}
+  .stat{border-left:0;border-top:1px solid var(--line)}
+  .stat:first-child{border-top:0}
 }
 </style>
 </head>
 <body>
 
-
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html">Araba Karşılaştır ve Seç</a>
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
     <nav class="nav" aria-label="Site">
       <a href="arac-detay.html">Araç detayı</a>
       <a href="mtv-hesaplama.html">MTV hesapla</a>
@@ -129,10 +121,11 @@ footer p{color:var(--muted);font-size:.85rem;max-width:64ch}
   </div>
 </header>
 
-<main class="wrap">
-  <section class="hero">
+<section class="hero">
+  <div class="wrap hero-inner">
     <span class="kicker">Türkiye'nin araç karşılaştırma sitesi</span>
     <h1>Aracı almadan önce gerçeği gör.</h1>
+    <div class="rule" aria-hidden="true"></div>
     <p class="lead">Her marka, her model, her yıl; teknik özellikler yan yana. Üstüne bilinen sorunlar, geri çağırmalar ve gerçek sahip yorumları — diğer sitelerin göstermediği kısım.</p>
     <div class="cta-row">
       <a class="btn primary" href="karsilastirma.html">
@@ -146,11 +139,13 @@ footer p{color:var(--muted);font-size:.85rem;max-width:64ch}
 
     <div class="stats">
       <div class="stat"><b>54</b><span>karşılaştırma başlığı, 9 kategoride</span></div>
-      <div class="stat"><b>27</b><span>marka, 294 versiyon veritabanında</span></div>
+      <div class="stat"><b>29</b><span>marka, 346 versiyon veritabanında</span></div>
       <div class="stat"><b>%100</b><span>kaynağı linkli, doğrulanabilir veri</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
+<main class="wrap">
   <section class="section">
     <div class="section-head">
       <span class="eyebrow">Neden Araba Karşılaştır ve Seç</span>
@@ -188,7 +183,7 @@ footer p{color:var(--muted);font-size:.85rem;max-width:64ch}
   </section>
 
   <div class="scope-box">
-    <p><strong>Kapsam:</strong> 27 marka, 294 versiyon, hepsi resmi marka sitesi ya da güvenilir fiyat listesinden alındı. "Her marka, her model, her yıl" hedefine doğru elle büyütülüyor.</p>
+    <p><strong>Kapsam:</strong> 29 marka, 346 versiyon, hepsi resmi marka sitesi ya da güvenilir fiyat listesinden alındı. "Her marka, her model, her yıl" hedefine doğru elle büyütülüyor.</p>
     <a class="btn" href="karsilastirma.html">Tüm başlıkları gör →</a>
   </div>
 </main>
