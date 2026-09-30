@@ -82,6 +82,7 @@ select:focus-visible{border-color:var(--accent)}
 .hsub{font-size:.82rem;color:var(--muted);line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
 .hsrc{display:inline-block;margin-top:10px;font-size:.76rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line-strong)}
 .hsrc:hover{color:var(--accent-soft);border-color:var(--accent-soft)}
+.hnote{display:block;margin-top:8px;padding:4px 9px;font-size:.72rem;line-height:1.4;letter-spacing:.01em;color:var(--muted);background:var(--surface2);border:1px solid var(--line-strong)}
 #rows{margin-top:8px}
 .catgroup{background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider)}
 .catgroup + .catgroup{margin-top:8px}
@@ -141,7 +142,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 29 marka ve 346 versiyonu kapsıyor, veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
+    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 29 marka ve 365 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
   </div>
 </section>
 
@@ -1208,7 +1209,89 @@ const CARS = [
   s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4 (xDrive)",koltuk:5,kapi:5,guc_hp:218,tork_nm:610,sifirYuz_sn:7.9,hiz_kmh:210,batarya_kwh:108.7,batarya_tipi:"Lityum İyon (NMC, 800V mimari)",menzil_km_wltp:742,ac_sarj_dk:330,dc_hizli_sarj_dk_20_80:21,uzunluk_mm:4782,genislik_mm:1895,yukseklik_mm:1635,dingil_mm:2897,bagaj_l:520,agirlik_kg:2360,istiap_kg:540,ncap_yildiz:5,ncap_test_yili:2026,abs:"Var",esp:"Var",liste_fiyati_tl:6819500,garanti_yil:3,garanti_km:null,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,mtv_yillik_tl:14586}},
  {id:"bmw-ix-2026-xdrive60-m-sport", marka:"BMW", model:"iX", yil:2026, versiyon:"xDrive60 M Sport",
   kaynakAd:"bmw.com.tr (resmi teknik veriler)", kaynakUrl:"https://www.bmw.com.tr/tr/all-models/i-series/ix/bmw-ix-technical-data.html",
-  s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4 (xDrive)",koltuk:5,kapi:5,guc_hp:544,tork_nm:765,sifirYuz_sn:4.6,hiz_kmh:200,batarya_kwh:109.1,batarya_tipi:"Lityum İyon",menzil_km_wltp:632,ac_sarj_dk:345,dc_hizli_sarj_dk_20_80:35,elektrik_tuketim_kwh100km:19.9,uzunluk_mm:4965,genislik_mm:1970,yukseklik_mm:1695,dingil_mm:3000,bagaj_l:500,agirlik_kg:2580,ncap_yildiz:5,ncap_test_yili:2021,abs:"Var",esp:"Var",liste_fiyati_tl:10783400,garanti_yil:3,garanti_km:null,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,mtv_yillik_tl:62888}}
+  s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4 (xDrive)",koltuk:5,kapi:5,guc_hp:544,tork_nm:765,sifirYuz_sn:4.6,hiz_kmh:200,batarya_kwh:109.1,batarya_tipi:"Lityum İyon",menzil_km_wltp:632,ac_sarj_dk:345,dc_hizli_sarj_dk_20_80:35,elektrik_tuketim_kwh100km:19.9,uzunluk_mm:4965,genislik_mm:1970,yukseklik_mm:1695,dingil_mm:3000,bagaj_l:500,agirlik_kg:2580,ncap_yildiz:5,ncap_test_yili:2021,abs:"Var",esp:"Var",liste_fiyati_tl:10783400,garanti_yil:3,garanti_km:null,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,mtv_yillik_tl:62888}},
+
+ /* --- Aşağıdakiler Türkiye'de artık satılmayan (üretimi/satışı durdurulmuş) modellerdir.
+    2010-2026 model boşluk analizinin "öncelikli/güncel" sanılan kalemleri araştırıldığında hepsinin
+    aslında satıştan kaldırıldığı ortaya çıktı (bkz. research/model-gap-2010-2026.md).
+    Her biri "durum" alanıyla işaretlenmiştir; karşılaştırma ekranında bu bir uyarı notu olarak gösterilir
+    ve liste fiyatı (varsa) güncel olmadığı için "s" içine değil sadece "durum" metnine yazılmıştır. */
+ {id:"alfa-romeo-giulia-2023-veloce-q4", marka:"Alfa Romeo", model:"Giulia", yil:2023, versiyon:"Veloce Q4 2.0 Turbo 280 HP AWD",
+  kaynakAd:"albayrac.com (yetkili bayi) / epey.com (motor verisi)", kaynakUrl:"https://albayrac.com/yenilenen-alfa-romeo-giulia-ve-stelvio-turkiyede-satisa-sunuldu/",
+  durum:"Türkiye'de satıştan kaldırıldı (son satılan facelift: 2023). Güncel liste fiyatı yok.",
+  s:{segment:"D (Üst-orta sedan)",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4 (AWD/Q4)",koltuk:5,kapi:4,cc:1995,silindir:4,besleme:"Turbo",guc_hp:280,tork_nm:400,sifirYuz_sn:5.2,hiz_kmh:240,tuketim_sehir_ici:8.9,tuketim_sehir_disi:4.9,tuketim_l100km:6.4,co2_gkm:148,depo_l:58,uzunluk_mm:4639,genislik_mm:1860,yukseklik_mm:1450,agirlik_kg:1530,bagaj_l:480,jant_inch:18,airbag_sayisi:6,abs:"Var",esp:"Var"}},
+ {id:"alfa-romeo-giulia-2023-competizione-q4", marka:"Alfa Romeo", model:"Giulia", yil:2023, versiyon:"Competizione Q4 2.0 Turbo 280 HP AWD (lansmana özel)",
+  kaynakAd:"albayrac.com (yetkili bayi)", kaynakUrl:"https://albayrac.com/yenilenen-alfa-romeo-giulia-ve-stelvio-turkiyede-satisa-sunuldu/",
+  durum:"Türkiye'de satıştan kaldırıldı (son satılan facelift: 2023). Güncel liste fiyatı yok.",
+  s:{segment:"D (Üst-orta sedan)",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4 (AWD/Q4)",koltuk:5,kapi:4,cc:1995,silindir:4,besleme:"Turbo",guc_hp:280,tork_nm:400,abs:"Var",esp:"Var"}},
+ {id:"alfa-romeo-stelvio-2023-veloce-q4", marka:"Alfa Romeo", model:"Stelvio", yil:2023, versiyon:"Veloce Q4 2.0 Turbo 280 HP AWD",
+  kaynakAd:"albayrac.com (yetkili bayi)", kaynakUrl:"https://albayrac.com/yenilenen-alfa-romeo-giulia-ve-stelvio-turkiyede-satisa-sunuldu/",
+  durum:"Türkiye'de satıştan kaldırıldı (son satılan facelift: 2023). Ayrıntılı ölçü/tüketim verisi doğrulanamadı; güncel liste fiyatı yok.",
+  s:{segment:"D-SUV (Orta-üst SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4 (AWD/Q4)",koltuk:5,kapi:5,cc:1995,silindir:4,besleme:"Turbo",guc_hp:280,abs:"Var",esp:"Var"}},
+ {id:"alfa-romeo-stelvio-2023-competizione-q4", marka:"Alfa Romeo", model:"Stelvio", yil:2023, versiyon:"Competizione Q4 2.0 Turbo 280 HP AWD (lansmana özel)",
+  kaynakAd:"albayrac.com (yetkili bayi)", kaynakUrl:"https://albayrac.com/yenilenen-alfa-romeo-giulia-ve-stelvio-turkiyede-satisa-sunuldu/",
+  durum:"Türkiye'de satıştan kaldırıldı (son satılan facelift: 2023). Ayrıntılı ölçü/tüketim verisi doğrulanamadı; güncel liste fiyatı yok.",
+  s:{segment:"D-SUV (Orta-üst SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4 (AWD/Q4)",koltuk:5,kapi:5,cc:1995,silindir:4,besleme:"Turbo",guc_hp:280,abs:"Var",esp:"Var"}},
+ {id:"peugeot-508-2025-allure-bluehdi-130", marka:"Peugeot", model:"508", yil:2025, versiyon:"Allure 1.5 BlueHDi 130 HP EAT8",
+  kaynakAd:"Peugeot Türkiye Basın Merkezi / ShiftDelete.Net (Mayıs 2025)", kaynakUrl:"https://basin.peugeot.com.tr/yenilenen-peugeot-508-turkiyede",
+  durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı. Son liste fiyatı (Mayıs 2025): 2.210.000 TL — güncel fiyat değildir.",
+  s:{segment:"D (Üst-orta sedan/fastback)",kasa:"Fastback (5 kapı Sedan)",yakit:"Dizel",sanziman:"Otomatik (8 ileri, EAT8)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,besleme:"Turbo Dizel",guc_hp:130,tork_nm:300,uzunluk_mm:4750,genislik_mm:1859,yukseklik_mm:1403,dingil_mm:2793,jant_inch:18,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Yok",serit_takip:"Var",geri_gorus_kamera:"Var",ekran_inch:10,dijital_gosterge:"Var"}},
+ {id:"peugeot-508-2025-gt-bluehdi-130", marka:"Peugeot", model:"508", yil:2025, versiyon:"GT 1.5 BlueHDi 130 HP EAT8",
+  kaynakAd:"Peugeot Türkiye Basın Merkezi / ShiftDelete.Net (Mayıs 2025)", kaynakUrl:"https://basin.peugeot.com.tr/yenilenen-peugeot-508-turkiyede",
+  durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı. Son liste fiyatı (Mayıs 2025): 2.454.000 TL — güncel fiyat değildir.",
+  s:{segment:"D (Üst-orta sedan/fastback)",kasa:"Fastback (5 kapı Sedan)",yakit:"Dizel",sanziman:"Otomatik (8 ileri, EAT8)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,besleme:"Turbo Dizel",guc_hp:130,tork_nm:300,uzunluk_mm:4750,genislik_mm:1859,yukseklik_mm:1403,dingil_mm:2793,jant_inch:19,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",ekran_inch:10,dijital_gosterge:"Var"}},
+ {id:"mg-zs-ev-2022-comfort", marka:"MG", model:"ZS EV", yil:2022, versiyon:"Comfort",
+  kaynakAd:"donanimhaber.com (lansman haberi)", kaynakUrl:"https://www.donanimhaber.com/mg-zs-ev-elektrikli-suv-turkiye-de-iste-fiyati-ve-ozellikleri--132225",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı). Lansman fiyatı (~2022): 394.000 TL — güncel fiyat değildir.",
+  s:{segment:"B-SUV (Kompakt SUV)",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites (Redüktör)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:143,tork_nm:353,sifirYuz_sn:8.1,hiz_kmh:140,co2_gkm:0,batarya_kwh:44.5,menzil_km_wltp:263,ac_sarj_dk:420,dc_hizli_sarj_dk_20_80:40,uzunluk_mm:4314,genislik_mm:1809,yukseklik_mm:1620,bagaj_l:448,abs:"Var",esp:"Var",serit_takip:"Var"}},
+ {id:"mg-zs-ev-2022-luxury", marka:"MG", model:"ZS EV", yil:2022, versiyon:"Luxury",
+  kaynakAd:"donanimhaber.com (lansman haberi)", kaynakUrl:"https://www.donanimhaber.com/mg-zs-ev-elektrikli-suv-turkiye-de-iste-fiyati-ve-ozellikleri--132225",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı). Lansman fiyatı (~2022): 409.000 TL — güncel fiyat değildir.",
+  s:{segment:"B-SUV (Kompakt SUV)",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites (Redüktör)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:143,tork_nm:353,sifirYuz_sn:8.1,hiz_kmh:140,co2_gkm:0,batarya_kwh:44.5,menzil_km_wltp:263,ac_sarj_dk:420,dc_hizli_sarj_dk_20_80:40,uzunluk_mm:4314,genislik_mm:1809,yukseklik_mm:1620,bagaj_l:448,abs:"Var",esp:"Var",serit_takip:"Var"}},
+ {id:"toyota-camry-2021-passion-2-5-hybrid", marka:"Toyota", model:"Camry", yil:2021, versiyon:"Passion 2.5 Hybrid e-CVT",
+  kaynakAd:"Toyota Türkiye Resmi Teknik Broşürü / Habertürk", kaynakUrl:"https://www.toyota.com.tr/content/dam/toyota/nmsc/turkey/cars/e-brosur/camry/Camry%202021%20Teknik%20ve%20Donan%C4%B1m%20%C3%96zellikleri_tcm-3043-2303534.pdf",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; 2021 sonrası fiyat listelerine girmedi). Lansman fiyatı (2021): 998.000 TL — güncel fiyat değildir.",
+  s:{kasa:"Sedan",yakit:"Hibrit (Benzin-Elektrik)",sanziman:"e-CVT",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:4,cc:2487,silindir:4,guc_hp:218,tork_nm:221,sifirYuz_sn:8.5,hiz_kmh:180,tuketim_sehir_ici:4.7,tuketim_sehir_disi:4.3,tuketim_l100km:4.3,co2_gkm:98,depo_l:50,uzunluk_mm:4885,genislik_mm:1840,yukseklik_mm:1445,dingil_mm:2825,agirlik_kg:1595,bagaj_l:524,jant_inch:18,airbag_sayisi:7,abs:"Var",esp:"Var",koltuk_isitma:"Var",ekran_inch:9,carplay_android_auto:"Var",garanti_yil:10,garanti_km:160000,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"nissan-navara-2021-platinum-2-3-dci-190hp-4x4-at", marka:"Nissan", model:"Navara", yil:2021, versiyon:"Platinum 2.3 dCi 190 HP Otomatik 4x4",
+  kaynakAd:"Arabavs.com", kaynakUrl:"https://www.arabavs.com/model/2021/nissan/navara/2-3-dci/platinum-otomatik.html",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; yeni nesil Navara henüz Türkiye'de satışa çıkmadı).",
+  s:{segment:"Pickup",kasa:"Çift Kabin Pickup",yakit:"Dizel",sanziman:"Otomatik (7 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:2298,silindir:4,besleme:"Turbo",guc_hp:190,tork_nm:450,sifirYuz_sn:10.8,hiz_kmh:180,tuketim_sehir_ici:8.8,tuketim_sehir_disi:5.9,tuketim_l100km:7.4,emisyon_normu:"Euro 6",depo_l:80,uzunluk_mm:5300,genislik_mm:1850,yukseklik_mm:1790,agirlik_kg:1993,jant_inch:18,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Dijital otomatik klima",koltuk_isitma:"Var",anahtarsiz_giris:"Var",garanti_yil:3,garanti_km:100000}},
+ {id:"nissan-navara-2021-tekna-2-3-dci-160hp-4x4-mt", marka:"Nissan", model:"Navara", yil:2021, versiyon:"Tekna 2.3 dCi 160 HP Manuel 4x4",
+  kaynakAd:"Arabavs.com", kaynakUrl:"https://www.arabavs.com/model/2021/nissan/navara/2-3-dci/tekna-manuel.html",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; yeni nesil Navara henüz Türkiye'de satışa çıkmadı).",
+  s:{segment:"Pickup",kasa:"Çift Kabin Pickup",yakit:"Dizel",sanziman:"Manuel (6 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:2298,silindir:4,besleme:"Turbo",guc_hp:160,tork_nm:403,sifirYuz_sn:12.0,hiz_kmh:172,tuketim_sehir_ici:7.1,tuketim_sehir_disi:6.0,tuketim_l100km:6.5,depo_l:80,uzunluk_mm:5300,genislik_mm:1850,yukseklik_mm:1790,agirlik_kg:1993,jant_inch:16,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Klima (tip belirtilmemiş)",garanti_yil:3,garanti_km:100000}},
+ {id:"hyundai-accent-blue-2018-mode-1-6-crdi-136hp-mt", marka:"Hyundai", model:"Accent Blue", yil:2018, versiyon:"Mode 1.6 CRDi 136 HP Manuel",
+  kaynakAd:"Epey.com", kaynakUrl:"https://www.epey.com/araba/2018-hyundai-accent-blue-1-6-crdi-136-ps-mode.html",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; 2018 verisi son doğrulanabilir jenerasyona ait).",
+  s:{segment:"B-Segment Sedan",kasa:"Sedan",yakit:"Dizel",sanziman:"Manuel (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1582,silindir:4,besleme:"Turbo (Common Rail)",guc_hp:136,tork_nm:260,sifirYuz_sn:10.1,hiz_kmh:190,tuketim_sehir_ici:5.5,tuketim_sehir_disi:4.0,tuketim_l100km:4.5,co2_gkm:119,depo_l:43,uzunluk_mm:4370,genislik_mm:1700,yukseklik_mm:1457,agirlik_kg:1240,bagaj_l:465,jant_inch:14,airbag_sayisi:2,abs:"Var",esp:"Var",klima:"Manuel"}},
+ {id:"hyundai-accent-blue-2018-mode-plus-1-4-dcvvt-100hp-cvt", marka:"Hyundai", model:"Accent Blue", yil:2018, versiyon:"Mode Plus 1.4 D-CVVT 100 HP CVT Otomatik",
+  kaynakAd:"Epey.com", kaynakUrl:"https://www.epey.com/araba/2018-hyundai-accent-blue-1-4-d-cvvt-100-ps-cvt-mode-plus.html",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; 2018 verisi son doğrulanabilir jenerasyona ait).",
+  s:{segment:"B-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (CVT)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.2,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.4,tuketim_l100km:6.4,co2_gkm:149,depo_l:43,uzunluk_mm:4370,genislik_mm:1700,yukseklik_mm:1457,agirlik_kg:1135,bagaj_l:465,jant_inch:16,airbag_sayisi:2,ncap_yildiz:5,abs:"Var",esp:"Var",klima:"Manuel",garanti_yil:5,garanti_km:160000,boya_garanti_yil:5,pas_garanti_yil:5}},
+ {id:"hyundai-elantra-2024-prime-1-6-mpi-cvt", marka:"Hyundai", model:"Elantra", yil:2024, versiyon:"Prime 1.6 MPI 123 HP CVT Otomatik",
+  kaynakAd:"Arabavs.com", kaynakUrl:"https://arabavs.com/model/2024/hyundai/elantra/1-6-mpi/prime-otomatik.html",
+  durum:"Türkiye'de Şubat 2025'te satıştan kaldırıldı. Son liste fiyatı (Ocak 2025): 1.699.000 TL — güncel fiyat değildir.",
+  s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (CVT-6)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1598,silindir:4,besleme:"Atmosferik",guc_hp:123,tork_nm:154,sifirYuz_sn:10.7,hiz_kmh:195,tuketim_sehir_ici:6.6,tuketim_sehir_disi:5.3,tuketim_l100km:5.9,co2_gkm:134,depo_l:47,uzunluk_mm:4710,genislik_mm:1825,yukseklik_mm:1430,agirlik_kg:1290,bagaj_l:474,jant_inch:17,abs:"Var",esp:"Var",yokus_kalkis:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Dijital otomatik klima"}},
+ {id:"hyundai-elantra-2023-elite-1-6-mpi-cvt", marka:"Hyundai", model:"Elantra", yil:2023, versiyon:"Elite 1.6 MPI 123 HP CVT Otomatik",
+  kaynakAd:"Arabavs.com", kaynakUrl:"https://www.arabavs.com/model/2023/hyundai/elantra/1-6-mpi/elite-otomatik.html",
+  durum:"Türkiye'de Şubat 2025'te satıştan kaldırıldı. Son liste fiyatı (Ocak 2025): 1.820.000 TL — güncel fiyat değildir.",
+  s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (CVT-6)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1598,silindir:4,besleme:"Atmosferik",guc_hp:123,tork_nm:154,sifirYuz_sn:10.7,hiz_kmh:195,tuketim_sehir_ici:8.6,tuketim_sehir_disi:5.6,tuketim_l100km:7.1,co2_gkm:134,depo_l:47,uzunluk_mm:4650,genislik_mm:1825,yukseklik_mm:1430,agirlik_kg:1265,bagaj_l:474,jant_inch:17,abs:"Var",esp:"Var",yokus_kalkis:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Dijital otomatik klima",acilir_tavan:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var"}},
+ {id:"kia-cerato-2024-elegance-1-6-mpi-at", marka:"Kia", model:"Cerato", yil:2024, versiyon:"Elegance 1.6 MPI 128 HP Otomatik",
+  kaynakAd:"Arabavs.com", kaynakUrl:"https://arabavs.com/model/2024/kia/cerato/1-6-mpi/elegance-otomatik.html",
+  durum:"Türkiye'de Ocak 2025'te satıştan kaldırıldı. Son liste fiyatı: 1.280.000 TL — güncel fiyat değildir.",
+  s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1591,silindir:4,besleme:"Atmosferik",guc_hp:128,tork_nm:154,sifirYuz_sn:11.6,hiz_kmh:195,tuketim_sehir_ici:9.8,tuketim_sehir_disi:5.9,tuketim_l100km:7.9,depo_l:50,uzunluk_mm:4640,genislik_mm:1800,yukseklik_mm:1450,agirlik_kg:1220,bagaj_l:502,jant_inch:16,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Manuel",garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
+ {id:"kia-cerato-2024-prestige-1-6-mpi-at", marka:"Kia", model:"Cerato", yil:2024, versiyon:"Prestige 1.6 MPI 128 HP Otomatik",
+  kaynakAd:"Arabavs.com", kaynakUrl:"https://arabavs.com/model/2024/kia/cerato/1-6-mpi/prestige-otomatik.html",
+  durum:"Türkiye'de Ocak 2025'te satıştan kaldırıldı. Son liste fiyatı: 1.430.000 TL — güncel fiyat değildir.",
+  s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1591,silindir:4,besleme:"Atmosferik",guc_hp:128,tork_nm:154,sifirYuz_sn:11.6,hiz_kmh:195,tuketim_sehir_ici:9.8,tuketim_sehir_disi:5.9,tuketim_l100km:7.9,depo_l:50,uzunluk_mm:4640,genislik_mm:1800,yukseklik_mm:1450,agirlik_kg:1220,bagaj_l:502,jant_inch:17,airbag_sayisi:2,abs:"Var",esp:"Var",yokus_kalkis:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Manuel",anahtarsiz_giris:"Var",garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
+ {id:"kia-rio-2023-elegance-konfor-1-4-at", marka:"Kia", model:"Rio", yil:2023, versiyon:"Hatchback Elegance Konfor 1.4 100 HP Otomatik",
+  kaynakAd:"Epey.com", kaynakUrl:"https://www.epey.com/araba/2023-kia-rio-hb-1-4-100-ps-otomatik-elegance-konfor.html",
+  durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı. Son liste fiyatı (Aralık 2023): 1.058.000 TL — güncel fiyat değildir.",
+  s:{segment:"B-Segment Hatchback",kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.9,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.0,tuketim_l100km:6.2,co2_gkm:142,depo_l:45,uzunluk_mm:4065,genislik_mm:1725,yukseklik_mm:1450,agirlik_kg:1090,bagaj_l:300,ncap_yildiz:3,garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
+ {id:"kia-rio-2023-cool-1-4-at", marka:"Kia", model:"Rio", yil:2023, versiyon:"Hatchback Cool 1.4 100 HP Otomatik (giriş donanımı)",
+  kaynakAd:"Epey.com", kaynakUrl:"https://www.epey.com/araba/2023-kia-rio-hb-1-4-100-ps-otomatik-cool.html",
+  durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı. Son liste fiyatı (Aralık 2023): 955.000 TL — güncel fiyat değildir.",
+  s:{segment:"B-Segment Hatchback",kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.9,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.0,tuketim_l100km:6.2,co2_gkm:142,depo_l:45,uzunluk_mm:4065,genislik_mm:1725,yukseklik_mm:1450,agirlik_kg:1090,bagaj_l:300,ncap_yildiz:3,garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}}
 ];
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, kullanılan başlıkların tamamı burada.
@@ -1411,7 +1494,7 @@ function render(){
   if(!html) html = '<div class="row"><div class="label" style="grid-column:1/-1;padding:20px 14px;text-align:center">Seçili araçlar arasında fark bulunamadı.</div></div>';
   $('rows').innerHTML = html;
 
-  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader"><div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div><a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a></div>`;
+  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader"><div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div>${c.durum?`<div class="hnote">⚠ ${esc(c.durum)}</div>`:''}<a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a></div>`;
   $('head').innerHTML = sides.map((s,i)=>head(s,cars[i])).join('');
 
   const seen = new Set();
