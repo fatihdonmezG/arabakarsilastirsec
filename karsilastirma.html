@@ -79,6 +79,8 @@ select:focus-visible{border-color:var(--accent)}
 .hcell{padding:22px 24px;min-width:0}
 .hcell + .hcell{border-left:1px solid var(--line)}
 .hgap{display:none}
+.hphoto{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--surface2);border:1px solid var(--line);margin-bottom:12px}
+.hphoto-ph{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/10;background:var(--surface2);border:1px solid var(--line);margin-bottom:12px;color:var(--muted);font-size:.72rem;text-align:center;padding:0 10px}
 .hname{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25;overflow-wrap:anywhere;color:var(--ink)}
 .hsub{font-size:.82rem;color:var(--muted);line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
 .hsrc{display:inline-block;margin-top:10px;font-size:.76rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line-strong)}
@@ -1794,21 +1796,27 @@ const CARS = [
     hiç eklenmedi. Chevrolet garanti: 2 yıl/100.000 km araç + 2 yıl/60.000 km orijinal parça. */
  {id:"cadillac-escalade-2026-sport-platinum", marka:"Cadillac", model:"Escalade", yil:2026, versiyon:"Sport Platinum / Luxury Platinum",
   kaynakAd:"otomobil.com.tr (Tur Oto resmi lansman haberi) / gmsv-turoto.com.tr (resmi distribütör sitesi) / cadillac.com (resmi global teknik veri)", kaynakUrl:"https://www.otomobil.com.tr/cadillac-chevrolet-gmc-turkiye-fiyatlari/",
+  foto:"assets/car-photos/cadillac-escalade.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Cadillac_Escalade",
   s:{segment:"Full-size Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (10 ileri, Electronic Precision Shift)",koltuk:8,kapi:5,cc:6200,silindir:8,besleme:"Doğal emişli (Supercharger yok)",guc_hp:420,tork_nm:624,uzunluk_mm:5383,genislik_mm:2059,yukseklik_mm:1948,dingil_mm:3073,bagaj_l:722,jant_inch:22,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",klima:"Var (3 bölgeli otomatik)",koltuk_isitma:"Var (ön ve 2. sıra, ventilasyon ve masaj da mevcut)",ekran_inch:55,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:37500000}},
  {id:"cadillac-escalade-esv-2026-sport-platinum", marka:"Cadillac", model:"Escalade ESV", yil:2026, versiyon:"Sport Platinum / Luxury Platinum",
   kaynakAd:"otomobil.com.tr (Tur Oto resmi lansman haberi) / gmsv-turoto.com.tr (resmi distribütör sitesi) / cadillac.com (resmi global teknik veri)", kaynakUrl:"https://www.otomobil.com.tr/cadillac-chevrolet-gmc-turkiye-fiyatlari/",
+  foto:"assets/car-photos/cadillac-escalade-esv.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Cadillac_Escalade_ESV",
   s:{segment:"Full-size Lüks SUV (Uzun Dingil)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (10 ileri, Electronic Precision Shift)",koltuk:8,kapi:5,cc:6200,silindir:8,besleme:"Doğal emişli (Supercharger yok)",guc_hp:420,tork_nm:624,uzunluk_mm:5766,genislik_mm:2059,yukseklik_mm:1948,dingil_mm:3404,bagaj_l:1175,jant_inch:22,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",klima:"Var (3 bölgeli otomatik)",koltuk_isitma:"Var (ön ve 2. sıra, ventilasyon ve masaj da mevcut)",ekran_inch:55,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:40000000}},
  {id:"cadillac-escalade-2026-v-series", marka:"Cadillac", model:"Escalade", yil:2026, versiyon:"V-Series",
   kaynakAd:"otomobil.com.tr (Tur Oto resmi lansman haberi) / gmsv-turoto.com.tr (resmi distribütör sitesi) / news.cadillac.com (resmi basın bülteni)", kaynakUrl:"https://www.otomobil.com.tr/cadillac-chevrolet-gmc-turkiye-fiyatlari/",
+  foto:"assets/car-photos/cadillac-escalade.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Cadillac_Escalade",
   s:{segment:"Full-size Performans Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (10 ileri, Hydra-Matic)",koltuk:7,kapi:5,cc:6200,silindir:8,besleme:"Süperşarjlı (2.65L TVS mekanik kompresör)",guc_hp:682,tork_nm:885,cekis:"4x4 (Full-time Active AWD)",uzunluk_mm:5383,genislik_mm:2059,yukseklik_mm:1948,dingil_mm:3073,bagaj_l:722,jant_inch:24,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",klima:"Var (3 bölgeli otomatik)",koltuk_isitma:"Var (ön ve 2. sıra, ventilasyon ve masaj da mevcut)",ekran_inch:55,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:47500000}},
  {id:"chevrolet-tahoe-2026-rst", marka:"Chevrolet", model:"Tahoe", yil:2026, versiyon:"RST",
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör Sitesi)", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/chevrolet/tahoe",
+  foto:"assets/car-photos/chevrolet-tahoe.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Chevrolet_Tahoe",
   s:{segment:"Tam boy SUV",kasa:"SUV",yakit:"Benzin",sanziman:"10 ileri otomatik",koltuk:7,cc:6200,silindir:8,besleme:"EcoTec3 V8 (Dynamic Fuel Management)",guc_hp:420,uzunluk_mm:5367,genislik_mm:2057,yukseklik_mm:1938,jant_inch:22,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",anahtarsiz_giris:"Var",ekran_inch:17.7,carplay_android_auto:"Var",dijital_gosterge:"Var",garanti_yil:2,garanti_km:100000}},
  {id:"chevrolet-tahoe-2026-high-country", marka:"Chevrolet", model:"Tahoe", yil:2026, versiyon:"High Country",
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör Sitesi)", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/chevrolet/tahoe",
+  foto:"assets/car-photos/chevrolet-tahoe.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Chevrolet_Tahoe",
   s:{segment:"Tam boy SUV",kasa:"SUV",yakit:"Benzin",sanziman:"10 ileri otomatik",koltuk:7,cc:6200,silindir:8,besleme:"EcoTec3 V8 (Dynamic Fuel Management)",guc_hp:420,uzunluk_mm:5367,genislik_mm:2057,yukseklik_mm:1938,jant_inch:24,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",ekran_inch:17.7,carplay_android_auto:"Var",dijital_gosterge:"Var",garanti_yil:2,garanti_km:100000}},
  {id:"chevrolet-suburban-2026-high-country", marka:"Chevrolet", model:"Suburban", yil:2026, versiyon:"High Country",
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör Sitesi)", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/chevrolet/suburban",
+  foto:"assets/car-photos/chevrolet-suburban.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Chevrolet_Suburban",
   s:{segment:"Tam boy SUV",kasa:"SUV",yakit:"Benzin",sanziman:"10 ileri otomatik",koltuk:7,cc:6200,silindir:8,besleme:"EcoTec3 V8 (Dynamic Fuel Management)",guc_hp:420,uzunluk_mm:5748,genislik_mm:2057,yukseklik_mm:1935,jant_inch:24,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",ekran_inch:17.7,carplay_android_auto:"Var",dijital_gosterge:"Var",garanti_yil:2,garanti_km:100000}},
  /* --- GMC + Alpine — 2026-10-06 araştırması (Claude ajanları ile). "GM dönüşü + diğer" grubunun
     2. ikilisi. GMC — resmi distribütör GM-SV Tur Oto; GÜNCEL olarak sadece Sierra Denali (3.0L
@@ -1825,18 +1833,23 @@ const CARS = [
     kaynağında bulunamadığı için eklenmedi. */
  {id:"gmc-sierra-2026-denali", marka:"GMC", model:"Sierra", yil:2026, versiyon:"Denali 3.0 Duramax Turbo Dizel 4x4",
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör) / donanimhaber.com / pece4x4.com", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/gmc/sierra",
+  foto:"assets/car-photos/gmc-sierra.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:GMC_Sierra",
   s:{segment:"Premium Pickup (Full-size)",kasa:"Crew Cab Pickup",yakit:"Dizel",sanziman:"Otomatik (10 ileri)",cekis:"4x4",cc:3000,silindir:6,guc_hp:305,tork_nm:671,uzunluk_mm:6133,genislik_mm:2063,yukseklik_mm:1915,jant_inch:"20 (standart) / 22 (opsiyonel)",abs:"Var",esp:"Var (StabiliTrak)",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var (14 kameraya kadar çevre görüş)",klima:"Var (çift bölgeli otomatik klima)",ekran_inch:13.4,carplay_android_auto:"Var (Kablosuz)",dijital_gosterge:"Var (12.3 inç dijital gösterge paneli)",garanti_yil:2,garanti_km:100000}},
  {id:"gmc-yukon-2026-denali", marka:"GMC", model:"Yukon", yil:2026, versiyon:"Denali",
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör) / donanimhaber.com", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/gmc/yukon",
+  foto:"assets/car-photos/gmc-yukon.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:GMC_Yukon",
   s:{segment:"Premium Full-Size SUV",kasa:"SUV (3 sıra koltuklu)",yakit:"Benzin",sanziman:"Otomatik (10 ileri)",cekis:"4WD (Active Response 4WD System)",cc:6200,silindir:8,guc_hp:420,tork_nm:624,uzunluk_mm:5337,genislik_mm:2057,yukseklik_mm:1943,jant_inch:"22 / 24 (opsiyonel)",abs:"Var",esp:"Var (StabiliTrak)",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var (13 kameraya kadar çevre görüş)",klima:"Var",koltuk_isitma:"Var (ön koltuklar, 8 yönlü elektrikli ısıtmalı)",ekran_inch:16.8,carplay_android_auto:"Var (Kablosuz)",dijital_gosterge:"Var (11 inç dijital gösterge + 15 inç Head-Up Display)",garanti_yil:2,garanti_km:100000}},
  {id:"alpine-a290-2026-gt-performance", marka:"Alpine", model:"A290", yil:2026, versiyon:"GT Performance",
   kaynakAd:"otomobil.com.tr - Alpine Fiyat Listesi (20 Eylül 2026)", kaynakUrl:"https://www.otomobil.com.tr/alpine-fiyat-listesi/",
+  foto:"assets/car-photos/alpine-a290.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Alpine_A290",
   s:{segment:"B-segment elektrikli hot-hatch",kasa:"Hatchback",yakit:"Elektrik",sanziman:"Tek ileri vites (Otomatik)",koltuk:5,kapi:5,guc_hp:220,tork_nm:300,uzunluk_mm:3997,genislik_mm:1823,yukseklik_mm:1512,bagaj_l:326,jant_inch:19,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",ekran_inch:10.1,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:2315000,batarya_kwh:52,menzil_km_wltp:380,hizlanma_0_100_sn:6.4,max_hiz_kmh:170}},
  {id:"alpine-a290-2026-gts", marka:"Alpine", model:"A290", yil:2026, versiyon:"GTS",
   kaynakAd:"otomobil.com.tr - Alpine Fiyat Listesi / A290 GTS Test Sürüşü (20 Eylül 2026)", kaynakUrl:"https://www.otomobil.com.tr/alpine-a290-gts-test-surusu/",
+  foto:"assets/car-photos/alpine-a290.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Alpine_A290",
   s:{segment:"B-segment elektrikli hot-hatch (üst donanım)",kasa:"Hatchback",yakit:"Elektrik",sanziman:"Tek ileri vites (Otomatik)",koltuk:5,kapi:5,guc_hp:220,tork_nm:300,uzunluk_mm:3997,genislik_mm:1823,yukseklik_mm:1512,bagaj_l:300,jant_inch:19,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",ekran_inch:10.1,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:2463000,batarya_kwh:52,menzil_km_wltp:364,hizlanma_0_100_sn:6.4,max_hiz_kmh:170}},
  {id:"alpine-a390-2026-gt", marka:"Alpine", model:"A390", yil:2026, versiyon:"GT",
   kaynakAd:"otomobil.com.tr - Alpine Fiyat Listesi (20 Eylül 2026)", kaynakUrl:"https://www.otomobil.com.tr/alpine-fiyat-listesi/",
+  foto:"assets/car-photos/alpine-a390.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/File:Alpine_A390_GT_(55088754941).jpg",
   s:{segment:"Elektrikli performans fastback",kasa:"Fastback (5 kapı)",yakit:"Elektrik",sanziman:"Tek ileri vites (Otomatik, 4 çeker - AWD)",koltuk:5,kapi:5,guc_hp:400,tork_nm:661,uzunluk_mm:4615,genislik_mm:1885,yukseklik_mm:1532,bagaj_l:532,jant_inch:20,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",koltuk_isitma:"Var",ekran_inch:12,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:6300000,batarya_kwh:89,menzil_km_wltp:555,hizlanma_0_100_sn:4.8}},
 ];
 
@@ -2040,7 +2053,13 @@ function render(){
   if(!html) html = '<div class="row"><div class="label" style="grid-column:1/-1;padding:20px 14px;text-align:center">Seçili araçlar arasında fark bulunamadı.</div></div>';
   $('rows').innerHTML = html;
 
-  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader"><div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div>${c.durum?`<div class="hnote">⚠ ${esc(c.durum)}</div>`:''}<a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a></div>`;
+  const photoHtml = c => c.foto
+    ? `<img class="hphoto" src="${esc(c.foto)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy">`
+    : `<div class="hphoto-ph" aria-hidden="true">Fotoğraf eklenmedi</div>`;
+  const fotoSrcHtml = c => c.fotoKaynakUrl
+    ? `<a class="hsrc" href="${esc(c.fotoKaynakUrl)}" target="_blank" rel="noopener">Fotoğraf: ${esc(c.fotoKaynakAd||'Kaynak')} ↗</a>`
+    : '';
+  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader">${photoHtml(c)}<div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div>${c.durum?`<div class="hnote">⚠ ${esc(c.durum)}</div>`:''}<a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a>${fotoSrcHtml(c)?'<br>'+fotoSrcHtml(c):''}</div>`;
   $('head').innerHTML = '<div class="hgap" aria-hidden="true"></div>' + sides.map((s,i)=>head(s,cars[i])).join('');
 
   const seen = new Set();
