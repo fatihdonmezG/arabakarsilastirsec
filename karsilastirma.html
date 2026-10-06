@@ -144,7 +144,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 49 marka ve 463 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
+    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 51 marka ve 477 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
   </div>
 </section>
 
@@ -1686,6 +1686,61 @@ const CARS = [
  {id:"maserati-mc20-2025-cielo", marka:"Maserati", model:"MC20", yil:2025, versiyon:"Cielo (Açılır Tavan)",
   kaynakAd:"Sifiraracal.com (fiyat/versiyon) + Maserati.com resmi global spec sayfası", kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/mc20",
   s:{segment:"Süper Spor",kasa:"Cabrio",yakit:"Benzin",sanziman:"Otomatik (8 ileri DCT)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,cc:2992,silindir:6,besleme:"Twin-Turbo (Nettuno V6)",guc_hp:630,tork_nm:730,sifirYuz_sn:2.9,hiz_kmh:325,depo_l:50,liste_fiyati_tl:38963400}},
+ /* --- Ferrari + Aston Martin — 2026-10-06 araştırması (Claude ajanları ile). Lüks/egzotik grubunun 3.
+    ikilisi. Ferrari: distribütör Fer-Mas Oto Ticaret A.Ş. (Tofaş iştiraki, 2005'ten beri); Amalfi
+    (Roma'nın yerini aldı, TR fiyatı 3 bağımsız kaynakla teyitli), Purosangue, 296 GTB, 296 GTS eklendi
+    — 4 versiyon. 12Cilindri (Coupe/Spider) kasıtlı olarak eklenmedi: araştırmacı ajan bunun TR'ye özgü
+    doğrudan satış/teslim kanıtı bulamadığını, sadece markanın güncel global modeli olmasından dolaylı
+    çıkarım yaptığını belirtti — siteninin katı kaynak standardı gereği dışarıda bırakıldı. Roma/
+    Portofino M/812 Superfast/F8 Tributo/SF90 Stradale yeni modellerle değiştirildi, 849 Testarossa
+    sadece tanıtıldı (TR satışı yok) — eklenmedi; hiçbirinde TL fiyat bulunamadı (Amalfi hariç).
+    Aston Martin: distribütör Yeniköy Motors (D ve D Motorlu Araçlar A.Ş., Hongqi'yi de temsil ediyor);
+    Vantage (Coupe/S/Roadster), DB12 (Coupe/S/Volante), DBX (707/S), Vanquish (Coupe/Volante) eklendi
+    — 10 versiyon. astonmartin.com.tr hiçbir modelde TL fiyat/garanti yayınlamadığı için bu alanlar
+    boş; Valhalla/Valour/Valiant/Valen gibi ultra-sınırlı "Specials" (sold-out/tahsisli) ve DB12
+    Goldfinger Edition eklenmedi. */
+ {id:"ferrari-amalfi-2026-coupe", marka:"Ferrari", model:"Amalfi", yil:2026, versiyon:"Coupe (2+)",
+  kaynakAd:"Ensonhaber - Ferrari Amalfi Türkiye'de satışa çıktı", kaynakUrl:"https://www.ensonhaber.com/ferrari-amalfi-turkiyede-satisa-cikti-iste-fiyati-ve-ozellikleri-h1545954",
+  s:{segment:"Lüks Spor GT (Gran Turismo)",kasa:"Coupe",yakit:"Benzin",sanziman:"Otomatik (8 ileri çift kavramalı)",cc:3855,silindir:8,besleme:"Çift Turbo",guc_hp:640,sifirYuz_sn:3.3,agirlik_kg:1470,ekran_inch:10.25,dijital_gosterge:"Var",abs:"Var (ABS Evo)",liste_fiyati_tl:45000000}},
+ {id:"ferrari-purosangue-2024-suv", marka:"Ferrari", model:"Purosangue", yil:2024, versiyon:"4 Kapı 4 Koltuk SUV",
+  kaynakAd:"Otomobilden.com.tr - Ferrari Purosangue FerMas'ta sergileniyor", kaynakUrl:"https://www.otomobilden.com.tr/ferrarinin-benzersiz-modeli-purosangue-fermasta-sergileniyor/",
+  s:{segment:"Ultra Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri çift kavramalı)",cekis:"4x4",koltuk:4,kapi:4,silindir:12,besleme:"Atmosferik",guc_hp:725,tork_nm:715,sifirYuz_sn:3.3,hiz_kmh:310,bagaj_l:472}},
+ {id:"ferrari-296-2025-gtb", marka:"Ferrari", model:"296", yil:2025, versiyon:"GTB (Coupe)",
+  kaynakAd:"Donanımhaber - 830 beygirlik Ferrari 296 GTB tanıtıldı", kaynakUrl:"https://www.donanimhaber.com/830-beygirlik-ferrari-296-gtb-tanitildi--135168",
+  s:{segment:"Orta Motorlu Süper Spor (Plug-in Hibrit)",kasa:"Coupe",yakit:"Hibrit",sanziman:"Otomatik (8 ileri çift kavramalı)",silindir:6,besleme:"Çift Turbo + Elektrik Motoru",guc_hp:830,tork_nm:740,sifirYuz_sn:2.9,hiz_kmh:330,batarya_kwh:7.45}},
+ {id:"ferrari-296-2025-gts", marka:"Ferrari", model:"296", yil:2025, versiyon:"GTS (Spider)",
+  kaynakAd:"Donanımhaber - Ferrari 296 GTS tanıtıldı", kaynakUrl:"https://www.donanimhaber.com/ferrari-296-gts-tanitildi-iste-tasarimi-ve-ozellikleri--147606",
+  s:{segment:"Orta Motorlu Süper Spor (Plug-in Hibrit)",kasa:"Cabrio",yakit:"Hibrit",sanziman:"Otomatik (8 ileri çift kavramalı)",cekis:"Arkadan İtiş (RWD)",silindir:6,besleme:"Çift Turbo + Elektrik Motoru",guc_hp:830,tork_nm:740,sifirYuz_sn:2.9,hiz_kmh:330,batarya_kwh:7.45}},
+ {id:"aston-martin-vantage-2026-coupe", marka:"Aston Martin", model:"Vantage", yil:2026, versiyon:"Coupe",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site (astonmartin.com.tr, Yeniköy Motors/D ve D Motorlu Araçlar A.Ş.)", kaynakUrl:"https://www.astonmartin.com/en/models/vantage-coupe",
+  s:{segment:"Spor Otomobil / GT",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.5,hiz_kmh:325,tuketim_l100km:12.1,co2_gkm:274,depo_l:73,uzunluk_mm:4495,genislik_mm:1980,yukseklik_mm:1275,dingil_mm:2705,agirlik_kg:1745,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-vantage-2026-s", marka:"Aston Martin", model:"Vantage", yil:2026, versiyon:"S",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/vantage-s",
+  s:{segment:"Spor Otomobil / GT",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.4,hiz_kmh:325,tuketim_l100km:12.1,co2_gkm:274,depo_l:73,uzunluk_mm:4495,genislik_mm:1980,yukseklik_mm:1275,dingil_mm:2705,agirlik_kg:1745,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-vantage-2026-roadster", marka:"Aston Martin", model:"Vantage", yil:2026, versiyon:"Roadster",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/vantage-roadster",
+  s:{segment:"Spor Otomobil / GT",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.6,hiz_kmh:325,tuketim_l100km:12.3,co2_gkm:279,depo_l:73,uzunluk_mm:4495,genislik_mm:1980,yukseklik_mm:1275,dingil_mm:2705,agirlik_kg:1805,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-db12-2026-coupe", marka:"Aston Martin", model:"DB12", yil:2026, versiyon:"Coupe",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/db12",
+  s:{segment:"Grand Tourer (GT)",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:4,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.6,hiz_kmh:325,tuketim_l100km:12.2,co2_gkm:278,depo_l:78,uzunluk_mm:4725,genislik_mm:2135,yukseklik_mm:1295,dingil_mm:2805,agirlik_kg:1788,bagaj_l:262,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-db12-2026-s", marka:"Aston Martin", model:"DB12", yil:2026, versiyon:"S",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/db12-s",
+  s:{segment:"Grand Tourer (GT)",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:4,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:690,tork_nm:800,sifirYuz_sn:3.5,hiz_kmh:325,tuketim_l100km:11.9,co2_gkm:269,depo_l:78,uzunluk_mm:4725,genislik_mm:1980,yukseklik_mm:1290,dingil_mm:2805,agirlik_kg:1820,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-db12-2026-volante", marka:"Aston Martin", model:"DB12", yil:2026, versiyon:"Volante",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/db12-volante",
+  s:{segment:"Grand Tourer (GT)",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:4,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.7,hiz_kmh:325,tuketim_l100km:12.3,co2_gkm:280,depo_l:78,uzunluk_mm:4725,genislik_mm:2135,yukseklik_mm:1295,dingil_mm:2805,agirlik_kg:1898,bagaj_l:206,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-dbx-2026-707", marka:"Aston Martin", model:"DBX", yil:2026, versiyon:"707",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/dbx707",
+  s:{segment:"Performans SUV",kasa:"SUV",yakit:"Benzin",sanziman:"9 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3982,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:707,tork_nm:900,sifirYuz_sn:3.3,hiz_kmh:310,tuketim_l100km:13.5,co2_gkm:309,uzunluk_mm:5039,genislik_mm:1998,yukseklik_mm:1680,dingil_mm:3060,agirlik_kg:2245,bagaj_l:638,jant_inch:22,abs:"Var",esp:"Var",klima:"Var",koltuk_isitma:"Var"}},
+ {id:"aston-martin-dbx-2026-s", marka:"Aston Martin", model:"DBX", yil:2026, versiyon:"S",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/dbx-s",
+  s:{segment:"Performans SUV",kasa:"SUV",yakit:"Benzin",sanziman:"9 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3982,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:727,tork_nm:900,sifirYuz_sn:3.3,hiz_kmh:310,tuketim_l100km:14.3,co2_gkm:323,uzunluk_mm:5039,genislik_mm:1998,yukseklik_mm:1680,dingil_mm:3060,agirlik_kg:2245,bagaj_l:638,abs:"Var",esp:"Var",klima:"Var",koltuk_isitma:"Var"}},
+ {id:"aston-martin-vanquish-2026-coupe", marka:"Aston Martin", model:"Vanquish", yil:2026, versiyon:"Coupe",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en/models/vanquish",
+  s:{segment:"Süper GT",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:12,besleme:"Çift Turbo (V12)",guc_hp:835,tork_nm:1000,sifirYuz_sn:3.3,hiz_kmh:345,tuketim_l100km:13.7,co2_gkm:312,depo_l:82,uzunluk_mm:4855,genislik_mm:2044,yukseklik_mm:1290,dingil_mm:2885,agirlik_kg:1910,bagaj_l:248,abs:"Var",esp:"Var",klima:"Var"}},
+ {id:"aston-martin-vanquish-2026-volante", marka:"Aston Martin", model:"Vanquish", yil:2026, versiyon:"Volante",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en-us/models/vanquish-volante",
+  s:{segment:"Süper GT",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:12,besleme:"Çift Turbo (V12)",guc_hp:835,tork_nm:1000,sifirYuz_sn:3.4,hiz_kmh:345,tuketim_l100km:14.1,co2_gkm:321,depo_l:82,uzunluk_mm:4855,genislik_mm:2044,yukseklik_mm:1295,dingil_mm:2885,agirlik_kg:2005,bagaj_l:219,abs:"Var",esp:"Var",klima:"Var"}},
 ];
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, kullanılan başlıkların tamamı burada.
