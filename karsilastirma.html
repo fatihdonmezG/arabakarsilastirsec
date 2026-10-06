@@ -144,7 +144,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 51 marka ve 477 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
+    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 52 marka ve 486 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
   </div>
 </section>
 
@@ -1741,6 +1741,42 @@ const CARS = [
  {id:"aston-martin-vanquish-2026-volante", marka:"Aston Martin", model:"Vanquish", yil:2026, versiyon:"Volante",
   kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en-us/models/vanquish-volante",
   s:{segment:"Süper GT",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:12,besleme:"Çift Turbo (V12)",guc_hp:835,tork_nm:1000,sifirYuz_sn:3.4,hiz_kmh:345,tuketim_l100km:14.1,co2_gkm:321,depo_l:82,uzunluk_mm:4855,genislik_mm:2044,yukseklik_mm:1295,dingil_mm:2885,agirlik_kg:2005,bagaj_l:219,abs:"Var",esp:"Var",klima:"Var"}},
+ /* --- Rolls-Royce — 2026-10-06 araştırması (Claude ajanları ile). Lüks/egzotik grubunun son (4.) ikilisi;
+    bu eklemeyle "lüks/egzotik önce" fazı tamamlandı. Rolls-Royce: distribütör Royal Motors ("Rolls-Royce
+    Motor Cars Istanbul" showroom); Ghost/Ghost Extended/Ghost Black Badge, Phantom/Phantom Extended,
+    Cullinan/Cullinan Black Badge, Spectre/Spectre Black Badge (Series II, hepsi) eklendi — 9 versiyon.
+    Resmi site hiçbir modelde TL fiyat yayınlamadığı için liste_fiyati_tl hiçbirinde doldurulamadı.
+    Bugatti: Türkiye'de HİÇ resmi/yetkili satış kanalı (bayi, distribütör, showroom) bulunamadı —
+    ensonmodeller.com'un "Bugatti Türkiye yetkili bayi ve servis yok" sayfasıyla doğrulandı; ayrıca
+    global ölçekte de Mistral/Tourbillon lansmandan önce sold-out olmuş, Chiron üretimi bitmiş —
+    bu yüzden hiç eklenmedi (boş sonuç, beklenen ve doğru sonuçtu). */
+ {id:"rolls-royce-ghost-2026-series-ii", marka:"Rolls-Royce", model:"Ghost", yil:2026, versiyon:"Series II",
+  kaynakAd:"Rolls-Royce Press Club (Ghost Series II resmi basın bülteni) + Wikipedia (teyit) + automobiledimension.com", kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0445483EN/ghost-series-ii",
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,sifirYuz_sn:4.3,hiz_kmh:249,tuketim_l100km:15.7,co2_gkm:357,uzunluk_mm:5545,genislik_mm:1998,yukseklik_mm:1573,dingil_mm:3295,agirlik_kg:2553,bagaj_l:464,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-ghost-extended-2026-series-ii", marka:"Rolls-Royce", model:"Ghost Extended", yil:2026, versiyon:"Extended Series II",
+  kaynakAd:"Rolls-Royce Press Club (Ghost Series II resmi basın bülteni) + Wikipedia (teyit)", kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0445483EN/ghost-series-ii",
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,hiz_kmh:249,tuketim_l100km:15.8,co2_gkm:358,uzunluk_mm:5715,dingil_mm:3465,agirlik_kg:2599,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-ghost-black-badge-2026-series-ii", marka:"Rolls-Royce", model:"Ghost Black Badge", yil:2026, versiyon:"Black Badge Series II",
+  kaynakAd:"automobile-catalog.com (Ghost Black Badge teknik veri) + Rolls-Royce Press Club", kaynakUrl:"https://www.automobile-catalog.com/car/2024/3377885/rolls-royce_ghost_black_badge.html",
+  s:{segment:"Ultra Lüks Performans Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:591,tork_nm:900,hiz_kmh:250,uzunluk_mm:5545,genislik_mm:1998,yukseklik_mm:1573,dingil_mm:3295,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-phantom-2026-series-ii", marka:"Rolls-Royce", model:"Phantom", yil:2026, versiyon:"Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Phantom VIII (teyit) + automobiledimension.com + Rolls-Royce resmi showroom sayfası", kaynakUrl:"https://www.rolls-roycemotorcars.com/istanbul/tr_TR/showroom.html",
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:900,sifirYuz_sn:5.3,hiz_kmh:250,uzunluk_mm:5762,genislik_mm:2018,yukseklik_mm:1646,dingil_mm:3552,agirlik_kg:2560,bagaj_l:494,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-phantom-extended-2026-series-ii", marka:"Rolls-Royce", model:"Phantom Extended", yil:2026, versiyon:"Extended Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Phantom VIII (teyit) + Rolls-Royce resmi showroom sayfası", kaynakUrl:"https://www.rolls-roycemotorcars.com/istanbul/tr_TR/showroom.html",
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:900,sifirYuz_sn:5.4,hiz_kmh:250,uzunluk_mm:5982,genislik_mm:2018,yukseklik_mm:1656,dingil_mm:3772,agirlik_kg:2610,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-cullinan-2026-series-ii", marka:"Rolls-Royce", model:"Cullinan", yil:2026, versiyon:"Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Cullinan (teyit) + autocarindia.com + Rolls-Royce resmi showroom sayfası", kaynakUrl:"https://www.autocarindia.com/cars/rolls-royce/cullinan/specifications",
+  s:{segment:"Ultra Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,sifirYuz_sn:5.2,hiz_kmh:250,depo_l:90,uzunluk_mm:5341,genislik_mm:2000,yukseklik_mm:1835,dingil_mm:3295,agirlik_kg:2660,bagaj_l:612,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-cullinan-black-badge-2026-series-ii", marka:"Rolls-Royce", model:"Cullinan Black Badge", yil:2026, versiyon:"Black Badge Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Cullinan (Black Badge verisi) + Rolls-Royce resmi showroom sayfası", kaynakUrl:"https://en.wikipedia.org/wiki/Rolls-Royce_Cullinan",
+  s:{segment:"Ultra Lüks Performans SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:591,tork_nm:900,hiz_kmh:250,depo_l:90,uzunluk_mm:5341,genislik_mm:2000,yukseklik_mm:1835,dingil_mm:3295,agirlik_kg:2660,bagaj_l:612,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-spectre-2026-series-ii", marka:"Rolls-Royce", model:"Spectre", yil:2026, versiyon:"Series II",
+  kaynakAd:"Rolls-Royce Press Club (Spectre Series II resmi basın bülteni) + arenaev.com", kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0458258EN/rolls-royce-presents-spectre-series-ii",
+  s:{segment:"Ultra Lüks Elektrikli Coupe",kasa:"Coupe",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:4,kapi:2,guc_hp:601,tork_nm:1015,sifirYuz_sn:4.3,hiz_kmh:250,co2_gkm:0,batarya_kwh:101.7,batarya_tipi:"Lityum-İyon",menzil_km_wltp:628,uzunluk_mm:5453,genislik_mm:2080,yukseklik_mm:1559,dingil_mm:3210,agirlik_kg:2965,bagaj_l:378,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
+ {id:"rolls-royce-spectre-black-badge-2026-series-ii", marka:"Rolls-Royce", model:"Spectre Black Badge", yil:2026, versiyon:"Black Badge Series II",
+  kaynakAd:"Rolls-Royce Press Club (Spectre Series II resmi basın bülteni) + Wikipedia", kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0458258EN/rolls-royce-presents-spectre-series-ii",
+  s:{segment:"Ultra Lüks Performans Elektrikli Coupe",kasa:"Coupe",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:4,kapi:2,guc_hp:680,tork_nm:1100,hiz_kmh:250,co2_gkm:0,batarya_kwh:101.7,batarya_tipi:"Lityum-İyon",menzil_km_wltp:628,uzunluk_mm:5453,genislik_mm:2080,yukseklik_mm:1559,dingil_mm:3210,agirlik_kg:2975,bagaj_l:378,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
 ];
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, kullanılan başlıkların tamamı burada.
