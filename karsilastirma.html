@@ -144,7 +144,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 34 marka ve 384 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
+    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 36 marka ve 404 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
   </div>
 </section>
 
@@ -1355,7 +1355,80 @@ const CARS = [
   s:{segment:"C-SUV / Elektrikli Crossover",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites Otomatik",koltuk:5,kapi:5,guc_hp:206.9,tork_nm:339,hiz_kmh:175,co2_gkm:0,batarya_kwh:80.6,batarya_tipi:"BYD LFP (ikinci kaynaktan doğrulanamadı)",elektrik_tuketim_kwh100km:13.5,uzunluk_mm:4715,genislik_mm:1890,yukseklik_mm:1715,agirlik_kg:1915,bagaj_l:839,liste_fiyati_tl:2474830}},
  {id:"kgm-musso-ev-2026-standard", marka:"KGM (SsangYong)", model:"Musso EV", yil:2026, versiyon:"Musso EV (Elektrikli Pickup, Önden Çekiş)",
   kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi)", kaynakUrl:"https://www.ssangyong.com.tr/musso-ev",
-  s:{segment:"Pickup / Elektrikli Kamyonet",kasa:"Pickup (Double Cab)",yakit:"Elektrik",sanziman:"Otomatik (1 ileri)",cekis:"4x2 (Önden Çekiş)",kapi:4,guc_hp:206.9,tork_nm:339,hiz_kmh:162,co2_gkm:0,batarya_kwh:80.6,elektrik_tuketim_kwh100km:23.0,uzunluk_mm:5160,genislik_mm:1920,yukseklik_mm:1740,agirlik_kg:2165,jant_inch:17,liste_fiyati_tl:2454874}}
+  s:{segment:"Pickup / Elektrikli Kamyonet",kasa:"Pickup (Double Cab)",yakit:"Elektrik",sanziman:"Otomatik (1 ileri)",cekis:"4x2 (Önden Çekiş)",kapi:4,guc_hp:206.9,tork_nm:339,hiz_kmh:162,co2_gkm:0,batarya_kwh:80.6,elektrik_tuketim_kwh100km:23.0,uzunluk_mm:5160,genislik_mm:1920,yukseklik_mm:1740,agirlik_kg:2165,jant_inch:17,liste_fiyati_tl:2454874}},
+ /* --- Audi — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
+    audi.com.tr WebFetch'e kapalı olduğu için Google indeksi + fiyatlistesi.audi.com.tr + arabam.com/sifiraracal.com/teknoblog gibi
+    güncel (Eylül-Ekim 2026) fiyat listesi haberleri çapraz doğrulanarak araştırıldı. Araştırılıp satıştan kaldırıldığı/
+    ikame edildiği için EKLENMEYEN modeller: Q8 e-tron (Q6 e-tron'un yerini aldı), A4 (A5 ailesi yerini aldı),
+    RS 6 Avant (güncel fiyat listesinde doğrulanamadı). */
+ {id:"audi-a3-sedan-2026-advanced-35-tfsi", marka:"Audi", model:"A3", yil:2026, versiyon:"Sedan Advanced 35 TFSI S tronic (110 kW/150 hp)",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / otoviraj.com / borlease.com.tr", kaynakUrl:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/audi-fiyat-listesi/",
+  s:{segment:"C (Kompakt)",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (7 ileri S tronic)",cekis:"Önden çekiş",koltuk:5,kapi:4,cc:1498,silindir:4,besleme:"Turbo + Mild Hybrid (MHEV)",guc_hp:150,tork_nm:250,sifirYuz_sn:8.4,hiz_kmh:232,uzunluk_mm:4504,genislik_mm:1816,yukseklik_mm:1417,dingil_mm:2636,bagaj_l:425,esp:true,yokus_kalkis:true,dijital_gosterge:true,liste_fiyati_tl:4297796,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-a5-sedan-2026-tdi-quattro-204", marka:"Audi", model:"A5", yil:2026, versiyon:"Sedan TDI quattro 150 kW (204 PS) S tronic",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / mukayese.com teknik özellikler", kaynakUrl:"https://mukayese.com/otomobil/audi-modelleri/a5-sportback-ozellikleri/40-tdi-quattro-204-hp-s-line-s-tronic-pi",
+  s:{segment:"D (Orta-üst sınıf)",kasa:"Sedan",yakit:"Dizel",sanziman:"Otomatik (7 ileri S tronic)",cekis:"quattro (4x4)",koltuk:5,kapi:4,cc:1968,silindir:4,besleme:"Turbo dizel + Mild Hybrid",guc_hp:204,tork_nm:400,sifirYuz_sn:7.4,hiz_kmh:235,tuketim_sehir_ici:5.3,tuketim_sehir_disi:4.4,tuketim_l100km:4.7,co2_gkm:117,depo_l:61,liste_fiyati_tl:8900973,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-a6-sedan-2026-tdi-quattro-204", marka:"Audi", model:"A6", yil:2026, versiyon:"Sedan TDI quattro 150 kW (204 PS) S tronic",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / otokokpit.com teknik inceleme", kaynakUrl:"https://www.otokokpit.com/yeni-kasa-audi-a6-c9-turkiye-fiyati/",
+  s:{segment:"D (Üst-orta sınıf)",kasa:"Sedan",yakit:"Dizel",sanziman:"Otomatik (7 ileri S tronic)",cekis:"quattro (4x4)",koltuk:5,kapi:4,cc:1968,silindir:4,besleme:"Turbo dizel",guc_hp:204,tork_nm:400,sifirYuz_sn:7.8,hiz_kmh:244,tuketim_l100km:4.8,co2_gkm:126,depo_l:60,uzunluk_mm:4999,genislik_mm:1875,yukseklik_mm:1452,dingil_mm:2923,agirlik_kg:1985,bagaj_l:452,liste_fiyati_tl:11618199,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-a6-sportback-e-tron-2026-performance", marka:"Audi", model:"A6 e-tron", yil:2026, versiyon:"Sportback e-tron performance",
+  kaynakAd:"teknoburada.net / otomobil.com.tr / arabam.com Audi Fiyat Listesi", kaynakUrl:"https://www.teknoburada.net/756-kmye-kadar-menzil-sunabilen-audi-a6-e-tron-satisa-sunuldu/",
+  s:{segment:"D (Üst-orta sınıf)",kasa:"Sportback (Elektrikli)",yakit:"Elektrik",sanziman:"Tek viteslı (indirgeme dişlisi)",cekis:"Arkadan itiş (tekli motor)",koltuk:5,kapi:4,guc_hp:367,tork_nm:565,batarya_kwh:94.9,batarya_tipi:"Lityum-iyon (100 kWh brüt / 94,9 kWh net)",menzil_km_wltp:756,dc_hizli_sarj_dk_20_80:21,uzunluk_mm:4928,genislik_mm:1923,yukseklik_mm:1487,dingil_mm:2946,liste_fiyati_tl:9460392,garanti_yil:2,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"audi-a8-l-2026-55-tfsi-quattro-340", marka:"Audi", model:"A8", yil:2026, versiyon:"A8 L Standart 55 TFSI quattro 340 hp tiptronic",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / sifiraracal.com / ultimatespecs.com", kaynakUrl:"https://www.sifiraracal.com/audi-modelleri/a8-l-ozellikleri/standart-55-tfsi-quattro-340-hp-tiptronic",
+  s:{segment:"F (Lüks üst sınıf)",kasa:"Sedan (Uzun şasi - L)",yakit:"Benzin",sanziman:"Otomatik (8 ileri tiptronic)",cekis:"quattro (4x4)",koltuk:5,kapi:4,cc:2995,silindir:6,besleme:"Turbo + Mild Hybrid",guc_hp:340,tork_nm:500,sifirYuz_sn:5.7,hiz_kmh:250,tuketim_sehir_ici:10.1,tuketim_sehir_disi:6,tuketim_l100km:7.5,co2_gkm:171,depo_l:72,uzunluk_mm:5302,genislik_mm:1945,yukseklik_mm:1488,dingil_mm:3128,agirlik_kg:2042,bagaj_l:505,liste_fiyati_tl:24459206,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-q2-2026-advanced-35-tfsi", marka:"Audi", model:"Q2", yil:2026, versiyon:"Advanced 35 Turbo FSI 150 hp S tronic",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / sifiraracal.com", kaynakUrl:"https://www.sifiraracal.com/audi-modelleri/q2-ozellikleri/advanced-35-turbo-fsi-150-hp-s-tronic",
+  s:{segment:"B/C (Kompakt SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri S tronic)",cekis:"Önden çekiş",koltuk:5,kapi:5,besleme:"Turbo",guc_hp:150,liste_fiyati_tl:3735775,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-q3-suv-2026-35-tfsi-150", marka:"Audi", model:"Q3", yil:2026, versiyon:"SUV TFSI 110 kW (150 hp) S tronic",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / ultimatespecs.com", kaynakUrl:"https://www.ultimatespecs.com/car-specs/Audi/149698/Audi-Q3-2026-15-TFSI.html",
+  s:{segment:"C (Kompakt SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri S tronic)",cekis:"Önden çekiş",koltuk:5,kapi:5,cc:1498,silindir:4,besleme:"Turbo + Intercooler (direkt enjeksiyon)",guc_hp:150,tork_nm:250,sifirYuz_sn:9.1,hiz_kmh:209,tuketim_l100km:6,co2_gkm:137,depo_l:55,uzunluk_mm:4531,genislik_mm:1859,yukseklik_mm:1601,dingil_mm:2681,agirlik_kg:1635,bagaj_l:488,liste_fiyati_tl:5311292,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-q4-e-tron-2026-45", marka:"Audi", model:"Q4 e-tron", yil:2026, versiyon:"45 e-tron (RWD)",
+  kaynakAd:"otomenzil.com / ultimatespecs.com (Q4 e-tron 45) / arabam.com fiyat", kaynakUrl:"https://www.otomenzil.com/elektrikli-araclar/q4-45-e-tron/",
+  s:{segment:"C/D (Orta sınıf SUV - Elektrikli)",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek viteslı (indirgeme dişlisi)",cekis:"Arkadan itiş",koltuk:5,kapi:5,guc_hp:286,tork_nm:545,sifirYuz_sn:6.7,hiz_kmh:180,batarya_kwh:82,batarya_tipi:"Lityum-iyon (82 kWh brüt / ~77 kWh net)",menzil_km_wltp:481,dc_hizli_sarj_dk_20_80:28,elektrik_tuketim_kwh100km:16.5,uzunluk_mm:4588,genislik_mm:1865,yukseklik_mm:1632,dingil_mm:2764,agirlik_kg:2145,bagaj_l:520,liste_fiyati_tl:5871541,garanti_yil:2,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"audi-q5-suv-2026-tfsi-quattro-204", marka:"Audi", model:"Q5", yil:2026, versiyon:"SUV TFSI quattro 150 kW (204 PS) S tronic",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / encycarpedia.com", kaynakUrl:"https://www.encycarpedia.com/us/audi/25-q5-tfsi-quattro-150-suv",
+  s:{segment:"D (Orta sınıf premium SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri)",cekis:"quattro (4x4)",koltuk:5,kapi:5,cc:1984,silindir:4,besleme:"Turbo + Mild Hybrid (MHEV)",guc_hp:204,tork_nm:340,sifirYuz_sn:7.2,hiz_kmh:225,depo_l:65,uzunluk_mm:4717,genislik_mm:1900,yukseklik_mm:1661,dingil_mm:2821,agirlik_kg:1896,jant_inch:17,liste_fiyati_tl:9482164,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-q6-e-tron-suv-2026-quattro", marka:"Audi", model:"Q6 e-tron", yil:2026, versiyon:"SUV quattro",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / teknoblog.com", kaynakUrl:"https://www.teknoblog.com/audi-q6-e-tron-turkiye/",
+  s:{segment:"D (Orta sınıf premium SUV - Elektrikli)",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek viteslı (2 motor)",cekis:"quattro (4x4, çift motor)",koltuk:5,kapi:5,guc_hp:387,sifirYuz_sn:5.9,batarya_kwh:94.9,batarya_tipi:"Lityum-iyon (100 kWh brüt / 94,9 kWh net)",menzil_km_wltp:619,dc_hizli_sarj_dk_20_80:21,bagaj_l:526,liste_fiyati_tl:9340419,garanti_yil:2,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"audi-q7-2026-45-tfsi-quattro-sline", marka:"Audi", model:"Q7", yil:2026, versiyon:"45 TFSI quattro S line (265 hp)",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / arabam.com teknik inceleme (2.0 TFSI quattro)", kaynakUrl:"https://www.arabam.com/blog/otomobil-testleri/audi-q7-2-0-tfsi-quattro/",
+  s:{segment:"E/F (Büyük premium SUV)",kasa:"SUV (7 koltuklu)",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"quattro (4x4)",koltuk:7,kapi:5,cc:1984,silindir:4,besleme:"Turbo",guc_hp:265,tork_nm:370,depo_l:100,uzunluk_mm:5052,genislik_mm:1968,yukseklik_mm:1741,dingil_mm:2994,agirlik_kg:1985,bagaj_l:770,jant_inch:19,liste_fiyati_tl:11589234,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-q8-2026-tfsi-quattro-195kw", marka:"Audi", model:"Q8", yil:2026, versiyon:"TFSI quattro 195 kW (265 hp) tiptronic",
+  kaynakAd:"fiyatlistesi.audi.com.tr (resmi fiyat listesi) / sifiraracal.com", kaynakUrl:"https://fiyatlistesi.audi.com.tr/2026/F8",
+  s:{segment:"E (Büyük premium SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri tiptronic)",cekis:"quattro (4x4)",koltuk:5,kapi:5,cc:1984,silindir:4,besleme:"Turbo",guc_hp:265,tork_nm:370,sifirYuz_sn:6.9,hiz_kmh:241,tuketim_l100km:10.3,co2_gkm:247,depo_l:75,uzunluk_mm:4992,bagaj_l:605,liste_fiyati_tl:13772832,mtv_yillik_tl:33474,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
+ {id:"audi-e-tron-gt-2026-quattro", marka:"Audi", model:"e-tron GT", yil:2026, versiyon:"quattro",
+  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / sifiraracal.com", kaynakUrl:"https://www.sifiraracal.com/audi-modelleri/e-tron-gt-quattro",
+  s:{segment:"E (Elektrikli performans GT)",kasa:"Sedan/Fastback (4 kapılı)",yakit:"Elektrik",sanziman:"Tek viteslı (önde) / 2 kademeli (arkada)",cekis:"quattro (4x4, çift motor)",koltuk:4,kapi:4,guc_hp:585,tork_nm:625,sifirYuz_sn:4,hiz_kmh:245,batarya_kwh:97,batarya_tipi:"Lityum-iyon (105 kWh brüt / 97 kWh net)",menzil_km_wltp:689,dc_hizli_sarj_dk_20_80:18,uzunluk_mm:4989,genislik_mm:1964,yukseklik_mm:1414,dingil_mm:2900,bagaj_l:405,liste_fiyati_tl:12137766,garanti_yil:2,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
+
+ /* --- Mini — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
+    mini.com.tr resmi sayfaları + arabam.com/webtekno.com fiyat listesi haberleri (Ekim 2026) ile doğrulandı.
+    Araştırılıp EKLENMEYEN modeller: Aceman (henüz TR'de resmi satışta değil, 2026 için hedefleniyor olarak duyuruldu),
+    Clubman (küresel üretimi durduruldu, güncel listede yok). Bazı bagaj hacmi değerleri kaynakta "koltuklar katlanmış"
+    max rakam olarak verildiği (Countryman: 1530 L) veya aralık olarak verildiği (ör. yakıt tüketimi) için, tek bir
+    doğrulanmış taban değer bulunamayan alanlar boş bırakıldı. Araç garantisi km'si resmi kaynakta "sınırsız" olarak
+    belirtildiği için garanti_km alanına sayısal bir üst sınır uydurmak yerine "Sınırsız" metni yazıldı. */
+ {id:"mini-cooper-3kapi-2026-cooper-c", marka:"Mini", model:"Cooper 3 Kapı", yil:2026, versiyon:"Cooper C",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-cooper-3-door/performance.html",
+  s:{kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:4,kapi:3,cc:1499,silindir:3,besleme:"Turbo (TwinPower Turbo)",guc_hp:156,tork_nm:230,sifirYuz_sn:7.7,hiz_kmh:225,uzunluk_mm:3876,genislik_mm:1744,bagaj_l:210,liste_fiyati_tl:3442700,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"mini-cooper-3kapi-2026-cooper-s", marka:"Mini", model:"Cooper 3 Kapı", yil:2026, versiyon:"Cooper S",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-cooper-3-door/performance.html",
+  s:{kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:4,kapi:3,cc:1998,silindir:4,besleme:"Turbo (TwinPower Turbo)",guc_hp:204,tork_nm:300,sifirYuz_sn:6.6,hiz_kmh:242,uzunluk_mm:3876,genislik_mm:1744,bagaj_l:210,liste_fiyati_tl:5697400,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"mini-cooper-5kapi-2026-cooper-c", marka:"Mini", model:"Cooper 5 Kapı", yil:2026, versiyon:"Cooper C",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-cooper-5-door.html",
+  s:{kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,cc:1499,silindir:3,besleme:"Turbo (TwinPower Turbo)",guc_hp:156,tork_nm:230,sifirYuz_sn:8,hiz_kmh:225,uzunluk_mm:4036,genislik_mm:1744,bagaj_l:275,liste_fiyati_tl:3364900,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"mini-cooper-cabrio-2026-cooper-s", marka:"Mini", model:"Cooper Cabrio", yil:2026, versiyon:"Cooper S Cabrio",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-cooper-convertible/dimensions.html",
+  s:{kasa:"Cabrio (Üstü Açılabilir)",yakit:"Benzin",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:4,kapi:2,cc:1998,silindir:4,besleme:"Turbo (TwinPower Turbo)",guc_hp:204,tork_nm:300,sifirYuz_sn:6.9,hiz_kmh:237,acilir_tavan:true,liste_fiyati_tl:6402100,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"mini-countryman-2026-c", marka:"Mini", model:"Countryman", yil:2026, versiyon:"Countryman C",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-countryman/performance.html",
+  s:{kasa:"SUV",yakit:"Benzin (Hafif Hibrit)",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,cc:1499,silindir:3,besleme:"Turbo (TwinPower Turbo)",guc_hp:170,tork_nm:280,sifirYuz_sn:8.3,hiz_kmh:212,uzunluk_mm:4444,genislik_mm:1843,yukseklik_mm:1661,dingil_mm:2692,liste_fiyati_tl:4230100,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"mini-countryman-2026-s-all4", marka:"Mini", model:"Countryman", yil:2026, versiyon:"Countryman S ALL4",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-countryman/performance.html",
+  s:{kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik",cekis:"4x4 (ALL4)",koltuk:5,kapi:5,cc:1998,silindir:4,besleme:"Turbo (TwinPower Turbo)",guc_hp:218,tork_nm:360,sifirYuz_sn:7.1,hiz_kmh:228,uzunluk_mm:4444,genislik_mm:1843,yukseklik_mm:1661,dingil_mm:2692,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
+ {id:"mini-countryman-electric-2026-e", marka:"Mini", model:"Countryman Electric", yil:2026, versiyon:"Countryman E",
+  kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/tamamen-elektrikli-mini-countryman.html",
+  s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites (Otomatik)",guc_hp:204,batarya_kwh:65.2,menzil_km_wltp:501,liste_fiyati_tl:3921300,garanti_yil:3,garanti_km:"Sınırsız",batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
 ];
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, kullanılan başlıkların tamamı burada.
