@@ -10,7 +10,7 @@
 <style>
 :root{
   color-scheme: dark;
-  --bg:#1C1E22; --surface:#212328; --surface2:#26282E; --ink:#F5F4F0; --muted:#9296A0; --line:#34363D; --line-strong:#45474F;
+  --bg:#2B2E34; --surface:#33363D; --surface2:#3A3D45; --ink:#F5F4F0; --muted:#9296A0; --line:#454850; --line-strong:#5A5D66;
   --divider:rgba(245,244,240,.16);
   --accent:#C9A961; --accent-soft:#E7D2A0; --accent-grad:linear-gradient(120deg,#E7D2A0 0%,#C9A961 50%,#9C824F 100%); --on-accent:#1B1508;
   --focus:#C9A961;
@@ -22,14 +22,14 @@
 }
 html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;min-height:100%;background:radial-gradient(ellipse 1100px 540px at 50% -180px, rgba(201,169,97,.11), transparent 60%), linear-gradient(180deg,#1D1F24 0%,#191B1F 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100%;background:radial-gradient(ellipse 1100px 540px at 50% -180px, rgba(201,169,97,.11), transparent 60%), linear-gradient(180deg,#2E3137 0%,#272A2F 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.01em}
 p{margin:0}
 .wrap{max-width:840px;margin:0 auto;padding:0 20px}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 
-.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--divider);background:#1C1E22}
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--divider);background:#2B2E34}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;gap:12px}
 .brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.08rem;letter-spacing:-.005em;text-decoration:none;white-space:nowrap;color:var(--ink)}
 .brandmark{flex:none;width:30px;height:30px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:14px;color:var(--on-accent);background:var(--accent-grad)}
