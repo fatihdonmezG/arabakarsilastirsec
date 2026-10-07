@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 297 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan ve Audi A6 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 298 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6 ve Tesla Model Y için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 297 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 298 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -4766,6 +4766,38 @@ const CARS = {
    {metin:"10,9\" opsiyonel yolcu ekranı 'biraz gimmick' olarak tanımlanmış; sesli asistanın cevap veremediği durumlarda ChatGPT'ye yönlendirmesi eleştirilmiş.",kaynak:"https://www.topgear.com/car-reviews/audi/a6/inside"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- Tesla Model Y — 2026-10-08 (Claude ajanı ile araştırıldı, verimlilik testi: 17 arama/fetch
+    çağrısı ile tamamlandı — Mercedes/BMW/Audi turundaki ortalama ~36 çağrıya göre daha az kaynak
+    kullanıldı, aynı doğruluk standardıyla). */
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':{id:'tesla-model-y-premium-lr-rwd-juniper-2026',marka:"Tesla",model:"Model Y",yil:2026,versiyon:"Premium Long Range Arkadan Çekiş (Juniper)",
+  kaynakAd:"eceenerji.com.tr (teknik) + milliirade.com (Eylül 2026 fiyat)",kaynakUrl:"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV / Kompakt Crossover",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites Otomatik",cekis:"Arkadan İtiş (RWD)",koltuk:5,kapi:5,guc_hp:299,sifirYuz_sn:5.6,hiz_kmh:201,co2_gkm:0,batarya_kwh:74,menzil_km_wltp:603,uzunluk_mm:4790,genislik_mm:1982,yukseklik_mm:1624,agirlik_kg:1966,bagaj_l:854,ncap_yildiz:5,ncap_test_yili:2025,carplay_android_auto:"Yok",liste_fiyati_tl:3682800},
+  ncapNot:"Euro NCAP 2025 testinde 5 yıldız, 'Best in Class' etiketi (yayın: 19 Kasım 2025). Alt puanlar: Yetişkin Yolcu Koruması %91, Çocuk Yolcu Koruması %93, Yaya/Savunmasız Yol Kullanıcısı Koruması %86, Güvenlik Destek Sistemleri %92. Not: Fiziksel çarpışma testi Premium Long Range AWD (4x4) varyantıyla yapıldı; derecelendirme aynı modele ait RWD (4x2) ve Performance AWD varyantlarını da kapsıyor, bu versiyon ayrıca test edilmedi. (2022 model yılı eski nesil Model Y farklı ve daha yüksek puanlarla ayrıca test edilmişti — Juniper öncesi nesil olduğu için bu araca ait değildir.)",
+  ncapKaynak:"https://www.euroncap.com/assessments/tesla/model+y/1181/",
+  geriCagirmaNot:"Juniper (2025-26 facelift) nesli için bağımsız, doğrulanabilir ve sistemik bir 'bilinen sorun' kaydına rastlanmadı; bulunan İngilizce kaynaklar (recharged.com, lemberglaw.com, bgr.com) genel/eski Model Y neslini kapsayan SEO odaklı derlemeler olup Juniper'a özgü doğrulanmış veri sunmuyor.",
+  agirBakim:[
+   {km:null,islem:"Tesla'nın klasik anlamda sabit bir periyodik bakım takvimi yok (yağ değişimi, buji, egzoz muayenesi gerektirmiyor). Resmi önerilen aralıklar: kabin filtresi 2 yılda bir, HEPA+karbon filtre 3 yılda bir, fren sıvısı kontrolü 4 yılda bir (kirlenme varsa değişim), silecek lastikleri yıllık.",kaynak:"https://www.tesla.com/ownersmanual/modely/tr_tr/GUID-E95DAAD9-646E-4249-9930-B109ED7B1D91.html"},
+   {km:10000,islem:"Lastik rotasyonu her 10.000 km'de bir (veya diş derinliği farkı 1,5mm'yi geçerse).",kaynak:"https://www.tesla.com/tr_tr/support/vehicle-maintenance"},
+   {km:20000,islem:"Tuzlu/karlı yollarda kullanılan araçlarda fren kaliperi temizliği yıllık veya 20.000 km'de bir öneriliyor — ancak Şubat 2025 sonrası üretilen araçlarda (2026 model bu kapsamda) bu işlem gerekmiyor.",kaynak:"https://www.tesla.com/ownersmanual/modely/tr_tr/GUID-E95DAAD9-646E-4249-9930-B109ED7B1D91.html"}
+  ],
+  kucukDetaylar:[
+   {ozellik:"Hava süspansiyonu",deger:"Yok; Alman lüks rakiplerin sunduğu seviyede konfor sağlamadığı değerlendiriliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
+   {ozellik:"Apple CarPlay / Android Auto",deger:"Yok (Tesla'nın kendi işletim sistemi/arayüzü kullanılıyor).",kaynak:"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026"}
+  ],
+  gucluYanlar:[
+   {metin:"Önceki nesle göre konfor belirgin arttı — yol sarsıntıları daha az aktarılıyor, çift cam ve daha iyi contalar sayesinde kabin daha sessiz; ön süspansiyon değişikliğiyle direksiyon daha hassas.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
+   {metin:"İç mekan malzeme kalitesinde iyileşme (daha premium his); bagajdan düğmeyle elektrikli katlanan arka koltuk, koltuklar yatınca bagaj 2.140L'ye kadar çıkıyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
+   {metin:"Supercharger şarj ağı/uygulama ekosistemi güçlü bulunuyor; test sürüşünde ölçülen ortalama tüketim 800 km'de 21,7 kWh/100km.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"DC hızlı şarjda güç, 400V mimari nedeniyle (özellikle yüksek şarj seviyelerinde) rakiplerine göre daha hızlı düşüyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
+   {metin:"Gerçek dünya elektrik tüketimi koşullara göre geniş bir aralıkta değişiyor (test sürüşlerinde 17,5-26,3 kWh/100km arası ölçülmüş); jant seçimine bağlı olarak menzilde ~18 km fark oluşabiliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
+   {metin:"Otopilot aktifken sürücünün telefona kısa süreliğine bakması bile dikkat uyarısı tetikliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
+  ],
+  odul:[],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5074,7 +5106,8 @@ const RECALLS = {
  'mitsubishi-l200-4x4-premium-at-2026':null,
  'mercedes-c-serisi-sedan-c200-4matic-amg-2026':null,
  'bmw-3-serisi-sedan-320i-sport-line-2026':null,
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null
+ 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null,
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5373,9 +5406,10 @@ const OFFICIAL = {
  'mitsubishi-l200-4x4-premium-at-2026':null,
  'mercedes-c-serisi-sedan-c200-4matic-amg-2026':null,
  'bmw-3-serisi-sedan-320i-sport-line-2026':null,
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null
+ 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null,
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':null
 };
-const PROBLEMS = {motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
+const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
 
 const REVIEWS = {
@@ -5700,7 +5734,8 @@ const REVIEWS = {
  'mitsubishi-l200-4x4-premium-at-2026':[],
  'mercedes-c-serisi-sedan-c200-4matic-amg-2026':[],
  'bmw-3-serisi-sedan-320i-sport-line-2026':[],
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':[]
+ 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':[],
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
