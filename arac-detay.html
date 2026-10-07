@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 304 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX ve Subaru Forester için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 306 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade ve Chevrolet Tahoe için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 304 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 306 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -4980,6 +4980,75 @@ const CARS = {
    {metin:"Fiyat segmentinde en ucuz araç değil.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- Cadillac Escalade + Chevrolet Tahoe — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
+    sırasıyla 22 ve 17 araç/arama çağrısı). ABD araçları olduğu için Euro NCAP yerine NHTSA/IIHS kullanıldı. */
+ 'cadillac-escalade-2026-sport-platinum':{id:'cadillac-escalade-2026-sport-platinum',marka:"Cadillac",model:"Escalade",yil:2026,versiyon:"Sport Platinum / Luxury Platinum",
+  kaynakAd:"otomobil.com.tr + gmsv-turoto.com.tr + cadillac.com + motor1.com/automotiveaddicts.com (derin inceleme)",kaynakUrl:"https://www.otomobil.com.tr/cadillac-chevrolet-gmc-turkiye-fiyatlari/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Full-size Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (10 ileri, Electronic Precision Shift)",koltuk:8,kapi:5,cc:6200,silindir:8,besleme:"Doğal emişli (Supercharger yok)",guc_hp:420,tork_nm:624,uzunluk_mm:5383,genislik_mm:2059,yukseklik_mm:1948,dingil_mm:3073,bagaj_l:722,jant_inch:22,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",klima:"Var (3 bölgeli otomatik)",koltuk_isitma:"Var (ön ve 2. sıra, ventilasyon ve masaj da mevcut)",ekran_inch:55,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:37500000},
+  ncapNot:"NHTSA (ABD) testinde 2023 model yıl Cadillac Escalade/Escalade ESV için (aynı 5. nesil 2021+ gövde, 6.2L V8): Ön çarpışma sürücü 5 yıldız, ön çarpışma yolcu 4 yıldız, yan çarpışma sürücü 5 yıldız, yan çarpışma yolcu 5 yıldız, yan direk (pole) 5 yıldız, devrilme (rollover) 3 yıldız. Genel kombine yıldız kaynakta verilmemiş. IIHS bu modeli henüz test etmemiş. 2026 model yılı için ayrı/güncellenmiş bir NHTSA testi doğrulanamadı.",
+  ncapKaynak:"https://m.carcomplaints.com/Cadillac/Escalade/2023/safety",
+  geriCagirmaNot:"NHTSA Kampanya #25V274000 (GM, 24 Nisan 2025): 2021-2024 model yılı Cadillac Escalade ve Escalade ESV (6.2L V8 benzinli motor) için — biyel kolu/krank mili üretim hatası motor hasarı/arızasına ve kaza riski artışına yol açabiliyor. 2026 model yılının bu kampanyaya dahil olup olmadığı doğrulanamadı (kampanya 2021-2024 MY ile sınırlı görünüyor).",
+  agirBakim:[
+   {km:12000,islem:"Resmi Cadillac Türkiye bakım kitapçığı bulunamadı; KBB üzerinden ABD pazarı GM bakım takvimine göre: her 7.500 mil (~12.000 km) lastik rotasyonu, fren balatası ve motor hava filtresi kontrolü; Oil Life Monitor sistemine göre yağ/filtre değişimi (en geç 12 ayda bir).",kaynak:"https://www.kbb.com/cadillac/escalade/2026/maintenance-schedules/"},
+   {km:36000,islem:"22.500 mil'de kabin hava filtresi değişimi eklenir; 30.000 ve 37.500 mil'de yağ değişimi ve lastik rotasyonu devam eder.",kaynak:"https://www.kbb.com/cadillac/escalade/2026/maintenance-schedules/"},
+   {km:72000,islem:"45.000 mil'de yağ/filtre değişimi, lastik rotasyonu, kabin+motor hava filtresi değişimi ve buharlaşma kontrol sistemi incelemesi yapılır.",kaynak:"https://www.kbb.com/cadillac/escalade/2026/maintenance-schedules/"}
+  ],
+  kucukDetaylar:[
+   {ozellik:"Executive İkinci Sıra Koltuk Paketi",deger:"Opsiyonel (~7.500 USD): ısıtmalı/havalandırmalı/masajlı koltuklar, kablosuz şarj, katlanır tepsi, elektrikli ayar — Escalade'de ilk kez sunuluyor.",kaynak:"https://www.automotiveaddicts.com/105864/2025-cadillac-escalade-4wd-sport-platinum-review-test-drive"},
+   {ozellik:"Ses sistemi",deger:"Executive paketle AKG 40 hoparlörlü ses sistemi geliyor.",kaynak:"https://www.automotiveaddicts.com/105864/2025-cadillac-escalade-4wd-sport-platinum-review-test-drive"},
+   {ozellik:"Night Vision",deger:"Isı kaynağı tespiti ve hayvan çarpışma uyarısı sağlıyor.",kaynak:"https://www.motor1.com/reviews/760844/2025-cadillac-escalade-review/"},
+   {ozellik:"Elektrikli kapılar",deger:"Motorlu açılma/kapanma, güç destekli manuel açılış, herhangi bir noktada durabilme özelliği var.",kaynak:"https://www.automotiveaddicts.com/105864/2025-cadillac-escalade-4wd-sport-platinum-review-test-drive"},
+   {ozellik:"Masaj koltuğu sınırlaması",deger:"Masaj özelliği sadece koltuk sırtını kapsıyor, minderi kapsamıyor.",kaynak:"https://www.automotiveaddicts.com/105864/2025-cadillac-escalade-4wd-sport-platinum-review-test-drive"}
+  ],
+  gucluYanlar:[
+   {metin:"Sınıfının en iyi sürüş kalitesine sahip SUV'larından biri olarak değerlendiriliyor (Magnetic Ride Control + hava süspansiyonu sayesinde).",kaynak:"https://www.automotiveaddicts.com/105864/2025-cadillac-escalade-4wd-sport-platinum-review-test-drive"},
+   {metin:"Super Cruise — 'bugün mevcut en iyi Seviye 2+ sürücü destek sistemlerinden biri' olarak değerlendiriliyor.",kaynak:"https://www.motor1.com/reviews/760844/2025-cadillac-escalade-review/"},
+   {metin:"Ferah/konforlu 3. sıra koltuk; arka koltuklar katlanınca ~120,5 ft³ (~3.413L) bagaj hacmine ulaşıyor.",kaynak:"https://www.motor1.com/reviews/760844/2025-cadillac-escalade-review/"},
+   {metin:"Güçlü V8 performansı: 420 hp/624 Nm ile 0-96 km/s yaklaşık 6,5 saniyede tamamlanıyor.",kaynak:"https://www.motor1.com/reviews/760844/2025-cadillac-escalade-review/"},
+   {metin:"Rolls-Royce Cullinan veya Bentley Bentayga gibi rakiplerinin en az iki katı fiyatına kıyasla daha iyi değer sunduğu değerlendiriliyor.",kaynak:"https://www.automotiveaddicts.com/105864/2025-cadillac-escalade-4wd-sport-platinum-review-test-drive"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Zayıf yakıt ekonomisi: EPA verilerine göre şehir içi/yol/kombine 14/18/16 mpg (~16,8/13,1/14,7 L/100km) — segmentinde en düşük değerlerden biri.",kaynak:"https://www.motor1.com/reviews/760844/2025-cadillac-escalade-review/"},
+   {metin:"Aşırı dokunmatik ekran bağımlılığı: az fiziksel düğme var, ekran sürücüden uzakta/ulaşılması güç konumlandırılmış.",kaynak:"https://www.motor1.com/reviews/760844/2025-cadillac-escalade-review/"},
+   {metin:"2021-2024 model yılları için 6.2L V8 motorda biyel kolu/krank mili kusuruna bağlı bir geri çağırma kaydı var (2026 MY'ye uygulanabilirliği doğrulanamadı).",kaynak:"https://www.vehiclesafetyrecalls.com/recall/25V274000"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'chevrolet-tahoe-2026-rst':{id:'chevrolet-tahoe-2026-rst',marka:"Chevrolet",model:"Tahoe",yil:2026,versiyon:"RST",
+  kaynakAd:"GM-SV Tur Oto + jdpower.com/autoguide.com (derin inceleme) + iihs.org",kaynakUrl:"https://www.gmsv-turoto.com.tr/en/chevrolet/tahoe",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Tam boy SUV",kasa:"SUV",yakit:"Benzin",sanziman:"10 ileri otomatik",koltuk:7,cc:6200,silindir:8,besleme:"EcoTec3 V8 (Dynamic Fuel Management)",guc_hp:420,uzunluk_mm:5367,genislik_mm:2057,yukseklik_mm:1938,jant_inch:22,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",anahtarsiz_giris:"Var",ekran_inch:17.7,carplay_android_auto:"Var",dijital_gosterge:"Var",garanti_yil:2,garanti_km:100000},
+  ncapNot:"IIHS (ABD) testinde 2026 model yılı Tahoe için: Ön küçük örtüşme (small overlap front) 'Acceptable' (sürücü tarafı 'Good', yolcu tarafı 'Acceptable'; test edilen: 2023 Tahoe LT 4WD). Ön orta örtüşme (moderate overlap front, güncellenmiş test) 'Poor' (test edilen: 2023 Tahoe LT 4WD). Yan çarpışma (güncellenmiş test) 'Good' (test edilen: 2024 Tahoe Z71 4WD). Çocuk koltuğu bağlantıları 'Good+'. NHTSA'dan dolaylı kaynakla (JD Power) devrilme direnci için 3 yıldız bulundu. RST donanımına özel ayrı bir test yok; bu değerler aynı şasi/motor/güvenlik donanımını paylaşan diğer donanım seviyelerinden (LT, Z71) alınmıştır.",
+  ncapKaynak:"https://www.iihs.org/ratings/vehicle/chevrolet/tahoe/2026",
+  geriCagirmaNot:"İki gerçek NHTSA geri çağırma kaydı bulundu: (1) Kampanya 26V085 — şanzıman kontrol valfi arızası, arka tekerleklerin sürüş sırasında kilitlenmesine yol açabiliyor; SADECE 2022 model yılı (10 vitesli ETRS şanzımanlı Escalade/Tahoe/Suburban/Yukon) etkileniyor, 2026 MY kapsam dışı. (2) Kampanya 26V289 — transfer kutusunda eksik bir parça, tekerleklerin uyarı vermeden kilitlenmesine yol açabiliyor; 2026 Chevrolet Tahoe doğrudan listeleniyor, ama sadece 66 araç etkileniyor (küçük bir üretim/parça partisi).",
+  agirBakim:[
+   {km:12000,islem:"Resmi Chevrolet Türkiye bakım kitapçığı bulunamadı; KBB üzerinden ABD pazarı 2025 Tahoe bakım takvimine göre: her 7.500 mil (~12.000 km) lastik rotasyonu, fren balatası ve motor hava filtresi kontrolü, Engine Oil Life System göstergesine göre yağ/filtre değişimi.",kaynak:"https://www.kbb.com/chevrolet/tahoe/2025/maintenance-schedules/"},
+   {km:36000,islem:"22.500 mil'de kabin hava filtresi değişimi eklenir; 30.000 ve 37.500 mil'de yağ değişimi ve lastik rotasyonu devam eder.",kaynak:"https://www.kbb.com/chevrolet/tahoe/2025/maintenance-schedules/"},
+   {km:72000,islem:"45.000 mil'de yağ/filtre değişimi, lastik rotasyonu, kabin+motor hava filtresi değişimi, buharlaşma kontrol sistemi kontrolü ve (varsa limited-slip diferansiyel) arka aks yağı değişimi yapılır.",kaynak:"https://www.kbb.com/chevrolet/tahoe/2025/maintenance-schedules/"}
+  ],
+  kucukDetaylar:[
+   {ozellik:"Multimedya/dijital gösterge",deger:"17,7 inç ortadan ekran + Google Built-in tüm donanım seviyelerinde standart; 11 inç dijital gösterge paneli ve opsiyonel 15 inç head-up display sunuluyor.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"},
+   {ozellik:"Kablosuz telefon şarjı",deger:"İncelemede iPhone ile iyi çalıştığı not edilmiş.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"},
+   {ozellik:"Elektrikli basamaklar",deger:"Güç destekli (power-assist) basamaklar binişi kolaylaştırıyor ve sağlam hissettiriyor.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"},
+   {ozellik:"Panoramik tavan",deger:"Üst donanımlarda mevcut, incelemede öne çıkan bir özellik olarak belirtilmiş.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"}
+  ],
+  gucluYanlar:[
+   {metin:"Çok geniş bagaj hacmi: arka koltuklar katlandığında ~122,7 ft³'e (yaklaşık 3.475 litre) kadar çıkıyor (test edilen: Z71 4WD).",kaynak:"https://www.autoguide.com/auto/2026-chevy-tahoe-pros-and-cons-44636026"},
+   {metin:"Üçüncü sıra koltuklar yetişkinler için de rahat, sadece çocuklar için değil (test edilen: Z71 4WD).",kaynak:"https://www.autoguide.com/auto/2026-chevy-tahoe-pros-and-cons-44636026"},
+   {metin:"Direksiyon hassas ve iyi ayarlanmış; Magnetic Ride Control yalpayı kontrol ediyor.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"},
+   {metin:"Geniş bir sürücü destek paketi standart olarak sunuluyor.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"},
+   {metin:"JD Power 2026 Initial Quality Study ve Vehicle Dependability Study'de segmentinde en yüksek sıralanan model.",kaynak:"https://www.jdpower.com/cars/expert-reviews/2026-chevrolet-tahoe-review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Çekiş kapasitesi düşük bulunuyor: Z71 4WD'de 8.200 lbs (~3.720 kg) — Toyota Sequoia (9.520 lbs) ve Jeep Grand Wagoneer (10.000 lbs) gibi rakiplere göre segment için şaşırtıcı derecede düşük değerlendiriliyor.",kaynak:"https://www.autoguide.com/auto/2026-chevy-tahoe-pros-and-cons-44636026"},
+   {metin:"Yakıt ekonomisi düşük: 6,2L V8 karma kullanımda 16-17 mpg (~14-14,7 L/100km) civarı; rakip büyük SUV'lar daha iyi performans gösteriyor.",kaynak:"https://www.autoguide.com/auto/2026-chevy-tahoe-pros-and-cons-44636026"},
+   {metin:"IIHS'in güncellenmiş orta örtüşmeli ön çarpışma testinde 'Poor' (Zayıf) sonucu aldı (2023 LT test aracı, 2023-2026 model yıllarını kapsıyor).",kaynak:"https://www.iihs.org/ratings/vehicle/chevrolet/tahoe/2026"}
+  ],
+  odul:[{ad:"2026 Best Full-Size SUV — AutoTrader.ca Editors' Awards (Tahoe/Suburban ailesine genel olarak verildi, RST'ye özel değil)",yil:2026,kaynak:"https://www.autotrader.ca/editorial/awards/2026-best-full-size-suv-chevrolet-suburban-tahoe/"}],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5295,7 +5364,9 @@ const RECALLS = {
  'porsche-macan-2026-electric':null,
  'land-rover-range-rover-evoque-2026-s-p160':null,
  'lexus-nx-2026-350h-executive':null,
- 'subaru-forester-2025-2-0i-fun':null
+ 'subaru-forester-2025-2-0i-fun':null,
+ 'cadillac-escalade-2026-sport-platinum':null,
+ 'chevrolet-tahoe-2026-rst':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5601,7 +5672,9 @@ const OFFICIAL = {
  'porsche-macan-2026-electric':null,
  'land-rover-range-rover-evoque-2026-s-p160':null,
  'lexus-nx-2026-350h-executive':null,
- 'subaru-forester-2025-2-0i-fun':null
+ 'subaru-forester-2025-2-0i-fun':null,
+ 'cadillac-escalade-2026-sport-platinum':null,
+ 'chevrolet-tahoe-2026-rst':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -5935,7 +6008,9 @@ const REVIEWS = {
  'porsche-macan-2026-electric':[],
  'land-rover-range-rover-evoque-2026-s-p160':[],
  'lexus-nx-2026-350h-executive':[],
- 'subaru-forester-2025-2-0i-fun':[]
+ 'subaru-forester-2025-2-0i-fun':[],
+ 'cadillac-escalade-2026-sport-platinum':[],
+ 'chevrolet-tahoe-2026-rst':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
