@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 302 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric ve Land Rover Range Rover Evoque için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 304 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX ve Subaru Forester için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 302 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 304 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -4920,6 +4920,66 @@ const CARS = {
    {metin:"Fiyat segment için yüksek bulunuyor; sadece plug-in hibrit versiyon yakıt ekonomisinde öne çıkıyor, bu versiyon (160 HP benzin Mild Hybrid dahil) diğer motorlara göre görece verimsiz değerlendiriliyor.",kaynak:"https://www.carwow.co.uk/Land-Rover/Range-Rover-Evoque"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- Lexus NX 350h + Subaru Forester e-BOXER — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
+    sırasıyla 20 ve 18 araç/arama çağrısı). */
+ 'lexus-nx-2026-350h-executive':{id:'lexus-nx-2026-350h-executive',marka:"Lexus",model:"NX",yil:2026,versiyon:"NX 350h Executive (2.5 Hibrit AWD)",
+  kaynakAd:"sifiraracal.com + lexus.com.tr + drivingelectric.com (derin inceleme) + euroncap.com",kaynakUrl:"https://www.sifiraracal.com/lexus-modelleri/nx",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV / Premium Crossover",kasa:"SUV",yakit:"Benzin (Hibrit)",sanziman:"e-CVT Otomatik",cekis:"4x4 (AWD)",koltuk:5,kapi:5,cc:2494,silindir:4,guc_hp:242,tork_nm:270,sifirYuz_sn:7.7,hiz_kmh:200,tuketim_l100km:5.9,uzunluk_mm:4660,genislik_mm:1865,yukseklik_mm:1670,bagaj_l:545,ekran_inch:14,ncap_yildiz:5,ncap_test_yili:2022,liste_fiyati_tl:8700000,garanti_yil:3,garanti_km:100000},
+  ncapNot:"Euro NCAP 2022 testinde (sertifikasyon 2022-03-02 yayımlandı) 5 yıldız aldı. Test edilen varyant tam olarak bu versiyonla eşleşiyor: NX 350h 2.5 benzinli hibrit, E-Four (4x4/AWD). Alt puanlar: Yetişkin Yolcu Koruması %91, Çocuk Yolcu Koruması %87, Savunmasız Yol Kullanıcıları %83, Güvenlik Destek Sistemleri %91.",
+  ncapKaynak:"https://www.euroncap.com/en/results/Lexus/NX/45229",
+  geriCagirmaNot:"ABD pazarında 2022 model yılı NX250/NX350/NX350h/NX450h+ için 4.215 aracı kapsayan bir geri çağırma bulundu: üretimde ön amortisör bağlantı noktaları çevresindeki bazı nokta kaynaklarının atlanmış olması, zamanla panel zayıflaması/çatlama ve amortisör bağlantı noktasından ayrılma riski. 2026 model yılı / Türkiye'ye özgü ayrı bir sistemik sorun veya geri çağırma kaydı bulunamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Koltuk ısıtma kontrolleri",deger:"Alt menülerde gizli olduğu için bulunması zor olabiliyor.",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"},
+   {ozellik:"Kabin tasarımı ('Tazuma' felsefesi)",deger:"Sık kullanılan kontroller sürücünün elinin altına yerleştirilmiş, yükseltilmiş merkez konsol ve büyük döner klima düğmeleri var.",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"},
+   {ozellik:"Üst donanım özellikleri",deger:"Premium Plus Pack ve üzerinde 360° kamera, head-up display, ısıtmalı/havalandırmalı ön koltuklar ve ısıtmalı arka koltuklar; en üst Takumi donanımında 17 hoparlörlü Mark Levinson ses sistemi ve otomatik park.",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"},
+   {ozellik:"Bagaj pratikliği",deger:"Bagaj içinde arka koltukları katlamak için bir kol/mandal bulunmuyor (bazı rakiplerde olan bir özellik eksik).",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"}
+  ],
+  gucluYanlar:[
+   {metin:"Rafine ve sessiz sürüş: şehir içinde motor çoğu zaman sessiz kalıyor, süspansiyon darbeleri iyi yutuyor, virajlarda gövde hareketi az.",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"},
+   {metin:"Üstün iç mekan kalitesi: yapım kalitesi ve malzemeler Alman ve İsveçli rakiplerden öne çıkıyor.",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"},
+   {metin:"Mükemmel güvenlik donanımı: standart olarak 8 hava yastığı, şerit takip, kör nokta uyarısı, otomatik acil frenleme, adaptif hız sabitleyici; Euro NCAP'te 5 yıldız (Yetişkin %91, Güvenlik Destek %91).",kaynak:"https://www.euroncap.com/en/results/Lexus/NX/45229"},
+   {metin:"Yüksek güvenilirlik algısı: 2020 Driver Power anketinde sahiplerin yalnızca %11,5'i ilk yıl içinde arıza bildirmiş; Lexus 2019 anketinde 29 marka arasında genel birinci olmuş.",kaynak:"https://www.carbuyer.co.uk/lexus/nx/143138/lexus-nx-suv-review/reliability"},
+   {metin:"Auto Express New Car Awards'ta 'Mid-size Premium SUV of the Year' kategorisinde üst üste 3. kez (2024 dahil) birincilik.",kaynak:"https://media.lexus.co.uk/three-wins-in-three-years-for-the-lexus-nx-in-the-auto-express-awards/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"e-CVT şanzıman hızlanırken motor devrini yükseltiyor, bu da pürüzsüzlüğü sınırlıyor ('drone' etkisi).",kaynak:"https://www.drivingelectric.com/lexus/41204/lexus-nx-350h-hybrid-review"},
+   {metin:"İnfotainment sistemi geçmiş nesillerde Driver Power anketinde düşük puan almış (yeni nesilde dokunmatik ekranla iyileştirildiği belirtiliyor).",kaynak:"https://www.carbuyer.co.uk/lexus/nx/143138/lexus-nx-suv-review/reliability"},
+   {metin:"En gelişmiş güvenlik/konfor donanımına (360 kamera, HUD, ısıtmalı/havalandırmalı koltuklar) ulaşmak için pahalı üst donanım paketleri (Premium Plus/Takumi) gerekiyor.",kaynak:"https://www.carbuyer.co.uk/lexus/nx/143138/lexus-nx-suv-review/reliability"}
+  ],
+  odul:[{ad:"Auto Express New Car Awards — 'Mid-size Premium SUV of the Year' (üst üste 3. kez)",yil:2024,kaynak:"https://media.lexus.co.uk/three-wins-in-three-years-for-the-lexus-nx-in-the-auto-express-awards/"}],
+  sistemPuani:null},
+ 'subaru-forester-2025-2-0i-fun':{id:'subaru-forester-2025-2-0i-fun',marka:"Subaru",model:"Forester",yil:2025,versiyon:"2.0i Fun e-BOXER",
+  kaynakAd:"subaru.com.tr + mukayese.com + topgear.com (derin inceleme) + euroncap.com",kaynakUrl:"https://subaru.com.tr/fiyat-listesi",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV",kasa:"SUV",yakit:"Benzin (Hafif Hibrit e-BOXER)",sanziman:"Lineartronic (CVT)",cekis:"4x4 (Simetrik Sürekli Dört Çeker)",koltuk:5,kapi:5,cc:1995,silindir:4,besleme:"Direkt enjeksiyon",guc_hp:150,tork_nm:194,sifirYuz_sn:11.8,hiz_kmh:188,tuketim_sehir_ici:7.4,tuketim_sehir_disi:6.4,tuketim_l100km:6.7,co2_gkm:154,depo_l:48,uzunluk_mm:4640,genislik_mm:1815,yukseklik_mm:1730,yerden_yukseklik_mm:220,agirlik_kg:1746,bagaj_l:509,ncap_yildiz:5,ncap_test_yili:2024,liste_fiyati_tl:4719900},
+  ncapNot:"Euro NCAP 2024 testinde ('all-new Forester e-BOXER', Avrupa spesifikasyonu) 5 yıldız (maksimum genel puan) aldı. Alt puanlar: Yetişkin Yolcu Koruması %83, Çocuk Yolcu Koruması %89, Savunmasız Yol Kullanıcıları %86, Güvenlik Destek Sistemleri %72. Test edilen model Türkiye'de satılan güncel 6. nesil e-BOXER ile aynı nesil/Avrupa spek, ancak hangi alt-donanım/trim test edildiği kaynakta açıkça belirtilmiyor.",
+  ncapKaynak:"https://www.subaru.eu/media/the-all-new-subaru-forester-awarded-maximum-five-star-rating-in-2024-euro-ncap-safety-test",
+  geriCagirmaNot:"ABD'de (NHTSA) 2025 model yılı Subaru Forester için 18 inç alüminyum alaşım jantlarda 'yanlış belirtilmiş lug seat yüzeyi' nedeniyle jantın tam oturmaması/istikrar kaybı riski olduğu, 20.366 aracı kapsayan bir geri çağırma bulundu (2025). Bu ABD pazarı için bildirilmiş; Avrupa/Türkiye'de satılan e-BOXER varyantının bu geri çağırmaya dahil olup olmadığı doğrulanamadı. Avrupa/Türkiye e-BOXER'ine özel ayrı bir sistemik sorun/geri çağırma kaydı aranmış ama bulunamamıştır.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Hands-Free Power Rear Gate",deger:"Subaru'da bir ilk olarak, bagaj kapağı bir 'kick sensor' (ayak hareketi algılayan sensör) ile açılıyor.",kaynak:"https://www.subaru.eu/media/subaru-launches-the-all-new-forester-e-boxer-in-europe"},
+   {ozellik:"Multimedya ekranı",deger:"11,6 inç Full HD dokunmatik ekran, seçili fonksiyonlar için fiziksel donanım düğmeleri korunmuş; kablosuz Apple CarPlay/Android Auto, Apple Maps navigasyon ve what3words entegrasyonu.",kaynak:"https://www.subaru.eu/media/subaru-launches-the-all-new-forester-e-boxer-in-europe"},
+   {ozellik:"Şarj ve bağlantı",deger:"Orta konsolda 10W kablosuz telefon şarjı, ön ve arka koltuklar için Type-C ve Type-A USB portları.",kaynak:"https://www.subaru.eu/media/subaru-launches-the-all-new-forester-e-boxer-in-europe"},
+   {ozellik:"Güvenlik/görüş donanımı",deger:"360° Multi-View Monitor (Subaru'da bir ilk), asferik dış dikiz aynaları, LED köşe aydınlatma lambaları; EyeSight Driver Assist'te 15 fonksiyon (5 yeni, 7 iyileştirilmiş), 9 hava yastığı (yeni 'far-side' hava yastığı dahil), Emergency Driving Stop System (Subaru'da bir ilk).",kaynak:"https://www.subaru.eu/media/subaru-launches-the-all-new-forester-e-boxer-in-europe"}
+  ],
+  gucluYanlar:[
+   {metin:"Daha önce olduğundan daha büyük ve pratik: ön ve arka yolcular için geniş iç mekân ve iyi boyutlu bagaj.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"},
+   {metin:"Kabin dayanıklı/sert plastik malzemeler kullanıyor — rakiplerin eşleşmekte zorlandığı bir sağlamlık.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"},
+   {metin:"Arazi/off-road yeteneği yol tutuşundan ödün vermeden korunmuş; yeni platform kasa sertliğini ~%40 artırmış ve arka diz boşluğuna 30mm eklemiş.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"},
+   {metin:"Geniş cam alanı ve ince sütunlar sayesinde gerçekten iyi görüş açısı sağlıyor.",kaynak:"https://autocar.co.uk/node/153955"},
+   {metin:"Euro NCAP'ten 2024 yılında maksimum 5 yıldız güvenlik derecesi aldı.",kaynak:"https://www.subaru.eu/media/the-all-new-subaru-forester-awarded-maximum-five-star-rating-in-2024-euro-ncap-safety-test"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"e-BOXER hibrit sistemi sadece yaklaşık 1 mil (~1,6 km) elektrikli menzil sunuyor; bu, maliyeti haklı çıkarmaya yetmiyor ve CVT şanzıman hafif ağır/yavaş tepkili bulunuyor, yakıt ekonomisi rakamları zayıf değerlendiriliyor.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"},
+   {metin:"İç mekân, birçok rakibe kıyasla eski/güncellenmemiş bir his veriyor.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"},
+   {metin:"Fiyat segmentinde en ucuz araç değil.",kaynak:"https://www.topgear.com/car-reviews/subaru/forester-e-boxer"}
+  ],
+  odul:[],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5233,7 +5293,9 @@ const RECALLS = {
  'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':null,
  'mini-cooper-3kapi-2026-cooper-s':null,
  'porsche-macan-2026-electric':null,
- 'land-rover-range-rover-evoque-2026-s-p160':null
+ 'land-rover-range-rover-evoque-2026-s-p160':null,
+ 'lexus-nx-2026-350h-executive':null,
+ 'subaru-forester-2025-2-0i-fun':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5537,7 +5599,9 @@ const OFFICIAL = {
  'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':null,
  'mini-cooper-3kapi-2026-cooper-s':null,
  'porsche-macan-2026-electric':null,
- 'land-rover-range-rover-evoque-2026-s-p160':null
+ 'land-rover-range-rover-evoque-2026-s-p160':null,
+ 'lexus-nx-2026-350h-executive':null,
+ 'subaru-forester-2025-2-0i-fun':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -5869,7 +5933,9 @@ const REVIEWS = {
  'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':[],
  'mini-cooper-3kapi-2026-cooper-s':[],
  'porsche-macan-2026-electric':[],
- 'land-rover-range-rover-evoque-2026-s-p160':[]
+ 'land-rover-range-rover-evoque-2026-s-p160':[],
+ 'lexus-nx-2026-350h-executive':[],
+ 'subaru-forester-2025-2-0i-fun':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
