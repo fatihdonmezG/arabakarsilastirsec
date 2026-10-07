@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 306 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade ve Chevrolet Tahoe için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 308 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra ve Alpine A290 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 306 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 308 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5049,6 +5049,68 @@ const CARS = {
    {metin:"IIHS'in güncellenmiş orta örtüşmeli ön çarpışma testinde 'Poor' (Zayıf) sonucu aldı (2023 LT test aracı, 2023-2026 model yıllarını kapsıyor).",kaynak:"https://www.iihs.org/ratings/vehicle/chevrolet/tahoe/2026"}
   ],
   odul:[{ad:"2026 Best Full-Size SUV — AutoTrader.ca Editors' Awards (Tahoe/Suburban ailesine genel olarak verildi, RST'ye özel değil)",yil:2026,kaynak:"https://www.autotrader.ca/editorial/awards/2026-best-full-size-suv-chevrolet-suburban-tahoe/"}],
+  sistemPuani:null},
+ /* --- GMC Sierra Denali + Alpine A290 — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
+    sırasıyla 23 ve 11 araç/arama çağrısı). */
+ 'gmc-sierra-2026-denali':{id:'gmc-sierra-2026-denali',marka:"GMC",model:"Sierra",yil:2026,versiyon:"Denali 3.0 Duramax Turbo Dizel 4x4",
+  kaynakAd:"GM-SV Tur Oto + donanimhaber.com + pece4x4.com + automotiveaddicts.com (derin inceleme) + iihs.org",kaynakUrl:"https://www.gmsv-turoto.com.tr/en/gmc/sierra",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Premium Pickup (Full-size)",kasa:"Crew Cab Pickup",yakit:"Dizel",sanziman:"Otomatik (10 ileri)",cekis:"4x4",cc:3000,silindir:6,guc_hp:305,tork_nm:671,uzunluk_mm:6133,genislik_mm:2063,yukseklik_mm:1915,jant_inch:"20 (standart) / 22 (opsiyonel)",abs:"Var",esp:"Var (StabiliTrak)",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var (14 kameraya kadar çevre görüş)",klima:"Var (çift bölgeli otomatik klima)",ekran_inch:13.4,carplay_android_auto:"Var (Kablosuz)",dijital_gosterge:"Var (12.3 inç dijital gösterge paneli)",garanti_yil:2,garanti_km:100000},
+  ncapNot:"Bu jenerasyon GMC Sierra 1500 Avrupa'da resmi satılmadığı için Euro NCAP testi yok. ABD'de IIHS'in sitesinde sadece 'yaya ön çarpışma önleme' testi bulundu: genel derecelendirme 'A' (Acceptable) — standart otomatik acil frenleme sistemi gündüz çocuk ve gece yetişkin geçiş senaryolarında çarpışmayı önledi veya hızı düşürdü. Tam gövde dayanıklılığı (frontal/side/roof strength) testleri yayınlanmamış. Test edilen kasa 'Extended Cab' idi — bu versiyon 'Crew Cab'; Denali/Duramax trim/motor ayrımı sayfada belirtilmediği için birebir eşleştiği kesin değil.",
+  ncapKaynak:"https://www.iihs.org/ratings/vehicle/gmc/sierra-1500/2026",
+  geriCagirmaNot:"NHTSA Kampanya 26V083 (GM, 12 Şubat 2026): SADECE 2020-2022 model yılı dizel motorlu Chevrolet Silverado/GMC Sierra 1500 ve 2020 Silverado/Sierra 2500/3500'ü kapsıyor — şanzıman kontrol valfi zamanla basınç kaybedebiliyor, sert vites geçişlerine ve nadiren arka tekerleklerin kısa süreli kilitlenmesine yol açabiliyor. 2026 model yılı bu kampanyanın DOĞRUDAN kapsamında değil, ama Duramax dizel şanzıman sisteminde tekrarlayan bir sorun geçmişi olduğunu gösteriyor.",
+  agirBakim:[
+   {km:12000,islem:"3.0L Duramax dizel motora özel resmi bir bakım aralığı bulunamadı. Genel referans (muhtemelen benzinli motor baz alınarak hazırlanmış, dizele özgü olmayan tablo): her 7.500 mil (~12.000 km) lastik rotasyonu, fren balatası ve motor hava filtresi kontrolü; yağ/filtre 'Engine Oil Life System' uyarısına göre değiştiriliyor (en geç 12 ay/12.000 mil).",kaynak:"https://www.kbb.com/gmc/sierra-1500-double-cab/2024/maintenance-schedules/"},
+   {km:36000,islem:"22.500 mil'de kabin hava filtresi değişimi eklenir; 30.000 ve 37.500 mil'de yağ değişimi ve lastik rotasyonu devam eder.",kaynak:"https://www.kbb.com/gmc/sierra-1500-double-cab/2024/maintenance-schedules/"},
+   {km:72000,islem:"45.000 mil'de yağ/filtre değişimi, lastik rotasyonu, kabin filtresi değişimi, evaporatif kontrol sistemi incelemesi, motor hava filtresi değişimi; 4x4 modelde transfer kutusu yağı da değiştiriliyor.",kaynak:"https://www.kbb.com/gmc/sierra-1500-double-cab/2024/maintenance-schedules/"}
+  ],
+  kucukDetaylar:[
+   {ozellik:"Gösterge paneli detayı (Denali trim incelemesi, V8 test aracı — trim özellikleri motor tipinden bağımsız)",deger:"Lazer oyma Mt. Denali haritası detayı var; kapı trim rozetlerinde Denali bölgesinin coğrafi koordinatları yer alıyor.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {ozellik:"İç mekan malzemeleri",deger:"Tavan kaplaması premium microsuede; koltuklar tam tahıl (full-grain) deri ve açık gözenekli Paldao ahşap detaylarla donatılmış, ön koltuklar ısıtmalı ve havalandırmalı.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {ozellik:"Görüş/manevra desteği",deger:"360° kamera sistemi ve dijital iç dikiz aynası kamerası; lastikler Bridgestone Alenza all-season.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"}
+  ],
+  gucluYanlar:[
+   {metin:"13,4 inç dokunmatik ana ekran navigasyon, multimedya ve araç ayarlarına erişimi kolaylaştırıyor.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {metin:"Super Cruise (eller serbest sürüş desteği, opsiyonel), adaptif hız sabitleyici, şerit tutma desteği ve renkli head-up display mevcut.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {metin:"MultiPro arka kapak 6 farklı fonksiyonuyla yükleme/boşaltmayı pratik hale getiriyor.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {metin:"Uyarlanabilir amortisörler yol bozukluklarını iyi emiyor, konforu destekliyor.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {metin:"10 ileri otomatik şanzıman vites geçişlerini akıcı yapıyor.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Masaj fonksiyonu sadece arka koltuklarda var, ön koltuklarda yok.",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {metin:"Sürüş konforu genel olarak iyi olsa da, test edilen V8 versiyonunda bazı durumlarda 'yine de bir kamyon olduğunu hissettiren' sarsıntılar olduğu belirtiliyor (dizel versiyon için ayrıca doğrulanmadı).",kaynak:"https://www.automotiveaddicts.com/103551/2025-gmc-sierra-1500-denali-ultimate-review-test-drive"},
+   {metin:"2020-2022 model yılı dizel Sierra 1500/HD'lerde şanzıman kontrol valfi aşınması ve yanlış yazılım yükleme sorunları geçmişte yaşanmış; bu durum Duramax dizel şanzıman ailesinde tekrarlayan bir güvenilirlik riski geçmişi olarak değerlendirilebilir (2026 modeli için doğrudan geçerli değil).",kaynak:"https://static.nhtsa.gov/odi/rcl/2026/RCLRPT-26V083-8549.pdf"}
+  ],
+  odul:[{ad:"2024 Korea Car of the Year — 'Pickup Truck of the Year' (AWAK, Güney Kore Otomobil Yazarları Derneği; Kore'de satılan tek konfigürasyon Crew Cab Denali, motor tipi kaynakta açıkça belirtilmemiş)",yil:2024,kaynak:"https://gmauthority.com/blog/2024/02/gmc-sierra-named-pickup-truck-of-the-year-in-korea/"}],
+  sistemPuani:null},
+ 'alpine-a290-2026-gt-performance':{id:'alpine-a290-2026-gt-performance',marka:"Alpine",model:"A290",yil:2026,versiyon:"GT Performance",
+  kaynakAd:"otomobil.com.tr + carwow.co.uk/parkers.co.uk (derin inceleme) + euroncap.com",kaynakUrl:"https://www.otomobil.com.tr/alpine-fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"B-segment elektrikli hot-hatch",kasa:"Hatchback",yakit:"Elektrik",sanziman:"Tek ileri vites (Otomatik)",koltuk:5,kapi:5,guc_hp:220,tork_nm:300,sifirYuz_sn:6.4,hiz_kmh:170,uzunluk_mm:3997,genislik_mm:1823,yukseklik_mm:1512,bagaj_l:326,jant_inch:19,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",ekran_inch:10.1,carplay_android_auto:"Var",dijital_gosterge:"Var",batarya_kwh:52,menzil_km_wltp:380,ncap_yildiz:4,ncap_test_yili:2024,liste_fiyati_tl:2315000},
+  ncapNot:"Euro NCAP 2024 testinde (sonuçlar 29 Kasım 2024 yayımlandı) 4/5 yıldız aldı. Tam genişlikte sert bariyer testi doğrudan A290 üzerinde yapıldı; ancak MPDB, yan direk ve yan mobil bariyer testleri Renault 5 üzerinde yapıldı — Euro NCAP, A290'ı Renault 5'in yapısal 'kurumsal ikizi' kabul ederek bu sonuçları A290'a da uyguladı. Testte spesifik bir donanım/güç seviyesi ayrımı yapılmamış, genel A290 gövdesi için geçerli (GT Performance dahil). İkincil kaynağa göre yetişkin ve çocuk koruma skorları %80.",
+  ncapKaynak:"https://news.euroncap.com/safercars/alpine-a290---euro-ncap-2024-results---4-stars/s/242efca3-82df-4a47-9696-325d0c9f280e",
+  geriCagirmaNot:"Resmi bir geri çağırma kaydı bulunamadı; ancak Alpine, 24 Temmuz 2024 - 30 Ocak 2025 arasında Douai fabrikasında üretilen araçlar için önleyici bir servis kampanyası başlattı: elektrikli park freni, sürücü kapısı açıldığında otomatik devreye girmediğinde uyarı sinyali gecikmeli veriliyor; ABS-ESP kontrol ünitesi yazılımı ücretsiz yeniden programlanıyor (~30 dakika). Fransa'da 767 araç etkilendi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Rejeneratif frenleme kontrolü",deger:"Direksiyon simidi üzerinde rejeneratif frenleme seviyesini ayarlamak için bir kadran (paddle) bulunuyor; menzili önceliklendiren özel bir 'Save' sürüş modu ve ekstra performans artışı sağlayan ayrı bir 'boost' düğmesi var.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {ozellik:"Multimedya",deger:"Google tabanlı multimedya sistemi, Google Haritalar üzerinden şarj istasyonu rotası planlayabiliyor; Android Auto ve Apple CarPlay destekleniyor. İklim kontrolü için dokunmatik ekran yerine fiziksel düğmeler korunmuş.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {ozellik:"Şarj/anahtar",deger:"Kablosuz telefon şarjı var; orta konsolda kart tipi anahtar için küçük bir yuva bulunuyor.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"}
+  ],
+  gucluYanlar:[
+   {metin:"Keskin, go-kart benzeri sürüş dinamiği: direksiyon hızlı tepki veriyor, virajlarda çevik ve yüksek tutuş sunuyor.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {metin:"Rakiplerine göre geniş bagaj hacmi: 326L, Mini JCW (210L), Abarth 500e (185L) ve Smart #1 Brabus'tan (273L) daha büyük.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {metin:"İyi otoyol konforu: yüksek hızda yol/rüzgar gürültüsü düşük, süspansiyon Renault 5'e göre iyileştirilmiş.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {metin:"Sıcak hatchback formülünü iyi uyguluyor, Cupra Born VZ ve Abarth 600e gibi rakiplere meydan okuyabilecek düzeyde değerlendiriliyor.",kaynak:"https://www.parkers.co.uk/alpine/a290/review/verdict/"},
+   {metin:"5 kapılı pratiklik: arka koltuğa erişim ve çocuk koltuğu takmak diğer hot hatch'lere göre daha pratik.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Dar arka koltuk ve zayıf saklama alanı: araçta hiç bardak tutucu yok, kapı cepleri küçük bir su şişesini zor alıyor, arkada sadece 12V soket var (USB şarj yok).",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {metin:"Gerçek dünya menzili resmi WLTP rakamının altında kalabiliyor; DC hızlı şarj hızı (100 kW) rakiplere göre 'etkileyici değil' olarak nitelendirildi.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"},
+   {metin:"Kapı panellerinde fiyat seviyesine göre göze batan ucuz plastikler kullanılmış; yeni model olduğu için uzun vadeli güvenilirlik henüz kanıtlanmamış.",kaynak:"https://www.carwow.co.uk/alpine/a290/news/10292/mat-watson-drives-alpine-a290"}
+  ],
+  odul:[{ad:"2025 Car of the Year (Avrupa COTY) — Renault 5 E-Tech ile birlikte (aynı platform), 353 puanla birinci; A290 bu ödülü kazanan ilk Alpine modeli",yil:2025,kaynak:"https://www.automotiveworld.com/news/alpine-a290-named-2025-car-of-the-year/"}],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5366,7 +5428,9 @@ const RECALLS = {
  'lexus-nx-2026-350h-executive':null,
  'subaru-forester-2025-2-0i-fun':null,
  'cadillac-escalade-2026-sport-platinum':null,
- 'chevrolet-tahoe-2026-rst':null
+ 'chevrolet-tahoe-2026-rst':null,
+ 'gmc-sierra-2026-denali':null,
+ 'alpine-a290-2026-gt-performance':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5674,7 +5738,9 @@ const OFFICIAL = {
  'lexus-nx-2026-350h-executive':null,
  'subaru-forester-2025-2-0i-fun':null,
  'cadillac-escalade-2026-sport-platinum':null,
- 'chevrolet-tahoe-2026-rst':null
+ 'chevrolet-tahoe-2026-rst':null,
+ 'gmc-sierra-2026-denali':null,
+ 'alpine-a290-2026-gt-performance':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -6010,7 +6076,9 @@ const REVIEWS = {
  'lexus-nx-2026-350h-executive':[],
  'subaru-forester-2025-2-0i-fun':[],
  'cadillac-escalade-2026-sport-platinum':[],
- 'chevrolet-tahoe-2026-rst':[]
+ 'chevrolet-tahoe-2026-rst':[],
+ 'gmc-sierra-2026-denali':[],
+ 'alpine-a290-2026-gt-performance':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
