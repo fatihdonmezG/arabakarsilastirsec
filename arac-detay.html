@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 298 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6 ve Tesla Model Y için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 300 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5 ve MINI Cooper S için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 298 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 300 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -4798,6 +4798,72 @@ const CARS = {
    {metin:"Otopilot aktifken sürücünün telefona kısa süreliğine bakması bile dikkat uyarısı tetikliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- Mazda CX-5 + MINI Cooper 3 Kapı (Cooper S) — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
+    sırasıyla 18 ve 12 araç/arama çağrısı). Mazda CX-5, Türkiye'de Kasım 2023'te satıştan kaldırılan son nesil
+    (KF, 2017-2023) üst donanımdır — "durum" alanı bu yüzden dolu; derin araştırma (NCAP/bakım/inceleme) yine
+    de aynı nesil/motor için gerçek kaynaklarla yapıldı. */
+ 'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':{id:'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus',marka:"Mazda",model:"CX-5",yil:2023,versiyon:"2.0 SKY-G 4x4 AT Power Sense Plus (Nappa deri, üst donanım)",
+  kaynakAd:"Mazda Türkiye Resmi Fiyat Listesi (Kasım 2023) + completecar.ie + euroncap.com (derin inceleme)",kaynakUrl:"https://media-assets.mazda.eu/raw/upload//mazdatr/globalassets/pdfs/pricelist/mazda-fiyat-listesi-november-2023-website.pdf",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi). Son liste fiyatı (Kasım 2023): 3.127.430 TL — güncel fiyat değildir.",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Kompakt SUV (C-SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"6 ileri otomatik",cekis:"4x4 (AWD)",koltuk:5,kapi:5,cc:1998,silindir:4,besleme:"Direkt enjeksiyon (DI), atmosferik",guc_hp:165,tork_nm:213,sifirYuz_sn:10.3,hiz_kmh:188,tuketim_sehir_ici:8.4,tuketim_sehir_disi:6.1,tuketim_l100km:7,co2_gkm:159,emisyon_normu:"Euro 6d",depo_l:58,uzunluk_mm:4550,genislik_mm:1840,yukseklik_mm:1680,dingil_mm:2700,agirlik_kg:1610,bagaj_l:506,ncap_yildiz:5,ncap_test_yili:2017,abs:"Var"},
+  ncapNot:"Euro NCAP 2017 testinde (KF neslinin lansmanında yapılan tek test, 2023 model yılı için ayrıca test edilmedi) 5 yıldız alındı — resmi Mazda basın bülteni ve bağımsız haberler (conceptcarz.com, autobuzz.my) bunu teyit ediyor. Test edilen varyant Avrupa pazarı 'Sports-Line' donanımıydı, bu özel versiyon ayrıca test edilmedi. Kategori puanları: Yetişkin Yolcu %95, Çocuk Yolcu %80, Savunmasız Yol Kullanıcıları %78, Güvenlik Destek Sistemleri %59. 10 yaş çocuk mankeninde boyun gerilimi 'poor', 6 yaş çocukta göğüs koruması 'marginal' bulundu. Not: Bu derecelendirme 1 Ocak 2024 itibarıyla Euro NCAP tarafından 'süresi dolmuş' (expired) olarak işaretlendi — artık güncel/resmi bir puan değil, sadece tarihsel referans.",
+  ncapKaynak:"https://www.euroncap.com/en/results/mazda/cx-5/27704",
+  geriCagirmaNot:"2023 model yılı için doğrulanmış, sistemik bir geri çağırma (recall) kaydına rastlanmadı; bulunan tek veri ABD NHTSA tüketici şikayet istatistikleridir (resmi recall değildir, en sık bildirilen kategoriler: motor, elektrik, dış aydınlatma, servis frenleri). Türkiye'ye özel bir geri çağırma kaydı aranmış ama bulunamamıştır (distribütörlük 2023'te sona erdiği için güncel TR kaynak bulmak zor).",
+  agirBakim:[
+   {km:10000,islem:"Temel bakım aralığı her 10.000 km veya 12 ayda bir (hangisi önce gelirse); program 160.000 km'ye kadar planlanmış, her bakımda motor yağı+filtre değişimi ile kayış/akü/fren/lastik kontrolleri yapılıyor. Not: Bu resmi Mazda owner's manual verisi Avustralya/Yeni Zelanda pazarına ait; Türkiye'ye özel bakım kitapçığı/ücret bilgisi bulunamadı.",kaynak:"https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8ft7eo17b/contents/07020104.html"},
+   {km:20000,islem:"Hava filtresi: 20.000 km'de temizlik, 60.000 km veya 3 yılda değişim.",kaynak:"https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8ft7eo17b/contents/07020104.html"},
+   {km:40000,islem:"Fren hidroliği ve kabin filtresi: 40.000 km veya 2 yılda bir değişim.",kaynak:"https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8ft7eo17b/contents/07020104.html"},
+   {km:120000,islem:"Buji değişimi 120.000 km'de; yakıt filtresi 150.000 km'de.",kaynak:"https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8ft7eo17b/contents/07020104.html"}
+  ],
+  kucukDetaylar:[
+   {ozellik:"İç mekan malzeme kalitesi",deger:"Üst donanımlarda 'Sen' ahşap kaplama detayları var; genel kalite incelemede 'Lexus seviyesine' benzetilmiş.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {ozellik:"Multimedya ekranı",deger:"Üst donanımlarda 10,25 inç ekran, döner kumanda (rotary controller) ile kullanılıyor; MazdaApp ile uzaktan kilit/bulma/navigasyon aktarımı mümkün.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {ozellik:"Arka kapılar",deger:"Rakiplerine göre daha geniş açılıyor, giriş-çıkışı kolaylaştırıyor.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"}
+  ],
+  gucluYanlar:[
+   {metin:"Çok yüksek iç mekân işçiliği ve malzeme kalitesi ('Lexus seviyesine' benzetiliyor).",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {metin:"Sıkı, tutarlı ve keyifli sürüş hissi (direksiyon/fren/vites kutusu dengesi).",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {metin:"19 inç jantlara rağmen bozulmayan sürüş konforu, iyi sürücü pozisyonu.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {metin:"Önceki nesle göre çok daha sessiz/rahat motor karakteri.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {metin:"Geniş açılan arka kapılar, yeterli bagaj/iç hacim pratikliği (506L).",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Gerçek dünya yakıt tüketimi resmi rakamın üzerinde ölçülmüş (karma kullanımda ~7,5L/100km, resmi 6,7L/100km'ye kıyasla); güç almak için motor devrinin yüksek tutulması gerekiyor.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {metin:"Hibrit/elektrikli motor seçeneği bu neslin hiçbir versiyonunda sunulmadı.",kaynak:"https://completecar.ie/car-reviews/article/Mazda/CX-5/CX-5_2.0_SkyActiv-G_petrol_(2021)/1806/10820/2021-Mazda-CX-5-2.0-SkyActiv-G-petrol-(2021)-review.html"},
+   {metin:"Euro NCAP testinde 10 yaş çocuk mankeninde boyun gerilimi 'poor', 6 yaş çocukta göğüs koruması 'marginal' sonucu alındı.",kaynak:"https://www.euroncap.com/en/results/mazda/cx-5/27704"}
+  ],
+  odul:[{ad:"Used Car of the Year 2022 ve Used Mid-Sized Car of the Year 2022 (Car Dealer Magazine, UK — genel CX-5 nesli için, belirli model yılına özel değil)",yil:2022,kaynak:"https://cardealermagazine.co.uk/mazda-cx-5-used-car-of-the-year-winner-2022/276128"}],
+  sistemPuani:null},
+ 'mini-cooper-3kapi-2026-cooper-s':{id:'mini-cooper-3kapi-2026-cooper-s',marka:"Mini",model:"Cooper 3 Kapı",yil:2026,versiyon:"Cooper S",
+  kaynakAd:"MINI Türkiye Resmi Site + listers.co.uk (derin inceleme) + euroncap.com",kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-cooper-3-door/performance.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:4,kapi:3,cc:1998,silindir:4,besleme:"Turbo (TwinPower Turbo)",guc_hp:204,tork_nm:300,sifirYuz_sn:6.6,hiz_kmh:242,uzunluk_mm:3876,genislik_mm:1744,bagaj_l:210,ncap_yildiz:5,ncap_test_yili:2025,liste_fiyati_tl:5697400,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12},
+  ncapNot:"Euro NCAP 2025 testinde MINI Cooper 3 Kapı (F66) ailesi 5 yıldız aldı. Alt puanlar: Yetişkin Yolcu %83, Çocuk Yolcu %82, Savunmasız Yol Kullanıcısı %81, Güvenlik Destek Sistemleri %77. Not: Fiziksel çarpışma testi 1,5L benzinli Cooper C (3 kapı, LHD, 4x2) varyantıyla yapıldı, bu versiyon (Cooper S, 2.0L, 204 HP) ayrıca test edilmedi; ancak BMW Group'un resmi basın bülteni 5 yıldızın tüm motor varyantlarını (Cooper C, Cooper S, John Cooper Works dahil) kapsadığını açıkça belirtiyor.",
+  ncapKaynak:"https://cdn.euroncap.com/media/89725/euroncap-2025-mini-cooper-datasheet.pdf",
+  geriCagirmaNot:"2025 model yılı MINI Cooper S için kaynaklı bir geri çağırma kaydı bulundu: Avustralya resmi geri çağırma kurumu, üretim hatası nedeniyle ön yolcu/sürücü emniyet kemerlerinin gerekli teknik özelliklere uymaması nedeniyle Cooper S'i adıyla kapsayan bir geri çağırma yayınladı (onarım ücretsiz, 99 araç Avustralya). Bağımsız bir Avrupa kaynağı da Haziran-Ağustos 2025 üretimli Cooper/Countryman modellerinde (dünya çapında 6.331 araç) benzer bir emniyet kemeri üretim hatası bildiriyor, ancak bu kayıtta 'Cooper S' adı açıkça geçmiyor. Genel sistemik bir motor/şanzıman arızası kaydına rastlanmadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Multimedya ekranı",deger:"9,5 inç dairesel OLED dokunmatik ekran; Apple CarPlay tam ekran dairesel formatta gösteriliyor; 'Hey MINI' sesli asistan.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {ozellik:"Sürüş modları",deger:"7 farklı 'MINI Experience' sürüş modu — direksiyon hassasiyeti, gaz tepkisi ve ekran arayüzünü değiştiriyor.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {ozellik:"Güvenlik/konfor donanımı",deger:"Remote 360° çevre kamerası, Park Assist Plus, Digital Key Plus (telefonla araç açma), opsiyonel Head-Up Display.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"}
+  ],
+  gucluYanlar:[
+   {metin:"Hafif gövde yapısı (1,2 tondan hafif) sayesinde klasik MINI sürüş keyfi ve çevik yol tutuşu sürdürülüyor.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {metin:"Güçlü performans: 204 PS ile 0-100 km/s 6,6 saniyede tamamlanıyor — verilen teknik veriyle örtüşüyor.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {metin:"Zengin ve modern teknoloji donanımı (dairesel ekran, sesli asistan, gelişmiş park/kamera sistemleri).",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {metin:"Düşük değer kaybı: incelemeye göre UK pazarında 3 yıl sonunda aracın yaklaşık yarısı değerini koruyor.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {metin:"Euro NCAP'ten 5 yıldız güvenlik derecelendirmesi (tüm motor varyantları, Cooper S dahil).",kaynak:"https://cdn.euroncap.com/media/89725/euroncap-2025-mini-cooper-datasheet.pdf"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Küçük bagaj hacmi: 210 litre, katlanınca 725 litre — rakiplerine göre sınırlı pratiklik.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {metin:"Arka koltuklar yalnızca küçük çocuklar için uygun; yetişkinler için pratik değil.",kaynak:"https://listers.co.uk/reviews/mini/cooper/14117"},
+   {metin:"Manuel şanzıman seçeneği yok (sadece otomatik); ayrıca 2025 model yılı için üretim hatası kaynaklı emniyet kemeri geri çağırması kayıtlı.",kaynak:"https://www.vehiclerecalls.gov.au/recalls/rec-006442"}
+  ],
+  odul:[{ad:"The Sun's 2024 Car of the Year (İngiltere) — kaynakta nesil/motor teyidi tam kesin değil, ihtiyatlı değerlendirilmeli",yil:2024,kaynak:"https://press.bmwgroup.com/united-kingdom/article/detail/T0445520EN_GB/mini-cooper-triumphs-as-the-sun's-2024-car-of-the-year"}],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5107,7 +5173,9 @@ const RECALLS = {
  'mercedes-c-serisi-sedan-c200-4matic-amg-2026':null,
  'bmw-3-serisi-sedan-320i-sport-line-2026':null,
  'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null,
- 'tesla-model-y-premium-lr-rwd-juniper-2026':null
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':null,
+ 'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':null,
+ 'mini-cooper-3kapi-2026-cooper-s':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5407,7 +5475,9 @@ const OFFICIAL = {
  'mercedes-c-serisi-sedan-c200-4matic-amg-2026':null,
  'bmw-3-serisi-sedan-320i-sport-line-2026':null,
  'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null,
- 'tesla-model-y-premium-lr-rwd-juniper-2026':null
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':null,
+ 'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':null,
+ 'mini-cooper-3kapi-2026-cooper-s':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -5735,7 +5805,9 @@ const REVIEWS = {
  'mercedes-c-serisi-sedan-c200-4matic-amg-2026':[],
  'bmw-3-serisi-sedan-320i-sport-line-2026':[],
  'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':[],
- 'tesla-model-y-premium-lr-rwd-juniper-2026':[]
+ 'tesla-model-y-premium-lr-rwd-juniper-2026':[],
+ 'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':[],
+ 'mini-cooper-3kapi-2026-cooper-s':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
