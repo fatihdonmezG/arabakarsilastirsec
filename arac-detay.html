@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 322 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro ve Hongqi E-HS9 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 330 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga ve Lamborghini Urus SE/Temerario/Revuelto için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 322 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 330 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5486,6 +5486,184 @@ const CARS = {
    {metin:"Servis ağı/güvenilirlik riski: Türkiye'de çok niş bir marka — 2023 lansmanından Kasım 2023'e kadar toplam satış sadece 18 adet, bu düşük hacim yedek parça/servis altyapısının sınırlı kalabileceğine işaret ediyor.",kaynak:"https://www.log.com.tr/?p=862447"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- Bentley (5 versiyon) ve Lamborghini (3 versiyon) — 2026-10-08 (Claude ajanları ile, optimize
+    verimli prompt: sırasıyla ~19 ve 20 arama/arama çağrısı). Ultra-lüks/egzotik markalar TL fiyat
+    yayınlamadığı için liste_fiyati_tl hiçbir versiyonda doldurulmadı (bilerek boş, karsilastirma.html'deki
+    kayıt da aynı şekilde boş). Bentley Flying Spur Hybrid için bulunan en kapsamlı inceleme kaynağının
+    bir önceki nesil (V6 PHEV, 544hp) modele ait olduğu tespit edildi — bu dürüstçe not edildi, yanlış
+    nesle ait performans iddiaları siteye yazılmadı. Lamborghini Urus SE ve Revuelto için NHTSA'da gerçek,
+    doğrulanmış erken-üretim geri çağırmaları bulundu (kaput perçini, yakıt pompası/yangın riski, silecek
+    bağlantısı, kamera yazılımı) — hepsi dürüstçe işlendi. */
+ 'bentley-continental-gt-2026-hybrid':{id:'bentley-continental-gt-2026-hybrid',marka:"Bentley",model:"Continental GT",yil:2026,versiyon:"Ultra Performance Hybrid (Taban Versiyon)",
+  kaynakAd:"Bentley Motors Resmi Global Sitesi + evo.co.uk/pistonheads.com (derin inceleme)",kaynakUrl:"https://www.bentleymotors.com/en/models/continental-gt/continental-gt.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks Spor Coupe (Grand Tourer)",kasa:"Coupe",yakit:"Hibrit",sanziman:"8 ileri çift kavramalı otomatik (DCT)",cekis:"4x4",koltuk:4,kapi:2,cc:3996,silindir:8,besleme:"Turbo + Elektrik Motoru",guc_hp:680,tork_nm:930,sifirYuz_sn:3.7,hiz_kmh:270,tuketim_l100km:4.1,co2_gkm:93,depo_l:80,batarya_kwh:25.9,batarya_tipi:"Lityum-İyon (Plug-in Hybrid)",menzil_km_wltp:84,uzunluk_mm:4895,genislik_mm:2187,yukseklik_mm:1397,dingil_mm:2851,agirlik_kg:2459,bagaj_l:260,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",acilir_tavan:"Var (opsiyonel - panoramik cam tavan)",anahtarsiz_giris:"Var",start_stop:"Var",ekran_inch:12.3,carplay_android_auto:"Var (Apple CarPlay doğrulandı, Android Auto net doğrulanamadı)",ses_sistemi:"Standart 10 hoparlör 650W / Opsiyonel Bang & Olufsen 16 hoparlör 1500W / Opsiyonel Naim for Bentley 18 hoparlör 2200W",dijital_gosterge:"Var",garanti_yil:3},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA'da Continental GT/GT Convertible için 2 gerçek kayıt bulundu, ancak 2020-2022 model yılları için (yeni nesil Ultra Performance Hybrid için ayrı doğrulama yok): (1) Kampanya 22V177000 — ön emniyet kemeri retraktör hatası, Nisan 2022; (2) kullanım kılavuzu hava yastığı etiket hatası (FMVSS 208 uyumsuzluğu), 15 Aralık 2021, ~3.777 araç.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik mimari",deger:"680hp sistem gücü: V8 591bhp + 140kW elektrik motoru, 25,9kWh batarya. 22 inç jant, 48V aktif stabilizatör ve 4 tekerlek direksiyon standart; platformun %68'i yeni parça, 400V mimari.",kaynak:"https://www.evo.co.uk/bentley/continental-gt/207185/bentley-continental-gt-speed-2024-review-driving-the-most-powerful"},
+   {ozellik:"Donanım",deger:"Motorlu emniyet kemeri uzatma ('butler'); döner gösterge paneli opsiyonel; standart fren dökme demir, opsiyonel karbon-seramik.",kaynak:"https://www.evo.co.uk/bentley/continental-gt/207185/bentley-continental-gt-speed-2024-review-driving-the-most-powerful"}
+  ],
+  gucluYanlar:[
+   {metin:"Elektrikli modda sessiz/yumuşak sürüş; 2,4-2,6 ton ağırlığa rağmen 4 tekerlek direksiyon + 48V aktif stabilizatörlerle şaşırtıcı çeviklik; gerçek (yapay olmayan) V8 sesi.",kaynak:"https://www.evo.co.uk/bentley/continental-gt/207185/bentley-continental-gt-speed-2024-review-driving-the-most-powerful"},
+   {metin:"Masaj/havalandırmalı koltuklar; WLTP elektrikli menzil ~50 mil, toplam menzil 500+ mil.",kaynak:"https://www-cdn.pistonheads.com/news/ph-driven/2025-bentley-continental-gtc-ph-review/50097"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Önceki modele göre 180+ kg daha ağır (coupe 2459kg); bagaj hacmi batarya nedeniyle küçülmüş; friksiyon/rejeneratif fren geçişi tutarsız hissettiriyor.",kaynak:"https://www.evo.co.uk/bentley/continental-gt/207185/bentley-continental-gt-speed-2024-review-driving-the-most-powerful"},
+   {metin:"Başlangıç fiyatı (İngiltere) önceki modelden £15.000 daha pahalı (£236.600).",kaynak:"https://www-cdn.pistonheads.com/news/ph-driven/2025-bentley-continental-gtc-ph-review/50097"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'bentley-continental-gtc-2026-hybrid':{id:'bentley-continental-gtc-2026-hybrid',marka:"Bentley",model:"Continental GTC",yil:2026,versiyon:"Ultra Performance Hybrid (Taban Versiyon, Convertible)",
+  kaynakAd:"Bentley Motors Resmi Global Sitesi + pistonheads.com (derin inceleme)",kaynakUrl:"https://www.bentleymotors.com/en/models/continental-gtc/continental-gtc.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks Spor Cabrio (Grand Tourer)",kasa:"Cabrio",yakit:"Hibrit",sanziman:"8 ileri çift kavramalı otomatik (DCT)",cekis:"4x4",koltuk:4,kapi:2,cc:3996,silindir:8,besleme:"Turbo + Elektrik Motoru",guc_hp:680,tork_nm:930,sifirYuz_sn:3.9,hiz_kmh:270,co2_gkm:98,depo_l:80,batarya_kwh:25.9,batarya_tipi:"Lityum-İyon (Plug-in Hybrid)",menzil_km_wltp:82,uzunluk_mm:4895,genislik_mm:2187,yukseklik_mm:1392,dingil_mm:2848,agirlik_kg:2636,bagaj_l:134,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",start_stop:"Var",ekran_inch:12.3,carplay_android_auto:"Var (Apple CarPlay doğrulandı, Android Auto net doğrulanamadı)",ses_sistemi:"Standart 10 hoparlör 650W / Opsiyonel Bang & Olufsen 16 hoparlör 1500W / Opsiyonel Naim for Bentley 18 hoparlör 2200W",dijital_gosterge:"Var",garanti_yil:3},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Aynı NHTSA kampanyaları (22V177000 emniyet kemeri retraktör; hava yastığı etiket hatası 21V975000) 2020-2022 model yılı Continental GTC'yi de kapsıyor; yeni nesil Ultra Performance Hybrid için ayrı kayıt bulunamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik mimari",deger:"680hp sistem gücü, V8 591bhp + 140kW elektrik motoru, 25,9kWh batarya, 0-100: 3,9sn.",kaynak:"https://www-cdn.pistonheads.com/news/ph-driven/2025-bentley-continental-gtc-ph-review/50097"}
+  ],
+  gucluYanlar:[
+   {metin:"Elektrikli modda sessiz/yumuşak sürüş; şaşırtıcı çeviklik; WLTP elektrikli menzil ~50 mil, toplam menzil 500+ mil.",kaynak:"https://www-cdn.pistonheads.com/news/ph-driven/2025-bentley-continental-gtc-ph-review/50097"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Coupe'ye göre daha ağır (2636kg) ve bagaj daha küçük (134L); Speed versiyonuna göre ~100hp daha az.",kaynak:"https://www-cdn.pistonheads.com/news/ph-driven/2025-bentley-continental-gtc-ph-review/50097"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'bentley-flying-spur-2026-hybrid':{id:'bentley-flying-spur-2026-hybrid',marka:"Bentley",model:"Flying Spur",yil:2026,versiyon:"Ultra Performance Hybrid (Taban Versiyon)",
+  kaynakAd:"Bentley Motors Resmi Global Sitesi (teknik veri); not: bulunan derin inceleme kaynağı önceki nesil V6 modele ait, ayrıca belirtildi",kaynakUrl:"https://www.bentleymotors.com/en/models/flying-spur/flying-spur.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks Sedan (Executive)",kasa:"Sedan",yakit:"Hibrit",sanziman:"8 ileri çift kavramalı otomatik (DCT)",cekis:"4x4",koltuk:5,kapi:4,cc:3996,silindir:8,besleme:"Turbo + Elektrik Motoru",guc_hp:680,tork_nm:930,sifirYuz_sn:3.9,hiz_kmh:270,tuketim_l100km:4.4,co2_gkm:100,depo_l:80,batarya_kwh:25.9,batarya_tipi:"Lityum-İyon (Plug-in Hybrid)",menzil_km_wltp:80,uzunluk_mm:5316,genislik_mm:2220,yukseklik_mm:1474,dingil_mm:3194,agirlik_kg:2641,bagaj_l:346,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",start_stop:"Var",ekran_inch:12.3,carplay_android_auto:"Var (Apple CarPlay doğrulandı, Android Auto net doğrulanamadı)",ses_sistemi:"Standart 10 hoparlör 650W / Opsiyonel Bang & Olufsen 16 hoparlör 1500W / Opsiyonel Naim for Bentley 18 hoparlör 2200W",dijital_gosterge:"Var",garanti_yil:3},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Aynı NHTSA kampanyaları (22V177000 emniyet kemeri retraktör; hava yastığı etiket hatası 21V975000) 2021-2022 model yılı Flying Spur'u da kapsıyor; yeni nesil Ultra Performance Hybrid için ayrı kayıt bulunamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"ÖNEMLİ KAYNAK UYARISI",deger:"Bulunan en kapsamlı bağımsız inceleme (drivencarguide.co.nz) motoru '2,9L V6 hibrit, 544hp' olarak tanımlıyor — bu, bir önceki nesil (2023) Flying Spur Hybrid'e ait, bu sayfadaki güncel 'Ultra Performance Hybrid' (680HP V8) ile aynı değil. Bu yüzden o incelemenin performans/sürüş izlenimleri güçlü/zayıf yön listelerine dahil edilmedi, sadece donanım felsefesi genel geçerliliğini koruyan maddeler alındı.",kaynak:"https://www.drivencarguide.co.nz/reviews/bentley-flying-spur-hybrid-review-this-is-what-600k-of-eco-sedan-looks-like"},
+   {ozellik:"Teknik mimari (resmi, güncel nesil)",deger:"680hp sistem gücü: V8 + elektrik motoru, 25,9kWh batarya, 8 ileri DCT, 4x4.",kaynak:"https://www.bentleymotors.com/en/models/flying-spur/flying-spur.html"}
+  ],
+  gucluYanlar:[
+   {metin:"(Önceki nesil V6 incelemesinden, genel platform felsefesi olarak geçerli olabilir) Dengeli viraj performansı, hava süspansiyonu limuzin hissi veriyor, AWD ıslak yolda çekişi koruyor, geniş kişiselleştirme seçenekleri.",kaynak:"https://www.drivencarguide.co.nz/reviews/bentley-flying-spur-hybrid-review-this-is-what-600k-of-eco-sedan-looks-like"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yukarıdaki kaynak uyarısına göre, bu maddeler önceki V6 nesline ait olup yeni V8 için teyit gerektirir: hibrit donanım nedeniyle arka tekerlek direksiyonu yok, bagaj 420L'den 350L'ye düşmüş, sadece AC şarj var (DC hızlı şarj yok), kablosuz Android Auto desteklenmiyor.",kaynak:"https://www.drivencarguide.co.nz/reviews/bentley-flying-spur-hybrid-review-this-is-what-600k-of-eco-sedan-looks-like"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'bentley-bentayga-2026-v8':{id:'bentley-bentayga-2026-v8',marka:"Bentley",model:"Bentayga",yil:2026,versiyon:"V8 (Taban Versiyon)",
+  kaynakAd:"Bentley Motors Resmi Global Sitesi + carsguide.com.au/carwow.co.uk (derin inceleme)",kaynakUrl:"https://www.bentleymotors.com/en/models/bentayga/bentayga.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"8 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3996,silindir:8,besleme:"Turbo",guc_hp:550,tork_nm:770,hiz_kmh:290,tuketim_l100km:13,co2_gkm:296,depo_l:85,uzunluk_mm:5125,genislik_mm:2222,yukseklik_mm:1728,dingil_mm:2995,agirlik_kg:2412,bagaj_l:484,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",start_stop:"Var",carplay_android_auto:"Var",garanti_yil:3},
+  ncapNot:"Euro NCAP tarafından test edilmemiş; carwow.co.uk açıkça şunu doğruluyor: 'Euro NCAP testi yok. Porsche Cayenne'in iyi sonuçları üzerinden çıkarım yapılıyor.'",
+  ncapKaynak:"https://www.carwow.co.uk/Bentley/Bentayga",
+  geriCagirmaNot:"NHTSA'daki hava yastığı etiket hatası kampanyası (21V975000, bildirim Aralık 2021) 2021-2022 model yılı Bentayga'yı kapsıyor; güncel nesil için ayrı kayıt bulunamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"21 inç jant standart, 4 çıkışlı egzoz, panoramik cam tavan, hava süspansiyonu, silindir devre dışı bırakma, 10,9 inç dokunmatik ekran (carwow'a göre Bentley'nin bu alandaki en iyisi), ön koltukta 22 ayrı elektrik motoru, gece görüş kamerası opsiyonel.",kaynak:"https://www.carwow.co.uk/Bentley/Bentayga"},
+   {ozellik:"Garanti",deger:"3 yıl sınırsız km garanti.",kaynak:"https://www.carwow.co.uk/Bentley/Bentayga"}
+  ],
+  gucluYanlar:[
+   {metin:"Twin-turbo V8 motor incelemede en yüksek alt-puanı aldı (9/10), sesi övülüyor; konfor modunda yumuşak/dengeli sürüş.",kaynak:"https://www.carsguide.com.au/car-reviews/bentley-bentayga-v8-74067"},
+   {metin:"Boyutuna göre şaşırtıcı çevik, aktif stabilizatör barları yalpayı azaltıyor; otoyolda çok sessiz ve stabil.",kaynak:"https://www.carsguide.com.au/car-reviews/bentley-bentayga-v8-74067"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Standart AEB yok, birçok ileri sürücü destek sistemi ek ücretli paket; Euro NCAP/ANCAP puanı yok.",kaynak:"https://www.carwow.co.uk/Bentley/Bentayga"},
+   {metin:"8 inç ekran eski bulunuyor, kablosuz şarj yok; resmi yakıt tüketimi 11,4 l/100km'ye karşı test edilen 21,1 l/100km; carwow'a göre kabinde Audi kaynaklı anahtar/kollar lüks algısını zayıflatıyor ve 'güvenilirlik konusunda endişeler var, birkaç kez geri çağırma yapılmış' notu düşülmüş (spesifik arıza tipi belirtilmemiş).",kaynak:"https://www.carwow.co.uk/Bentley/Bentayga"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'bentley-bentayga-2026-hybrid':{id:'bentley-bentayga-2026-hybrid',marka:"Bentley",model:"Bentayga",yil:2026,versiyon:"Hybrid PHEV (Taban Versiyon)",
+  kaynakAd:"Bentley Motors Resmi Global Sitesi + topgear.com (derin inceleme)",kaynakUrl:"https://www.bentleymotors.com/en/models/bentayga/bentayga.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks SUV",kasa:"SUV",yakit:"Hibrit",sanziman:"8 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:2995,silindir:6,besleme:"Turbo + Elektrik Motoru",guc_hp:462,tork_nm:700,hiz_kmh:254,tuketim_l100km:6.7,co2_gkm:153,batarya_kwh:18,batarya_tipi:"Lityum-İyon (Plug-in Hybrid)",menzil_km_wltp:45,uzunluk_mm:5125,genislik_mm:2222,yukseklik_mm:1710,dingil_mm:2995,agirlik_kg:2510,bagaj_l:479,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",start_stop:"Var",carplay_android_auto:"Var",garanti_yil:3},
+  ncapNot:"Euro NCAP tarafından test edilmemiş (Bentayga ailesi genelinde test edilmediği carwow.co.uk kaynağından teyitli).",
+  ncapKaynak:"https://www.carwow.co.uk/Bentley/Bentayga",
+  geriCagirmaNot:"Genel Bentayga NHTSA hava yastığı etiket kampanyası (21V975000, 2021-2022 model yılları) PHEV versiyonunu da kapsıyor olabilir, versiyona özel ayrı doğrulama yapılamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Sürüş modları",deger:"Hybrid (otomatik)/Electric/Hold modları; harita ekranında yeşil kenarlı elektrikli menzil gösterimi; ev tipi şarjla ~2,5 saatte tam dolum.",kaynak:"https://www.topgear.com/car-reviews/bentley/bentayga/30-v6-hybrid-5dr-auto/first-drive"}
+  ],
+  gucluYanlar:[
+   {metin:"Elektrik modunda sessiz/pürüzsüz, motor başlatıldığında doğrudan elektrikle başlıyor; 2626kg ağırlığa rağmen 0-100: ~5,5sn.",kaynak:"https://www.topgear.com/car-reviews/bentley/bentayga/30-v6-hybrid-5dr-auto/first-drive"},
+   {metin:"Fren geçişi (elektrik motoru↔disk fren) fark edilmeyecek kadar iyi.",kaynak:"https://www.topgear.com/car-reviews/bentley/bentayga/30-v6-hybrid-5dr-auto/first-drive"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Batarya küçük (13kWh, bu incelemede test edilen versiyonda) ve yavaş şarj oluyor; motor bataryayı şarj edemiyor (sadece rejeneratif frenleme); elektrikli menzil sınırlı (~48km).",kaynak:"https://www.topgear.com/car-reviews/bentley/bentayga/30-v6-hybrid-5dr-auto/first-drive"},
+   {metin:"V6 motor V8/W12'ye göre daha sert/kaba, orta devirde sertlik ve kickdown'da titreşim var, ses karakteri 'Bentley'e uymuyor'; ağırlık nedeniyle diğer Bentayga versiyonlarından daha az çevik; arka yolcu alanı beklenenden dar.",kaynak:"https://www.topgear.com/car-reviews/bentley/bentayga/30-v6-hybrid-5dr-auto/first-drive"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'lamborghini-urus-se-2026':{id:'lamborghini-urus-se-2026',marka:"Lamborghini",model:"Urus SE",yil:2026,versiyon:"SE (Plug-in Hibrit)",
+  kaynakAd:"Lamborghini.com Resmi Basın Bülteni + NHTSA/vehiclesafetyrecalls.com (derin araştırma)",kaynakUrl:"https://www.lamborghini.com/en-en/news/lamborghini-urus-se-the-first-plug-in-hybrid-super-suv",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks Performans SUV",kasa:"SUV",yakit:"Hibrit",sanziman:"8 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3996,silindir:8,besleme:"Twin-turbo",guc_hp:789,tork_nm:950,sifirYuz_sn:3.4,hiz_kmh:312,depo_l:85,batarya_kwh:25.9,batarya_tipi:"Lityum-İyon",menzil_km_wltp:60,uzunluk_mm:5123,genislik_mm:2022,yukseklik_mm:1638,dingil_mm:3003,agirlik_kg:2505,bagaj_l:454,jant_inch:21},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA'da Urus ailesi için 3 gerçek kayıt bulundu: (1) Kampanya 24V348000 — 2023-2024 Urus S/Performante, üretim hatalı perçin pimleri nedeniyle kaputun yüksek hızda ayrılma riski, ~2.133 araç (SE'nin kapsamda olup olmadığı doğrulanamadı); (2) Kampanya 25V903000 — 2019-2024 Urus (SE dahil olabilir), yazılım hatası geri görüş kamerası görüntüsünü engelliyor, ~10.554 araç, 21 Aralık 2025; (3) Kampanya 25V633000 — 2025 Urus (SE'nin üretim yılıyla örtüşüyor), yüksek basınçlı yakıt pompası bağlantı elemanları yeterince sıkılmamış, yakıt sızıntısı/yangın riski, 14 araç, 23 Eylül 2025.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik mimari",deger:"Plug-in hibrit yapı, düşük profilli (lowered) gövde seçeneği mevcut.",kaynak:"https://evo.co.uk/lamborghini/lamborghini-urus/207218/lamborghini-urus-se-pictures"}
+  ],
+  gucluYanlar:[
+   {metin:"Auto Motor und Sport tarafından lüks SUV kategorisinde 'Best Car 2024' seçildi; Sport Auto Award 2024'te kategorisinde birincilik.",kaynak:"https://www.supercars.net/blog/2024-lamborghini-hybrids-revered"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Üç ayrı NHTSA geri çağırması (kaput, kamera yazılımı, yakıt pompası) ilk üretim yıllarında kalite kontrol sorunlarına işaret ediyor (bkz. geriCagirmaNot).",kaynak:"https://www.motorauthority.com/news/1143263_lamborghini-urus-recalled-because-hood-could-detach-at-high-speeds"}
+  ],
+  odul:[{ad:"Auto Motor und Sport — Lüks SUV kategorisinde 'Best Car 2024'",yil:2024,kaynak:"https://www.supercars.net/blog/2024-lamborghini-hybrids-revered"},{ad:"Automobile Awards 2024 (Paris) — 'Dashboard of the Year'",yil:2024,kaynak:"https://theevreport.com/lamborghinis-hybrid-lineup-dominates-global-awards"}],
+  sistemPuani:null},
+ 'lamborghini-temerario-2026':{id:'lamborghini-temerario-2026',marka:"Lamborghini",model:"Temerario",yil:2026,versiyon:"Standart (Alleggerita paketi opsiyonel)",
+  kaynakAd:"Lamborghini.com Resmi Haber + topgear.com (derin inceleme)",kaynakUrl:"https://www.lamborghini.com/en-en/news/lamborghini-temerario-authentic-fuoriclasse",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Süper Otomobil",kasa:"Coupe",yakit:"Hibrit",sanziman:"8 ileri çift kavramalı (DCT)",cekis:"4x4",koltuk:2,kapi:2,cc:3996,silindir:8,besleme:"Twin-turbo (Hot-V)",guc_hp:907,tork_nm:729,sifirYuz_sn:2.7,hiz_kmh:343,depo_l:68,batarya_kwh:3.8,batarya_tipi:"Lityum-İyon",uzunluk_mm:4706,genislik_mm:1996,yukseklik_mm:1201,dingil_mm:2658,agirlik_kg:1923,ekran_inch:8.4,dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Bu araştırma turunda NHTSA'da Temerario'ya özel bir geri çağırma kaydı bulunamadı (arama kotası sınırlı kaldığı için ek doğrulama tam yapılamadı) — bu, kayıt olmadığı anlamına gelmez, sadece bu oturumda teyit edilemediği anlamına gelir.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor",deger:"4.0L twin-turbo düz silindirli (flat-plane) V8, redline 10.000 rpm. Motor+8 ileri çift kavramalı şanzıman arası elektrik motoru + ön e-aks üzerinde iki elektrik motoru, 4 tekerlekten çekiş. 3,8kWh batarya. 'Alleggerita' paketi karbon jantlarla ~30kg hafifletme sunuyor.",kaynak:"https://www.topgear.com/car-reviews/lamborghini/temerario"}
+  ],
+  gucluYanlar:[
+   {metin:"Tasarımı ölçülü/sade, eski Huracán V10'a göre daha kullanışlı ve az korkutucu bulunuyor. Çok hızlı (0-100: ~2,7sn).",kaynak:"https://www.topgear.com/car-reviews/lamborghini/temerario"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Motor sesi düşük devirde 'sanayi tipi/homurtulu' bulunuyor, bazıları için alışma gerektiriyor. Önceki Huracán'dan 250kg'dan fazla ağır. Elektrikli menzil kaynaklar arasında çelişkili raporlanmış.",kaynak:"https://www.topgear.com/car-reviews/lamborghini/temerario"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'lamborghini-revuelto-2026':{id:'lamborghini-revuelto-2026',marka:"Lamborghini",model:"Revuelto",yil:2026,versiyon:"Standart",
+  kaynakAd:"Wikipedia (teyit) + carwow.co.uk (derin inceleme) + NHTSA/vehiclesafetyrecalls.com",kaynakUrl:"https://en.wikipedia.org/wiki/Lamborghini_Revuelto",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Süper Otomobil (Flagship)",kasa:"Coupe",yakit:"Hibrit",sanziman:"8 ileri çift kavramalı (DCT)",cekis:"4x4",koltuk:2,kapi:2,cc:6498,silindir:12,besleme:"Doğal emişli",guc_hp:1001,tork_nm:1062,sifirYuz_sn:2.5,hiz_kmh:350,depo_l:68,batarya_kwh:3.8,batarya_tipi:"Lityum-İyon",menzil_km_wltp:10,uzunluk_mm:4947,genislik_mm:2033,yukseklik_mm:1160,dingil_mm:2779,agirlik_kg:1772,jant_inch:21},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA'da 3 ayrı, gerçek kayıt bulundu — ilk üretim yılı sorunlarını yansıtıyor: (1) Kampanya 24V765000 (15 Ekim 2024) — 2024 Revuelto, 455 araç, silecek bağlantı çubuğu bükülüp motor bağlantısından ayrılabiliyor, silecekler durabiliyor; (2) Kampanya 24V945000 (19 Aralık 2024) — 2024 Revuelto, 2 araç, yağ devresi flanş vidaları yeterince sıkılmamış → yağ sızıntısı/motor yangın riski (New York'ta gerçek bir yangın olayı sonrası tespit edildi); (3) Kampanya 26V053000 (29 Ocak 2026) — 2024-2025 Revuelto, 7 araç, yazılım hatası geri görüş kamerası görüntüsünü engelliyor.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik mimari",deger:"Plug-in hibrit: 6,5L V12 + 3 elektrik motoru, toplam güç carwow ölçümünde 1.015hp (Lamborghini'nin resmi 1.001hp rakamından az farklı). Orta motorlu, alçak gövde, dört çıkışlı egzoz, açık motor bölmesi camı. Bazı iç parçalar (direksiyon kumandaları gibi) Audi/VW grubu paylaşımlı.",kaynak:"https://www.carwow.co.uk/news/7826/lamborghini-revuelto-review"}
+  ],
+  gucluYanlar:[
+   {metin:"Launch control ile 0-60mph: 2,47sn (carwow ölçümü). Şehir içi kullanımı Aventador'dan çok daha kolay. Süspansiyon bozuk yollarda darbe emme konusunda iyi, sürüş modları esnek. Carwow 10/10 'Wowscore' verdi.",kaynak:"https://www.carwow.co.uk/news/7826/lamborghini-revuelto-review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Fiyat ~£450.000 (opsiyonsuz), 'aşırı pahalı' olarak eleştirildi. Bagaj sadece 112 litre (ön kaput altında). Görüş açısı zayıf, dar alanlarda sürmek zor. Kapı cepleri yok, bardaklık kullanışsız. Sürücü koltuğu geriye az açılıyor, 1,83m üzeri boylar için zor. Infotainment ekranı yavaş. Düşük hızda fren tepkisi sert/tutuk.",kaynak:"https://www.carwow.co.uk/news/7826/lamborghini-revuelto-review"},
+   {metin:"İlk üretim yıllarında 3 ayrı NHTSA geri çağırması (silecek, yağ sızıntısı/yangın riski, kamera yazılımı) kalite kontrol sorunlarına işaret ediyor (bkz. geriCagirmaNot).",kaynak:"https://www.motorauthority.com/news/1145448_lamborghini-revuelto-recalled-for-fire-risk"}
+  ],
+  odul:[{ad:"Road & Track — '2025 Performance Car of the Year'",yil:2025,kaynak:"https://www.supercars.net/blog/2024-lamborghini-hybrids-revered"},{ad:"Chicago Athenaeum: Museum of Architecture and Design — 'Good Design Award' (Transportation kategorisi)",yil:2024,kaynak:"https://www.supercars.net/blog/2024-lamborghini-hybrids-revered"}],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5829,7 +6007,55 @@ const RECALLS = {
    kaynak:'https://www.log.com.tr/skywell-turkiyeden-yanan-et5ler-hakkinda-resmi-aciklama-cok-sayida-riskli-arac-var/'}
  ],
  'swm-g01-pro-2026-dct':null,
- 'hongqi-e-hs9-2025-deluxe':null
+ 'hongqi-e-hs9-2025-deluxe':null,
+ 'bentley-continental-gt-2026-hybrid':[
+  {tarih:'2022-04',parca:'Emniyet kemeri',baslik:'Ön emniyet kemeri retraktör hatası (NHTSA 22V177000)',
+   ozet:'2020-2022 model yılı Continental GT/GTC için NHTSA kampanyası; yeni nesil Ultra Performance Hybrid için ayrı doğrulama yok.',
+   cozum:'Yetkili serviste kontrol/değişim.',kaynak:'https://conceptcarz.com/view/z32317/recall/32317/Bentley-Continental-GT.aspx'}
+ ],
+ 'bentley-continental-gtc-2026-hybrid':[
+  {tarih:'2022-04',parca:'Emniyet kemeri',baslik:'Ön emniyet kemeri retraktör hatası (NHTSA 22V177000)',
+   ozet:'2020-2022 model yılı Continental GT/GTC için NHTSA kampanyası; yeni nesil Ultra Performance Hybrid için ayrı doğrulama yok.',
+   cozum:'Yetkili serviste kontrol/değişim.',kaynak:'https://conceptcarz.com/view/z32317/recall/32317/Bentley-Continental-GT.aspx'}
+ ],
+ 'bentley-flying-spur-2026-hybrid':[
+  {tarih:'2021-12',parca:'Hava yastığı etiketi',baslik:'Kullanım kılavuzu hava yastığı etiket hatası (NHTSA, FMVSS 208 uyumsuzluğu)',
+   ozet:'2021-2022 model yılı Flying Spur için ~3.777 araçlık kampanya; yeni nesil Ultra Performance Hybrid için ayrı doğrulama yok.',
+   cozum:'Düzeltilmiş kullanım kılavuzu/etiket sağlanması.',kaynak:'https://vehiclesafetyrecalls.com/recall/21V975000'}
+ ],
+ 'bentley-bentayga-2026-v8':[
+  {tarih:'2021-12',parca:'Hava yastığı etiketi',baslik:'Kullanım kılavuzu hava yastığı etiket hatası (NHTSA, FMVSS 208 uyumsuzluğu)',
+   ozet:'2021-2022 model yılı Bentayga için kampanya; güncel nesil için ayrı kayıt bulunamadı.',
+   cozum:'Düzeltilmiş kullanım kılavuzu/etiket sağlanması.',kaynak:'https://vehiclesafetyrecalls.com/recall/21V975000'}
+ ],
+ 'bentley-bentayga-2026-hybrid':[
+  {tarih:'2021-12',parca:'Hava yastığı etiketi',baslik:'Kullanım kılavuzu hava yastığı etiket hatası (NHTSA, FMVSS 208 uyumsuzluğu)',
+   ozet:'2021-2022 model yılı Bentayga ailesi için kampanya (PHEV versiyonunu kapsayıp kapsamadığı ayrıca doğrulanamadı).',
+   cozum:'Düzeltilmiş kullanım kılavuzu/etiket sağlanması.',kaynak:'https://vehiclesafetyrecalls.com/recall/21V975000'}
+ ],
+ 'lamborghini-urus-se-2026':[
+  {tarih:'2025-09',parca:'Yakıt sistemi',baslik:'Yüksek basınçlı yakıt pompası bağlantı elemanı gevşekliği (NHTSA 25V633000)',
+   ozet:'2025 model yılı Urus için 14 araçlık kampanya; yakıt sızıntısı/yangın riski.',
+   cozum:'Yetkili serviste kontrol/sıkma.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V633-1314.pdf'},
+  {tarih:'2025-12',parca:'Geri görüş kamerası',baslik:'Yazılım hatası geri görüş kamerası görüntüsünü engelliyor (NHTSA 25V903000)',
+   ozet:'2019-2024 model yılı Urus ailesi için ~10.554 araçlık kampanya (FMVSS 111 ihlali).',
+   cozum:'Yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V903-2916.pdf'},
+  {tarih:'2024-10',parca:'Kaporta',baslik:'Kaput perçin pimi üretim hatası (NHTSA 24V348000)',
+   ozet:'2023-2024 model yılı Urus S/Performante için ~2.133 araçlık kampanya; yüksek hızda kaputun ayrılma riski. Urus SE\'nin kapsamda olup olmadığı doğrulanamadı.',
+   cozum:'Yetkili serviste kontrol/değişim.',kaynak:'https://www.motorauthority.com/news/1143263_lamborghini-urus-recalled-because-hood-could-detach-at-high-speeds'}
+ ],
+ 'lamborghini-revuelto-2026':[
+  {tarih:'2024-12',parca:'Motor / yağ devresi',baslik:'Yağ devresi flanş vidaları yeterince sıkılmamış — yangın riski (NHTSA 24V945000)',
+   ozet:'2024 model yılı Revuelto için 2 araçlık kampanya; New York\'ta gerçek bir yangın olayı sonrası tespit edildi.',
+   cozum:'Yetkili serviste kontrol/sıkma.',kaynak:'https://www.motorauthority.com/news/1145448_lamborghini-revuelto-recalled-for-fire-risk'},
+  {tarih:'2024-10',parca:'Silecek sistemi',baslik:'Silecek bağlantı çubuğu bükülmesi (NHTSA 24V765000)',
+   ozet:'2024 model yılı Revuelto için 455 araçlık kampanya; silecekler durabiliyor.',
+   cozum:'Yetkili serviste kontrol/değişim.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V765000'},
+  {tarih:'2026-01',parca:'Geri görüş kamerası',baslik:'Yazılım hatası geri görüş kamerası görüntüsünü engelliyor (NHTSA 26V053000)',
+   ozet:'2024-2025 model yılı Revuelto için 7 araçlık kampanya.',
+   cozum:'Yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/26V053000'}
+ ],
+ 'lamborghini-temerario-2026':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -6153,7 +6379,15 @@ const OFFICIAL = {
  'skywell-et5-lr-2026-legend':null,
  'skywell-et5-lr-2026-exclusive':null,
  'swm-g01-pro-2026-dct':null,
- 'hongqi-e-hs9-2025-deluxe':null
+ 'hongqi-e-hs9-2025-deluxe':null,
+ 'bentley-continental-gt-2026-hybrid':null,
+ 'bentley-continental-gtc-2026-hybrid':null,
+ 'bentley-flying-spur-2026-hybrid':null,
+ 'bentley-bentayga-2026-v8':null,
+ 'bentley-bentayga-2026-hybrid':null,
+ 'lamborghini-urus-se-2026':null,
+ 'lamborghini-temerario-2026':null,
+ 'lamborghini-revuelto-2026':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -6505,7 +6739,15 @@ const REVIEWS = {
  'skywell-et5-lr-2026-legend':[],
  'skywell-et5-lr-2026-exclusive':[],
  'swm-g01-pro-2026-dct':[],
- 'hongqi-e-hs9-2025-deluxe':[]
+ 'hongqi-e-hs9-2025-deluxe':[],
+ 'bentley-continental-gt-2026-hybrid':[],
+ 'bentley-continental-gtc-2026-hybrid':[],
+ 'bentley-flying-spur-2026-hybrid':[],
+ 'bentley-bentayga-2026-v8':[],
+ 'bentley-bentayga-2026-hybrid':[],
+ 'lamborghini-urus-se-2026':[],
+ 'lamborghini-temerario-2026':[],
+ 'lamborghini-revuelto-2026':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
