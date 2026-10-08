@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 406 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio (6. nesil), Togg T10X, Toyota Camry, GMC Yukon, Fiat Egea Sedan, Peugeot 508, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, MINI Cooper C (3/5 Kapı), MINI Cooper Cabrio, MINI Countryman, MINI Countryman Electric, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Subaru Crosstrek, Subaru Solterra, Cadillac Escalade, Cadillac Escalade ESV, Chevrolet Tahoe, Chevrolet Suburban, GMC Sierra, Alpine A290, Alpine A390, KGM Torres, DS 7, DS N°4, DS N°8, MG ZS EV, Nissan Navara, Alfa Romeo Giulia, Alfa Romeo Stelvio, Hyundai Accent Blue, Hyundai Elantra, Kia Cerato, Kia Rio, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20, Ferrari Amalfi/Purosangue/296, Aston Martin Vantage/DB12/DBX/Vanquish, Rolls-Royce Ghost/Phantom/Cullinan/Spectre ve Isuzu D-Max için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 415 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio (6. nesil), Togg T10X, Toyota Camry, GMC Yukon, Fiat Egea Sedan, Peugeot 508, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, MINI Cooper C (3/5 Kapı), MINI Cooper Cabrio, MINI Countryman, MINI Countryman Electric, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Lexus LBX, Lexus RX, Lexus LM, Subaru Forester, Subaru Crosstrek, Subaru Solterra, Cadillac Escalade, Cadillac Escalade ESV, Chevrolet Tahoe, Chevrolet Suburban, GMC Sierra, Alpine A290, Alpine A390, KGM Torres, KGM Torres EVX, KGM Korando, KGM Actyon, KGM Musso Grand, KGM Musso EV, DS 7, DS N°4, DS N°8, MG ZS EV, Nissan Navara, Alfa Romeo Giulia, Alfa Romeo Stelvio, Hyundai Accent Blue, Hyundai Elantra, Kia Cerato, Kia Rio, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20, Ferrari Amalfi/Purosangue/296, Aston Martin Vantage/DB12/DBX/Vanquish, Rolls-Royce Ghost/Phantom/Cullinan/Spectre ve Isuzu D-Max için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 406 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 415 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -7314,6 +7314,214 @@ const CARS = {
    {metin:"Bu oturumda bağımsız, detaylı bir inceleme kaynağına erişilemedi.",kaynak:null}
   ],
   odul:[],
+  sistemPuani:null},
+'lexus-lbx-2026-elegant':{id:'lexus-lbx-2026-elegant',marka:"Lexus",model:"LBX",yil:2026,versiyon:"Elegant (1.5 Hibrit e-CVT FWD)",
+  kaynakAd:"lexus.com.tr (Teknik Özellikler) + sifiraracal.com (fiyat) + Euro NCAP/ANCAP",kaynakUrl:"https://www.lexus.com.tr/araclar/lbx/teknik-ozellikler",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"B-SUV",kasa:"SUV (Crossover)",yakit:"Benzin (Hibrit)",sanziman:"e-CVT Otomatik",cekis:"4x2 (Önden Çekiş)",koltuk:5,kapi:5,cc:1490,silindir:3,guc_hp:136,uzunluk_mm:4191,genislik_mm:1826,yukseklik_mm:1544,bagaj_l:331,liste_fiyati_tl:3380000,ncap_yildiz:5},
+  ncapNot:"Euro NCAP 5 yıldız (2024 testi), standart donanımla elde edildi (opsiyonel paket gerekmedi). ANCAP de aynı testi aynalayarak kendi puanını yayınladı; ANCAP puanı yalnızca 1.5L hibrit versiyonlar için geçerli ve Aralık 2031'e kadar süreli.",
+  ncapKaynak:"https://www.lexus.eu/discover-lexus/safety/lbx-awarded-five-star-euro-ncap-rating",
+  geriCagirmaNot:"Avusturya kaynaklı bir raporda, Temmuz 2022-Ocak 2025 arası üretilen araçlarda gösterge paneli (kombimetre) yazılımının belleğe aşırı veri yazarak zamanla bozulmasına yol açabileceği, bu durumun kalkış sırasında hız göstergesi/uyarı ekranının görünmemesine neden olabileceği belirtiliyor (OTA güncellemesiyle düzeltiliyor). Ancak resmi bir kampanya numarası veya kesin duyuru tarihi bu oturumda doğrulanamadığından yapılandırılmış geri çağırma listesine eklenmedi; VIN üzerinden Lexus Türkiye ile teyit önerilir.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"sikayetvar.com üzerinde tek bir sahip, 10 yıllık garantiye rağmen 10 ay içinde 12V aküsünün iki kez arızalandığını bildirmiş; bayi seyrek kullanım olduğunu belirtmiş. Sistemik bir bulgu değil, tekil şikayet.",kaynak:"https://www.sikayetvar.com/en/lexus-us/lexus-lbx-battery-keeps-failing-despite-10-year-warranty"}
+  ],
+  gucluYanlar:[
+   {metin:"Standart donanımla Euro NCAP 5 yıldız güvenlik notu.",kaynak:"https://www.lexus.eu/discover-lexus/safety/lbx-awarded-five-star-euro-ncap-rating"},
+   {metin:"What Car? Car of the Year 2024 ödülünü kazandı — Lexus'un Avrupa'da aldığı ilk büyük ödüllerden biri.",kaynak:"https://media.lexus.co.uk/?p=78523"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Olası gösterge paneli yazılım arızası bildirimi var (VIN ile teyit önerilir).",kaynak:"https://www.oeamtc.at/rueckrufaktionen/lexus-lbx-probleme-mit-der-programmierung-des-kombimeters-87251528/print"},
+   {metin:"Tekil 12V akü şikayetleri bildirilmiş.",kaynak:"https://www.sikayetvar.com/en/lexus-us/lexus-lbx-battery-keeps-failing-despite-10-year-warranty"}
+  ],
+  odul:[
+   {ad:"What Car? Car of the Year 2024",yil:2024,kaynak:"https://media.lexus.co.uk/?p=78523"}
+  ],
+  sistemPuani:null},
+ 'lexus-rx-2026-350h-executive-awd':{id:'lexus-rx-2026-350h-executive-awd',marka:"Lexus",model:"RX",yil:2026,versiyon:"RX 350h Executive AWD (2.5 Hibrit)",
+  kaynakAd:"sifiraracal.com + Euro NCAP (2022 testi) + NHTSA",kaynakUrl:"https://www.sifiraracal.com/lexus-modelleri/rx",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D-SUV / Premium Crossover",kasa:"SUV",yakit:"Benzin (Hibrit)",sanziman:"CVT Otomatik",cekis:"4x4 (AWD)",koltuk:5,kapi:5,cc:2487,silindir:4,guc_hp:246,tork_nm:316,sifirYuz_sn:7.4,hiz_kmh:180,tuketim_l100km:6.5,uzunluk_mm:4890,genislik_mm:1920,yukseklik_mm:1695,bagaj_l:838,liste_fiyati_tl:10970000,ncap_yildiz:5},
+  ncapNot:"Euro NCAP 5 yıldız (2022 testi, güncel 5. nesil RX platformu). NOT: Lexus'un 2015 tarihli basın açıklamasındaki 5 yıldız sonucu ESKİ nesil RX'e aittir ve bu versiyon için kullanılmamıştır; burada 2022 tarihli test esas alınmıştır.",
+  ncapKaynak:"https://www.auto-motor-und-sport.de/video/euroncap-crashtest-2022-lexus-rx/",
+  geriCagirmaNot:"NHTSA'da RX350/RX350h/RX500h ailesini kapsayan dört ayrı kampanya bulundu (detaylar RECALLS kaydında); bu versiyonun tam olarak hangilerini kapsadığı VIN ile teyit edilmelidir. Ayrıca 2023 model yılı bazı RX'leri etkileyen ayrı bir hava yastığı kampanyası (yaklaşık 1.716 araç, Ocak 2025 Toyota duyurusuna dayanıyor) bildirildi ancak resmi kampanya numarası bu oturumda doğrulanamadığından yapılandırılmış listeye eklenmedi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"NHTSA şikayetlerinde 2023 RX350h için gaza basarken tereddüt/stop etme, istem dışı yüksek devir ve geri vitesteyken sarsıntı bildirimleri var (3 şikayet, kaza/yaralanma yok).",kaynak:"https://www.carcomplaints.com/Lexus/RX_350H/2023/drivetrain/power_train.shtml"},
+   {ozellik:"Marka güvenilirliği",deger:"Autoexpress Driver Power 2026 anketinde Lexus 30 marka arasında 4. sırada; RX modeli ise 'en iyi sahip olunacak arabalar' listesine girmedi.",kaynak:"https://www.autoexpress.co.uk/lexus/rx/reliability"}
+  ],
+  gucluYanlar:[
+   {metin:"Pratiklik ve işçilik kalitesi beğeniliyor.",kaynak:"https://www.autoexpress.co.uk/lexus/rx/reliability"},
+   {metin:"Driver Power 2026'da Lexus marka olarak 30 üretici arasında 4. sırada.",kaynak:"https://www.autoexpress.co.uk/lexus/rx/reliability"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Hız limiti uyarısı aşırı hassas (1 mph üzerinde bile uyarıyor).",kaynak:"https://www.autoexpress.co.uk/lexus/rx/reliability"},
+   {metin:"Bagaj hacmi (461L) segment rakiplerine göre küçük; arka koltuk elektrikli katlama yavaş.",kaynak:"https://www.autoexpress.co.uk/lexus/rx/reliability"},
+   {metin:"Aktif NHTSA kampanyaları mevcut — VIN kontrolü önerilir.",kaynak:"https://www.motorverso.com/recalls/lexus/rx/2024/"}
+  ],
+  odul:[
+   {ad:"PR Arabia National Auto Award (Suudi Arabistan, bölgesel ödül)",yil:2024,kaynak:"https://www.lexus.com.sa/en/news-event-and-media/lexus-rx-wins-the-pr-arabia-national-auto-award"}
+  ],
+  sistemPuani:null},
+ 'lexus-rx-2026-500h-fsport-awd':{id:'lexus-rx-2026-500h-fsport-awd',marka:"Lexus",model:"RX",yil:2026,versiyon:"RX 500h F SPORT AWD (2.4 Turbo Performans Hibrit)",
+  kaynakAd:"sifiraracal.com + Euro NCAP (2022 testi) + NHTSA",kaynakUrl:"https://www.sifiraracal.com/lexus-modelleri/rx",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D-SUV / Premium Performans Crossover",kasa:"SUV",yakit:"Benzin (Hibrit, Turbo)",sanziman:"Otomatik (ECT-i)",cekis:"4x4 (AWD)",koltuk:5,kapi:5,cc:2393,silindir:4,besleme:"Turbo",guc_hp:366,tork_nm:550,sifirYuz_sn:5.9,hiz_kmh:209,tuketim_l100km:8.7,uzunluk_mm:4890,genislik_mm:1920,yukseklik_mm:1695,agirlik_kg:2240,bagaj_l:838,liste_fiyati_tl:12785000,ncap_yildiz:5},
+  ncapNot:"Euro NCAP 5 yıldız (2022 testi, aynı 5. nesil RX platformu/gövdesi — RX350h ile ortak test).",
+  ncapKaynak:"https://www.auto-motor-und-sport.de/video/euroncap-crashtest-2022-lexus-rx/",
+  geriCagirmaNot:"NHTSA'da RX350/RX350h/RX500h ailesini kapsayan dört ayrı kampanya bulundu (detaylar RECALLS kaydında, RX500h özellikle emniyet kemeri kampanyasında adı geçiyor); bu versiyonun tam olarak hangilerini kapsadığı VIN ile teyit edilmelidir.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor/Şanzıman izlenimi",deger:"Güçlü turbo-hibrit motor, performans sınıfına göre makul yakıt tüketimi; CVT yerine 6 ileri klasik otomatik kullanılıyor.",kaynak:"https://www.chasingcars.com.au/reviews/large-suvs/lexus-rx500h-f-sport-performance-2023-review/"}
+  ],
+  gucluYanlar:[
+   {metin:"Güçlü turbo-hibrit motor, toparlak yol tutuşu ve konforlu süspansiyon.",kaynak:"https://www.chasingcars.com.au/reviews/large-suvs/lexus-rx500h-f-sport-performance-2023-review/"},
+   {metin:"Güncel kabin teknolojisi.",kaynak:"https://www.chasingcars.com.au/reviews/large-suvs/lexus-rx500h-f-sport-performance-2023-review/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"V6 motor seçeneği yok; direksiyonda geri bildirim hissi zayıf; üç sıra koltuk seçeneği yok.",kaynak:"https://www.chasingcars.com.au/reviews/large-suvs/lexus-rx500h-f-sport-performance-2023-review/"},
+   {metin:"Sert hızlanmada CVT/6AT gürültülü, F SPORT vites kulakçıkları 'az işlevsel' bulunmuş; performans segment beklentisine göre 'biraz sönük', yakıt tüketimi ve sigorta maliyeti yüksek.",kaynak:"https://www.autoexpress.co.uk/lexus/rx/reliability"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'lexus-lm-2026-350h-7-koltuk':{id:'lexus-lm-2026-350h-7-koltuk',marka:"Lexus",model:"LM",yil:2026,versiyon:"LM 350h (2.5 Hibrit E-FOUR, 7 Koltuklu)",
+  kaynakAd:"lexus.com.tr (araclar/lm) + AB Safety Gate",kaynakUrl:"https://www.lexus.com.tr/araclar/lm",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Premium MPV",kasa:"MPV/Minivan",yakit:"Benzin (Hibrit)",sanziman:"e-CVT Otomatik",cekis:"4x4 (E-FOUR)",koltuk:7,kapi:5,guc_hp:206,sifirYuz_sn:8.7,hiz_kmh:190,liste_fiyati_tl:17620000},
+  ncapNot:"Lexus LM için Euro NCAP veya ANCAP tarafından yapılmış resmi bir çarpışma testi bu oturumda bulunamadı (düşük hacimli/sınırlı pazar MPV'si).",
+  ncapKaynak:null,
+  geriCagirmaNot:"AB Safety Gate'te 2024-2025 model Lexus LM350h için 25SD-063 numaralı bir bildirim var: gösterge paneli yazılımının belleğe aşırı veri yazarak zamanla bozulması, kalkışta hız göstergesi/uyarı ekranının görünmemesine yol açabiliyor (LBX'teki sorunla aynı aile, OTA güncellemesiyle düzeltiliyor). Model/versiyon/yıl doğrudan eşleştiği için uygulanabilirlik yüksek, ancak kaynakta kesin duyuru tarihi bulunamadığından (sayfa yalnızca son kontrol tarihini gösteriyor) yapılandırılmış geri çağırma listesine tarihsiz olarak eklenemedi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"Bu oturumda somut, kaynaklı bir şikayet/güvenilirlik verisi bulunamadı (düşük hacimli/sınırlı pazar modeli).",kaynak:null}
+  ],
+  gucluYanlar:[
+   {metin:"Arka koltuklar (captain's chair) elektrikli kayma/yatırma/ısıtma/soğutma ile oldukça lüks.",kaynak:"https://www.parkers.co.uk/lexus/lm/review"},
+   {metin:"Sakin hibrit aktarma organları, iyi kontrol edilen gürültü/titreşim; adaptif amortisörlerle segment için şaşırtıcı derecede dengeli yol tutuşu/konfor.",kaynak:"https://www.parkers.co.uk/lexus/lm/review"},
+   {metin:"Üst düzey malzeme kalitesi; van tabanlı rakiplere göre 'şaşırtıcı derecede iyi değer' olarak değerlendiriliyor.",kaynak:"https://www.parkers.co.uk/lexus/lm/review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Van tabanlı rakiplere göre oldukça pahalı; PHEV/EV seçeneği yok.",kaynak:"https://www.parkers.co.uk/lexus/lm/review"},
+   {metin:"7 koltuk kullanımda bagaj hacmi sınırlı; 0-100 km/s yaklaşık 8.7-9.0 saniye (hızlı değil); sert hızlanmada motor sesi belirginleşiyor; üçüncü sıra koltuklar orta sıraya göre daha az konforlu.",kaynak:"https://www.parkers.co.uk/lexus/lm/review"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'kgm-korando-2026-platinum':{id:'kgm-korando-2026-platinum',marka:"KGM (SsangYong)",model:"Korando",yil:2026,versiyon:"Platinum (1.5T 6AT 4x2)",
+  kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi) + Euro NCAP",kaynakUrl:"https://www.ssangyong.com.tr/korando",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (6 ileri, AISIN)",cekis:"4x2 (Önden Çekiş)",koltuk:5,kapi:5,cc:1497,silindir:4,besleme:"Turbo (Direkt Enjeksiyon)",guc_hp:163,tork_nm:280,tuketim_l100km:7.9,depo_l:50,uzunluk_mm:4450,genislik_mm:1870,yukseklik_mm:1629,agirlik_kg:1544,bagaj_l:551,liste_fiyati_tl:2375000,ncap_yildiz:5},
+  ncapNot:"Euro NCAP 5 yıldız sonucu mevcut, ancak bu test 2019'da (o zamanki Euro NCAP protokolüyle) orijinal 3. nesil Korando (C300) için yapılmıştır. Platinum donanımı aynı C300 neslinin (2019'dan beri üretimde) kozmetik/donanım güncellemesi olduğundan test aynı nesle ait kabul edilebilir; ancak sonuç günümüzün çok daha sıkı 2023+ Euro NCAP protokolüne göre değil, eski ve daha gevşek protokole göre alınmıştır — doğrudan güncel modellerle kıyaslanmamalıdır.",
+  ncapKaynak:"https://www.carkeys.co.uk/news/ssangyong-korando-receives-five-star-safety-rating-from-euro-ncap",
+  geriCagirmaNot:"Bulunan iki geri çağırma da (Kore'de emniyet kemeri bağlantısı, 2015 üretimi ~2.637 araç, Şubat 2016 duyurusu; Avustralya'da ISB-2013002 hava yastığı uyarı etiketi eksikliği, 1.741 araç) güncel (2019 sonrası, C300) nesilden ÖNCEKİ 'Korando C' (2011-2019) neslini kapsıyor ve bu versiyon için uygulanabilir değil, bu nedenle hariç tutuldu. Güncel nesil için bu oturumda bir geri çağırma bulunamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"Bu oturumda derinlemesine, kaynaklı bir şikayet veritabanı verisi bulunamadı.",kaynak:null}
+  ],
+  gucluYanlar:[
+   {metin:"Geniş ve kullanışlı kabin; eski SsangYong Tivoli/Rexton dönemi kabinlerine göre büyük bir adım.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"},
+   {metin:"Üst donanımlarda kapsamlı standart ekipman.",kaynak:null}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Markanın 2022'de yaşadığı iflas idaresi süreci (KG Group tarafından satın alınarak çözüldü) incelemelerde marka istikrarına dair tarihsel bir not olarak geçiyor; güncel mekanik bir sorun değildir.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'kgm-actyon-2026-4x4':{id:'kgm-actyon-2026-4x4',marka:"KGM (SsangYong)",model:"Actyon",yil:2026,versiyon:"Actyon 4x4 (1.5T 6AT)",
+  kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi) + Parkers UK + The Car Expert",kaynakUrl:"https://www.ssangyong.com.tr/actyon",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV / Coupe SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"4x4",koltuk:5,kapi:5,cc:1497,silindir:4,besleme:"Turbo",guc_hp:163,tork_nm:280,hiz_kmh:191,tuketim_l100km:7.76,depo_l:50,uzunluk_mm:4740,genislik_mm:1910,yukseklik_mm:1680,agirlik_kg:1670,bagaj_l:796,jant_inch:20,liste_fiyati_tl:3550000},
+  ncapNot:"Şubat 2026 itibarıyla KGM Actyon, Euro NCAP tarafından değerlendirilmemiştir.",
+  ncapKaynak:"https://www.thecarexpert.co.uk/kgm-actyon-2025/",
+  geriCagirmaNot:"Yeni bir model olduğundan (2024-2025 piyasaya sürüm) bu oturumda NHTSA/KBA/AB Safety Gate/ANCAP kaynaklarında Actyon'a özel bir geri çağırma bulunamadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"Yeni bir model olduğundan bu oturumda derinlemesine şikayet veritabanı verisi bulunamadı.",kaynak:null}
+  ],
+  gucluYanlar:[
+   {metin:"Segment rakiplerine göre çok geniş 668 litrelik bagaj; cömert arka diz/baş mesafesi.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"},
+   {metin:"Otoyol hızında beklenenden sessiz; frenler doğrusal ve tepkisel.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"},
+   {metin:"Geniş standart donanım: adaptif hız sabitleyici, ısıtmalı/havalandırmalı koltuklar, 360° kamera.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Bozuk yollarda sert/huzursuz süspansiyon.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"},
+   {metin:"Gerçek dünya yakıt tüketimi iddia edilen değerin oldukça altında (~20mpg gözlemlenen vs ~33mpg iddia — karşılaştırılabilir bir Kia Sportage mild-hybrid'in kabaca yarısı kadar verimli).",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"},
+   {metin:"Ucuz hissettiren iç mekan malzemeleri; dokunmatik ekran tepkisiz; direksiyon belirsiz ve geri bildirimsiz; şanzıman çok istekli vites düşürüyor, bu da sürüş rahatlığını ve tüketimi olumsuz etkiliyor; tek donanım seviyesi, hibrit/elektrikli seçenek yok; karşılaştırılabilir bir Kia Sportage'dan yalnızca yaklaşık £3.000 ucuz.",kaynak:"https://www.parkers.co.uk/kgm/actyon/review/"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'kgm-musso-grand-2026-4x2':{id:'kgm-musso-grand-2026-4x2',marka:"KGM (SsangYong)",model:"Musso Grand",yil:2026,versiyon:"Musso Grand 4x2 (2.2 Dizel 6AT)",
+  kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi) + Avustralya ACCC",kaynakUrl:"https://www.ssangyong.com.tr/musso-grand",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Pickup (Kamyonet)",kasa:"Pickup (Double Cab)",yakit:"Dizel",sanziman:"Otomatik (6 ileri)",cekis:"4x2 (Önden Çekiş)",koltuk:5,kapi:4,cc:2157,silindir:4,besleme:"Turbo",guc_hp:202,tork_nm:441,tuketim_l100km:9.0,depo_l:75,uzunluk_mm:5405,genislik_mm:1950,yukseklik_mm:1885,agirlik_kg:2095,bagaj_l:1441,liste_fiyati_tl:1905000},
+  ncapNot:"Musso/Musso Grand için Euro NCAP veya ANCAP tarafından yapılmış bir test bu oturumda bulunamadı.",
+  ncapKaynak:null,
+  geriCagirmaNot:"Avustralya'da REC-006327 numaralı bir geri çağırma, 2020-2024 üretimi Musso ve Rexton modellerini (15.284 araç) kapsıyor: motor soğutma fanı sigortası üretim hatası nedeniyle arızalanabilir, motor aşırı ısınması veya ani güç kaybı riski taşıyor. Kampanya 'Musso' adını genel olarak andığından ve üretim yıllarıyla örtüştüğünden orta-yüksek olasılıkla bu versiyonu da kapsıyor, ancak uzun dingil mesafeli 'Musso Grand' versiyonunun standart Musso'dan ayrı değerlendirilip değerlendirilmediği netleşmediğinden VIN ile teyit önerilir.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"Bu oturumda Musso Grand'a özel derinlemesine şikayet/güvenilirlik verisi bulunamadı.",kaynak:null}
+  ],
+  gucluYanlar:[],
+  dikkatEdilecekler:[
+   {metin:"REC-006327 kapsamındaki motor soğutma fanı sigortası sorunu nedeniyle VIN kontrolü önerilir.",kaynak:"https://www.carexpert.com.au/kgm/musso/1996/base/safety-and-security"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'kgm-torres-evx-2026-standard':{id:'kgm-torres-evx-2026-standard',marka:"KGM (SsangYong)",model:"Torres EVX",yil:2026,versiyon:"Torres EVX (Elektrikli)",
+  kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi) + ANCAP + The Car Expert",kaynakUrl:"https://www.ssangyong.com.tr/torres-evx",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV / Elektrikli Crossover",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites Otomatik",koltuk:5,kapi:5,guc_hp:206.9,tork_nm:339,hiz_kmh:175,co2_gkm:0,batarya_kwh:80.6,batarya_tipi:"BYD LFP (ikinci kaynaktan doğrulanamadı)",elektrik_tuketim_kwh100km:13.5,uzunluk_mm:4715,genislik_mm:1890,yukseklik_mm:1715,agirlik_kg:1915,bagaj_l:839,liste_fiyati_tl:2474830},
+  ncapNot:"Şubat 2026 itibarıyla benzinli/hibrit Torres, Euro NCAP tarafından değerlendirilmemiştir; elektrikli Torres EVX versiyonu için de ayrı bir resmi puan bulunamadı.",
+  ncapKaynak:"https://www.thecarexpert.co.uk/kgm-torres-2024/",
+  geriCagirmaNot:"ÖNEMLİ GÜVENLİK UYARISI (resmi geri çağırma değil): ANCAP, 25 Ağustos 2026'da Torres EVX'in reklamı yapılan 8 hava yastığı yerine yalnızca 7 hava yastığıyla (orta hava yastığı eksik) teslim edildiğini açıkladı. Sorun Yeni Zelanda'da Mart 2024'ten, Avustralya'da Ekim 2025'ten beri satılan araçları etkiliyor; KGM pazarlama materyallerini düzeltti ve ANCAP üretimde hava yastığının eklenmesini talep etti. Benzinli/hibrit Torres versiyonlarının etkilenmediği belirtiliyor. Ayrıca Almanya KBA kaynaklı, şerit takip asistanının sınırlı çalıştığına dair bir bildirim olduğu tespit edildi, ancak kampanya numarası ve tarihi bu oturumda doğrulanamadı — takip gerektiriyor.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"Bu oturumda derinlemesine şikayet veritabanı verisi bulunamadı.",kaynak:null}
+  ],
+  gucluYanlar:[
+   {metin:"Tipik orta boy SUV'lara göre araba gibi sürüş/yol tutuşu; SsangYong'un üretim geçmişine atfedilen sağlam işçilik.",kaynak:"https://thedriven.io/2026/04/04/kgm-torres-evx-review-an-electric-suv-that-is-worth-looking-at/"},
+   {metin:"Rahatsız etmeyen sürücü destek sistemleri; net sürücü ekranı; ısıtmalı/havalandırmalı 8 yönlü elektrikli ön koltuklar; iyi arka baş/diz mesafesi.",kaynak:"https://thedriven.io/2026/04/04/kgm-torres-evx-review-an-electric-suv-that-is-worth-looking-at/"},
+   {metin:"~8 saniyede 0-100 km/s; 130kW DC hızlı şarj (ön sol şarj portu ile pratik); 462 km WLTP menzil (2WD Musso'ya göre ~%10 daha fazla); kolay Android Auto entegrasyonu.",kaynak:"https://thedriven.io/2026/04/04/kgm-torres-evx-review-an-electric-suv-that-is-worth-looking-at/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Reklamı yapılan orta hava yastığı eksik (bkz. ANCAP uyarısı) — ciddi bir güvenlik açıklama sorunu.",kaynak:"https://www.motoringnz.com/news/2026/8/25/ancap-alert-for-electric-kgm-torres"},
+   {metin:"Fiziksel gösterge paneli düğmeleri yok; ekran kontrastı sınırlı; dokunmatik ekran yavaş açılıyor ve dahili navigasyon yok; Bluetooth telefon rehberi 30 kişiyle sınırlı; kabin karanlık ve 'mağara gibi' hissettiriyor.",kaynak:"https://thedriven.io/2026/04/04/kgm-torres-evx-review-an-electric-suv-that-is-worth-looking-at/"},
+   {metin:"Ön koltuklar geride uzun boylu yolcular için dar arka diz mesafesi; Eco modu yavaş tepki veriyor, Sport modu ise asabi; kalkışta ön lastiklerde patinaj; şerit takip asistanı bozuk yollarda rahatsız edici uyarılar veriyor; 100 km/s üzerinde otoyol menzili %10-15 düşüyor.",kaynak:"https://thedriven.io/2026/04/04/kgm-torres-evx-review-an-electric-suv-that-is-worth-looking-at/"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'kgm-musso-ev-2026-standard':{id:'kgm-musso-ev-2026-standard',marka:"KGM (SsangYong)",model:"Musso EV",yil:2026,versiyon:"Musso EV (Elektrikli Pickup, Önden Çekiş)",
+  kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi) + ANCAP + CarGurus UK",kaynakUrl:"https://www.ssangyong.com.tr/musso-ev",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Pickup / Elektrikli Kamyonet",kasa:"Pickup (Double Cab)",yakit:"Elektrik",sanziman:"Otomatik (1 ileri)",cekis:"4x2 (Önden Çekiş)",kapi:4,guc_hp:206.9,tork_nm:339,hiz_kmh:162,co2_gkm:0,batarya_kwh:80.6,elektrik_tuketim_kwh100km:23.0,uzunluk_mm:5160,genislik_mm:1920,yukseklik_mm:1740,agirlik_kg:2165,jant_inch:17,liste_fiyati_tl:2454874},
+  ncapNot:"Musso EV için Euro NCAP veya ANCAP tarafından verilmiş resmi bir yıldız puanı bu oturumda bulunamadı.",
+  ncapKaynak:null,
+  geriCagirmaNot:"ÖNEMLİ GÜVENLİK UYARISI (resmi geri çağırma değil): ANCAP, 21 Ağustos 2026'da Musso EV'nin reklamı yapılan 8 hava yastığı yerine orta hava yastığı VE sürücü diz hava yastığının eksik olduğunu, gerçek donanımın 6 hava yastığı olduğunu açıkladı. Kasım 2025'teki piyasaya sürümden beri satılan araçları (uyarı anında 300'den fazla araç) etkiliyor; KGM ürün bilgisi hatalarını kabul etti. Bu, aynı kök nedenle ilişkili Torres EVX uyarısıyla doğrudan bağlantılı. Bu oturumda ayrıca resmi bir NHTSA/KBA/AB Safety Gate geri çağırma kaydı bulunup bulunmadığı teyit edilemedi (çok yeni bir model, araştırma bütçesi yetmedi).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Bakım/Güvenilirlik",deger:"Çok yeni bir model olduğundan bu oturumda derinlemesine şikayet veritabanı verisi bulunamadı.",kaynak:null}
+  ],
+  gucluYanlar:[
+   {metin:"Pickup için araba gibi, sessiz ve pürüzsüz sürüş; ~8.0 saniyede 0-100 km/s.",kaynak:"https://www.cargurus.co.uk/research/KGM-Musso-2026-mg800"},
+   {metin:"Kaliteli hissettiren kabin; segment rakipleri arasında en iyi menzil/şarj hızlarından biri; V2L (araçtan cihaza güç aktarımı) özelliği; kendinden seviyelendirmeli süspansiyon.",kaynak:"https://www.cargurus.co.uk/research/KGM-Musso-2026-mg800"},
+   {metin:"Geniş standart donanım: ısıtmalı/havalandırmalı koltuklar, 360° kamera, adaptif hız sabitleyici, ısı pompası.",kaynak:"https://www.cargurus.co.uk/research/KGM-Musso-2026-mg800"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Reklamı yapılan orta ve sürücü diz hava yastıkları eksik, gerçek donanım 6 hava yastığı (bkz. ANCAP uyarısı) — ciddi bir güvenlik açıklama sorunu.",kaynak:"https://thedriven.io/2026/08/21/kgm-electric-ute-missing-two-key-airbags-after-over-300-on-the-road/"},
+   {metin:"Yük kapasitesi yalnızca 690 kg (rakiplerin oldukça altında); çekiş kapasitesi 2.300 kg ile tam boy rakiplere göre mütevazı; kasa küçük (~1,3 m uzunluk, 1.039 litre).",kaynak:"https://www.cargurus.co.uk/research/KGM-Musso-2026-mg800"},
+   {metin:"Dokunmatik ekran yavaş ve menüler karışık; klima kontrolü direksiyonla kısmen örtüşüyor; sürücü destek sistemleri aşırı hassas; servis aralığı (12 ay/~16.000 km) tipik elektrikli araç normlarına göre sık; sınırlı arazi geometrisi (181mm yerden yükseklik).",kaynak:"https://www.cargurus.co.uk/research/KGM-Musso-2026-mg800"}
+  ],
+  odul:[
+   {ad:"Red Dot Award: Product Design 2026 (KGM'nin Kore pazarında 'Torres EVT' adıyla sattığı, Batı pazarlarındaki Musso EV ile aynı araç için verildi)",yil:2026,kaynak:"https://www.missionline.it/mission-fleet-post/kgm-torres-evt-conquista-il-red-dot-award-product-design-2026/"}
+  ],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -8200,7 +8408,46 @@ const RECALLS = {
    cozum:'Sol/sağ ön sürüş şaftı muayene + gerekirse değişim, ücretsiz.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RCAK-23V754-2941.pdf'}
  ],
  'subaru-solterra-2025-e-xcellent-awd':null,
- 'subaru-solterra-2025-e-xtreme-awd':null
+ 'subaru-solterra-2025-e-xtreme-awd':null,
+'lexus-lbx-2026-elegant':null,
+ 'lexus-rx-2026-350h-executive-awd':[
+  {tarih:'2026-03',parca:'Geri görüş kamerası yazılımı',baslik:'Bazı vites konumlarında kamera görüntüsü gelmeyebilir (NHTSA 26V162000)',
+   ozet:'RX350/RX350h/RX500h dahil, ~144.200 araç.',
+   cozum:'Yazılım güncellemesi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'},
+  {tarih:'2025-10',parca:'Panoramik görüş monitörü (PVM)',baslik:'PVM ekran fonksiyonu arızası (NHTSA 25V744000)',
+   ozet:'Çoklu model kampanyası, RX dahil ~1.024.407 araç.',
+   cozum:'Yazılım güncellemesi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'},
+  {tarih:'2025-02',parca:'Arka orta koltuk emniyet kemeri',baslik:'Kemer dokumasında hasar riski (NHTSA 25V059000)',
+   ozet:'2024-2025 RX350/RX350h/RX500h dahil, ~40.922 araç.',
+   cozum:'Bayi muayenesi, gerekirse kemer değişimi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'},
+  {tarih:'2024-06',parca:'Ön koltuk baş desteği',baslik:'Baş desteği arızası (NHTSA 24V482000)',
+   ozet:'2024 RX350/RX350h dahil ~11.418 araç.',
+   cozum:'Bayi muayenesi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'}
+ ],
+ 'lexus-rx-2026-500h-fsport-awd':[
+  {tarih:'2026-03',parca:'Geri görüş kamerası yazılımı',baslik:'Bazı vites konumlarında kamera görüntüsü gelmeyebilir (NHTSA 26V162000)',
+   ozet:'RX350/RX350h/RX500h dahil, ~144.200 araç.',
+   cozum:'Yazılım güncellemesi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'},
+  {tarih:'2025-10',parca:'Panoramik görüş monitörü (PVM)',baslik:'PVM ekran fonksiyonu arızası (NHTSA 25V744000)',
+   ozet:'Çoklu model kampanyası, RX dahil ~1.024.407 araç.',
+   cozum:'Yazılım güncellemesi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'},
+  {tarih:'2025-02',parca:'Arka orta koltuk emniyet kemeri',baslik:'Kemer dokumasında hasar riski (NHTSA 25V059000)',
+   ozet:'2024-2025 RX350/RX350h/RX500h dahil (RX500h açıkça adı geçiyor), ~40.922 araç.',
+   cozum:'Bayi muayenesi, gerekirse kemer değişimi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'},
+  {tarih:'2024-06',parca:'Ön koltuk baş desteği',baslik:'Baş desteği arızası (NHTSA 24V482000)',
+   ozet:'2024 RX350/RX350h dahil ~11.418 araç.',
+   cozum:'Bayi muayenesi, ücretsiz.',kaynak:'https://www.motorverso.com/recalls/lexus/rx/2024/'}
+ ],
+ 'lexus-lm-2026-350h-7-koltuk':null,
+ 'kgm-korando-2026-platinum':null,
+ 'kgm-actyon-2026-4x4':null,
+ 'kgm-musso-grand-2026-4x2':[
+  {tarih:'2025-04',parca:'Motor soğutma fanı sigortası',baslik:'Üretim hatasına bağlı sigorta arızası (Avustralya REC-006327)',
+   ozet:'2020-2024 üretimi Musso ve Rexton, 15.284 araç. Belirli sürüş koşullarında sigorta arızalanabilir, motor aşırı ısınması veya ani güç kaybı riski oluşabilir. Musso Grand (uzun dingil mesafeli) versiyonunun bu kampanyaya dahil olup olmadığı VIN ile teyit edilmelidir.',
+   cozum:'Bayi muayenesi, gerekirse sigorta/parça değişimi, ücretsiz.',kaynak:'https://www.carexpert.com.au/kgm/musso/1996/base/safety-and-security'}
+ ],
+ 'kgm-torres-evx-2026-standard':null,
+ 'kgm-musso-ev-2026-standard':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -8608,7 +8855,16 @@ const OFFICIAL = {
  'mini-countryman-electric-2026-e':null,
  'subaru-crosstrek-2025-e-boxer':null,
  'subaru-solterra-2025-e-xcellent-awd':null,
- 'subaru-solterra-2025-e-xtreme-awd':null
+ 'subaru-solterra-2025-e-xtreme-awd':null,
+'lexus-lbx-2026-elegant':null,
+ 'lexus-rx-2026-350h-executive-awd':null,
+ 'lexus-rx-2026-500h-fsport-awd':null,
+ 'lexus-lm-2026-350h-7-koltuk':null,
+ 'kgm-korando-2026-platinum':null,
+ 'kgm-actyon-2026-4x4':null,
+ 'kgm-musso-grand-2026-4x2':null,
+ 'kgm-torres-evx-2026-standard':null,
+ 'kgm-musso-ev-2026-standard':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -9044,7 +9300,16 @@ const REVIEWS = {
  'mini-countryman-electric-2026-e':[],
  'subaru-crosstrek-2025-e-boxer':[],
  'subaru-solterra-2025-e-xcellent-awd':[],
- 'subaru-solterra-2025-e-xtreme-awd':[]
+ 'subaru-solterra-2025-e-xtreme-awd':[],
+'lexus-lbx-2026-elegant':[],
+ 'lexus-rx-2026-350h-executive-awd':[],
+ 'lexus-rx-2026-500h-fsport-awd':[],
+ 'lexus-lm-2026-350h-7-koltuk':[],
+ 'kgm-korando-2026-platinum':[],
+ 'kgm-actyon-2026-4x4':[],
+ 'kgm-musso-grand-2026-4x2':[],
+ 'kgm-torres-evx-2026-standard':[],
+ 'kgm-musso-ev-2026-standard':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
@@ -9246,12 +9511,12 @@ function renderScore(){
 function renderProblems(){
   const id=state.carId;
   const rc=RECALLS[id];
-  if(rc===null) $('#recalls').innerHTML='<div class="emptystate">Bu model yılı için geri çağırma verisi henüz eklenmedi.</div>';
+  const gcNot = car().geriCagirmaNot ? `<p class="note" style="margin-top:8px">${esc(car().geriCagirmaNot)}</p>` : '';
+  if(rc===null) $('#recalls').innerHTML=`<div class="emptystate">Bu model yılı için geri çağırma verisi henüz eklenmedi.</div>${gcNot}`;
   else if(!rc.length){
-    const gcNot = car().geriCagirmaNot ? `<p class="note" style="margin-top:8px">${esc(car().geriCagirmaNot)}</p>` : '';
     $('#recalls').innerHTML=`<div class="emptystate">Bu model yılı için kayıtlı geri çağırma bulunamadı.</div>${gcNot}`;
   }
-  else $('#recalls').innerHTML=rc.map(r=>`<details class="recall"><summary><span class="rdate">${fmtMonth(r.tarih)}</span><span class="rtitle">${esc(r.baslik)}</span><span class="tag">${esc(r.parca)}</span></summary><div class="rbody"><p>${esc(r.ozet)}</p><p><b>Çözüm:</b> ${esc(r.cozum)}</p><p class="src">Kaynak: ${esc(r.kaynak)}</p></div></details>`).join('');
+  else $('#recalls').innerHTML=rc.map(r=>`<details class="recall"><summary><span class="rdate">${fmtMonth(r.tarih)}</span><span class="rtitle">${esc(r.baslik)}</span><span class="tag">${esc(r.parca)}</span></summary><div class="rbody"><p>${esc(r.ozet)}</p><p><b>Çözüm:</b> ${esc(r.cozum)}</p><p class="src">Kaynak: ${esc(r.kaynak)}</p></div></details>`).join('')+gcNot;
 
   const off=OFFICIAL[id];
   if(!off) $('#officialBlock').innerHTML='<h3>Resmi şikayetler</h3><p class="src">Kaynak: NHTSA (ABD)</p><div class="emptystate">Bu model yılı için şikayet verisi henüz eklenmedi.</div>';
