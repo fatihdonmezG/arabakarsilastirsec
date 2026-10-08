@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 313 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream ve Leapmotor T03 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 320 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour ve Skywell ET5 LR için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 313 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 320 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5257,6 +5257,177 @@ const CARS = {
    {metin:"Dokunmatik ekran sezgisel değil ve direksiyon tarafından kısmen kapanıyor; iç mekanda sert plastik malzeme ağırlıklı.",kaynak:"https://www.carbuyer.co.uk/leapmotor/t03/305997/leapmotor-t03-review-a-cheap-but-well-equipped-electric-city-car"}
   ],
   odul:[{ad:"Parkers New Car Awards 2026 — Best Value Car",yil:2026,kaynak:"https://www.stellantisandyou.co.uk/news-hub/leapmotor-t03-named-best-value-car-in-the-2026-parkers-new-car-awards"}],
+  sistemPuani:null},
+ /* --- Forthing T5 Evo, M4 U-Tour ve Skywell ET5 LR — 2026-10-08 (Claude ajanları ile, optimize verimli
+    prompt: sırasıyla 33 ve 30 arama/arama çağrısı). ÖNEMLİ: Skywell ET5 LR için 2026 boyunca Türkiye'de
+    tekrarlayan araç yangını haberleri basına yansıdı (Kayseri, Diyarbakır, İzmir, Bursa, Aydın, İstanbul,
+    Adana — birden fazla şehir); resmi zorunlu bir geri çağırma yok ama distribütör Ulu Motor "gönüllü"
+    ücretsiz kontrol daveti başlattı ve Çin'den inceleme heyeti geldi. Bu dürüstçe geriCagirmaNot ve
+    dikkatEdilecekler'e işlendi. Forthing için Euro NCAP/NHTSA/ödül taramasında hiçbir sonuç yok (marka
+    çok yeni/niş); bu da null/boş olarak dürüstçe bırakıldı. */
+ 'forthing-t5evo-2026-premium':{id:'forthing-t5evo-2026-premium',marka:"Forthing",model:"T5 Evo",yil:2026,versiyon:"Premium",
+  kaynakAd:"forthing.com.tr (fiyat) + donanimhaber.com/tamindir.com (teknik veri, derin inceleme)",kaynakUrl:"https://forthing.com.tr/fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",koltuk:5,cc:1500,besleme:"Turbo",guc_hp:175,tork_nm:285,sifirYuz_sn:9.7,hiz_kmh:200,tuketim_l100km:6.6,uzunluk_mm:4565,genislik_mm:1860,yukseklik_mm:1690,dingil_mm:2715,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Var",acilir_tavan:"Var",anahtarsiz_giris:"Var",ekran_inch:12.3,carplay_android_auto:"Var",liste_fiyati_tl:2800000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Forthing markasına veya T5 Evo modeline özel resmi bir geri çağırma kaydına rastlanmadı (NHTSA, Çin SAMR ve TR resmi kaynakları tarandı).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor ve şanzıman",deger:"1.5L turbo benzinli, 175HP/285Nm; giriş donanımında (bazı pazarlarda) manuel, bu versiyon dahil üst donanımlarda 7 ileri DCT otomatik şanzıman.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"},
+   {ozellik:"Standart donanım (tüm versiyonlar)",deger:"Suni deri koltuk, 6 hoparlör, kablosuz Apple CarPlay/Android Auto, anahtarsız giriş/çalıştırma, açılır cam tavan, ambiyans aydınlatma, 12,3 inç multimedya ekranı, manuel klima, hız sabitleyici, yokuş kalkış/iniş desteği, geri görüş kamerası.",kaynak:"https://www.donanimhaber.com/cinli-forthing-in-iki-modeli-turkiye-de-iste-fiyatlar--192540"}
+  ],
+  gucluYanlar:[
+   {metin:"BAE pazarı kullanıcı yorumlarında (4,5/5 ortalama): geniş kabin, sportif/çekici tasarım, iyi yapı kalitesi, şehir içi/otoyolda dengeli sürüş ve yeterli motor gücü vurgulanıyor.",kaynak:"https://zigwheels.ae/new-cars/forthing/t5-evo/user-reviews/spacious-cabin-super-built-quality"},
+   {metin:"Türkiye lansmanında Ulu Motor'a göre 3.487 ön sipariş alındı; pazara ilginin yüksek olduğunu gösteriyor.",kaynak:"https://www.haber7.com/otomobil/haber/3544948-bir-cinli-daha-geliyor-gormeden-3-bin-500-on-siparis-verdik"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Sadece benzinli motor seçeneği var (hibrit/elektrik henüz Türkiye'de yok); 175HP ve 9,7sn 0-100 performansı segmentinde 'orta düzey' olarak değerlendiriliyor.",kaynak:"https://shiftdelete.net/?p=1174490"},
+   {metin:"Marka Türkiye'de çok yeni olduğu için bağımsız/uzun dönem güvenilirlik verisi, servis ağı yaygınlığı veya yedek parça teminine dair somut/doğrulanmış bir basın kaynağı bulunamadı — bu bir veri eksikliği notudur, olumsuz bir bulgu değildir. Bir BAE kullanıcı yorumunda da 'Çin markalarına henüz tam güvenmiyorum' şeklinde marka güveni tereddüdü belirtilmiş.",kaynak:"https://zigwheels.ae/new-cars/forthing/t5-evo/user-reviews/spacious-cabin-super-built-quality"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'forthing-t5evo-2026-executive':{id:'forthing-t5evo-2026-executive',marka:"Forthing",model:"T5 Evo",yil:2026,versiyon:"Executive",
+  kaynakAd:"forthing.com.tr (fiyat) + donanimhaber.com/tamindir.com (teknik veri, derin inceleme)",kaynakUrl:"https://forthing.com.tr/fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",koltuk:5,cc:1500,besleme:"Turbo",guc_hp:175,tork_nm:285,sifirYuz_sn:9.7,hiz_kmh:200,tuketim_l100km:6.6,uzunluk_mm:4565,genislik_mm:1860,yukseklik_mm:1690,dingil_mm:2715,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Var",koltuk_isitma:"Var",acilir_tavan:"Var",anahtarsiz_giris:"Var",geri_gorus_kamera:"Var (360 derece)",ekran_inch:12.3,carplay_android_auto:"Var",liste_fiyati_tl:3200000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Forthing markasına veya T5 Evo modeline özel resmi bir geri çağırma kaydına rastlanmadı (NHTSA, Çin SAMR ve TR resmi kaynakları tarandı).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Executive donanım farkları",deger:"Premium'a ek olarak perde hava yastıkları, ön park sensörü, 360° kamera, kör nokta uyarısı, otomatik klima + PM2.5 filtre, ısıtmalı dış aynalar, elektrikli bagaj kapağı, kara kutu (araç veri kaydedici), elektrikli+ısıtmalı ön koltuklar.",kaynak:"https://www.donanimhaber.com/cinli-forthing-in-iki-modeli-turkiye-de-iste-fiyatlar--192540"},
+   {ozellik:"Motor ve şanzıman",deger:"1.5L turbo benzinli, 175HP/285Nm, 7 ileri DCT otomatik şanzıman.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"}
+  ],
+  gucluYanlar:[
+   {metin:"Lansman fiyatları normal liste fiyatının altında kampanyalı sunuldu; donanım seviyesi fiyat segmentine göre zengin (360 kamera, PM2.5 filtre gibi üst segment özellikler bu donanımda mevcut).",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"},
+   {metin:"BAE pazarı kullanıcı yorumlarında (4,5/5 ortalama): geniş kabin, iyi yapı kalitesi, dengeli sürüş vurgulanıyor.",kaynak:"https://zigwheels.ae/new-cars/forthing/t5-evo/user-reviews/spacious-cabin-super-built-quality"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Sadece benzinli motor seçeneği var; 175HP ve 9,7sn 0-100 performansı segmentinde 'orta düzey' olarak değerlendiriliyor.",kaynak:"https://shiftdelete.net/?p=1174490"},
+   {metin:"Marka Türkiye'de çok yeni olduğu için bağımsız/uzun dönem güvenilirlik verisi veya servis ağı yaygınlığına dair doğrulanmış bir kaynak bulunamadı — veri eksikliği notudur.",kaynak:"https://zigwheels.ae/new-cars/forthing/t5-evo/user-reviews/spacious-cabin-super-built-quality"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'forthing-t5evo-2026-sport-edition':{id:'forthing-t5evo-2026-sport-edition',marka:"Forthing",model:"T5 Evo",yil:2026,versiyon:"Sport Edition",
+  kaynakAd:"forthing.com.tr (fiyat) + donanimhaber.com/tamindir.com (teknik veri, derin inceleme)",kaynakUrl:"https://forthing.com.tr/fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",koltuk:5,cc:1500,besleme:"Turbo",guc_hp:175,tork_nm:285,sifirYuz_sn:9.7,hiz_kmh:200,tuketim_l100km:6.6,uzunluk_mm:4565,genislik_mm:1860,yukseklik_mm:1690,dingil_mm:2715,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Var",koltuk_isitma:"Var",acilir_tavan:"Var",anahtarsiz_giris:"Var",geri_gorus_kamera:"Var (360 derece)",ekran_inch:12.3,carplay_android_auto:"Var",liste_fiyati_tl:3500000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Forthing markasına veya T5 Evo modeline özel resmi bir geri çağırma kaydına rastlanmadı (NHTSA, Çin SAMR ve TR resmi kaynakları tarandı).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Üst donanım ekstra özellikler",deger:"Executive'in tüm donanımına ek olarak havalandırmalı+masajlı sürücü koltuğu; en üst donanım seviyesi.",kaynak:"https://www.donanimhaber.com/cinli-forthing-in-iki-modeli-turkiye-de-iste-fiyatlar--192540"},
+   {ozellik:"Motor ve şanzıman",deger:"1.5L turbo benzinli, 175HP/285Nm, 7 ileri DCT otomatik şanzıman.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"}
+  ],
+  gucluYanlar:[
+   {metin:"En zengin donanım seviyesi (masajlı/havalandırmalı koltuk dahil) segment ortalamasının üzerinde bir donanım paketi sunuyor.",kaynak:"https://www.donanimhaber.com/cinli-forthing-in-iki-modeli-turkiye-de-iste-fiyatlar--192540"},
+   {metin:"BAE pazarı kullanıcı yorumlarında iyi yapı kalitesi ve dengeli sürüş vurgulanıyor.",kaynak:"https://zigwheels.ae/new-cars/forthing/t5-evo/user-reviews/spacious-cabin-super-built-quality"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Sadece benzinli motor seçeneği var; 175HP ve 9,7sn 0-100 performansı segmentinde 'orta düzey' olarak değerlendiriliyor — 'Sport Edition' ismine rağmen mekanik olarak diğer donanımlarla aynı motor/performans.",kaynak:"https://shiftdelete.net/?p=1174490"},
+   {metin:"Marka Türkiye'de çok yeni olduğu için bağımsız/uzun dönem güvenilirlik verisine dair doğrulanmış bir kaynak bulunamadı — veri eksikliği notudur.",kaynak:"https://zigwheels.ae/new-cars/forthing/t5-evo/user-reviews/spacious-cabin-super-built-quality"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'forthing-m4utour-2026-premium':{id:'forthing-m4utour-2026-premium',marka:"Forthing",model:"M4 U-Tour",yil:2026,versiyon:"Premium",
+  kaynakAd:"forthing.com.tr (fiyat) + donanimhaber.com/tamindir.com (teknik veri, derin inceleme)",kaynakUrl:"https://forthing.com.tr/fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"MPV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",koltuk:7,cc:1500,besleme:"Turbo",guc_hp:175,tork_nm:285,tuketim_l100km:6.8,uzunluk_mm:4850,genislik_mm:1889,yukseklik_mm:1715,dingil_mm:2900,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Var",acilir_tavan:"Var",serit_takip:"Var",adaptif_hiz_sabitleyici:"Var",ekran_inch:12.3,carplay_android_auto:"Var",liste_fiyati_tl:2850000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Forthing markasına veya M4 U-Tour modeline özel resmi bir geri çağırma kaydına rastlanmadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"İç mekan ve pratiklik",deger:"7 koltuk, 10 farklı koltuk konfigürasyonu ve 43 'akıllı' saklama alanı sunuyor.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"},
+   {ozellik:"Standart donanım",deger:"Kablosuz Apple CarPlay/Android Auto, 12,3 inç ekran, suni deri koltuk, açılır cam tavan, hız sabitleyici, geri görüş kamerası, yokuş kalkış/iniş desteği.",kaynak:"https://www.donanimhaber.com/cinli-forthing-in-iki-modeli-turkiye-de-iste-fiyatlar--192540"}
+  ],
+  gucluYanlar:[
+   {metin:"BAE kullanıcı yorumlarında (4,5/5 ortalama): kompakt MPV segmentinde premium görünümlü, kaliteli malzemeli kabin; konforlu süspansiyon ve hafif direksiyon şehir trafiğinde kullanım kolaylığı sağlıyor.",kaynak:"https://zigwheels.ae/new-cars/forthing/u-tour"},
+   {metin:"7 koltuk + 10 farklı koltuk konfigürasyonu + 43 saklama alanı segmentinde pratiklik avantajı olarak öne çıkıyor.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"BAE incelemesinde üçüncü sıra koltuk alanının sınırlı olduğu belirtiliyor; bir kullanıcı başlangıç fiyatının bu Çin markası için yüksek olabileceğini, uzun vadeli güvenilirliğin sorgulanabilir olduğunu not düşmüş.",kaynak:"https://zigwheels.ae/new-cars/forthing/u-tour"},
+   {metin:"Sadece benzinli motor seçeneği mevcut (TR'de hibrit/elektrik henüz yok); niş/yeni marka olduğu için servis ağı yaygınlığına dair doğrulanmış bir kaynak bulunamadı.",kaynak:"https://shiftdelete.net/?p=1174490"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'forthing-m4utour-2026-executive':{id:'forthing-m4utour-2026-executive',marka:"Forthing",model:"M4 U-Tour",yil:2026,versiyon:"Executive",
+  kaynakAd:"forthing.com.tr (fiyat) + donanimhaber.com/tamindir.com (teknik veri, derin inceleme)",kaynakUrl:"https://forthing.com.tr/fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"MPV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",koltuk:7,cc:1500,besleme:"Turbo",guc_hp:175,tork_nm:285,tuketim_l100km:6.8,uzunluk_mm:4850,genislik_mm:1889,yukseklik_mm:1715,dingil_mm:2900,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Var",acilir_tavan:"Var",serit_takip:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var (360 derece)",ekran_inch:12.3,carplay_android_auto:"Var",liste_fiyati_tl:3250000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Forthing markasına veya M4 U-Tour modeline özel resmi bir geri çağırma kaydına rastlanmadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Executive donanım farkları",deger:"Premium'a ek olarak perde hava yastığı, 360° kamera, kör nokta uyarısı, otomatik klima + PM2.5 filtre, elektrikli+ısıtmalı ön koltuk, masajlı sürücü koltuğu.",kaynak:"https://www.donanimhaber.com/cinli-forthing-in-iki-modeli-turkiye-de-iste-fiyatlar--192540"},
+   {ozellik:"İç mekan ve pratiklik",deger:"7 koltuk, 10 farklı koltuk konfigürasyonu ve 43 'akıllı' saklama alanı.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"}
+  ],
+  gucluYanlar:[
+   {metin:"BAE kullanıcı yorumlarında premium görünümlü kabin, panoramik cam tavan ve masajlı/havalandırmalı sürücü koltuğu gibi geniş donanım olumlu değerlendiriliyor.",kaynak:"https://zigwheels.ae/new-cars/forthing/u-tour"},
+   {metin:"7 koltuk + 43 saklama alanı segmentinde pratiklik avantajı sağlıyor.",kaynak:"https://www.tamindir.com/haber/forthing-t5-evo-m4-u-tour-ozellikleri-fiyati_96805/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"BAE incelemesinde üçüncü sıra koltuk alanının sınırlı olduğu ve uzun vadeli güvenilirliğin sorgulanabilir olduğu belirtiliyor.",kaynak:"https://zigwheels.ae/new-cars/forthing/u-tour"},
+   {metin:"Sadece benzinli motor seçeneği mevcut; niş/yeni marka olduğu için servis ağı yaygınlığına dair doğrulanmış bir kaynak bulunamadı.",kaynak:"https://shiftdelete.net/?p=1174490"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'skywell-et5-lr-2026-legend':{id:'skywell-et5-lr-2026-legend',marka:"Skywell",model:"ET5 LR",yil:2026,versiyon:"Legend",
+  kaynakAd:"arabam.com blog (fiyat) + skywell.com.tr + log.com.tr/shiftdelete.net (yangın haberleri, derin araştırma)",kaynakUrl:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/skywell-fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:204,tork_nm:320,sifirYuz_sn:7.9,co2_gkm:0,batarya_kwh:86,menzil_km_wltp:642,ac_sarj_dk:480,uzunluk_mm:4720,genislik_mm:1908,yukseklik_mm:1696,dingil_mm:2800,yerden_yukseklik_mm:159,agirlik_kg:2005,bagaj_l:467,jant_inch:19,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",dijital_gosterge:"Var",liste_fiyati_tl:2175000,batarya_garanti_yil:8},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"ÖNEMLİ GÜVENLİK NOTU: ET5, Euro NCAP tarafından test edilmemiş, ancak 2026 boyunca Türkiye'de tekrarlayan araç yangını haberleri basına yansıdı — Mart 2026 Kayseri, Mayıs 2026 Diyarbakır, 19 Haziran 2026 İzmir (yan araçlara sıçrayan yangın), 29 Temmuz 2026 Kayseri (şarj istasyonunda araç patladı), ayrıca Ağustos-Eylül 2026'da Bursa, Aydın/Didim, İstanbul ve Adana'da olaylar bildirildi. Olay sayısı kaynaklar arasında tartışmalı (gazeteci tespiti 7 ayda 9-10, kullanıcı tahminleri son 1 yılda 13-16 araç). Bu, resmi/zorunlu bir geri çağırma değil — distribütör Ulu Motor 'gönüllü' ücretsiz kontrol daveti başlattı (şasi no. ile sorgulanabiliyor) ve Çin'den resmi bir inceleme heyeti Ağustos 2026'da Türkiye'ye geldi. Risk faktörü olarak yetkisiz/uygunsuz yazılım, batarya alt kısmı darbesi, standart dışı soğutma sıvısı, eksik bakım ve yetkisiz kaporta/boya işlemleri gösteriliyor. Bazı sahipler kontrol öncesi yüksek ücret (90.000 TL+KDV inceleme + 5.000 TL çekici) talep edildiğini bildiriyor; Ulu Motor bunun onarım bedeli olduğunu açıklıyor.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"Panoramik cam tavan, LED far, 11kW AC / 80kW DC hızlı şarj desteği.",kaynak:"https://www.iscihaber.net/otomobil/skywell-et-lr-legend-turkiyeye-giris-yapti-mart-2025-fiyatlari-ve-ozellikleri/145208"},
+   {ozellik:"İç mekan (benzer pazar versiyonundan, teyit gerekir)",deger:"Geniş iç mekân, özellikle arka koltuk diz mesafesi; kaliteli malzeme/işçilik, elektrikli+ısıtmalı/soğutmalı ön koltuklar, deri döşeme, kablosuz şarj.",kaynak:"https://elcerokm.com/skywell/et5/review"}
+  ],
+  gucluYanlar:[
+   {metin:"Geniş iç mekân ve segment ortalamasının üzerinde bagaj hacmi (467L); konforlu, sessiz sürüş.",kaynak:"https://elcerokm.com/skywell/et5/review"},
+   {metin:"Şehir içi kullanım için menzil (642km WLTP beyan) yeterli bulunuyor.",kaynak:"https://elcerokm.com/skywell/et5/review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"TEKRARLAYAN ARAÇ YANGINI HABERLERİ — bkz. geriCagirmaNot. Kritik bir güvenlik gündemi, resmi geri çağırma olmasa da ciddiye alınması gereken, basına yansımış çok sayıda doğrulanmış olay var.",kaynak:"https://shiftdelete.net/?p=1275886"},
+   {metin:"Skywell ET5'in Çin'deki kardeşi 'Skyworth EV6' (aynı araç, farklı marka adı) C-NCAP (Çin NCAP, Euro NCAP değil) testinde sadece 1 yıldız aldı; yan çarpışma testinde B-sütunu kabine ciddi girmiş ve bu kalemde 16 üzerinden 0 puan almış.",kaynak:"https://carnewschina.com/2023/01/11/skyworth-ev6-skywell-et5-scores-only-1-star-in-c-ncap-crash-test/"},
+   {metin:"sikayetvar.com'da çok sayıda ET5/ET5 Legend şikayeti var: direksiyon tutukluğu, batarya alt koruma tablasında yanık/erime izleri (1 yıllık araçta), elektronik arızalar (multimedya, Bluetooth, park sensörü), yedek parça tedarikinde aylarca gecikme, yüksek/şeffaf olmayan servis ücretleri.",kaynak:"https://www.sikayetvar.com/skywell/arac"},
+   {metin:"İspanya pazarı incelemesine göre (farklı batarya/menzil varyantı olabilir, TR'de teyit edilmeli): CarPlay/Android Auto desteği yok, gerçek otoyol menzili beyan edilenin altında ölçülmüş, yedek lastik yok, şerit takip asistanı fazla müdahaleci.",kaynak:"https://elcerokm.com/skywell/et5/review"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'skywell-et5-lr-2026-exclusive':{id:'skywell-et5-lr-2026-exclusive',marka:"Skywell",model:"ET5 LR",yil:2026,versiyon:"Exclusive",
+  kaynakAd:"arabam.com blog (fiyat) + skywell.com.tr + log.com.tr/shiftdelete.net (yangın haberleri, derin araştırma)",kaynakUrl:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/skywell-fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"D",kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:204,tork_nm:320,sifirYuz_sn:7.9,co2_gkm:0,batarya_kwh:86,menzil_km_wltp:642,ac_sarj_dk:480,uzunluk_mm:4720,genislik_mm:1908,yukseklik_mm:1696,dingil_mm:2800,yerden_yukseklik_mm:159,agirlik_kg:2005,bagaj_l:467,jant_inch:19,abs:"Var",esp:"Var",yokus_kalkis:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",dijital_gosterge:"Var",liste_fiyati_tl:2800000,batarya_garanti_yil:8},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"ÖNEMLİ GÜVENLİK NOTU: ET5, Euro NCAP tarafından test edilmemiş, ancak 2026 boyunca Türkiye'de tekrarlayan araç yangını haberleri basına yansıdı — Mart 2026 Kayseri, Mayıs 2026 Diyarbakır, 19 Haziran 2026 İzmir (yan araçlara sıçrayan yangın), 29 Temmuz 2026 Kayseri (şarj istasyonunda araç patladı), ayrıca Ağustos-Eylül 2026'da Bursa, Aydın/Didim, İstanbul ve Adana'da olaylar bildirildi. Olay sayısı kaynaklar arasında tartışmalı (gazeteci tespiti 7 ayda 9-10, kullanıcı tahminleri son 1 yılda 13-16 araç). Bu, resmi/zorunlu bir geri çağırma değil — distribütör Ulu Motor 'gönüllü' ücretsiz kontrol daveti başlattı (şasi no. ile sorgulanabiliyor) ve Çin'den resmi bir inceleme heyeti Ağustos 2026'da Türkiye'ye geldi. Risk faktörü olarak yetkisiz/uygunsuz yazılım, batarya alt kısmı darbesi, standart dışı soğutma sıvısı, eksik bakım ve yetkisiz kaporta/boya işlemleri gösteriliyor. Bazı sahipler kontrol öncesi yüksek ücret (90.000 TL+KDV inceleme + 5.000 TL çekici) talep edildiğini bildiriyor; Ulu Motor bunun onarım bedeli olduğunu açıklıyor.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım farkı",deger:"Legend'e ek olarak adaptif hız sabitleyici standart donanımda.",kaynak:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/skywell-fiyat-listesi/"},
+   {ozellik:"İç mekan (benzer pazar versiyonundan, teyit gerekir)",deger:"Geniş iç mekân, kaliteli malzeme/işçilik, elektrikli+ısıtmalı/soğutmalı ön koltuklar, deri döşeme, kablosuz şarj.",kaynak:"https://elcerokm.com/skywell/et5/review"}
+  ],
+  gucluYanlar:[
+   {metin:"Adaptif hız sabitleyici dahil daha zengin sürüş destek paketi, geniş iç mekân ve segment ortalamasının üzerinde bagaj hacmi (467L).",kaynak:"https://elcerokm.com/skywell/et5/review"},
+   {metin:"Şehir içi kullanım için menzil (642km WLTP beyan) yeterli bulunuyor.",kaynak:"https://elcerokm.com/skywell/et5/review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"TEKRARLAYAN ARAÇ YANGINI HABERLERİ — bkz. geriCagirmaNot. Kritik bir güvenlik gündemi, resmi geri çağırma olmasa da ciddiye alınması gereken, basına yansımış çok sayıda doğrulanmış olay var.",kaynak:"https://shiftdelete.net/?p=1275886"},
+   {metin:"Skywell ET5'in Çin'deki kardeşi 'Skyworth EV6' (aynı araç, farklı marka adı) C-NCAP testinde sadece 1 yıldız aldı; yan çarpışma testinde 16 üzerinden 0 puan almış.",kaynak:"https://carnewschina.com/2023/01/11/skyworth-ev6-skywell-et5-scores-only-1-star-in-c-ncap-crash-test/"},
+   {metin:"sikayetvar.com'da çok sayıda ET5/ET5 Legend şikayeti var: direksiyon tutukluğu, batarya alt koruma tablasında yanık/erime izleri, elektronik arızalar, yedek parça tedarikinde aylarca gecikme, yüksek/şeffaf olmayan servis ücretleri.",kaynak:"https://www.sikayetvar.com/skywell/arac"}
+  ],
+  odul:[],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5581,7 +5752,24 @@ const RECALLS = {
  'ds-n4-2026-pallas-bluehdi-130':null,
  'voyah-free-2026-high-489hp':null,
  'voyah-dream-2026-standart-7-koltuk':null,
- 'leapmotor-t03-2026-basic-400':null
+ 'leapmotor-t03-2026-basic-400':null,
+ 'forthing-t5evo-2026-premium':null,
+ 'forthing-t5evo-2026-executive':null,
+ 'forthing-t5evo-2026-sport-edition':null,
+ 'forthing-m4utour-2026-premium':null,
+ 'forthing-m4utour-2026-executive':null,
+ 'skywell-et5-lr-2026-legend':[
+  {tarih:'2026-08',parca:'Batarya / elektrik sistemi',baslik:'Gönüllü ücretsiz kontrol kampanyası (tekrarlayan yangın haberleri sonrası)',
+   ozet:'2026 boyunca Türkiye genelinde (Kayseri, Diyarbakır, İzmir, Bursa, Aydın, İstanbul, Adana) tekrarlayan ET5 yangını haberleri üzerine, Çin\'den bir inceleme heyeti Türkiye\'ye geldi ve distribütör şasi numarasıyla sorgulanabilen gönüllü bir kontrol daveti başlattı. Bu resmi/zorunlu bir geri çağırma değildir.',
+   cozum:'Yetkili serviste ücretsiz kontrol (bazı sahiplere göre kontrol/çekici için ücret talep edildiği de bildiriliyor); risk faktörü olarak yetkisiz yazılım, batarya alt kısmı darbesi, standart dışı soğutma sıvısı ve eksik bakım gösteriliyor.',
+   kaynak:'https://www.log.com.tr/skywell-turkiyeden-yanan-et5ler-hakkinda-resmi-aciklama-cok-sayida-riskli-arac-var/'}
+ ],
+ 'skywell-et5-lr-2026-exclusive':[
+  {tarih:'2026-08',parca:'Batarya / elektrik sistemi',baslik:'Gönüllü ücretsiz kontrol kampanyası (tekrarlayan yangın haberleri sonrası)',
+   ozet:'2026 boyunca Türkiye genelinde (Kayseri, Diyarbakır, İzmir, Bursa, Aydın, İstanbul, Adana) tekrarlayan ET5 yangını haberleri üzerine, Çin\'den bir inceleme heyeti Türkiye\'ye geldi ve distribütör şasi numarasıyla sorgulanabilen gönüllü bir kontrol daveti başlattı. Bu resmi/zorunlu bir geri çağırma değildir.',
+   cozum:'Yetkili serviste ücretsiz kontrol (bazı sahiplere göre kontrol/çekici için ücret talep edildiği de bildiriliyor); risk faktörü olarak yetkisiz yazılım, batarya alt kısmı darbesi, standart dışı soğutma sıvısı ve eksik bakım gösteriliyor.',
+   kaynak:'https://www.log.com.tr/skywell-turkiyeden-yanan-et5ler-hakkinda-resmi-aciklama-cok-sayida-riskli-arac-var/'}
+ ]
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5896,7 +6084,14 @@ const OFFICIAL = {
  'ds-n4-2026-pallas-bluehdi-130':null,
  'voyah-free-2026-high-489hp':null,
  'voyah-dream-2026-standart-7-koltuk':null,
- 'leapmotor-t03-2026-basic-400':null
+ 'leapmotor-t03-2026-basic-400':null,
+ 'forthing-t5evo-2026-premium':null,
+ 'forthing-t5evo-2026-executive':null,
+ 'forthing-t5evo-2026-sport-edition':null,
+ 'forthing-m4utour-2026-premium':null,
+ 'forthing-m4utour-2026-executive':null,
+ 'skywell-et5-lr-2026-legend':null,
+ 'skywell-et5-lr-2026-exclusive':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -6239,7 +6434,14 @@ const REVIEWS = {
  'ds-n4-2026-pallas-bluehdi-130':[],
  'voyah-free-2026-high-489hp':[],
  'voyah-dream-2026-standart-7-koltuk':[],
- 'leapmotor-t03-2026-basic-400':[]
+ 'leapmotor-t03-2026-basic-400':[],
+ 'forthing-t5evo-2026-premium':[],
+ 'forthing-t5evo-2026-executive':[],
+ 'forthing-t5evo-2026-sport-edition':[],
+ 'forthing-m4utour-2026-premium':[],
+ 'forthing-m4utour-2026-executive':[],
+ 'skywell-et5-lr-2026-legend':[],
+ 'skywell-et5-lr-2026-exclusive':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
