@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 330 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga ve Lamborghini Urus SE/Temerario/Revuelto için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 342 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20 ve Ferrari Amalfi/Purosangue/296 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 330 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 342 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5664,6 +5664,275 @@ const CARS = {
    {metin:"İlk üretim yıllarında 3 ayrı NHTSA geri çağırması (silecek, yağ sızıntısı/yangın riski, kamera yazılımı) kalite kontrol sorunlarına işaret ediyor (bkz. geriCagirmaNot).",kaynak:"https://www.motorauthority.com/news/1145448_lamborghini-revuelto-recalled-for-fire-risk"}
   ],
   odul:[{ad:"Road & Track — '2025 Performance Car of the Year'",yil:2025,kaynak:"https://www.supercars.net/blog/2024-lamborghini-hybrids-revered"},{ad:"Chicago Athenaeum: Museum of Architecture and Design — 'Good Design Award' (Transportation kategorisi)",yil:2024,kaynak:"https://www.supercars.net/blog/2024-lamborghini-hybrids-revered"}],
+  sistemPuani:null},
+ /* --- Maserati (8 versiyon) ve Ferrari (4 versiyon) — 2026-10-08 (Claude ajanları ile, optimize verimli
+    prompt: sırasıyla ~29 ve ~20 arama/arama çağrısı). Euro NCAP'in HİÇBİR Maserati veya Ferrari modelini
+    test etmediği doğrulandı (Ferrari'nin ilk Euro NCAP adayı, henüz satışta olmayan elektrikli "Luce"
+    olacak). Gerçek, tarihli NHTSA geri çağırmaları bulundu ve yapılandırılmış olarak eklendi: Maserati
+    Grecale/GranTurismo (arka kamera yazılımı), GranTurismo/GranCabrio (yakıt göstergesi/motor durma
+    riski), MC20 Cielo (ön cam çerçeve contası + lastik etiketi), Ferrari Purosangue (frenleme kabiliyetini
+    azaltabilen kısa devre riski — "do not drive" uyarısı verilmiş), Ferrari 296 (yakıt sızıntısı/yangın
+    riski — "do not drive" uyarısı verilmiş). Tüm "do not drive" düzeyi uyarılar dürüstçe öne çıkarıldı. */
+ 'maserati-grecale-2025-gt':{id:'maserati-grecale-2025-gt',marka:"Maserati",model:"Grecale",yil:2025,versiyon:"GT",
+  kaynakAd:"Sifiraracal.com (fiyat) + carwow.co.uk (derin inceleme) + NHTSA (derin araştırma)",kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/grecale",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Premium Orta-Üst SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik",cekis:"4x4",cc:1995,silindir:4,besleme:"Turbo + Hafif Hibrit (MHEV)",guc_hp:330,liste_fiyati_tl:6867200},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA Kampanya 24V892000 (Maserati kampanya no. 761): 2023-2024 Grecale'de (2024 GranTurismo ile birlikte, toplam ~1.710 araç) 'Central Vision Park Assist Module' (CVPAM) yazılımı, geri vites takıldığında arka kamera görüntüsünü göstermeyebiliyor (FMVSS 111 arka görüş standardına aykırı). Bildirim 26 Kasım 2024; çözüm ücretsiz yazılım güncellemesi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"12,3 inç dijital gösterge paneli + 12,3 inç dokunmatik ekran + 8,8 inç alt iklim/konfor ekranı; CarPlay/Android Auto tüm versiyonlarda standart. GT donanımında 10 yönlü ayarlanabilir sport koltuklar. Bagaj 535L.",kaynak:"https://www.carwow.co.uk/maserati/grecale"}
+  ],
+  gucluYanlar:[
+   {metin:"Etkileyici düz hat performansı, geniş ve şık iç mekan, akıcı Android tabanlı bilgi-eğlence sistemi, otoyolda sessiz/rahat sürüş, hassas direksiyon. Bagaj hacmi BMW X4 ve Porsche Macan ile rekabetçi.",kaynak:"https://www.carwow.co.uk/maserati/grecale"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"İklim ekranı sürüş halinde kullanımı zor, direksiyon pozisyonu ofset, tümsek/çukurlarda süspansiyon huzursuz, gaz tepkisi hafif geç, standart olması gereken bazı donanımlar opsiyonel (sürüş asistanı paketleri ~£5.000). Euro NCAP puanı yok.",kaynak:"https://www.carwow.co.uk/maserati/grecale"},
+   {metin:"Consumer Reports, Maserati markası için güvenilirlik sıralaması oluşturacak yeterli veri olmadığını açıklamış — bu belirsizlik kendi başına bir uyarı niteliğinde.",kaynak:"https://www.gobankingrates.com/saving-money/car/italian-car-brands-named-least-reliable-of-2025/"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'maserati-grecale-2025-modena':{id:'maserati-grecale-2025-modena',marka:"Maserati",model:"Grecale",yil:2025,versiyon:"Modena",
+  kaynakAd:"Sifiraracal.com (fiyat) + carwow.co.uk (derin inceleme) + NHTSA (derin araştırma)",kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/grecale",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Premium Orta-Üst SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik",cekis:"4x4",cc:1995,silindir:4,besleme:"Turbo + Hafif Hibrit (MHEV)",guc_hp:330,liste_fiyati_tl:8051600},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA Kampanya 24V892000 (Maserati kampanya no. 761): 2023-2024 Grecale'de CVPAM yazılımı arka kamera görüntüsünü göstermeyebiliyor (FMVSS 111 ihlali). Bildirim 26 Kasım 2024; çözüm ücretsiz yazılım güncellemesi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"GT'ye ek olarak Modena'da 14 yönlü ayarlanabilir sport koltuklar bulunuyor. Bagaj 535L.",kaynak:"https://www.carwow.co.uk/maserati/grecale"}
+  ],
+  gucluYanlar:[
+   {metin:"Etkileyici düz hat performansı, geniş ve şık iç mekan, akıcı bilgi-eğlence sistemi, otoyolda sessiz/rahat sürüş, hassas direksiyon.",kaynak:"https://www.carwow.co.uk/maserati/grecale"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"İklim ekranı sürüş halinde kullanımı zor, süspansiyon tümsek/çukurlarda huzursuz, gaz tepkisi hafif geç. Euro NCAP puanı yok.",kaynak:"https://www.carwow.co.uk/maserati/grecale"},
+   {metin:"Consumer Reports, Maserati markası için güvenilirlik sıralaması oluşturacak yeterli veri olmadığını açıklamış.",kaynak:"https://www.gobankingrates.com/saving-money/car/italian-car-brands-named-least-reliable-of-2025/"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'maserati-grecale-2025-trofeo':{id:'maserati-grecale-2025-trofeo',marka:"Maserati",model:"Grecale",yil:2025,versiyon:"Trofeo",
+  kaynakAd:"Sifiraracal.com + Webtekno (fiyat/0-100) + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/grecale",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Premium Orta-Üst SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik",cekis:"4x4",cc:2992,silindir:6,besleme:"Twin-Turbo (Nettuno V6)",guc_hp:530,sifirYuz_sn:3.8,liste_fiyati_tl:15041800},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA Kampanya 24V892000 (Maserati kampanya no. 761): CVPAM yazılımı arka kamera görüntüsünü göstermeyebiliyor (FMVSS 111 ihlali). Bildirim 26 Kasım 2024; çözüm ücretsiz yazılım güncellemesi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"En üst benzinli donanım; hibrit bataryası olmadığı için bagaj ~570L (Folgore'dan daha büyük).",kaynak:"https://www.carwow.co.uk/maserati/grecale"}
+  ],
+  gucluYanlar:[
+   {metin:"Nettuno V6 motorla etkileyici performans (0-100: 3,8sn); geniş ve şık iç mekan, hassas direksiyon.",kaynak:"https://www.carwow.co.uk/maserati/grecale"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"İklim ekranı sürüş halinde kullanımı zor, süspansiyon tümsek/çukurlarda huzursuz. Euro NCAP puanı yok.",kaynak:"https://www.carwow.co.uk/maserati/grecale"},
+   {metin:"Consumer Reports, Maserati markası için güvenilirlik sıralaması oluşturacak yeterli veri olmadığını açıklamış.",kaynak:"https://www.gobankingrates.com/saving-money/car/italian-car-brands-named-least-reliable-of-2025/"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'maserati-grecale-2025-folgore':{id:'maserati-grecale-2025-folgore',marka:"Maserati",model:"Grecale",yil:2025,versiyon:"Folgore (Elektrikli)",
+  kaynakAd:"Webtekno (fiyat) + completecar.ie (derin inceleme) + NHTSA",kaynakUrl:"https://www.webtekno.com/elektrikli-maserati-grecale-folgore-turkiye-fiyati-h160622.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Premium Orta-Üst SUV",kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",guc_hp:550,tork_nm:820,sifirYuz_sn:4.1,hiz_kmh:220,batarya_kwh:105,menzil_km_wltp:500,ekran_inch:12.3,liste_fiyati_tl:9250000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA Kampanya 24V892000 (Maserati kampanya no. 761): CVPAM yazılımı arka kamera görüntüsünü göstermeyebiliyor (FMVSS 111 ihlali, Grecale ailesini kapsıyor). Bildirim 26 Kasım 2024; çözüm ücretsiz yazılım güncellemesi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik mimari",deger:"2x205kW elektrik motoru (AWD), 97kWh kullanılabilir batarya; DC şarj tepe 150kW (9 dakikada 100km menzil ekler); 400V mimari (yeni nesil Maserati EV'lerinin 800V mimarisinden daha yavaş şarj). Gerçek dünya kış testinde ~340km menzil ölçülmüş (beyan 500km).",kaynak:"https://www.completecar.ie/car-reviews/article/Maserati/Grecale/Grecale_Folgore_(2025)/2526/13955/2025-Maserati-Grecale-Folgore-(2025)-review.html"}
+  ],
+  gucluYanlar:[
+   {metin:"Yeni Porsche Macan'dan daha çekici bulunan tasarım, sessiz/kaliteli kabin, Grecale ailesinde en geniş arka diz mesafesi ve en ucuz işletme maliyeti.",kaynak:"https://www.completecar.ie/car-reviews/article/Maserati/Grecale/Grecale_Folgore_(2025)/2526/13955/2025-Maserati-Grecale-Folgore-(2025)-review.html"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Direksiyon aşırı hafif/elastik, güven verici değil; sentetik motor sesi kapatılamıyor ve sabit hızda monoton; güvenilirlik kanıtlanmamış; verimlilik sınıfında lider değil. Euro NCAP puanı yok.",kaynak:"https://www.completecar.ie/car-reviews/article/Maserati/Grecale/Grecale_Folgore_(2025)/2526/13955/2025-Maserati-Grecale-Folgore-(2025)-review.html"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'maserati-granturismo-2025-trofeo':{id:'maserati-granturismo-2025-trofeo',marka:"Maserati",model:"GranTurismo",yil:2025,versiyon:"Trofeo",
+  kaynakAd:"Sifiraracal.com (fiyat) + whatcar.com (derin inceleme) + NHTSA",kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/granturismo",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks GT Coupe",kasa:"Coupe",yakit:"Benzin",sanziman:"Otomatik",cekis:"4x4",koltuk:4,kapi:2,cc:2992,silindir:6,besleme:"Twin-Turbo (Nettuno V6)",guc_hp:550,liste_fiyati_tl:22167900},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"İki ayrı NHTSA kaydı: (1) Kampanya 24V892000 — CVPAM yazılımı arka kamera görüntüsünü göstermeyebiliyor (2024 GranTurismo dahil, ~1.710 araç, 26 Kasım 2024); (2) Kampanya 24V-679 (Maserati no. 749) — 2024 GranTurismo/GranCabrio, ~524 araç: gövde kontrol modülü (BCM) yazılımı hatalı yakıt seviyesi gösterebiliyor, bu da sürüş sırasında beklenmedik motor stop riskine yol açabiliyor. Bildirim 12 Eylül 2024; çözüm ücretsiz BCM yazılım güncellemesi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"310L düz tabanlı bagaj (5 kabin boy valiz sığıyor); arka koltuklar katlanmıyor, sadece kayak kapağı var. 12,2 inç dijital gösterge, 12,3 inç ana ekran (tepkisi yavaş bulunmuş), 8,8 inç alt iklim ekranı.",kaynak:"https://www.whatcar.com/maserati/granturismo/coupe/review/n26333"}
+  ],
+  gucluYanlar:[
+   {metin:"Uzun yol konforu ile çevik sürüşü dengeliyor, güçlü performans, konforlu/destekleyici koltuklar.",kaynak:"https://www.whatcar.com/maserati/granturismo/coupe/review/n26333"},
+   {metin:"Car and Driver 2025 Editors' Choice Awards'da 'Luxury Sports Car' kategorisinde ödül aldı.",kaynak:"https://www.media.stellantis.com/us-en/maserati/press/maserati-granturismo-trofeo-and-granturismo-folgore-win-car-and-drivers-2025-editors-choice-awards"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Egzoz sesi hayal kırıklığı yaratıyor ve karaktersiz bulunmuş; iç mekan fiyatına göre yeterince kaliteli değil; opsiyonlarla fiyat hızla artıyor. Euro NCAP puanı yok.",kaynak:"https://www.whatcar.com/maserati/granturismo/coupe/review/n26333"},
+   {metin:"İki ayrı NHTSA geri çağırması (kamera yazılımı, yakıt göstergesi/motor durma riski) var — bkz. geriCagirmaNot.",kaynak:"https://static.nhtsa.gov/odi/rcl/2024/RCAK-24V679-3719.pdf"}
+  ],
+  odul:[{ad:"Car and Driver 2025 Editors' Choice Awards — 'Luxury Sports Car'",yil:2025,kaynak:"https://www.media.stellantis.com/us-en/maserati/press/maserati-granturismo-trofeo-and-granturismo-folgore-win-car-and-drivers-2025-editors-choice-awards"}],
+  sistemPuani:null},
+ 'maserati-granturismo-2024-folgore':{id:'maserati-granturismo-2024-folgore',marka:"Maserati",model:"GranTurismo",yil:2024,versiyon:"Folgore (Elektrikli)",
+  kaynakAd:"log.com.tr (fiyat) + whatcar.com/motor1.com (derin inceleme) + NHTSA",kaynakUrl:"https://www.log.com.tr/elektrikli-maserati-granturismo-folgore-ve-grecale-folgore-turkiyede-satisa-sunuldu/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks GT Coupe",kasa:"Coupe",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:4,kapi:2,guc_hp:761,sifirYuz_sn:2.7,hiz_kmh:325,batarya_kwh:92.5,liste_fiyati_tl:15000000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"İki ayrı NHTSA kaydı: (1) Kampanya 24V892000 — CVPAM yazılımı arka kamera görüntüsünü göstermeyebiliyor (26 Kasım 2024); (2) Kampanya 24V-679 — gövde kontrol modülü (BCM) yazılımı hatalı yakıt/batarya seviyesi gösterebiliyor, motor/sistem beklenmedik şekilde durma riski (12 Eylül 2024, ~524 araç).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik mimari (kaynak çelişkisi notu)",deger:"WhatCar'a göre 751bhp/0-62mph 2,7sn/83kWh kullanılabilir batarya/280 mil (WLTP) menzil/270kW DC şarj. Motor1'e göre kısa sürelerde 818hp tepe güç (92,5kWh T-şekilli batarya), EPA menzili 242 mil. Fark muhtemelen pazar/test döngüsü (WLTP vs EPA) farkından kaynaklanıyor, iki kaynak da gerçek.",kaynak:"https://www.whatcar.com/maserati/granturismo/coupe/review/n26333"},
+   {ozellik:"Bagaj",deger:"Sadece 270L (batarya/motor nedeniyle, benzinli versiyondan belirgin küçük).",kaynak:"https://www.motor1.com/reviews/751619/maserati-granturismo-folgore-first-drive-review/"}
+  ],
+  gucluYanlar:[
+   {metin:"Çarpıcı tasarım, gevşek yüzeyde mükemmel kontrollü drift/savrulma kabiliyeti, hem agresif hem hassas sürüş karakterinde ikili kişilik, ağırlığını iyi gizliyor.",kaynak:"https://www.motor1.com/reviews/751619/maserati-granturismo-folgore-first-drive-review/"},
+   {metin:"Car and Driver 2025 Editors' Choice Awards'da 'Electric Luxury Sports Car' kategorisinde ödül aldı.",kaynak:"https://www.media.stellantis.com/us-en/maserati/press/maserati-granturismo-trofeo-and-granturismo-folgore-win-car-and-drivers-2025-editors-choice-awards"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Ekstra ağırlık süspansiyon konforunu ve yol tutuşunu olumsuz etkiliyor, frenler yüksek hızda zorlanıyor. Bagaj çok küçük.",kaynak:"https://www.whatcar.com/maserati/granturismo/coupe/review/n26333"},
+   {metin:"İç mekan detayları yetersiz/fiyatını hak etmiyor; çok fazla dokunmatik ekran, yeterince fiziksel düğme yok (bazı anahtarlar düşük segment Stellantis modellerinden); direksiyon hissi 'ölü' ve yön geri bildirimi zayıf.",kaynak:"https://www.motor1.com/reviews/751619/maserati-granturismo-folgore-first-drive-review/"}
+  ],
+  odul:[{ad:"Car and Driver 2025 Editors' Choice Awards — 'Electric Luxury Sports Car'",yil:2025,kaynak:"https://www.media.stellantis.com/us-en/maserati/press/maserati-granturismo-trofeo-and-granturismo-folgore-win-car-and-drivers-2025-editors-choice-awards"}],
+  sistemPuani:null},
+ 'maserati-grancabrio-2026-trofeo':{id:'maserati-grancabrio-2026-trofeo',marka:"Maserati",model:"GranCabrio",yil:2026,versiyon:"Trofeo",
+  kaynakAd:"ensonhaber.com (TR giriş haberi) + evo.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.ensonhaber.com/maseratiden-3-yeni-model-grecale-granturismo-ve-grancabrio-ekimde-turkiyede-h1551270",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks GT Cabrio",kasa:"Cabrio",yakit:"Benzin",sanziman:"Otomatik",cekis:"4x4",koltuk:4,kapi:2,cc:2992,silindir:6,besleme:"Twin-Turbo (Nettuno V6)",guc_hp:590,tork_nm:650,hiz_kmh:320},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA Kampanya 24V-679 (Maserati no. 749): 2024 GranCabrio (2024 GranTurismo ile birlikte, toplam ~524 araç) gövde kontrol modülü (BCM) yazılımı hatalı yakıt göstergesi → motor beklenmedik şekilde durabilir. Bildirim 12 Eylül 2024; çözüm ücretsiz yazılım güncellemesi.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Tavan",deger:"Saatte 31mph'e kadar hızda 14 saniyede açılıp 16 saniyede kapanabiliyor; tavan kontrolü dokunmatik ekrandan yapılıyor (fiziksel düğme yok). Koltukta ense ısıtıcı (hava üfleyen) var.",kaynak:"https://www.evo.co.uk/maserati/grancabrio"},
+   {ozellik:"Motor",deger:"3.0L çift turbo V6 Nettuno (ön yanma odası teknolojisi), 8 vitesli ZF otomatik, AWD, ağırlık dağılımı %51:49 (ön:arka).",kaynak:"https://www.evo.co.uk/maserati/grancabrio"}
+  ],
+  gucluYanlar:[
+   {metin:"'Patlayıcı bir V6' motor, yatıştırıcı süspansiyon konforu, iyi iç mekan alanı.",kaynak:"https://www.evo.co.uk/maserati/grancabrio"},
+   {metin:"Car and Driver 2026 Editors' Choice Honorees listesinde 'Luxury Sports Car' segmentinde yer aldı.",kaynak:"https://www.media.stellantis.com/em-en/maserati/press/maserati-celebrates-car-and-driver-s-2026-editors-choice-award-recognition-for-granturismo-and-grancabrio"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Kabin 'wow etkisi' taşımıyor; gerçek bir spor araba değil (GT karakterinde); dokunmatik ekran yoğunluğu ve tavan açma/kapamanın dokunmatik ekrandan yapılması 'fazla karmaşık' bulunmuş.",kaynak:"https://www.evo.co.uk/maserati/grancabrio"}
+  ],
+  odul:[{ad:"Car and Driver 2026 Editors' Choice Honorees — 'Luxury Sports Car'",yil:2026,kaynak:"https://www.media.stellantis.com/em-en/maserati/press/maserati-celebrates-car-and-driver-s-2026-editors-choice-award-recognition-for-granturismo-and-grancabrio"}],
+  sistemPuani:null},
+ 'maserati-mc20-2025-cielo':{id:'maserati-mc20-2025-cielo',marka:"Maserati",model:"MC20",yil:2025,versiyon:"Cielo (Açılır Tavan)",
+  kaynakAd:"Sifiraracal.com (fiyat) + evo.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/mc20",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Süper Spor",kasa:"Cabrio",yakit:"Benzin",sanziman:"Otomatik (8 ileri DCT)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,cc:2992,silindir:6,besleme:"Twin-Turbo (Nettuno V6)",guc_hp:630,tork_nm:730,sifirYuz_sn:2.9,hiz_kmh:325,depo_l:50,liste_fiyati_tl:38963400},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"İki doğrulanmış geri çağırma: (1) NHTSA 23V570000 — 2023 MC20 Cielo'ya özel (~59 araç): ön cam çerçeve saplaması contası eksik/uygulanmamış olabilir → gövde/tavan mukavemeti (FMVSS 216 tavan ezilme, FMVSS 214 yan darbe) etkilenebilir, 10 Ağustos 2023; (2) NHTSA 24V537000 — 2022-2024 MC20 ve 2023-2024 MC20 Cielo (toplam ~1.092 araç): lastik etiketindeki azami taşıma ağırlığı (VCW) değeri hatalı olabilir (FMVSS 110), 18 Temmuz 2024. Her ikisinin de çözümü ücretsiz.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Tavan",deger:"Saatte 31mph'e kadar hızda ~12 saniyede açılıp kapanabiliyor; tavan kontrolü merkezi dokunmatik ekrandan; cam tavan opak/şeffaf arasında anında geçiş yapabiliyor. Kuru ağırlık 1.560kg.",kaynak:"https://evo.co.uk/maserati/mc20/205347/maserati-mc20-cielo-2022-review"}
+  ],
+  gucluYanlar:[
+   {metin:"Olağanüstü güç aktarma organları; sınıfının en iyisi şasi; motor ve 8 vitesli çift kavramalı şanzıman mükemmel bulunmuş; şasi GT konforu ile süper spor keskinliğini dengeliyor.",kaynak:"https://evo.co.uk/maserati/mc20/205347/maserati-mc20-cielo-2022-review"},
+   {metin:"MC20 (coupe/temel nesil), İngiliz GQ dergisi tarafından 'Super Sports Car of The Year 2021' seçildi (ödül MC20 model ailesine ait, Cielo versiyonu için ayrıca doğrulanmadı).",kaynak:"https://www.maserati.com/ca/en/news/mc20-gq-car-awards"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Pahalı, opsiyonlar fiyatı hızla yükseltiyor; 1.560kg kuru ağırlıkla 'özellikle hafif değil' (McLaren Artura ve Ferrari 296 GTS ile olumsuz kıyaslanmış); direksiyonda merkez civarında hafif boşluk; Cielo coupe'ye göre bazen daha ağır ve daha az kontrollü; fren pedalı alışılmadık uzun ve sert basış gerektiriyor.",kaynak:"https://evo.co.uk/maserati/mc20/205347/maserati-mc20-cielo-2022-review"},
+   {metin:"İki ayrı NHTSA geri çağırması (ön cam çerçeve contası, lastik etiketi hatası) var — bkz. geriCagirmaNot.",kaynak:"https://vehiclesafetyrecalls.com/recall/23V570000"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'ferrari-amalfi-2026-coupe':{id:'ferrari-amalfi-2026-coupe',marka:"Ferrari",model:"Amalfi",yil:2026,versiyon:"Coupe (2+)",
+  kaynakAd:"Ensonhaber.com (fiyat) + evo.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.ensonhaber.com/ferrari-amalfi-turkiyede-satisa-cikti-iste-fiyati-ve-ozellikleri-h1545954",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks Spor GT (Gran Turismo)",kasa:"Coupe",yakit:"Benzin",sanziman:"Otomatik (8 ileri çift kavramalı)",cc:3855,silindir:8,besleme:"Çift Turbo",guc_hp:640,sifirYuz_sn:3.3,agirlik_kg:1470,ekran_inch:10.25,dijital_gosterge:"Var",abs:"Var (ABS Evo)",liste_fiyati_tl:45000000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Ferrari, tarihinde hiçbir modelini Euro NCAP çarpışma testine göndermemiş — markanın ilk Euro NCAP adayı Amalfi değil, henüz satışa sunulmamış ilk elektrikli modeli 'Luce' olacak (2026'da planlanıyor). Amalfi çok yeni bir model olduğu için (2025 tanıtım, TR teslimatları 2026) NHTSA'da henüz modele özel bir geri çağırma kaydına rastlanmadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Teknik",deger:"Yeni Bosch ECU, geliştirilmiş turbo yönetimi, daha hafif motor parçaları (kam milleri, blok); motor 6000rpm'e daha hızlı çıkıyor, devir limiti 7600rpm. Tork 561lb-ft (3000-5750rpm). Brake-by-wire fren sistemi, 6D sensörlü ABS Evo, Side Slip Control 6.1.",kaynak:"https://www.evo.co.uk/ferrari/amalfi"},
+   {ozellik:"Kokpit",deger:"Direksiyonda fiziksel start butonu (F80'den esinlenilmiş HMI), yatay dokunmatik ekran, 12Cilindri'ye benzer kabin mimarisi.",kaynak:"https://www.evo.co.uk/ferrari/amalfi"}
+  ],
+  gucluYanlar:[
+   {metin:"631-640HP ile Enzo'ya yakın güç; geniş karakter — sakin sürüşte rahat, sert sürüşte keskin. Çevik direksiyon/gaz tepkisi, tutarlı ve güvenilir fren performansı.",kaynak:"https://www.evo.co.uk/ferrari/amalfi"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Motor sesi/müziği zayıf bulunmuş, orta devirlerde mekanik sesler ön planda. Hızlı virajlarda ön lastik tutuş geri bildirimi sınırlı (McLaren'a kıyasla daha az güven veriyor).",kaynak:"https://www.evo.co.uk/ferrari/amalfi"},
+   {metin:"Race modunda vites geçişleri viraj içinde sarsıntı yapabiliyor; Comfort/Sport modlarında düşük tutuşta traction control gücü ciddi sınırlıyor. Euro NCAP tarafından test edilmemiş (Ferrari hiçbir modelini test ettirmiyor).",kaynak:"https://www.donanimhaber.com/ferrari-ilk-kez-euro-ncap-carpisma-testine-arac-gonderiyor--206781"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'ferrari-purosangue-2024-suv':{id:'ferrari-purosangue-2024-suv',marka:"Ferrari",model:"Purosangue",yil:2024,versiyon:"4 Kapı 4 Koltuk SUV",
+  kaynakAd:"Otomobilden.com.tr (TR sergi haberi) + carmagazine.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.otomobilden.com.tr/ferrarinin-benzersiz-modeli-purosangue-fermasta-sergileniyor/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri çift kavramalı)",cekis:"4x4",koltuk:4,kapi:4,silindir:12,besleme:"Atmosferik",guc_hp:725,tork_nm:715,sifirYuz_sn:3.3,hiz_kmh:310,bagaj_l:472},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"ÖNEMLİ: NHTSA 25V-479 (Temmuz 2025) — 2023-2025 model yılı Purosangue, potansiyel olarak 541 araç. Sigorta kutusunun güç kaynağı ile yolcu tarafı ayak dayanağı birbirine temas edip kısa devre yapabiliyor; bu fren uyarı lambasını yakabiliyor ve FRENLEME KABİLİYETİNİ DÜŞÜREBİLİYOR ('A loss of braking ability increases the risk of a crash'). Çözüm: ücretsiz plastik ara parça takılması. Bildirim mektupları 21 Eylül 2025'te gönderildi. Ayrıca Ferrari hiçbir modelini Euro NCAP'e göndermemiş — Purosangue test edilmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Süspansiyon",deger:"Aktif süspansiyon: geleneksel stabilizatör çubuğu yok, her tekerlekte elektrik motoru damper eksenine kuvvet uygulayarak yalpa/pitch açılarını ~%50 azaltıyor (48V güç kaynağı + ayrı soğutma sistemi gerektiriyor). 812 Competizione'dan alınan dört tekerlek yönlendirme sistemi, Side Slip Control 8.0.",kaynak:"https://carmagazine.co.uk/car-reviews/ferrari/purosangue-suv"},
+   {ozellik:"Donanım",deger:"Standart Burmeister 3D ses sistemi; dikişli deri + bakır telli karbon fiber döşeme, askeri kumaş kaplı taban.",kaynak:"https://carmagazine.co.uk/car-reviews/ferrari/purosangue-suv"}
+  ],
+  gucluYanlar:[
+   {metin:"5 metre boyuna rağmen SUV ağırlığı hissettirmeyen tasarım; çok yüksek kabin malzeme kalitesi. 22-23 inç jantlara rağmen yumuşak/konforlu süspansiyon; etkileyici V12 sesi; ağır bir araç için şaşırtıcı çeviklik.",kaynak:"https://carmagazine.co.uk/car-reviews/ferrari/purosangue-suv"},
+   {metin:"Red Dot: Best of the Best 2023 tasarım ödülünü kazandı.",kaynak:"https://www.ferrari.com/en-EN/articles/ferrari-purosangue-and-ferrari-vision-gran-turismo-named-red-dot-best-of-the-best-2023"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"NHTSA'nın 'frenleme kabiliyetini düşürebilir, kaza riskini artırır' uyarısıyla yaptığı geri çağırma — bkz. geriCagirmaNot, ciddi bir güvenlik bulgusu.",kaynak:"https://www.jalopnik.com/1924744/ferrari-recalls-purosangues-for-loss-of-braking-ability"},
+   {metin:"Direksiyondaki dokunmatik infotainment kontrolleri kullanışsız; arka kapılarda engel sensörü yok; ~80mph üstünde rahatsız edici rüzgar sesi. Bagaj hacmi (472L), Lamborghini Urus (616L) ve Aston Martin DBX'ten (632L) daha küçük. Kuru ağırlık 2033kg.",kaynak:"https://carmagazine.co.uk/car-reviews/ferrari/purosangue-suv"}
+  ],
+  odul:[{ad:"Red Dot: Best of the Best 2023 (tasarım ödülü)",yil:2023,kaynak:"https://www.ferrari.com/en-EN/articles/ferrari-purosangue-and-ferrari-vision-gran-turismo-named-red-dot-best-of-the-best-2023"}],
+  sistemPuani:null},
+ 'ferrari-296-2025-gtb':{id:'ferrari-296-2025-gtb',marka:"Ferrari",model:"296",yil:2025,versiyon:"GTB (Coupe)",
+  kaynakAd:"Donanımhaber.com (tanıtım) + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.donanimhaber.com/830-beygirlik-ferrari-296-gtb-tanitildi--135168",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Orta Motorlu Süper Spor (Plug-in Hibrit)",kasa:"Coupe",yakit:"Hibrit",sanziman:"Otomatik (8 ileri çift kavramalı)",silindir:6,besleme:"Çift Turbo + Elektrik Motoru",guc_hp:830,tork_nm:740,sifirYuz_sn:2.9,hiz_kmh:330,batarya_kwh:7.45},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"ÖNEMLİ: NHTSA 23V-329 (2023) — 2022-2023 model yılı Ferrari 296 (GTB/GTS). Yakıt tankı bağlantı borusu, yüksek voltajlı batarya koruma kapağıyla sürtünerek korozyona uğrayabiliyor, delinip YAKIT SIZINTISINA yol açabiliyor; harici bir ateşleme kaynağıyla birleşirse YANGIN RİSKİ artıyor. Ferrari bu kampanya kapsamında etkilenen araçların parça gelene kadar kullanılmamasını tavsiye etti ('do not drive' uyarısı). Onarım ücretsiz, ~2 saat. Ferrari ayrıca hiçbir modelini Euro NCAP'e göndermemiş — 296 test edilmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Güç rakamı doğrulama notu",deger:"Ferrari'nin resmi kurumsal sayfası hibrit sistem toplam gücünü 830 CV (610kW) @ 8000rpm olarak veriyor (içten yanmalı motor 663cv + elektrik motoru 122kW/167cv). Bazı İngilizce kaynaklarda görülen 819bhp rakamı, metrik cv/PS biriminden SAE hp birimine çevrimden kaynaklanıyor — iki rakam da doğru, sadece birim farklı, resmi/birincil rakam 830 CV'dir.",kaynak:"https://corporate.ferrari.com/en/296-gtb-defining-fun-drive"},
+   {ozellik:"Motor",deger:"120° V6 turbo, 2992cc, maks. devir 8500rpm, özgül güç 221cv/litre. Elektrik motoru (MGU-K) 315Nm tork, 7,45kWh batarya, yalnızca elektrikle ~16mil (~26km) menzil. Arkada hareketli aktif kanat (yüksek hızda stabilite + fren desteği).",kaynak:"https://www.carwow.co.uk/ferrari/news/6882/ferrari-296-gtb-plug-in-hybrid-supercar-driven"}
+  ],
+  gucluYanlar:[
+   {metin:"Günlük kullanımda yumuşak, performans modunda çok sert/keskin karakter; pürüzlü yollarda da kendinden emin. İnceleyen kaynak (carwow), 296 GTB'yi 'şu anda satışta olan en iyi Ferrari' olarak değerlendirmiş. 0-60mph 2,9sn, 205mph+ azami hız.",kaynak:"https://www.carwow.co.uk/ferrari/news/6882/ferrari-296-gtb-plug-in-hybrid-supercar-driven"},
+   {metin:"Top Gear 'Supercar of the Year' 2022 ve Car Design Award 2022 ('2022'nin en iyi görünümlü üretim otomobili') ödüllerini kazandı.",kaynak:"https://sportscardigest.com/ferrari-296-gtb-named-supercar-of-the-year-by-top-gear/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yakıt sızıntısı/yangın riski nedeniyle 'kullanmayın' uyarılı NHTSA geri çağırması var — bkz. geriCagirmaNot, ciddi bir güvenlik bulgusu.",kaynak:"https://www.motor1.com/news/667059/ferrari-296-not-drive-fuel-leak/"},
+   {metin:"Direksiyondaki dokunmatik kontroller (özellikle infotainment) ve ayna ayar kontrolleri kullanımı zor/karmaşık. Eşya koyma alanı az. İç mekân işçiliğinde küçük kalite sorunları bildirilmiş.",kaynak:"https://www.carwow.co.uk/ferrari/news/6882/ferrari-296-gtb-plug-in-hybrid-supercar-driven"}
+  ],
+  odul:[{ad:"Top Gear — 'Supercar of the Year 2022'",yil:2022,kaynak:"https://sportscardigest.com/ferrari-296-gtb-named-supercar-of-the-year-by-top-gear/"},{ad:"Car Design Award 2022 — 2022'nin en iyi görünümlü üretim otomobili",yil:2022,kaynak:"https://cdn.ferrari.com/cms/network/media/pdf/CS_296_GTB_Car_Design_Award_2022_gbr.pdf"}],
+  sistemPuani:null},
+ 'ferrari-296-2025-gts':{id:'ferrari-296-2025-gts',marka:"Ferrari",model:"296",yil:2025,versiyon:"GTS (Spider)",
+  kaynakAd:"Donanımhaber.com (tanıtım) + carwow.co.uk (derin inceleme, GTB ile ortak) + NHTSA",kaynakUrl:"https://www.donanimhaber.com/ferrari-296-gts-tanitildi-iste-tasarimi-ve-ozellikleri--147606",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Orta Motorlu Süper Spor (Plug-in Hibrit)",kasa:"Cabrio",yakit:"Hibrit",sanziman:"Otomatik (8 ileri çift kavramalı)",cekis:"Arkadan İtiş (RWD)",silindir:6,besleme:"Çift Turbo + Elektrik Motoru",guc_hp:830,tork_nm:740,sifirYuz_sn:2.9,hiz_kmh:330,batarya_kwh:7.45},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"ÖNEMLİ: NHTSA 23V-329 (2023) — 2022-2023 model yılı Ferrari 296 (GTB/GTS'yi kapsıyor). Yakıt tankı bağlantı borusu, yüksek voltajlı batarya koruma kapağıyla sürtünerek korozyona uğrayabiliyor, delinip YAKIT SIZINTISINA yol açabiliyor; YANGIN RİSKİ artıyor. Ferrari etkilenen araçların parça gelene kadar kullanılmamasını tavsiye etti ('do not drive' uyarısı). Onarım ücretsiz, ~2 saat. Ferrari ayrıca hiçbir modelini Euro NCAP'e göndermemiş — 296 test edilmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor (GTB ile ortak)",deger:"120° V6 turbo, 2992cc, maks. devir 8500rpm. Elektrik motoru (MGU-K) 315Nm tork, 7,45kWh batarya. Toplam sistem gücü resmi olarak 830 CV (bazı kaynaklarda birim farkıyla 819bhp).",kaynak:"https://corporate.ferrari.com/en/296-gtb-defining-fun-drive"}
+  ],
+  gucluYanlar:[
+   {metin:"Günlük kullanımda yumuşak, performans modunda çok sert/keskin karakter (GTB ile aynı platform/güç aktarma organları). 0-60mph 2,9sn, 205mph+ azami hız.",kaynak:"https://www.carwow.co.uk/ferrari/news/6882/ferrari-296-gtb-plug-in-hybrid-supercar-driven"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yakıt sızıntısı/yangın riski nedeniyle 'kullanmayın' uyarılı NHTSA geri çağırması GTS'yi de kapsıyor — bkz. geriCagirmaNot, ciddi bir güvenlik bulgusu.",kaynak:"https://www.motor1.com/news/667059/ferrari-296-not-drive-fuel-leak/"},
+   {metin:"Direksiyondaki dokunmatik kontroller kullanımı zor/karmaşık (GTB incelemesiyle ortak platform notu); eşya koyma alanı az.",kaynak:"https://www.carwow.co.uk/ferrari/news/6882/ferrari-296-gtb-plug-in-hybrid-supercar-driven"}
+  ],
+  odul:[],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -6055,7 +6324,72 @@ const RECALLS = {
    ozet:'2024-2025 model yılı Revuelto için 7 araçlık kampanya.',
    cozum:'Yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/26V053000'}
  ],
- 'lamborghini-temerario-2026':null
+ 'lamborghini-temerario-2026':null,
+ 'maserati-grecale-2025-gt':[
+  {tarih:'2024-11',parca:'Geri görüş kamerası',baslik:"CVPAM yazılımı arka kamera görüntüsünü engelliyor (NHTSA 24V892000)",
+   ozet:'2023-2024 Grecale (2024 GranTurismo ile birlikte, toplam ~1.710 araç) için kampanya; FMVSS 111 arka görüş standardına aykırı.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V892000'}
+ ],
+ 'maserati-grecale-2025-modena':[
+  {tarih:'2024-11',parca:'Geri görüş kamerası',baslik:"CVPAM yazılımı arka kamera görüntüsünü engelliyor (NHTSA 24V892000)",
+   ozet:'2023-2024 Grecale için kampanya; FMVSS 111 arka görüş standardına aykırı.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V892000'}
+ ],
+ 'maserati-grecale-2025-trofeo':[
+  {tarih:'2024-11',parca:'Geri görüş kamerası',baslik:"CVPAM yazılımı arka kamera görüntüsünü engelliyor (NHTSA 24V892000)",
+   ozet:'2023-2024 Grecale için kampanya; FMVSS 111 arka görüş standardına aykırı.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V892000'}
+ ],
+ 'maserati-grecale-2025-folgore':[
+  {tarih:'2024-11',parca:'Geri görüş kamerası',baslik:"CVPAM yazılımı arka kamera görüntüsünü engelliyor (NHTSA 24V892000)",
+   ozet:'2023-2024 Grecale ailesi için kampanya; FMVSS 111 arka görüş standardına aykırı.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V892000'}
+ ],
+ 'maserati-granturismo-2025-trofeo':[
+  {tarih:'2024-11',parca:'Geri görüş kamerası',baslik:"CVPAM yazılımı arka kamera görüntüsünü engelliyor (NHTSA 24V892000)",
+   ozet:'2024 GranTurismo (Grecale ile birlikte, toplam ~1.710 araç) için kampanya.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V892000'},
+  {tarih:'2024-09',parca:'Yakıt göstergesi / motor kontrolü',baslik:'BCM yazılımı hatalı yakıt seviyesi gösterebiliyor — beklenmedik motor durma riski (NHTSA 24V-679)',
+   ozet:'2024 GranTurismo/GranCabrio için ~524 araçlık kampanya (Maserati kampanya no. 749).',
+   cozum:'Ücretsiz BCM yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2024/RCAK-24V679-3719.pdf'}
+ ],
+ 'maserati-granturismo-2024-folgore':[
+  {tarih:'2024-11',parca:'Geri görüş kamerası',baslik:"CVPAM yazılımı arka kamera görüntüsünü engelliyor (NHTSA 24V892000)",
+   ozet:'2024 GranTurismo için kampanya.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V892000'},
+  {tarih:'2024-09',parca:'Yakıt/batarya göstergesi',baslik:'BCM yazılımı hatalı seviye gösterebiliyor — beklenmedik durma riski (NHTSA 24V-679)',
+   ozet:'2024 GranTurismo/GranCabrio için ~524 araçlık kampanya.',
+   cozum:'Ücretsiz BCM yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2024/RCAK-24V679-3719.pdf'}
+ ],
+ 'maserati-grancabrio-2026-trofeo':[
+  {tarih:'2024-09',parca:'Yakıt göstergesi / motor kontrolü',baslik:'BCM yazılımı hatalı yakıt seviyesi gösterebiliyor — beklenmedik motor durma riski (NHTSA 24V-679)',
+   ozet:'2024 GranCabrio (2024 GranTurismo ile birlikte, toplam ~524 araç) için kampanya.',
+   cozum:'Ücretsiz BCM yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2024/RCAK-24V679-3719.pdf'}
+ ],
+ 'maserati-mc20-2025-cielo':[
+  {tarih:'2023-08',parca:'Kaporta / tavan yapısı',baslik:'Ön cam çerçeve saplaması contası eksik — gövde/tavan mukavemeti riski (NHTSA 23V570000)',
+   ozet:'2023 MC20 Cielo\'ya özel ~59 araçlık kampanya; FMVSS 216 (tavan ezilme) ve FMVSS 214 (yan darbe) standartları etkilenebilir.',
+   cozum:'Ücretsiz kontrol + conta uygulaması.',kaynak:'https://vehiclesafetyrecalls.com/recall/23V570000'},
+  {tarih:'2024-07',parca:'Lastik etiketi',baslik:'Azami taşıma ağırlığı (VCW) etiket hatası (NHTSA 24V537000)',
+   ozet:'2022-2024 MC20 ve 2023-2024 MC20 Cielo için toplam ~1.092 araçlık kampanya (FMVSS 110).',
+   cozum:'Ücretsiz düzeltilmiş etiket takılması.',kaynak:'https://vehiclesafetyrecalls.com/recall/24V537000'}
+ ],
+ 'ferrari-amalfi-2026-coupe':null,
+ 'ferrari-purosangue-2024-suv':[
+  {tarih:'2025-09',parca:'Elektrik sistemi / fren',baslik:'Sigorta kutusu kısa devresi — FRENLEME KABİLİYETİNİ DÜŞÜREBİLİR (NHTSA 25V-479)',
+   ozet:'2023-2025 model yılı Purosangue, potansiyel olarak 541 araç. Sigorta kutusunun güç kaynağı ile yolcu tarafı ayak dayanağı temas edip kısa devre yapabiliyor; fren uyarı lambası yanabiliyor ve frenleme kabiliyeti düşebiliyor. NHTSA: "A loss of braking ability increases the risk of a crash."',
+   cozum:'Ücretsiz plastik ara parça takılması.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V479-5968.pdf'}
+ ],
+ 'ferrari-296-2025-gtb':[
+  {tarih:'2023-01',parca:'Yakıt sistemi',baslik:'Yakıt tankı bağlantı borusu korozyonu — YANGIN RİSKİ, "kullanmayın" uyarısı (NHTSA 23V-329)',
+   ozet:'2022-2023 model yılı Ferrari 296 (GTB/GTS). Yakıt tankı bağlantı borusu, yüksek voltajlı batarya koruma kapağıyla sürtünerek korozyona uğrayıp delinebiliyor, yakıt sızıntısı ve yangın riski oluşturuyor. Ferrari etkilenen araçların parça gelene kadar kullanılmamasını tavsiye etti.',
+   cozum:'Ücretsiz onarım, ~2 saat.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RIONL-23V329-3002.pdf'}
+ ],
+ 'ferrari-296-2025-gts':[
+  {tarih:'2023-01',parca:'Yakıt sistemi',baslik:'Yakıt tankı bağlantı borusu korozyonu — YANGIN RİSKİ, "kullanmayın" uyarısı (NHTSA 23V-329)',
+   ozet:'2022-2023 model yılı Ferrari 296 (GTB/GTS\'yi kapsıyor). Yakıt tankı bağlantı borusu korozyona uğrayıp delinebiliyor, yakıt sızıntısı ve yangın riski oluşturuyor. Ferrari etkilenen araçların parça gelene kadar kullanılmamasını tavsiye etti.',
+   cozum:'Ücretsiz onarım, ~2 saat.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RIONL-23V329-3002.pdf'}
+ ]
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -6387,7 +6721,19 @@ const OFFICIAL = {
  'bentley-bentayga-2026-hybrid':null,
  'lamborghini-urus-se-2026':null,
  'lamborghini-temerario-2026':null,
- 'lamborghini-revuelto-2026':null
+ 'lamborghini-revuelto-2026':null,
+ 'maserati-grecale-2025-gt':null,
+ 'maserati-grecale-2025-modena':null,
+ 'maserati-grecale-2025-trofeo':null,
+ 'maserati-grecale-2025-folgore':null,
+ 'maserati-granturismo-2025-trofeo':null,
+ 'maserati-granturismo-2024-folgore':null,
+ 'maserati-grancabrio-2026-trofeo':null,
+ 'maserati-mc20-2025-cielo':null,
+ 'ferrari-amalfi-2026-coupe':null,
+ 'ferrari-purosangue-2024-suv':null,
+ 'ferrari-296-2025-gtb':null,
+ 'ferrari-296-2025-gts':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -6747,7 +7093,19 @@ const REVIEWS = {
  'bentley-bentayga-2026-hybrid':[],
  'lamborghini-urus-se-2026':[],
  'lamborghini-temerario-2026':[],
- 'lamborghini-revuelto-2026':[]
+ 'lamborghini-revuelto-2026':[],
+ 'maserati-grecale-2025-gt':[],
+ 'maserati-grecale-2025-modena':[],
+ 'maserati-grecale-2025-trofeo':[],
+ 'maserati-grecale-2025-folgore':[],
+ 'maserati-granturismo-2025-trofeo':[],
+ 'maserati-granturismo-2024-folgore':[],
+ 'maserati-grancabrio-2026-trofeo':[],
+ 'maserati-mc20-2025-cielo':[],
+ 'ferrari-amalfi-2026-coupe':[],
+ 'ferrari-purosangue-2024-suv':[],
+ 'ferrari-296-2025-gtb':[],
+ 'ferrari-296-2025-gts':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
