@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 342 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20 ve Ferrari Amalfi/Purosangue/296 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 363 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20, Ferrari Amalfi/Purosangue/296, Aston Martin Vantage/DB12/DBX/Vanquish, Rolls-Royce Ghost/Phantom/Cullinan/Spectre ve Isuzu D-Max için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 342 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 363 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5933,6 +5933,468 @@ const CARS = {
    {metin:"Direksiyondaki dokunmatik kontroller kullanımı zor/karmaşık (GTB incelemesiyle ortak platform notu); eşya koyma alanı az.",kaynak:"https://www.carwow.co.uk/ferrari/news/6882/ferrari-296-gtb-plug-in-hybrid-supercar-driven"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- Aston Martin (10 versiyon) + Rolls-Royce (9 versiyon) + Isuzu D-Max (2 versiyon) — 2026-10-08
+    (Claude ajanları ile, optimize verimli prompt). Bu, 25 markalık eksik-marka listesinin SON partisidir.
+    Aston Martin: Euro NCAP hiçbir Aston Martin modelini test etmemiş (çoklu arama ile doğrulandı, düşük
+    üretim hacmi). Vantage/DB12/DBX707 2025 model yılı araçlar NHTSA 25V001000 (geri görüş kamerası/
+    bilgi-eğlence ekranı arızası) kapsamında ortak geri çağırmaya sahip; DBX ayrıca 2026'ya özel iki ayrı
+    NHTSA kampanyası (arka süspansiyon kolu 26V200000, lastik basınç uyarısı 26V187000) almış; Vanquish'e
+    ayrı bir fren vakum pompası geri çağırması (25V532000) var. Rolls-Royce: Euro NCAP hiçbir modeli test
+    etmemiş (doğrulandı). Ghost/Phantom/Cullinan/Spectre ailelerinin her biri için gerçek, güncel nesle ait
+    NHTSA geri çağırmaları bulundu (Cullinan'a 2026'da emniyet kemeri cıvatası kampanyası dahil — RECALLS
+    altında yapılandırılmış kayıt). Isuzu D-Max: Euro NCAP'te GERÇEK 5 yıldız sonucu var (2020 testi, 2022'de
+    5 yıldıza güncellendi) — bu partinin tek Euro NCAP-testli aracı. ABD'de satılmadığı için NHTSA kaydı yok;
+    bunun yerine Avustralya resmi otoritesi (vehiclerecalls.gov.au) kaynaklı direksiyon sistemi geri çağırması
+    yapılandırılmış kayıt olarak eklendi. */
+ 'aston-martin-vantage-2026-coupe':{id:'aston-martin-vantage-2026-coupe',marka:"Aston Martin",model:"Vantage",yil:2026,versiyon:"Coupe",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site (astonmartin.com.tr, Yeniköy Motors) + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/vantage-coupe",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Spor Otomobil / GT",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.5,hiz_kmh:325,tuketim_l100km:12.1,co2_gkm:274,depo_l:73,uzunluk_mm:4495,genislik_mm:1980,yukseklik_mm:1275,dingil_mm:2705,agirlik_kg:1745,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V001000 (Ocak 2025) — 2025 model yılı Vantage/DB12/DBX707'yi kapsayan geri çağırma: araç vitese takıldığında bilgi-eğlence ana ekranı geri görüş kamerası görüntüsünü kapatabiliyor (FMVSS 111 ihlali, ABD'de 3 model toplam 1.452 araç). Çözüm: ücretsiz yazılım güncellemesi. Aston Martin hiçbir modelini Euro NCAP'e göndermemiş — düşük üretim hacmi nedeniyle Vantage test edilmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Güvenilirlik verisi",deger:"Model 2024 sonrası yeni nesil olduğu için uzun dönem güvenilirlik/Driver Power anket verisi henüz yok. Motor ve şanzıman Mercedes-AMG ile paylaşılıyor.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"},
+   {ozellik:"Garanti",deger:"3 yıl sınırsız km fabrika garantisi.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"}
+  ],
+  gucluYanlar:[
+   {metin:"665 hp twin-turbo 4.0L V8, 0-100km/s 3,5sn, 325km/s azami hız; dengeli/doğal direksiyon hissi. Gelişmiş iç mekan, 10,3 inç ekran, standart 360° kamera.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Önceki nesle göre fiyat ~£35.000 arttı (başlangıç ~£165.000); bazı iç mekan parçaları (sinyal kolu vb.) Mercedes menşeli, ucuz hissettiriyor. Sadece 2 koltuk, dar bagaj/torpido gözü.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"},
+   {metin:"Geri görüş kamerası/bilgi-eğlence ekranı arızası nedeniyle NHTSA geri çağırması kapsamında (bkz. geri çağırmalar).",kaynak:"https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'aston-martin-vantage-2026-s':{id:'aston-martin-vantage-2026-s',marka:"Aston Martin",model:"Vantage",yil:2026,versiyon:"S",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/vantage-s",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Spor Otomobil / GT",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.4,hiz_kmh:325,tuketim_l100km:12.1,co2_gkm:274,depo_l:73,uzunluk_mm:4495,genislik_mm:1980,yukseklik_mm:1275,dingil_mm:2705,agirlik_kg:1745,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V001000 (Ocak 2025) — 2025 model yılı Vantage/DB12/DBX707'yi kapsayan geri görüş kamerası/bilgi-eğlence ekranı arızası (FMVSS 111 ihlali). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Güvenilirlik verisi",deger:"Yeni nesil olduğu için uzun dönem güvenilirlik verisi henüz yok. Motor/şanzıman Mercedes-AMG ile paylaşılıyor.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"}
+  ],
+  gucluYanlar:[
+   {metin:"665 hp twin-turbo V8 (temel Vantage ile aynı platform), dengeli direksiyon, gelişmiş iç mekan ve standart 360° kamera.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yüksek fiyat seviyesi; sadece 2 koltuk, dar bagaj. Geri görüş kamerası arızası nedeniyle NHTSA geri çağırması kapsamında.",kaynak:"https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'aston-martin-vantage-2026-roadster':{id:'aston-martin-vantage-2026-roadster',marka:"Aston Martin",model:"Vantage",yil:2026,versiyon:"Roadster",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/vantage-roadster",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Spor Otomobil / GT",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.6,hiz_kmh:325,tuketim_l100km:12.3,co2_gkm:279,depo_l:73,uzunluk_mm:4495,genislik_mm:1980,yukseklik_mm:1275,dingil_mm:2705,agirlik_kg:1805,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V001000 (Ocak 2025) — 2025 model yılı Vantage ailesini kapsayan geri görüş kamerası/bilgi-eğlence ekranı arızası (FMVSS 111 ihlali). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Üst açılır tavan",deger:"Katlanır yumuşak tavan; Coupe'ye göre ~60kg daha ağır. Diğer tüm mekanik özellikler Coupe ile ortak.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"}
+  ],
+  gucluYanlar:[
+   {metin:"665 hp twin-turbo V8, açık tavan sürüş deneyimi; dengeli direksiyon hissi Coupe ile ortak.",kaynak:"https://www.carwow.co.uk/aston-martin/vantage"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yüksek fiyat; sadece 2 koltuk, Coupe'den daha dar bagaj. Geri görüş kamerası arızası nedeniyle NHTSA geri çağırması kapsamında.",kaynak:"https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'aston-martin-db12-2026-coupe':{id:'aston-martin-db12-2026-coupe',marka:"Aston Martin",model:"DB12",yil:2026,versiyon:"Coupe",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + Top Gear (derin inceleme) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/db12",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Grand Tourer (GT)",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:4,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.6,hiz_kmh:325,tuketim_l100km:12.2,co2_gkm:278,depo_l:78,uzunluk_mm:4725,genislik_mm:2135,yukseklik_mm:1295,dingil_mm:2805,agirlik_kg:1788,bagaj_l:262,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V001000 (Ocak 2025) — 2025 model yılı DB12'yi de kapsayan geri görüş kamerası/bilgi-eğlence ekranı arızası (FMVSS 111 ihlali). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Kasa sertliği",deger:"DB11'e göre kasa %7 daha sert; 671 bhp twin-turbo 4.0L V8 (V12/hibrit seçeneği yok), 590 lb-ft tork, 8 ileri otomatik.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  gucluYanlar:[
+   {metin:"Top Gear: 'Yıllardır sürdüğümüz en başarılı Aston Martin.' DB11'e göre çok daha iyi yol tutuşu/kasa kontrolü, sakin ve konforlu seyir, büyük ölçüde iyileştirilmiş iç mekan ve Aston'ın kendi dokunmatik ekranı.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Tasarım DB11/DBS'ten çok az değişmiş; dar arka koltuklar, küçük bagaj (kapak yeterince açılmıyor). Başlangıç fiyatı ~£185-191.000, opsiyonlarla daha da artıyor.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  odul:[
+   {ad:"Robb Report 'Car of the Year 2024' (Aston Martin'in 21 yıl sonra ilk kazandığı bu ödül)",yil:2024,kaynak:"https://harwoods.co.uk/resources/news/aston-martin-db12-robb-report-car-of-the-year-2024"}
+  ],
+  sistemPuani:null},
+ 'aston-martin-db12-2026-s':{id:'aston-martin-db12-2026-s',marka:"Aston Martin",model:"DB12",yil:2026,versiyon:"S",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + Top Gear (derin inceleme, DB12 ortak) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/db12-s",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Grand Tourer (GT)",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:4,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:690,tork_nm:800,sifirYuz_sn:3.5,hiz_kmh:325,tuketim_l100km:11.9,co2_gkm:269,depo_l:78,uzunluk_mm:4725,genislik_mm:1980,yukseklik_mm:1290,dingil_mm:2805,agirlik_kg:1820,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V001000 (Ocak 2025) — DB12 ailesini kapsayan geri görüş kamerası/bilgi-eğlence ekranı arızası (FMVSS 111 ihlali). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor",deger:"S versiyonu 690hp'e çıkarılmış twin-turbo V8 ile temel DB12'den 10hp daha güçlü; kasa/süspansiyon ayarları ortak.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  gucluYanlar:[
+   {metin:"DB11'e göre çok daha iyi yol tutuşu/kasa kontrolü, sakin ve konforlu seyir (DB12 incelemesiyle ortak platform notu).",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yüksek fiyat seviyesi, dar arka koltuklar ve küçük bagaj DB12 ailesinin genel eleştirisi.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  odul:[
+   {ad:"Robb Report 'Car of the Year 2024' (DB12 ailesi)",yil:2024,kaynak:"https://harwoods.co.uk/resources/news/aston-martin-db12-robb-report-car-of-the-year-2024"}
+  ],
+  sistemPuani:null},
+ 'aston-martin-db12-2026-volante':{id:'aston-martin-db12-2026-volante',marka:"Aston Martin",model:"DB12",yil:2026,versiyon:"Volante",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + Top Gear (derin inceleme, DB12 ortak) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/db12-volante",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Grand Tourer (GT)",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:4,kapi:2,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:680,tork_nm:800,sifirYuz_sn:3.7,hiz_kmh:325,tuketim_l100km:12.3,co2_gkm:280,depo_l:78,uzunluk_mm:4725,genislik_mm:2135,yukseklik_mm:1295,dingil_mm:2805,agirlik_kg:1898,bagaj_l:206,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V001000 (Ocak 2025) — DB12 ailesini kapsayan geri görüş kamerası/bilgi-eğlence ekranı arızası (FMVSS 111 ihlali). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Üst açılır tavan",deger:"Katlanır yumuşak tavan; Coupe'ye göre ~110kg daha ağır, bagaj Coupe'nin ~206L'si (Coupe 262L).",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  gucluYanlar:[
+   {metin:"Açık tavan GT deneyimi, Coupe ile aynı sakin/konforlu seyir karakteri ve iyileştirilmiş iç mekan.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yüksek fiyat, Coupe'ye göre daha dar bagaj (206L) ve daha fazla ağırlık (üst açılır mekanizma).",kaynak:"https://www.topgear.com/car-reviews/aston-martin/db12"}
+  ],
+  odul:[
+   {ad:"Robb Report 'Car of the Year 2024' (DB12 ailesi)",yil:2024,kaynak:"https://harwoods.co.uk/resources/news/aston-martin-db12-robb-report-car-of-the-year-2024"}
+  ],
+  sistemPuani:null},
+ 'aston-martin-dbx-2026-707':{id:'aston-martin-dbx-2026-707',marka:"Aston Martin",model:"DBX",yil:2026,versiyon:"707",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + Top Gear (derin inceleme) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/dbx707",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Performans SUV",kasa:"SUV",yakit:"Benzin",sanziman:"9 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3982,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:707,tork_nm:900,sifirYuz_sn:3.3,hiz_kmh:310,tuketim_l100km:13.5,co2_gkm:309,uzunluk_mm:5039,genislik_mm:1998,yukseklik_mm:1680,dingil_mm:3060,agirlik_kg:2245,bagaj_l:638,jant_inch:22,abs:"Var",esp:"Var",klima:"Var",koltuk_isitma:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"DBX707, ÜÇ AYRI gerçek NHTSA kampanyasının kapsamında: (1) 25V001000 (Ocak 2025) — geri görüş kamerası/bilgi-eğlence ekranı arızası, FMVSS 111 ihlali; (2) 26V200000 (Mart 2026, 2023-2026 DBX707 ve 2026 DBX S'i kapsıyor, 3.937 araç) — arka alt süspansiyon kolu bağlantı pimi kayabiliyor, kol çatlayıp ARAÇ KONTROLÜNÜN KAYBINA yol açabiliyor; (3) 26V187000 (Mart 2026, 1.091 araç) — lastik basıncı düştüğünde uyarı lambası yanmayabiliyor (FMVSS 138 ihlali). Her üçünde de çözüm ücretsiz muayene/onarım/yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor",deger:"697 bhp (707PS) twin-turbo V8, standart DBX'e göre +155bhp; 0-100km/s 3,3sn, 311km/s azami hız. Sport+ modda arkaya %95 tork dağılımı.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/v8-dbx707-5dr-touchtronic/first-drive"}
+  ],
+  gucluYanlar:[
+   {metin:"SUV için güçlü pist performansı, dengeli/kontrollü sürüş, iyi konfor, etkileyici V8 sesi, tutarlı fren performansı.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/v8-dbx707-5dr-touchtronic/first-drive"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Vites değişimleri Lamborghini Urus kadar keskin değil, direksiyon geri bildirimi yetersiz, sert sürüşte ön akstan sıçrama hissediliyor. Başlangıç fiyatı ~£189.000, standart DBX'ten ~£30.000 fazla.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/v8-dbx707-5dr-touchtronic/first-drive"},
+   {metin:"Arka süspansiyon kolu ve lastik basınç uyarı sistemi için 2026'da açılan iki ayrı NHTSA geri çağırması kapsamında — araç kontrolü kaybı riski (bkz. geri çağırmalar).",kaynak:"https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V200-7931.pdf"}
+  ],
+  odul:[
+   {ad:"Robb Report 2023 'Car of the Year' İkincisi (Runner-Up)",yil:2023,kaynak:"https://robbreport.hk/posts/meet-the-aston-martin-dbx707-robb-reports-2023-car-of-the-year-runner-up"}
+  ],
+  sistemPuani:null},
+ 'aston-martin-dbx-2026-s':{id:'aston-martin-dbx-2026-s',marka:"Aston Martin",model:"DBX",yil:2026,versiyon:"S",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/dbx-s",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Performans SUV",kasa:"SUV",yakit:"Benzin",sanziman:"9 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3982,silindir:8,besleme:"Çift Turbo (V8)",guc_hp:727,tork_nm:900,sifirYuz_sn:3.3,hiz_kmh:310,tuketim_l100km:14.3,co2_gkm:323,uzunluk_mm:5039,genislik_mm:1998,yukseklik_mm:1680,dingil_mm:3060,agirlik_kg:2245,bagaj_l:638,abs:"Var",esp:"Var",klima:"Var",koltuk_isitma:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"DBX S, İKİ gerçek NHTSA kampanyasının kapsamında: (1) 26V200000 (Mart 2026, 2026 DBX S'i kapsıyor, 3.937 araç toplam) — arka alt süspansiyon kolu bağlantı pimi kayabiliyor, kol çatlayıp ARAÇ KONTROLÜNÜN KAYBINA yol açabiliyor; (2) 26V187000 (Mart 2026, 2026 DBX S dahil, 1.091 araç) — lastik basıncı düştüğünde uyarı lambası yanmayabiliyor (FMVSS 138 ihlali). Çözüm: ücretsiz muayene/onarım/yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor",deger:"727hp'e çıkarılmış twin-turbo V8 ile DBX707'den de güçlü, markanın en performanslı SUV versiyonu.",kaynak:"https://www.astonmartin.com/en/models/dbx-s"}
+  ],
+  gucluYanlar:[
+   {metin:"DBX707 ailesiyle ortak platform — SUV için güçlü pist performansı ve dengeli sürüş karakteri.",kaynak:"https://www.topgear.com/car-reviews/aston-martin/v8-dbx707-5dr-touchtronic/first-drive"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Arka süspansiyon kolu ve lastik basınç uyarı sistemi için 2026'da açılan iki ayrı NHTSA geri çağırması kapsamında — araç kontrolü kaybı riski (bkz. geri çağırmalar).",kaynak:"https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V200-7931.pdf"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'aston-martin-vanquish-2026-coupe':{id:'aston-martin-vanquish-2026-coupe',marka:"Aston Martin",model:"Vanquish",yil:2026,versiyon:"Coupe",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + The Drive (derin inceleme) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en/models/vanquish",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Süper GT",kasa:"Coupe",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:12,besleme:"Çift Turbo (V12)",guc_hp:835,tork_nm:1000,sifirYuz_sn:3.3,hiz_kmh:345,tuketim_l100km:13.7,co2_gkm:312,depo_l:82,uzunluk_mm:4855,genislik_mm:2044,yukseklik_mm:1290,dingil_mm:2885,agirlik_kg:1910,bagaj_l:248,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V532000 (Ağustos 2025) — 2025 model yılı Vanquish (ABD'de 178 araç, diğer ülkelerde +419). Fren güçlendirici vakum pompası yetersiz vakum üretebiliyor (kök neden DTC P050FFF); sonucu sert fren pedalı, azalan pedal hareketi ve olası daha uzun fren mesafesi — FRENLEME PERFORMANSI nedeniyle kaza riski artışı. Kaza/yaralanma bildirilmemiş. Çözüm: ücretsiz ESP modülü yazılım güncellemesi, ~3 saat. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Motor",deger:"Yeniden tasarlanmış 5.2L twin-turbo V12, The Drive incelemesine göre 824hp/738lb-ft (resmi Aston Martin rakamı 835hp — ölçüm standardı farkı olabilir). 0-100km/s 3,2sn, 344km/s azami hız.",kaynak:"https://www.thedrive.com/car-reviews/2025-aston-martin-vanquish-first-drive-review"}
+  ],
+  gucluYanlar:[
+   {metin:"The Drive (9/10): Aston Martin'in şu anki en iyi ön motorlu spor otomobili. Agresif hızlanma, dar yollarda çeviklik, standart karbon-seramik frenler (dökme demire göre ~27kg hafif), özel hissettiren iç mekan.",kaynak:"https://www.thedrive.com/car-reviews/2025-aston-martin-vanquish-first-drive-review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Fiyat 429.000 ABD dolarından başlıyor, yıllık en fazla 1.000 adet üretim; sadece 2 koltuk. Fren güçlendirici vakum pompası sorunu nedeniyle NHTSA geri çağırması kapsamında (bkz. geri çağırmalar).",kaynak:"https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V532-4245.pdf"}
+  ],
+  odul:[
+   {ad:"What Car? 2025 Car of the Year — 'Best sports car money no object'",yil:2025,kaynak:"https://whatcar.com/news/car-of-the-year-awards-best-sports-car-money-no-object/n26456"}
+  ],
+  sistemPuani:null},
+ 'aston-martin-vanquish-2026-volante':{id:'aston-martin-vanquish-2026-volante',marka:"Aston Martin",model:"Vanquish",yil:2026,versiyon:"Volante",
+  kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site + The Drive (derin inceleme, Coupe ortak) + NHTSA",kaynakUrl:"https://www.astonmartin.com/en-us/models/vanquish-volante",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Süper GT",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:12,besleme:"Çift Turbo (V12)",guc_hp:835,tork_nm:1000,sifirYuz_sn:3.4,hiz_kmh:345,tuketim_l100km:14.1,co2_gkm:321,depo_l:82,uzunluk_mm:4855,genislik_mm:2044,yukseklik_mm:1295,dingil_mm:2885,agirlik_kg:2005,bagaj_l:219,abs:"Var",esp:"Var",klima:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 25V532000 (Ağustos 2025) — Vanquish ailesini kapsayan fren güçlendirici vakum pompası sorunu (kök neden DTC P050FFF): sert fren pedalı, azalan pedal hareketi, olası daha uzun fren mesafesi. Çözüm: ücretsiz ESP modülü yazılım güncellemesi. Euro NCAP hiçbir Aston Martin modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Üst açılır tavan",deger:"Coupe'ye göre ~95kg daha ağır, bagaj 219L (Coupe 248L). Motor/performans Coupe ile ortak (5.2L twin-turbo V12).",kaynak:"https://www.thedrive.com/car-reviews/2025-aston-martin-vanquish-first-drive-review"}
+  ],
+  gucluYanlar:[
+   {metin:"Açık tavan süper GT deneyimi, Coupe ile aynı agresif hızlanma ve özel iç mekan hissi.",kaynak:"https://www.thedrive.com/car-reviews/2025-aston-martin-vanquish-first-drive-review"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Çok yüksek fiyat, sadece 2 koltuk, Coupe'den daha dar bagaj. Fren güçlendirici vakum pompası sorunu nedeniyle NHTSA geri çağırması kapsamında.",kaynak:"https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V532-4245.pdf"}
+  ],
+  odul:[
+   {ad:"What Car? 2025 Car of the Year — 'Best sports car money no object' (Vanquish ailesi)",yil:2025,kaynak:"https://whatcar.com/news/car-of-the-year-awards-best-sports-car-money-no-object/n26456"}
+  ],
+  sistemPuani:null},
+ 'rolls-royce-ghost-2026-series-ii':{id:'rolls-royce-ghost-2026-series-ii',marka:"Rolls-Royce",model:"Ghost",yil:2026,versiyon:"Series II",
+  kaynakAd:"Rolls-Royce Press Club (Ghost Series II resmi basın bülteni) + Wikipedia (teyit) + automobiledimension.com + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0445483EN/ghost-series-ii",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,sifirYuz_sn:4.3,hiz_kmh:249,tuketim_l100km:15.7,co2_gkm:357,uzunluk_mm:5545,genislik_mm:1998,yukseklik_mm:1573,dingil_mm:3295,agirlik_kg:2553,bagaj_l:464,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 23V-645 (Eylül 2023) — 2021-2023 Ghost. Enstrüman paneli üzerindeki tek katlı temperli gösterge camı çarpışmada kırılabilir, yaralanma riskini artırır. Çözüm: bayilerde ücretsiz koruyucu kaplama uygulaması. Rolls-Royce hiçbir modelini Euro NCAP'e göndermemiş (düşük üretim hacmi) — Ghost test edilmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Güvenilirlik",deger:"Spesifik, doğrulanabilir bakım sorunu maddesi bu araştırmada bulunamadı — uzun dönem güvenilirlik verisi sınırlı.",kaynak:"https://www.carbuyer.co.uk/rolls-royce/ghost"}
+  ],
+  gucluYanlar:[
+   {metin:"Carwow: süspansiyon yolu neredeyse tamamen izole ediyor, iç mekan malzemeleri üst düzey (kalın deri, gerçek krom), son derece sessiz kabin, twin-turbo 6.75L V12 sessiz/titreşimsiz, 0-100km/s ~4,6sn.",kaynak:"https://www.carwow.co.uk/rolls-royce/ghost/2018"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Performans 'göründüğünden daha az hızlı hissettiriyor' (motor çok rahat); büyük boyut nedeniyle park etme zor, küçük bir çarpma onarımı pahalı. Başlangıç fiyatı ~£250.000.",kaynak:"https://www.carwow.co.uk/rolls-royce/ghost/2018"}
+  ],
+  odul:[
+   {ad:"Red Dot 'Best of the Best' Tasarım Ödülü",yil:null,kaynak:"https://www.auto123.com/en/news/rolls-royce-ghost-has-received-the-prestigious-red-dot-best-of-the-best-award/24158/"}
+  ],
+  sistemPuani:null},
+ 'rolls-royce-ghost-extended-2026-series-ii':{id:'rolls-royce-ghost-extended-2026-series-ii',marka:"Rolls-Royce",model:"Ghost Extended",yil:2026,versiyon:"Extended Series II",
+  kaynakAd:"Rolls-Royce Press Club (Ghost Series II resmi basın bülteni) + Wikipedia (teyit) + NHTSA",kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0445483EN/ghost-series-ii",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,hiz_kmh:249,tuketim_l100km:15.8,co2_gkm:358,uzunluk_mm:5715,dingil_mm:3465,agirlik_kg:2599,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 23V-645 (Eylül 2023) — Ghost ailesini kapsayan enstrüman paneli gösterge camı kırılma riski (yaralanma riski). Çözüm: ücretsiz koruyucu kaplama. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Uzatılmış dingil mesafesi",deger:"Standart Ghost'a göre dingil mesafesi 3295mm'den 3465mm'ye çıkarılmış, arka koltuk alanı genişletilmiş.",kaynak:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0445483EN/ghost-series-ii"}
+  ],
+  gucluYanlar:[
+   {metin:"Standart Ghost ile aynı sessiz kabin ve V12 karakteri, genişletilmiş arka koltuk alanıyla şoförlü kullanım için ideal.",kaynak:"https://www.carwow.co.uk/rolls-royce/ghost/2018"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Standart Ghost'tan daha uzun gövde nedeniyle park etme/manevra daha da zor. Çok yüksek fiyat seviyesi.",kaynak:"https://www.carwow.co.uk/rolls-royce/ghost/2018"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'rolls-royce-ghost-black-badge-2026-series-ii':{id:'rolls-royce-ghost-black-badge-2026-series-ii',marka:"Rolls-Royce",model:"Ghost Black Badge",yil:2026,versiyon:"Black Badge Series II",
+  kaynakAd:"automobile-catalog.com (Ghost Black Badge teknik veri) + Rolls-Royce Press Club + NHTSA",kaynakUrl:"https://www.automobile-catalog.com/car/2024/3377885/rolls-royce_ghost_black_badge.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Performans Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:591,tork_nm:900,hiz_kmh:250,uzunluk_mm:5545,genislik_mm:1998,yukseklik_mm:1573,dingil_mm:3295,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 23V-645 (Eylül 2023) — Ghost ailesini kapsayan enstrüman paneli gösterge camı kırılma riski (yaralanma riski). Çözüm: ücretsiz koruyucu kaplama. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Performans ayarı",deger:"Standart Ghost'a göre 591hp'e çıkarılmış güç (563hp'den), 900Nm tork, sertleştirilmiş süspansiyon ve spor karakter ayarları.",kaynak:"https://www.automobile-catalog.com/car/2024/3377885/rolls-royce_ghost_black_badge.html"}
+  ],
+  gucluYanlar:[
+   {metin:"Standart Ghost'un sessiz/konforlu karakterine ek olarak daha sportif güç/tork ve karakter ayarı.",kaynak:"https://www.carwow.co.uk/rolls-royce/ghost/2018"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Çok yüksek fiyat seviyesi; büyük boyut nedeniyle park etme zor.",kaynak:"https://www.carwow.co.uk/rolls-royce/ghost/2018"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'rolls-royce-phantom-2026-series-ii':{id:'rolls-royce-phantom-2026-series-ii',marka:"Rolls-Royce",model:"Phantom",yil:2026,versiyon:"Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Phantom VIII (teyit) + automobiledimension.com + Rolls-Royce resmi showroom sayfası + evo.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.rolls-roycemotorcars.com/istanbul/tr_TR/showroom.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:900,sifirYuz_sn:5.3,hiz_kmh:250,uzunluk_mm:5762,genislik_mm:2018,yukseklik_mm:1646,dingil_mm:3552,agirlik_kg:2560,bagaj_l:494,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 21V-855 (Kasım 2021) — 2019-2022 Phantom (442 araç). Merkezi Bilgi Ekranı doğru konuma kalkmıyor, geri görüş kamerası görüntüsü kısmen engelleniyor (arkadan çarpma önleme riski). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Not: Bazı ödül/inceleme kaynakları Series II'den önceki (2018 lansmanlı) Phantom VIII nesline aittir; temel platform/motor Series II ile aynıdır ancak iç donanım/estetik güncellemeleri Series II'ye özeldir.",deger:"Ayrım kaynaklarda net yapılmamış, genel Phantom VIII ailesi verisi olarak değerlendirilmelidir.",kaynak:"https://www.evo.co.uk/rolls-royce/phantom/208941/rolls-royce-phantom-review-the-epitome-of-excess-and-british-engineering"}
+  ],
+  gucluYanlar:[
+   {metin:"evo.co.uk: kabin 'her yüzeyde kütüphane sessizliğinde'; aktif hava süspansiyonu 2670kg ağırlığa rağmen darbeleri emiyor; 6.75L twin-turbo V12, 563bhp/664lb-ft (1750rpm'den); işçilik/malzeme 'piyasadaki her şeyin üstünde'.",kaynak:"https://www.evo.co.uk/rolls-royce/phantom/208941/rolls-royce-phantom-review-the-epitome-of-excess-and-british-engineering"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Yakıt tüketimi gerçek sürüşte iddia edilenden belirgin yüksek; fiyat £433.745'ten başlıyor; uzunluğu nedeniyle park etmesi zor; bilgi-eğlenme sistemi eski nesil, döner kadranla kontrol ediliyor.",kaynak:"https://www.evo.co.uk/rolls-royce/phantom/208941/rolls-royce-phantom-review-the-epitome-of-excess-and-british-engineering"}
+  ],
+  odul:[
+   {ad:"UK Car of the Year Awards 2018 — 'Best Luxury Car'",yil:2018,kaynak:"https://www.hrowen.co.uk/news/phantom-named-best-luxury-car-2018/"},
+   {ad:"BBC Top Gear Magazine — 'Luxury Car of the Year'",yil:null,kaynak:"https://www.hrowen.co.uk/?p=22380"}
+  ],
+  sistemPuani:null},
+ 'rolls-royce-phantom-extended-2026-series-ii':{id:'rolls-royce-phantom-extended-2026-series-ii',marka:"Rolls-Royce",model:"Phantom Extended",yil:2026,versiyon:"Extended Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Phantom VIII (teyit) + Rolls-Royce resmi showroom sayfası + NHTSA",kaynakUrl:"https://www.rolls-roycemotorcars.com/istanbul/tr_TR/showroom.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:900,sifirYuz_sn:5.4,hiz_kmh:250,uzunluk_mm:5982,genislik_mm:2018,yukseklik_mm:1656,dingil_mm:3772,agirlik_kg:2610,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 21V-855 (Kasım 2021) — Phantom ailesini kapsayan Merkezi Bilgi Ekranı/geri görüş kamerası arızası (arkadan çarpma önleme riski). Çözüm: ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Uzatılmış dingil mesafesi",deger:"Standart Phantom'a göre dingil mesafesi 3552mm'den 3772mm'ye çıkarılmış, markanın en uzun seri üretim sedanı.",kaynak:"https://www.rolls-roycemotorcars.com/istanbul/tr_TR/showroom.html"}
+  ],
+  gucluYanlar:[
+   {metin:"Standart Phantom'ın sessiz/lüks karakteri, genişletilmiş arka koltuk alanıyla şoförlü kullanım için markanın amiral gemisi.",kaynak:"https://www.evo.co.uk/rolls-royce/phantom/208941/rolls-royce-phantom-review-the-epitome-of-excess-and-british-engineering"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Standart Phantom'dan daha uzun gövde nedeniyle park etme/manevra daha zor; çok yüksek fiyat seviyesi.",kaynak:"https://www.evo.co.uk/rolls-royce/phantom/208941/rolls-royce-phantom-review-the-epitome-of-excess-and-british-engineering"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'rolls-royce-cullinan-2026-series-ii':{id:'rolls-royce-cullinan-2026-series-ii',marka:"Rolls-Royce",model:"Cullinan",yil:2026,versiyon:"Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Cullinan (teyit) + autocarindia.com + Rolls-Royce resmi showroom sayfası + carwow.co.uk (derin inceleme) + NHTSA",kaynakUrl:"https://www.autocarindia.com/cars/rolls-royce/cullinan/specifications",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,sifirYuz_sn:5.2,hiz_kmh:250,depo_l:90,uzunluk_mm:5341,genislik_mm:2000,yukseklik_mm:1835,dingil_mm:3295,agirlik_kg:2660,bagaj_l:612,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"İKİ gerçek NHTSA geri çağırması: (1) 26V143 (Mart 2026, 2020-2026 Cullinan, 102 araç) — emniyet kemeri sabitleme cıvataları düzgün sıkılmamış olabilir, gevşeyip arka kemer kayışına zarar verebilir veya bagaj yükü baskısıyla arka koltuk sırtlığı hareket edebilir; düzeltilene kadar arka koltuk/bagaj kullanılmaması önerildi. (2) 19V-612 (Ağustos 2019, 403 araç) — fren lambaları FMVSS 108 standardını karşılayacak kadar parlak olmayabilir. Çözümler: ücretsiz muayene/sıkma/değişim ve ücretsiz yazılım güncellemesi. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş (carbuyer.co.uk: 'maliyeti ve nadirliği nedeniyle test alması muhtemel değil').",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Güvenilirlik notu (carbuyer.co.uk)",deger:"5 üzerinden 4.0 güvenilirlik/güvenlik puanı; Phantom platformu ve BMW Group teknolojisini paylaşıyor, ciddi bir sorun öngörülmüyor.",kaynak:"https://carbuyer.co.uk/rolls-royce/cullinan/reliability"}
+  ],
+  gucluYanlar:[
+   {metin:"Carwow: bol iç hacim (arkada 3 yetişkin için lounge koltuk + 560L bagaj), sınıf lideri kalite, 6.75L V12 571hp, hava süspansiyonu + 4 tekerlek direksiyon ile konforlu/çevik sürüş, off-road modları 0,5m+ su geçişine izin veriyor.",kaynak:"https://www.carwow.co.uk/rolls-royce/cullinan"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Stil 'divisive' (kutulu gövde + büyük ızgara herkese göre değil); tek motor seçeneği eski usul V12; off-road yetenekte Range Rover daha iyi. Giriş fiyatı ~£250.000, donanımlı araçlar ~£400.000'e yaklaşıyor.",kaynak:"https://www.carwow.co.uk/rolls-royce/cullinan"},
+   {metin:"2026'da açılan emniyet kemeri sabitleme cıvatası geri çağırması nedeniyle düzeltilene kadar arka koltuk/bagaj kullanılmaması tavsiye edildi (bkz. geri çağırmalar).",kaynak:"https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V143-5324.pdf"}
+  ],
+  odul:[
+   {ad:"ArabWheels Awards 2018 — 'Prestigious Luxury SUV of the Year'",yil:2018,kaynak:"https://press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0288507EN/rolls-royce-cullinan-named-prestigious-luxury-suv-of-the-year'-at-arabwheels-awards-ceremony"},
+   {ad:"Golden Steering Wheel Awards — 'Best Ultra Luxury SUV of the Year'",yil:null,kaynak:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0294324EN/rolls-royce-cullinan-wins-best-ultra-luxury-suv'-of-the-year-at-the-golden-steering-awards"}
+  ],
+  sistemPuani:null},
+ 'rolls-royce-cullinan-black-badge-2026-series-ii':{id:'rolls-royce-cullinan-black-badge-2026-series-ii',marka:"Rolls-Royce",model:"Cullinan Black Badge",yil:2026,versiyon:"Black Badge Series II",
+  kaynakAd:"Wikipedia - Rolls-Royce Cullinan (Black Badge verisi) + Rolls-Royce resmi showroom sayfası + NHTSA",kaynakUrl:"https://en.wikipedia.org/wiki/Rolls-Royce_Cullinan",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Performans SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:591,tork_nm:900,hiz_kmh:250,depo_l:90,uzunluk_mm:5341,genislik_mm:2000,yukseklik_mm:1835,dingil_mm:3295,agirlik_kg:2660,bagaj_l:612,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Cullinan ailesini kapsayan iki gerçek NHTSA geri çağırması: 26V143 (Mart 2026) emniyet kemeri sabitleme cıvatası sorunu ve 19V-612 (Ağustos 2019) fren lambası parlaklığı sorunu — detaylar için standart Cullinan kaydına bakınız. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Performans ayarı",deger:"Standart Cullinan'a göre 591hp'e çıkarılmış güç, 900Nm tork, sertleştirilmiş süspansiyon ve karakteristik siyah krom detaylar.",kaynak:"https://en.wikipedia.org/wiki/Rolls-Royce_Cullinan"}
+  ],
+  gucluYanlar:[
+   {metin:"Standart Cullinan'ın bol iç hacmi ve sınıf lideri kalitesine ek olarak daha sportif güç/tork ve karakter ayarı.",kaynak:"https://www.carwow.co.uk/rolls-royce/cullinan"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Çok yüksek fiyat seviyesi; off-road yetenekte Range Rover gibi rakipler daha iyi değerlendiriliyor.",kaynak:"https://www.carwow.co.uk/rolls-royce/cullinan"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'rolls-royce-spectre-2026-series-ii':{id:'rolls-royce-spectre-2026-series-ii',marka:"Rolls-Royce",model:"Spectre",yil:2026,versiyon:"Series II",
+  kaynakAd:"Rolls-Royce Press Club (Spectre Series II resmi basın bülteni) + arenaev.com + WhatCar (derin inceleme) + NHTSA",kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0458258EN/rolls-royce-presents-spectre-series-ii",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Elektrikli Coupe",kasa:"Coupe",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:4,kapi:2,guc_hp:601,tork_nm:1015,sifirYuz_sn:4.3,hiz_kmh:250,co2_gkm:0,batarya_kwh:101.7,batarya_tipi:"Lityum-İyon",menzil_km_wltp:628,uzunluk_mm:5453,genislik_mm:2080,yukseklik_mm:1559,dingil_mm:3210,agirlik_kg:2965,bagaj_l:378,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 24V-039 (Ocak 2024) — 24 Ekim 2023-11 Aralık 2023 arası üretilen Spectre (RR25). Ön ısı eşitleme (HEAT) kablosu konnektöründeki fazla yapıştırıcı nedeniyle kablo tam sabitlenmemiş olabilir. Çözüm: bayilerde kablo bağlantısının kontrolü ve gerekirse yeniden bağlanması; onarım tamamlanana kadar etkilenen araçlar (2. el dahil) satılamıyor/teslim edilemiyor. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Gerçek dünya menzil testi (Edmunds, Jalopnik aktarımı)",deger:"23 inç tekerlekli Spectre, EPA tahmini 266 mil karşılığında gerçekte 281 mil kat etti — EPA rakamını AŞTI.",kaynak:"https://jalopnik.com/rolls-royce-spectre-ev-beats-epa-figures-in-edmunds-rea-1851391935"}
+  ],
+  gucluYanlar:[
+   {metin:"WhatCar: seyir hızında çok sessiz, zahmetsiz hızlanma; boyutuna göre şaşırtıcı çeviklik (4 tekerlek direksiyon + aktif anti-roll süspansiyon); üst düzey yapı kalitesi, çok sayıda fiziksel düğme, bol ön/arka koltuk alanı.",kaynak:"https://www.whatcar.com/rolls-royce/spectre/coupe/review/n26923"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"WhatCar: düşük hızda süspansiyon konforu çukurlarda sert darbeler verebiliyor; görüş açısı sınırlı (uzun burun, geniş arka direkler); depolama alanı yetersiz; çok pahalı, şarj hızı rakiplere göre ortalama.",kaynak:"https://www.whatcar.com/rolls-royce/spectre/coupe/review/n26923"},
+   {metin:"Ön ısı eşitleme kablosu bağlantı sorunu nedeniyle NHTSA geri çağırması kapsamında — onarılana kadar araç satışı/teslimatı durduruldu (bkz. geri çağırmalar).",kaynak:"https://static.nhtsa.gov/odi/rcl/2024/RCMN-24V039-1545.pdf"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'rolls-royce-spectre-black-badge-2026-series-ii':{id:'rolls-royce-spectre-black-badge-2026-series-ii',marka:"Rolls-Royce",model:"Spectre Black Badge",yil:2026,versiyon:"Black Badge Series II",
+  kaynakAd:"Rolls-Royce Press Club (Spectre Series II resmi basın bülteni) + Wikipedia + NHTSA",kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0458258EN/rolls-royce-presents-spectre-series-ii",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Ultra Lüks Performans Elektrikli Coupe",kasa:"Coupe",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:4,kapi:2,guc_hp:680,tork_nm:1100,hiz_kmh:250,co2_gkm:0,batarya_kwh:101.7,batarya_tipi:"Lityum-İyon",menzil_km_wltp:628,uzunluk_mm:5453,genislik_mm:2080,yukseklik_mm:1559,dingil_mm:3210,agirlik_kg:2975,bagaj_l:378,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"NHTSA 24V-039 (Ocak 2024) — Spectre ailesini kapsayan ön ısı eşitleme kablosu bağlantı sorunu (üretim tarihi aralığındaki araçlar). Çözüm: bayilerde kablo kontrolü/yeniden bağlama; onarılana kadar araç satışı/teslimatı durduruldu. Euro NCAP hiçbir Rolls-Royce modelini test etmemiş.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Performans ayarı",deger:"Standart Spectre'a göre 680hp'e çıkarılmış güç (601hp'den), 1100Nm tork, sertleştirilmiş süspansiyon ve karakteristik Black Badge ayarları.",kaynak:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0458258EN/rolls-royce-presents-spectre-series-ii"}
+  ],
+  gucluYanlar:[
+   {metin:"Standart Spectre'ın sessiz/çevik karakterine ek olarak daha yüksek güç/tork ve sportif ayar.",kaynak:"https://www.whatcar.com/rolls-royce/spectre/coupe/review/n26923"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Standart Spectre ile aynı menzil/konfor eleştirileri geçerli; çok yüksek fiyat seviyesi.",kaynak:"https://www.whatcar.com/rolls-royce/spectre/coupe/review/n26923"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'isuzu-d-max-2026-v-life-4x2-at':{id:'isuzu-d-max-2026-v-life-4x2-at',marka:"Isuzu",model:"D-Max",yil:2026,versiyon:"V-Life 4x2 AT (1.9 Turbo Dizel)",
+  kaynakAd:"isuzu.com.tr (motor/versiyon bilgisi) + arabam.com (Eylül 2026 fiyat listesi) + Euro NCAP + carwow.co.uk (derin inceleme)",kaynakUrl:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/isuzu-fiyat-listesi/",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Pickup (Kamyonet)",kasa:"Pickup (Double Cab)",yakit:"Dizel",sanziman:"Otomatik (6 ileri)",cekis:"4x2 (Arkadan Çekiş)",koltuk:5,kapi:4,cc:1898,silindir:4,besleme:"Turbo (Common Rail)",guc_hp:164,tork_nm:360,tuketim_sehir_ici:9.3,tuketim_sehir_disi:6.9,tuketim_l100km:7.8,depo_l:76,uzunluk_mm:5295,genislik_mm:1860,yukseklik_mm:1795,garanti_yil:5,garanti_km:100000,liste_fiyati_tl:3225000,ncap_yildiz:5},
+  ncapNot:"Euro NCAP 2020 testi (2022'de güncellenmiş yıldız derecelendirmesiyle 5 yıldıza çıkarıldı). Test edilen varyant: 4 kapılı Crew Cab, 1.9L dizel, 4x4, sol direksiyon — kasa/güvenlik yapısı 4x2 versiyonla ortaktır. Kategori puanları: Yetişkin Yolcu Koruması %84, Çocuk Yolcu Koruması %86, Yaya/VRU Koruması %69, Güvenlik Destek Sistemleri %83.",
+  ncapKaynak:"https://www.euroncap.com/en/results/Isuzu/D-Max/41401",
+  geriCagirmaNot:"Isuzu D-Max ABD pazarında satılmadığı için NHTSA'da kayıtlı geri çağırma yok. Avustralya resmi otoritesi (vehiclerecalls.gov.au) üzerinde 2018-2023 model yılı D-Max için birden fazla direksiyon sistemi arızası geri çağırması kayıtlı (resmi tarih/detay bu araştırmada tam doğrulanamadı — kampanya varlığı teyitli, kesin tarih için bkz. kaynak).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Eski nesil karşılaştırması",deger:"Önceki D-Max nesli (2012 model) Euro NCAP'te sadece 4 yıldız almıştı; güncel nesil (V-Life/V-Cross) diz hava yastığı iyileştirmesiyle 5 yıldıza yükseldi.",kaynak:"https://cdn.euroncap.com/media/62104/euroncap-2020-isuzu-d-max-datasheet.pdf"}
+  ],
+  gucluYanlar:[
+   {metin:"Carwow: yolda konforlu, pickup için hassas/hızlı direksiyon, sade ve iyi etiketlenmiş iç mekan, tüm modellerde 1 tonun üzerinde yük kapasitesi, 5 yıldız Euro NCAP, 5 yıl/125.000 mil garanti.",kaynak:"https://www.carwow.co.uk/isuzu/d-max"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"1.9L dizel motor (164hp) rakiplerine göre zayıf/zorlanarak çalışıyor, daha yavaş; sert süspansiyon uzun yolculuklarda konforsuz; yakıt tüketimi Ford Ranger/KGM Musso'dan daha az verimli.",kaynak:"https://www.carwow.co.uk/isuzu/d-max"}
+  ],
+  odul:[
+   {ad:"What Van? 'Pick-up of the Year 2022'",yil:2022,kaynak:"https://www.isuzu.co.uk/news/what-van-pick-up-of-the-year-2022/"}
+  ],
+  sistemPuani:null},
+ 'isuzu-d-max-2026-v-cross-4x4-at':{id:'isuzu-d-max-2026-v-cross-4x4-at',marka:"Isuzu",model:"D-Max",yil:2026,versiyon:"V-Cross 4x4 AT (1.9 Turbo Dizel)",
+  kaynakAd:"epey.com (teknik veri, V-Cross 4x4) + arabam.com (Eylül 2026 fiyat) + Euro NCAP + carwow.co.uk (derin inceleme)",kaynakUrl:"https://www.epey.com/araba/2018-isuzu-d-max-1-9d-164-bg-otomatik-v-cross-4x4.html",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Pickup (Kamyonet)",kasa:"Pickup (Double Cab)",yakit:"Dizel",sanziman:"Otomatik (6 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:1898,silindir:4,besleme:"Turbo (Common Rail)",guc_hp:164,tork_nm:360,hiz_kmh:180,tuketim_sehir_ici:9.3,tuketim_sehir_disi:6.9,tuketim_l100km:7.8,depo_l:76,uzunluk_mm:5295,genislik_mm:1860,yukseklik_mm:1795,agirlik_kg:1995,istiap_kg:1005,jant_inch:18,garanti_yil:5,garanti_km:100000,liste_fiyati_tl:5424300,ncap_yildiz:5},
+  ncapNot:"Euro NCAP 2020 testi (2022'de 5 yıldıza güncellendi). Test edilen varyant tam olarak bu versiyon: 4 kapılı Crew Cab, 1.9L dizel, 4x4, sol direksiyon. Kategori puanları: Yetişkin Yolcu Koruması %84, Çocuk Yolcu Koruması %86, Yaya/VRU Koruması %69, Güvenlik Destek Sistemleri %83.",
+  ncapKaynak:"https://www.euroncap.com/en/results/Isuzu/D-Max/41401",
+  geriCagirmaNot:"Isuzu D-Max ABD pazarında satılmadığı için NHTSA'da kayıtlı geri çağırma yok. Avustralya resmi otoritesi (vehiclerecalls.gov.au) üzerinde 2018-2023 model yılı D-Max için birden fazla direksiyon sistemi arızası geri çağırması kayıtlı (resmi tarih/detay bu araştırmada tam doğrulanamadı — kampanya varlığı teyitli, kesin tarih için bkz. kaynak).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Çekme kapasitesi",deger:"Carwow'a göre D-Max ailesi 3.500 kg'a kadar çekme kapasitesine sahip (temel 4x2 Utility hariç, o 2.500 kg); çekerken stabil.",kaynak:"https://www.carwow.co.uk/isuzu/d-max"}
+  ],
+  gucluYanlar:[
+   {metin:"Carwow: 4x4 çekiş ile güçlü arazi yeteneği, kasislerde arka taraf iyi kontrol ediliyor, güçlü güvenlik donanımı ve 5 yıldız Euro NCAP, iyi güvenilirlik reputasyonu.",kaynak:"https://www.carwow.co.uk/isuzu/d-max"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"1.9L dizel motor (164hp) rakiplerine göre zayıf/zorlanarak çalışıyor; sert süspansiyon uzun yolculuklarda konforsuz; Ford Ranger kadar rafine/lüks değil.",kaynak:"https://www.carwow.co.uk/isuzu/d-max"}
+  ],
+  odul:[
+   {ad:"What Van? 'Pick-up of the Year 2022'",yil:2022,kaynak:"https://www.isuzu.co.uk/news/what-van-pick-up-of-2022/"}
+  ],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -6389,6 +6851,126 @@ const RECALLS = {
   {tarih:'2023-01',parca:'Yakıt sistemi',baslik:'Yakıt tankı bağlantı borusu korozyonu — YANGIN RİSKİ, "kullanmayın" uyarısı (NHTSA 23V-329)',
    ozet:'2022-2023 model yılı Ferrari 296 (GTB/GTS\'yi kapsıyor). Yakıt tankı bağlantı borusu korozyona uğrayıp delinebiliyor, yakıt sızıntısı ve yangın riski oluşturuyor. Ferrari etkilenen araçların parça gelene kadar kullanılmamasını tavsiye etti.',
    cozum:'Ücretsiz onarım, ~2 saat.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RIONL-23V329-3002.pdf'}
+ ],
+ 'aston-martin-vantage-2026-coupe':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı Vantage/DB12/DBX707 (ABD\'de 3 model toplam 1.452 araç). Araç vitese takıldığında bilgi-eğlence ana ekranı geri görüş kamerası görüntüsünü kapatabiliyor, azalmış arka görüş nedeniyle kaza riski artıyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'}
+ ],
+ 'aston-martin-vantage-2026-s':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı Vantage ailesini kapsıyor. Araç vitese takıldığında bilgi-eğlence ana ekranı geri görüş kamerası görüntüsünü kapatabiliyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'}
+ ],
+ 'aston-martin-vantage-2026-roadster':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı Vantage ailesini kapsıyor. Araç vitese takıldığında bilgi-eğlence ana ekranı geri görüş kamerası görüntüsünü kapatabiliyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'}
+ ],
+ 'aston-martin-db12-2026-coupe':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı DB12\'yi kapsıyor. Araç vitese takıldığında bilgi-eğlence ana ekranı geri görüş kamerası görüntüsünü kapatabiliyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'}
+ ],
+ 'aston-martin-db12-2026-s':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı DB12 ailesini kapsıyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'}
+ ],
+ 'aston-martin-db12-2026-volante':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı DB12 ailesini kapsıyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'}
+ ],
+ 'aston-martin-dbx-2026-707':[
+  {tarih:'2025-01',parca:'Bilgi-eğlence ekranı / geri görüş kamerası',baslik:'Vitese takıldığında geri görüş kamerası görüntüsü kapanabiliyor (NHTSA 25V001000, FMVSS 111)',
+   ozet:'2025 model yılı DBX707\'yi kapsıyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V001-1849.pdf'},
+  {tarih:'2026-03',parca:'Arka alt süspansiyon kolu',baslik:'Tork reaksiyon bağlantı pimi kayabiliyor — ARAÇ KONTROLÜ KAYBI riski (NHTSA 26V200000)',
+   ozet:'2023-2026 DBX707 ve 2026 DBX S (toplam 3.937 araç, tamamlanma oranı %41,58). Tork reaksiyon bağlantı pimi arka alt süspansiyon kolundan kayabiliyor, bu da kolun çatlamasına/kırılmasına yol açabiliyor.',
+   cozum:'Ücretsiz muayene, çatlak varsa kol değişimi, tüm araçlarda bağlantı cıvatası değişimi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V200-7931.pdf'},
+  {tarih:'2026-03',parca:'Lastik basınç uyarı sistemi (TPMS)',baslik:'Lastik basıncı düştüğünde uyarı lambası yanmayabiliyor (NHTSA 26V187000, FMVSS 138)',
+   ozet:'2025-2026 DBX ve 2026 DBX S (1.091 araç, tamamlanma oranı %78,46).',
+   cozum:'Ücretsiz TPMS yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V187-2995.pdf'}
+ ],
+ 'aston-martin-dbx-2026-s':[
+  {tarih:'2026-03',parca:'Arka alt süspansiyon kolu',baslik:'Tork reaksiyon bağlantı pimi kayabiliyor — ARAÇ KONTROLÜ KAYBI riski (NHTSA 26V200000)',
+   ozet:'2026 DBX S dahil (DBX707 ile toplam 3.937 araç, tamamlanma oranı %41,58). Tork reaksiyon bağlantı pimi arka alt süspansiyon kolundan kayabiliyor, kol çatlayabiliyor/kırılabiliyor.',
+   cozum:'Ücretsiz muayene, çatlak varsa kol değişimi, tüm araçlarda bağlantı cıvatası değişimi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V200-7931.pdf'},
+  {tarih:'2026-03',parca:'Lastik basınç uyarı sistemi (TPMS)',baslik:'Lastik basıncı düştüğünde uyarı lambası yanmayabiliyor (NHTSA 26V187000, FMVSS 138)',
+   ozet:'2026 DBX S dahil (1.091 araç, tamamlanma oranı %78,46).',
+   cozum:'Ücretsiz TPMS yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V187-2995.pdf'}
+ ],
+ 'aston-martin-vanquish-2026-coupe':[
+  {tarih:'2025-08',parca:'Fren güçlendirici vakum pompası',baslik:'Yetersiz vakum — azalan fren performansı riski (NHTSA 25V532000)',
+   ozet:'2025 model yılı Vanquish (ABD\'de 178 araç, diğer ülkelerde +419). Vakum pompası yetersiz vakum üretebiliyor (DTC P050FFF), sonucu sert fren pedalı, azalan pedal hareketi ve olası daha uzun fren mesafesi. Kaza/yaralanma bildirilmemiş.',
+   cozum:'Ücretsiz ESP modülü yazılım güncellemesi, ~3 saat.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V532-4245.pdf'}
+ ],
+ 'aston-martin-vanquish-2026-volante':[
+  {tarih:'2025-08',parca:'Fren güçlendirici vakum pompası',baslik:'Yetersiz vakum — azalan fren performansı riski (NHTSA 25V532000)',
+   ozet:'2025 model yılı Vanquish ailesini kapsıyor. Vakum pompası yetersiz vakum üretebiliyor, sonucu sert fren pedalı ve olası daha uzun fren mesafesi.',
+   cozum:'Ücretsiz ESP modülü yazılım güncellemesi, ~3 saat.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCAK-25V532-4245.pdf'}
+ ],
+ 'rolls-royce-ghost-2026-series-ii':[
+  {tarih:'2023-09',parca:'Enstrüman paneli / gösterge camı',baslik:'Gösterge camı çarpışmada kırılabiliyor — yaralanma riski (NHTSA 23V-645)',
+   ozet:'2021-2023 Ghost. Enstrüman paneli üzerindeki tek katlı temperli gösterge camı çarpışmada kırılabilir, yaralanma riskini artırır.',
+   cozum:'Bayilerde ücretsiz koruyucu kaplama uygulaması.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RCAK-23V645-1484.pdf'}
+ ],
+ 'rolls-royce-ghost-extended-2026-series-ii':[
+  {tarih:'2023-09',parca:'Enstrüman paneli / gösterge camı',baslik:'Gösterge camı çarpışmada kırılabiliyor — yaralanma riski (NHTSA 23V-645)',
+   ozet:'2021-2023 Ghost ailesini kapsıyor.',
+   cozum:'Bayilerde ücretsiz koruyucu kaplama uygulaması.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RCAK-23V645-1484.pdf'}
+ ],
+ 'rolls-royce-ghost-black-badge-2026-series-ii':[
+  {tarih:'2023-09',parca:'Enstrüman paneli / gösterge camı',baslik:'Gösterge camı çarpışmada kırılabiliyor — yaralanma riski (NHTSA 23V-645)',
+   ozet:'2021-2023 Ghost ailesini kapsıyor.',
+   cozum:'Bayilerde ücretsiz koruyucu kaplama uygulaması.',kaynak:'https://static.nhtsa.gov/odi/rcl/2023/RCAK-23V645-1484.pdf'}
+ ],
+ 'rolls-royce-phantom-2026-series-ii':[
+  {tarih:'2021-11',parca:'Merkezi Bilgi Ekranı / geri görüş kamerası',baslik:'Ekran doğru konuma kalkmıyor, kamera görüntüsü engelleniyor (NHTSA 21V-855)',
+   ozet:'2019-2022 Phantom (442 araç). Merkezi Bilgi Ekranı doğru konuma kalkmadığında geri görüş kamerası görüntüsü kısmen engelleniyor, arkadan çarpma riski artıyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2021/RCAK-21V855-2864.pdf'}
+ ],
+ 'rolls-royce-phantom-extended-2026-series-ii':[
+  {tarih:'2021-11',parca:'Merkezi Bilgi Ekranı / geri görüş kamerası',baslik:'Ekran doğru konuma kalkmıyor, kamera görüntüsü engelleniyor (NHTSA 21V-855)',
+   ozet:'2019-2022 Phantom ailesini kapsıyor.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2021/RCAK-21V855-2864.pdf'}
+ ],
+ 'rolls-royce-cullinan-2026-series-ii':[
+  {tarih:'2026-03',parca:'Emniyet kemeri sabitleme cıvataları',baslik:'Cıvatalar gevşeyip arka kemer/koltuk sırtlığına zarar verebiliyor (NHTSA 26V143)',
+   ozet:'2020-2026 Cullinan (102 araç). Sabitleme cıvataları düzgün sıkılmamış olabilir; gevşeyip arka emniyet kemeri kayışına zarar verebilir veya bagajdaki yük baskısıyla arka koltuk sırtlığı hareket edebilir.',
+   cozum:'Düzeltilene kadar arka koltuk/bagaj kullanılmaması önerildi; bayilerde ücretsiz muayene/sıkma/değişim.',kaynak:'https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V143-5324.pdf'},
+  {tarih:'2019-08',parca:'Fren lambaları',baslik:'Fren lambaları yeterince parlak olmayabiliyor (NHTSA 19V-612, FMVSS 108)',
+   ozet:'2019 Cullinan (403 araç). Fren lambaları FMVSS 108 standardını karşılayacak kadar parlak olmayabilir, görünürlük azalır.',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2019/RCAK-19V612-7061.pdf'}
+ ],
+ 'rolls-royce-cullinan-black-badge-2026-series-ii':[
+  {tarih:'2026-03',parca:'Emniyet kemeri sabitleme cıvataları',baslik:'Cıvatalar gevşeyip arka kemer/koltuk sırtlığına zarar verebiliyor (NHTSA 26V143)',
+   ozet:'2020-2026 Cullinan ailesini kapsıyor (102 araç).',
+   cozum:'Düzeltilene kadar arka koltuk/bagaj kullanılmaması önerildi; bayilerde ücretsiz muayene/sıkma/değişim.',kaynak:'https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V143-5324.pdf'},
+  {tarih:'2019-08',parca:'Fren lambaları',baslik:'Fren lambaları yeterince parlak olmayabiliyor (NHTSA 19V-612, FMVSS 108)',
+   ozet:'2019 Cullinan ailesini kapsıyor (403 araç).',
+   cozum:'Ücretsiz yazılım güncellemesi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2019/RCAK-19V612-7061.pdf'}
+ ],
+ 'rolls-royce-spectre-2026-series-ii':[
+  {tarih:'2024-01',parca:'Ön ısı eşitleme (HEAT) kablosu',baslik:'Konnektördeki fazla yapıştırıcı nedeniyle kablo tam sabitlenmeyebiliyor (NHTSA 24V-039)',
+   ozet:'24 Ekim 2023 - 11 Aralık 2023 arası üretilen Spectre (RR25). Konnektör üzerindeki fazla yapıştırıcı nedeniyle kablo tam sabitlenmemiş olabilir.',
+   cozum:'Bayilerde kablo bağlantısının kontrolü, fazla yapıştırıcının temizlenmesi, kablonun yeniden bağlanması; onarım tamamlanana kadar etkilenen araçlar satılamaz/teslim edilemez.',kaynak:'https://static.nhtsa.gov/odi/rcl/2024/RCMN-24V039-1545.pdf'}
+ ],
+ 'rolls-royce-spectre-black-badge-2026-series-ii':[
+  {tarih:'2024-01',parca:'Ön ısı eşitleme (HEAT) kablosu',baslik:'Konnektördeki fazla yapıştırıcı nedeniyle kablo tam sabitlenmeyebiliyor (NHTSA 24V-039)',
+   ozet:'Spectre ailesini kapsayan üretim tarihi aralığındaki araçlar (RR25).',
+   cozum:'Bayilerde kablo bağlantısının kontrolü ve gerekirse yeniden bağlanması; onarım tamamlanana kadar araç satışı/teslimatı durduruldu.',kaynak:'https://static.nhtsa.gov/odi/rcl/2024/RCMN-24V039-1545.pdf'}
+ ],
+ 'isuzu-d-max-2026-v-life-4x2-at':[
+  {tarih:'2022',parca:'Direksiyon sistemi',baslik:'Direksiyon arızası riski nedeniyle geri çağırma (Avustralya ACCC/vehiclerecalls.gov.au)',
+   ozet:'Isuzu D-Max ABD pazarında satılmadığı için NHTSA kaydı yok; Avustralya resmi otoritesi 2018-2023 model yılları arasında D-Max için birden fazla direksiyon sistemi arızası geri çağırması kaydetmiştir. Kesin tarih/etkilenen araç sayısı bu araştırmada tam doğrulanamadı.',
+   cozum:'Bayilerde ücretsiz muayene/onarım (vehiclerecalls.gov.au üzerinden detaylar).',kaynak:'https://www.caradvice.com.au/news/isuzu-d-max-mu-x-recalled-steering-failure/'}
+ ],
+ 'isuzu-d-max-2026-v-cross-4x4-at':[
+  {tarih:'2022',parca:'Direksiyon sistemi',baslik:'Direksiyon arızası riski nedeniyle geri çağırma (Avustralya ACCC/vehiclerecalls.gov.au)',
+   ozet:'Isuzu D-Max ABD pazarında satılmadığı için NHTSA kaydı yok; Avustralya resmi otoritesi 2018-2023 model yılları arasında D-Max için birden fazla direksiyon sistemi arızası geri çağırması kaydetmiştir. Kesin tarih/etkilenen araç sayısı bu araştırmada tam doğrulanamadı.',
+   cozum:'Bayilerde ücretsiz muayene/onarım (vehiclerecalls.gov.au üzerinden detaylar).',kaynak:'https://www.caradvice.com.au/news/isuzu-d-max-mu-x-recalled-steering-failure/'}
  ]
 };
 const OFFICIAL = {
@@ -6733,7 +7315,28 @@ const OFFICIAL = {
  'ferrari-amalfi-2026-coupe':null,
  'ferrari-purosangue-2024-suv':null,
  'ferrari-296-2025-gtb':null,
- 'ferrari-296-2025-gts':null
+ 'ferrari-296-2025-gts':null,
+ 'aston-martin-vantage-2026-coupe':null,
+ 'aston-martin-vantage-2026-s':null,
+ 'aston-martin-vantage-2026-roadster':null,
+ 'aston-martin-db12-2026-coupe':null,
+ 'aston-martin-db12-2026-s':null,
+ 'aston-martin-db12-2026-volante':null,
+ 'aston-martin-dbx-2026-707':null,
+ 'aston-martin-dbx-2026-s':null,
+ 'aston-martin-vanquish-2026-coupe':null,
+ 'aston-martin-vanquish-2026-volante':null,
+ 'rolls-royce-ghost-2026-series-ii':null,
+ 'rolls-royce-ghost-extended-2026-series-ii':null,
+ 'rolls-royce-ghost-black-badge-2026-series-ii':null,
+ 'rolls-royce-phantom-2026-series-ii':null,
+ 'rolls-royce-phantom-extended-2026-series-ii':null,
+ 'rolls-royce-cullinan-2026-series-ii':null,
+ 'rolls-royce-cullinan-black-badge-2026-series-ii':null,
+ 'rolls-royce-spectre-2026-series-ii':null,
+ 'rolls-royce-spectre-black-badge-2026-series-ii':null,
+ 'isuzu-d-max-2026-v-life-4x2-at':null,
+ 'isuzu-d-max-2026-v-cross-4x4-at':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -7105,7 +7708,28 @@ const REVIEWS = {
  'ferrari-amalfi-2026-coupe':[],
  'ferrari-purosangue-2024-suv':[],
  'ferrari-296-2025-gtb':[],
- 'ferrari-296-2025-gts':[]
+ 'ferrari-296-2025-gts':[],
+ 'aston-martin-vantage-2026-coupe':[],
+ 'aston-martin-vantage-2026-s':[],
+ 'aston-martin-vantage-2026-roadster':[],
+ 'aston-martin-db12-2026-coupe':[],
+ 'aston-martin-db12-2026-s':[],
+ 'aston-martin-db12-2026-volante':[],
+ 'aston-martin-dbx-2026-707':[],
+ 'aston-martin-dbx-2026-s':[],
+ 'aston-martin-vanquish-2026-coupe':[],
+ 'aston-martin-vanquish-2026-volante':[],
+ 'rolls-royce-ghost-2026-series-ii':[],
+ 'rolls-royce-ghost-extended-2026-series-ii':[],
+ 'rolls-royce-ghost-black-badge-2026-series-ii':[],
+ 'rolls-royce-phantom-2026-series-ii':[],
+ 'rolls-royce-phantom-extended-2026-series-ii':[],
+ 'rolls-royce-cullinan-2026-series-ii':[],
+ 'rolls-royce-cullinan-black-badge-2026-series-ii':[],
+ 'rolls-royce-spectre-2026-series-ii':[],
+ 'rolls-royce-spectre-black-badge-2026-series-ii':[],
+ 'isuzu-d-max-2026-v-life-4x2-at':[],
+ 'isuzu-d-max-2026-v-cross-4x4-at':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
