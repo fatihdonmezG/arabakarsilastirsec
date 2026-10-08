@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 310 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres ve DS N°4 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 313 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream ve Leapmotor T03 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 310 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 313 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5174,6 +5174,89 @@ const CARS = {
    {metin:"Bu versiyonun kullandığı 1.5 BlueHDi dizel motor ailesinde eksantrik mili zinciriyle ilgili bilinen bir arıza riski ve buna bağlı geri çağırma kaydı mevcut (bkz. geriCagirmaNot).",kaynak:"https://en.ara.cat/cars/stellantis-faces-the-risk-of-another-fiasco-with-the-1-5-bluehdi-diesel-engine_1_5435759.html"}
   ],
   odul:[{ad:"Festival Automobile International — 2022'nin En Güzel Otomobili (Most Beautiful Car of 2022)",yil:2022,kaynak:"https://www.media.stellantis.com/em-en/ds/press/ds-4-lifts-the-prize-for-the-most-beautiful-car-of-2022"}],
+  sistemPuani:null},
+ /* --- Voyah Free, Voyah Dream, Leapmotor T03 — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
+    sırasıyla 23 ve 9 arama/arama çağrısı). */
+ 'voyah-free-2026-high-489hp':{id:'voyah-free-2026-high-489hp',marka:"Voyah",model:"Free",yil:2026,versiyon:"High 489HP (360kW)",
+  kaynakAd:"Sifiraracal.com + Donanımhaber.com (teknik veri) + autocar.co.uk + carwow.es (derin inceleme) + euroncap.com",kaynakUrl:"https://www.sifiraracal.com/voyah-modelleri/free",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik",cekis:"4x4",koltuk:5,kapi:5,guc_hp:489,tork_nm:720,sifirYuz_sn:4.4,hiz_kmh:200,co2_gkm:0,batarya_kwh:106,menzil_km_wltp:500,dc_hizli_sarj_dk_20_80:45,uzunluk_mm:4905,genislik_mm:1950,yukseklik_mm:1645,dingil_mm:2960,agirlik_kg:2340,bagaj_l:560,jant_inch:20,airbag_sayisi:6,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",acilir_tavan:"Var",ses_sistemi:"Var (Dyaudio Premium Hi-Fi)",dijital_gosterge:"Var",liste_fiyati_tl:5428120,garanti_yil:5,batarya_garanti_yil:8},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Rusya'da Rosstandart tarafından resmi bir geri çağırma yapıldı: 13 Aralık 2022 – 12 Aralık 2024 arası üretilen 468 adet Voyah Free, kullanıcı arayüzünde Rusça dil desteği eksikliği nedeniyle geri çağrıldı; çözüm yazılım/dil paketi güncellemesiydi. Türkiye'ye satılan araçlar için ayrı bir kayıt bulunamadı; NHTSA'da kayıt yok (ABD'de satılmıyor). Ayrıca Rusya'da üretilen (Motorinvest/Lipetsk) araçlarda adaptif kruz kontrol arızası şikayetleri var; üretici sorunu doğruladı ama bu resmi bir geri çağırma değil, sahip şikayeti + üretici yanıtı niteliğinde.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Kokpit",deger:"Üç adet 12,3 inç ekran kabinin genişliğini kaplıyor; giriş anında gösterge paneli otomatik yükseliyor.",kaynak:"https://autocar.co.uk/node/117183"},
+   {ozellik:"Üst donanım süspansiyonu",deger:"'Exclusive Deluxe' seviyesinde 110mm'lik hava süspansiyonu standart; Çinli müşterilerin %97'si bu donanımı seçmiş.",kaynak:"https://autocar.co.uk/node/117183"},
+   {ozellik:"Döşeme",deger:"Deri olmayan, OEKO-TEX sertifikalı yapay deri döşeme ve konsolda parlak alüminyum detaylar kullanılıyor.",kaynak:"https://autocar.co.uk/node/117183"},
+   {ozellik:"Konfor donanımı",deger:"Panoramik otomatik karartmalı cam tavan, ısıtmalı/havalandırmalı/masajlı koltuklar ve gece görüş sistemi mevcut.",kaynak:"https://www.carwow.es/voyah/free"}
+  ],
+  gucluYanlar:[
+   {metin:"İç mekân geniş ve lüks hissettiriyor, özellikle arka koltuklarda ferahlık öne çıkıyor.",kaynak:"https://autocar.co.uk/node/117183"},
+   {metin:"Hava süspansiyonu yol bozukluklarını büyük ölçüde yutuyor, direksiyon hafif ama yol hissi korunuyor.",kaynak:"https://autocar.co.uk/node/117183"},
+   {metin:"Yüksek kaliteli iç mekân ve gelişmiş teknoloji donanımı.",kaynak:"https://www.carwow.es/voyah/free"},
+   {metin:"İyi menzil ve uyarlanabilir hava süspansiyonu sistemi övülüyor.",kaynak:"https://www.carwow.es/voyah/free"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Hızlı şarj gücü 100kW ile sınırlı kabul ediliyor, rakiplerine göre düşük.",kaynak:"https://www.carwow.es/voyah/free"},
+   {metin:"Araç ağır (2.310 kg) olarak değerlendiriliyor; Avrupa'da satış/servis ağı henüz kısıtlı.",kaynak:"https://www.carwow.es/voyah/free"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'voyah-dream-2026-standart-7-koltuk':{id:'voyah-dream-2026-standart-7-koltuk',marka:"Voyah",model:"Dream",yil:2026,versiyon:"Standart 7 Koltuk",
+  kaynakAd:"Sifiraracal.com + Otomobil.com.tr (teknik veri) + carwow.es (derin inceleme) + euroncap.com",kaynakUrl:"https://www.sifiraracal.com/voyah-fiyat-listesi",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{kasa:"MPV",yakit:"Elektrik",sanziman:"Otomatik",cekis:"4x4",koltuk:7,guc_hp:435,tork_nm:620,sifirYuz_sn:5.9,hiz_kmh:200,co2_gkm:0,batarya_kwh:108.73,menzil_km_wltp:480,dc_hizli_sarj_dk_20_80:36,elektrik_tuketim_kwh100km:20,uzunluk_mm:5315,genislik_mm:1985,yukseklik_mm:1800,dingil_mm:3200,agirlik_kg:2692,adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",koltuk_isitma:"Var",ses_sistemi:"Var (Dynaudio)",dijital_gosterge:"Var (3 ekranlı kokpit, Qualcomm 8155)",liste_fiyati_tl:8526336,batarya_garanti_yil:8},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"Resmi kaynaklardan (NHTSA, Rosstandart, Çin resmi makamları) Dream modeline özel bir geri çağırma kaydına rastlanmadı.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Koltuk düzeni",deger:"7 koltuklu kabin (2+2+3) düzeninde ikinci sıra koltuklar elektrikli, ısıtmalı, havalandırmalı ve masajlı.",kaynak:"https://www.carwow.es/voyah/dream"},
+   {ozellik:"Multimedya",deger:"Üç adet 12,3 inç dijital ekran ve 10 hoparlörlü Dynaudio ses sistemi mevcut.",kaynak:"https://www.carwow.es/voyah/dream"},
+   {ozellik:"Sürüş destek paketi",deger:"Adaptif hız sabitleyici, şerit takip, otomatik acil fren, 360° kamera, çapraz trafik uyarısı, park sensörleri ve trafik işareti tanıma standart.",kaynak:"https://www.carwow.es/voyah/dream"}
+  ],
+  gucluYanlar:[
+   {metin:"Lüks konfigürasyon ve kaplamalar, ikinci sırada bağımsız (kaptan) koltuklar sunuyor.",kaynak:"https://www.carwow.es/voyah/dream"},
+   {metin:"109 kWh batarya ile 480 km'ye kadar menzil sunuyor.",kaynak:"https://www.carwow.es/voyah/dream"},
+   {metin:"Toplam güç ve çekiş, boyutuna göre aracı çevik kılıyor.",kaynak:"https://www.carwow.es/voyah/dream"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Fiyatı yüksek kabul ediliyor.",kaynak:"https://www.carwow.es/voyah/dream"},
+   {metin:"AC şarj gücü 11kW ile sınırlı — bataryayı tam doldurmak yaklaşık 11 saat sürüyor.",kaynak:"https://www.carwow.es/voyah/dream"},
+   {metin:"Hibrit veya içten yanmalı motor seçeneği sunulmuyor, tam elektrikli tek seçenek bazı alıcılar için dezavantaj olarak not ediliyor.",kaynak:"https://www.carwow.es/voyah/dream"}
+  ],
+  odul:[{ad:"MUSE Design Awards 2025 — Platin derecesi ('Oscars of Design' olarak anılan ödülün platin kategorisi)",yil:2025,kaynak:"https://www.chinaservicesinfo.com/s/202503/19/WS67dcd892498eec7e1f7326c9/voyah-autos-platinum-wins-at-2025-muse-design-awards.html"}],
+  sistemPuani:null},
+ 'leapmotor-t03-2026-basic-400':{id:'leapmotor-t03-2026-basic-400',marka:"Leapmotor",model:"T03",yil:2026,versiyon:"Basic 400",
+  kaynakAd:"sifiraracal.com + carbuyer.co.uk/whatcar.com (derin inceleme) + euroncap.com",kaynakUrl:"https://www.sifiraracal.com/leapmotor-modelleri/t03-ozellikleri/basic-400",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"A Segment (Şehir Arabası)",kasa:"Hatchback",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"Önden Çekiş",koltuk:5,kapi:5,guc_hp:109,tork_nm:155,sifirYuz_sn:14,hiz_kmh:130,co2_gkm:0,batarya_kwh:41.3,batarya_tipi:"LFP (Lityum Demir Fosfat)",menzil_km_wltp:417,ac_sarj_dk:210,dc_hizli_sarj_dk_20_80:36,uzunluk_mm:3620,genislik_mm:1652,yukseklik_mm:1577,bagaj_l:210,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Var",acilir_tavan:"Var",ekran_inch:10.1,dijital_gosterge:"Var (8 inç)",liste_fiyati_tl:995000,batarya_garanti_yil:6},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"T03 modeline özel resmi bir geri çağırma kaydına rastlanmadı. Ağustos 2026'da Çin'de SAMR tarafından açıklanan büyük bir geri çağırmaya Leapmotor dahil oldu (kapı iç acil açma mekanizması sorunu) ama bu yalnızca C11 (322.575 adet) ve C01 (48.625 adet) modellerini kapsıyor — T03 listede yok.",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Kokpit",deger:"8 inç dijital gösterge paneli + 10,1 inç dokunmatik ekran (navigasyon ve sesli komut destekli).",kaynak:"https://www.carbuyer.co.uk/leapmotor/t03/305997/leapmotor-t03-review-a-cheap-but-well-equipped-electric-city-car"},
+   {ozellik:"Tavan",deger:"Elektrik kumandalı güneşlikli panoramik tavan standart donanımda.",kaynak:"https://www.carbuyer.co.uk/leapmotor/t03/305997/leapmotor-t03-review-a-cheap-but-well-equipped-electric-city-car"},
+   {ozellik:"Garanti",deger:"4 yıl/60.000 mil (İngiltere spesifikasyonu) + batarya için 8 yıl/100.000 mil; What Car? bu garantiyi 'özel bir şey değil' olarak değerlendiriyor.",kaynak:"https://usedcars.whatcar.com/leapmotor/t03/hatchback/review/n27136"}
+  ],
+  gucluYanlar:[
+   {metin:"Şehir içinde konforlu süspansiyon, çoğu kasis ve bozuk yolu iyi absorbe ediyor; otoyolda rüzgar/yol gürültüsü az.",kaynak:"https://usedcars.whatcar.com/leapmotor/t03/hatchback/review/n27136"},
+   {metin:"Ferah ve aydınlık kabin, iyi işçilikli hissettiriyor; ön ve arkada sürpriz derecede fazla kafa mesafesi var.",kaynak:"https://usedcars.whatcar.com/leapmotor/t03/hatchback/review/n27136"},
+   {metin:"Fiyatına göre zengin standart donanım ve kapsamlı güvenlik paketi (şerit takip, otomatik acil fren, hız limiti tanıma standart).",kaynak:"https://www.carbuyer.co.uk/leapmotor/t03/305997/leapmotor-t03-review-a-cheap-but-well-equipped-electric-city-car"},
+   {metin:"Küçük dönüş çapı ve iyi görüş açısı sayesinde park etmesi çok kolay.",kaynak:"https://www.parkers.co.uk/leapmotor/t03/"},
+   {metin:"Parkers 2026 Yeni Araba Ödülleri'nde 'fiyatına göre sürpriz derecede iyi sürüş' notuyla 'Best Value Car' ödülünü aldı.",kaynak:"https://www.parkers.co.uk/leapmotor/t03/"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Çok küçük bagaj hacmi (210L) ve dar yapı; sadece 2 arka koltuk var (rakiplerinde 3 koltuk olabiliyor).",kaynak:"https://usedcars.whatcar.com/leapmotor/t03/hatchback/review/n27136"},
+   {metin:"Hızlanma zayıf ve gaza basınca tepki gecikmeli (0-100 km/h ~12sn); direksiyon çok hafif ve geri bildirim vermiyor.",kaynak:"https://usedcars.whatcar.com/leapmotor/t03/hatchback/review/n27136"},
+   {metin:"Dokunmatik ekran sezgisel değil ve direksiyon tarafından kısmen kapanıyor; iç mekanda sert plastik malzeme ağırlıklı.",kaynak:"https://www.carbuyer.co.uk/leapmotor/t03/305997/leapmotor-t03-review-a-cheap-but-well-equipped-electric-city-car"}
+  ],
+  odul:[{ad:"Parkers New Car Awards 2026 — Best Value Car",yil:2026,kaynak:"https://www.stellantisandyou.co.uk/news-hub/leapmotor-t03-named-best-value-car-in-the-2026-parkers-new-car-awards"}],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5495,7 +5578,10 @@ const RECALLS = {
  'gmc-sierra-2026-denali':null,
  'alpine-a290-2026-gt-performance':null,
  'kgm-torres-2026-4x4':null,
- 'ds-n4-2026-pallas-bluehdi-130':null
+ 'ds-n4-2026-pallas-bluehdi-130':null,
+ 'voyah-free-2026-high-489hp':null,
+ 'voyah-dream-2026-standart-7-koltuk':null,
+ 'leapmotor-t03-2026-basic-400':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -5807,7 +5893,10 @@ const OFFICIAL = {
  'gmc-sierra-2026-denali':null,
  'alpine-a290-2026-gt-performance':null,
  'kgm-torres-2026-4x4':null,
- 'ds-n4-2026-pallas-bluehdi-130':null
+ 'ds-n4-2026-pallas-bluehdi-130':null,
+ 'voyah-free-2026-high-489hp':null,
+ 'voyah-dream-2026-standart-7-koltuk':null,
+ 'leapmotor-t03-2026-basic-400':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -6147,7 +6236,10 @@ const REVIEWS = {
  'gmc-sierra-2026-denali':[],
  'alpine-a290-2026-gt-performance':[],
  'kgm-torres-2026-4x4':[],
- 'ds-n4-2026-pallas-bluehdi-130':[]
+ 'ds-n4-2026-pallas-bluehdi-130':[],
+ 'voyah-free-2026-high-489hp':[],
+ 'voyah-dream-2026-standart-7-koltuk':[],
+ 'leapmotor-t03-2026-basic-400':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
