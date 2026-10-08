@@ -247,7 +247,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 320 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour ve Skywell ET5 LR için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 322 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio, Togg T10X, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, MINI Cooper S, Porsche Macan Electric, Land Rover Range Rover Evoque, Lexus NX, Subaru Forester, Cadillac Escalade, Chevrolet Tahoe, GMC Sierra, Alpine A290, KGM Torres, DS N°4, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro ve Hongqi E-HS9 için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </nav>
 
   <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 320 versiyondan herhangi birini aç</span>
+    <span class="pl" id="pickLbl">Araç seç — veritabanındaki 322 versiyondan herhangi birini aç</span>
     <div class="fields">
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
@@ -5428,6 +5428,64 @@ const CARS = {
    {metin:"sikayetvar.com'da çok sayıda ET5/ET5 Legend şikayeti var: direksiyon tutukluğu, batarya alt koruma tablasında yanık/erime izleri, elektronik arızalar, yedek parça tedarikinde aylarca gecikme, yüksek/şeffaf olmayan servis ücretleri.",kaynak:"https://www.sikayetvar.com/skywell/arac"}
   ],
   odul:[],
+  sistemPuani:null},
+ /* --- SWM G01 Pro ve Hongqi E-HS9 — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
+    sırasıyla 17 ve 20 arama/arama çağrısı). SWM: 23 Eylül 2026'da Eskişehir'deki yerli üretim ortaklığı
+    GSR2 tip onayı sorunu nedeniyle sona erdi (webtekno.com), stok araçlar 2. el olarak satılıyor —
+    durum alanında dürüstçe belirtildi. Hongqi: Euro NCAP Mart 2025'te 5 yıldız vermiş (gerçek, doğrulanmış
+    sonuç bulundu); referans menzil değeri (550km) doğrulanamadı, Avrupa pazarı 99kWh paket için gerçek
+    kaynaklı değer olan 465km WLTP kullanıldı, tutarsızlık kucukDetaylar'da not edildi. */
+ 'swm-g01-pro-2026-dct':{id:'swm-g01-pro-2026-dct',marka:"SWM",model:"G01 Pro",yil:2026,versiyon:"1.5 TGDI DCT (tek versiyon, yerli üretim)",
+  kaynakAd:"arabam.com (fiyat) + donanimhaber.com + webtekno.com + sikayetvar.com (derin araştırma)",kaynakUrl:"https://www.arabam.com/sifir-km/swm-g01-pro-fiyat-listesi-yakit-tuketimi",
+  durum:"Eskişehir'deki yerli üretim (Urzat Otomotiv / ATMO Group-Urzema), Aralık 2025'te başladıktan ~9 ay sonra, 23 Eylül 2026'da GSR2 tip onayı/ADAS gerekliliklerinin karşılanamaması nedeniyle SWM Motors ile üretim iş birliği resmen sona erdi (webtekno.com, 23 Eylül 2026). Piyasadaki stok araçlar 'Oto Merkezi' üzerinden 2. el olarak satışa sunuluyor; tesisin başka bir markaya kiralanıp kiralanmayacağı belirsiz. Markanın TR'den 'tamamen' çekildiğine dair net resmi teyit yok — sadece üretim ortaklığının bittiği doğrulandı. Son bilinen liste fiyatı (01.08.2026, arabam.com): 2.099.000 TL — güncel/aktif bir fiyat olmayabilir.",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"C-SUV",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",kapi:5,besleme:"Turbo (T-GDI)",guc_hp:178,tork_nm:280,tuketim_l100km:8.5,depo_l:52,uzunluk_mm:4670,genislik_mm:1855,yukseklik_mm:1740,dingil_mm:2750,agirlik_kg:1576,ekran_inch:14.6,dijital_gosterge:"Var (8.8 inç)",geri_gorus_kamera:"Var (360 derece HD kamera sistemi)",koltuk_isitma:"Var",acilir_tavan:"Var (açılabilir panoramik cam tavan)",anahtarsiz_giris:"Var",liste_fiyati_tl:2099000,garanti_yil:5,garanti_km:150000},
+  ncapNot:null,
+  ncapKaynak:null,
+  geriCagirmaNot:"SWM G01/G01 Pro için resmi bir geri çağırma (TSE/Sanayi Bakanlığı, NHTSA veya Çin SAMR) kaydına rastlanmadı. Bunun yerine üretimi doğrudan etkileyen güncel gelişme: 23 Eylül 2026'da SWM Motors ile distribütör ATMO Group/Urzema Holding'in Eskişehir'deki üretim iş birliği, GSR2 (Genel Güvenlik Yönetmeliği) tip onayı standartlarına uygun yeni model tedarik edilemediği için sona erdi (bkz. durum alanı).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Donanım",deger:"Full LED farlar, anahtarsız giriş, elektrikli bagaj kapağı, deri koltuk, açılabilir panoramik cam tavan, 64 renk ambiyans aydınlatma, 360° HD kamera sistemi, kablosuz şarj, 8.8 inç dijital gösterge + 14.6 inç multimedya ekranı.",kaynak:"https://www.donanimhaber.com/turkiye-de-uretilen-swm-g01-pro-fiyati-ve-satis-tarihi-aciklandi--200261"},
+   {ozellik:"Motor/tork (kaynak çelişkisi notu)",deger:"donanimhaber.com 178HP/300Nm veriyor; bu sayfadaki referans değer (280Nm) farklı bir kaynaktan geliyor — tork değeri kaynaklar arasında net değil.",kaynak:"https://www.donanimhaber.com/turkiye-de-uretilen-swm-g01-pro-fiyati-ve-satis-tarihi-aciklandi--200261"}
+  ],
+  gucluYanlar:[
+   {metin:"Zengin donanım seviyesi/segmentine göre donanım-fiyat dengesi (panoramik cam tavan, 360° kamera, büyük ekranlar).",kaynak:"https://www.donanimhaber.com/turkiye-de-uretilen-swm-g01-pro-fiyati-ve-satis-tarihi-aciklandi--200261"},
+   {metin:"5 yıl/150.000 km garanti süresi, segment ortalamasının üzerinde.",kaynak:"https://www.donanimhaber.com/turkiye-de-uretilen-swm-g01-pro-fiyati-ve-satis-tarihi-aciklandi--200261"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"KRİTİK RİSK — Üretim durdu: Eskişehir üretimi GSR2 tip onayı sorunu nedeniyle 23 Eylül 2026'da sona erdi. Bu, satış sonrası servis ağı, yedek parça tedariki ve garanti desteğinin sürdürülebilirliği konusunda somut risk oluşturuyor.",kaynak:"https://www.webtekno.com/cinli-swm-turkiye-uretimine-son-verdi-h225496.html"},
+   {metin:"Üretim devam ederken de servis/yedek parça erişim şikayetleri bildirilmişti: Antalya ve Diyarbakır'da yetkili servis kapanması/azalması, parça teminin 5 aya kadar uzaması.",kaynak:"https://www.sikayetvar.com/swm-turkiye/swm-arac"},
+   {metin:"Tekrarlayan kullanıcı şikayetleri: şanzıman/motor uyumsuzluğu (vites geçişinde sarsıntı, 3 yazılım güncellemesine rağmen çözülmemiş), ABS ışığı yanması, ADAS/radar sistemlerinin (kör nokta, park sensörü, çarpışma önleyici) düzensiz çalışması, elektronik arıza/yolda kalma. Bunlar tekil kullanıcı beyanları, bağımsız teknik istatistik değil.",kaynak:"https://www.sikayetvar.com/swm-turkiye/swm-arac"},
+   {metin:"Bağımsız güvenlik testi yok — Euro NCAP tarafından test edilmemiş görünüyor.",kaynak:"https://www.euroncap.com/en/results"}
+  ],
+  odul:[],
+  sistemPuani:null},
+ 'hongqi-e-hs9-2025-deluxe':{id:'hongqi-e-hs9-2025-deluxe',marka:"Hongqi",model:"E-HS9",yil:2025,versiyon:"Deluxe",
+  kaynakAd:"Yeniköy Motors (TR distribütör) + euroncap.com + autocar.co.uk (derin inceleme)",kaynakUrl:"https://www.yenikoymotors.com/hongi/e-hs9/27789",
+  fotoUrl:null,
+  sanalTurUrl:null,
+  s:{segment:"Lüks SUV",kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:7,kapi:5,guc_hp:551,tork_nm:751,sifirYuz_sn:4.9,batarya_kwh:99,menzil_km_wltp:465,co2_gkm:0,uzunluk_mm:5209,genislik_mm:2010,yukseklik_mm:1731,jant_inch:21,acilir_tavan:"Var",koltuk_isitma:"Var",carplay_android_auto:"Var",serit_takip:"Var",dijital_gosterge:"Var",ncap_yildiz:5,ncap_test_yili:2025,garanti_yil:5,garanti_km:150000,batarya_garanti_yil:8},
+  ncapNot:"Euro NCAP, Mart 2025'te E-HS9 Deluxe'ü (Elektrik, Long Range, 4x4, sol direksiyonlu/LHD, 2.660kg) test etti ve 5 yıldız verdi. Alt puanlar: Yetişkin Yolcu %82, Çocuk Yolcu %87, Savunmasız Yol Kullanıcıları %73, Güvenlik Destek Sistemleri %82. Bu derece sadece sol direksiyonlu (LHD) araçlar için geçerlidir.",
+  ncapKaynak:"https://www.euroncap.com/en/results/hongqi/e-hs9/54344",
+  geriCagirmaNot:"Resmi bir geri çağırma kaydına rastlanmadı (NHTSA'da araç ABD'de satılmadığı için kayıtlı değil; Çin SAMR ve Türkiye kaynaklı aramalarda da sonuç çıkmadı).",
+  agirBakim:[],
+  kucukDetaylar:[
+   {ozellik:"Menzil verisi tutarsızlığı",deger:"Bu sayfadaki 465km WLTP değeri, 99kWh paket için Avrupa pazarı kaynaklarından (fdrive.cz, autozeitung.de) alınmıştır. TR lansman haberinde 500km NEDC rakamı da geçmektedir; 550km gibi daha yüksek bir rakam hiçbir güvenilir kaynakta doğrulanamadı.",kaynak:"https://fdrive.cz/katalog/hongqi-e-hs9/specifikace/99-kwh"},
+   {ozellik:"Donanım",deger:"Çift motor önde+arkada (4x4), dijital gösterge paneli + merkezi dokunmatik ekran, elektrikli ayarlı koltuklar (ısıtma/soğutma/masaj ön koltuklarda), hava süspansiyonu, kablosuz telefon şarjı, panoramik cam tavan. AC şarj 11kW, DC hızlı şarj ~130-140kW.",kaynak:"https://www.autoindustriya.com/car/2023/Hongqi/e-hs9/deluxe.html"},
+   {ozellik:"Garanti",deger:"Araç garantisi 5 yıl/150.000km (Filipinler 'Deluxe' trim sayfasında teyit edildi); batarya garantisi genelde 8 yıl olarak geçiyor.",kaynak:"https://www.autoindustriya.com/car/2023/Hongqi/e-hs9/deluxe.html"}
+  ],
+  gucluYanlar:[
+   {metin:"Boyut ve görünümüyle dikkat çekici, lüks algısı yüksek (Rolls-Royce Cullinan'a benzetiliyor).",kaynak:"https://autocar.co.uk/node/113946"},
+   {metin:"Fiyatına göre donanım zenginliği (ısıtmalı/soğutmalı/masajlı koltuklar, hava süspansiyonu); boyutuna göre tatmin edici hızlanma (0-100: ~4,9-5sn).",kaynak:"https://autocar.co.uk/node/113946"},
+   {metin:"Euro NCAP'ten 5 yıldız (Mart 2025, Deluxe LHD) — güvenlik donanımı olumlu puanlanmış.",kaynak:"https://www.euroncap.com/en/results/hongqi/e-hs9/54344"}
+  ],
+  dikkatEdilecekler:[
+   {metin:"Malzeme kalitesi fiyat beklentisinin altında: bazı deri yüzeyler sentetik, konsol dolguları ince, ahşap kaplama sahte görünümlü. Rejeneratif frenleme çok zayıf, tek pedal sürüşü mümkün değil.",kaynak:"https://autocar.co.uk/node/113946"},
+   {metin:"Araç kütlesi ve 4 teker direksiyon eksikliği dar alanlarda manevrayı zorlaştırıyor; arka sıraya giriş/çıkış zor.",kaynak:"https://autocar.co.uk/node/113946"},
+   {metin:"Servis ağı/güvenilirlik riski: Türkiye'de çok niş bir marka — 2023 lansmanından Kasım 2023'e kadar toplam satış sadece 18 adet, bu düşük hacim yedek parça/servis altyapısının sınırlı kalabileceğine işaret ediyor.",kaynak:"https://www.log.com.tr/?p=862447"}
+  ],
+  odul:[],
   sistemPuani:null}
 };
 const RIVALS = [
@@ -5769,7 +5827,9 @@ const RECALLS = {
    ozet:'2026 boyunca Türkiye genelinde (Kayseri, Diyarbakır, İzmir, Bursa, Aydın, İstanbul, Adana) tekrarlayan ET5 yangını haberleri üzerine, Çin\'den bir inceleme heyeti Türkiye\'ye geldi ve distribütör şasi numarasıyla sorgulanabilen gönüllü bir kontrol daveti başlattı. Bu resmi/zorunlu bir geri çağırma değildir.',
    cozum:'Yetkili serviste ücretsiz kontrol (bazı sahiplere göre kontrol/çekici için ücret talep edildiği de bildiriliyor); risk faktörü olarak yetkisiz yazılım, batarya alt kısmı darbesi, standart dışı soğutma sıvısı ve eksik bakım gösteriliyor.',
    kaynak:'https://www.log.com.tr/skywell-turkiyeden-yanan-et5ler-hakkinda-resmi-aciklama-cok-sayida-riskli-arac-var/'}
- ]
+ ],
+ 'swm-g01-pro-2026-dct':null,
+ 'hongqi-e-hs9-2025-deluxe':null
 };
 const OFFICIAL = {
  'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
@@ -6091,7 +6151,9 @@ const OFFICIAL = {
  'forthing-m4utour-2026-premium':null,
  'forthing-m4utour-2026-executive':null,
  'skywell-et5-lr-2026-legend':null,
- 'skywell-et5-lr-2026-exclusive':null
+ 'skywell-et5-lr-2026-exclusive':null,
+ 'swm-g01-pro-2026-dct':null,
+ 'hongqi-e-hs9-2025-deluxe':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
@@ -6441,7 +6503,9 @@ const REVIEWS = {
  'forthing-m4utour-2026-premium':[],
  'forthing-m4utour-2026-executive':[],
  'skywell-et5-lr-2026-legend':[],
- 'skywell-et5-lr-2026-exclusive':[]
+ 'skywell-et5-lr-2026-exclusive':[],
+ 'swm-g01-pro-2026-dct':[],
+ 'hongqi-e-hs9-2025-deluxe':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
