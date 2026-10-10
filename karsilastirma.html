@@ -37,6 +37,7 @@ p{margin:0}
 .nav a[aria-current],.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:20px;text-transform:uppercase;font-size:.76rem;letter-spacing:.07em;border-radius:2px}
 .nav a[aria-current]:hover,.nav a.cta:hover{filter:brightness(1.07)}
 .nav a.cta{margin-left:10px}
+@media (max-width:640px){.top{position:static}.top .wrap{height:auto;flex-wrap:wrap;padding-block:12px}.nav{justify-content:flex-start}.nav a{padding:8px 10px}.nav a.cta{margin-left:0}}
 
 .hero{position:relative;border-bottom:1px solid var(--divider);background:
     linear-gradient(100deg, var(--bg) 0%, rgba(28,30,34,.95) 30%, rgba(28,30,34,.68) 56%, rgba(28,30,34,.22) 82%, rgba(28,30,34,.05) 100%),
@@ -112,7 +113,44 @@ select:focus-visible{border-color:var(--accent)}
 
 footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divider);color:var(--muted);font-size:.85rem;max-width:70ch;line-height:1.6}
 
+/* --- revizyon: filtre, hazır karşılaştırmalar, paylaşım, boyut, SSS --- */
+.filters{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:flex-end;margin-top:56px;padding:22px 24px;background:var(--surface);border:1px solid var(--divider)}
+.filters .field{min-width:180px;flex:1}
+.filters .field select{height:44px}
+.filters .switch{flex:none}
+.fcount{flex-basis:100%;font-size:.82rem;color:var(--muted)}
+.presets{margin-top:28px}
+.presets h2,.dims h2,.faq h2{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-family:var(--body);margin-bottom:6px}
+.presets .sub{font-size:.82rem;color:var(--muted);margin-bottom:14px}
+.plist{display:grid;grid-template-columns:1fr;gap:10px}
+.pcard{display:block;text-align:left;font:inherit;color:var(--ink);background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--line);padding:14px 16px;cursor:pointer;min-height:44px}
+.pcard:hover{border-color:var(--accent)}
+.pcard .pseg{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-soft);font-weight:700;margin-bottom:4px}
+.pcard .pnames{font-family:var(--display);font-weight:700;font-size:.98rem;line-height:1.3}
+.pcard .vs{color:var(--muted);font-weight:500;font-family:var(--body);font-size:.8rem;padding-inline:4px}
+.hfill{display:block;margin-top:8px;font-size:.74rem;color:var(--muted)}
+.hfill b{color:var(--ink);font-weight:600}
+.copied{font-size:.82rem;color:var(--accent-soft);margin-left:10px}
+.dims{margin-top:48px;padding:26px 24px;background:var(--surface);border:1px solid var(--divider)}
+.dims .sub{font-size:.82rem;color:var(--muted);margin-bottom:16px}
+.dgrp + .dgrp{margin-top:18px}
+.dname{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent-soft);margin-bottom:6px}
+.drow{display:grid;grid-template-columns:minmax(110px,190px) 1fr auto;gap:12px;align-items:center;min-height:26px;font-size:.85rem}
+.dcar{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dtrack{height:10px;background:var(--surface2);border-radius:2px;overflow:hidden;display:block}
+.dbar{display:block;height:100%;background:var(--accent-grad)}
+.dv{font-variant-numeric:tabular-nums;color:var(--muted);min-width:78px;text-align:right}
+@media (max-width:640px){.drow{grid-template-columns:1fr auto;gap:4px 12px;margin-bottom:6px}.dtrack{grid-column:1/-1;grid-row:2}}
+.dims .dnone{font-size:.85rem;color:var(--muted)}
+.faq{margin-top:48px}
+.faq details{background:var(--surface);border:1px solid var(--divider);padding:0 20px}
+.faq details + details{margin-top:8px}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:600;font-size:.95rem;min-height:44px}
+.faq details p{padding-bottom:16px;color:var(--muted);font-size:.9rem;line-height:1.65}
+.faq a{color:var(--accent-soft)}
+
 @media (min-width:640px){
+  .plist{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
   .pickers{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 }
 @media (min-width:760px){
@@ -146,16 +184,33 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope">Başlıklar Epey ve ArabaVS gibi köklü karşılaştırma siteleri taranarak çıkarıldı; 9 kategoride 54 satır, tamamı burada. Veritabanı şu an 56 marka ve 497 versiyonu kapsıyor (bir kısmı artık Türkiye'de satılmayan, tarihsel referans amaçlı modellerdir ve ayrıca işaretlenmiştir); veri bulunmayan satırlar "—" ile görünür ve sırayla dolduruluyor.</p>
+    <p class="scope" id="scope">Veritabanı, güncel Türkiye lineup'ı ve tarihsel referans amaçlı, satıştan kalkmış modellerden oluşuyor. Veri bulunmayan satırlar "—" ile görünür; tahmin yazılmaz.</p>
   </div>
 </section>
 
 <main class="wrap">
+  <section class="filters" aria-label="Araç listesini daralt">
+    <div class="field"><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div>
+    <div class="field"><label for="fKasa">Kasa tipi</label><select id="fKasa"></select></div>
+    <label class="switch"><input type="checkbox" id="fSatis"> Sadece satıştaki araçlar</label>
+    <p class="fcount" id="fCount" aria-live="polite"></p>
+  </section>
+
+  <section class="presets" aria-labelledby="presetsTitle">
+    <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
+    <p class="sub">Aynı sınıftan seçilmiş örnek eşleşmeler. Kullanım istatistiğine dayalı bir "en popüler" listesi değildir.</p>
+    <div class="plist" id="presetList"></div>
+  </section>
+
   <section class="pickers" id="pickers" aria-label="Araç seçimi"></section>
 
   <div class="tools">
     <label class="switch"><input type="checkbox" id="diff"> Sadece farkları göster</label>
-    <button class="btn" type="button" id="swap">Sırayı ters çevir</button>
+    <div>
+      <button class="btn" type="button" id="share">Bağlantıyı kopyala</button>
+      <button class="btn" type="button" id="swap">Sırayı ters çevir</button>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
   </div>
 
   <section class="sheet" role="table" aria-label="Teknik özellik karşılaştırması">
@@ -164,13 +219,29 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
   </section>
   <p class="legend">İşaretli (✓) değer, o satırda daha iyi olan araca aittir. Veri henüz bulunmayan satırlarda "—" görünür.</p>
 
+  <section class="dims" aria-labelledby="dimsTitle">
+    <h2 id="dimsTitle">Boyutlar yan yana</h2>
+    <p class="sub">Her ölçüde çubuklar sıfırdan başlar ve en büyük değere göre ölçeklenir; küçük farklar bu yüzden görsel olarak da küçük görünür.</p>
+    <div id="dimsBody"></div>
+  </section>
+
   <section class="sources" aria-label="Kaynaklar">
     <h2>Bu karşılaştırmanın kaynakları</h2>
     <ul id="sourceList"></ul>
   </section>
 
+  <section class="faq" aria-labelledby="faqTitle">
+    <h2 id="faqTitle">Sık sorulan sorular</h2>
+    <details><summary>Veriler nereden geliyor?</summary><p>Her versiyonun kaynağı tablonun başında ve bu sayfanın "Kaynaklar" bölümünde linkli. Önceliğimiz resmi marka siteleri ve resmi fiyat listeleri; bunlarda olmayan değerler için güvenilir otomotiv basını ve teknik veri siteleri kullanılır. İlan sitelerindeki fiyatlar kullanılmaz.</p></details>
+    <details><summary>"—" işareti ne anlama geliyor?</summary><p>O satır için doğrulanmış bir değer bulamadık ya da henüz araştırmadık. Boşluğu tahminle doldurmuyoruz; veri bulundukça satır dolar.</p></details>
+    <details><summary>Neden bazı araçlarda fiyat yok?</summary><p>Fiyatı yalnızca Türkiye'de satışta olan sıfır araçlar için, resmi liste fiyatından veriyoruz. Satıştan kalkmış modellerde ve eski model yıllarında fiyat göstermiyoruz; bu satırda "Satışta değil" yazar.</p></details>
+    <details><summary>✓ işareti neyi gösteriyor?</summary><p>Sayısal satırlarda daha iyi olan değeri: daha yüksek güç, tork ya da bagaj; daha düşük tüketim, hızlanma süresi ya da fiyat gibi. Bu işaret bir satın alma önerisi değildir; hangi satırın sizin için önemli olduğuna siz karar verirsiniz.</p></details>
+    <details><summary>Farklı yıllarda verilmiş Euro NCAP yıldızları karşılaştırılabilir mi?</summary><p>Doğrudan karşılaştırılamaz. Euro NCAP test protokollerini düzenli olarak sıkılaştırıyor; bu yüzden tabloda yıldızın yanında test yılı da gösterilir. Ayrıntı: <a href="https://www.euroncap.com/en/car-safety/the-ratings-explained/" target="_blank" rel="noopener">Euro NCAP – derecelendirmeler nasıl okunur ↗</a></p></details>
+    <details><summary>Karşılaştırmayı nasıl paylaşırım?</summary><p>"Bağlantıyı kopyala" düğmesi seçili araçları içeren bir adres kopyalar. Bu adresi açan kişi aynı karşılaştırmayı görür.</p></details>
+  </section>
+
   <footer>
-    Teknik özellikler resmi marka siteleri ve güvenilir otomotiv haberlerinden derlenmiştir, güncelleme tarihi 26 Eylül 2026. Fiyat ve donanım paketleri zamanla değişebilir, satın almadan önce yetkili bayiyle teyit edin.
+    Teknik özellikler resmi marka siteleri ve güvenilir otomotiv kaynaklarından derlenmiştir, veri güncelleme tarihi 10 Ekim 2026. Fiyat ve donanım paketleri zamanla değişebilir, satın almadan önce yetkili bayiyle teyit edin.
   </footer>
 </main>
 
@@ -1238,23 +1309,23 @@ const CARS = [
   s:{segment:"D-SUV (Orta-üst SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4 (AWD/Q4)",koltuk:5,kapi:5,cc:1995,silindir:4,besleme:"Turbo",guc_hp:280,abs:"Var",esp:"Var"}},
  {id:"peugeot-508-2025-allure-bluehdi-130", marka:"Peugeot", model:"508", yil:2025, versiyon:"Allure 1.5 BlueHDi 130 HP EAT8",
   kaynakAd:"Peugeot Türkiye Basın Merkezi / ShiftDelete.Net (Mayıs 2025)", kaynakUrl:"https://basin.peugeot.com.tr/yenilenen-peugeot-508-turkiyede",
-  durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı. Son liste fiyatı (Mayıs 2025): 2.210.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı.",
   s:{segment:"D (Üst-orta sedan/fastback)",kasa:"Fastback (5 kapı Sedan)",yakit:"Dizel",sanziman:"Otomatik (8 ileri, EAT8)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,besleme:"Turbo Dizel",guc_hp:130,tork_nm:300,uzunluk_mm:4750,genislik_mm:1859,yukseklik_mm:1403,dingil_mm:2793,jant_inch:18,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Yok",serit_takip:"Var",geri_gorus_kamera:"Var",ekran_inch:10,dijital_gosterge:"Var"}},
  {id:"peugeot-508-2025-gt-bluehdi-130", marka:"Peugeot", model:"508", yil:2025, versiyon:"GT 1.5 BlueHDi 130 HP EAT8",
   kaynakAd:"Peugeot Türkiye Basın Merkezi / ShiftDelete.Net (Mayıs 2025)", kaynakUrl:"https://basin.peugeot.com.tr/yenilenen-peugeot-508-turkiyede",
-  durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı. Son liste fiyatı (Mayıs 2025): 2.454.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı.",
   s:{segment:"D (Üst-orta sedan/fastback)",kasa:"Fastback (5 kapı Sedan)",yakit:"Dizel",sanziman:"Otomatik (8 ileri, EAT8)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,besleme:"Turbo Dizel",guc_hp:130,tork_nm:300,uzunluk_mm:4750,genislik_mm:1859,yukseklik_mm:1403,dingil_mm:2793,jant_inch:19,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",ekran_inch:10,dijital_gosterge:"Var"}},
  {id:"mg-zs-ev-2022-comfort", marka:"MG", model:"ZS EV", yil:2022, versiyon:"Comfort",
   kaynakAd:"donanimhaber.com (lansman haberi)", kaynakUrl:"https://www.donanimhaber.com/mg-zs-ev-elektrikli-suv-turkiye-de-iste-fiyati-ve-ozellikleri--132225",
-  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı). Lansman fiyatı (~2022): 394.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı).",
   s:{segment:"B-SUV (Kompakt SUV)",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites (Redüktör)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:143,tork_nm:353,sifirYuz_sn:8.1,hiz_kmh:140,co2_gkm:0,batarya_kwh:44.5,menzil_km_wltp:263,ac_sarj_dk:420,dc_hizli_sarj_dk_20_80:40,uzunluk_mm:4314,genislik_mm:1809,yukseklik_mm:1620,bagaj_l:448,abs:"Var",esp:"Var",serit_takip:"Var"}},
  {id:"mg-zs-ev-2022-luxury", marka:"MG", model:"ZS EV", yil:2022, versiyon:"Luxury",
   kaynakAd:"donanimhaber.com (lansman haberi)", kaynakUrl:"https://www.donanimhaber.com/mg-zs-ev-elektrikli-suv-turkiye-de-iste-fiyati-ve-ozellikleri--132225",
-  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı). Lansman fiyatı (~2022): 409.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı).",
   s:{segment:"B-SUV (Kompakt SUV)",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites (Redüktör)",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:143,tork_nm:353,sifirYuz_sn:8.1,hiz_kmh:140,co2_gkm:0,batarya_kwh:44.5,menzil_km_wltp:263,ac_sarj_dk:420,dc_hizli_sarj_dk_20_80:40,uzunluk_mm:4314,genislik_mm:1809,yukseklik_mm:1620,bagaj_l:448,abs:"Var",esp:"Var",serit_takip:"Var"}},
  {id:"toyota-camry-2021-passion-2-5-hybrid", marka:"Toyota", model:"Camry", yil:2021, versiyon:"Passion 2.5 Hybrid e-CVT",
   kaynakAd:"Toyota Türkiye Resmi Teknik Broşürü / Habertürk", kaynakUrl:"https://www.toyota.com.tr/content/dam/toyota/nmsc/turkey/cars/e-brosur/camry/Camry%202021%20Teknik%20ve%20Donan%C4%B1m%20%C3%96zellikleri_tcm-3043-2303534.pdf",
-  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; 2021 sonrası fiyat listelerine girmedi). Lansman fiyatı (2021): 998.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; 2021 sonrası fiyat listelerine girmedi).",
   s:{kasa:"Sedan",yakit:"Hibrit (Benzin-Elektrik)",sanziman:"e-CVT",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:4,cc:2487,silindir:4,guc_hp:218,tork_nm:221,sifirYuz_sn:8.5,hiz_kmh:180,tuketim_sehir_ici:4.7,tuketim_sehir_disi:4.3,tuketim_l100km:4.3,co2_gkm:98,depo_l:50,uzunluk_mm:4885,genislik_mm:1840,yukseklik_mm:1445,dingil_mm:2825,agirlik_kg:1595,bagaj_l:524,jant_inch:18,airbag_sayisi:7,abs:"Var",esp:"Var",koltuk_isitma:"Var",ekran_inch:9,carplay_android_auto:"Var",garanti_yil:10,garanti_km:160000,bakim_araligi_km:15000,bakim_araligi_ay:12}},
  {id:"nissan-navara-2021-platinum-2-3-dci-190hp-4x4-at", marka:"Nissan", model:"Navara", yil:2021, versiyon:"Platinum 2.3 dCi 190 HP Otomatik 4x4",
   kaynakAd:"Arabavs.com", kaynakUrl:"https://www.arabavs.com/model/2021/nissan/navara/2-3-dci/platinum-otomatik.html",
@@ -1274,27 +1345,27 @@ const CARS = [
   s:{segment:"B-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (CVT)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.2,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.4,tuketim_l100km:6.4,co2_gkm:149,depo_l:43,uzunluk_mm:4370,genislik_mm:1700,yukseklik_mm:1457,agirlik_kg:1135,bagaj_l:465,jant_inch:16,airbag_sayisi:2,ncap_yildiz:5,abs:"Var",esp:"Var",klima:"Manuel",garanti_yil:5,garanti_km:160000,boya_garanti_yil:5,pas_garanti_yil:5}},
  {id:"hyundai-elantra-2024-prime-1-6-mpi-cvt", marka:"Hyundai", model:"Elantra", yil:2024, versiyon:"Prime 1.6 MPI 123 HP CVT Otomatik",
   kaynakAd:"Arabavs.com", kaynakUrl:"https://arabavs.com/model/2024/hyundai/elantra/1-6-mpi/prime-otomatik.html",
-  durum:"Türkiye'de Şubat 2025'te satıştan kaldırıldı. Son liste fiyatı (Ocak 2025): 1.699.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de Şubat 2025'te satıştan kaldırıldı.",
   s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (CVT-6)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1598,silindir:4,besleme:"Atmosferik",guc_hp:123,tork_nm:154,sifirYuz_sn:10.7,hiz_kmh:195,tuketim_sehir_ici:6.6,tuketim_sehir_disi:5.3,tuketim_l100km:5.9,co2_gkm:134,depo_l:47,uzunluk_mm:4710,genislik_mm:1825,yukseklik_mm:1430,agirlik_kg:1290,bagaj_l:474,jant_inch:17,abs:"Var",esp:"Var",yokus_kalkis:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Dijital otomatik klima"}},
  {id:"hyundai-elantra-2023-elite-1-6-mpi-cvt", marka:"Hyundai", model:"Elantra", yil:2023, versiyon:"Elite 1.6 MPI 123 HP CVT Otomatik",
   kaynakAd:"Arabavs.com", kaynakUrl:"https://www.arabavs.com/model/2023/hyundai/elantra/1-6-mpi/elite-otomatik.html",
-  durum:"Türkiye'de Şubat 2025'te satıştan kaldırıldı. Son liste fiyatı (Ocak 2025): 1.820.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de Şubat 2025'te satıştan kaldırıldı.",
   s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (CVT-6)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1598,silindir:4,besleme:"Atmosferik",guc_hp:123,tork_nm:154,sifirYuz_sn:10.7,hiz_kmh:195,tuketim_sehir_ici:8.6,tuketim_sehir_disi:5.6,tuketim_l100km:7.1,co2_gkm:134,depo_l:47,uzunluk_mm:4650,genislik_mm:1825,yukseklik_mm:1430,agirlik_kg:1265,bagaj_l:474,jant_inch:17,abs:"Var",esp:"Var",yokus_kalkis:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Dijital otomatik klima",acilir_tavan:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var"}},
  {id:"kia-cerato-2024-elegance-1-6-mpi-at", marka:"Kia", model:"Cerato", yil:2024, versiyon:"Elegance 1.6 MPI 128 HP Otomatik",
   kaynakAd:"Arabavs.com", kaynakUrl:"https://arabavs.com/model/2024/kia/cerato/1-6-mpi/elegance-otomatik.html",
-  durum:"Türkiye'de Ocak 2025'te satıştan kaldırıldı. Son liste fiyatı: 1.280.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de Ocak 2025'te satıştan kaldırıldı.",
   s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1591,silindir:4,besleme:"Atmosferik",guc_hp:128,tork_nm:154,sifirYuz_sn:11.6,hiz_kmh:195,tuketim_sehir_ici:9.8,tuketim_sehir_disi:5.9,tuketim_l100km:7.9,depo_l:50,uzunluk_mm:4640,genislik_mm:1800,yukseklik_mm:1450,agirlik_kg:1220,bagaj_l:502,jant_inch:16,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Manuel",garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
  {id:"kia-cerato-2024-prestige-1-6-mpi-at", marka:"Kia", model:"Cerato", yil:2024, versiyon:"Prestige 1.6 MPI 128 HP Otomatik",
   kaynakAd:"Arabavs.com", kaynakUrl:"https://arabavs.com/model/2024/kia/cerato/1-6-mpi/prestige-otomatik.html",
-  durum:"Türkiye'de Ocak 2025'te satıştan kaldırıldı. Son liste fiyatı: 1.430.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de Ocak 2025'te satıştan kaldırıldı.",
   s:{segment:"C-Segment Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:4,cc:1591,silindir:4,besleme:"Atmosferik",guc_hp:128,tork_nm:154,sifirYuz_sn:11.6,hiz_kmh:195,tuketim_sehir_ici:9.8,tuketim_sehir_disi:5.9,tuketim_l100km:7.9,depo_l:50,uzunluk_mm:4640,genislik_mm:1800,yukseklik_mm:1450,agirlik_kg:1220,bagaj_l:502,jant_inch:17,airbag_sayisi:2,abs:"Var",esp:"Var",yokus_kalkis:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Manuel",anahtarsiz_giris:"Var",garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
  {id:"kia-rio-2023-elegance-konfor-1-4-at", marka:"Kia", model:"Rio", yil:2023, versiyon:"Hatchback Elegance Konfor 1.4 100 HP Otomatik",
   kaynakAd:"Epey.com", kaynakUrl:"https://www.epey.com/araba/2023-kia-rio-hb-1-4-100-ps-otomatik-elegance-konfor.html",
-  durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı. Son liste fiyatı (Aralık 2023): 1.058.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı.",
   s:{segment:"B-Segment Hatchback",kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.9,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.0,tuketim_l100km:6.2,co2_gkm:142,depo_l:45,uzunluk_mm:4065,genislik_mm:1725,yukseklik_mm:1450,agirlik_kg:1090,bagaj_l:300,ncap_yildiz:3,garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
  {id:"kia-rio-2023-cool-1-4-at", marka:"Kia", model:"Rio", yil:2023, versiyon:"Hatchback Cool 1.4 100 HP Otomatik (giriş donanımı)",
   kaynakAd:"Epey.com", kaynakUrl:"https://www.epey.com/araba/2023-kia-rio-hb-1-4-100-ps-otomatik-cool.html",
-  durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı. Son liste fiyatı (Aralık 2023): 955.000 TL — güncel fiyat değildir.",
+  durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı.",
   s:{segment:"B-Segment Hatchback",kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.9,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.0,tuketim_l100km:6.2,co2_gkm:142,depo_l:45,uzunluk_mm:4065,genislik_mm:1725,yukseklik_mm:1450,agirlik_kg:1090,bagaj_l:300,ncap_yildiz:3,garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
 
  /* --- Yeni markalar (Tesla, Subaru, Lexus, Isuzu, KGM/SsangYong) — 2026-10-04 araştırması.
@@ -1524,35 +1595,35 @@ const CARS = [
     veri 2021'e ait. CX-3/CX-30/CX-60/Mazda6 güvenilir resmi kaynak bulunamadığı için eklenmedi. */
  {id:"mazda-cx5-2023-20-sky-g-4x4-power-sense", marka:"Mazda", model:"CX-5", yil:2023, versiyon:"2.0 SKY-G 4x4 AT Power Sense",
   kaynakAd:"Mazda Türkiye Resmi Fiyat Listesi (Kasım 2023) + otoloji.com teknik özellikler", kaynakUrl:"https://media-assets.mazda.eu/raw/upload//mazdatr/globalassets/pdfs/pricelist/mazda-fiyat-listesi-november-2023-website.pdf",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi). Son liste fiyatı (Kasım 2023): 3.127.430 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi).",
   s:{segment:"Kompakt SUV (C-SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"6 ileri otomatik",cekis:"4x4 (AWD)",koltuk:5,kapi:5,cc:1998,silindir:4,besleme:"Direkt enjeksiyon (DI), atmosferik",guc_hp:165,tork_nm:213,sifirYuz_sn:10.3,hiz_kmh:188,tuketim_sehir_ici:8.4,tuketim_sehir_disi:6.1,tuketim_l100km:7,co2_gkm:159,emisyon_normu:"Euro 6d",depo_l:58,uzunluk_mm:4550,genislik_mm:1840,yukseklik_mm:1680,dingil_mm:2700,agirlik_kg:1540,bagaj_l:506,abs:"Var"}},
  {id:"mazda-cx5-2023-20-sky-g-4x4-power-sense-plus", marka:"Mazda", model:"CX-5", yil:2023, versiyon:"2.0 SKY-G 4x4 AT Power Sense Plus (Nappa deri, üst donanım)",
   kaynakAd:"Mazda Türkiye Resmi Fiyat Listesi (Kasım 2023) + otoloji.com teknik özellikler", kaynakUrl:"https://media-assets.mazda.eu/raw/upload//mazdatr/globalassets/pdfs/pricelist/mazda-fiyat-listesi-november-2023-website.pdf",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi). Son liste fiyatı (Kasım 2023): 3.127.430 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi).",
   s:{segment:"Kompakt SUV (C-SUV)",kasa:"SUV",yakit:"Benzin",sanziman:"6 ileri otomatik",cekis:"4x4 (AWD)",koltuk:5,kapi:5,cc:1998,silindir:4,besleme:"Direkt enjeksiyon (DI), atmosferik",guc_hp:165,tork_nm:213,sifirYuz_sn:10.3,hiz_kmh:188,tuketim_sehir_ici:8.4,tuketim_sehir_disi:6.1,tuketim_l100km:7,co2_gkm:159,emisyon_normu:"Euro 6d",depo_l:58,uzunluk_mm:4550,genislik_mm:1840,yukseklik_mm:1680,dingil_mm:2700,agirlik_kg:1610,bagaj_l:506,abs:"Var"}},
  {id:"mazda-mx5-2023-15-sky-g-power-sense-roadster", marka:"Mazda", model:"MX-5", yil:2023, versiyon:"1.5 SKY-G Power Sense (Roadster, açık tavan)",
   kaynakAd:"Mazda Türkiye Resmi Fiyat Listesi (Kasım 2023) + ultimatespecs.com teknik özellikler", kaynakUrl:"https://media-assets.mazda.eu/raw/upload//mazdatr/globalassets/pdfs/pricelist/mazda-fiyat-listesi-november-2023-website.pdf",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi). Son liste fiyatı (Kasım 2023): 2.213.890 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi).",
   s:{segment:"Roadster / Spor",kasa:"Roadster (Açık tavan/Cabrio)",yakit:"Benzin",sanziman:"6 ileri manuel",cekis:"Arkadan itiş (RWD)",koltuk:2,kapi:2,cc:1496,silindir:4,besleme:"Direkt enjeksiyon (DI), atmosferik",guc_hp:132,tork_nm:152,sifirYuz_sn:8.3,hiz_kmh:204,tuketim_l100km:6.3,co2_gkm:142,emisyon_normu:"Euro 6d (WLTP)",depo_l:45,uzunluk_mm:3915,genislik_mm:1735,yukseklik_mm:1225,dingil_mm:2310,yerden_yukseklik_mm:125,agirlik_kg:1078,bagaj_l:130,acilir_tavan:"Var (manuel açılır bez tavan)"}},
  {id:"mazda-mx5-rf-2023-15-sky-g-power-sense", marka:"Mazda", model:"MX-5 RF", yil:2023, versiyon:"1.5 SKY-G Power Sense (RF - retractable fastback)",
   kaynakAd:"Mazda Türkiye Resmi Fiyat Listesi (Kasım 2023) + ultimatespecs.com teknik özellikler", kaynakUrl:"https://media-assets.mazda.eu/raw/upload//mazdatr/globalassets/pdfs/pricelist/mazda-fiyat-listesi-november-2023-website.pdf",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi). Son liste fiyatı (Kasım 2023): 2.374.420 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi).",
   s:{segment:"Roadster / Spor",kasa:"Targa (Otomatik sert üst, retractable fastback)",yakit:"Benzin",sanziman:"6 ileri manuel",cekis:"Arkadan itiş (RWD)",koltuk:2,kapi:2,cc:1496,silindir:4,besleme:"Direkt enjeksiyon (DI), atmosferik",guc_hp:132,tork_nm:152,emisyon_normu:"Euro 6d (WLTP)",depo_l:45,dingil_mm:2310,bagaj_l:127,acilir_tavan:"Var (otomatik katlanır sert tavan - RF gövde tipi)"}},
  {id:"mazda-2-2021-15-skyactiv-g-power-sense", marka:"Mazda", model:"Mazda2", yil:2021, versiyon:"1.5 Skyactiv-G Power Sense (üst donanım, otomatik)",
   kaynakAd:"arabanibul.com.tr - 2021 Yeni Mazda 2 Türkiye Fiyatı Açıklandı", kaynakUrl:"https://www.arabanibul.com.tr/2021-yeni-mazda-2-turkiye-fiyati-aciklandi",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı. Mazda2 için son doğrulanan liste fiyatı (2021): 308.980 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı.",
   s:{segment:"B Segment (Şehir/Kompakt)",kasa:"Hatchback",yakit:"Benzin",sanziman:"6 ileri otomatik (Skyactiv-Drive)",cekis:"Önden çekiş (FWD)",koltuk:5,kapi:5,cc:1496,silindir:4,guc_hp:111,tork_nm:145,sifirYuz_sn:10.3,hiz_kmh:188,tuketim_sehir_ici:4.6,tuketim_sehir_disi:6.5,tuketim_l100km:5.3,depo_l:44,uzunluk_mm:4065,genislik_mm:1695,yukseklik_mm:1495,agirlik_kg:1090,bagaj_l:280}},
  {id:"mazda-2-2021-15-skyactiv-g-reflex", marka:"Mazda", model:"Mazda2", yil:2021, versiyon:"1.5 Skyactiv-G Reflex (giriş donanımı, otomatik)",
   kaynakAd:"arabanibul.com.tr - 2021 Yeni Mazda 2 Türkiye Fiyatı Açıklandı", kaynakUrl:"https://www.arabanibul.com.tr/2021-yeni-mazda-2-turkiye-fiyati-aciklandi",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı. Mazda2 için son doğrulanan liste fiyatı (2021): 294.800 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı.",
   s:{segment:"B Segment (Şehir/Kompakt)",kasa:"Hatchback",yakit:"Benzin",sanziman:"6 ileri otomatik (Skyactiv-Drive)",cekis:"Önden çekiş (FWD)",koltuk:5,kapi:5,cc:1496,silindir:4,guc_hp:111,tork_nm:145,sifirYuz_sn:10.3,hiz_kmh:188,tuketim_sehir_ici:4.6,tuketim_sehir_disi:6.5,tuketim_l100km:5.3,depo_l:44,uzunluk_mm:4065,genislik_mm:1695,yukseklik_mm:1495,agirlik_kg:1090,bagaj_l:280}},
  {id:"mazda-3-2020-sedan-15-skyactiv-g-soul", marka:"Mazda", model:"Mazda3", yil:2020, versiyon:"Sedan 1.5 Skyactiv-G 120 PS Soul (giriş donanımı, manuel)",
   kaynakAd:"aracbulten.com - Mazda Fiyat Listesi 2020", kaynakUrl:"https://aracbulten.com/mazda-fiyat-listesi-2020/",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı; Türkiye'de satılan son Mazda3 nesli bu modeldi. Son liste fiyatı (2020): 141.960 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı; Türkiye'de satılan son Mazda3 nesli bu modeldi.",
   s:{segment:"C Segment (Kompakt)",kasa:"Sedan",yakit:"Benzin",sanziman:"6 ileri manuel",cekis:"Önden çekiş (FWD)",koltuk:5,kapi:4,cc:1496,silindir:4,besleme:"Çok noktalı enjeksiyon (MPI)",guc_hp:120,tork_nm:150,depo_l:51,uzunluk_mm:4585,genislik_mm:1795,yukseklik_mm:1450,bagaj_l:419,airbag_sayisi:6,abs:"Var",esp:"Var (DSC)"}},
  {id:"mazda-3-2020-hatchback-15-skyactiv-g-power-sense", marka:"Mazda", model:"Mazda3", yil:2020, versiyon:"Hatchback 1.5 Skyactiv-G 120 PS Power Sense (üst donanım, otomatik)",
   kaynakAd:"aracbulten.com - Mazda Fiyat Listesi 2020", kaynakUrl:"https://aracbulten.com/mazda-fiyat-listesi-2020/",
-  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı; Türkiye'de satılan son Mazda3 nesli bu modeldi. Son liste fiyatı (2020): 192.035 TL — güncel fiyat değildir.",
+  durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı; Türkiye'de satılan son Mazda3 nesli bu modeldi.",
   s:{segment:"C Segment (Kompakt)",kasa:"Hatchback",yakit:"Benzin",sanziman:"6 ileri otomatik",cekis:"Önden çekiş (FWD)",koltuk:5,kapi:5,cc:1496,silindir:4,besleme:"Çok noktalı enjeksiyon (MPI)",guc_hp:120,tork_nm:150,sifirYuz_sn:11.6,hiz_kmh:185,tuketim_sehir_ici:6.8,tuketim_sehir_disi:4.8,tuketim_l100km:5.5,co2_gkm:129,depo_l:51,uzunluk_mm:4585,genislik_mm:1795,yukseklik_mm:1450,agirlik_kg:1295,bagaj_l:419,airbag_sayisi:6,ncap_yildiz:5,abs:"Var",esp:"Var (DSC)"}},
  /* --- Voyah + Leapmotor — 2026-10-06 araştırması (Claude ajanları ile). Türkiye'de henüz hiç bulunmayan
     21 markadan "Çinli markalar önce" sırasına göre ilk grup. Voyah: distribütör Marcar Otomotiv, GÜNCEL
@@ -1877,7 +1948,7 @@ const GROUPS = [
   ['agirlik_kg','Boş ağırlık','kg'],['istiap_kg','Azami yük (istiap haddi)','kg'],
   ['bagaj_l','Bagaj hacmi','L','high'],['jant_inch','Jant çapı','"']]},
  {name:'Güvenlik', rows:[
-  ['airbag_sayisi','Hava yastığı sayısı','','high'],['ncap_yildiz','Euro NCAP puanı','','high'],
+  ['airbag_sayisi','Hava yastığı sayısı','','high'],['ncap_yildiz','Euro NCAP puanı'],['ncap_test_yili','Euro NCAP test yılı'],
   ['abs','ABS'],['esp','ESP / ESC'],['yokus_kalkis','Yokuş kalkış desteği'],
   ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],
   ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['geri_gorus_kamera','Geri görüş kamerası']]},
@@ -1891,7 +1962,7 @@ const GROUPS = [
  {name:'Değerlendirme', rows:[
   ['sistem_puani_10','Sistem puanı (10 üzerinden)','','high']]},
  {name:'Fiyat ve vergi', rows:[
-  ['liste_fiyati_tl','Güncel liste fiyatı','TL','low'],['mtv_yillik_tl','Yıllık MTV (1-3 yaş)','TL','low']]},
+  ['liste_fiyati_tl','Güncel liste fiyatı (satıştaki sıfır araç)','TL','low'],['mtv_yillik_tl','Yıllık MTV (1-3 yaş)','TL','low']]},
  {name:'Garanti ve bakım', rows:[
   ['garanti_yil','Araç garantisi','yıl','high'],['garanti_km','Araç garantisi','km','high'],
   ['batarya_garanti_yil','Batarya garantisi','yıl','high'],
@@ -1928,15 +1999,107 @@ const state = {
 };
 let sides = ['a','b'];
 
+/* --- Filtreler --- */
+const isDiscontinued = c => !!c.durum && !c.s.liste_fiyati_tl;
+const FUEL_CATS = [['elektrik','Elektrikli'],['phev','Plug-in hibrit'],['hibrit','Hibrit'],['mhev','Hafif (mild) hibrit'],['lpg','Benzin / LPG'],['dizel','Dizel'],['benzin','Benzin']];
+const BODY_CATS = [['suv','SUV / Crossover'],['sedan','Sedan'],['hatchback','Hatchback'],['sw','Station wagon'],['mpv','MPV / Minivan'],['coupe','Coupe / Cabrio / Roadster'],['pickup','Pick-up'],['diger','Diğer']];
+function fuelCat(y){
+  y = y||'';
+  if(/^Elektrik/i.test(y)) return 'elektrik';
+  if(/plug-?in/i.test(y)) return 'phev';
+  if(/hafif|mild/i.test(y)) return 'mhev';
+  if(/hibrit|hybrid|e-POWER/i.test(y)) return 'hibrit';
+  if(/LPG/.test(y)) return 'lpg';
+  if(/^Dizel/i.test(y)) return 'dizel';
+  if(/^Benzin/i.test(y)) return 'benzin';
+  return null;
+}
+function bodyCat(k){
+  k = k||'';
+  if(/pick-?up/i.test(k)) return 'pickup';
+  if(/MPV|Minivan/i.test(k)) return 'mpv';
+  if(/Station|Estate/i.test(k)) return 'sw';
+  if(/SUV|Crossover/i.test(k)) return 'suv';
+  if(/Coupe|Cabrio|Roadster|Targa|Fastback/i.test(k)) return 'coupe';
+  if(/Sedan|Sportback/i.test(k)) return 'sedan';
+  if(/Hatchback/i.test(k)) return 'hatchback';
+  return 'diger';
+}
+const filt = {yakit:'', kasa:'', satis:false};
+const matchF = (c,f) => (!f.yakit || fuelCat(c.s.yakit)===f.yakit) && (!f.kasa || bodyCat(c.s.kasa)===f.kasa) && (!f.satis || !isDiscontinued(c));
+const pool = () => CARS.filter(c=>matchF(c,filt));
+
+function renderFilters(){
+  const fuelOpts = FUEL_CATS.map(([v,t])=>({v,t,n:CARS.filter(c=>matchF(c,{...filt,yakit:v})).length})).filter(o=>o.n||o.v===filt.yakit);
+  const bodyOpts = BODY_CATS.map(([v,t])=>({v,t,n:CARS.filter(c=>matchF(c,{...filt,kasa:v})).length})).filter(o=>o.n||o.v===filt.kasa);
+  const allF = CARS.filter(c=>matchF(c,{...filt,yakit:''})).length, allK = CARS.filter(c=>matchF(c,{...filt,kasa:''})).length;
+  fill($('fYakit'), [{v:'',t:`Tümü (${allF})`}, ...fuelOpts.map(o=>({v:o.v,t:`${o.t} (${o.n})`}))], filt.yakit);
+  fill($('fKasa'), [{v:'',t:`Tümü (${allK})`}, ...bodyOpts.map(o=>({v:o.v,t:`${o.t} (${o.n})`}))], filt.kasa);
+  $('fSatis').checked = filt.satis;
+  const p = pool();
+  $('fCount').textContent = `Seçim listelerinde ${num(p.length)} versiyon, ${num(uniq(p.map(c=>c.marka)).length)} marka gösteriliyor.`;
+}
+
+/* --- Hazır karşılaştırmalar (aynı sınıftan örnek eşleşmeler) --- */
+const PRESETS = [
+  {seg:'Kompakt sedan', ids:['egea-sedan-2026-1.4-fire-95','toyota-corolla-sedan-1-5-vision-plus-2026','renault-megane-sedan-touch-1-3-tce-edc-140-2026']},
+  {seg:'Elektrikli C-SUV', ids:['togg-t10x-2026-v1-rwd-standart','tesla-model-y-2026-premium-long-range-rwd']},
+  {seg:'B segment hatchback', ids:['renault-clio-evolution-plus-tce-edc-115-2026','hyundai-i20-elite-gsr-dct-2026','opel-corsa-1.2-100hp-mt6-2026']},
+  {seg:'C-SUV', ids:['peugeot-3008-allure-hybrid-2026','kia-sportage-live-2026','hyundai-tucson-comfort-4x2-2026','vw-tiguan-1-5-etsi-150-dsg-life-2026']},
+  {seg:'Hibrit crossover', ids:['toyota-chr-hybrid-1-8-flame-2026','toyota-corolla-cross-hybrid-1-8-flame-2026','peugeot-2008-allure-hybrid-2026']},
+  {seg:'Kompakt hatchback', ids:['vw-golf-1-5-tsi-116-manuel-impression-2026','seat-leon-style-2026','opel-astra-1.5-130hp-diesel-at8-edition-2026']}
+].map(p=>({...p, ids:p.ids.filter(id=>byId(id))})).filter(p=>p.ids.length>=2);
+
+function setCars(ids){
+  ids = ids.filter(id=>byId(id)).slice(0,MAX_SIDES);
+  if(ids.length<MIN_SIDES) return false;
+  filt.yakit=''; filt.kasa=''; filt.satis=false;
+  sides = SIDE_KEYS.slice(0,ids.length);
+  ids.forEach((id,i)=>{ const c=byId(id); state[SIDE_KEYS[i]]={marka:c.marka,model:c.model,yil:c.yil,id:c.id}; });
+  return true;
+}
+
+function renderPresets(){
+  $('presetList').innerHTML = PRESETS.map((p,i)=>`<button type="button" class="pcard" data-preset="${i}"><span class="pseg">${esc(p.seg)}</span><span class="pnames">${p.ids.map(id=>{const c=byId(id);return esc(c.marka+' '+c.model);}).join('<span class="vs">vs</span>')}</span></button>`).join('');
+  $$('.pcard').forEach(b=>b.addEventListener('click',()=>{
+    if(setCars(PRESETS[+b.dataset.preset].ids)){ render(); $('pickers').scrollIntoView({behavior:'smooth',block:'start'}); }
+  }));
+}
+
+/* --- Boyut karşılaştırması: sıfırdan başlayan, aynı ölçekli çubuklar --- */
+const DIM_ROWS = [['uzunluk_mm','Uzunluk'],['genislik_mm','Genişlik'],['yukseklik_mm','Yükseklik'],['dingil_mm','Dingil mesafesi'],['bagaj_l','Bagaj hacmi','L']];
+function renderDims(cars){
+  let out='';
+  DIM_ROWS.forEach(([key,label,unit])=>{
+    const vals = cars.map(c=>c.s[key]);
+    if(vals.every(v=>v==null)) return;
+    const max = Math.max(...vals.filter(v=>v!=null));
+    out += `<div class="dgrp"><div class="dname">${label}</div>` + cars.map((c,i)=>{
+      const v=c.s[key];
+      const bar = v==null ? '' : `<span class="dbar" style="width:${(v/max*100).toFixed(1)}%"></span>`;
+      return `<div class="drow"><span class="dcar">${esc(c.marka+' '+c.model)}</span><span class="dtrack">${bar}</span><span class="dv">${v==null?'veri yok':num(v)+' '+(unit||'mm')}</span></div>`;
+    }).join('') + '</div>';
+  });
+  $('dimsBody').innerHTML = out || '<p class="dnone">Seçili araçlar için ölçü verisi yok.</p>';
+}
+
+/* --- Paylaşılabilir adres --- */
+function readHash(){
+  const m = location.hash.match(/k=([^&]+)/);
+  if(!m) return;
+  setCars(decodeURIComponent(m[1]).split(','));
+}
+
 function normalize(side){
   const st = state[side];
-  const makes = uniq(CARS.map(c=>c.marka)).sort(trSort);
+  const P = pool();
+  const makes = uniq(P.map(c=>c.marka)).sort(trSort);
   if(!makes.includes(st.marka)) st.marka = makes[0];
-  const models = uniq(CARS.filter(c=>c.marka===st.marka).map(c=>c.model)).sort(trSort);
+  const models = uniq(P.filter(c=>c.marka===st.marka).map(c=>c.model)).sort(trSort);
   if(!models.includes(st.model)) st.model = models[0];
-  const years = uniq(CARS.filter(c=>c.marka===st.marka&&c.model===st.model).map(c=>c.yil)).sort((x,y)=>y-x);
+  const years = uniq(P.filter(c=>c.marka===st.marka&&c.model===st.model).map(c=>c.yil)).sort((x,y)=>y-x);
   if(!years.includes(st.yil)) st.yil = years[0];
-  const vers = CARS.filter(c=>c.marka===st.marka&&c.model===st.model&&c.yil===st.yil);
+  const vers = P.filter(c=>c.marka===st.marka&&c.model===st.model&&c.yil===st.yil);
   if(!vers.find(c=>c.id===st.id)) st.id = vers[0].id;
   return {makes, models, years, vers};
 }
@@ -1950,7 +2113,8 @@ function addSide(){
   const side = SIDE_KEYS.find(k=>!sides.includes(k));
   if(!state[side].marka){
     const used = sides.map(s=>state[s].id);
-    const c = CARS.find(c=>!used.includes(c.id)) || CARS[0];
+    const P = pool();
+    const c = P.find(c=>!used.includes(c.id)) || P[0] || CARS[0];
     state[side] = {marka:c.marka, model:c.model, yil:c.yil, id:c.id};
   }
   sides = [...sides, side];
@@ -1982,7 +2146,7 @@ function renderPickerPanels(){
     fill($(side+'-marka'), o.makes.map(v=>({v,t:v})), st.marka);
     fill($(side+'-model'), o.models.map(v=>({v,t:v})), st.model);
     fill($(side+'-yil'), o.years.map(v=>({v,t:v})), st.yil);
-    fill($(side+'-id'), o.vers.map(c=>({v:c.id,t:c.versiyon})), st.id);
+    fill($(side+'-id'), o.vers.map(c=>({v:c.id,t:c.versiyon+(isDiscontinued(c)?' (satıştan kalktı)':'')})), st.id);
     const logoEl = $(side+'-logo');
     const logoFile = MARKA_LOGO[st.marka];
     if(logoFile){ logoEl.src = 'assets/logos/'+logoFile; logoEl.alt = st.marka+' amblemi'; logoEl.style.visibility = 'visible'; }
@@ -2030,6 +2194,7 @@ function deltaText(better,v,rivalVals){
 }
 
 function render(){
+  renderFilters();
   renderPickerPanels();
   const cars = sides.map(s=>byId(state[s].id));
   const onlyDiff = $('diff').checked;
@@ -2038,10 +2203,11 @@ function render(){
   GROUPS.forEach(g=>{
     let rowsHtml = '';
     g.rows.forEach(([key,label,unit,better])=>{
-      const entries = sides.map((s,i)=>({side:s, v:cars[i].s[key]}));
+      const entries = sides.map((s,i)=>({side:s, v:cars[i].s[key], car:cars[i]}));
       if(onlyDiff && entries.every(e=>e.v===entries[0].v)) return;
       const winners = pickWinners(better, entries);
-      const cellsHtml = entries.map(({side,v})=>{
+      const cellsHtml = entries.map(({side,v,car})=>{
+        if(key==='liste_fiyati_tl' && v==null && isDiscontinued(car)) return `<div class="cell ${side}" role="cell"><span class="na">Satışta değil</span></div>`;
         const win = winners.has(side);
         const rivalVals = entries.filter(e=>e.side!==side).map(e=>e.v);
         return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}<span class="val">${fmt(v,unit)}</span>${win?deltaText(better,v,rivalVals):''}</div>`;
@@ -2061,6 +2227,13 @@ function render(){
     : '';
   const head = (side,c)=>`<div class="hcell ${side}" role="columnheader">${photoHtml(c)}<div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div>${c.durum?`<div class="hnote">⚠ ${esc(c.durum)}</div>`:''}<a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a>${fotoSrcHtml(c)?'<br>'+fotoSrcHtml(c):''}</div>`;
   $('head').innerHTML = '<div class="hgap" aria-hidden="true"></div>' + sides.map((s,i)=>head(s,cars[i])).join('');
+  const ALL_KEYS = GROUPS.flatMap(g=>g.rows.map(r=>r[0]));
+  $$('#head .hcell').forEach((el,i)=>{
+    const c = cars[i], filled = ALL_KEYS.filter(k=>c.s[k]!=null).length;
+    el.insertAdjacentHTML('beforeend', `<span class="hfill"><b>${filled}</b> / ${ALL_KEYS.length} satırda doğrulanmış veri</span>`);
+  });
+  renderDims(cars);
+  history.replaceState(null,'','#k='+cars.map(c=>encodeURIComponent(c.id)).join(','));
 
   const seen = new Set();
   const list = cars.filter(c=>{ if(seen.has(c.id)) return false; seen.add(c.id); return true; });
@@ -2069,7 +2242,20 @@ function render(){
 
 $('diff').addEventListener('change',render);
 $('swap').addEventListener('click',()=>{ sides = [...sides].reverse(); render(); });
+$('fYakit').addEventListener('change',e=>{ filt.yakit=e.target.value; render(); });
+$('fKasa').addEventListener('change',e=>{ filt.kasa=e.target.value; render(); });
+$('fSatis').addEventListener('change',e=>{ filt.satis=e.target.checked; render(); });
+$('share').addEventListener('click',async()=>{
+  const url = location.href;
+  try{ await navigator.clipboard.writeText(url); $('copied').textContent='Bağlantı kopyalandı.'; }
+  catch(_){ $('copied').textContent='Kopyalanamadı; adres çubuğundaki bağlantıyı kullanın.'; }
+  setTimeout(()=>{ $('copied').textContent=''; }, 3500);
+});
+window.addEventListener('hashchange',()=>{ readHash(); render(); });
 
+$('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Veri bulunmayan satırlar "—" ile görünür; tahmin yazılmaz.`;
+readHash();
+renderPresets();
 render();
 </script>
 
