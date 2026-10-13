@@ -114,6 +114,8 @@ textarea{padding:12px;min-height:110px;resize:vertical}
 .sec:first-child{padding-top:8px}
 .sec > h2{font-size:clamp(1.4rem,3.5vw,1.8rem);line-height:1.15;font-weight:800}
 .lead{color:var(--muted);margin-top:8px;max-width:64ch;font-weight:300;line-height:1.6}
+.durumbox{margin:14px 0 0;padding:10px 14px;max-width:72ch;font-size:.9rem;color:var(--ink);background:rgba(231,161,90,.1);border-left:3px solid #E7A15A}
+.durumbox b{color:#F2C08A}
 .caution{margin:16px 0 0;padding:14px 16px;background:var(--surface);border:1px solid var(--line);box-shadow:inset 3px 0 0 var(--line-strong);font-size:.9rem;color:var(--muted);max-width:72ch}
 .block{margin-top:28px}
 .block h3{font-size:1.1rem;font-weight:700}
@@ -243,6 +245,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   <div class="wrap">
     <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
     <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
       <a href="arac-detay.html" aria-current="page">Araç detayı</a>
       <a href="piyasa.html">Pazar</a>
       <a href="haberler.html">Haberler</a>
@@ -253,7 +256,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </nav>
   </div>
 </header>
-<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 440 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio (6. nesil), Togg T10X, Toyota Camry, GMC Yukon, Fiat Egea Sedan, Peugeot 508, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, Mazda MX-5, Mazda MX-5 RF, Mazda2, Mazda3, MINI Cooper S, MINI Cooper C (3/5 Kapı), MINI Cooper Cabrio, MINI Countryman, MINI Countryman Electric, Porsche 911, Porsche Macan, Porsche Macan Electric, Porsche Cayenne, Porsche Panamera, Porsche Taycan, Land Rover Defender, Land Rover Discovery, Land Rover Discovery Sport, Land Rover Range Rover, Land Rover Range Rover Sport, Land Rover Range Rover Velar, Land Rover Range Rover Evoque, Lexus NX, Lexus LBX, Lexus RX, Lexus LM, Subaru Forester, Subaru Crosstrek, Subaru Solterra, Cadillac Escalade, Cadillac Escalade ESV, Chevrolet Tahoe, Chevrolet Suburban, GMC Sierra, Alpine A290, Alpine A390, KGM Torres, KGM Torres EVX, KGM Korando, KGM Actyon, KGM Musso Grand, KGM Musso EV, DS 7, DS N°4, DS N°8, MG ZS EV, Nissan Navara, Alfa Romeo Giulia, Alfa Romeo Stelvio, Hyundai Accent Blue, Hyundai Elantra, Kia Cerato, Kia Rio, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20, Ferrari Amalfi/Purosangue/296, Aston Martin Vantage/DB12/DBX/Vanquish, Rolls-Royce Ghost/Phantom/Cullinan/Spectre ve Isuzu D-Max için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Fiat Egea Sedan 1.6 Multijet'teki sahip yorumları ve resmi şikayet istatistiği ise gerçek değil, yalnızca tasarımı göstermek için eklenmiş örnek içeriktir.</div></div>
+<div class="notice" role="note"><div class="wrap">Teknik özellikler ve fiyatlar 440 versiyonun tamamında gerçek ve kaynaklıdır (aşağıda linkli). Şimdilik yalnızca Renault Clio (6. nesil), Togg T10X, Toyota Camry, GMC Yukon, Fiat Egea Sedan, Peugeot 508, Mercedes-Benz C-Serisi Sedan, BMW 3 Serisi Sedan, Audi A6, Tesla Model Y, Mazda CX-5, Mazda MX-5, Mazda MX-5 RF, Mazda2, Mazda3, MINI Cooper S, MINI Cooper C (3/5 Kapı), MINI Cooper Cabrio, MINI Countryman, MINI Countryman Electric, Porsche 911, Porsche Macan, Porsche Macan Electric, Porsche Cayenne, Porsche Panamera, Porsche Taycan, Land Rover Defender, Land Rover Discovery, Land Rover Discovery Sport, Land Rover Range Rover, Land Rover Range Rover Sport, Land Rover Range Rover Velar, Land Rover Range Rover Evoque, Lexus NX, Lexus LBX, Lexus RX, Lexus LM, Subaru Forester, Subaru Crosstrek, Subaru Solterra, Cadillac Escalade, Cadillac Escalade ESV, Chevrolet Tahoe, Chevrolet Suburban, GMC Sierra, Alpine A290, Alpine A390, KGM Torres, KGM Torres EVX, KGM Korando, KGM Actyon, KGM Musso Grand, KGM Musso EV, DS 7, DS N°4, DS N°8, MG ZS EV, Nissan Navara, Alfa Romeo Giulia, Alfa Romeo Stelvio, Hyundai Accent Blue, Hyundai Elantra, Kia Cerato, Kia Rio, Voyah Free, Voyah Dream, Leapmotor T03, Forthing T5 Evo, Forthing M4 U-Tour, Skywell ET5 LR, SWM G01 Pro, Hongqi E-HS9, Bentley Continental GT/GTC/Flying Spur/Bentayga, Lamborghini Urus SE/Temerario/Revuelto, Maserati Grecale/GranTurismo/GranCabrio/MC20, Ferrari Amalfi/Purosangue/296, Aston Martin Vantage/DB12/DBX/Vanquish, Rolls-Royce Ghost/Phantom/Cullinan/Spectre ve Isuzu D-Max için geri çağırma taraması, sahip forumu artı-eksi listesi ve (varsa) ödül gibi derin inceleme tamamlandı; diğer modellerde bu bölümler "henüz eklenmedi" şeklinde boş görünür, uydurma veri yoktur. Sitede örnek ya da uydurma sahip yorumu bulunmaz.</div></div>
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Sayfa yolu">
@@ -278,6 +281,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <h1 id="title"></h1>
       <p class="sub" id="subtitle"></p>
       <p class="src" id="heroSrc" style="font-size:.85rem;color:var(--muted);margin-top:4px"></p>
+      <p class="durumbox" id="durumNote" hidden></p>
       <div class="picks">
         <div role="group" aria-labelledby="yilLbl"><span class="pl" id="yilLbl">Model yılı</span><div class="chips" id="years"></div></div>
         <div role="group" aria-labelledby="verLbl"><span class="pl" id="verLbl">Versiyon</span><div class="chips" id="versions"></div></div>
@@ -321,7 +325,6 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <section class="box" aria-labelledby="scoreT">
         <h2 id="scoreT">Sahip puanı</h2>
         <div id="scoreBody"></div>
-        <button class="btn primary js-write" type="button">Yorum yaz</button>
       </section>
       <section class="box" aria-labelledby="cmpT">
         <h2 id="cmpT">Karşılaştır</h2>
@@ -361,8 +364,6 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
         </div>
       </section>
 
-      <div class="adslot" role="complementary" aria-label="Reklam alanı">Reklam alanı</div>
-
       <section class="sec" id="yorumlar" aria-labelledby="yorumlarT">
         <h2 id="yorumlarT">Sahip yorumları</h2>
         <p class="lead" id="reviewLead"></p>
@@ -376,16 +377,8 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
           </select>
           <span id="filterTag"></span>
           <span class="grow"></span>
-          <button class="btn primary js-write" type="button">Yorum yaz</button>
-        </div>
-        <div id="reviews"></div>
-        <div class="sponsor">
-          <div>
-            <span class="tag ok">Sponsorlu bağlantı</span>
-            <p>Bu araç için sigorta ve kasko tekliflerini karşılaştır.</p>
           </div>
-          <button class="btn" type="button" id="sponsorBtn">Teklif al</button>
-        </div>
+        <div id="reviews"></div>
       </section>
 
       <section class="sec" id="fiyatvergi" aria-labelledby="fiyatvergiT">
@@ -407,14 +400,14 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 
       <section class="sec" id="karsilastir" aria-labelledby="karsilastirT">
         <h2 id="karsilastirT">Rakipleriyle karşılaştır</h2>
-        <p class="lead">Veritabanımızdaki diğer araçlarla tüm özellikleri satır satır yan yana gör. Segmentler her zaman birebir örtüşmeyebilir, kapsam büyüdükçe daha yakın rakipler eklenecek.</p>
+        <p class="lead">Veritabanımızdaki diğer araçlarla tüm özellikleri satır satır yan yana gör. Rakipler otomatik seçilir: aynı kasa tipinden, başka markadan, yakıt türü aynı ve motor gücü en yakın modeller. Segmentler her zaman birebir örtüşmeyebilir.</p>
         <ul class="rivals" id="rivals"></ul>
       </section>
     </div>
   </div>
 
   <footer>
-    Teknik özellikler, fiyatlar ve MTV hesaplaması kaynaklıdır — her bölümün altında kaynak linki bulunur. Renault Clio ve Togg T10X için geri çağırma taraması, sahip forumu/test sürüşü kaynaklı artı-eksi listesi ve donanım araştırması da tamamlandı. Fiat Egea Sedan 1.6 Multijet'te görünen sahip yorumları ve resmi şikayet istatistiği ise henüz gerçek veri değil, yalnızca bu bölümlerin tasarımını göstermek için eklenmiş örnek içeriktir; gerçek sahip yorumları geldikçe bu bölüm gerçek verilerle güncellenecektir.
+    Teknik özellikler, fiyatlar ve MTV hesaplaması kaynaklıdır — her bölümün altında kaynak linki bulunur. Renault Clio ve Togg T10X için geri çağırma taraması, sahip forumu/test sürüşü kaynaklı artı-eksi listesi ve donanım araştırması da tamamlandı. Sahip yorumu bölümü henüz açılmadı; sitede örnek ya da uydurma yorum bulunmaz.
   </footer>
 </main>
 
@@ -465,175 +458,13 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-/* ---------- Örnek veri ---------- */
+/* ---------- Veri ---------- */
 const MTV_URL = 'mtv-hesaplama.html';
 const CARS = {
- 'egea-1.6-multijet':{id:'egea-1.6-multijet',marka:'Fiat',model:'Egea Sedan',yil:2026,versiyon:'1.6 Multijet 130 HP',
-  kaynakAd:'fiat.com.tr',kaynakUrl:'https://www.fiat.com.tr/modeller/egea/sedan',
-  fotoUrl:'https://www.sifiraracal.com/fiat-modelleri/egea-resimleri',
-  sanalTurUrl:null,
-  s:{
-  kasa:'Sedan',yakit:'Dizel',cekis:'Önden çekiş',
-  cc:1598,guc_hp:130,tork_nm:320,sifirYuz_sn:9.8,hiz_kmh:209,emisyon_normu:'Euro 6D-Final',
-  tuketim_sehir_ici:5.0,tuketim_sehir_disi:4.1,tuketim_l100km:4.5,
-  ncap_yildiz:3,ncap_test_yili:2016,liste_fiyati_tl:1499900,mtv_yillik_tl:10016,
-  garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,
-  bakim_araligi_km:10000,bakim_araligi_ay:12},
-  ncapNot:'2016 testi, temel donanım — eski test, güncel protokollerle birebir kıyaslanamaz.',
-  ncapKaynak:'https://www.euroncap.com/en/results/fiat/tipo/44199',
-  agirBakim:[
-   {km:40000,islem:'Fren hidrolik değişimi, filtre kontrolleri',kaynak:'egeaylageziyorum.com'},
-   {km:60000,islem:'Triger ZİNCİR kontrolü (dizel motorda zincir kullanılır, kayışa göre daha uzun ömürlü)',kaynak:'egeaylageziyorum.com'},
-   {km:100000,islem:'Kapsamlı revizyon',kaynak:'egeaylageziyorum.com'}
-  ],
-  kucukDetaylar:[
-   {ozellik:'Gözlük gözü',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
-   {ozellik:'Soğutmalı torpido',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
-   {ozellik:'Kolçak altı soğutma',deger:'Yok',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
-  ],
-  gucluYanlar:[],
-  dikkatEdilecekler:[
-   {metin:'Sahip forumlarında sık tekrarlanan şikayet: temel versiyonlarda gözlük gözü, soğutmalı torpido ve camlarda uzaktan kumanda özelliği yok.',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
-  ],
-  odul:[],
-  sistemPuani:{toplam:4.9,kriterler:[
-   {ad:'Güvenlik',puan:1.2,max:2,aciklama:'Euro NCAP 3 yıldız (2016, eski test)'},
-   {ad:'Performans',puan:0.6,max:2,aciklama:'0-100: 9.8 sn'},
-   {ad:'Verimlilik',puan:1.75,max:2,aciklama:'Ortalama tüketim: 4.5 l/100km'},
-   {ad:'Garanti',puan:0.33,max:2,aciklama:'3 yıl / 60.000 km'}
-  ],veriYokKriterler:['Konfor donanımı — tam versiyon donanım listesi netleşmedi']}},
- 'egea-1.4-fire':{id:'egea-1.4-fire',marka:'Fiat',model:'Egea Sedan',yil:2026,versiyon:'1.4 Fire 95 HP',
-  kaynakAd:'sifiraracal.com',kaynakUrl:'https://www.sifiraracal.com/fiat-modelleri/egea',
-  fotoUrl:'https://www.sifiraracal.com/fiat-modelleri/egea-resimleri',
-  sanalTurUrl:null,
-  s:{
-  kasa:'Sedan',yakit:'Benzin',sanziman:'Manuel, 6 ileri',cekis:'Önden çekiş',
-  cc:1368,guc_hp:95,tork_nm:127,sifirYuz_sn:11.8,hiz_kmh:186,
-  tuketim_sehir_ici:7.6,tuketim_sehir_disi:5.6,tuketim_l100km:6.6,
-  ncap_yildiz:3,ncap_test_yili:2016,liste_fiyati_tl:null,mtv_yillik_tl:10016,
-  garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,
-  bakim_araligi_km:10000,bakim_araligi_ay:12},
-  ncapNot:'2016 testi, temel donanım — eski test, güncel protokollerle birebir kıyaslanamaz.',
-  ncapKaynak:'https://www.euroncap.com/en/results/fiat/tipo/44199',
-  fiyatNot:'Eylül 2026 güncel fiyat listelerinde bu motor seçeneği yer almıyor, muhtemelen sınırlı satışta.',
-  agirBakim:[
-   {km:40000,islem:'Buji, fren hidrolik değişimi',kaynak:'egeaylageziyorum.com'},
-   {km:60000,islem:'Triger KAYIŞ değişimi (benzinli motorda kayış sistemi kullanılır, kritik — atlanırsa motor arızası riski)',kaynak:'egeaylageziyorum.com'},
-   {km:100000,islem:'Kapsamlı revizyon',kaynak:'egeaylageziyorum.com'}
-  ],
-  kucukDetaylar:[
-   {ozellik:'Gözlük gözü',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
-   {ozellik:'Soğutmalı torpido',deger:'Yok (temel versiyonlarda)',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'},
-   {ozellik:'Kolçak altı soğutma',deger:'Yok',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
-  ],
-  gucluYanlar:[],
-  dikkatEdilecekler:[
-   {metin:'Sahip forumlarında sık tekrarlanan şikayet: temel versiyonlarda gözlük gözü, soğutmalı torpido ve camlarda uzaktan kumanda özelliği yok.',kaynak:'https://egeaclub.com/konu-fiat-egea-nin-eksikleri-ve-yanlislari.html'}
-  ],
-  odul:[],
-  sistemPuani:{toplam:2.9,kriterler:[
-   {ad:'Güvenlik',puan:1.2,max:2,aciklama:'Euro NCAP 3 yıldız (2016, eski test)'},
-   {ad:'Performans',puan:0.1,max:2,aciklama:'0-100: 11.8 sn'},
-   {ad:'Verimlilik',puan:0.7,max:2,aciklama:'Ortalama tüketim: 6.6 l/100km'},
-   {ad:'Garanti',puan:0.33,max:2,aciklama:'3 yıl / 60.000 km'}
-  ],veriYokKriterler:['Konfor donanımı — tam versiyon donanım listesi netleşmedi']}},
- 'clio6-1.2-tce':{id:'clio6-1.2-tce',marka:"Renault",model:"Clio (6. nesil)",yil:2026,versiyon:"1.2 TCe 115 PS",
-  kaynakAd:"karar.com",kaynakUrl:"https://www.karar.com/ekonomi-haberleri/yeni-renault-clio-turkiyede-2028061",
-  fotoUrl:"https://www.sifiraracal.com/renault-modelleri/clio-resimleri",
-  sanalTurUrl:"https://www.renault.com.tr/hybrid-araclar/yeni-clio/konfigurator-yeni.html",
-  s:{kasa:"Hatchback",yakit:"Benzin",cc:null,silindir:3,sanziman:"Manuel, 6 ileri (EDC otomatik de mevcut)",cekis:"Önden çekiş",guc_hp:115,tork_nm:190,sifirYuz_sn:10.0,tuketim_l100km:5.0,co2_gkm:114,uzunluk_mm:4116,genislik_mm:1768,dingil_mm:2591,bagaj_l:391,adaptif_hiz_sabitleyici:"Var",ncap_yildiz:4,ncap_test_yili:2025,liste_fiyati_tl:1799000,mtv_yillik_tl:null,garanti_yil:3,garanti_km:100000,bakim_araligi_km:15000,bakim_araligi_ay:12},
-  ncapNot:"Euro NCAP test yılı: 2025. Genel puan: 4 yıldız. Detaylı skorlar (euroncap.com resmi sonuç sayfasından, https://www.euroncap.com/en/results/renault/clio/59039 ): Yetişkin Yolcu Koruması (Adult Occupant) %79, Çocuk Yolcu Koruması (Child Occupant) %82, Diğer Trafik Kullanıcıları/Yaya Koruması (Vulnerable Road Users) %80, Güvenlik Destek Sistemleri (Safety Assist) %73. Notlar: Ön çarpışma testinde sürücü göğüs korumasının 'zayıf (weak)', yolcu tarafının 'sınırda (marginal)' değerlendirildiği belirtiliyor; yan çarpışma testinde ise tüm kritik bölgelerde maksimum puan alınarak 'iyi' korunma sağlandığı raporlanıyor. Yayalar için otonom acil frenleme sistemi yeterli, bisikletliler için iyi performans gösteriyor; ancak aktif kaput (pop-up bonnet) sistemi bulunmuyor.",
-  ncapKaynak:"https://www.euroncap.com/en/results/renault/clio/59039",
-  geriCagirmaNot:"Renault Clio 6 (2026 model) için doğrudan/spesifik bir geri çağırma (recall) kaydına rastlanmadı. Araştırma sırasında bulunan tek ilgili duyuru, Mayıs 2024 sonrası üretilen Clio 5 modellerini (bir önceki nesil) kapsayan ve AB güvenlik standartlarına uyum amacıyla mevcut 4 hava yastığına ek olarak 2 perde hava yastığı takılmasını içeren, Renault'nun Haziran 2026'da duyurulan gönüllü kampanyasıdır. Bu kampanya açıkça Clio 5'e (2024 sonrası üretim) yöneliktir; Clio 6'yı (2026 model) kapsadığına dair hiçbir bilgiye rastlanmadı. Kaynaklar: https://www.yozgatcamlik.com/renault-clio-sahiplerine-kritik-uyari-binlerce-arac-geri-cagriliyor ve https://www.ilerigazetesi.com.tr/renault-turkiyede-binlerce-aracini-geri-cagiriyor-renault-port-uygulamanizi-kontrol-edin . T.C. Sanayi ve Teknoloji Bakanlığı'nın resmi 'Gönüllü Geri Çağırma Faaliyetleri' sayfası (sanayi.gov.tr/piyasa-gozetimi-ve-denetimleri/geri-cagirma-faaliyetleri) bu araştırma sırasında erişim engeli nedeniyle doğrudan taranamadı; bu nedenle bakanlık kaydı bağımsız olarak teyit edilememiştir.",
-  agirBakim:[
-   {km:80000,islem:"Renault'nun genel 'ağır bakım' kuralı: 4 yıl veya 80.000 km'de bir yapılır. Bu bakımda tüm kayışlar (varsa), bujiler, yağ filtresi, hava filtresi, polen filtresi, motor yağı, fren hidroliği ve kayış gergi rulmanı değiştirilir. Not: Bu, Renault'nun genel/model-bağımsız servis kuralı olarak yayınlanmıştır; Clio 6'ya özel bir kaynak değildir.",kaynak:"https://korkmazhaber.com/renault-yetkili-servis-yillik-ve-4-yil-agir-bakim-fiyatlari-ve-degisecek-parca-listesi-21574.htm"},
-   {km:60000,islem:"Renault'nun 1.0 TCe 3 silindirli motorunda (Clio 6'nın 1.2 TCe 115 motorunun temelini oluşturan motor ailesi - Clio 5'te kullanılan versiyon) 60.000 km'de bujilerin değiştirilmesi 'özellikle önemli' olarak belirtiliyor; bu kilometrede ayrıca tüm filtreler ve fren balataları da kontrol ediliyor. Not: Doğrudan Clio 6 1.2 TCe 115 motoru için değil, akraba 1.0 TCe (Clio 5) motoru için yayınlanmış bir kaynaktır.",kaynak:"https://parcaekseni.com/renault-clio-5-1-0-tce-bakim-periyotlari/"},
-   {km:30000,islem:"1.0 TCe motor ailesinde (Clio 5) 30.000 km'de yakıt filtresi değişimi ve fren balata kontrolü yapılıyor, motor yağı/yağ filtresi/hava filtresi/polen filtresi de bu kilometrede yenileniyor. Not: Clio 5 1.0 TCe kaynağıdır, Clio 6 1.2 TCe için doğrudan teyit edilmemiştir.",kaynak:"https://parcaekseni.com/renault-clio-5-1-0-tce-bakim-periyotlari/"},
-   {km:null,islem:"Triger tipi (kayış mı zincir mi?): Clio 6'nın 1.2 TCe 115 motoruna dair doğrudan bir kaynak bulunamadı. Ancak bu motorun türediği kabul edilen Clio 5'in 1.0 TCe (H4D kod) 3 silindirli motorunda triger ZİNCİR (chain) kullanılıyor - yedek parça kataloglarında 'triger zincir seti' olarak satılıyor, kayış seti değil. Zincirli sistemlerde sabit bir 'değişim kilometresi' yayınlanmaz, genelde arıza belirtisi (soğukta zincir sesi, gerginlik) çıkana kadar ömür boyu kullanılır.",kaynak:"https://www.cetinrenault.com/urun/clio-5-1-0-h4d-triger-zincir-seti-130c17039r"}
-  ],
-  kucukDetaylar:[
-   {ozellik:"Açılır/panoramik tavan (tüm donanımlarda)",deger:"En üst donanım seviyesi Esprit Alpine'de bile açılır/panoramik tavan seçeneği bulunmuyor; forum kullanıcıları bunu eksiklik olarak not ediyor.",kaynak:"https://forum.donanimhaber.com/yeni-renault-clio-6-ana-konu--162088137"},
-   {ozellik:"Evolution (giriş) donanımı - geri görüş kamerası",deger:"Giriş seviyesi Evolution donanımında geri görüş kamerası yok, klima manuel (otomatik değil), ortam aydınlatması yok, ses sistemi temel seviyede.",kaynak:"https://www.otokokpit.com/yeni-kasa-renault-clio-6-teknik-ozellikleri/"},
-   {ozellik:"Vites kolu - silecek kolu yakınlığı",deger:"Vites kolunun silecek koluna çok yakın konumlandırılması, ilk kullanımda sürücülerde karışıklığa yol açıyor.",kaynak:"https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"},
-   {ozellik:"Bagaj hacmi farkı (benzinli vs hibrit)",deger:"1.2 TCe (benzinli) versiyonun bagaj hacmi 391 litre; tam hibrit E-Tech versiyona göre 82 litre daha fazla (hibrit versiyonda batarya nedeniyle bagaj küçülüyor).",kaynak:"https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"},
-   {ozellik:"Evolution Plus donanımının fiyat/donanım karşılığı olan trim adı",deger:"Veritabanındaki 1.799.000 TL liste fiyatı, resmi Renault Türkiye sitesinde ve DonanımHaber fiyat haberinde 'Evolution Plus TCe EDC 115 hp' donanımının fiyatıyla birebir eşleşiyor; bu nedenle bu araştırmadaki donanım bulguları bu trim'e aittir.",kaynak:"https://www.donanimhaber.com/yeni-renault-clio-2026-turkiye-fiyati-aciklandi--201848"}
-  ],
-  gucluYanlar:[
-   {metin:"İç mekan malzeme ve teknoloji kalitesi, önceki nesil Clio 5'e göre belirgin şekilde iyileşti; kullanıcılar C-segment araçlarla rekabet edebilecek seviyede olduğunu belirtiyor.",kaynak:"https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"},
-   {metin:"Arka koltuk konforu gerçekten iyi; 1.84 metre boyundaki yolcular bile rahat oturabiliyor (önceki nesle göre belirgin iyileşme).",kaynak:"https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"},
-   {metin:"1.2 TCe motor, önceki 1.0 TCe ünitesine göre daha yumuşak ve titreşimsiz çalışıyor; iç mekan kalite hissi yükseltilmiş, yumuşak dokulu yüzeyler kullanılmış.",kaynak:"https://www.otomobil.com.tr/yeni-renault-clio-6-test-surusu/"},
-   {metin:"205/40 R18 lastiklerle beklenenden daha iyi sürüş konforu sağlanıyor; süspansiyon konfor ve dinamik sürüş arasında iyi bir denge kuruyor.",kaynak:"https://www.otomobil.com.tr/yeni-renault-clio-6-test-surusu/"},
-   {metin:"Şasi/süspansiyon dengesi aracın güçlü yönlerinden biri; hafif araç kütlesiyle birlikte 115 beygirlik güç yeterli geliyor, gerçek dünya tüketimi 5-6 L/100km bandında kalıyor.",kaynak:"https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"},
-   {metin:"Bu fiyat segmentinde adaptif hız sabitleyici ve şerit takip asistanı gibi gelişmiş sürüş destek sistemlerinin artık standart/erişilebilir olması olumlu karşılanıyor.",kaynak:"https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"Şehir içi düşük hızlarda 3 silindirli 1.2 TCe motor pürüzsüzlükten uzak; rölantide metalik sesler ve titreşim hissediliyor.",kaynak:"https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"},
-   {metin:"Start-stop sistemi motoru yeniden çalıştırırken belirgin sarsıntılar (jolt) yaratıyor; sistem ayrı bir butonla kolayca devre dışı bırakılabiliyor.",kaynak:"https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"},
-   {metin:"İç mekanda sert plastik kullanımı hakim; hibrit E-Tech versiyona kıyasla daha az cilalı/lüks bir izlenim veriyor.",kaynak:"https://www.drive.gr/test-drives/dokimi/test-drive-renault-clio-12-tce-115-edc-metaxy-sfyras-kai-akmonos"},
-   {metin:"Arka cam küçük, görüş açısını kısıtlıyor; arkada yolcular için tavan tutunma kolu (handle) bulunmuyor.",kaynak:"https://www.otomobil.com.tr/yeni-renault-clio-6-test-surusu/"},
-   {metin:"Bagaj kaplama malzemesi kalitesi zayıf bulundu; sürücü koltuğunun bacak desteği (legrest) pozisyonu çok alçak ve ayarlanamıyor.",kaynak:"https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"},
-   {metin:"Fiyatlandırma B-segmenti için yüksek bulunuyor; bazı kullanıcılar fiyatı 'absürt' olarak nitelendiriyor ve takas tekliflerinin araç değerinin altında kaldığından şikayet ediyor.",kaynak:"https://otopark.com/forum/threads/yeni-clio-6yi-nasil-buldunuz.16499/"},
-   {metin:"Ön-arka tasarım orantısı bazı kullanıcılar tarafından tutarsız bulunuyor ('arkasıyla önünün tutarsızlığı'); elektronik donanımın güvenilirliği konusunda şüpheci yorumlar mevcut ('zannetmiyorum ki elektroniği halletmiş olsunlar').",kaynak:"https://eksisozluk.com/renault-clio-6--8024435"},
-   {metin:"En üst donanım seviyesi Esprit Alpine'de dahi açılır/panoramik tavan seçeneği yok; forum kullanıcıları bunu eksiklik olarak belirtiyor.",kaynak:"https://forum.donanimhaber.com/yeni-renault-clio-6-ana-konu--162088137"},
-   {metin:"[NOT: Bu madde Clio 6 değil, önceki nesil Clio 5'e aittir - referans amaçlı eklenmiştir] Clio 5 sahipleri arasında start-stop sisteminin aralıklarla devre dışı kaldığı ve 'start stop kontrol ettirin' hata mesajı verdiği yaygın bir şikayet konusu; Renault Ar-Ge yetkilisine göre sorun ABS beyni ile araç beyni arasındaki uyumsuzluktan kaynaklanıyor. Clio 6 için bu sorunun geçerli olup olmadığına dair bir kaynak bulunamadı.",kaynak:"https://www.renaultfanclub.com/threads/start-stop-arizasi-renaultun-bize-sattigi-ayipli-clio-5-sahipleri-platformu.105562/"}
-  ],
-  odul:[
-   {ad:"Renault Clio (yeni nesil), Otomotiv Gazetecileri Derneği (OGD) tarafından düzenlenen 11. 'Türkiye'de Yılın Otomobili 2026' yarışmasını kazandı. 67 otomotiv gazetecisinin oylamasıyla, Şubat 2025-Şubat 2026 arası yarışan 33 araç arasından finale kalan 7 modeli geride bırakarak 3.360 puanla birinci oldu (24 Haziran 2026, Anadolu Ajansı haberi). Distribütör MAİS, bu ödülün Clio için ikinci kez kazanılan 'Yılın Otomobili' unvanı olduğunu belirtti. Not: Haberde 'yeni Clio' ifadesi kullanılıyor; 2026 lansmanı zamanlaması nedeniyle bu ödülün Clio 6'ya ait olduğu değerlendiriliyor, ancak haber metninde nesil adı (Clio 6) açıkça geçmiyor.",yil:"",kaynak:"https://www.aa.com.tr/tr/ekonomi/turkiyede-yilin-otomobili-2026-yarismasinin-kazanani-renault-clio-oldu/3976062"}
-  ],
-  sistemPuani:{toplam:5.0,kriterler:[
-   {ad:"Güvenlik",puan:1.6,max:2,aciklama:"Euro NCAP 4 yıldız (2025 testi)."},
-   {ad:"Performans",puan:0.57,max:2,aciklama:"0-100: 10.0 sn"},
-   {ad:"Verimlilik",puan:1.5,max:2,aciklama:"Ortalama tüketim: 5.0 l/100km"},
-   {ad:"Garanti",puan:0.33,max:2,aciklama:"3 yıl / 100.000 km"}
-  ],veriYokKriterler:["Konfor donanımı — tam versiyon donanım listesi netleşmedi — 8/9 madde teyitli (klima, anahtarsız giriş, start-stop, adaptif hız sabitleyici, şerit takip, CarPlay/Android Auto, dijital gösterge: Var; açılır tavan: Yok); koltuk ısıtması hiçbir kaynakta doğrulanamadı, tam liste netleşmediği için bu kriter puanlanmadı."]}},
- 'togg-t10x-v1':{id:'togg-t10x-v1',marka:"Togg",model:"T10X",yil:2026,versiyon:"V1 RWD Standart Menzil",
-  kaynakAd:"sifiraracal.com, elektrikliturkiye.com",kaynakUrl:"https://www.sifiraracal.com/togg-modelleri/t10x-ozellikleri/v1-rwd-standart--v1-rwd",
-  fotoUrl:"https://www.sifiraracal.com/togg-modelleri/t10x-resimleri",
-  sanalTurUrl:"https://configurator.togg.eu/t10x",
-  s:{kasa:"SUV",yakit:"Elektrik",cekis:"Arkadan çekiş",guc_hp:218,tork_nm:350,sifirYuz_sn:7.4,batarya_kwh:52.4,batarya_tipi:"LFP",menzil_km_wltp:314,ac_sarj_dk:195,dc_hizli_sarj_dk_20_80:28,elektrik_tuketim_kwh100km:16.7,airbag_sayisi:7,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",dijital_gosterge:"Var",ncap_yildiz:5,ncap_test_yili:2025,liste_fiyati_tl:1909048,mtv_yillik_tl:14586,garanti_yil:3,garanti_km:100000,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:40000,bakim_araligi_ay:24,klima:"Var",koltuk_isitma:"Yok",acilir_tavan:"Yok",anahtarsiz_giris:"Var",carplay_android_auto:"Yok"},
-  ncapNot:"Euro NCAP'in resmi sonuç sayfasına göre (euroncap.com/en/results/togg/t10x/56128): Test yılı 2025, genel puan 5 yıldız. Kategori bazlı skorlar: Yetişkin Yolcu Koruması (Adult Occupant) %94, Çocuk Yolcu Koruması (Child Occupant) %85, Güvenlik Açısından Kırılgan Yol Kullanıcıları/Yaya Koruması (Vulnerable Road Users) %79, Sürüş Destek Sistemleri (Safety Assist) %80. Test özetinde ön ofset ve yan darbe testlerinde tam puan alındığı, yolcu kompartımanının ön ofset testinde sabit kaldığı, sürücü ve ön yolcu için kritik vücut bölgelerinde iyi koruma sağlandığı belirtiliyor.",
-  ncapKaynak:"https://www.euroncap.com/en/results/togg/t10x/56128",
-  geriCagirmaNot:"Togg T10X için resmi/doğrulanmış bir geri çağırma (recall) duyurusu bulunamadı. Sanayi ve Teknoloji Bakanlığı'nın 'Otomotiv Gönüllü Geri Çağırma' e-Devlet portalı (turkiye.gov.tr/sanayi-otomotiv-gonullu-geri-cagirma-4581) kimlik doğrulaması gerektirdiği için kayıt listesi tam olarak taranamadı, ancak genel web ve haber taramasında (2023-2025 dönemi kapsayan çok sayıda arama) Togg/T10X'e yönelik herhangi bir resmi geri çağırma haberi tespit edilmedi. Bunun yerine Togg, düzenli OTA (kablosuz) yazılım güncellemeleri yayınlıyor (örn. OTA 1.4 ve OTA 1.5 - togg.com.tr/en/t10x-ota-1-4, togg.com.tr/en/t10x-ota-1-5) ve bu güncellemeler bazı yazılım kaynaklı sorunları (kamera, ekran, ADAS davranışları) gideriyor; ancak bunlar üretici tarafından resmi bir 'recall/geri çağırma' olarak değil, rutin yazılım iyileştirmesi olarak sunuluyor. Sonuç: doğrulanmış bir resmi geri çağırma kaydı bulunamamıştır; sadece rutin OTA güncellemeleri mevcuttur.",
-  agirBakim:[
-   {km:40000,islem:"Periyodik bakım (40.000 km veya 2 yılda bir, hangisi önce dolarsa): kabin filtresi değişimi, soğutma sıvısı seviye/yoğunluk kontrolü, fren hidroliği (fren sıvısı) periyodik değişimi, 12V akü testi, süspansiyon ve yüksek voltaj batarya bağlantı/izolasyon kontrolü",kaynak:"https://t10x.net/threads/togg-t10x-periyodik-bakim-rehberi-detayli-ve-bilgilendirici.33/"},
-   {km:80000,islem:"İkinci periyodik bakım basamağı (80.000 km / 4. yıl) - aynı kontrol ve bakım kalemleri (fren hidroliği, soğutma sıvısı, 12V akü, kabin filtresi vb.) tekrarlanıyor",kaynak:"https://t10x.net/threads/togg-t10x-periyodik-bakim-rehberi-detayli-ve-bilgilendirici.33/"}
-  ],
-  kucukDetaylar:[
-   {ozellik:"AC şarj gücü",deger:"V1 RWD Standart Menzil'de 11 kW AC şarj kapasitesi var; üst donanım V2 modellerinde 22 kW AC şarj sunuluyor",kaynak:"https://webrazzi.com/2023/03/14/togg-t10-paket-farklar/"},
-   {ozellik:"Koltuk/direksiyon ısıtma ve ses sistemi",deger:"V1 RWD Standart Menzil'de koltuk ısıtması, direksiyon ısıtması, Meridian ses sistemi ve akustik cam bulunmuyor; bu özellikler üst donanım seviyelerinde mevcut",kaynak:"https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"},
-   {ozellik:"Isı pompası (heat pump)",deger:"Togg yetkilileri fabrika açılışında ailenin hiçbir versiyonunda (V1 RWD Standart Menzil dahil) ısı pompası sunulmayacağını açıkça belirtti; kabin ısıtması doğrudan batarya enerjisiyle sağlanıyor",kaynak:"https://www.log.com.tr/togg-t10x-icin-menzili-dogrudan-etkileyen-isi-pompasi-sunulacak-mi-ozel-haber/"},
-   {ozellik:"Yedek lastik",deger:"Araçta yedek lastik bulunmuyor, bunun yerine tamir kiti veriliyor (bir owner, otoyolda lastik patladığında bunun sorun yarattığını bildirmiş)",kaynak:"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},
-   {ozellik:"Emniyet kemeri yükseklik ayarı",deger:"Ön koltuklarda emniyet kemeri yükseklik ayarı bulunmadığı bir kullanıcı tarafından bildirilmiş",kaynak:"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"}
-  ],
-  gucluYanlar:[
-   {metin:"Uzun süreli bir Togg T10X kullanıcısı süspansiyon konforunu 'bugüne kadar kullandığım en başarılı ve konforlu araçtı' sözleriyle övüyor",kaynak:"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},
-   {metin:"Aynı kullanıcı farların gece sürüşünde çok iyi görüş sağladığını belirtiyor ('farlar mükemmel, gece sürüşlerinde çok iyi bir görüş sağlıyor')",kaynak:"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},
-   {metin:"DonanımHaber forumunda bir sahibi iç mekan malzeme kalitesini (ön konsolda yumuşak plastik ve deri kaplama) ve yüksek çözünürlüklü dokunmatik ekranları övüyor, genel yapı kalitesini VW Group standartlarıyla kıyaslıyor",kaynak:"https://forum.donanimhaber.com/togg-t10x-kullanici-incelemesi--158490587"},
-   {metin:"Aynı kullanıcı, önceki Hyundai Tucson'una kıyasla T10X'in yol tutuşunun daha iyi olduğunu ve düşük ağırlık merkezinin sürüş dinamiğine olumlu katkı sağladığını belirtiyor",kaynak:"https://forum.donanimhaber.com/togg-t10x-kullanici-incelemesi--158490587"},
-   {metin:"LFP batarya sayesinde günlük %100 şarj yapılabiliyor (ömür kaygısı olmadan) ve 3. seviye rejeneratif frenleme sayesinde şehir içi sürüşün neredeyse fren pedalına dokunmadan yapılabildiği bildiriliyor",kaynak:"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"Yazılım güncellemeleri sonrası kamera arızaları (togcam / yan ayna kamerası), dil ayarının kendiliğinden değişmesi ve hatalı uyarı ışıkları gibi tekrarlayan sorunlar bildiriliyor",kaynak:"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},
-   {metin:"Şikayetvar'da yazılım güncellemesi sonrası ekran kararması, sürücü destek (ADAS) sistemlerinin devre dışı kalması ve 'güncelleme kontrolü başarısız' hatası gibi çok sayıda şikayet bulunuyor",kaynak:"https://www.sikayetvar.com/togg/t10x/yazilim-guncelleme"},
-   {metin:"Araçta ısı pompası bulunmadığından kabin ısıtması doğrudan batarya enerjisiyle sağlanıyor; bu durum özellikle soğuk havalarda gerçek menzili belirgin şekilde düşürüyor",kaynak:"https://www.log.com.tr/togg-t10x-icin-menzili-dogrudan-etkileyen-isi-pompasi-sunulacak-mi-ozel-haber/"},
-   {metin:"V1 RWD Standart Menzil'de gerçek kullanımda 20-25°C'de karma sürüşte yaklaşık 250-280 km, 0°C altında ısıtıcı kullanımıyla ise yaklaşık 200-220 km menzil bildiriliyor; bu değerler 314 km'lik WLTP rakamının altında kalıyor",kaynak:"https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"},
-   {metin:"12V akü ile ilgili tekrarlayan arıza şikayetleri var; bir kullanıcı yaklaşık 1 yıl içinde 12 kez aracının yolda kaldığını bildiriyor, başka kullanıcılar ise aracın 12V aküyü düzgün şarj etmediğini belirtiyor",kaynak:"https://www.sikayetvar.com/togg/t10x/12v-aku-sorunu"},
-   {metin:"Lastik basınç sensörlerinin (TPMS) sürekli hatalı uyarı verdiğine dair yaygın şikayetler var; bazı kullanıcılar servislerin bunu 'kullanıcı hatası' olarak nitelendirdiğini, sorunun kalıcı çözülmediğini bildiriyor",kaynak:"https://www.sikayetvar.com/togg/t10x/lastik"},
-   {metin:"Servis randevusu bekleme süreleri ve müşteri hizmetlerine ulaşım konusunda tekrarlayan şikayetler var; bir forum başlığında kaza sonrası servis/onarım süresinin en az 2 ay olduğu aktarılıyor",kaynak:"https://forum.donanimhaber.com/togg-un-kaza-icin-servis-suresinin-en-az-2-ay-olmasi-rezaleti--159015295"},
-   {metin:"Togg kendi işletim sistemini (Trumore) kullandığı için Apple CarPlay ve Android Auto hiçbir versiyonda (V1 dahil) desteklenmiyor",kaynak:"https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"}
-  ],
-  odul:[
-   {ad:"Togg T10X, Otomotiv Gazetecileri Derneği (OGD) tarafından düzenlenen yarışmanın 9. senesinde (2024) 63 gazetecinin oylamasıyla 2.630 puan alarak 'Türkiye'de Yılın Otomobili' seçildi",yil:"",kaynak:"https://www.dunya.com/sektorler/otomotiv/turkiyenin-otomobil-oscari-sahibini-buldu-togg-t10xe-yilin-otomobili-odulu-haberi-733863"},
-   {ad:"Aynı OGD yarışmasında Togg'un Trumore Dijital Deneyim Platformu 'Yılın İnovasyonu' ödülünü kazandı (bu doğrudan T10X aracının kendisi için değil, yazılım/dijital deneyim platformu için verildi)",yil:"",kaynak:"https://www.dunya.com/sektorler/otomotiv/turkiyenin-otomobil-oscari-sahibini-buldu-togg-t10xe-yilin-otomobili-odulu-haberi-733863"},
-   {ad:"NOT (doğrulama): Togg markasının aldığı iF Design Award (2021, 'Professional Concept' kategorisi) üretim T10X modeline değil, ondan önceki 'C-SUV' konsept aracına aittir; bu nedenle doğrudan T10X'in bir ödülü olarak sayılmamalıdır. Araştırmada üretim T10X'e ait doğrulanmış bir Red Dot veya CES tasarım/inovasyon ödülü bulunamamıştır.",yil:"",kaynak:"https://www.dailysabah.com/business/automotive/togg-becomes-1st-turkish-brand-to-win-if-design-award-in-mobility"}
-  ],
-  sistemPuani:{toplam:7.4,kriterler:[
-   {ad:"Güvenlik",puan:2.0,max:2,aciklama:"Euro NCAP 5 yıldız (2025 testi)."},
-   {ad:"Performans",puan:1.31,max:2,aciklama:"0-100: 7.4 sn"},
-   {ad:"Verimlilik",puan:0.83,max:2,aciklama:"Ortalama elektrik tüketimi: 16.7 kWh/100km"},
-   {ad:"Konfor donanımı",puan:1.25,max:2,aciklama:"Elektrikli araç olduğu için start-stop maddesi 9'luk listeden çıkarıldı (mimari olarak uygulanamaz); kalan 8 maddeden 5'i 'Var': klima, anahtarsız giriş, adaptif hız sabitleyici, şerit takip, dijital gösterge. Koltuk ısıtma, açılır tavan ve CarPlay/Android Auto (hiçbir versiyonda) yok."},
-   {ad:"Garanti",puan:2.0,max:2,aciklama:"Batarya garantisi: 8 yıl (araç garantisi ayrıca 3 yıl / 100.000 km)."}
-  ],veriYokKriterler:[]}},
+ 
+ 
+ 
+ 
  'fiat-egea-cross-1-6-multijet-street-130hp-2026':{id:'fiat-egea-cross-1-6-multijet-street-130hp-2026',marka:"Fiat",model:"Egea Cross",yil:2026,versiyon:"1.6 Multijet Street 130 HP DCT",
   kaynakAd:"fiat.com.tr (resmi)",kaynakUrl:"https://www.fiat.com.tr/modeller/egea/cross",
   fotoUrl:null,
@@ -4701,110 +4532,13 @@ const CARS = {
     alan eklenmedi (bulunamayanlar boş/null bırakıldı — örn. sistemPuani metodolojisi henüz taslak
     olduğu için hiçbirine eklenmedi, mevcut 290 kayıtta da aynı). Kalan 26 marka + bu 3 markanın diğer
     modelleri henüz detay sayfasına eklenmedi. */
- 'mercedes-c-serisi-sedan-c200-4matic-amg-2026':{id:'mercedes-c-serisi-sedan-c200-4matic-amg-2026',marka:"Mercedes-Benz",model:"C-Serisi Sedan",yil:2026,versiyon:"C 200 4MATIC AMG",
-  kaynakAd:"mercedes-benz.com.tr (resmi fiyat listesi + broşür) + epey.com (çapraz doğrulama)",kaynakUrl:"https://fiyat.mercedes-benz.com.tr/model/c-serisi-sedan/fiyat/2026",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{segment:"D Segment (Orta Sınıf)",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (9G-TRONIC)",cekis:"4MATIC (Tüm Tekerlekten Çekiş)",koltuk:5,kapi:4,cc:1496,silindir:4,besleme:"Turbo (Mild Hibrit)",guc_hp:204,tork_nm:300,sifirYuz_sn:7.1,hiz_kmh:241,tuketim_sehir_ici:9.2,tuketim_sehir_disi:5.2,tuketim_l100km:6.6,co2_gkm:152,depo_l:50,uzunluk_mm:4751,genislik_mm:1820,yukseklik_mm:1446,agirlik_kg:1630,bagaj_l:455,ncap_yildiz:5,ncap_test_yili:2022,liste_fiyati_tl:6485000,mtv_yillik_tl:12028,garanti_yil:2},
-  ncapNot:"Euro NCAP test yılı: 2022, genel puan 5 yıldız. Test edilen versiyon C 180 AMG Line idi (sol direksiyon); W206 kasasının gövde/güvenlik yapısı tüm C-Serisi Sedan varyantları (C200 4MATIC dahil) için ortaktır. Alt puanlar (euroncap.com resmi sonuç sayfası): Yetişkin Yolcu Koruması %93, Çocuk Yolcu Koruması %89, Yaya/Savunmasız Yol Kullanıcısı Koruması %80, Güvenlik Asistanı %82.",
-  ncapKaynak:"https://www.euroncap.com/es/results/mercedes-benz/c-class/45873",
-  geriCagirmaNot:null,
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Ön yolcu tarafı dijital ekran (Hyperscreen benzeri)",deger:"2026 facelift C-Serisi'nde opsiyonel olarak bile sunulmuyor; bu özellik Mercedes'in üst segment modellerinde (S-Serisi, EQS) mevcut.",kaynak:"https://mercedesblog.com/mercedes-c-class-facelift-illuminated-grille-new-engines-google-navigation-but-no-hyperscreen/"}
-  ],
-  gucluYanlar:[],
-  dikkatEdilecekler:[
-   {metin:"Şikayetvar.com'da C200 motoruna dair tekrarlayan şikayet konuları arasında motor arıza lambası, buji arızalarının tekrarlaması, otoyolda güç kesme/tekleme, NOx sensörü değişimleri, yağ soğutucu/turbo sorunları ve uzun parça bekleme süreleri yer alıyor. ÖNEMLİ NOT: Bu şikayetler 2015-2026 arası farklı model yılı/motor/donanım paketlerini (dizel dahil) kapsıyor; 2026 model C200 4MATIC'in 1.5L turbo mild-hibrit (M254) motoruna özel olduğu doğrulanamadı — genel eğilim olarak değerlendirilmeli.",kaynak:"https://www.sikayetvar.com/mercedes-benz/c200-motor"}
-  ],
-  odul:[],
-  sistemPuani:null},
- 'bmw-3-serisi-sedan-320i-sport-line-2026':{id:'bmw-3-serisi-sedan-320i-sport-line-2026',marka:"BMW",model:"3 Serisi Sedan",yil:2026,versiyon:"320i Sedan Sport Line",
-  kaynakAd:"bmw.com.tr (resmi teknik veriler)",kaynakUrl:"https://www.bmw.com.tr/tr/all-models/3-series/bmw-3-serisi-sedan/bmw-3-serisi-sedan-teknik-veriler.html",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (Steptronic, 8 ileri)",cekis:"Arkadan İtiş",koltuk:5,kapi:4,cc:1597,silindir:4,besleme:"TwinPower Turbo",guc_hp:170,tork_nm:250,sifirYuz_sn:8.1,hiz_kmh:228,tuketim_l100km:7.6,co2_gkm:171,depo_l:59,uzunluk_mm:4713,genislik_mm:1827,yukseklik_mm:1440,dingil_mm:2851,bagaj_l:480,agirlik_kg:1590,ncap_yildiz:5,ncap_test_yili:2019,abs:"Var",esp:"Var",liste_fiyati_tl:5821300,garanti_yil:3,garanti_km:null,boya_garanti_yil:3,pas_garanti_yil:12,mtv_yillik_tl:12028},
-  ncapNot:"Euro NCAP test yılı: 2019 (G20 nesli), genel puan 5 yıldız. Alt puanlar (euroncap.com resmi sonuç sayfası + datasheet): Yetişkin Yolcu Koruması %97, Çocuk Yolcu Koruması %87, Yaya/Savunmasız Yol Kullanıcısı Koruması %87, Güvenlik Asistanı %76. Not: BMW'nin kendi basın bülteni çocuk koruması için farklı/daha yüksek bir rakam (23.8/24) veriyor; euroncap.com'daki resmi %87 rakamı esas alınmıştır.",
-  ncapKaynak:"https://euroncap.com/en/results/bmw/3+series/38531",
-  geriCagirmaNot:"RAC.co.uk'a göre G20 3 Serisi için geçmişte hava yastığı, geri görüş kamerası, 3.0 litrelik benzinli motor, emniyet kemeri ve direksiyon mekanizması ile ilgili geri çağırma kampanyaları yapılmış. Kampanyaların tarih/kapsam detayı ve 320i/2026 model yılına uygulanıp uygulanmadığı bu kaynakta netleşmiyor; Türkiye'ye özel resmi bir geri çağırma kaydı bulunamadı.",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Elektrikli bagaj kapağı (Sedan, Sport Line)",deger:"Sedan gövdede standart değil, ek paketle sunuluyor (Touring versiyonunda standart).",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},
-   {ozellik:"Apple CarPlay",deger:"İlk sahiplere sadece 1 yıl ücretsiz sunuluyor, sonrasında ücretli aboneliğe geçiyor (ConnectedDrive hizmetlerinin çoğu gibi).",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},
-   {ozellik:"Arka koltuk Isofix bağlantısı",deger:"Sadece arka sıradaki iki dış koltukta mevcut, orta koltukta yok.",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"}
-  ],
-  gucluYanlar:[
-   {metin:"Arkadan itişli sürüş dinamikleri güçlü; RAC testinde sürüş/yol tutuş 8/10 puan aldı. Önceki nesle göre şasi %25 daha sert ve 55 kg'a kadar daha hafif.",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},
-   {metin:"Önceki nesle göre arka koltukta diz ve baş mesafesi genişletilmiş; güvenlik puanı RAC testinde 8/10.",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"RAC testinde performans, iç mekan/teknoloji ve pratiklik kategorileri sadece 7/10 (orta seviye) puan aldı; 48V hafif hibrit sistemin yakıt tasarrufuna katkısı çok sınırlı bulundu.",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},
-   {metin:"Manuel vites seçeneği sadece dizel (318d/320d) modellerde mevcut; benzinli 320i'de manuel vites seçeneği yok.",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},
-   {metin:"İlk bakım Türkiye'de sabit ücretli değil, araca göre değişiyor; yetkili bayi verilerine göre ortalama 25.000–40.000 TL bandında (2026). Tam bakım aralığı (km/ay) için BMW Türkiye'ye özel resmi bir kaynak bulunamadı; BMW'nin genel 'Condition Based Service' (durum bazlı, sabit km değil) sistemini kullandığı biliniyor.",kaynak:"https://www.donanimhaber.com/bmw-ve-mini-ilk-bakim-icin-40-bin-tl-istiyor--206639"},
-   {metin:"G20 nesli için sahip forumlarında raporlanan sorunlar arasında soğukta egzozdan şıkırtı sesi, arka diferansiyelden yağ sızıntısı, iç mekan plastiklerinde gıcırtı, panoramik camda tıkırtı, iDrive bağlantı kesintileri, Harman Kardon donanımında bas sesinin rastgele kesilmesi, Cross Traffic Alert sorunları ve dizel versiyonlarda uzun süre şehir içi kullanımda DPF tıkanması bildiriliyor.",kaynak:"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"}
-  ],
-  odul:[
-   {ad:"BMW 3 Serisi (G20), 2019 New York Motor Show'da 46 ülkeden gazetecinin oylamasıyla 'World Car of the Year' (Yılın Dünya Otomobili) ödülünü kazandı.",yil:"2019",kaynak:"https://www.press.bmwgroup.com/south-africa/article/detail/T0063501EN/global-success:-the-bmw-3-series-is-named-world-car-of-the-year"}
-  ],
-  sistemPuani:null},
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':{id:'audi-a6-sedan-tdi-quattro-204-s-tronic-2026',marka:"Audi",model:"A6",yil:2026,versiyon:"Sedan TDI quattro 150 kW (204 PS) S tronic",
-  kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / otokokpit.com teknik inceleme",kaynakUrl:"https://www.otokokpit.com/yeni-kasa-audi-a6-c9-turkiye-fiyati/",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{segment:"D (Üst-orta sınıf)",kasa:"Sedan",yakit:"Dizel",sanziman:"Otomatik (7 ileri S tronic)",cekis:"quattro (4x4)",koltuk:5,kapi:4,cc:1968,silindir:4,besleme:"Turbo dizel",guc_hp:204,tork_nm:400,sifirYuz_sn:7.8,hiz_kmh:244,tuketim_l100km:4.8,co2_gkm:126,depo_l:60,uzunluk_mm:4999,genislik_mm:1875,yukseklik_mm:1452,dingil_mm:2923,agirlik_kg:1985,bagaj_l:452,ncap_yildiz:5,ncap_test_yili:2024,liste_fiyati_tl:11618199,mtv_yillik_tl:33474,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12},
-  ncapNot:"Euro NCAP, yeni nesil A6'yı (C9) Nisan 2025'te 5 yıldız ile değerlendirdi — fiziksel çarpışma testi 'A6 Avant 2.0 TDI 150kW (204 PS), 4x2 dizel' varyantında yapıldı ve sonuç tüm A6/S6 varyantlarını (quattro dahil) kapsıyor. Alt puanlar: Yetişkin Yolcu Koruması %87, Çocuk Yolcu Koruması %88, Yaya/Savunmasız Yol Kullanıcısı Koruması %78, Güvenlik Asistanı %77. Not: Sedan quattro S tronic 204 PS versiyonu ayrıca test edilmemiştir, 4x2 TDI test sonucu tüm gövde/motor varyantlarına uygulanmıştır.",
-  ncapKaynak:"https://www.euroncap.com/en/results/audi/a6/54533",
-  geriCagirmaNot:"C9 nesli (2024 sonrası üretim) çok yeni bir model olduğu için güvenilir, bu nesle özel raporlanmış bir geri çağırma kaydına rastlanmadı.",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"10,9\" ön yolcu MMI ekranı",deger:"Standart değil, opsiyonel donanım.",kaynak:"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},
-   {ozellik:"Bang & Olufsen 3D ses sistemi",deger:"Standart değil, opsiyonel donanım.",kaynak:"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},
-   {ozellik:"Adaptif hava süspansiyonu",deger:"Standart değil, opsiyonel donanım.",kaynak:"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},
-   {ozellik:"Arka aks direksiyonu (all-wheel steering)",deger:"Standart değil, opsiyonel donanım.",kaynak:"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},
-   {ozellik:"Artırılmış gerçeklik head-up display",deger:"Sadece opsiyonel 'Sound and Vision' paketinde sunuluyor (İngiltere fiyatıyla yaklaşık £2.650).",kaynak:"https://www.topgear.com/car-reviews/audi/a6/inside"}
-  ],
-  gucluYanlar:[
-   {metin:"Koltuklar çok iyi bulundu, arka diz mesafesi geniş; kabin malzemeleri yumuşak dokulu. 14,5\" merkezi dokunmatik ekran net ve okunaklı.",kaynak:"https://www.topgear.com/car-reviews/audi/a6/inside"},
-   {metin:"Panoramik cam tavanın güneş kesen 'dijital perde' özelliği ve artırılmış gerçeklik head-up display beğenilmiş.",kaynak:"https://www.topgear.com/car-reviews/audi/a6/inside"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"11,9\" dijital gösterge paneli 'oldukça sade' bulunmuş ve Audi'nin eski Virtual Cockpit sisteminden daha zayıf değerlendirilmiş; fiziksel kontroller minimal, klima ayarları ekrana taşınmış.",kaynak:"https://www.topgear.com/car-reviews/audi/a6/inside"},
-   {metin:"10,9\" opsiyonel yolcu ekranı 'biraz gimmick' olarak tanımlanmış; sesli asistanın cevap veremediği durumlarda ChatGPT'ye yönlendirmesi eleştirilmiş.",kaynak:"https://www.topgear.com/car-reviews/audi/a6/inside"}
-  ],
-  odul:[],
-  sistemPuani:null},
+ 
+ 
+ 
  /* --- Tesla Model Y — 2026-10-08 (Claude ajanı ile araştırıldı, verimlilik testi: 17 arama/fetch
     çağrısı ile tamamlandı — Mercedes/BMW/Audi turundaki ortalama ~36 çağrıya göre daha az kaynak
     kullanıldı, aynı doğruluk standardıyla). */
- 'tesla-model-y-premium-lr-rwd-juniper-2026':{id:'tesla-model-y-premium-lr-rwd-juniper-2026',marka:"Tesla",model:"Model Y",yil:2026,versiyon:"Premium Long Range Arkadan Çekiş (Juniper)",
-  kaynakAd:"eceenerji.com.tr (teknik) + milliirade.com (Eylül 2026 fiyat)",kaynakUrl:"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{segment:"C-SUV / Kompakt Crossover",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites Otomatik",cekis:"Arkadan İtiş (RWD)",koltuk:5,kapi:5,guc_hp:299,sifirYuz_sn:5.6,hiz_kmh:201,co2_gkm:0,batarya_kwh:74,menzil_km_wltp:603,uzunluk_mm:4790,genislik_mm:1982,yukseklik_mm:1624,agirlik_kg:1966,bagaj_l:854,ncap_yildiz:5,ncap_test_yili:2025,carplay_android_auto:"Yok",liste_fiyati_tl:3682800},
-  ncapNot:"Euro NCAP 2025 testinde 5 yıldız, 'Best in Class' etiketi (yayın: 19 Kasım 2025). Alt puanlar: Yetişkin Yolcu Koruması %91, Çocuk Yolcu Koruması %93, Yaya/Savunmasız Yol Kullanıcısı Koruması %86, Güvenlik Destek Sistemleri %92. Not: Fiziksel çarpışma testi Premium Long Range AWD (4x4) varyantıyla yapıldı; derecelendirme aynı modele ait RWD (4x2) ve Performance AWD varyantlarını da kapsıyor, bu versiyon ayrıca test edilmedi. (2022 model yılı eski nesil Model Y farklı ve daha yüksek puanlarla ayrıca test edilmişti — Juniper öncesi nesil olduğu için bu araca ait değildir.)",
-  ncapKaynak:"https://www.euroncap.com/assessments/tesla/model+y/1181/",
-  geriCagirmaNot:"Juniper (2025-26 facelift) nesli için bağımsız, doğrulanabilir ve sistemik bir 'bilinen sorun' kaydına rastlanmadı; bulunan İngilizce kaynaklar (recharged.com, lemberglaw.com, bgr.com) genel/eski Model Y neslini kapsayan SEO odaklı derlemeler olup Juniper'a özgü doğrulanmış veri sunmuyor.",
-  agirBakim:[
-   {km:null,islem:"Tesla'nın klasik anlamda sabit bir periyodik bakım takvimi yok (yağ değişimi, buji, egzoz muayenesi gerektirmiyor). Resmi önerilen aralıklar: kabin filtresi 2 yılda bir, HEPA+karbon filtre 3 yılda bir, fren sıvısı kontrolü 4 yılda bir (kirlenme varsa değişim), silecek lastikleri yıllık.",kaynak:"https://www.tesla.com/ownersmanual/modely/tr_tr/GUID-E95DAAD9-646E-4249-9930-B109ED7B1D91.html"},
-   {km:10000,islem:"Lastik rotasyonu her 10.000 km'de bir (veya diş derinliği farkı 1,5mm'yi geçerse).",kaynak:"https://www.tesla.com/tr_tr/support/vehicle-maintenance"},
-   {km:20000,islem:"Tuzlu/karlı yollarda kullanılan araçlarda fren kaliperi temizliği yıllık veya 20.000 km'de bir öneriliyor — ancak Şubat 2025 sonrası üretilen araçlarda (2026 model bu kapsamda) bu işlem gerekmiyor.",kaynak:"https://www.tesla.com/ownersmanual/modely/tr_tr/GUID-E95DAAD9-646E-4249-9930-B109ED7B1D91.html"}
-  ],
-  kucukDetaylar:[
-   {ozellik:"Hava süspansiyonu",deger:"Yok; Alman lüks rakiplerin sunduğu seviyede konfor sağlamadığı değerlendiriliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
-   {ozellik:"Apple CarPlay / Android Auto",deger:"Yok (Tesla'nın kendi işletim sistemi/arayüzü kullanılıyor).",kaynak:"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026"}
-  ],
-  gucluYanlar:[
-   {metin:"Önceki nesle göre konfor belirgin arttı — yol sarsıntıları daha az aktarılıyor, çift cam ve daha iyi contalar sayesinde kabin daha sessiz; ön süspansiyon değişikliğiyle direksiyon daha hassas.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
-   {metin:"İç mekan malzeme kalitesinde iyileşme (daha premium his); bagajdan düğmeyle elektrikli katlanan arka koltuk, koltuklar yatınca bagaj 2.140L'ye kadar çıkıyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
-   {metin:"Supercharger şarj ağı/uygulama ekosistemi güçlü bulunuyor; test sürüşünde ölçülen ortalama tüketim 800 km'de 21,7 kWh/100km.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"DC hızlı şarjda güç, 400V mimari nedeniyle (özellikle yüksek şarj seviyelerinde) rakiplerine göre daha hızlı düşüyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
-   {metin:"Gerçek dünya elektrik tüketimi koşullara göre geniş bir aralıkta değişiyor (test sürüşlerinde 17,5-26,3 kWh/100km arası ölçülmüş); jant seçimine bağlı olarak menzilde ~18 km fark oluşabiliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"},
-   {metin:"Otopilot aktifken sürücünün telefona kısa süreliğine bakması bile dikkat uyarısı tetikliyor.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
-  ],
-  odul:[],
-  sistemPuani:null},
+ 
  /* --- Mazda CX-5 + MINI Cooper 3 Kapı (Cooper S) — 2026-10-08 (Claude ajanları ile, optimize verimli prompt:
     sırasıyla 18 ve 12 araç/arama çağrısı). Mazda CX-5, Türkiye'de Kasım 2023'te satıştan kaldırılan son nesil
     (KF, 2017-2023) üst donanımdır — "durum" alanı bu yüzden dolu; derin araştırma (NCAP/bakım/inceleme) yine
@@ -6408,24 +6142,7 @@ const CARS = {
     eski/satıştan kaldırılmış). Her araç için NCAP (bazen Euro NCAP yerine ANCAP/NHTSA kullanıldı, açıkça
     belirtildi), gerçek geri çağırma/TSB taraması, derin inceleme ve ödül araştırması Claude ajanlarıyla
     yapıldı; veri bulunamayan alanlar null/boş bırakıldı. */
- 'togg-t10x-2026-v1-rwd-standart':{id:'togg-t10x-2026-v1-rwd-standart',marka:"Togg",model:"T10X",yil:2026,versiyon:"V1 RWD Standart Menzil",
-  kaynakAd:"sifiraracal.com, elektrikliturkiye.com + Euro NCAP",kaynakUrl:"https://www.sifiraracal.com/togg-modelleri/t10x-ozellikleri/v1-rwd-standart--v1-rwd",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{kasa:"SUV",yakit:"Elektrik",cekis:"Arkadan çekiş",guc_hp:218,tork_nm:350,sifirYuz_sn:7.4,batarya_kwh:52.4,batarya_tipi:"LFP",menzil_km_wltp:314,ac_sarj_dk:195,dc_hizli_sarj_dk_20_80:28,elektrik_tuketim_kwh100km:16.7,airbag_sayisi:7,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",dijital_gosterge:"Var",ncap_yildiz:5,ncap_test_yili:2025,liste_fiyati_tl:1909048,mtv_yillik_tl:14586,garanti_yil:3,garanti_km:100000,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:40000,bakim_araligi_ay:24,sistem_puani_10:7.7,segment:"C-SUV",sanziman:"Otomatik (Tek Kademeli Redüktör)",koltuk:5,kapi:5,hiz_kmh:185,uzunluk_mm:4599,genislik_mm:1886,yukseklik_mm:1676,dingil_mm:2890,yerden_yukseklik_mm:192,bagaj_l:441,jant_inch:17,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Yok",anahtarsiz_giris:"Var",ekran_inch:8,ses_sistemi:"6 Hoparlör",carplay_android_auto:"Yok"},
-  ncapNot:"Euro NCAP 5 yıldız (2025 yayın). ÖNEMLİ: Euro NCAP'in test ettiği spesifik varyant Togg'un kendi datasheet'inde 'T10X LR (Long Range) RWD, LHD' olarak geçiyor — yani doğrudan test edilen versiyon bu sayfadaki 'Standart Menzil' değil, 'Long Range'dir. Euro NCAP tek bir varyantı test edip aynı gövde/güvenlik donanımını paylaşan diğer versiyonlara atfeder. Detaylı puanlar: Yetişkin Yolcu Koruması %94, Çocuk Yolcu Koruması %85, Yaya/VRU Koruması %79, Güvenlik Destek Sistemleri %80.",
-  ncapKaynak:"https://www.euroncap.com/press-media/new-names-set-high-standards-for-safety-togg-and-firefly-shake-up-the-ev-market/",
-  geriCagirmaNot:"Resmi bir geri çağırma kampanyası bulunamadı. 4 Ekim 2024'te Şanlıurfa/Viranşehir'de özel mülkte park halindeyken bir T10X'te çıkan yangın olayı var — Togg'un resmi açıklamasına göre yaralanma/can kaybı yok, ilk incelemede yangının bataryadan kaynaklanmadığı belirtilmiş. Bu tekil bir olay bildirimidir, resmi geri çağırma kampanyası değildir.",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Güvenilirlik verisi",deger:"Bağımsız/istatistiksel bir güvenilirlik verisi bu araştırmada bulunamadı (araç henüz yeterince yeni ve sınırlı sahiplik verisi var).",kaynak:"https://www.euroncap.com/press-media/new-names-set-high-standards-for-safety-togg-and-firefly-shake-up-the-ev-market/"}
-  ],
-  gucluYanlar:[],
-  dikkatEdilecekler:[],
-  odul:[
-   {ad:"Otomobil Gazetecileri Derneği (OGD) — Türkiye'de 2024 Yılın Otomobili",yil:2024,kaynak:"https://www.hurriyet.com.tr/ekonomi/togg-yilin-otomobili-oldu-42481292"}
-  ],
-  sistemPuani:null},
+ 
  'toyota-camry-2021-passion-2-5-hybrid':{id:'toyota-camry-2021-passion-2-5-hybrid',marka:"Toyota",model:"Camry",yil:2021,versiyon:"Passion 2.5 Hybrid e-CVT",
   kaynakAd:"Toyota Türkiye Resmi Teknik Broşürü / Habertürk + ANCAP + NHTSA + IIHS",kaynakUrl:"https://www.toyota.com.tr/content/dam/toyota/nmsc/turkey/cars/e-brosur/camry/Camry%202021%20Teknik%20ve%20Donan%C4%B1m%20%C3%96zellikleri_tcm-3043-2303534.pdf",
   durum:"Türkiye'de satıştan kaldırıldı (kesin tarih doğrulanamadı; 2021 sonrası fiyat listelerine girmedi). Bağlamsal not: Birleşik Krallık'ta Kasım 2021'de, Japonya'da (ana üretim ülkesi) Mart 2023'te satıştan/üretimden kaldırılmıştır; Türkiye'ye özgü kesin tarih/neden hâlâ doğrulanamadı.",
@@ -6471,65 +6188,9 @@ const CARS = {
   ],
   odul:[],
   sistemPuani:null},
- 'clio6-2026-1.2-tce-115':{id:'clio6-2026-1.2-tce-115',marka:"Renault",model:"Clio (6. nesil)",yil:2026,versiyon:"1.2 TCe 115 PS",
-  kaynakAd:"karar.com + Euro NCAP + WhatCar (derin inceleme)",kaynakUrl:"https://www.karar.com/ekonomi-haberleri/yeni-renault-clio-turkiyede-2028061",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{kasa:"Hatchback",yakit:"Benzin",cc:null,silindir:3,sanziman:"Manuel, 6 ileri (EDC otomatik de mevcut)",cekis:"Önden çekiş",guc_hp:115,tork_nm:190,sifirYuz_sn:10.0,tuketim_l100km:5.0,co2_gkm:114,uzunluk_mm:4116,genislik_mm:1768,dingil_mm:2591,bagaj_l:391,adaptif_hiz_sabitleyici:"Var",ncap_yildiz:4,ncap_test_yili:2025,liste_fiyati_tl:1799000,mtv_yillik_tl:null,garanti_yil:3,garanti_km:null,bakim_araligi_km:null,bakim_araligi_ay:null,sistem_puani_10:5.0},
-  ncapNot:"Euro NCAP 4 yıldız (yayın: 10 Aralık 2025). Test edilen versiyon resmi sonuç sayfasında hem 1,8 litre hibrit hem de 1,2 litre turbo benzinli Clio'yu (4x2, sadece sol direksiyon) kapsadığı belirtiliyor — yani bu 1.2 TCe versiyonu derecelendirme kapsamındadır. Kategori puanları: Yetişkin Yolcu Koruması %79 (sürücü göğüs koruması 'poor'), Çocuk Yolcu Koruması %82, Yaya/VRU Koruması %80, Güvenlik Destek Sistemleri %73 ('average', araca karşı acil fren testinde başarısız).",
-  ncapKaynak:"https://www.euroncap.com/en/results/renault/clio/59039",
-  geriCagirmaNot:"Yeni (6. nesil, 2025-2026 model) Clio için spesifik bir resmi geri çağırma kampanyası bulunamadı (araç çok yeni).",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Güvenilirlik (What Car? anketi, önceki nesil referans)",deger:"2019 sonrası petrol/hibrit Clio modelleri genel olarak iyi güvenilirlik puanı almış (%93,9), sahiplerin çoğu planlanmamış tamir bildirmemiş. Ana sorun alanı hibrit modellerde (elektrik sorunları) — bu 1.2 TCe benzinli versiyon için ayrı bir olumsuz bulgu yok.",kaynak:"https://www.whatcar.com/renault/clio/hatchback/used-review/n22574/advice"}
-  ],
-  gucluYanlar:[
-   {metin:"WhatCar: iyi döşenmiş, sade kontrollere sahip kabin, fiziksel klima düğmeleri, dengeli sürüş/yol tutuş, destekleyici ön koltuklar, geniş bagaj/saklama alanı, cömert standart donanım ve düşük giriş fiyatı.",kaynak:"https://www.whatcar.com/renault/clio/hatchback/review/n17243"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"WhatCar: uzun boylu yetişkinler için sıkışık arka koltuk, düşük hızlarda sert/zıplayan süspansiyon, yüksek bagaj eşiği, kötü arka görüş, rakiplere göre vasat garanti.",kaynak:"https://www.whatcar.com/renault/clio/hatchback/review/n17243"}
-  ],
-  odul:[
-   {ad:"Trophées de L'Argus 2026 — 'Voiture de l'Année' (Fransa, 425 puanla Dacia Bigster ve Skoda Elroq'u geride bıraktı)",yil:2026,kaynak:"https://journalauto.com/journal-des-flottes/trophees-de-largus-2026-la-renault-clio-sacree-voiture-de-lannee/"}
-  ],
-  sistemPuani:null},
- 'egea-sedan-2026-1.4-fire-95':{id:'egea-sedan-2026-1.4-fire-95',marka:"Fiat",model:"Egea Sedan",yil:2026,versiyon:"1.4 Fire 95 HP",
-  kaynakAd:"sifiraracal.com + Euro NCAP (Fiat Tipo, aynı platform)",kaynakUrl:"https://www.sifiraracal.com/fiat-modelleri/egea",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{kasa:"Sedan",yakit:"Benzin",sanziman:"Manuel, 6 ileri",cekis:"Önden çekiş",cc:1368,guc_hp:95,tork_nm:127,sifirYuz_sn:11.8,hiz_kmh:186,tuketim_sehir_ici:7.6,tuketim_sehir_disi:5.6,tuketim_l100km:6.6,ncap_yildiz:3,ncap_test_yili:2016,liste_fiyati_tl:null,mtv_yillik_tl:null,garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,bakim_araligi_km:10000,bakim_araligi_ay:12,sistem_puani_10:2.9},
-  ncapNot:"Euro NCAP (Fiat Tipo adıyla test edildi, aynı platform): standart güvenlik donanımıyla 3 yıldız, opsiyonel 'Pack Safety' (AEB + hız limitleyici) ile 4 yıldız (2016 yayını). ÖNEMLİ: Bu test 2016 tarihlidir; 2026 model yılı Egea Sedan için güncel/yeniden test edilmiş bir Euro NCAP sonucu bulunamadı — araç o tarihten sonra yeniden test edilmemiş görünüyor.",
-  ncapKaynak:"https://www.euroncap.com/en/results/fat/tipo/25458",
-  geriCagirmaNot:"Tipo/Egea platformuna ait gerçek, AB/KBA kaynaklı kampanyalar bulundu (detaylar RECALLS kaydında): (1) Şubat 2017 sürücü hava yastığı kablo demeti sorunu (PRA 2013/13822, Türkiye kapsamı belirsiz); (2) Şubat 2024, ~25.000 araç (500/Panda/Tipo, 2023 model) için geri vites lambası/park sensörü/arka kamera arızası; (3) Temmuz 2024, 2021-2023 üretim için hatalı jant/lastik spesifikasyonu kampanyası (4.482 araç). Bu üç kampanyanın bu spesifik 2026 model yılı versiyonunu kapsayıp kapsamadığı VIN bazlı doğrulama gerektirir.",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Dayanıklılık testi (GTÜ/AutoZeitung, ikincil kaynaklı)",deger:"Alman GTÜ'nün 3 yaşındaki araçlar üzerinde yaptığı dayanıklılık testinde Egea, kompakt sınıfta en dayanıklı/arızasız araç seçilmiş (100 araçta 0,84 arıza oranı). NOT: Haberler orijinal GTÜ raporuna doğrudan link vermiyor, Tofaş yöneticisinin açıklamasına dayanıyor — birincil kaynak doğrulanamadı.",kaynak:"https://www.webtekno.com/fiat-egea-sinifinin-en-dayanikli-araci-secildi-h84947.html"},
-   {ozellik:"Kronik sorun iddiaları (öznel değerlendirme)",deger:"arabalar.com.tr'nin kaynak göstermeyen öznel değerlendirmesine göre: kısa mesafe kullanımda EGR/turbo karbon tıkanması, sert süspansiyon kaynaklı gürültü, manuel şanzımanda 1-2. vites sertliği gibi iddialar 'abartılı/yapısal olmayan' bulunmuş. Bu, dış kaynak göstermeyen bir yazarın öznel görüşüdür.",kaynak:"https://www.arabalar.com.tr/test/fiat-egeanin-kronik-sorunlari-abartiliyor-mu"}
-  ],
-  gucluYanlar:[],
-  dikkatEdilecekler:[
-   {metin:"Egea Sedan için carwow/topgear/motor1 gibi uluslararası kaynaklardan bağımsız, güncel (2024-2026) bir derinlemesine inceleme bulunamadı (araç İngiltere/ABD pazarlarında satılmıyor).",kaynak:"https://www.euroncap.com/en/results/fat/tipo/25458"}
-  ],
-  odul:[],
-  sistemPuani:null},
- 'egea-sedan-2026-1.6-multijet-130':{id:'egea-sedan-2026-1.6-multijet-130',marka:"Fiat",model:"Egea Sedan",yil:2026,versiyon:"1.6 Multijet 130 HP",
-  kaynakAd:"fiat.com.tr + Euro NCAP (Fiat Tipo, aynı platform)",kaynakUrl:"https://www.fiat.com.tr/modeller/egea/sedan",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{kasa:"Sedan",yakit:"Dizel",cc:1598,guc_hp:130,tork_nm:320,sifirYuz_sn:9.8,hiz_kmh:209,emisyon_normu:"Euro 6D-Final",tuketim_sehir_ici:5.0,tuketim_sehir_disi:4.1,tuketim_l100km:4.5,ncap_yildiz:3,ncap_test_yili:2016,liste_fiyati_tl:1499900,mtv_yillik_tl:12028,garanti_yil:3,garanti_km:60000,boya_garanti_yil:3,pas_garanti_yil:8,bakim_araligi_km:10000,bakim_araligi_ay:12,sistem_puani_10:4.9},
-  ncapNot:"Euro NCAP (Fiat Tipo adıyla test edildi, aynı platform): standart güvenlik donanımıyla 3 yıldız, opsiyonel 'Pack Safety' (AEB + hız limitleyici) ile 4 yıldız (2016 yayını). ÖNEMLİ: Bu test 2016 tarihlidir; 2026 model yılı Egea Sedan için güncel/yeniden test edilmiş bir Euro NCAP sonucu bulunamadı.",
-  ncapKaynak:"https://www.euroncap.com/en/results/fat/tipo/25458",
-  geriCagirmaNot:"Tipo/Egea platformuna ait gerçek, AB/KBA kaynaklı kampanyalar bulundu (detaylar RECALLS kaydında): (1) Şubat 2017 sürücü hava yastığı kablo demeti sorunu (PRA 2013/13822); (2) Şubat 2024, ~25.000 araç için geri vites lambası/park sensörü/arka kamera arızası; (3) Temmuz 2024, 2021-2023 üretim için hatalı jant/lastik spesifikasyonu kampanyası. Bu kampanyaların bu spesifik 2026 model yılı versiyonunu kapsayıp kapsamadığı VIN bazlı doğrulama gerektirir.",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Dayanıklılık testi (GTÜ/AutoZeitung, ikincil kaynaklı)",deger:"Alman GTÜ'nün dayanıklılık testinde Egea, kompakt sınıfta en dayanıklı/arızasız araç seçilmiş (100 araçta 0,84 arıza oranı); motor, kaporta, şanzıman, yağ sızıntısı ve egzoz kategorilerinde ortalama üstü. Birincil kaynak doğrulanamadı, ikincil (Türk basını) kaynaklıdır.",kaynak:"https://www.webtekno.com/fiat-egea-sinifinin-en-dayanikli-araci-secildi-h84947.html"}
-  ],
-  gucluYanlar:[],
-  dikkatEdilecekler:[
-   {metin:"Egea Sedan için uluslararası kaynaklardan bağımsız, güncel bir derinlemesine inceleme bulunamadı (araç İngiltere/ABD pazarlarında satılmıyor).",kaynak:"https://www.euroncap.com/en/results/fat/tipo/25458"}
-  ],
-  odul:[],
-  sistemPuani:null},
+ 
+ 
+ 
  'peugeot-508-2025-allure-bluehdi-130':{id:'peugeot-508-2025-allure-bluehdi-130',marka:"Peugeot",model:"508",yil:2025,versiyon:"Allure 1.5 BlueHDi 130 HP EAT8",
   kaynakAd:"Peugeot Türkiye Basın Merkezi / ShiftDelete.Net (Mayıs 2025) + Euro NCAP + WhatCar",kaynakUrl:"https://basin.peugeot.com.tr/yenilenen-peugeot-508-turkiyede",
   durum:"Türkiye'de 2025 sonunda satıştan kaldırıldı. Bağlamsal not: Peugeot, D-segmenti sedan pazarının küçülmesi ve SUV'lara yönelim nedeniyle 508'i önce İngiltere'de (2024 sonu), ardından tüm Avrupa'da (2025 sonu) satıştan kaldırdı; 2024'ün ilk yarısında Avrupa'da sadece 5.512 adet satılmıştı. Türkiye'ye özgü ayrı bir resmi açıklama bulunamadı.",
@@ -6672,29 +6333,7 @@ const CARS = {
    {ad:"Pick-Up of the Year — What Van? dergisi",yil:2020,kaynak:"https://nissaninsider.co.uk/nissan-navara-named-what-van-pick-up-of-the-year/"}
   ],
   sistemPuani:null},
- 'tesla-model-y-2026-premium-long-range-rwd':{id:'tesla-model-y-2026-premium-long-range-rwd',marka:"Tesla",model:"Model Y",yil:2026,versiyon:"Premium Long Range Arkadan Çekiş (Juniper)",
-  kaynakAd:"eceenerji.com.tr (teknik) + milliirade.com (Eylül 2026 fiyat) + Euro NCAP + Electrive.com",kaynakUrl:"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026",
-  fotoUrl:null,
-  sanalTurUrl:null,
-  s:{segment:"C-SUV / Kompakt Crossover",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites Otomatik",cekis:"Arkadan İtiş (RWD)",koltuk:5,kapi:5,guc_hp:299,sifirYuz_sn:5.6,hiz_kmh:201,co2_gkm:0,batarya_kwh:74.0,menzil_km_wltp:603,uzunluk_mm:4790,genislik_mm:1982,yukseklik_mm:1624,agirlik_kg:1966,bagaj_l:854,carplay_android_auto:"Yok",liste_fiyati_tl:3682800,ncap_yildiz:5},
-  ncapNot:"Euro NCAP 5 yıldız (2025 yeniden test, Juniper nesli; sonuç 17 Kasım 2025'te yayınlandı). Kategori puanları: Yetişkin Koruması %91, Çocuk Koruması %93, Zayıf Yol Kullanıcıları %86, Güvenlik Asistanı %92. Test edilen araç sol direksiyon, çift motor AWD; derecelendirme Long Range ve Performance versiyonlarını da kapsıyor. Ocak 2026'da Euro NCAP, Model Y'yi '2025 Best in Class Small SUV' seçti.",
-  ncapKaynak:"https://news.euroncap.com/safercars/choose-a-car/tesla-model-y---euro-ncap-2025-results---5-stars/s/f12506af-158b-4631-a546-6ca7685dea9d",
-  geriCagirmaNot:"İki resmi NHTSA kampanyası bulundu (detaylar RECALLS kaydında): (1) 26V315000 — sertifikasyon etiketi eksikliği, ~14.575 adet 2025-2026 Model Y. (2) 25V359000 — ön cam yıkama sistemi tıkanıklığı, 172 araç (belirli 2026 Model Y dahil).",
-  agirBakim:[],
-  kucukDetaylar:[
-   {ozellik:"Bakım/Güvenilirlik",deger:"Juniper nesline (2025+ yenilenmiş Model Y) özgü, somut ve yeterince doğrulanmış (resmi/gazetecilik kaynaklı) bir bakım/güvenilirlik verisi bulunamadı.",kaynak:null}
-  ],
-  gucluYanlar:[
-   {metin:"Electrive.com: önceki modele göre çok daha konforlu süspansiyon (yol pürüzlerinde yalnızca hafif sallanma), daha sessiz kabin (çift camlı yan pencereler, daha iyi yalıtım), daha hassas direksiyon, daha kaliteli iç mekan malzemeleri, pratik özellikler (bagajdan kumanda edilebilen elektrikli arka koltuk, 2.140 litreye kadar yük hacmi), sinyal kolu geri geldi, Supercharger ağı ve uygulama ekosistemi.",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
-  ],
-  dikkatEdilecekler:[
-   {metin:"Electrive.com: hızlı şarjda tepe değer (234 kW) kısa sürede düşüyor, 80%'e ulaşmak ~30 dakika sürüyor (400V mimarisi rakiplerin gerisinde), donanımda büyük değişiklik yok, ortalama tüketim 21.7 kWh/100km, hava süspansiyonlu Alman rakiplerin gerisinde kalıyor, silecek kolu artık sinyal kolunun olduğu yerde (kullanıcı kafa karışıklığı).",kaynak:"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}
-  ],
-  odul:[
-   {ad:"2026 Drive Car of the Year (Avustralya) — Drive.com.au",yil:2026,kaynak:"https://www.mediaweek.com.au/news/tesla-model-y-crowned-2026-drive-car-of-the-year"},
-   {ad:"Euro NCAP 2025 Best in Class Small SUV",yil:2025,kaynak:"https://news.euroncap.com/safercars/choose-a-car/tesla-model-y---euro-ncap-2025-results---5-stars/s/f12506af-158b-4631-a546-6ca7685dea9d"}
-  ],
-  sistemPuani:null},
+ 
  'tesla-model-y-2026-performance-awd':{id:'tesla-model-y-2026-performance-awd',marka:"Tesla",model:"Model Y",yil:2026,versiyon:"Performance Dört Çeker (Juniper)",
   kaynakAd:"arabakarsilastirma.com.tr (Tesla katalog verisi) + milliirade.com (Eylül 2026 fiyat) + Euro NCAP + Electrive.com",kaynakUrl:"https://arabakarsilastirma.com.tr/tesla/model-y/2026/tesla-model-y-2026-juniper-performance-awd",
   fotoUrl:null,
@@ -8073,22 +7712,35 @@ const CARS = {
    {ad:"World Car Design of the Year (2019)",yil:2019,kaynak:"https://media.landrover.com/news/2019/11/new-range-rover-evoque-wins-best-suvcrossover-womens-world-car-year-awards"},
    {ad:"Best SUV/Crossover, Women's World Car of the Year 2019",yil:2019,kaynak:"https://media.landrover.com/news/2019/11/new-range-rover-evoque-wins-best-suvcrossover-womens-world-car-year-awards"}
   ],
-  sistemPuani:null}
+  sistemPuani:null},
+'egea-sedan-2026-1.6-multijet-130':{"id":"egea-sedan-2026-1.6-multijet-130","marka":"Fiat","model":"Egea Sedan","yil":2026,"versiyon":"1.6 Multijet 130 HP","kaynakAd":"fiat.com.tr + Euro NCAP (Fiat Tipo, aynı platform)","kaynakUrl":"https://www.fiat.com.tr/modeller/egea/sedan","fotoUrl":null,"sanalTurUrl":null,"s":{"kasa":"Sedan","yakit":"Dizel","cekis":"Önden çekiş","cc":1598,"guc_hp":130,"tork_nm":320,"sifirYuz_sn":9.8,"hiz_kmh":209,"emisyon_normu":"Euro 6D-Final","tuketim_sehir_ici":5,"tuketim_sehir_disi":4.1,"tuketim_l100km":4.5,"ncap_yildiz":3,"ncap_test_yili":2016,"liste_fiyati_tl":1499900,"mtv_yillik_tl":12028,"garanti_yil":3,"garanti_km":60000,"boya_garanti_yil":3,"pas_garanti_yil":8,"bakim_araligi_km":10000,"bakim_araligi_ay":12,"sistem_puani_10":4.9},"ncapNot":"Euro NCAP (Fiat Tipo adıyla test edildi, aynı platform): standart güvenlik donanımıyla 3 yıldız, opsiyonel 'Pack Safety' (AEB + hız limitleyici) ile 4 yıldız (2016 yayını). ÖNEMLİ: Bu test 2016 tarihlidir; 2026 model yılı Egea Sedan için güncel/yeniden test edilmiş bir Euro NCAP sonucu bulunamadı.","ncapKaynak":"https://www.euroncap.com/en/results/fat/tipo/25458","agirBakim":[{"km":40000,"islem":"Fren hidrolik değişimi, filtre kontrolleri","kaynak":"egeaylageziyorum.com"},{"km":60000,"islem":"Triger ZİNCİR kontrolü (dizel motorda zincir kullanılır, kayışa göre daha uzun ömürlü)","kaynak":"egeaylageziyorum.com"},{"km":100000,"islem":"Kapsamlı revizyon","kaynak":"egeaylageziyorum.com"}],"kucukDetaylar":[{"ozellik":"Dayanıklılık testi (GTÜ/AutoZeitung, ikincil kaynaklı)","deger":"Alman GTÜ'nün dayanıklılık testinde Egea, kompakt sınıfta en dayanıklı/arızasız araç seçilmiş (100 araçta 0,84 arıza oranı); motor, kaporta, şanzıman, yağ sızıntısı ve egzoz kategorilerinde ortalama üstü. Birincil kaynak doğrulanamadı, ikincil (Türk basını) kaynaklıdır.","kaynak":"https://www.webtekno.com/fiat-egea-sinifinin-en-dayanikli-araci-secildi-h84947.html"}],"gucluYanlar":[],"dikkatEdilecekler":[{"metin":"Egea Sedan için uluslararası kaynaklardan bağımsız, güncel bir derinlemesine inceleme bulunamadı (araç İngiltere/ABD pazarlarında satılmıyor).","kaynak":"https://www.euroncap.com/en/results/fat/tipo/25458"}],"odul":[],"sistemPuani":null,"geriCagirmaNot":"Tipo/Egea platformuna ait gerçek, AB/KBA kaynaklı kampanyalar bulundu (detaylar RECALLS kaydında): (1) Şubat 2017 sürücü hava yastığı kablo demeti sorunu (PRA 2013/13822); (2) Şubat 2024, ~25.000 araç için geri vites lambası/park sensörü/arka kamera arızası; (3) Temmuz 2024, 2021-2023 üretim için hatalı jant/lastik spesifikasyonu kampanyası. Bu kampanyaların bu spesifik 2026 model yılı versiyonunu kapsayıp kapsamadığı VIN bazlı doğrulama gerektirir."},
+'egea-sedan-2026-1.4-fire-95':{"id":"egea-sedan-2026-1.4-fire-95","marka":"Fiat","model":"Egea Sedan","yil":2026,"versiyon":"1.4 Fire 95 HP","kaynakAd":"sifiraracal.com + Euro NCAP (Fiat Tipo, aynı platform)","kaynakUrl":"https://www.sifiraracal.com/fiat-modelleri/egea","fotoUrl":null,"sanalTurUrl":null,"s":{"kasa":"Sedan","yakit":"Benzin","sanziman":"Manuel, 6 ileri","cekis":"Önden çekiş","cc":1368,"guc_hp":95,"tork_nm":127,"sifirYuz_sn":11.8,"hiz_kmh":186,"tuketim_sehir_ici":7.6,"tuketim_sehir_disi":5.6,"tuketim_l100km":6.6,"ncap_yildiz":3,"ncap_test_yili":2016,"liste_fiyati_tl":null,"mtv_yillik_tl":null,"garanti_yil":3,"garanti_km":60000,"boya_garanti_yil":3,"pas_garanti_yil":8,"bakim_araligi_km":10000,"bakim_araligi_ay":12,"sistem_puani_10":2.9},"ncapNot":"Euro NCAP (Fiat Tipo adıyla test edildi, aynı platform): standart güvenlik donanımıyla 3 yıldız, opsiyonel 'Pack Safety' (AEB + hız limitleyici) ile 4 yıldız (2016 yayını). ÖNEMLİ: Bu test 2016 tarihlidir; 2026 model yılı Egea Sedan için güncel/yeniden test edilmiş bir Euro NCAP sonucu bulunamadı — araç o tarihten sonra yeniden test edilmemiş görünüyor.","ncapKaynak":"https://www.euroncap.com/en/results/fat/tipo/25458","fiyatNot":"Eylül 2026 güncel fiyat listelerinde bu motor seçeneği yer almıyor, muhtemelen sınırlı satışta.","agirBakim":[{"km":40000,"islem":"Buji, fren hidrolik değişimi","kaynak":"egeaylageziyorum.com"},{"km":60000,"islem":"Triger KAYIŞ değişimi (benzinli motorda kayış sistemi kullanılır, kritik — atlanırsa motor arızası riski)","kaynak":"egeaylageziyorum.com"},{"km":100000,"islem":"Kapsamlı revizyon","kaynak":"egeaylageziyorum.com"}],"kucukDetaylar":[{"ozellik":"Dayanıklılık testi (GTÜ/AutoZeitung, ikincil kaynaklı)","deger":"Alman GTÜ'nün 3 yaşındaki araçlar üzerinde yaptığı dayanıklılık testinde Egea, kompakt sınıfta en dayanıklı/arızasız araç seçilmiş (100 araçta 0,84 arıza oranı). NOT: Haberler orijinal GTÜ raporuna doğrudan link vermiyor, Tofaş yöneticisinin açıklamasına dayanıyor — birincil kaynak doğrulanamadı.","kaynak":"https://www.webtekno.com/fiat-egea-sinifinin-en-dayanikli-araci-secildi-h84947.html"},{"ozellik":"Kronik sorun iddiaları (öznel değerlendirme)","deger":"arabalar.com.tr'nin kaynak göstermeyen öznel değerlendirmesine göre: kısa mesafe kullanımda EGR/turbo karbon tıkanması, sert süspansiyon kaynaklı gürültü, manuel şanzımanda 1-2. vites sertliği gibi iddialar 'abartılı/yapısal olmayan' bulunmuş. Bu, dış kaynak göstermeyen bir yazarın öznel görüşüdür.","kaynak":"https://www.arabalar.com.tr/test/fiat-egeanin-kronik-sorunlari-abartiliyor-mu"}],"gucluYanlar":[],"dikkatEdilecekler":[{"metin":"Egea Sedan için carwow/topgear/motor1 gibi uluslararası kaynaklardan bağımsız, güncel (2024-2026) bir derinlemesine inceleme bulunamadı (araç İngiltere/ABD pazarlarında satılmıyor).","kaynak":"https://www.euroncap.com/en/results/fat/tipo/25458"}],"odul":[],"sistemPuani":null,"geriCagirmaNot":"Tipo/Egea platformuna ait gerçek, AB/KBA kaynaklı kampanyalar bulundu (detaylar RECALLS kaydında): (1) Şubat 2017 sürücü hava yastığı kablo demeti sorunu (PRA 2013/13822, Türkiye kapsamı belirsiz); (2) Şubat 2024, ~25.000 araç (500/Panda/Tipo, 2023 model) için geri vites lambası/park sensörü/arka kamera arızası; (3) Temmuz 2024, 2021-2023 üretim için hatalı jant/lastik spesifikasyonu kampanyası (4.482 araç). Bu üç kampanyanın bu spesifik 2026 model yılı versiyonunu kapsayıp kapsamadığı VIN bazlı doğrulama gerektirir."},
+'clio6-2026-1.2-tce-115':{"id":"clio6-2026-1.2-tce-115","marka":"Renault","model":"Clio (6. nesil)","yil":2026,"versiyon":"1.2 TCe 115 PS","kaynakAd":"karar.com + Euro NCAP + WhatCar (derin inceleme)","kaynakUrl":"https://www.karar.com/ekonomi-haberleri/yeni-renault-clio-turkiyede-2028061","fotoUrl":null,"sanalTurUrl":null,"s":{"kasa":"Hatchback","yakit":"Benzin","cc":null,"silindir":3,"sanziman":"Manuel, 6 ileri (EDC otomatik de mevcut)","cekis":"Önden çekiş","guc_hp":115,"tork_nm":190,"sifirYuz_sn":10,"tuketim_l100km":5,"co2_gkm":114,"uzunluk_mm":4116,"genislik_mm":1768,"dingil_mm":2591,"bagaj_l":391,"adaptif_hiz_sabitleyici":"Var","ncap_yildiz":4,"ncap_test_yili":2025,"liste_fiyati_tl":1799000,"mtv_yillik_tl":null,"garanti_yil":3,"garanti_km":null,"bakim_araligi_km":null,"bakim_araligi_ay":null,"sistem_puani_10":5},"ncapNot":"Euro NCAP 4 yıldız (yayın: 10 Aralık 2025). Test edilen versiyon resmi sonuç sayfasında hem 1,8 litre hibrit hem de 1,2 litre turbo benzinli Clio'yu (4x2, sadece sol direksiyon) kapsadığı belirtiliyor — yani bu 1.2 TCe versiyonu derecelendirme kapsamındadır. Kategori puanları: Yetişkin Yolcu Koruması %79 (sürücü göğüs koruması 'poor'), Çocuk Yolcu Koruması %82, Yaya/VRU Koruması %80, Güvenlik Destek Sistemleri %73 ('average', araca karşı acil fren testinde başarısız).","ncapKaynak":"https://www.euroncap.com/en/results/renault/clio/59039","geriCagirmaNot":"Yeni (6. nesil, 2025-2026 model) Clio için spesifik bir resmi geri çağırma kampanyası bulunamadı (araç çok yeni).","agirBakim":[{"km":80000,"islem":"Renault'nun genel 'ağır bakım' kuralı: 4 yıl veya 80.000 km'de bir yapılır. Bu bakımda tüm kayışlar (varsa), bujiler, yağ filtresi, hava filtresi, polen filtresi, motor yağı, fren hidroliği ve kayış gergi rulmanı değiştirilir. Not: Bu, Renault'nun genel/model-bağımsız servis kuralı olarak yayınlanmıştır; Clio 6'ya özel bir kaynak değildir.","kaynak":"https://korkmazhaber.com/renault-yetkili-servis-yillik-ve-4-yil-agir-bakim-fiyatlari-ve-degisecek-parca-listesi-21574.htm"},{"km":60000,"islem":"Renault'nun 1.0 TCe 3 silindirli motorunda (Clio 6'nın 1.2 TCe 115 motorunun temelini oluşturan motor ailesi - Clio 5'te kullanılan versiyon) 60.000 km'de bujilerin değiştirilmesi 'özellikle önemli' olarak belirtiliyor; bu kilometrede ayrıca tüm filtreler ve fren balataları da kontrol ediliyor. Not: Doğrudan Clio 6 1.2 TCe 115 motoru için değil, akraba 1.0 TCe (Clio 5) motoru için yayınlanmış bir kaynaktır.","kaynak":"https://parcaekseni.com/renault-clio-5-1-0-tce-bakim-periyotlari/"},{"km":30000,"islem":"1.0 TCe motor ailesinde (Clio 5) 30.000 km'de yakıt filtresi değişimi ve fren balata kontrolü yapılıyor, motor yağı/yağ filtresi/hava filtresi/polen filtresi de bu kilometrede yenileniyor. Not: Clio 5 1.0 TCe kaynağıdır, Clio 6 1.2 TCe için doğrudan teyit edilmemiştir.","kaynak":"https://parcaekseni.com/renault-clio-5-1-0-tce-bakim-periyotlari/"},{"km":null,"islem":"Triger tipi (kayış mı zincir mi?): Clio 6'nın 1.2 TCe 115 motoruna dair doğrudan bir kaynak bulunamadı. Ancak bu motorun türediği kabul edilen Clio 5'in 1.0 TCe (H4D kod) 3 silindirli motorunda triger ZİNCİR (chain) kullanılıyor - yedek parça kataloglarında 'triger zincir seti' olarak satılıyor, kayış seti değil. Zincirli sistemlerde sabit bir 'değişim kilometresi' yayınlanmaz, genelde arıza belirtisi (soğukta zincir sesi, gerginlik) çıkana kadar ömür boyu kullanılır.","kaynak":"https://www.cetinrenault.com/urun/clio-5-1-0-h4d-triger-zincir-seti-130c17039r"}],"kucukDetaylar":[{"ozellik":"Güvenilirlik (What Car? anketi, önceki nesil referans)","deger":"2019 sonrası petrol/hibrit Clio modelleri genel olarak iyi güvenilirlik puanı almış (%93,9), sahiplerin çoğu planlanmamış tamir bildirmemiş. Ana sorun alanı hibrit modellerde (elektrik sorunları) — bu 1.2 TCe benzinli versiyon için ayrı bir olumsuz bulgu yok.","kaynak":"https://www.whatcar.com/renault/clio/hatchback/used-review/n22574/advice"}],"gucluYanlar":[{"metin":"WhatCar: iyi döşenmiş, sade kontrollere sahip kabin, fiziksel klima düğmeleri, dengeli sürüş/yol tutuş, destekleyici ön koltuklar, geniş bagaj/saklama alanı, cömert standart donanım ve düşük giriş fiyatı.","kaynak":"https://www.whatcar.com/renault/clio/hatchback/review/n17243"}],"dikkatEdilecekler":[{"metin":"WhatCar: uzun boylu yetişkinler için sıkışık arka koltuk, düşük hızlarda sert/zıplayan süspansiyon, yüksek bagaj eşiği, kötü arka görüş, rakiplere göre vasat garanti.","kaynak":"https://www.whatcar.com/renault/clio/hatchback/review/n17243"}],"odul":[{"ad":"Trophées de L'Argus 2026 — 'Voiture de l'Année' (Fransa, 425 puanla Dacia Bigster ve Skoda Elroq'u geride bıraktı)","yil":2026,"kaynak":"https://journalauto.com/journal-des-flottes/trophees-de-largus-2026-la-renault-clio-sacree-voiture-de-lannee/"}],"sistemPuani":null},
+'togg-t10x-2026-v1-rwd-standart':{"id":"togg-t10x-2026-v1-rwd-standart","marka":"Togg","model":"T10X","yil":2026,"versiyon":"V1 RWD Standart Menzil","kaynakAd":"sifiraracal.com, elektrikliturkiye.com + Euro NCAP","kaynakUrl":"https://www.sifiraracal.com/togg-modelleri/t10x-ozellikleri/v1-rwd-standart--v1-rwd","fotoUrl":null,"sanalTurUrl":null,"s":{"kasa":"SUV","yakit":"Elektrik","cekis":"Arkadan çekiş","guc_hp":218,"tork_nm":350,"sifirYuz_sn":7.4,"batarya_kwh":52.4,"batarya_tipi":"LFP","menzil_km_wltp":314,"ac_sarj_dk":195,"dc_hizli_sarj_dk_20_80":28,"elektrik_tuketim_kwh100km":16.7,"airbag_sayisi":7,"adaptif_hiz_sabitleyici":"Var","serit_takip":"Var","dijital_gosterge":"Var","ncap_yildiz":5,"ncap_test_yili":2025,"liste_fiyati_tl":1909048,"mtv_yillik_tl":14586,"garanti_yil":3,"garanti_km":100000,"batarya_garanti_yil":8,"boya_garanti_yil":3,"pas_garanti_yil":12,"bakim_araligi_km":40000,"bakim_araligi_ay":24,"klima":"Var","koltuk_isitma":"Yok","acilir_tavan":"Yok","anahtarsiz_giris":"Var","carplay_android_auto":"Yok","sistem_puani_10":7.7,"segment":"C-SUV","sanziman":"Otomatik (Tek Kademeli Redüktör)","koltuk":5,"kapi":5,"hiz_kmh":185,"uzunluk_mm":4599,"genislik_mm":1886,"yukseklik_mm":1676,"dingil_mm":2890,"yerden_yukseklik_mm":192,"bagaj_l":441,"jant_inch":17,"abs":"Var","esp":"Var","yokus_kalkis":"Var","geri_gorus_kamera":"Var","ekran_inch":8,"ses_sistemi":"6 Hoparlör"},"ncapNot":"Euro NCAP 5 yıldız (2025 yayın). ÖNEMLİ: Euro NCAP'in test ettiği spesifik varyant Togg'un kendi datasheet'inde 'T10X LR (Long Range) RWD, LHD' olarak geçiyor — yani doğrudan test edilen versiyon bu sayfadaki 'Standart Menzil' değil, 'Long Range'dir. Euro NCAP tek bir varyantı test edip aynı gövde/güvenlik donanımını paylaşan diğer versiyonlara atfeder. Detaylı puanlar: Yetişkin Yolcu Koruması %94, Çocuk Yolcu Koruması %85, Yaya/VRU Koruması %79, Güvenlik Destek Sistemleri %80.","ncapKaynak":"https://www.euroncap.com/press-media/new-names-set-high-standards-for-safety-togg-and-firefly-shake-up-the-ev-market/","geriCagirmaNot":"Resmi bir geri çağırma kampanyası bulunamadı. 4 Ekim 2024'te Şanlıurfa/Viranşehir'de özel mülkte park halindeyken bir T10X'te çıkan yangın olayı var — Togg'un resmi açıklamasına göre yaralanma/can kaybı yok, ilk incelemede yangının bataryadan kaynaklanmadığı belirtilmiş. Bu tekil bir olay bildirimidir, resmi geri çağırma kampanyası değildir.","agirBakim":[{"km":40000,"islem":"Periyodik bakım (40.000 km veya 2 yılda bir, hangisi önce dolarsa): kabin filtresi değişimi, soğutma sıvısı seviye/yoğunluk kontrolü, fren hidroliği (fren sıvısı) periyodik değişimi, 12V akü testi, süspansiyon ve yüksek voltaj batarya bağlantı/izolasyon kontrolü","kaynak":"https://t10x.net/threads/togg-t10x-periyodik-bakim-rehberi-detayli-ve-bilgilendirici.33/"},{"km":80000,"islem":"İkinci periyodik bakım basamağı (80.000 km / 4. yıl) - aynı kontrol ve bakım kalemleri (fren hidroliği, soğutma sıvısı, 12V akü, kabin filtresi vb.) tekrarlanıyor","kaynak":"https://t10x.net/threads/togg-t10x-periyodik-bakim-rehberi-detayli-ve-bilgilendirici.33/"}],"kucukDetaylar":[{"ozellik":"Güvenilirlik verisi","deger":"Bağımsız/istatistiksel bir güvenilirlik verisi bu araştırmada bulunamadı (araç henüz yeterince yeni ve sınırlı sahiplik verisi var).","kaynak":"https://www.euroncap.com/press-media/new-names-set-high-standards-for-safety-togg-and-firefly-shake-up-the-ev-market/"}],"gucluYanlar":[{"metin":"Uzun süreli bir Togg T10X kullanıcısı süspansiyon konforunu 'bugüne kadar kullandığım en başarılı ve konforlu araçtı' sözleriyle övüyor","kaynak":"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},{"metin":"Aynı kullanıcı farların gece sürüşünde çok iyi görüş sağladığını belirtiyor ('farlar mükemmel, gece sürüşlerinde çok iyi bir görüş sağlıyor')","kaynak":"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},{"metin":"DonanımHaber forumunda bir sahibi iç mekan malzeme kalitesini (ön konsolda yumuşak plastik ve deri kaplama) ve yüksek çözünürlüklü dokunmatik ekranları övüyor, genel yapı kalitesini VW Group standartlarıyla kıyaslıyor","kaynak":"https://forum.donanimhaber.com/togg-t10x-kullanici-incelemesi--158490587"},{"metin":"Aynı kullanıcı, önceki Hyundai Tucson'una kıyasla T10X'in yol tutuşunun daha iyi olduğunu ve düşük ağırlık merkezinin sürüş dinamiğine olumlu katkı sağladığını belirtiyor","kaynak":"https://forum.donanimhaber.com/togg-t10x-kullanici-incelemesi--158490587"},{"metin":"LFP batarya sayesinde günlük %100 şarj yapılabiliyor (ömür kaygısı olmadan) ve 3. seviye rejeneratif frenleme sayesinde şehir içi sürüşün neredeyse fren pedalına dokunmadan yapılabildiği bildiriliyor","kaynak":"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"}],"dikkatEdilecekler":[{"metin":"Yazılım güncellemeleri sonrası kamera arızaları (togcam / yan ayna kamerası), dil ayarının kendiliğinden değişmesi ve hatalı uyarı ışıkları gibi tekrarlayan sorunlar bildiriliyor","kaynak":"https://eksiseyler.com/bir-suredir-togg-t10x-kullanan-bir-eksi-sozluk-yazarinin-aracla-ilgili-izlenimleri"},{"metin":"Şikayetvar'da yazılım güncellemesi sonrası ekran kararması, sürücü destek (ADAS) sistemlerinin devre dışı kalması ve 'güncelleme kontrolü başarısız' hatası gibi çok sayıda şikayet bulunuyor","kaynak":"https://www.sikayetvar.com/togg/t10x/yazilim-guncelleme"},{"metin":"Araçta ısı pompası bulunmadığından kabin ısıtması doğrudan batarya enerjisiyle sağlanıyor; bu durum özellikle soğuk havalarda gerçek menzili belirgin şekilde düşürüyor","kaynak":"https://www.log.com.tr/togg-t10x-icin-menzili-dogrudan-etkileyen-isi-pompasi-sunulacak-mi-ozel-haber/"},{"metin":"V1 RWD Standart Menzil'de gerçek kullanımda 20-25°C'de karma sürüşte yaklaşık 250-280 km, 0°C altında ısıtıcı kullanımıyla ise yaklaşık 200-220 km menzil bildiriliyor; bu değerler 314 km'lik WLTP rakamının altında kalıyor","kaynak":"https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"},{"metin":"12V akü ile ilgili tekrarlayan arıza şikayetleri var; bir kullanıcı yaklaşık 1 yıl içinde 12 kez aracının yolda kaldığını bildiriyor, başka kullanıcılar ise aracın 12V aküyü düzgün şarj etmediğini belirtiyor","kaynak":"https://www.sikayetvar.com/togg/t10x/12v-aku-sorunu"},{"metin":"Lastik basınç sensörlerinin (TPMS) sürekli hatalı uyarı verdiğine dair yaygın şikayetler var; bazı kullanıcılar servislerin bunu 'kullanıcı hatası' olarak nitelendirdiğini, sorunun kalıcı çözülmediğini bildiriyor","kaynak":"https://www.sikayetvar.com/togg/t10x/lastik"},{"metin":"Servis randevusu bekleme süreleri ve müşteri hizmetlerine ulaşım konusunda tekrarlayan şikayetler var; bir forum başlığında kaza sonrası servis/onarım süresinin en az 2 ay olduğu aktarılıyor","kaynak":"https://forum.donanimhaber.com/togg-un-kaza-icin-servis-suresinin-en-az-2-ay-olmasi-rezaleti--159015295"},{"metin":"Togg kendi işletim sistemini (Trumore) kullandığı için Apple CarPlay ve Android Auto hiçbir versiyonda (V1 dahil) desteklenmiyor","kaynak":"https://elektrikliturkiye.com/elektrikli-otomobil-incelemeleri/togg-t10x-v1-standart-menzil-incelemesi-fiyati-artilari-ve-lfp-batarya-gercekleri/"}],"odul":[{"ad":"Otomobil Gazetecileri Derneği (OGD) — Türkiye'de 2024 Yılın Otomobili","yil":2024,"kaynak":"https://www.hurriyet.com.tr/ekonomi/togg-yilin-otomobili-oldu-42481292"}],"sistemPuani":null},
+'mercedes-benz-c-serisi-2026-c200-4matic-amg':{"id":"mercedes-benz-c-serisi-2026-c200-4matic-amg","marka":"Mercedes-Benz","model":"C-Serisi Sedan","yil":2026,"versiyon":"C 200 4MATIC AMG","kaynakAd":"mercedes-benz.com.tr (resmi fiyat listesi + broşür) + epey.com (çapraz doğrulama)","kaynakUrl":"https://fiyat.mercedes-benz.com.tr/model/c-serisi-sedan/fiyat/2026","fotoUrl":null,"sanalTurUrl":null,"s":{"segment":"D Segment (Orta Sınıf)","kasa":"Sedan","yakit":"Benzin","sanziman":"Otomatik (9G-TRONIC)","cekis":"4MATIC (Tüm Tekerlekten Çekiş)","koltuk":5,"kapi":4,"cc":1496,"silindir":4,"besleme":"Turbo (Mild Hibrit)","guc_hp":204,"tork_nm":300,"sifirYuz_sn":7.1,"hiz_kmh":241,"tuketim_sehir_ici":9.2,"tuketim_sehir_disi":5.2,"tuketim_l100km":6.6,"co2_gkm":152,"depo_l":50,"uzunluk_mm":4751,"genislik_mm":1820,"yukseklik_mm":1446,"agirlik_kg":1630,"bagaj_l":455,"ncap_yildiz":5,"ncap_test_yili":2022,"liste_fiyati_tl":6485000,"mtv_yillik_tl":12028,"garanti_yil":2},"ncapNot":"Euro NCAP test yılı: 2022, genel puan 5 yıldız. Test edilen versiyon C 180 AMG Line idi (sol direksiyon); W206 kasasının gövde/güvenlik yapısı tüm C-Serisi Sedan varyantları (C200 4MATIC dahil) için ortaktır. Alt puanlar (euroncap.com resmi sonuç sayfası): Yetişkin Yolcu Koruması %93, Çocuk Yolcu Koruması %89, Yaya/Savunmasız Yol Kullanıcısı Koruması %80, Güvenlik Asistanı %82.","ncapKaynak":"https://www.euroncap.com/es/results/mercedes-benz/c-class/45873","geriCagirmaNot":null,"agirBakim":[],"kucukDetaylar":[{"ozellik":"Ön yolcu tarafı dijital ekran (Hyperscreen benzeri)","deger":"2026 facelift C-Serisi'nde opsiyonel olarak bile sunulmuyor; bu özellik Mercedes'in üst segment modellerinde (S-Serisi, EQS) mevcut.","kaynak":"https://mercedesblog.com/mercedes-c-class-facelift-illuminated-grille-new-engines-google-navigation-but-no-hyperscreen/"}],"gucluYanlar":[],"dikkatEdilecekler":[{"metin":"Şikayetvar.com'da C200 motoruna dair tekrarlayan şikayet konuları arasında motor arıza lambası, buji arızalarının tekrarlaması, otoyolda güç kesme/tekleme, NOx sensörü değişimleri, yağ soğutucu/turbo sorunları ve uzun parça bekleme süreleri yer alıyor. ÖNEMLİ NOT: Bu şikayetler 2015-2026 arası farklı model yılı/motor/donanım paketlerini (dizel dahil) kapsıyor; 2026 model C200 4MATIC'in 1.5L turbo mild-hibrit (M254) motoruna özel olduğu doğrulanamadı — genel eğilim olarak değerlendirilmeli.","kaynak":"https://www.sikayetvar.com/mercedes-benz/c200-motor"}],"odul":[],"sistemPuani":null},
+'bmw-3-serisi-sedan-2026-320i-sport-line':{"id":"bmw-3-serisi-sedan-2026-320i-sport-line","marka":"BMW","model":"3 Serisi Sedan","yil":2026,"versiyon":"320i Sedan Sport Line","kaynakAd":"bmw.com.tr (resmi teknik veriler)","kaynakUrl":"https://www.bmw.com.tr/tr/all-models/3-series/bmw-3-serisi-sedan/bmw-3-serisi-sedan-teknik-veriler.html","fotoUrl":null,"sanalTurUrl":null,"s":{"kasa":"Sedan","yakit":"Benzin","sanziman":"Otomatik (Steptronic, 8 ileri)","cekis":"Arkadan İtiş","koltuk":5,"kapi":4,"cc":1597,"silindir":4,"besleme":"TwinPower Turbo","guc_hp":170,"tork_nm":250,"sifirYuz_sn":8.1,"hiz_kmh":228,"tuketim_l100km":7.6,"co2_gkm":171,"depo_l":59,"uzunluk_mm":4713,"genislik_mm":1827,"yukseklik_mm":1440,"dingil_mm":2851,"bagaj_l":480,"agirlik_kg":1590,"ncap_yildiz":5,"ncap_test_yili":2019,"abs":"Var","esp":"Var","liste_fiyati_tl":5821300,"garanti_yil":3,"garanti_km":null,"boya_garanti_yil":3,"pas_garanti_yil":12,"mtv_yillik_tl":12028},"ncapNot":"Euro NCAP test yılı: 2019 (G20 nesli), genel puan 5 yıldız. Alt puanlar (euroncap.com resmi sonuç sayfası + datasheet): Yetişkin Yolcu Koruması %97, Çocuk Yolcu Koruması %87, Yaya/Savunmasız Yol Kullanıcısı Koruması %87, Güvenlik Asistanı %76. Not: BMW'nin kendi basın bülteni çocuk koruması için farklı/daha yüksek bir rakam (23.8/24) veriyor; euroncap.com'daki resmi %87 rakamı esas alınmıştır.","ncapKaynak":"https://euroncap.com/en/results/bmw/3+series/38531","geriCagirmaNot":"RAC.co.uk'a göre G20 3 Serisi için geçmişte hava yastığı, geri görüş kamerası, 3.0 litrelik benzinli motor, emniyet kemeri ve direksiyon mekanizması ile ilgili geri çağırma kampanyaları yapılmış. Kampanyaların tarih/kapsam detayı ve 320i/2026 model yılına uygulanıp uygulanmadığı bu kaynakta netleşmiyor; Türkiye'ye özel resmi bir geri çağırma kaydı bulunamadı.","agirBakim":[],"kucukDetaylar":[{"ozellik":"Elektrikli bagaj kapağı (Sedan, Sport Line)","deger":"Sedan gövdede standart değil, ek paketle sunuluyor (Touring versiyonunda standart).","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},{"ozellik":"Apple CarPlay","deger":"İlk sahiplere sadece 1 yıl ücretsiz sunuluyor, sonrasında ücretli aboneliğe geçiyor (ConnectedDrive hizmetlerinin çoğu gibi).","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},{"ozellik":"Arka koltuk Isofix bağlantısı","deger":"Sadece arka sıradaki iki dış koltukta mevcut, orta koltukta yok.","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"}],"gucluYanlar":[{"metin":"Arkadan itişli sürüş dinamikleri güçlü; RAC testinde sürüş/yol tutuş 8/10 puan aldı. Önceki nesle göre şasi %25 daha sert ve 55 kg'a kadar daha hafif.","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},{"metin":"Önceki nesle göre arka koltukta diz ve baş mesafesi genişletilmiş; güvenlik puanı RAC testinde 8/10.","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"}],"dikkatEdilecekler":[{"metin":"RAC testinde performans, iç mekan/teknoloji ve pratiklik kategorileri sadece 7/10 (orta seviye) puan aldı; 48V hafif hibrit sistemin yakıt tasarrufuna katkısı çok sınırlı bulundu.","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},{"metin":"Manuel vites seçeneği sadece dizel (318d/320d) modellerde mevcut; benzinli 320i'de manuel vites seçeneği yok.","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"},{"metin":"İlk bakım Türkiye'de sabit ücretli değil, araca göre değişiyor; yetkili bayi verilerine göre ortalama 25.000–40.000 TL bandında (2026). Tam bakım aralığı (km/ay) için BMW Türkiye'ye özel resmi bir kaynak bulunamadı; BMW'nin genel 'Condition Based Service' (durum bazlı, sabit km değil) sistemini kullandığı biliniyor.","kaynak":"https://www.donanimhaber.com/bmw-ve-mini-ilk-bakim-icin-40-bin-tl-istiyor--206639"},{"metin":"G20 nesli için sahip forumlarında raporlanan sorunlar arasında soğukta egzozdan şıkırtı sesi, arka diferansiyelden yağ sızıntısı, iç mekan plastiklerinde gıcırtı, panoramik camda tıkırtı, iDrive bağlantı kesintileri, Harman Kardon donanımında bas sesinin rastgele kesilmesi, Cross Traffic Alert sorunları ve dizel versiyonlarda uzun süre şehir içi kullanımda DPF tıkanması bildiriliyor.","kaynak":"https://www.rac.co.uk/drive/car-reviews/bmw/3-series/3-series-%5Bg20%5D-2018-2022"}],"odul":[{"ad":"BMW 3 Serisi (G20), 2019 New York Motor Show'da 46 ülkeden gazetecinin oylamasıyla 'World Car of the Year' (Yılın Dünya Otomobili) ödülünü kazandı.","yil":"2019","kaynak":"https://www.press.bmwgroup.com/south-africa/article/detail/T0063501EN/global-success:-the-bmw-3-series-is-named-world-car-of-the-year"}],"sistemPuani":null},
+'audi-a6-sedan-2026-tdi-quattro-204':{"id":"audi-a6-sedan-2026-tdi-quattro-204","marka":"Audi","model":"A6","yil":2026,"versiyon":"Sedan TDI quattro 150 kW (204 PS) S tronic","kaynakAd":"arabam.com Audi Fiyat Listesi (Eylül 2026) / otokokpit.com teknik inceleme","kaynakUrl":"https://www.otokokpit.com/yeni-kasa-audi-a6-c9-turkiye-fiyati/","fotoUrl":null,"sanalTurUrl":null,"s":{"segment":"D (Üst-orta sınıf)","kasa":"Sedan","yakit":"Dizel","sanziman":"Otomatik (7 ileri S tronic)","cekis":"quattro (4x4)","koltuk":5,"kapi":4,"cc":1968,"silindir":4,"besleme":"Turbo dizel","guc_hp":204,"tork_nm":400,"sifirYuz_sn":7.8,"hiz_kmh":244,"tuketim_l100km":4.8,"co2_gkm":126,"depo_l":60,"uzunluk_mm":4999,"genislik_mm":1875,"yukseklik_mm":1452,"dingil_mm":2923,"agirlik_kg":1985,"bagaj_l":452,"ncap_yildiz":5,"ncap_test_yili":2024,"liste_fiyati_tl":11618199,"mtv_yillik_tl":33474,"garanti_yil":2,"boya_garanti_yil":3,"pas_garanti_yil":12,"bakim_araligi_km":15000,"bakim_araligi_ay":12},"ncapNot":"Euro NCAP, yeni nesil A6'yı (C9) Nisan 2025'te 5 yıldız ile değerlendirdi — fiziksel çarpışma testi 'A6 Avant 2.0 TDI 150kW (204 PS), 4x2 dizel' varyantında yapıldı ve sonuç tüm A6/S6 varyantlarını (quattro dahil) kapsıyor. Alt puanlar: Yetişkin Yolcu Koruması %87, Çocuk Yolcu Koruması %88, Yaya/Savunmasız Yol Kullanıcısı Koruması %78, Güvenlik Asistanı %77. Not: Sedan quattro S tronic 204 PS versiyonu ayrıca test edilmemiştir, 4x2 TDI test sonucu tüm gövde/motor varyantlarına uygulanmıştır.","ncapKaynak":"https://www.euroncap.com/en/results/audi/a6/54533","geriCagirmaNot":"C9 nesli (2024 sonrası üretim) çok yeni bir model olduğu için güvenilir, bu nesle özel raporlanmış bir geri çağırma kaydına rastlanmadı.","agirBakim":[],"kucukDetaylar":[{"ozellik":"10,9\" ön yolcu MMI ekranı","deger":"Standart değil, opsiyonel donanım.","kaynak":"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},{"ozellik":"Bang & Olufsen 3D ses sistemi","deger":"Standart değil, opsiyonel donanım.","kaynak":"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},{"ozellik":"Adaptif hava süspansiyonu","deger":"Standart değil, opsiyonel donanım.","kaynak":"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},{"ozellik":"Arka aks direksiyonu (all-wheel steering)","deger":"Standart değil, opsiyonel donanım.","kaynak":"https://www.donanimhaber.com/yeni-audi-a6-turkiye-de-iste-fiyati-ve-ozellikleri--198014"},{"ozellik":"Artırılmış gerçeklik head-up display","deger":"Sadece opsiyonel 'Sound and Vision' paketinde sunuluyor (İngiltere fiyatıyla yaklaşık £2.650).","kaynak":"https://www.topgear.com/car-reviews/audi/a6/inside"}],"gucluYanlar":[{"metin":"Koltuklar çok iyi bulundu, arka diz mesafesi geniş; kabin malzemeleri yumuşak dokulu. 14,5\" merkezi dokunmatik ekran net ve okunaklı.","kaynak":"https://www.topgear.com/car-reviews/audi/a6/inside"},{"metin":"Panoramik cam tavanın güneş kesen 'dijital perde' özelliği ve artırılmış gerçeklik head-up display beğenilmiş.","kaynak":"https://www.topgear.com/car-reviews/audi/a6/inside"}],"dikkatEdilecekler":[{"metin":"11,9\" dijital gösterge paneli 'oldukça sade' bulunmuş ve Audi'nin eski Virtual Cockpit sisteminden daha zayıf değerlendirilmiş; fiziksel kontroller minimal, klima ayarları ekrana taşınmış.","kaynak":"https://www.topgear.com/car-reviews/audi/a6/inside"},{"metin":"10,9\" opsiyonel yolcu ekranı 'biraz gimmick' olarak tanımlanmış; sesli asistanın cevap veremediği durumlarda ChatGPT'ye yönlendirmesi eleştirilmiş.","kaynak":"https://www.topgear.com/car-reviews/audi/a6/inside"}],"odul":[],"sistemPuani":null},
+'tesla-model-y-2026-premium-long-range-rwd':{"id":"tesla-model-y-2026-premium-long-range-rwd","marka":"Tesla","model":"Model Y","yil":2026,"versiyon":"Premium Long Range Arkadan Çekiş (Juniper)","kaynakAd":"eceenerji.com.tr (teknik) + milliirade.com (Eylül 2026 fiyat) + Euro NCAP + Electrive.com","kaynakUrl":"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026","fotoUrl":null,"sanalTurUrl":null,"s":{"segment":"C-SUV / Kompakt Crossover","kasa":"SUV","yakit":"Elektrik","sanziman":"Tek Vites Otomatik","cekis":"Arkadan İtiş (RWD)","koltuk":5,"kapi":5,"guc_hp":299,"sifirYuz_sn":5.6,"hiz_kmh":201,"co2_gkm":0,"batarya_kwh":74,"menzil_km_wltp":603,"uzunluk_mm":4790,"genislik_mm":1982,"yukseklik_mm":1624,"agirlik_kg":1966,"bagaj_l":854,"ncap_yildiz":5,"ncap_test_yili":2025,"carplay_android_auto":"Yok","liste_fiyati_tl":3682800},"ncapNot":"Euro NCAP 5 yıldız (2025 yeniden test, Juniper nesli; sonuç 17 Kasım 2025'te yayınlandı). Kategori puanları: Yetişkin Koruması %91, Çocuk Koruması %93, Zayıf Yol Kullanıcıları %86, Güvenlik Asistanı %92. Test edilen araç sol direksiyon, çift motor AWD; derecelendirme Long Range ve Performance versiyonlarını da kapsıyor. Ocak 2026'da Euro NCAP, Model Y'yi '2025 Best in Class Small SUV' seçti.","ncapKaynak":"https://news.euroncap.com/safercars/choose-a-car/tesla-model-y---euro-ncap-2025-results---5-stars/s/f12506af-158b-4631-a546-6ca7685dea9d","geriCagirmaNot":"İki resmi NHTSA kampanyası bulundu (detaylar RECALLS kaydında): (1) 26V315000 — sertifikasyon etiketi eksikliği, ~14.575 adet 2025-2026 Model Y. (2) 25V359000 — ön cam yıkama sistemi tıkanıklığı, 172 araç (belirli 2026 Model Y dahil).","agirBakim":[{"km":null,"islem":"Tesla'nın klasik anlamda sabit bir periyodik bakım takvimi yok (yağ değişimi, buji, egzoz muayenesi gerektirmiyor). Resmi önerilen aralıklar: kabin filtresi 2 yılda bir, HEPA+karbon filtre 3 yılda bir, fren sıvısı kontrolü 4 yılda bir (kirlenme varsa değişim), silecek lastikleri yıllık.","kaynak":"https://www.tesla.com/ownersmanual/modely/tr_tr/GUID-E95DAAD9-646E-4249-9930-B109ED7B1D91.html"},{"km":10000,"islem":"Lastik rotasyonu her 10.000 km'de bir (veya diş derinliği farkı 1,5mm'yi geçerse).","kaynak":"https://www.tesla.com/tr_tr/support/vehicle-maintenance"},{"km":20000,"islem":"Tuzlu/karlı yollarda kullanılan araçlarda fren kaliperi temizliği yıllık veya 20.000 km'de bir öneriliyor — ancak Şubat 2025 sonrası üretilen araçlarda (2026 model bu kapsamda) bu işlem gerekmiyor.","kaynak":"https://www.tesla.com/ownersmanual/modely/tr_tr/GUID-E95DAAD9-646E-4249-9930-B109ED7B1D91.html"}],"kucukDetaylar":[{"ozellik":"Bakım/Güvenilirlik","deger":"Juniper nesline (2025+ yenilenmiş Model Y) özgü, somut ve yeterince doğrulanmış (resmi/gazetecilik kaynaklı) bir bakım/güvenilirlik verisi bulunamadı.","kaynak":null}],"gucluYanlar":[{"metin":"Electrive.com: önceki modele göre çok daha konforlu süspansiyon (yol pürüzlerinde yalnızca hafif sallanma), daha sessiz kabin (çift camlı yan pencereler, daha iyi yalıtım), daha hassas direksiyon, daha kaliteli iç mekan malzemeleri, pratik özellikler (bagajdan kumanda edilebilen elektrikli arka koltuk, 2.140 litreye kadar yük hacmi), sinyal kolu geri geldi, Supercharger ağı ve uygulama ekosistemi.","kaynak":"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}],"dikkatEdilecekler":[{"metin":"Electrive.com: hızlı şarjda tepe değer (234 kW) kısa sürede düşüyor, 80%'e ulaşmak ~30 dakika sürüyor (400V mimarisi rakiplerin gerisinde), donanımda büyük değişiklik yok, ortalama tüketim 21.7 kWh/100km, hava süspansiyonlu Alman rakiplerin gerisinde kalıyor, silecek kolu artık sinyal kolunun olduğu yerde (kullanıcı kafa karışıklığı).","kaynak":"https://www.electrive.com/2025/03/27/juniper-review-how-tesla-has-tuned-the-model-y-for-comfort"}],"odul":[{"ad":"2026 Drive Car of the Year (Avustralya) — Drive.com.au","yil":2026,"kaynak":"https://www.mediaweek.com.au/news/tesla-model-y-crowned-2026-drive-car-of-the-year"},{"ad":"Euro NCAP 2025 Best in Class Small SUV","yil":2025,"kaynak":"https://news.euroncap.com/safercars/choose-a-car/tesla-model-y---euro-ncap-2025-results---5-stars/s/f12506af-158b-4631-a546-6ca7685dea9d"}],"sistemPuani":null}
 };
-const RIVALS = [
- {ad:'Fiat Egea Sedan 1.4 Fire 95 HP',ver:'Aynı model, benzinli motor',guc:95,tuketim:6.6,bagaj:null,ncap:3,fiyat:null,id:'egea-1.4-fire'},
- {ad:'Renault Clio (6. nesil) 1.2 TCe',ver:'2026, 115 PS',guc:115,tuketim:5.0,bagaj:391,ncap:4,fiyat:1799000,id:'clio6-1.2-tce'},
- {ad:'Togg T10X V1 RWD',ver:'2026, elektrikli SUV',guc:218,tuketim:null,bagaj:null,ncap:5,fiyat:1909048,id:'togg-t10x-v1'}
-];
+/* Rakipler: aynı kasa tipinden, farklı markadan, gücü en yakın modeller otomatik seçilir */
+function fuelCat(y){ y=y||''; if(/^Elektrik/i.test(y)) return 'elektrik'; if(/plug-?in/i.test(y)) return 'phev'; if(/hafif|mild/i.test(y)) return 'mhev'; if(/hibrit|hybrid|e-POWER/i.test(y)) return 'hibrit'; if(/LPG/.test(y)) return 'lpg'; if(/^Dizel/i.test(y)) return 'dizel'; if(/^Benzin/i.test(y)) return 'benzin'; return null; }
+function bodyCat(k){ k=k||''; if(/pick-?up/i.test(k)) return 'pickup'; if(/MPV|Minivan/i.test(k)) return 'mpv'; if(/Station|Estate/i.test(k)) return 'sw'; if(/SUV|Crossover/i.test(k)) return 'suv'; if(/Coupe|Cabrio|Roadster|Targa|Fastback/i.test(k)) return 'coupe'; if(/Sedan|Sportback/i.test(k)) return 'sedan'; if(/Hatchback/i.test(k)) return 'hatchback'; return 'diger'; }
+const satista = c => !(c.durum && !c.s.liste_fiyati_tl);
+function rivalsFor(c){
+  const fc=fuelCat(c.s.yakit), bc=bodyCat(c.s.kasa), hp=c.s.guc_hp;
+  const scored=Object.values(CARS).filter(x=>x.marka!==c.marka && bodyCat(x.s.kasa)===bc && satista(x)===satista(c))
+    .map(x=>({x, sc:(fuelCat(x.s.yakit)===fc?0:1000) + (hp&&x.s.guc_hp?Math.abs(x.s.guc_hp-hp):400) - (x.s.segment&&c.s.segment&&x.s.segment===c.s.segment?150:0)}))
+    .sort((a,b)=>a.sc-b.sc);
+  const seen=new Set(), out=[];
+  for(const {x} of scored){ const k=x.marka+'|'+x.model; if(seen.has(k)) continue; seen.add(k); out.push(x); if(out.length===4) break; }
+  return out;
+}
+
 const RECALLS = {
- 'egea-1.6-multijet':[
-  {tarih:'2025-11',parca:'Şanzıman',baslik:'Çift kavramalı şanzıman yazılım kontrolü',
-   ozet:'Örnek kayıt: belirli üretim tarihli araçlarda şanzıman kontrol ünitesi yazılımı güncellenecek.',
-   cozum:'Yetkili serviste yazılım güncellemesi, ücretsiz.',kaynak:'Örnek kayıt, Sanayi ve Teknoloji Bakanlığı gönüllü geri çağırma biçiminde'}
- ],
- 'egea-1.4-fire':null,
- 'clio6-1.2-tce':[],
- 'togg-t10x-v1':[],
+ 
+ 
+ 
+ 
  'fiat-egea-cross-1-6-multijet-street-130hp-2026':null,
  'fiat-egea-cross-1-6-multijet-urban-130hp-2026':null,
  'fiat-egea-cross-1-6-multijet-lounge-130hp-2026':null,
@@ -8379,10 +8031,10 @@ const RECALLS = {
  'mitsubishi-space-star-intense-cvt-2026':null,
  'mitsubishi-l200-4x2-tornado-mt-2026':null,
  'mitsubishi-l200-4x4-premium-at-2026':null,
- 'mercedes-c-serisi-sedan-c200-4matic-amg-2026':null,
- 'bmw-3-serisi-sedan-320i-sport-line-2026':null,
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null,
- 'tesla-model-y-premium-lr-rwd-juniper-2026':null,
+ 
+ 
+ 
+ 
  'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':null,
  'mini-cooper-3kapi-2026-cooper-s':null,
  'porsche-macan-2026-electric':null,
@@ -8650,7 +8302,7 @@ const RECALLS = {
    ozet:'Isuzu D-Max ABD pazarında satılmadığı için NHTSA kaydı yok; Avustralya resmi otoritesi 2018-2023 model yılları arasında D-Max için birden fazla direksiyon sistemi arızası geri çağırması kaydetmiştir. Kesin tarih/etkilenen araç sayısı bu araştırmada tam doğrulanamadı.',
    cozum:'Bayilerde ücretsiz muayene/onarım (vehiclerecalls.gov.au üzerinden detaylar).',kaynak:'https://www.caradvice.com.au/news/isuzu-d-max-mu-x-recalled-steering-failure/'}
  ],
- 'togg-t10x-2026-v1-rwd-standart':null,
+ 
  'toyota-camry-2021-passion-2-5-hybrid':[
   {tarih:'2023-12',parca:'Hava yastığı (Airbag)',baslik:'Hava yastığının çarpışmada açılmama riski (NHTSA 23V865000)',
    ozet:'Kampanya toplam kapsamı 999.901 araç. Belirli koşullarda hava yastığı kaza anında açılmayabiliyor, yaralanma riskini artırıyor.',
@@ -8661,29 +8313,9 @@ const RECALLS = {
    ozet:'2025-2026 model yılı GMC Yukon/Yukon XL (24 inç jantlı araçlar). Bayilerin aksesuar fren paketi takarken veya göbek rulmanı servisinde yanlış cıvata kullanmış olabileceği; cıvatalar zamanla gevşeyebilir/deforme olabilir, kopma halinde kısmi araç kontrol kaybı riski. Bilinen kaza/yaralanma yok, 7 saha şikâyeti var. Denali donanımının kapsamda olup olmadığı 24 inç jant şartına bağlı, VIN bazlı doğrulama gerekiyor.',
    cozum:'Bayilerde ücretsiz muayene, gerekirse cıvata değişimi.',kaynak:'https://gmauthority.com/blog/2026/05/gmc-yukon-recalled-for-incorrect-front-wheel-hub-bolts/'}
  ],
- 'clio6-2026-1.2-tce-115':null,
- 'egea-sedan-2026-1.4-fire-95':[
-  {tarih:'2017-02',parca:'Hava yastığı kablo demeti',baslik:'Sürücü hava yastığı kablo demeti sürtünmesi (AB/KBA, PRA 2013/13822)',
-   ozet:'2015-2016 arası üretilen Tipo/Egea araçlarında hava yastığı kabloları direksiyon simidi kablo kelepçesine sürtünebiliyor; aşınma kısa devre ve istenmeyen hava yastığı patlamasına yol açabiliyor. Türkiye kapsamı belirsiz.',
-   cozum:'Bayilerde ücretsiz muayene/onarım.',kaynak:'https://forum.donanimhaber.com/fiat-egea-tipo-icin-ab-geri-cagirmasi-subat-2017--124161890'},
-  {tarih:'2024-02',parca:'Geri vites lambası / park sensörü / arka kamera',baslik:'Elektrik arızası riski (AB/KBA)',
-   ozet:'~25.000 araç (Fiat 500, Panda ve Tipo, 2023 model) kapsayan kampanya: geri vites lambaları, park sensörleri ve arka kamera arızalanabilir. Tam arıza nedeni kaynakta belirtilmemiş.',
-   cozum:'Bayilerde ücretsiz muayene/onarım.',kaynak:'https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/'},
-  {tarih:'2024-07',parca:'Jant/lastik',baslik:'Hatalı jant/lastik spesifikasyonu (AB/KBA)',
-   ozet:'2021-2023 arası üretilen 4.482 Fiat 500 ve Tipo için hatalı jant/lastik spesifikasyonu kampanyası. Detay kaynakta eksik.',
-   cozum:'Bayilerde ücretsiz muayene.',kaynak:'https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/'}
- ],
- 'egea-sedan-2026-1.6-multijet-130':[
-  {tarih:'2017-02',parca:'Hava yastığı kablo demeti',baslik:'Sürücü hava yastığı kablo demeti sürtünmesi (AB/KBA, PRA 2013/13822)',
-   ozet:'2015-2016 arası üretilen Tipo/Egea araçlarında hava yastığı kabloları direksiyon simidi kablo kelepçesine sürtünebiliyor; aşınma kısa devre ve istenmeyen hava yastığı patlamasına yol açabiliyor. Türkiye kapsamı belirsiz.',
-   cozum:'Bayilerde ücretsiz muayene/onarım.',kaynak:'https://forum.donanimhaber.com/fiat-egea-tipo-icin-ab-geri-cagirmasi-subat-2017--124161890'},
-  {tarih:'2024-02',parca:'Geri vites lambası / park sensörü / arka kamera',baslik:'Elektrik arızası riski (AB/KBA)',
-   ozet:'~25.000 araç (Fiat 500, Panda ve Tipo, 2023 model) kapsayan kampanya: geri vites lambaları, park sensörleri ve arka kamera arızalanabilir.',
-   cozum:'Bayilerde ücretsiz muayene/onarım.',kaynak:'https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/'},
-  {tarih:'2024-07',parca:'Jant/lastik',baslik:'Hatalı jant/lastik spesifikasyonu (AB/KBA)',
-   ozet:'2021-2023 arası üretilen 4.482 Fiat 500 ve Tipo için hatalı jant/lastik spesifikasyonu kampanyası.',
-   cozum:'Bayilerde ücretsiz muayene.',kaynak:'https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/'}
- ],
+ 
+ 
+ 
  'peugeot-508-2025-allure-bluehdi-130':[
   {tarih:'2016-07',parca:'Yakıt sistemi',baslik:'Yakıt geri dönüş borusu/enjektör bağlantısı hasarı — YANGIN RİSKİ (PRA 2013/13822)',
    ozet:'Dizel 508\'lerde yakıt geri dönüş boruları ile enjektör bağlantısı fabrikada montaj sırasında hasar görmüş olabilir; küçük yakıt sızıntıları sıcak motor bölgesine ulaşıp yangın riski oluşturabilir. Etkilenen model yılları/VIN aralığı net belirtilmemiş.',
@@ -8718,14 +8350,7 @@ const RECALLS = {
    ozet:'NP300 Navara, 2016-2019 üretim, 2.3 dCi motor, dünya çapında 77.209 araç. SCR sisteminin maksimum verimlilik seviyesi mevzuata uygun değil. NOT: Bu 2021 model aracın kampanya kapsamında olup olmadığı teyit edilemedi.',
    cozum:'Yazılım güncellemesi, bayilerde ücretsiz.',kaynak:'https://car-recalls.eu/sk/nissan-navara-non-compliance-scr-system-kba/'}
  ],
- 'tesla-model-y-2026-premium-long-range-rwd':[
-  {tarih:'2026-05',parca:'Sertifikasyon etiketi',baslik:'Sertifikasyon etiketi eksikliği (NHTSA 26V315000)',
-   ozet:'~14.575 adet 2025-2026 Model Y. Sertifikasyon etiketi takılmamış olabilir, 49 C.F.R. Part 567 federal gereksinimlerine uyumsuzluk; ağırlık bilgisi eksikliği istemsiz aşırı yüklemeye ve kaza riskine yol açabilir.',
-   cozum:'Ücretsiz inceleme ve gerekirse etiket takılması.',kaynak:'https://vehiclesafetyrecalls.com/recall/26V315000'},
-  {tarih:'2025-05',parca:'Ön cam yıkama sistemi',baslik:'Yıkama nozulu tıkanıklığı (NHTSA 25V359000)',
-   ozet:'172 araç, belirli 2026 Model Y dahil. Hortum bağlantı parçası ön cam yıkama nozullarını tıkayabilir, FMVSS No. 104 uyumsuzluğu; görüş azalması kaza riskini artırabilir.',
-   cozum:'Ücretsiz inceleme ve gerekirse silecek kolu bağlantı parçası değişimi.',kaynak:'https://recallcheck.net/recall/25V359000'}
- ],
+ 
  'tesla-model-y-2026-performance-awd':[
   {tarih:'2026-05',parca:'Sertifikasyon etiketi',baslik:'Sertifikasyon etiketi eksikliği (NHTSA 26V315000)',
    ozet:'~14.575 adet 2025-2026 Model Y. Sertifikasyon etiketi takılmamış olabilir, 49 C.F.R. Part 567 federal gereksinimlerine uyumsuzluk; ağırlık bilgisi eksikliği istemsiz aşırı yüklemeye ve kaza riskine yol açabilir.',
@@ -9117,13 +8742,21 @@ const RECALLS = {
   {tarih:'2025-12',parca:'Vites değiştirme modülü',baslik:"Nem nedeniyle LED gösterge arızası — 'Sürmeyin/Dışarıda Park Edin' uyarısı (NHTSA 25V705)",
    ozet:"Kaynakta doğrudan '2026 Land Rover Range Rover Evoque' (6 araç) olarak adlandırılmış. Doğrudan model yılı eşleşmesi.",
    cozum:'Bayi muayenesi, gerekirse modül değişimi.',kaynak:'https://static.nhtsa.gov/odi/rcl/2025/RCLRPT-25V705-3310.pdf'}
- ]
+ ],
+'egea-sedan-2026-1.6-multijet-130':[{"tarih":"2017-02","parca":"Hava yastığı kablo demeti","baslik":"Sürücü hava yastığı kablo demeti sürtünmesi (AB/KBA, PRA 2013/13822)","ozet":"2015-2016 arası üretilen Tipo/Egea araçlarında hava yastığı kabloları direksiyon simidi kablo kelepçesine sürtünebiliyor; aşınma kısa devre ve istenmeyen hava yastığı patlamasına yol açabiliyor. Türkiye kapsamı belirsiz.","cozum":"Bayilerde ücretsiz muayene/onarım.","kaynak":"https://forum.donanimhaber.com/fiat-egea-tipo-icin-ab-geri-cagirmasi-subat-2017--124161890"},{"tarih":"2024-02","parca":"Geri vites lambası / park sensörü / arka kamera","baslik":"Elektrik arızası riski (AB/KBA)","ozet":"~25.000 araç (Fiat 500, Panda ve Tipo, 2023 model) kapsayan kampanya: geri vites lambaları, park sensörleri ve arka kamera arızalanabilir.","cozum":"Bayilerde ücretsiz muayene/onarım.","kaynak":"https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/"},{"tarih":"2024-07","parca":"Jant/lastik","baslik":"Hatalı jant/lastik spesifikasyonu (AB/KBA)","ozet":"2021-2023 arası üretilen 4.482 Fiat 500 ve Tipo için hatalı jant/lastik spesifikasyonu kampanyası.","cozum":"Bayilerde ücretsiz muayene.","kaynak":"https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/"}],
+'egea-sedan-2026-1.4-fire-95':[{"tarih":"2017-02","parca":"Hava yastığı kablo demeti","baslik":"Sürücü hava yastığı kablo demeti sürtünmesi (AB/KBA, PRA 2013/13822)","ozet":"2015-2016 arası üretilen Tipo/Egea araçlarında hava yastığı kabloları direksiyon simidi kablo kelepçesine sürtünebiliyor; aşınma kısa devre ve istenmeyen hava yastığı patlamasına yol açabiliyor. Türkiye kapsamı belirsiz.","cozum":"Bayilerde ücretsiz muayene/onarım.","kaynak":"https://forum.donanimhaber.com/fiat-egea-tipo-icin-ab-geri-cagirmasi-subat-2017--124161890"},{"tarih":"2024-02","parca":"Geri vites lambası / park sensörü / arka kamera","baslik":"Elektrik arızası riski (AB/KBA)","ozet":"~25.000 araç (Fiat 500, Panda ve Tipo, 2023 model) kapsayan kampanya: geri vites lambaları, park sensörleri ve arka kamera arızalanabilir. Tam arıza nedeni kaynakta belirtilmemiş.","cozum":"Bayilerde ücretsiz muayene/onarım.","kaynak":"https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/"},{"tarih":"2024-07","parca":"Jant/lastik","baslik":"Hatalı jant/lastik spesifikasyonu (AB/KBA)","ozet":"2021-2023 arası üretilen 4.482 Fiat 500 ve Tipo için hatalı jant/lastik spesifikasyonu kampanyası. Detay kaynakta eksik.","cozum":"Bayilerde ücretsiz muayene.","kaynak":"https://car-recalls.eu/uk/recall-news/kba-recalls/fiat/tipo/"}],
+'clio6-2026-1.2-tce-115':[],
+'togg-t10x-2026-v1-rwd-standart':[],
+'mercedes-benz-c-serisi-2026-c200-4matic-amg':null,
+'bmw-3-serisi-sedan-2026-320i-sport-line':null,
+'audi-a6-sedan-2026-tdi-quattro-204':null,
+'tesla-model-y-2026-premium-long-range-rwd':[{"tarih":"2026-05","parca":"Sertifikasyon etiketi","baslik":"Sertifikasyon etiketi eksikliği (NHTSA 26V315000)","ozet":"~14.575 adet 2025-2026 Model Y. Sertifikasyon etiketi takılmamış olabilir, 49 C.F.R. Part 567 federal gereksinimlerine uyumsuzluk; ağırlık bilgisi eksikliği istemsiz aşırı yüklemeye ve kaza riskine yol açabilir.","cozum":"Ücretsiz inceleme ve gerekirse etiket takılması.","kaynak":"https://vehiclesafetyrecalls.com/recall/26V315000"},{"tarih":"2025-05","parca":"Ön cam yıkama sistemi","baslik":"Yıkama nozulu tıkanıklığı (NHTSA 25V359000)","ozet":"172 araç, belirli 2026 Model Y dahil. Hortum bağlantı parçası ön cam yıkama nozullarını tıkayabilir, FMVSS No. 104 uyumsuzluğu; görüş azalması kaza riskini artırabilir.","cozum":"Ücretsiz inceleme ve gerekirse silecek kolu bağlantı parçası değişimi.","kaynak":"https://recallcheck.net/recall/25V359000"}]
 };
 const OFFICIAL = {
- 'egea-1.6-multijet':{toplam:64,bilesenler:[['Şanzıman',22],['Elektrik sistemi',18],['Multimedya ekranı',11],['Fren',7],['Süspansiyon',6]]},
- 'egea-1.4-fire':null,
- 'clio6-1.2-tce':null,
- 'togg-t10x-v1':null,
+ 
+ 
+ 
+ 
  'fiat-egea-cross-1-6-multijet-street-130hp-2026':null,
  'fiat-egea-cross-1-6-multijet-urban-130hp-2026':null,
  'fiat-egea-cross-1-6-multijet-lounge-130hp-2026':null,
@@ -9414,10 +9047,10 @@ const OFFICIAL = {
  'mitsubishi-space-star-intense-cvt-2026':null,
  'mitsubishi-l200-4x2-tornado-mt-2026':null,
  'mitsubishi-l200-4x4-premium-at-2026':null,
- 'mercedes-c-serisi-sedan-c200-4matic-amg-2026':null,
- 'bmw-3-serisi-sedan-320i-sport-line-2026':null,
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':null,
- 'tesla-model-y-premium-lr-rwd-juniper-2026':null,
+ 
+ 
+ 
+ 
  'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':null,
  'mini-cooper-3kapi-2026-cooper-s':null,
  'porsche-macan-2026-electric':null,
@@ -9483,19 +9116,19 @@ const OFFICIAL = {
  'rolls-royce-spectre-black-badge-2026-series-ii':null,
  'isuzu-d-max-2026-v-life-4x2-at':null,
  'isuzu-d-max-2026-v-cross-4x4-at':null,
- 'togg-t10x-2026-v1-rwd-standart':null,
+ 
  'toyota-camry-2021-passion-2-5-hybrid':null,
  'gmc-yukon-2026-denali':null,
- 'clio6-2026-1.2-tce-115':null,
- 'egea-sedan-2026-1.4-fire-95':null,
- 'egea-sedan-2026-1.6-multijet-130':null,
+ 
+ 
+ 
  'peugeot-508-2025-allure-bluehdi-130':null,
  'peugeot-508-2025-gt-bluehdi-130':null,
 'mg-zs-ev-2022-comfort':null,
  'mg-zs-ev-2022-luxury':null,
  'nissan-navara-2021-platinum-2-3-dci-190hp-4x4-at':null,
  'nissan-navara-2021-tekna-2-3-dci-160hp-4x4-mt':null,
- 'tesla-model-y-2026-premium-long-range-rwd':null,
+ 
  'tesla-model-y-2026-performance-awd':null,
  'ds-7-2026-etoile-bluehdi-130':null,
  'ds-n8-2026-etoile-fwd-long-range':null,
@@ -9559,41 +9192,24 @@ const OFFICIAL = {
  'land-rover-range-rover-sport-2026-dynamic-se-d300':null,
  'land-rover-range-rover-sport-2026-sv-black':null,
  'land-rover-range-rover-velar-2026-s-d204':null,
- 'land-rover-range-rover-evoque-2026-s-phev269':null
+ 'land-rover-range-rover-evoque-2026-s-phev269':null,
+'egea-sedan-2026-1.6-multijet-130':null,
+'egea-sedan-2026-1.4-fire-95':null,
+'clio6-2026-1.2-tce-115':null,
+'togg-t10x-2026-v1-rwd-standart':null,
+'mercedes-benz-c-serisi-2026-c200-4matic-amg':null,
+'bmw-3-serisi-sedan-2026-320i-sport-line':null,
+'audi-a6-sedan-2026-tdi-quattro-204':null,
+'tesla-model-y-2026-premium-long-range-rwd':null
 };
 const PROBLEMS ={motor:'Motor',sanziman:'Şanzıman',elektrik:'Elektrik sistemi',multimedya:'Multimedya ekranı',fren:'Fren',suspansiyon:'Süspansiyon',klima:'Klima',yakit:'Yüksek yakıt tüketimi',kaporta:'Kaporta ve boya'};
 const SUBS = {konfor:'Konfor',yakit:'Yakıt tüketimi',guven:'Güvenilirlik',perf:'Performans',donanim:'Donanım'};
 
 const REVIEWS = {
- 'egea-1.6-multijet':[
-  {id:'r1',ad:'Mert K.',tarih:'2026-08-14',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:3},ay:14,km:21000,
-   baslik:'Şehir içinde de uzun yolda da dengeli',arti:['Yol tutuşu','Dizel motor ekonomik','Kabin sessiz'],eksi:['Ekran menüleri karışık'],
-   metin:'Neredeyse bir buçuk yıldır kullanıyorum. Hafta içi şehir, hafta sonu şehirlerarası gidiyorum. Tüketim beklediğimden iyi. Multimedya ekranı bir iki kez kendiliğinden yeniden başladı, yazılım güncellemesinden sonra görmedim.',
-   sorun:['multimedya'],faydali:12},
-  {id:'r2',ad:'Elif T.',tarih:'2026-07-30',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:4},ay:8,km:9500,
-   baslik:'Beklentimi karşıladı',arti:['Fiyat/performans','İç mekan kalitesi'],eksi:['Bagaj eşiği biraz yüksek'],
-   metin:'İlk arabam değil ama en memnun kaldığım oldu. Uzun yolda dizel motor gerçekten tasarruflu. Şimdilik hiçbir sorun yaşamadım.',
-   sorun:[],faydali:7},
-  {id:'r3',ad:'Baran S.',tarih:'2026-06-21',puan:3,sub:{konfor:4,yakit:4,guven:3,perf:4,donanim:3},ay:26,km:48000,
-   baslik:'Kullanışlı ama şanzıman bazen tereddüt ediyor',arti:['Sürüş keyfi','Yakıt ekonomisi'],eksi:['Düşük hızda şanzıman tereddütü'],
-   metin:'Düşük hızda trafikte şanzıman bazen tereddüt ediyordu, serviste yapılan yazılım güncellemesinden sonra azaldı. Periyodik bakım maliyetleri beklediğimden yüksek çıktı.',
-   sorun:['sanziman','multimedya'],faydali:15},
-  {id:'r4',ad:'Selin A.',tarih:'2026-05-09',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:4},ay:11,km:15200,
-   baslik:'Günlük kullanım için ideal',arti:['Park etmesi kolay','Yakıt tüketimi'],eksi:['Arka diz mesafesi'],
-   metin:'Şehir içi kullanıyorum, geri görüş kamerası çok işime yarıyor. Arka koltukta uzun boylu biri için alan dar kalıyor.',
-   sorun:[],faydali:3},
-  {id:'r5',ad:'Okan D.',tarih:'2026-03-02',puan:2,sub:{konfor:3,yakit:3,guven:2,perf:3,donanim:3},ay:30,km:62000,
-   baslik:'Ekran ve şanzıman sorunları can sıktı',arti:['Motor performansı'],eksi:['Ekran donması','Şanzıman arızası'],
-   metin:'Ekran birkaç kez donup kapandı, şanzıman da düşük hızda sarsıntılı çalıştı. Servis güncelleme yaptı, sorun tamamen bitmedi.',
-   sorun:['multimedya','sanziman'],faydali:21},
-  {id:'r6',ad:'Deniz Y.',tarih:'2026-01-18',puan:4,sub:{konfor:4,yakit:4,guven:4,perf:4,donanim:4},ay:6,km:7800,
-   baslik:'Sakin ve ekonomik',arti:['Yakıt tüketimi','Sessizlik'],eksi:[],
-   metin:'Altı aydır kullanıyorum, uzun yolda yorulmuyorum. İlk servis sorunsuz geçti.',
-   sorun:[],faydali:2}
- ],
- 'egea-1.4-fire':[],
- 'clio6-1.2-tce':[],
- 'togg-t10x-v1':[],
+ 
+ 
+ 
+ 
  'fiat-egea-cross-1-6-multijet-street-130hp-2026':[],
  'fiat-egea-cross-1-6-multijet-urban-130hp-2026':[],
  'fiat-egea-cross-1-6-multijet-lounge-130hp-2026':[],
@@ -9884,10 +9500,10 @@ const REVIEWS = {
  'mitsubishi-space-star-intense-cvt-2026':[],
  'mitsubishi-l200-4x2-tornado-mt-2026':[],
  'mitsubishi-l200-4x4-premium-at-2026':[],
- 'mercedes-c-serisi-sedan-c200-4matic-amg-2026':[],
- 'bmw-3-serisi-sedan-320i-sport-line-2026':[],
- 'audi-a6-sedan-tdi-quattro-204-s-tronic-2026':[],
- 'tesla-model-y-premium-lr-rwd-juniper-2026':[],
+ 
+ 
+ 
+ 
  'mazda-cx5-2023-20-sky-g-4x4-power-sense-plus':[],
  'mini-cooper-3kapi-2026-cooper-s':[],
  'porsche-macan-2026-electric':[],
@@ -9953,19 +9569,19 @@ const REVIEWS = {
  'rolls-royce-spectre-black-badge-2026-series-ii':[],
  'isuzu-d-max-2026-v-life-4x2-at':[],
  'isuzu-d-max-2026-v-cross-4x4-at':[],
- 'togg-t10x-2026-v1-rwd-standart':[],
+ 
  'toyota-camry-2021-passion-2-5-hybrid':[],
  'gmc-yukon-2026-denali':[],
- 'clio6-2026-1.2-tce-115':[],
- 'egea-sedan-2026-1.4-fire-95':[],
- 'egea-sedan-2026-1.6-multijet-130':[],
+ 
+ 
+ 
  'peugeot-508-2025-allure-bluehdi-130':[],
  'peugeot-508-2025-gt-bluehdi-130':[],
 'mg-zs-ev-2022-comfort':[],
  'mg-zs-ev-2022-luxury':[],
  'nissan-navara-2021-platinum-2-3-dci-190hp-4x4-at':[],
  'nissan-navara-2021-tekna-2-3-dci-160hp-4x4-mt':[],
- 'tesla-model-y-2026-premium-long-range-rwd':[],
+ 
  'tesla-model-y-2026-performance-awd':[],
  'ds-7-2026-etoile-bluehdi-130':[],
  'ds-n8-2026-etoile-fwd-long-range':[],
@@ -10029,7 +9645,15 @@ const REVIEWS = {
  'land-rover-range-rover-sport-2026-dynamic-se-d300':[],
  'land-rover-range-rover-sport-2026-sv-black':[],
  'land-rover-range-rover-velar-2026-s-d204':[],
- 'land-rover-range-rover-evoque-2026-s-phev269':[]
+ 'land-rover-range-rover-evoque-2026-s-phev269':[],
+'egea-sedan-2026-1.6-multijet-130':[],
+'egea-sedan-2026-1.4-fire-95':[],
+'clio6-2026-1.2-tce-115':[],
+'togg-t10x-2026-v1-rwd-standart':[],
+'mercedes-benz-c-serisi-2026-c200-4matic-amg':[],
+'bmw-3-serisi-sedan-2026-320i-sport-line':[],
+'audi-a6-sedan-2026-tdi-quattro-204':[],
+'tesla-model-y-2026-premium-long-range-rwd':[]
 };
 
 /* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, 9 grup / 54 başlık. */
@@ -10086,7 +9710,8 @@ const avg = a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
 const fmtDate = iso=>new Date(iso+'T12:00:00').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
 const fmtMonth = ym=>new Date(ym+'-15T12:00:00').toLocaleDateString('tr-TR',{month:'long',year:'numeric'});
 
-const state = {carId:'egea-1.6-multijet',sort:'yeni',filter:null};
+const ID_ALIAS = {"egea-1.6-multijet":"egea-sedan-2026-1.6-multijet-130","egea-1.4-fire":"egea-sedan-2026-1.4-fire-95","clio6-1.2-tce":"clio6-2026-1.2-tce-115","togg-t10x-v1":"togg-t10x-2026-v1-rwd-standart","mercedes-c-serisi-sedan-c200-4matic-amg-2026":"mercedes-benz-c-serisi-2026-c200-4matic-amg","bmw-3-serisi-sedan-320i-sport-line-2026":"bmw-3-serisi-sedan-2026-320i-sport-line","audi-a6-sedan-tdi-quattro-204-s-tronic-2026":"audi-a6-sedan-2026-tdi-quattro-204","tesla-model-y-premium-lr-rwd-juniper-2026":"tesla-model-y-2026-premium-long-range-rwd"};
+const state = {carId:'egea-sedan-2026-1.6-multijet-130',sort:'yeni',filter:null};
 const helped = new Set();
 const reviews = JSON.parse(JSON.stringify(REVIEWS));
 const car = ()=>CARS[state.carId];
@@ -10126,6 +9751,8 @@ function renderHero(){
   const c=car();
   $('#title').textContent=c.marka+' '+c.model;
   $('#subtitle').textContent=c.yil+' model, '+c.versiyon;
+  const dn=$('#durumNote');
+  if(c.durum){ dn.hidden=false; dn.innerHTML=(satista(c)?'<b>Satış durumu:</b> ':'<b>Bu versiyon artık Türkiye\'de satılmıyor.</b> ')+esc(c.durum); } else { dn.hidden=true; dn.innerHTML=''; }
   $('#heroSrc').innerHTML = c.kaynakUrl ? `Kaynak: <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener" style="color:inherit">${esc(c.kaynakAd)}</a> ↗` : '';
   $('#crumbMarka').textContent=c.marka;
   $('#crumbModel').textContent=c.model;
@@ -10165,7 +9792,7 @@ function renderArtilar(){
     ? `${pro?`<div class="pro"><h5>Öne çıkanlar</h5><ul>${pro}</ul></div>`:'<div class="pro"><h5>Öne çıkanlar</h5><p class="note">Bu versiyon için henüz editöryel bir öne çıkan not eklenmedi.</p></div>'}${con?`<div class="con"><h5>Dikkat edilecekler</h5><ul>${con}</ul></div>`:''}`
     : '<p class="note">Henüz not eklenmedi.</p>';
 
-  const others=RIVALS.map(r=>r.ncap).filter(n=>n!=null);
+  const others=rivalsFor(c).map(r=>r.s.ncap_yildiz).filter(n=>n!=null);
   const my=c.s.ncap_yildiz;
   let ncapMsg='';
   if(my!=null && others.length){
@@ -10214,7 +9841,7 @@ function renderBakim(){
 function renderScore(){
   const pub=published(), n=pub.length;
   if(!n){
-    $('#scoreBody').innerHTML='<p class="score-meta">Bu versiyon için henüz yorum yok. İlk yorumu sen yaz.</p>';
+    $('#scoreBody').innerHTML='<p class="score-meta">Sahip yorumu toplamaya henüz başlamadık; puan yorumlar geldikçe hesaplanacak.</p>';
     return;
   }
   const a=avg(pub.map(r=>r.puan));
@@ -10247,7 +9874,7 @@ function renderProblems(){
 
   const pub=published(), n=pub.length;
   if(!n){
-    $('#userBlock').innerHTML='<h3>Sahiplerin bildirdiği sorunlar</h3><p class="src">Kaynak: Araba Karşılaştır ve Seç sahip yorumları</p><div class="emptystate">Henüz yorum olmadığı için bu bölüm boş. Yorum yazanların işaretlediği sorunlar burada görünür.</div>';
+    $('#userBlock').innerHTML='<h3>Sahiplerin bildirdiği sorunlar</h3><p class="src">Kaynak: Araba Karşılaştır ve Seç sahip yorumları</p><div class="emptystate">Sahip yorumu toplamaya henüz başlamadık; bu bölüm yorumlar geldikçe dolacak.</div>';
     return;
   }
   const counts={};
@@ -10270,7 +9897,7 @@ function renderReviews(){
   rest.sort(sorters[state.sort]);
   list=[...pend,...rest];
   if(!list.length){
-    $('#reviews').innerHTML=`<div class="emptystate">${all.length?'Bu filtreyle eşleşen yorum yok.':'Bu versiyon için henüz yorum yok. Aracı kullanıyorsan ilk yorumu sen yaz, diğer alıcılara yardımı olur.'}${all.length?'':'<br><button class="btn primary js-write" type="button">Yorum yaz</button>'}</div>`;
+    $('#reviews').innerHTML=`<div class="emptystate">${all.length?'Bu filtreyle eşleşen yorum yok.':'Sahip yorumu toplamaya henüz başlamadık. Yorumlar gerçek sahiplerden gelmeye başladığında burada görünecek; örnek ya da uydurma yorum yayınlamıyoruz.'}</div>`;
     return;
   }
   $('#reviews').innerHTML=list.map(r=>{
@@ -10298,11 +9925,13 @@ function renderSpecs(){
 }
 
 function renderRivals(){
-  $('#cmpSel').innerHTML=RIVALS.map((r,i)=>`<option value="${i}">${esc(r.ad)}</option>`).join('');
-  $('#rivals').innerHTML=RIVALS.map((r,i)=>`<li><div class="rn"><b>${esc(r.ad)}</b><span>${esc(r.ver)}</span></div><div class="rnums"><span>${r.guc!=null?r.guc+' HP':'—'}</span><span>${r.tuketim!=null?nf(r.tuketim,1)+' l/100 km':'—'}</span><span>${r.bagaj!=null?r.bagaj+' L bagaj':'—'}</span></div><button type="button" class="btn small" data-rival="${i}">Karşılaştır</button></li>`).join('');
+  const c=car(), rv=rivalsFor(c);
+  $('#cmpSel').innerHTML=rv.map(r=>`<option value="${esc(r.id)}">${esc(r.marka+' '+r.model+' — '+r.versiyon)}</option>`).join('');
+  $('#rivals').innerHTML=rv.length ? rv.map(r=>`<li><div class="rn"><b>${esc(r.marka+' '+r.model)}</b><span>${r.yil}, ${esc(r.versiyon)}</span></div><div class="rnums"><span>${r.s.guc_hp!=null?r.s.guc_hp+' HP':'—'}</span><span>${r.s.tuketim_l100km!=null?nf(r.s.tuketim_l100km,1)+' l/100 km':'—'}</span><span>${r.s.bagaj_l!=null?r.s.bagaj_l+' L bagaj':'—'}</span></div><a class="btn small" href="karsilastirma.html#k=${encodeURIComponent(c.id)},${encodeURIComponent(r.id)}">Karşılaştır</a></li>`).join('')
+    : '<li><div class="rn"><span>Bu kasa tipinde veritabanımızda başka marka yok.</span></div></li>';
 }
 
-function renderAll(){ renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); }
+function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); }
 
 /* ---------- Yorum formu ---------- */
 function buildForm(){
@@ -10360,9 +9989,7 @@ document.addEventListener('click',e=>{
     helped.has(id)?helped.delete(id):helped.add(id);
     return renderReviews();
   }
-  if(t.dataset.rival!==undefined){ toast('Bu düğme, '+RIVALS[t.dataset.rival].ad+' ile karşılaştırma sayfasını açacak.'); return; }
-  if(t.id==='cmpGo'){ toast('Bu düğme, seçtiğin araçla karşılaştırma sayfasını açacak.'); return; }
-  if(t.id==='sponsorBtn'){ toast('Bu düğme, ortak firmanın teklif sayfasına yönlendirecek.'); return; }
+  if(t.id==='cmpGo'){ const v=$('#cmpSel').value; if(v) location.href='karsilastirma.html#k='+encodeURIComponent(state.carId)+','+encodeURIComponent(v); return; }
 });
 $('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderReviews(); });
 
@@ -10383,13 +10010,13 @@ $('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderRe
 
 /* Ana sayfadan gelen derin bağlantı: #egea-1.6-multijet gibi bir token varsa o versiyonu aç. */
 (function(){
-  const token = location.hash.slice(1);
+  const token = ID_ALIAS[location.hash.slice(1)] || location.hash.slice(1);
   if(token && CARS[token]) state.carId = token;
 })();
 
 /* Sayfa zaten açıkken sadece # kısmı değişirse (tarayıcı tam yeniden yüklemez) yine de doğru aracı göster. */
 window.addEventListener('hashchange', ()=>{
-  const token = location.hash.slice(1);
+  const token = ID_ALIAS[location.hash.slice(1)] || location.hash.slice(1);
   if(token && CARS[token] && token !== state.carId){ state.carId = token; state.filter = null; renderAll(); }
 });
 

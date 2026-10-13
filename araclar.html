@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tüm Araçlar | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Veritabanındaki tüm araç versiyonları: marka, yakıt türü, kasa tipi ve satış durumuna göre süz, seçtiklerini yan yana karşılaştır.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.fbar{display:grid;grid-template-columns:1fr;gap:12px 14px;margin-top:22px;padding:18px 20px;background:var(--surface);border:1px solid var(--divider)}
+@media (min-width:760px){.fbar{grid-template-columns:2fr 1fr 1fr 1fr 1fr}}
+.fbar label{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted);margin-bottom:6px}
+.fbar input,.fbar select{width:100%;height:44px;padding-inline:12px;font:inherit;font-size:.92rem;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:2px}
+.frow{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-top:14px}
+.switch{display:inline-flex;align-items:center;gap:9px;cursor:pointer;min-height:40px;font-size:.9rem;color:var(--muted)}
+.switch input{width:18px;height:18px;accent-color:var(--accent);margin:0}
+.count{font-size:.86rem;color:var(--muted)}
+.list{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px}
+@media (min-width:760px){.list{grid-template-columns:1fr 1fr}}
+@media (min-width:1060px){.list{grid-template-columns:1fr 1fr 1fr}}
+.vcard{display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);padding:16px 18px}
+.vcard.sel{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.vtop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.vname{font-family:var(--display);font-weight:700;font-size:1.02rem;line-height:1.25}
+.vver{font-size:.84rem;color:var(--muted);margin-top:2px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.bdg{font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:2px;background:var(--surface2);border:1px solid var(--line-strong);color:var(--muted);white-space:nowrap}
+.bdg.off{color:#F2C08A;border-color:rgba(231,161,90,.5)}
+.vnums{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.86rem;font-variant-numeric:tabular-nums}
+.vnums b{font-weight:600}
+.vnums span{color:var(--muted)}
+.vact{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.sbtn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;text-decoration:none}
+.sbtn:hover{border-color:var(--accent);color:var(--accent-soft)}
+.sbtn[aria-pressed="true"]{background:var(--accent-grad);color:var(--on-accent);border-color:transparent}
+.sbtn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.more{display:flex;justify-content:center;margin-top:18px}
+.tray{position:sticky;bottom:0;z-index:8;margin-top:20px;padding:12px 16px;background:#1F2126;border:1px solid var(--accent);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+.tray[hidden]{display:none}
+.tray .names{font-size:.86rem;color:var(--muted)}
+.tray .go{background:var(--accent-grad);color:var(--on-accent);border-color:transparent;font-weight:700}
+.empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px solid var(--divider);margin-top:16px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html" aria-current="page">Tüm araçlar</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="ehliyet.html">Ehliyet</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="mtv-hesaplama.html">MTV</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Veritabanı</span>
+    <h1>Tüm araçlar</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lead" id="lead">Veritabanındaki tüm versiyonlar. Marka, yakıt türü, kasa tipi ve satış durumuna göre süz; en fazla 4 aracı seçip yan yana karşılaştır.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="section" style="padding-top:20px">
+    <div class="fbar" role="search">
+      <div><label for="q">Ara</label><input id="q" type="search" placeholder="Marka, model ya da versiyon" autocomplete="off"></div>
+      <div><label for="fMarka">Marka</label><select id="fMarka"></select></div>
+      <div><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div>
+      <div><label for="fKasa">Kasa tipi</label><select id="fKasa"></select></div>
+      <div><label for="fSirala">Sırala</label><select id="fSirala">
+        <option value="marka">Marka ve model (A–Z)</option>
+        <option value="gucDesc">Güç (yüksekten düşüğe)</option>
+        <option value="tuketim">Tüketim (düşükten yükseğe)</option>
+        <option value="yil">Model yılı (yeniden eskiye)</option>
+      </select></div>
+    </div>
+    <div class="frow">
+      <label class="switch"><input type="checkbox" id="fSatis"> Sadece Türkiye'de satıştaki araçlar</label>
+      <span class="count" id="count" aria-live="polite">Yükleniyor…</span>
+    </div>
+    <div class="list" id="list"></div>
+    <div class="more"><button type="button" class="sbtn" id="more" hidden>Daha fazla göster</button></div>
+    <div class="tray" id="tray" hidden>
+      <span class="names" id="trayNames"></span>
+      <span><button type="button" class="sbtn" id="clearSel">Seçimi temizle</button> <a class="sbtn go" id="goCmp" href="karsilastirma.html">Seçilenleri karşılaştır</a></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Liste, karşılaştırma sayfasındaki veritabanından otomatik oluşur. Her versiyonun kaynağı karşılaştırma ve detay sayfalarında linklidir.</p>
+  </div>
+</footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nf = (v,d=0) => v.toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const FUEL = [['elektrik','Elektrikli'],['phev','Plug-in hibrit'],['hibrit','Hibrit'],['mhev','Hafif (mild) hibrit'],['lpg','Benzin / LPG'],['dizel','Dizel'],['benzin','Benzin']];
+const BODY = [['suv','SUV / Crossover'],['sedan','Sedan'],['hatchback','Hatchback'],['sw','Station wagon'],['mpv','MPV / Minivan'],['coupe','Coupe / Cabrio / Roadster'],['pickup','Pick-up'],['diger','Diğer']];
+function fuelCat(y){ y=y||''; if(/^Elektrik/i.test(y)) return 'elektrik'; if(/plug-?in/i.test(y)) return 'phev'; if(/hafif|mild/i.test(y)) return 'mhev'; if(/hibrit|hybrid|e-POWER/i.test(y)) return 'hibrit'; if(/LPG/.test(y)) return 'lpg'; if(/^Dizel/i.test(y)) return 'dizel'; if(/^Benzin/i.test(y)) return 'benzin'; return null; }
+function bodyCat(k){ k=k||''; if(/pick-?up/i.test(k)) return 'pickup'; if(/MPV|Minivan/i.test(k)) return 'mpv'; if(/Station|Estate/i.test(k)) return 'sw'; if(/SUV|Crossover/i.test(k)) return 'suv'; if(/Coupe|Cabrio|Roadster|Targa|Fastback/i.test(k)) return 'coupe'; if(/Sedan|Sportback/i.test(k)) return 'sedan'; if(/Hatchback/i.test(k)) return 'hatchback'; return 'diger'; }
+const $ = id => document.getElementById(id);
+let CARS=[], DETAY=new Set(), shown=60, sel=[];
+const PAGE=60;
+
+async function load(){
+  try{
+    const [k,d] = await Promise.all([fetch('karsilastirma.html').then(r=>r.text()), fetch('arac-detay.html').then(r=>r.text())]);
+    const s=k.indexOf('const CARS = ['), e=k.indexOf('\n];',s)+3;
+    CARS = new Function(k.slice(s,e)+';return CARS;')();
+    for(const m of d.matchAll(/'([a-zA-Z0-9.\-]+)':\{id:'\1'/g)) DETAY.add(m[1]);
+  }catch(err){
+    $('count').textContent='Araç listesi yüklenemedi. Sayfayı bir web sunucusu üzerinden açın.'; return;
+  }
+  CARS.forEach(c=>{ c._f=fuelCat(c.s.yakit); c._b=bodyCat(c.s.kasa); c._off=!!c.durum && !c.s.liste_fiyati_tl; c._q=(c.marka+' '+c.model+' '+c.versiyon).toLocaleLowerCase('tr'); });
+  const brands=[...new Set(CARS.map(c=>c.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
+  $('fMarka').innerHTML='<option value="">Tüm markalar ('+brands.length+')</option>'+brands.map(b=>`<option>${esc(b)}</option>`).join('');
+  $('fYakit').innerHTML='<option value="">Tümü</option>'+FUEL.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');
+  $('fKasa').innerHTML='<option value="">Tümü</option>'+BODY.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');
+  $('lead').textContent=`Veritabanındaki ${nf(CARS.length)} versiyon, ${brands.length} marka. Marka, yakıt türü, kasa tipi ve satış durumuna göre süz; en fazla 4 aracı seçip yan yana karşılaştır.`;
+  const p=new URLSearchParams(location.hash.slice(1));
+  if(p.get('marka')) $('fMarka').value=p.get('marka');
+  render();
+}
+
+function filtered(){
+  const q=$('q').value.trim().toLocaleLowerCase('tr'), m=$('fMarka').value, f=$('fYakit').value, b=$('fKasa').value, sat=$('fSatis').checked;
+  let r=CARS.filter(c=>(!m||c.marka===m)&&(!f||c._f===f)&&(!b||c._b===b)&&(!sat||!c._off)&&(!q||q.split(/\s+/).every(w=>c._q.includes(w))));
+  const srt=$('fSirala').value;
+  const cmp={
+    marka:(a,b)=>a.marka.localeCompare(b.marka,'tr')||a.model.localeCompare(b.model,'tr')||b.yil-a.yil||a.versiyon.localeCompare(b.versiyon,'tr'),
+    gucDesc:(a,b)=>(b.s.guc_hp??-1)-(a.s.guc_hp??-1),
+    tuketim:(a,b)=>(a.s.tuketim_l100km??1e9)-(b.s.tuketim_l100km??1e9),
+    yil:(a,b)=>b.yil-a.yil||a.marka.localeCompare(b.marka,'tr')
+  }[srt];
+  return r.sort(cmp);
+}
+
+function card(c){
+  const on=sel.includes(c.id), full=sel.length>=4&&!on;
+  const nums=[];
+  if(c.s.guc_hp!=null) nums.push(`<span><b>${nf(c.s.guc_hp)}</b> HP</span>`);
+  if(c._f==='elektrik'){ if(c.s.menzil_km_wltp!=null) nums.push(`<span><b>${nf(c.s.menzil_km_wltp)}</b> km menzil</span>`); }
+  else if(c.s.tuketim_l100km!=null) nums.push(`<span><b>${nf(c.s.tuketim_l100km,1)}</b> l/100 km</span>`);
+  if(c.s.bagaj_l!=null) nums.push(`<span><b>${nf(c.s.bagaj_l)}</b> L bagaj</span>`);
+  return `<article class="vcard${on?' sel':''}">
+    <div class="vtop"><div><div class="vname">${esc(c.marka+' '+c.model)}</div><div class="vver">${c.yil} · ${esc(c.versiyon)}</div></div></div>
+    <div class="badges">${c.s.yakit?`<span class="bdg">${esc(c.s.yakit)}</span>`:''}${c.s.kasa?`<span class="bdg">${esc(c.s.kasa)}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}</div>
+    <div class="vnums">${nums.join('')||'<span>Temel değerler henüz eklenmedi</span>'}</div>
+    <div class="vact">
+      <button type="button" class="sbtn" data-sel="${esc(c.id)}" aria-pressed="${on}"${full?' aria-disabled="true"':''}>${on?'Seçildi':'Karşılaştırmaya ekle'}</button>
+      ${DETAY.has(c.id)?`<a class="sbtn" href="arac-detay.html#${encodeURIComponent(c.id)}">Detay</a>`:'<span class="sbtn" aria-disabled="true" title="Detay sayfası hazırlanıyor">Detay hazırlanıyor</span>'}
+    </div>
+  </article>`;
+}
+
+function render(){
+  const r=filtered();
+  $('count').textContent=`${nf(r.length)} versiyon gösteriliyor`;
+  $('list').innerHTML = r.length ? r.slice(0,shown).map(card).join('') : '';
+  if(!r.length) $('list').innerHTML='<div class="empty" style="grid-column:1/-1">Bu filtrelere uyan araç yok.</div>';
+  $('more').hidden = r.length<=shown;
+  $('more').textContent = `Daha fazla göster (${nf(r.length-shown)} kaldı)`;
+  renderTray();
+}
+function renderTray(){
+  $('tray').hidden=!sel.length;
+  const names=sel.map(id=>{const c=CARS.find(x=>x.id===id);return c?c.marka+' '+c.model:id;});
+  $('trayNames').textContent=`${sel.length} / 4 seçildi: ${names.join(', ')}`+(sel.length<2?' — karşılaştırmak için en az 2 araç seç.':'');
+  $('goCmp').href='karsilastirma.html#k='+sel.map(encodeURIComponent).join(',');
+  $('goCmp').setAttribute('aria-disabled', String(sel.length<2));
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-sel]'); if(!b) return;
+  const id=b.dataset.sel; sel = sel.includes(id) ? sel.filter(x=>x!==id) : (sel.length<4 ? [...sel,id] : sel);
+  render();
+});
+$('more').addEventListener('click',()=>{ shown+=PAGE; render(); });
+$('clearSel').addEventListener('click',()=>{ sel=[]; render(); });
+['q','fMarka','fYakit','fKasa','fSirala','fSatis'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',()=>{ shown=PAGE; render(); }));
+load();
+</script>
+</body>
+</html>
