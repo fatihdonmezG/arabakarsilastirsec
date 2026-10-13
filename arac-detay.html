@@ -457,6 +457,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="assets/puanlar.js"></script>
 <script>
 /* ---------- Veri ---------- */
 const MTV_URL = 'mtv-hesaplama.html';
@@ -9772,12 +9773,14 @@ function renderHero(){
 }
 
 function renderSistemPuani(){
-  const c=car(), sp=c.sistemPuani;
-  if(!sp){ $('#sysScoreBody').innerHTML='<p class="score-meta">Henüz hesaplanmadı.</p>'; return; }
-  const subs=sp.kriterler.map(k=>`<li><span>${esc(k.ad)}</span><span class="meter" aria-hidden="true"><i style="width:${k.puan/k.max*100}%"></i></span><b>${nf(k.puan,2)}</b></li>`).join('');
-  const veriYok=sp.veriYokKriterler&&sp.veriYokKriterler.length
-    ? `<p class="note">Veri yok: ${sp.veriYokKriterler.map(esc).join('; ')}. Bu kriterler toplama katılmadı.</p>` : '';
-  $('#sysScoreBody').innerHTML=`<div class="score-num">${nf(sp.toplam,1)}<small>/ 10</small></div><p class="score-meta">${sp.kriterler.length} kriterden hesaplandı</p><ul class="subs">${subs}</ul>${veriYok}`;
+  const c=car(), sp=(window.PUANLAR||{})[c.id];
+  const more='<p class="note"><a href="sistem-puani.html" style="color:var(--accent-soft)">Puan nasıl hesaplanıyor?</a></p>';
+  if(!sp||!sp.kriterler.length){ $('#sysScoreBody').innerHTML='<p class="score-meta">Bu versiyon için puan hesaplamaya yetecek veri henüz yok.</p>'+more; return; }
+  const subs=sp.kriterler.map(k=>`<li><span>${esc(k.ad)} <small style="color:var(--muted)">%${Math.round(k.agirlik*100)}</small></span><span class="meter" aria-hidden="true"><i style="width:${k.puan/k.max*100}%"></i></span><b>${nf(k.puan,1)}</b></li>`).join('');
+  const veriYok=sp.veriYokKriterler&&sp.veriYokKriterler.length ? `<p class="note">Veri yok: ${sp.veriYokKriterler.map(esc).join(', ')}. Bu kriterler hesaba katılmadı.</p>` : '';
+  const notlar=(sp.notlar||[]).map(n=>`<p class="note">${esc(n)}</p>`).join('');
+  const head = sp.toplam!=null ? `<div class="score-num">${nf(sp.toplam,1)}<small>/ 10</small></div><p class="score-meta">${sp.kriterler.length} kriterden, aynı kasa tipindeki araçlarla kıyaslanarak</p>` : `<p class="score-meta">Toplam puan için yeterli veri yok; mevcut alt puanlar:</p>`;
+  $('#sysScoreBody').innerHTML=`${head}<ul class="subs">${subs}</ul>${veriYok}${notlar}${more}`;
 }
 
 function renderArtilar(){

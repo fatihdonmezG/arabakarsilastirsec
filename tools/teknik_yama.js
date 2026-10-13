@@ -76,4 +76,5 @@ for (const [id, rows] of Object.entries(byId)) { k = patch(k, id, 'k', rows); if
 const K2 = Object.fromEntries(getObj(k, 'k').map(c => [c.id, c])), D2 = getObj(d, 'd');
 for (const r of todo) { if (K2[r.id].s[r.alan] !== r.deger) { console.error('doğrulama hatası ' + r.id + '.' + r.alan); process.exit(1); } if (D2[r.id] && D2[r.id].s[r.alan] !== r.deger) { console.error('detay doğrulama hatası ' + r.id); process.exit(1); } }
 fs.writeFileSync(KF, k); fs.writeFileSync(DF, d);
+require('child_process').execFileSync('node',[path.join(__dirname,'puan_hesapla.js')],{stdio:'inherit'});
 console.log(`Uygulandı: ${todo.length} alan, ${Object.keys(byId).length} versiyon.`);

@@ -79,4 +79,5 @@ h = h.replace(/(Teknik özellikler ve fiyatlar )\d+( versiyonun)/, `$1${n}$2`).r
 fs.writeFileSync(DF, h);
 for (const nm of ['RECALLS', 'OFFICIAL', 'REVIEWS']) { const c = Object.keys(obj(nm)).length; if (c !== n) { console.error(`UYARI: ${nm} kayıt sayısı ${c}, CARS ${n}`); process.exit(1); } }
 const missing = KCARS.filter(c => !obj('CARS')[c.id]).map(c => c.id);
+require('child_process').execFileSync('node',[path.join(__dirname,'puan_hesapla.js')],{stdio:'inherit'});
 console.log(`Eklendi: ${input.length}. arac-detay toplam: ${n}. Detayı eksik versiyon: ${missing.length}`);
