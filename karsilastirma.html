@@ -101,6 +101,8 @@ select:focus-visible{border-color:var(--accent)}
 .cell .val{color:var(--ink);font-weight:500}
 .cell.win .val{color:var(--accent-soft);font-weight:700}
 .tick{margin-right:6px;color:var(--accent)}
+.ek{font-size:.75rem;color:var(--muted);text-decoration:none;margin-left:2px}
+.ek:hover{color:var(--accent-soft)}
 .delta{display:block;font-size:.78rem;font-weight:400;color:var(--muted);margin-top:4px}
 .na{color:var(--line-strong)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -2243,7 +2245,7 @@ function render(){
         if(key==='liste_fiyati_tl' && v==null && isDiscontinued(car)) return `<div class="cell ${side}" role="cell"><span class="na">Satışta değil</span></div>`;
         const win = winners.has(side);
         const rivalVals = entries.filter(e=>e.side!==side).map(e=>e.v);
-        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}<span class="val">${fmt(v,unit)}</span>${win?deltaText(better,v,rivalVals):''}</div>`;
+        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}<span class="val">${fmt(v,unit)}</span>${v!=null&&car.ekKaynak&&car.ekKaynak[key]?` <a class="ek" href="${esc(car.ekKaynak[key].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(car.ekKaynak[key].ad)}">↗</a>`:''}${win?deltaText(better,v,rivalVals):''}</div>`;
       }).join('');
       rowsHtml += `<div class="row" role="row"><div class="label" role="rowheader">${esc(label)}</div>${cellsHtml}</div>`;
     });
@@ -2272,7 +2274,7 @@ function render(){
 
   const seen = new Set();
   const list = cars.filter(c=>{ if(seen.has(c.id)) return false; seen.add(c.id); return true; });
-  $('sourceList').innerHTML = list.map(c=>`<li>${esc(c.marka+' '+c.model+' '+c.versiyon)} — <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">${esc(c.kaynakAd)}</a></li>`).join('');
+  $('sourceList').innerHTML = list.map(c=>{ const ek=c.ekKaynak?[...new Map(Object.values(c.ekKaynak).map(x=>[x.url,x])).values()]:[]; return `<li>${esc(c.marka+' '+c.model+' '+c.versiyon)} — <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">${esc(c.kaynakAd)}</a>${ek.length?' · ek veri: '+ek.map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.ad)}</a>`).join(', '):''}</li>`; }).join('');
 }
 
 $('diff').addEventListener('change',render);

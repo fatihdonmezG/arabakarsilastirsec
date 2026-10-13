@@ -34,3 +34,37 @@ C.filter(c=>!ex.has(c.id)).forEach(c=>console.log(c.marka,'|',c.id,'|',c.model,c
    - `node -e "const h=require('fs').readFileSync('arac-detay.html','utf8');[...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(x=>new Function(x[1]));console.log('ok')"`
    - Playwright ile (Chromium `/opt/pw-browsers/chromium`, dış istekleri engelle) birkaç yeni kaydı `arac-detay.html#<id>` ile aç: sayfa hatası yok, başlık doğru, geri çağırmalar ve artı-eksiler görünüyor.
 4. Commit mesajı Türkçe; hangi markadan kaç versiyon eklendiğini ve önemli bulguları (hariç tutulan kampanyalar, NCAP uyarıları) yaz.
+
+---
+
+# Eksik teknik alanları doldurma
+
+Karşılaştırmadaki versiyonların boş teknik alanları (`s` içindeki `null`/eksik alanlar) `tools/teknik_yama.js` ile doldurulur. Araç hem karşılaştırmada hem detay sayfasında güncellenir ve her alanın kaynağı `ekKaynak` olarak saklanır; sitede değerin yanında ↗ bağlantısı görünür.
+
+## Boş alanları listeleme
+
+```bash
+node -e "
+const fs=require('fs');const k=fs.readFileSync('karsilastirma.html','utf8');const s=k.indexOf('const CARS = ['),e=k.indexOf('\n];',s)+3;
+const C=new Function(k.slice(s,e)+';return CARS;')();
+const COMMON=['segment','kasa','yakit','sanziman','cekis','koltuk','kapi','guc_hp','tork_nm','sifirYuz_sn','hiz_kmh','uzunluk_mm','genislik_mm','yukseklik_mm','dingil_mm','agirlik_kg','bagaj_l','airbag_sayisi','ncap_yildiz','ncap_test_yili'];
+const ICE=['cc','silindir','besleme','tuketim_l100km','co2_gkm','emisyon_normu','depo_l'];const EV=['batarya_kwh','menzil_km_wltp','dc_hizli_sarj_dk_20_80','elektrik_tuketim_kwh100km'];
+const MARKA=process.argv[1];
+C.filter(c=>!MARKA||c.marka===MARKA).forEach(c=>{const ev=/^Elektrik/i.test(c.s.yakit||'');const m=[...COMMON,...(ev?EV:ICE)].filter(f=>c.s[f]==null);if(m.length)console.log(c.id,'|',m.join(','));});" "Volkswagen"
+```
+
+## Kurallar
+
+- Her değer, açıp okuduğun bir sayfaya dayanır (öncelik: üreticinin Türkiye sitesi, broşür/teknik katalog PDF'i, basın sitesi; sonra ultimatespecs, auto-data.net, encycarpedia gibi teknik veritabanları; NCAP için euroncap.com).
+- Kaynak, **aynı model yılı, motor ve donanım** için olmalı. Başka pazarın (ör. ABD) farklı motorlu versiyonunun değerini kullanma.
+- WLTP ve NEDC değerlerini karıştırma; 2026 araçlarda WLTP.
+- `ncap_yildiz` yalnızca Euro NCAP'in aynı nesil/gövde için verdiği sonuçsa; `ncap_test_yili` ile birlikte gir.
+- `segment` gibi sınıflandırmalar da kaynaktan gelir (üretici ya da Euro NCAP sınıfı); kendin sınıflandırma.
+- Fiyat alanları bu araçla doldurulamaz.
+- sahibinden yalnızca satıştan kalkmış eski modellerde, son çare, tek seferlik ve elle okunarak; `kaynakTuru:"sahibinden"`.
+
+## Uygulama
+
+1. Bulguları satır satır JSON olarak (JSONL) yaz: `{"id":"...","alan":"agirlik_kg","deger":1425,"kaynakAd":"...","kaynakUrl":"https://...","kaynakTuru":"birincil","sonDogrulama":"2026-10-14"}`. Sayısal değerler tırnaksız; birim alan adındaki birimle aynı olmalı (mm, kg, L, HP, Nm, sn, km/s, l/100km, g/km, kWh, km, dk).
+2. `node tools/teknik_yama.js yama.jsonl`. Dolu alanlar atlanır; hata varsa hiçbir şey yazılmaz.
+3. İki sayfanın sözdizimini kontrol et, karşılaştırmada güncellenen birkaç versiyonu Playwright ile aç.

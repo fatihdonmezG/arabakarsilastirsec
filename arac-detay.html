@@ -9917,9 +9917,9 @@ function renderReviews(){
 }
 
 function renderSpecs(){
-  const s=car().s;
+  const c=car(), s=c.s, ek=c.ekKaynak||{};
   $('#specs').innerHTML=GROUPS.map(g=>{
-    const rows=g.rows.filter(([k])=>s[k]!=null&&s[k]!=='').map(([k,l,u])=>`<div><dt>${esc(l)}</dt><dd>${esc(fmtVal(s[k],u))}</dd></div>`).join('');
+    const rows=g.rows.filter(([k])=>s[k]!=null&&s[k]!=='').map(([k,l,u])=>`<div><dt>${esc(l)}</dt><dd>${esc(fmtVal(s[k],u))}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</dd></div>`).join('');
     return rows?`<div class="specgroup"><h3>${esc(g.name)}</h3><dl>${rows}</dl></div>`:'';
   }).join('');
 }

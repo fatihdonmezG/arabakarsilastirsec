@@ -64,6 +64,7 @@ for (const e of input) {
   if (e.ncap_test_yili != null) s.ncap_test_yili = e.ncap_test_yili;
   const car = { id: e.id, marka: kc.marka, model: kc.model, yil: kc.yil, versiyon: kc.versiyon, kaynakAd: kc.kaynakAd, kaynakUrl: kc.kaynakUrl };
   if (kc.durum) car.durum = kc.durum;
+  if (kc.ekKaynak) car.ekKaynak = kc.ekKaynak;
   Object.assign(car, { fotoUrl: null, sanalTurUrl: null, s,
     ncapNot: e.ncapNot || null, ncapKaynak: e.ncapKaynak || null, geriCagirmaNot: e.geriCagirmaNot || null,
     agirBakim: [], kucukDetaylar: e.kucukDetaylar || [], gucluYanlar: e.gucluYanlar || [], dikkatEdilecekler: e.dikkatEdilecekler || [],
