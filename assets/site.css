@@ -25,7 +25,7 @@ p{margin:0}
 .nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:9px 12px;border-radius:2px;color:var(--muted)}
 .nav a:hover,.nav a[aria-current]{color:var(--ink)}
-.nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--accent)}
+.nav a[aria-current]:not(.cta){box-shadow:inset 0 -2px 0 var(--accent)}
 .nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:18px;text-transform:uppercase;font-size:.76rem;letter-spacing:.07em;margin-left:8px}
 @media (max-width:640px){.top{position:static}.top .wrap{flex-wrap:wrap;padding-block:12px}.nav{justify-content:flex-start}.nav a{padding:8px 10px}.nav a.cta{margin-left:0}}
 
