@@ -76,6 +76,23 @@
   </section>
 
   <section class="section">
+    <h2>En çok satan otomobil modelleri</h2>
+    <p class="sub">Otomobil satış adedi, ilk 10 model.</p>
+    <div class="filters" role="group" aria-label="Dönem seç" id="modelTabs">
+      <button type="button" class="fbtn" data-p="eylul" aria-pressed="true">Eylül 2026</button>
+      <button type="button" class="fbtn" data-p="dokuzay" aria-pressed="false">Ocak–Eylül 2026</button>
+    </div>
+    <div class="panel">
+      <div class="chart" id="cModels"></div>
+      <details class="tableview"><summary>Tablo olarak göster</summary>
+        <div class="tablewrap"><table id="tModels"></table></div>
+      </details>
+      <p class="src" id="sModels"></p>
+      <p class="note" id="nModels"></p>
+    </div>
+  </section>
+
+  <section class="section">
     <h2>Yakıt türüne göre otomobil satışları</h2>
     <p class="sub">Otomobil satışlarında payı, yüzde. 2026 Ocak–Eylül ile 2025 Ocak–Kasım dönemi karşılaştırması (iki dönemin uzunluğu farklı; yüzdeler kendi dönemine göredir).</p>
     <div class="panel">
@@ -139,6 +156,14 @@ const D = {
     {ay:'Ağustos',oto:61529,hta:19502,yoy:-20.28,src:'https://www.bloomberght.com/otomotiv-pazarinda-sert-daralma-3787062',srcAd:'Bloomberg HT'},
     {ay:'Eylül',oto:63736,hta:19733,yoy:-24.33,src:'https://www.foreks.com/haber/detay/6abf440d24008d7d4373ad6e/FRKS/tr/odmd-ocak-eylul-doneminde-otomobil-ve-hafif-ticari-arac-pazari-13-39-oraninda-daraldi-02-10-26/',srcAd:'ForInvest'}
   ],
+  model:{
+    eylul:{baslik:'Eylül 2026', liste:[['Togg T10X',4237],['Renault Boreal',3220],['Renault Megane Sedan',2830],['Toyota Corolla',2486],['Togg T10F',2455],['Renault Duster',2305],['Renault Clio HB',1993],['Tesla Model Y',1725],['Hyundai i20',1649],['Kia Sportage',1591]],
+      src:'Kaynak: ODMD verisi; <a href="https://webtekno.com/eylul-2026-kac-otomobil-satildi-en-cok-satan-modeller-h226204.html" target="_blank" rel="noopener">Webtekno, 2 Ekim 2026</a> ve <a href="https://www.tamindir.com/haber/turkiye-eylul-2026-en-cok-satilan-arabalar_112171/" target="_blank" rel="noopener">Tamindir, 2 Ekim 2026</a> (iki kaynak aynı adetleri veriyor).',
+      not:'Model adlarını kaynaktaki gibi yazdık. Bir kaynak 3. sıradaki modeli "Megane", diğeri "Megane Sedan" olarak veriyor.'},
+    dokuzay:{baslik:'Ocak–Eylül 2026', liste:[['Renault Clio',33636],['Toyota Corolla',24495],['Renault Megane',22768],['Togg T10X',22020],['Renault Duster',19774],['Toyota C-HR',17952],['Hyundai i20',17284],['Fiat Egea Sedan',17033],['Volkswagen Taigo',16507],['Togg T10F',15408]],
+      src:'Kaynak: ODMD verisi; <a href="https://www.tamindir.com/haber/turkiye-eylul-2026-en-cok-satilan-arabalar_112171/" target="_blank" rel="noopener">Tamindir, 2 Ekim 2026</a>.',
+      not:'Dokuz aylık sıralamayı yalnızca bir kaynakta bulabildik; ikinci bir kaynakla karşılaştıramadık.'}
+  },
   marka:[['Renault',11430],['Togg',6692],['Fiat',6208],['Volkswagen',6140],['Hyundai',5532],['Toyota',5429],['Ford',4394],['Peugeot',4304],['Mercedes-Benz',3950],['Skoda',3397]],
   yakit:[['Benzin',258453,41.2,442650,47.2],['Hibrit',204956,32.6,251992,26.9],['Elektrik',121079,19.3,166665,17.8],['Dizel',34520,5.5,69471,7.4],['LPG',8969,1.4,7399,0.8]],
   yillik:[
@@ -161,8 +186,8 @@ function tipFor(el){
 function niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v))); const m=v/p; return [1,1.2,1.5,2,2.5,3,4,5,6,8,10].find(c=>c>=m)*p; }
 
 /* Aylık yığılmış çubuk */
-(function(){
-  const el=document.getElementById('cMonthly'), W=720, H=300, L=56, R=8, T=12, B=30;
+function drawMonthly(){
+  const el=document.getElementById('cMonthly'), W=Math.max(300,el.clientWidth||720), H=W<500?240:300, L=56, R=8, T=12, B=30;
   const max=niceMax(Math.max(...D.aylik.map(d=>d.oto+d.hta)));
   const y=v=>T+(H-T-B)*(1-v/max), bw=(W-L-R)/D.aylik.length, barW=Math.min(44,bw*0.62);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="2026 aylık otomobil ve hafif ticari araç satışları">`;
@@ -185,25 +210,38 @@ function niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v))); const m=v/p
   document.getElementById('tMonthly').innerHTML = '<thead><tr><th>Ay</th><th class="n">Otomobil</th><th class="n">Hafif ticari</th><th class="n">Toplam</th><th class="n">Yıllık değişim</th><th>Kaynak</th></tr></thead><tbody>' +
     D.aylik.map(d=>`<tr><td>${d.ay}</td><td class="n">${n(d.oto)}</td><td class="n">${n(d.hta)}</td><td class="n">${n(d.oto+d.hta)}</td><td class="n">${pct(d.yoy)}</td><td><a href="${esc(d.src)}" target="_blank" rel="noopener" style="color:var(--accent-soft)">${esc(d.srcAd)}</a></td></tr>`).join('') + '</tbody>';
   document.getElementById('sMonthly').innerHTML = 'Kaynak: ODMD aylık verileri; her ayın aktarıldığı kaynak tabloda. Ocak–Eylül toplamı (803.465) aylık rakamların toplamıyla aynı. Nisan için yıllık değişim oranını kaynakta bulamadık.';
-})();
+}
 
-/* Marka yatay çubuk */
-(function(){
-  const el=document.getElementById('cBrands'), W=720, rowH=30, L=118, R=64, H=D.marka.length*rowH+8;
-  const max=Math.max(...D.marka.map(m=>m[1])), x=v=>(W-L-R)*v/max;
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Eylül 2026 en çok satan 10 otomobil markası">`;
-  D.marka.forEach(([m,v],i)=>{ const yy=i*rowH+4, w=x(v), r=Math.min(4,w/2);
+/* Tek seri yatay çubuk (marka ve model sıralamaları) */
+function hbar(elId, tableId, liste, aria, colName, L){
+  const el=document.getElementById(elId), W=Math.max(300,el.clientWidth||720), rowH=30, R=64, H=liste.length*rowH+8;
+  L=Math.min(L,Math.round(W*0.44));
+  const max=Math.max(...liste.map(m=>m[1])), x=v=>(W-L-R)*v/max;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(aria)}">`;
+  liste.forEach(([m,v],i)=>{ const yy=i*rowH+4, w=x(v), r=Math.min(4,w/2);
     s+=`<text class="lbl" x="${L-10}" y="${yy+rowH/2+2}" text-anchor="end">${esc(m)}</text>`;
     s+=`<path class="bar" fill="var(--series-1)" d="M${L},${yy+5} H${L+w-r} Q${L+w},${yy+5} ${L+w},${yy+5+r} V${yy+rowH-7-r} Q${L+w},${yy+rowH-7} ${L+w-r},${yy+rowH-7} H${L} Z"/>`;
     s+=`<text class="axis" x="${L+w+8}" y="${yy+rowH/2+2}">${n(v)}</text>`;
   });
-  s+='</svg>'; el.innerHTML=s;
-  document.getElementById('tBrands').innerHTML='<thead><tr><th>Sıra</th><th>Marka</th><th class="n">Adet</th></tr></thead><tbody>'+D.marka.map(([m,v],i)=>`<tr><td>${i+1}</td><td>${esc(m)}</td><td class="n">${n(v)}</td></tr>`).join('')+'</tbody>';
-})();
+  el.innerHTML=s+'</svg>';
+  document.getElementById(tableId).innerHTML=`<thead><tr><th>Sıra</th><th>${colName}</th><th class="n">Adet</th></tr></thead><tbody>`+liste.map(([m,v],i)=>`<tr><td>${i+1}</td><td>${esc(m)}</td><td class="n">${n(v)}</td></tr>`).join('')+'</tbody>';
+}
+const drawBrands=()=>hbar('cBrands','tBrands',D.marka,'Eylül 2026 en çok satan 10 otomobil markası','Marka',118);
+
+function renderModels(p){
+  modelP=p; const d=D.model[p];
+  hbar('cModels','tModels',d.liste,d.baslik+' en çok satan 10 otomobil modeli','Model',176);
+  document.getElementById('sModels').innerHTML=d.src;
+  document.getElementById('nModels').textContent=d.not;
+  document.querySelectorAll('#modelTabs .fbtn').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.p===p)));
+}
+document.querySelectorAll('#modelTabs .fbtn').forEach(b=>b.addEventListener('click',()=>renderModels(b.dataset.p)));
+let modelP='eylul';
+renderModels('eylul');
 
 /* Yakıt payı gruplu yatay çubuk */
-(function(){
-  const el=document.getElementById('cFuel'), W=720, grp=50, L=80, R=60, H=D.yakit.length*grp+6;
+function drawFuel(){
+  const el=document.getElementById('cFuel'), W=Math.max(300,el.clientWidth||720), grp=50, L=80, R=60, H=D.yakit.length*grp+6;
   const max=50, x=v=>(W-L-R)*v/max;
   const bar=(y,w,fill)=>{ const r=Math.min(4,w/2); return `<path class="bar" fill="${fill}" d="M${L},${y} H${L+w-r} Q${L+w},${y} ${L+w},${y+r} V${y+16-r} Q${L+w},${y+16} ${L+w-r},${y+16} H${L} Z"/>`; };
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Yakıt türüne göre otomobil satış payları">`;
@@ -214,8 +252,10 @@ function niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v))); const m=v/p
   });
   s+='</svg>'; el.innerHTML=s;
   document.getElementById('tFuel').innerHTML='<thead><tr><th>Yakıt</th><th class="n">2026 Oca–Eyl adet</th><th class="n">Pay</th><th class="n">2025 Oca–Kas adet</th><th class="n">Pay</th></tr></thead><tbody>'+D.yakit.map(([k,a26,p26,a25,p25])=>`<tr><td>${k}</td><td class="n">${n(a26)}</td><td class="n">%${p26.toLocaleString('tr-TR')}</td><td class="n">${n(a25)}</td><td class="n">%${p25.toLocaleString('tr-TR')}</td></tr>`).join('')+'</tbody>';
-})();
+}
 
+drawMonthly(); drawBrands(); drawFuel();
+let rz; let lastW=window.innerWidth; window.addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ if(window.innerWidth===lastW) return; lastW=window.innerWidth; drawMonthly(); drawBrands(); drawFuel(); renderModels(modelP); },150); });
 document.getElementById('tYears').innerHTML = D.yillik.map(d=>`<tr><td>${d.yil}</td><td class="n">${n(d.oto)}</td><td class="n">${n(d.hta)}</td><td class="n">${n(d.top)}</td><td><a href="${esc(d.src)}" target="_blank" rel="noopener" style="color:var(--accent-soft)">${esc(d.srcAd)}</a></td></tr>`).join('');
 </script>
 </body>
