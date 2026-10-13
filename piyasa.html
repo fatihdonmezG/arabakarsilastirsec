@@ -118,13 +118,19 @@
   </section>
 
   <section class="section">
-    <h2>Yıllık toplamlar</h2>
+    <h2>Yıllara göre pazar, 2010–2025</h2>
+    <p class="sub">Otomobil ve hafif ticari araç satışları, yıllık adet. 2023, pazarın ilk kez 1 milyonu aştığı yıl; 2025 şimdiye kadarki en yüksek yıl.</p>
     <div class="panel">
-      <div class="tablewrap"><table>
-        <thead><tr><th>Yıl</th><th class="n">Otomobil</th><th class="n">Hafif ticari</th><th class="n">Toplam</th><th>Kaynak</th></tr></thead>
-        <tbody id="tYears"></tbody>
-      </table></div>
-      <p class="note">Daha eski yılların toplamlarını henüz ODMD'ye dayanan bir kaynakla doğrulayamadık; bulundukça eklenecek.</p>
+      <div class="legend"><span><i style="background:var(--series-1)"></i>Otomobil</span><span><i style="background:var(--series-2)"></i>Hafif ticari</span></div>
+      <div class="chart" id="cYears"></div>
+      <details class="tableview"><summary>Tablo olarak göster</summary>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Yıl</th><th class="n">Otomobil</th><th class="n">Hafif ticari</th><th class="n">Toplam</th><th>Kaynak</th></tr></thead>
+          <tbody id="tYears"></tbody>
+        </table></div>
+      </details>
+      <p class="src">Kaynak: 2010–2020 <a href="https://www.alomaliye.com/wp-content/uploads/2021/01/aralik-2020-odd-rapor.pdf" target="_blank" rel="noopener">ODD Aralık 2020 raporu (Ek 1–3)</a>; 2021 <a href="https://www.alomaliye.com/wp-content/uploads/2022/01/aralik-21-odd.pdf" target="_blank" rel="noopener">ODD Aralık 2021 raporu</a>; 2022 <a href="https://paratic.com/otomobil-pazari-2022yi-pozitif-seviyede-kapatti/" target="_blank" rel="noopener">Paratic (ODMD verisi)</a>; 2023 <a href="https://www.borsagundem.com.tr/otomotiv-pazari-1-milyon-232-bin-635-satisla-2023te-rekor-kirdi" target="_blank" rel="noopener">Borsa Gündem (ODMD verisi)</a>; 2024 ve 2025 tabloda.</p>
+      <p class="note">2022'nin hafif ticari rakamı kaynakta ayrıca verilmediği için toplamdan otomobil satışı çıkarılarak hesaplandı. ODMD'nin eski adı ODD'dir (Otomotiv Distribütörleri Derneği).</p>
     </div>
   </section>
 
@@ -168,6 +174,11 @@ const D = {
   marka:[['Renault',11430],['Togg',6692],['Fiat',6208],['Volkswagen',6140],['Hyundai',5532],['Toyota',5429],['Ford',4394],['Peugeot',4304],['Mercedes-Benz',3950],['Skoda',3397]],
   yakit:[['Benzin',258453,41.2,442650,47.2],['Hibrit',204956,32.6,251992,26.9],['Elektrik',121079,19.3,166665,17.8],['Dizel',34520,5.5,69471,7.4],['LPG',8969,1.4,7399,0.8]],
   yillik:[
+    ...[[2010,509784,251129],[2011,593519,270920],[2012,556280,221481],[2013,664655,188723],[2014,587331,180350],[2015,725596,242421],[2016,756938,226782],[2017,722759,233435],[2018,486321,134616],[2019,387256,91804],[2020,610109,162679]]
+      .map(([yil,oto,hta])=>({yil,oto,hta,top:oto+hta,src:'https://www.alomaliye.com/wp-content/uploads/2021/01/aralik-2020-odd-rapor.pdf',srcAd:'ODD Aralık 2020 raporu'})),
+    {yil:2021,oto:561853,hta:175497,top:737350,src:'https://www.alomaliye.com/wp-content/uploads/2022/01/aralik-21-odd.pdf',srcAd:'ODD Aralık 2021 raporu'},
+    {yil:2022,oto:592660,hta:190623,top:783283,src:'https://paratic.com/otomobil-pazari-2022yi-pozitif-seviyede-kapatti/',srcAd:'Paratic (ODMD verisi); hafif ticari hesaplandı'},
+    {yil:2023,oto:967341,hta:265294,top:1232635,src:'https://www.borsagundem.com.tr/otomotiv-pazari-1-milyon-232-bin-635-satisla-2023te-rekor-kirdi',srcAd:'Borsa Gündem (ODMD verisi)'},
     {yil:2024,oto:980341,hta:258168,top:1238509,src:'https://www.vkyanaliz.com/Files/docs/otomotiv-sektoru-aralik-2024-1736251244.pdf',srcAd:'Vakıf Yatırım, Aralık 2024 (ODMD verisi)'},
     {yil:2025,oto:1084496,hta:283904,top:1368400,src:'https://www.ensonhaber.com/otomobil/turkiye-otomobil-ve-hafif-ticari-arac-pazari-2025i-rekorla-kapatti',srcAd:'Ensonhaber, 7 Ocak 2026 (ODMD verisi)'}
   ]
@@ -255,8 +266,29 @@ function drawFuel(){
   document.getElementById('tFuel').innerHTML='<thead><tr><th>Yakıt</th><th class="n">2026 Oca–Eyl adet</th><th class="n">Pay</th><th class="n">2025 Oca–Kas adet</th><th class="n">Pay</th></tr></thead><tbody>'+D.yakit.map(([k,a26,p26,a25,p25])=>`<tr><td>${k}</td><td class="n">${n(a26)}</td><td class="n">%${p26.toLocaleString('tr-TR')}</td><td class="n">${n(a25)}</td><td class="n">%${p25.toLocaleString('tr-TR')}</td></tr>`).join('')+'</tbody>';
 }
 
-drawMonthly(); drawBrands(); drawFuel();
-let rz; let lastW=window.innerWidth; window.addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ if(window.innerWidth===lastW) return; lastW=window.innerWidth; drawMonthly(); drawBrands(); drawFuel(); renderModels(modelP); },150); });
+function drawYears(){
+  const el=document.getElementById('cYears'), Y=D.yillik, W=Math.max(300,el.clientWidth||720), H=W<500?240:300, L=72, R=8, T=12, B=30;
+  const max=niceMax(Math.max(...Y.map(d=>d.oto+d.hta))), NT=(max/1e5)%3===0?3:4;
+  const y=v=>T+(H-T-B)*(1-v/max), bw=(W-L-R)/Y.length, barW=Math.min(34,bw*0.66);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="2010–2025 yıllık otomobil ve hafif ticari araç satışları">`;
+  for(let i=0;i<=NT;i++){ const v=max*i/NT, yy=y(v); s+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}"/><text class="axis" x="${L-8}" y="${yy+4}" text-anchor="end">${n(v/1000)} bin</text>`; }
+  Y.forEach((d,i)=>{
+    const cx=L+bw*i+bw/2, x=cx-barW/2, yo=y(d.oto), yt=y(d.oto+d.hta), base=y(0), r=Math.min(4,(yo-1-yt)/2);
+    s+=`<path class="bar" fill="var(--series-1)" d="M${x},${base} V${yo+1} H${x+barW} V${base} Z"/>`;
+    s+=`<path class="bar" fill="var(--series-2)" d="M${x},${yo-1} V${yt+r} Q${x},${yt} ${x+r},${yt} H${x+barW-r} Q${x+barW},${yt} ${x+barW},${yt+r} V${yo-1} Z"/>`;
+    if(W>=600 || i%2===1) s+=`<text class="axis" x="${cx}" y="${H-10}" text-anchor="middle">${W<600?"'"+String(d.yil).slice(2):d.yil}</text>`;
+    s+=`<rect class="hit" data-i="${i}" x="${L+bw*i}" y="${T}" width="${bw}" height="${H-T-B}"/>`;
+  });
+  el.innerHTML=s+'</svg>';
+  const tip=tipFor(el);
+  el.querySelectorAll('.hit').forEach(r=>{
+    r.addEventListener('mousemove',e=>{ const d=Y[+r.dataset.i], b=el.getBoundingClientRect();
+      tip.show(`<b>${d.yil}</b><br>Otomobil: <b>${n(d.oto)}</b><br>Hafif ticari: <b>${n(d.hta)}</b><br>Toplam: <b>${n(d.oto+d.hta)}</b>`, e.clientX-b.left, e.clientY-b.top); });
+    r.addEventListener('mouseleave',()=>tip.hide());
+  });
+}
+drawMonthly(); drawBrands(); drawFuel(); drawYears();
+let rz; let lastW=window.innerWidth; window.addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ if(window.innerWidth===lastW) return; lastW=window.innerWidth; drawMonthly(); drawBrands(); drawFuel(); drawYears(); renderModels(modelP); },150); });
 document.getElementById('tYears').innerHTML = D.yillik.map(d=>`<tr><td>${d.yil}</td><td class="n">${n(d.oto)}</td><td class="n">${n(d.hta)}</td><td class="n">${n(d.top)}</td><td><a href="${esc(d.src)}" target="_blank" rel="noopener" style="color:var(--accent-soft)">${esc(d.srcAd)}</a></td></tr>`).join('');
 </script>
 </body>
