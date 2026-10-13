@@ -81,7 +81,9 @@ select:focus-visible{border-color:var(--accent)}
 .hcell{padding:22px 24px;min-width:0}
 .hcell + .hcell{border-left:1px solid var(--line)}
 .hgap{display:none}
-.hphoto{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--surface2);border:1px solid var(--line);margin-bottom:12px}
+.hphoto{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 58%;background:radial-gradient(ellipse 70% 60% at 50% 62%,#50545e 0%,#33363d 55%,#26282d 100%);border:1px solid var(--line);margin-bottom:6px}
+.hcredit{font-size:.66rem;color:var(--muted);margin-bottom:10px;line-height:1.35}
+.hcredit a{color:var(--muted)}
 .hphoto-ph{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/10;background:var(--surface2);border:1px solid var(--line);margin-bottom:12px;color:var(--muted);font-size:.72rem;text-align:center;padding:0 10px}
 .hname{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25;overflow-wrap:anywhere;color:var(--ink)}
 .hsub{font-size:.82rem;color:var(--muted);line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
@@ -270,6 +272,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 </main>
 
 <script src="assets/puanlar.js"></script>
+<script src="assets/fotolar.js"></script>
 <script>
 const CARS = [
  {id:"egea-sedan-2026-1.4-fire-95", marka:"Fiat", model:"Egea Sedan", yil:2026, versiyon:"1.4 Fire 95 HP",
@@ -2257,7 +2260,7 @@ function render(){
   $('rows').innerHTML = html;
 
   const photoHtml = c => c.foto
-    ? `<img class="hphoto" src="${esc(c.foto)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy">`
+    ? `<img class="hphoto" src="${esc(c.foto)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy">${c._fotoKredi?`<div class="hcredit">${c._fotoKredi}</div>`:''}`
     : `<div class="hphoto-ph" aria-hidden="true">Fotoğraf eklenmedi</div>`;
   const fotoSrcHtml = c => c.fotoKaynakUrl
     ? `<a class="hsrc" href="${esc(c.fotoKaynakUrl)}" target="_blank" rel="noopener">Fotoğraf: ${esc(c.fotoKaynakAd||'Kaynak')} ↗</a>`
@@ -2293,7 +2296,7 @@ $('share').addEventListener('click',async()=>{
 window.addEventListener('hashchange',()=>{ readHash(); render(); });
 
 $('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Veri bulunmayan satırlar "—" ile görünür; tahmin yazılmaz.`;
-CARS.forEach(c=>{ const p=(window.PUANLAR||{})[c.id]; c.s.sistem_puani_10 = p&&p.toplam!=null ? p.toplam : null; });
+CARS.forEach(c=>{ const f=window.fotoFor?window.fotoFor(c):null; if(f){ c.foto=f.src; c._fotoKredi=window.fotoKredi(f); } const p=(window.PUANLAR||{})[c.id]; c.s.sistem_puani_10 = p&&p.toplam!=null ? p.toplam : null; });
 readHash();
 renderPresets();
 render();

@@ -116,6 +116,11 @@ textarea{padding:12px;min-height:110px;resize:vertical}
 .lead{color:var(--muted);margin-top:8px;max-width:64ch;font-weight:300;line-height:1.6}
 .durumbox{margin:14px 0 0;padding:10px 14px;max-width:72ch;font-size:.9rem;color:var(--ink);background:rgba(231,161,90,.1);border-left:3px solid #E7A15A}
 .durumbox b{color:#F2C08A}
+.carphoto{position:relative;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line);background:radial-gradient(ellipse 70% 60% at 50% 62%,#50545e 0%,#33363d 55%,#26282d 100%)}
+.carphoto img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 58%}
+.carphoto::after{content:'';position:absolute;inset:0;box-shadow:inset 0 -40px 50px -30px rgba(0,0,0,.45);pointer-events:none}
+.credit{font-size:.74rem;color:var(--muted);margin-top:6px}
+.credit a{color:var(--muted)}
 .caution{margin:16px 0 0;padding:14px 16px;background:var(--surface);border:1px solid var(--line);box-shadow:inset 3px 0 0 var(--line-strong);font-size:.9rem;color:var(--muted);max-width:72ch}
 .block{margin-top:28px}
 .block h3{font-size:1.1rem;font-weight:700}
@@ -288,7 +293,9 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       </div>
     </div>
     <figure class="art">
-      <svg viewBox="0 0 480 190" role="img" aria-label="Araç fotoğrafı için ayrılan alan, örnek çizim">
+      <div class="carphoto" id="photoWrap" hidden><img id="photoImg" alt="" decoding="async"></div>
+      <p class="credit" id="photoCredit" hidden></p>
+      <svg id="artSvg" viewBox="0 0 480 190" role="img" aria-label="Araç fotoğrafı için ayrılan alan, örnek çizim">
         <line x1="10" y1="176" x2="470" y2="176" stroke="var(--line)" stroke-width="2"/>
         <path d="M44 146 L44 114 Q44 102 56 98 L112 90 L128 66 Q138 50 176 46 L292 46 Q332 48 352 76 L420 90 Q440 94 440 114 L440 146 Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
         <path d="M138 84 L150 66 Q158 58 178 56 L200 56 L200 84 Z" fill="var(--accent-tint)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
@@ -299,7 +306,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
         <circle cx="120" cy="148" r="30" fill="var(--ink)"/><circle cx="120" cy="148" r="13" fill="var(--surface2)"/>
         <circle cx="370" cy="148" r="30" fill="var(--ink)"/><circle cx="370" cy="148" r="13" fill="var(--surface2)"/>
       </svg>
-      <figcaption>Bu bir örnek çizimdir — telif hakları nedeniyle üretici fotoğrafını doğrudan burada göstermiyoruz. Gerçek fotoğraflar ve (varsa) 360° görünüm aşağıdaki linklerde:<br><a id="fotoLink" href="#" target="_blank" rel="noopener" style="color:var(--accent-soft);font-weight:600">Gerçek fotoğraf galerisini gör ↗</a><span id="turWrap"><br><a id="turLink" href="#" target="_blank" rel="noopener" style="color:var(--accent-soft);font-weight:600">360° / sanal turu gör ↗</a></span></figcaption>
+      <figcaption id="artCap">Bu bir örnek çizimdir — telif hakları nedeniyle üretici fotoğrafını doğrudan burada göstermiyoruz. Gerçek fotoğraflar ve (varsa) 360° görünüm aşağıdaki linklerde:<br><a id="fotoLink" href="#" target="_blank" rel="noopener" style="color:var(--accent-soft);font-weight:600">Gerçek fotoğraf galerisini gör ↗</a><span id="turWrap"><br><a id="turLink" href="#" target="_blank" rel="noopener" style="color:var(--accent-soft);font-weight:600">360° / sanal turu gör ↗</a></span></figcaption>
     </figure>
   </section>
 
@@ -458,6 +465,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="assets/puanlar.js"></script>
+<script src="assets/fotolar.js"></script>
 <script>
 /* ---------- Veri ---------- */
 const MTV_URL = 'mtv-hesaplama.html';
@@ -9768,6 +9776,9 @@ function renderHero(){
   const items=[['Beygir gücü',s.guc_hp,'HP'],['Azami tork',s.tork_nm,'Nm'],['0-100 km/s',s.sifirYuz_sn,'sn'],['Ortalama tüketim',s.tuketim_l100km,'l/100 km'],['Bagaj',s.bagaj_l,'L']];
   $('#keystats').innerHTML=items.map(([l,v,u])=>`<div class="ks"><dt>${l}</dt><dd>${v==null?'—':nf(v,dec(v))}<small>${u}</small></dd></div>`).join('');
   $('#fotoLink').href=c.fotoUrl||c.kaynakUrl||'#';
+  const ph=window.fotoFor?window.fotoFor(c):null;
+  $('#photoWrap').hidden=!ph; $('#photoCredit').hidden=!ph; $('#artSvg').style.display=ph?'none':''; $('#artCap').hidden=!!ph;
+  if(ph){ $('#photoImg').src=ph.src; $('#photoImg').alt=c.marka+' '+c.model; $('#photoCredit').innerHTML=window.fotoKredi(ph)+(ph.yilMin||ph.yilMax?` · ${ph.yilMin||''}–${ph.yilMax||''} model yılları için`:''); }
   const turEl=$('#turWrap'), turA=$('#turLink');
   if(c.sanalTurUrl){ turEl.hidden=false; turA.href=c.sanalTurUrl; } else { turEl.hidden=true; }
 }

@@ -68,3 +68,35 @@ C.filter(c=>!MARKA||c.marka===MARKA).forEach(c=>{const ev=/^Elektrik/i.test(c.s.
 1. Bulguları satır satır JSON olarak (JSONL) yaz: `{"id":"...","alan":"agirlik_kg","deger":1425,"kaynakAd":"...","kaynakUrl":"https://...","kaynakTuru":"birincil","sonDogrulama":"2026-10-14"}`. Sayısal değerler tırnaksız; birim alan adındaki birimle aynı olmalı (mm, kg, L, HP, Nm, sn, km/s, l/100km, g/km, kWh, km, dk).
 2. `node tools/teknik_yama.js yama.jsonl`. Dolu alanlar atlanır; hata varsa hiçbir şey yazılmaz.
 3. İki sayfanın sözdizimini kontrol et, karşılaştırmada güncellenen birkaç versiyonu Playwright ile aç.
+
+---
+
+# Araç fotoğrafı ekleme (Wikimedia Commons)
+
+Fotoğraflar yalnızca Wikimedia Commons'tan, serbest lisanslı dosyalardan gelir ve `assets/fotolar.js` içinde **model + model yılı aralığı** başına bir kayıt olarak tutulur (aynı modelin tüm versiyonları aynı fotoğrafı kullanır). Sitede fotoğrafın altında yazar, lisans ve Commons sayfası bağlantısı otomatik görünür; fotoğrafı olmayan araçlarda çizim gösterilir.
+
+## Seçim kuralları
+
+1. **Doğru nesil.** Fotoğraftaki araç, versiyonun nesliyle aynı olmalı (ör. 4116 mm Clio = Clio VI). Aynı nesilde makyaj öncesi/sonrası farkı varsa makyajlı hali tercih edilir; makyajsız foto ancak başka seçenek yoksa ve fark küçükse kullanılır. Farklı rozet (Dacia Duster ≠ Renault Duster), farklı pazar modeli (Çin'e özel Tayron, Çin Camry'si) ya da farklı kasa (SW/Combi yerine sedan) kullanılmaz; uygun foto yoksa boş bırakılır.
+2. **Açı ve arka plan:** önden 3/4 ya da yandan, araç kadrajı dolduruyor, arka plan sade. Arkadan çekim, iç mekân, kalabalık fuar çekimi, polis/taksi/kiralık araç kaplamaları, yarış livreleri seçilmez.
+3. **Yatay ve yeterli çözünürlük:** genişlik ≥ 1500 px, en/boy ≥ 1,25.
+4. **Lisans:** CC0, Public domain, CC BY / CC BY-SA 2.0–4.0 (ülke uyarlamaları dahil). Yazar ve lisans Commons'taki `Artist` ve `LicenseShortName` alanlarından aynen alınır.
+5. İyi kaynaklar: Wikipedia makale bilgi kutusundaki görsel (genelde güncel neslin temiz önden 3/4 fotoğrafı); Commons'ta "M 93" (`– f TARİH` = önden), Alexander Migl / Alexander-93, Vauxford, MoCars, Damian B Oh dosyaları.
+
+## Veriyi alma
+
+Commons API'si (`https://commons.wikimedia.org/w/api.php`) tek istekte küçük resim adresi, lisans ve yazarı verir:
+
+```
+?action=query&generator=search&gsrnamespace=6&gsrsearch="Marka Model" filetype:bitmap&gsrlimit=12&prop=imageinfo&iiprop=url|extmetadata|size&iiurlwidth=1280&format=json
+```
+
+Wikipedia bilgi kutusu görseli: `https://en.wikipedia.org/w/api.php?action=query&redirects=1&prop=pageimages&piprop=name&format=json&titles=Hyundai Kona`
+
+Bulut ortamının kabuğu Wikimedia'ya erişemez; API, kullanıcının bilgisayarındaki tarayıcı panelinden (commons.wikimedia.org sayfası açıkken `fetch`) okunur.
+
+## Ekleme
+
+1. JSON dizi hazırla (biçim `tools/foto_ekle.js` başında). `src` = API'deki `thumburl` (1280px, `upload.wikimedia.org/wikipedia/commons/thumb/...`), `sayfa` = `descriptionurl`, `baslik` = Commons dosya adı.
+2. `node tools/foto_ekle.js fotolar.json`. Marka/model karşılaştırmada yoksa, lisans izinli değilse, adresler Commons değilse hiçbir şey yazmaz. Sonda kaç modelin fotoğrafı olduğunu yazar.
+3. araclar.html, arac-detay.html ve karsilastirma.html'de birkaç modeli aç; fotoğraf ve kredi satırı görünmeli.
