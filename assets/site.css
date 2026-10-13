@@ -1,0 +1,109 @@
+/* Ortak stil: piyasa, haberler, ehliyet, rehber sayfaları */
+:root{
+  color-scheme: dark;
+  --bg:#2B2E34; --surface:#33363D; --surface2:#3A3D45; --ink:#F5F4F0; --muted:#9296A0; --line:#454850; --line-strong:#5A5D66;
+  --divider:rgba(245,244,240,.16);
+  --accent:#C9A961; --accent-soft:#E7D2A0; --accent-grad:linear-gradient(120deg,#E7D2A0 0%,#C9A961 50%,#9C824F 100%); --on-accent:#1B1508;
+  --focus:#C9A961; --good-tint:rgba(201,169,97,.12);
+  --series-1:#c98500; --series-2:#3987e5;
+  --warn:#E7A15A;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse 1100px 540px at 50% -180px, rgba(201,169,97,.11), transparent 60%), linear-gradient(180deg,#2E3137 0%,#272A2F 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+.top{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--divider);background:#2B2E34}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:12px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.08rem;text-decoration:none;white-space:nowrap;color:var(--ink)}
+.brandmark{flex:none;width:30px;height:30px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:14px;color:var(--on-accent);background:var(--accent-grad)}
+.nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:9px 12px;border-radius:2px;color:var(--muted)}
+.nav a:hover,.nav a[aria-current]{color:var(--ink)}
+.nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--accent)}
+.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:18px;text-transform:uppercase;font-size:.76rem;letter-spacing:.07em;margin-left:8px}
+@media (max-width:640px){.top{position:static}.top .wrap{flex-wrap:wrap;padding-block:12px}.nav{justify-content:flex-start}.nav a{padding:8px 10px}.nav a.cta{margin-left:0}}
+
+.hero{border-bottom:1px solid var(--divider)}
+.hero-inner{padding-block:64px 52px}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-soft)}
+h1{font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.06;letter-spacing:-.02em;margin-top:12px;max-width:22ch}
+.rule{width:64px;height:3px;background:var(--accent-grad);margin-top:20px;border-radius:2px}
+.lead{margin-top:18px;color:var(--muted);font-size:1.08rem;max-width:62ch;font-weight:300}
+.stamp{display:inline-flex;margin-top:20px;padding:6px 14px;border-radius:99px;border:1px solid rgba(201,169,97,.32);background:var(--good-tint);color:var(--accent-soft);font-size:.82rem;font-weight:600}
+
+.section{padding-block:44px}
+.section + .section{border-top:1px solid var(--divider)}
+h2{font-weight:700;font-size:clamp(1.4rem,3.4vw,1.9rem)}
+h3{font-size:1.08rem;font-weight:700}
+.sub{color:var(--muted);margin-top:8px;max-width:70ch;font-size:.95rem}
+.panel{margin-top:22px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);padding:22px 24px}
+.grid2{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px}
+.grid3{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px}
+@media (min-width:760px){.grid2{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:repeat(3,1fr)}.wrap{padding-inline:24px}}
+.grid2 .panel,.grid3 .panel{margin-top:0}
+
+.src{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.5}
+.src a{color:var(--accent-soft);text-decoration:none;border-bottom:1px dotted rgba(231,210,160,.5)}
+.src a:hover{border-bottom-style:solid}
+.note{margin-top:14px;padding:10px 14px;border-left:3px solid var(--warn);background:rgba(231,161,90,.08);font-size:.86rem;color:var(--ink)}
+.prose p + p{margin-top:12px}
+.prose ul{margin:10px 0 0;padding-left:20px}
+.prose li + li{margin-top:6px}
+.prose{color:#DCDBD6}
+
+/* İstatistik kutucukları */
+.tiles{display:grid;grid-template-columns:1fr;gap:1px;margin-top:22px;background:var(--line);border:1px solid var(--divider)}
+@media (min-width:640px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);padding:18px 20px}
+.tile b{display:block;font-family:var(--display);font-weight:800;font-size:1.9rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tile span{display:block;font-size:.84rem;color:var(--muted)}
+.tile .chg{margin-top:4px;color:var(--ink);font-size:.84rem}
+
+/* Tablolar */
+.tablewrap{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+td.n,th.n{text-align:right;white-space:nowrap}
+
+/* Grafik */
+.chart{position:relative;margin-top:16px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .axis{fill:var(--muted);font-family:var(--body);font-size:12px}
+.chart .lbl{fill:var(--ink);font-family:var(--body);font-size:12px}
+.chart .hit{fill:transparent;cursor:default}
+.chart .hit:hover + .bar,.chart .bar:hover{filter:brightness(1.15)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:.84rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.tip{position:absolute;pointer-events:none;background:#1F2126;border:1px solid var(--line-strong);padding:8px 10px;font-size:.82rem;line-height:1.4;white-space:nowrap;opacity:0;transition:opacity .1s;z-index:5}
+.tip b{font-variant-numeric:tabular-nums}
+details.tableview{margin-top:12px}
+details.tableview summary{cursor:pointer;font-size:.84rem;color:var(--accent-soft);min-height:32px}
+
+/* Haber kartları */
+.news{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px}
+.nitem{background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider);padding:18px 20px}
+.nmeta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.76rem;color:var(--muted)}
+.chip{display:inline-block;padding:2px 9px;border-radius:2px;border:1px solid var(--line-strong);background:var(--surface2);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.68rem;color:var(--accent-soft)}
+.nitem h3{margin-top:8px;font-size:1.06rem}
+.nitem p{margin-top:6px;color:#DCDBD6;font-size:.93rem}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.fbtn{font:inherit;font-size:.82rem;font-weight:600;color:var(--muted);background:transparent;border:1px solid var(--line-strong);border-radius:2px;padding:8px 14px;cursor:pointer;min-height:40px}
+.fbtn[aria-pressed="true"]{color:var(--on-accent);background:var(--accent-grad);border-color:transparent}
+
+/* Rehber içindekiler */
+.toc{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.toc a{font-size:.84rem;text-decoration:none;padding:7px 12px;border:1px solid var(--line-strong);border-radius:2px;color:var(--muted)}
+.toc a:hover{color:var(--ink);border-color:var(--accent)}
+.chapter{scroll-margin-top:90px}
+.num{display:inline-flex;width:30px;height:30px;border-radius:2px;align-items:center;justify-content:center;background:var(--good-tint);color:var(--accent-soft);font-family:var(--display);font-weight:800;margin-right:10px;font-size:.95rem}
+
+footer{padding-block:36px 52px;border-top:1px solid var(--divider);margin-top:20px}
+footer p{color:var(--muted);font-size:.85rem;max-width:72ch}
