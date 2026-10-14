@@ -1,0 +1,185 @@
+# Eksik teknik veri — ilerleme
+
+Zamanlanmış görev her çalışmada en çok boş alanı olan, "tamamlandı" yazmayan 2 markayı işler.
+Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar aranmaz.
+
+## Marka durumu
+
+| Marka | Durum | Son çalışma |
+|---|---|---|
+| Mercedes-Benz | tamamlandı | 2026-10-14 |
+| Volkswagen | tamamlandı | 2026-10-14 |
+
+## 2026-10-14 — Mercedes-Benz, Volkswagen
+
+- Doldurulan alan: 335 (Mercedes-Benz 167, Volkswagen 168), 47 versiyon.
+- Araştırılıp bulunamayan: 155 alan (aşağıda).
+- Kayıtta fark edilen, bu araçla düzeltilemeyen eski/şüpheli değerler (elle kontrol önerilir):
+  - VW T-Roc (2 versiyon): boyut/ağırlık/bagaj/tüketim eski nesle (4251 mm) ait; 2026 yeni nesil 4373 mm, dingil 2629, bagaj 475 L. Boş alanlar yeni nesil kaynaklarıyla dolduruldu.
+  - VW Tiguan 2.0 TDI 193: uzunluk/yükseklik/bagaj/depo/tüketim eski nesle ait görünüyor.
+  - VW Taigo: boyutlar (4074x1751x1436) hatalı; VW TR: 4266x1757x1518. Taigo 95 tüketim/CO2 şüpheli.
+  - VW T-Cross: Euro NCAP 2025 yeniden testte 3 yıldız (2026 MY şasilerinden itibaren) — 3 yazıldı.
+  - MB A 200 ve C 200 4MATIC: tüketim/CO2 NEDC görünüyor (güncel TR: A 200 6,3/143; C 200 4MATIC 6,8/154).
+  - MB GLB 220: tork 500 Nm sistem torku (motor 300 Nm); bagaj 1715 L koltuklar katlı (normal 540 L).
+  - MB C 63: depo 66 L (kaynak 60 L), koltuk 4 (kaynak 5). E 220 d genişlik 1904 (kaynak 1880).
+  - MB GLC 180 Coupé: çekiş "Önden Çekiş" yazıyor, auto-data arkadan itiş diyor.
+  - MB S 500 L: tork/uzunluk/dingil makyaj öncesi kısa şasiye ait görünüyor. Maybach S 580 tork/tüketim eski kasa olabilir.
+  - MB G 580 tüketim 22.6 kWh kaynaklarla (27.7–30.3) uyuşmuyor; G 500 CO2 264 (kaynak 248). EQS 500 menzil 818 (kaynak 876).
+
+### Araştırıldı, bulunamadı (id | alan | neden)
+
+- mercedes-benz-a-serisi-2026-a200-amg | airbag_sayisi | Mercedes TR kaynaklarında sayı/liste yok; Euro NCAP listesi TR donanımını yansıtmıyor (yan göğüs/pelvis ayrımı belirsiz)
+- mercedes-benz-a-serisi-2026-a200-amg | ncap_yildiz | Euro NCAP A-Class 2018 sonucu 2025-01-01 itibarıyla "expired"
+- mercedes-benz-a-serisi-2026-a200-amg | ncap_test_yili | Euro NCAP A-Class 2018 sonucu 2025-01-01 itibarıyla "expired"
+- mercedes-benz-cla-2026-cla220-4matic-amg | airbag_sayisi | Mercedes TR kaynaklarında sayı yok; Euro NCAP listesi (elektrikli test aracı) yan göğüs/pelvis ayrımı nedeniyle sayı belirsiz
+- mercedes-benz-cla-2026-cla200-plus-amg-elektrik | genislik_mm | TR basın bülteni yalnız aynalı genişlik (2021 mm) veriyor; CLA 200+ için aynasız değer bulunamadı
+- mercedes-benz-cla-2026-cla200-plus-amg-elektrik | airbag_sayisi | Mercedes TR kaynaklarında sayı yok; Euro NCAP listesinden sayı belirsiz
+- mercedes-benz-cla-2026-cla200-plus-amg-elektrik | batarya_kwh | TR'ye özel CLA 200+ için batarya kapasitesi hiçbir güvenilir kaynakta yok
+- mercedes-benz-cla-2026-cla200-plus-amg-elektrik | dc_hizli_sarj_dk_20_80 | kaynak yalnız "22 dakika" ve "10 dakikada 300 km" veriyor, % aralığı yok
+- mercedes-benz-cla-2026-cla200-plus-amg-elektrik | elektrik_tuketim_kwh100km | kaynak aralık veriyor (14,6-12,2), versiyon ucu belirsiz
+- mercedes-benz-gla-2026-gla200-amg | airbag_sayisi | Mercedes TR kaynaklarında sayı yok (donanım tablosu görsel)
+- mercedes-benz-gla-2026-gla200-amg | ncap_yildiz | Euro NCAP GLA 2019 sonucu 2026-01-01 itibarıyla "expired"
+- mercedes-benz-gla-2026-gla200-amg | ncap_test_yili | Euro NCAP GLA 2019 sonucu 2026-01-01 itibarıyla "expired"
+- mercedes-benz-gla-2026-gla200-amg | emisyon_normu | yalnız 2023 tarihli ikincil kaynak (Euro 6d-ISC-FCM / Euro 6d); 2026 versiyonu için güncel kaynak yok
+- mercedes-benz-glb-2026-glb220-4matic-amg | airbag_sayisi | TR basın bülteni yalnız diz ve orta hava yastığından söz ediyor, sayı yok
+- mercedes-benz-glb-2026-glb220-4matic-amg | ncap_yildiz | yeni nesil GLB (2026) için euroncap.com sonucu yok; 2019 eski nesil sonucu expired
+- mercedes-benz-glb-2026-glb220-4matic-amg | ncap_test_yili | yeni nesil GLB (2026) için euroncap.com sonucu yok
+- mercedes-benz-eqa-2026-eqa250-plus-night-edition | airbag_sayisi | Mercedes TR kaynaklarında sayı yok
+- mercedes-benz-eqa-2026-eqa250-plus-night-edition | ncap_yildiz | Euro NCAP EQA sonucu (2019 GLA bazlı) 2026-01-01 itibarıyla "expired"
+- mercedes-benz-eqa-2026-eqa250-plus-night-edition | ncap_test_yili | Euro NCAP EQA sonucu 2026-01-01 itibarıyla "expired"
+- mercedes-benz-eqa-2026-eqa250-plus-night-edition | dc_hizli_sarj_dk_20_80 | kaynak 10-80 veriyor (TR e-broşür: %10-80 32 dk)
+- mercedes-benz-c-serisi-2026-c200-4matic-amg | airbag_sayisi | Mercedes TR kaynaklarında sayı yok
+- mercedes-benz-c-serisi-2026-c200-4matic-amg | emisyon_normu | yalnız eski kaynak (Euro 6d-ISC-FCM, auto-data/2022); 2026 için güncel kaynak yok
+- mercedes-benz-c-serisi-all-terrain-2026-c200-4matic-all-terrain | airbag_sayisi | kaynakta sayı yok
+- mercedes-benz-c-serisi-all-terrain-2026-c200-4matic-all-terrain | ncap_yildiz | Euro NCAP C-Class 2022 listesinde All-Terrain açıkça yok (yalnız "5-door")
+- mercedes-benz-c-serisi-all-terrain-2026-c200-4matic-all-terrain | ncap_test_yili | Euro NCAP C-Class 2022 listesinde All-Terrain açıkça yok
+- mercedes-benz-c-serisi-all-terrain-2026-c200-4matic-all-terrain | emisyon_normu | yalnız 2022 TR basın bülteni (Euro 6d ISC-FCM); 2026 için güncel kaynak yok
+- mercedes-benz-c-serisi-2026-amg-c63-s-e-performance | airbag_sayisi | kaynakta sayı yok
+- mercedes-benz-c-serisi-2026-amg-c63-s-e-performance | ncap_yildiz | Euro NCAP C-Class 2022 varyant listesinde C 63 / PHEV yok
+- mercedes-benz-c-serisi-2026-amg-c63-s-e-performance | ncap_test_yili | Euro NCAP C-Class 2022 varyant listesinde C 63 / PHEV yok
+- mercedes-benz-c-serisi-2026-amg-c63-s-e-performance | tuketim_l100km | PHEV kaynakları çelişkili (AMG sitesi 9 l ön-değer, TR tüketim sayfası 10,5, auto-data 6,9); ağırlıklı WLTP belirsiz
+- mercedes-benz-c-serisi-2026-amg-c63-s-e-performance | co2_gkm | PHEV kaynakları çelişkili (205 / 238 / 156-167 g/km)
+- mercedes-benz-c-serisi-2026-amg-c63-s-e-performance | emisyon_normu | yalnız auto-data "Euro 6e"; 2026 TR (muhtemelen 6e-bis) için birincil kaynak yok
+- mercedes-benz-e-serisi-2026-e180-amg | ncap_yildiz | Euro NCAP E-Class 2024 varyant listesinde E 180 yok
+- mercedes-benz-e-serisi-2026-e180-amg | ncap_test_yili | Euro NCAP E-Class 2024 varyant listesinde E 180 yok
+- mercedes-benz-e-serisi-2026-e180-amg | emisyon_normu | TR 2023 bülteni yalnız "Euro 6", auto-data "Euro 6e"; 2026 için kesin değer yok
+- mercedes-benz-e-serisi-2026-e220d-4matic-amg | emisyon_normu | TR 2023 bülteni yalnız "Euro 6", ultimatespecs "Euro 6d"; 2026 için kesin değer yok
+- mercedes-benz-cle-coupe-2026-cle300-4matic-amg | airbag_sayisi | Mercedes TR kaynaklarında sayı yok; Euro NCAP listesinden sayı belirsiz
+- mercedes-benz-cle-cabriolet-2026-cle300-4matic-amg | airbag_sayisi | Mercedes TR kaynaklarında sayı yok; Euro NCAP listesinden sayı belirsiz
+- mercedes-benz-glc-2026-glc300d-4matic-amg | airbag_sayisi | TR donanım listesi yalnız diz+orta konsol hava yastığını sayıyor; tam liste bulunamadı
+- mercedes-benz-glc-2026-glc300d-4matic-amg | ncap_yildiz | Euro NCAP GLC (2022) tablosunda GLC 300d 4MATIC '-' (kapsam dışı) işaretli
+- mercedes-benz-glc-2026-glc300d-4matic-amg | ncap_test_yili | Euro NCAP GLC (2022) tablosunda GLC 300d 4MATIC kapsam dışı
+- mercedes-benz-glc-2026-glc300d-4matic-amg | tuketim_l100km | kaynaklar WLTP aralık veriyor (5.6-6.2), versiyon ucu belirsiz
+- mercedes-benz-glc-2026-glc300d-4matic-amg | co2_gkm | kaynaklar WLTP aralık veriyor (146-163), versiyon ucu belirsiz
+- mercedes-benz-glc-2026-glc300d-4matic-amg | emisyon_normu | yalnız 2022 tarihli veritabanı kaydında Euro 6d-ISC-FCM; 2026 TR için birincil kaynak bulunamadı (TR fiyat sayfası/broşür PDF erişilemedi)
+- mercedes-benz-glc-coupe-2026-glc180-amg | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-glc-coupe-2026-glc180-amg | ncap_yildiz | Euro NCAP GLC (2022) sonucu yalnız 5 kapı SUV için; Coupé kapsamda değil
+- mercedes-benz-glc-coupe-2026-glc180-amg | ncap_test_yili | Euro NCAP'te GLC Coupé için sonuç yok
+- mercedes-benz-glc-elektrikli-2026-glc400-4matic-amg | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-glc-elektrikli-2026-glc400-4matic-amg | ncap_yildiz | euroncap.com'da elektrikli GLC (EQ Technology) için sonuç bulunamadı
+- mercedes-benz-glc-elektrikli-2026-glc400-4matic-amg | ncap_test_yili | euroncap.com'da elektrikli GLC için sonuç bulunamadı
+- mercedes-benz-glc-elektrikli-2026-glc400-4matic-amg | dc_hizli_sarj_dk_20_80 | kaynak 10-80 veriyor (22 dk, autotijd.be)
+- mercedes-benz-gle-2026-gle300d-4matic-amg | genislik_mm | kaynaklar çelişiyor (ultimatespecs 1947, auto-data 2010)
+- mercedes-benz-gle-2026-gle300d-4matic-amg | agirlik_kg | kaynaklar çelişiyor (ultimatespecs 2335, auto-data 2260)
+- mercedes-benz-gle-2026-gle300d-4matic-amg | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-gle-2026-gle300d-4matic-amg | ncap_yildiz | Euro NCAP GLE (2019) sonucu 2026-01-01 itibarıyla geçerliliğini yitirdi
+- mercedes-benz-gle-2026-gle300d-4matic-amg | ncap_test_yili | Euro NCAP GLE (2019) sonucu süresi dolmuş
+- mercedes-benz-gle-2026-gle300d-4matic-amg | tuketim_l100km | WLTP aralık (6.8-7.8), versiyon ucu belirsiz
+- mercedes-benz-gle-2026-gle300d-4matic-amg | co2_gkm | WLTP aralık (179-204), versiyon ucu belirsiz
+- mercedes-benz-gle-2026-gle300d-4matic-amg | emisyon_normu | yalnız eski veritabanı değerleri (Euro 6d-ISC-FCM / 6d-WLTP); 2026 için birincil kaynak bulunamadı
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | genislik_mm | kaynaklar çelişiyor (ultimatespecs 1947, auto-data 2018)
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | yukseklik_mm | kaynaklar çelişiyor (ultimatespecs 1716, auto-data 1730)
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | agirlik_kg | kaynaklar çelişiyor (ultimatespecs 2390, auto-data 2315)
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | ncap_yildiz | Euro NCAP GLE (2019, Coupé dahil) sonucu 2026-01-01 itibarıyla geçerliliğini yitirdi
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | ncap_test_yili | Euro NCAP GLE (2019) sonucu süresi dolmuş
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | tuketim_l100km | WLTP aralık (6.7-7.5), versiyon ucu belirsiz
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | co2_gkm | WLTP aralık (177-197), versiyon ucu belirsiz
+- mercedes-benz-gle-coupe-2026-gle300d-4matic-amg | emisyon_normu | yalnız eski veritabanı değerleri (Euro 6d-ISC-FCM / 6d-WLTP); 2026 için kaynak bulunamadı
+- mercedes-benz-gls-2026-gls450d-4matic-amg | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-gls-2026-gls450d-4matic-amg | ncap_yildiz | euroncap.com'da GLS (X167) sonucu bulunamadı
+- mercedes-benz-gls-2026-gls450d-4matic-amg | ncap_test_yili | euroncap.com'da GLS sonucu bulunamadı
+- mercedes-benz-g-serisi-2026-g580-heritage-elektrik | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-g-serisi-2026-g580-heritage-elektrik | ncap_yildiz | euroncap.com'da W465 G-Serisi için geçerli sonuç bulunamadı
+- mercedes-benz-g-serisi-2026-g580-heritage-elektrik | ncap_test_yili | euroncap.com'da geçerli sonuç bulunamadı
+- mercedes-benz-g-serisi-2026-g580-heritage-elektrik | menzil_km_wltp | WLTP aralık (434-473 km), versiyon ucu belirsiz
+- mercedes-benz-g-serisi-2026-g580-heritage-elektrik | dc_hizli_sarj_dk_20_80 | kaynak yalnız 'x-80%' 32 dk veriyor (başlangıç belirtilmemiş); 20-80 süresi yok
+- mercedes-benz-g-serisi-2026-g500-heritage | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-g-serisi-2026-g500-heritage | ncap_yildiz | euroncap.com'da W465 G-Serisi için geçerli sonuç bulunamadı
+- mercedes-benz-g-serisi-2026-g500-heritage | ncap_test_yili | euroncap.com'da geçerli sonuç bulunamadı
+- mercedes-benz-s-serisi-2026-s500-4matic-l-inspiration | airbag_sayisi | basın kiti yalnız 'en fazla 15 hava yastığı' diyor; standart sayı belirsiz
+- mercedes-benz-s-serisi-2026-s500-4matic-l-inspiration | ncap_yildiz | euroncap.com'da S-Serisi (W223) sonucu bulunamadı
+- mercedes-benz-s-serisi-2026-s500-4matic-l-inspiration | ncap_test_yili | euroncap.com'da S-Serisi sonucu bulunamadı
+- mercedes-benz-s-serisi-2026-s450d-4matic-l-inspiration | airbag_sayisi | basın kiti yalnız 'en fazla 15 hava yastığı' diyor; standart sayı belirsiz
+- mercedes-benz-s-serisi-2026-s450d-4matic-l-inspiration | ncap_yildiz | euroncap.com'da S-Serisi (W223) sonucu bulunamadı
+- mercedes-benz-s-serisi-2026-s450d-4matic-l-inspiration | ncap_test_yili | euroncap.com'da S-Serisi sonucu bulunamadı
+- mercedes-benz-s-serisi-2026-s450d-4matic-l-inspiration | tuketim_l100km | WLTP aralık (6.3-6.9, Mercedes basın), versiyon ucu belirsiz
+- mercedes-benz-s-serisi-2026-s450d-4matic-l-inspiration | co2_gkm | WLTP aralık (165-182, Mercedes basın), versiyon ucu belirsiz
+- mercedes-benz-maybach-s-serisi-2026-s580-inspiration | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-maybach-s-serisi-2026-s580-inspiration | ncap_yildiz | euroncap.com'da Maybach S-Serisi sonucu bulunamadı
+- mercedes-benz-maybach-s-serisi-2026-s580-inspiration | ncap_test_yili | euroncap.com'da Maybach S-Serisi sonucu bulunamadı
+- mercedes-benz-eqe-2026-eqe350-4matic-amg | airbag_sayisi | TR donanım listesi yalnız diz+orta konsol hava yastığını sayıyor; tam liste bulunamadı
+- mercedes-benz-eqe-2026-eqe350-4matic-amg | dc_hizli_sarj_dk_20_80 | kaynak yalnız 'x-80%' 32 dk veriyor; 20-80 süresi yok
+- mercedes-benz-eqe-2026-eqe280-amg | tork_nm | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | sifirYuz_sn | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | hiz_kmh | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | uzunluk_mm | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | genislik_mm | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | yukseklik_mm | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | dingil_mm | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | agirlik_kg | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | bagaj_l | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | batarya_kwh | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | menzil_km_wltp | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | elektrik_tuketim_kwh100km | EQE 280 (218 PS) için güvenilir teknik veri kaynağı bulunamadı (ultimatespecs/auto-data/autotijd listelerinde yok)
+- mercedes-benz-eqe-2026-eqe280-amg | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-eqe-2026-eqe280-amg | ncap_yildiz | Euro NCAP EQE (2022) varyant tablosunda EQE 280 yok
+- mercedes-benz-eqe-2026-eqe280-amg | ncap_test_yili | Euro NCAP EQE (2022) varyant tablosunda EQE 280 yok
+- mercedes-benz-eqe-2026-eqe280-amg | dc_hizli_sarj_dk_20_80 | kaynak bulunamadı
+- mercedes-benz-eqs-2026-eqs500-4matic-inspiration | airbag_sayisi | tam standart hava yastığı listesi bulunamadı
+- mercedes-benz-eqs-2026-eqs500-4matic-inspiration | ncap_yildiz | Euro NCAP EQS (2021) varyant tablosunda EQS 500 4MATIC yok
+- mercedes-benz-eqs-2026-eqs500-4matic-inspiration | ncap_test_yili | Euro NCAP EQS (2021) varyant tablosunda EQS 500 4MATIC yok
+- mercedes-benz-eqs-2026-eqs500-4matic-inspiration | dc_hizli_sarj_dk_20_80 | şarj süresi verisi kaynakta giriş gerektiriyor; 20-80 süresi bulunamadı
+- mercedes-benz-eqs-2026-eqs500-4matic-inspiration | elektrik_tuketim_kwh100km | kaynak tek değer (16.3, 876 km menzile ait) veriyor; TR menzili 818 km, versiyona ait değer belirsiz
+- vw-taigo-1-0-tsi-95-manuel-life-2026 | segment | Euro NCAP Taigo sayfasında sınıf yok; üretici sınıflaması bulunamadı
+- vw-taigo-1-0-tsi-95-manuel-life-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı (Euro NCAP tablosu koltuk-pozisyonu bazlı, sayım belirsiz)
+- vw-taigo-1-0-tsi-95-manuel-life-2026 | emisyon_normu | Yalnızca auto-data 2021 sürümü "Euro 6d-ISC-FCM"; 2026 TR için güncel norm doğrulanamadı
+- vw-taigo-1-0-tsi-116-dsg-style-2026 | segment | Euro NCAP Taigo sayfasında sınıf yok; üretici sınıflaması bulunamadı
+- vw-taigo-1-0-tsi-116-dsg-style-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı
+- vw-taigo-1-0-tsi-116-dsg-style-2026 | emisyon_normu | auto-data "Euro 6 EA" (belirsiz kod); TR kaynağında yok
+- vw-taigo-1-5-tsi-150-dsg-r-line-2026 | segment | Euro NCAP Taigo sayfasında sınıf yok; üretici sınıflaması bulunamadı
+- vw-taigo-1-5-tsi-150-dsg-r-line-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı
+- vw-taigo-1-5-tsi-150-dsg-r-line-2026 | tuketim_l100km | auto-data 6.1 (2021 sürümü) VW TR sitesindeki Taigo WLTP aralığı 5.5-5.9 dışında; güncel değer doğrulanamadı
+- vw-taigo-1-5-tsi-150-dsg-r-line-2026 | co2_gkm | auto-data 138 g/km 2021 sürümüne ait; 2026 için doğrulanamadı
+- vw-taigo-1-5-tsi-150-dsg-r-line-2026 | emisyon_normu | auto-data 2021 sürümü "Euro 6d-ISC-FCM"; 2026 TR için doğrulanamadı
+- vw-t-cross-1-0-tsi-116-manuel-life-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı
+- vw-t-cross-1-0-tsi-116-manuel-life-2026 | emisyon_normu | auto-data "Euro 6 EA" (belirsiz kod); TR kaynağında yok
+- vw-t-cross-1-0-tsi-116-dsg-style-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı
+- vw-t-cross-1-0-tsi-116-dsg-style-2026 | emisyon_normu | auto-data "Euro 6 EA" (belirsiz kod); TR kaynağında yok
+- vw-t-cross-1-0-tsi-116-dsg-r-line-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı
+- vw-t-cross-1-0-tsi-116-dsg-r-line-2026 | emisyon_normu | auto-data "Euro 6 EA" (belirsiz kod); TR kaynağında yok
+- vw-golf-1-5-etsi-150-dsg-r-line-2026 | emisyon_normu | auto-data "Euro 6 EA" (belirsiz kod); TR broşüründe norm yok
+- vw-golf-gti-2-0-tsi-265-dsg-2026 | airbag_sayisi | TR Golf broşürü GTI'ı kapsamıyor; GTI için ayrı üretici listesi bulunamadı
+- vw-golf-gti-2-0-tsi-265-dsg-2026 | emisyon_normu | auto-data "Euro 6 EB" (belirsiz kod); TR kaynağında yok
+- vw-golf-r-2-0-tsi-333-dsg-2026 | airbag_sayisi | TR Golf broşürü Golf R'ı kapsamıyor; Golf R için ayrı üretici listesi bulunamadı
+- vw-t-roc-1-5-etsi-150-dsg-life-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı (yeni nesil)
+- vw-t-roc-1-5-etsi-150-dsg-r-line-2026 | airbag_sayisi | Üretici kaynağında açık sayı/liste bulunamadı (yeni nesil)
+- vw-tayron-1-5-etsi-150-dsg-life-2026 | co2_gkm | ultimatespecs tek değer 142 g/km (6.2 l/100km ile; R-Line tüketimine uyuyor), Life (6.0) için CO2 kaynakta yok
+- vw-passat-1-5-etsi-150-dsg-impression-2026 | airbag_sayisi | Euro NCAP konum bazlı listeliyor (arka yan opsiyonel), VW kaynağında açık sayı yok
+- vw-passat-1-5-etsi-150-dsg-r-line-2026 | agirlik_kg | kaynak tek değer (1572 kg) baz donanım; R-Line (panoramik tavan vb.) için geçerliliği belirsiz
+- vw-passat-1-5-etsi-150-dsg-r-line-2026 | airbag_sayisi | Euro NCAP konum bazlı listeliyor (arka yan opsiyonel), VW kaynağında açık sayı yok
+- vw-passat-1-5-etsi-150-dsg-r-line-2026 | tuketim_l100km | kaynak 5.4 l/100km (CO2 122) veriyor; R-Line CO2 128 olduğundan bu versiyona ait değer belirsiz
+- vw-passat-2-0-tdi-193-4motion-dsg-r-line-2026 | airbag_sayisi | Euro NCAP konum bazlı listeliyor (arka yan opsiyonel), VW kaynağında açık sayı yok
+- vw-tiguan-1-5-etsi-150-dsg-life-2026 | airbag_sayisi | Euro NCAP konum bazlı listeliyor (yan baş/göğüs/pelvis ayrı satır), güvenilir adet sayılamadı; VW TR sayfasında yok
+- vw-tiguan-1-5-etsi-150-dsg-r-line-2026 | airbag_sayisi | Euro NCAP konum bazlı listeliyor, güvenilir adet sayılamadı; VW TR sayfasında yok
+- vw-tiguan-2-0-tdi-193-4motion-dsg-r-line-2026 | airbag_sayisi | Euro NCAP konum bazlı listeliyor, güvenilir adet sayılamadı; VW TR sayfasında yok
+- vw-id4-125kw-170hp-pure-2025 | segment | VW TR sayfasında segment yok; Euro NCAP sayfası yalnızca gövde (SUV) veriyor, sınıf yok
+- vw-id4-125kw-170hp-pure-2025 | airbag_sayisi | Euro NCAP konum bazlı listeliyor, açık adet yok
+- vw-id4-125kw-170hp-pure-2025 | dc_hizli_sarj_dk_20_80 | kaynak 10-80 veriyor (ultimatespecs 10-80% 25 dk)
+- vw-id4-125kw-170hp-pure-2025 | elektrik_tuketim_kwh100km | ultimatespecs 16.8 kWh/100km'yi 357 km menzil ile veriyor; TR versiyonu 354 km, aynı spesifikasyon olduğu doğrulanamadı
+- vw-id7-210kw-286hp-pro-s-2025 | segment | VW TR sayfası yalnızca "elektrikli sedan" diyor; Euro NCAP sınıf vermiyor (gövde Hatchback)
+- vw-id7-210kw-286hp-pro-s-2025 | airbag_sayisi | Euro NCAP konum bazlı listeliyor (arka yan opsiyonel), açık adet yok
+- vw-id7-210kw-286hp-pro-s-2025 | dc_hizli_sarj_dk_20_80 | kaynak yalnızca "%80'e 25 dk" veriyor, başlangıç SoC belirtilmemiş (muhtemelen 10-80)
+- vw-touareg-3-0-v6-tdi-286-tiptronic-elegance-2025 | ncap_yildiz | Euro NCAP 2018 sonucunun geçerliliği 1 Ocak 2025'te sona ermiş (expired)
+- vw-touareg-3-0-v6-tdi-286-tiptronic-elegance-2025 | ncap_test_yili | Euro NCAP 2018 sonucunun geçerliliği 1 Ocak 2025'te sona ermiş (expired)
+- vw-touareg-3-0-v6-tdi-286-tiptronic-elegance-2025 | emisyon_normu | auto-data "Euro 6 EA" yazıyor (net Euro normu değil); ultimatespecs Touareg sayfası 429 hız sınırı nedeniyle açılamadı
