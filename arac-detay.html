@@ -52,7 +52,11 @@ p{margin:0}
 
 .carpicker{margin-top:20px;padding:16px 20px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider)}
 .carpicker .pl{display:block;font-size:.76rem;font-weight:600;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
-.carpicker .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;max-width:640px}
+.carpicker .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+@media (min-width:900px){.carpicker .fields{grid-template-columns:repeat(3,1fr) 1.3fr 1.3fr 2fr}}
+.carpicker .pfoot{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin-top:10px;font-size:.82rem;color:var(--muted)}
+.carpicker .pfoot button{font:inherit;font-size:.8rem;color:var(--accent-soft);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline}
+.carpicker select.on{border-color:var(--accent)}
 .carpicker .field label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
 .carpicker select{width:100%;height:46px;padding-inline:12px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:2px}
 .carpicker select:focus-visible{border-color:var(--accent)}
@@ -95,6 +99,7 @@ h1{font-weight:800;font-size:clamp(2.1rem,6vw,3.3rem);line-height:1.05;letter-sp
 .meter{height:6px;background:var(--surface2);border:1px solid var(--line);border-radius:2px;overflow:hidden}
 .meter i{display:block;height:100%;background:var(--accent-grad)}
 .subs b{font-variant-numeric:tabular-nums;text-align:right;font-weight:600;color:var(--ink)}
+.subs .why{grid-column:1/-1;margin-top:-4px;font-size:.74rem;line-height:1.4;color:var(--muted)}
 .box label{display:block;font-size:.76rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
 
 .btn{font:inherit;font-weight:600;font-size:.86rem;min-height:44px;padding:0 16px;color:var(--ink);background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;letter-spacing:.01em}
@@ -276,9 +281,14 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   <section class="carpicker" aria-label="Araç seç">
     <span class="pl" id="pickLbl">Araç seç — veritabanındaki 435 versiyondan herhangi birini aç</span>
     <div class="fields">
+      <div class="field"><label for="pickYil">Model yılı</label><select id="pickYil"></select></div>
+      <div class="field"><label for="pickYakit">Yakıt</label><select id="pickYakit"></select></div>
+      <div class="field"><label for="pickKasa">Kasa</label><select id="pickKasa"></select></div>
       <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
       <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
+      <div class="field"><label for="pickVer">Versiyon</label><select id="pickVer"></select></div>
     </div>
+    <div class="pfoot"><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="pickSatis" style="accent-color:var(--accent)"> Sadece satıştakiler</label><span id="pickCount"></span><button type="button" id="pickClear" hidden>Filtreleri temizle</button><a href="araclar.html" style="color:var(--accent-soft)">Tüm araçlar listesinde daha fazla filtre →</a></div>
   </section>
 
   <section class="hero" aria-label="Araç özeti">
@@ -9733,28 +9743,53 @@ function toast(msg){
 }
 
 /* ---------- Render ---------- */
+const PF={yil:'',yakit:'',kasa:'',satis:false};
+const PF_FUEL=[['elektrik','Elektrikli'],['phev','Plug-in hibrit'],['hibrit','Hibrit'],['mhev','Hafif hibrit'],['lpg','Benzin / LPG'],['dizel','Dizel'],['benzin','Benzin']];
+const PF_BODY=[['suv','SUV / Crossover'],['sedan','Sedan'],['hatchback','Hatchback'],['sw','Station wagon'],['mpv','MPV'],['coupe','Coupe / Cabrio'],['pickup','Pick-up'],['diger','Diğer']];
+const pfMatch=x=>(!PF.yil||(PF.yil==='eski'?x.yil<=2025:x.yil===Number(PF.yil)))&&(!PF.yakit||fuelCat(x.s.yakit)===PF.yakit)&&(!PF.kasa||bodyCat(x.s.kasa)===PF.kasa)&&(!PF.satis||satista(x));
+const trSort=(a,b)=>a.localeCompare(b,'tr');
 function renderCarPicker(){
-  const c=car();
-  const all=Object.values(CARS);
-  const brands=[...new Set(all.map(x=>x.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
-  $('#pickMarka').innerHTML=brands.map(b=>`<option value="${esc(b)}"${b===c.marka?' selected':''}>${esc(b)}</option>`).join('');
-  const models=[...new Set(all.filter(x=>x.marka===c.marka).map(x=>x.model))].sort((a,b)=>a.localeCompare(b,'tr'));
+  const c=car(), all=Object.values(CARS), pool=all.filter(pfMatch);
+  const years=[...new Set(all.map(x=>x.yil))].sort((a,b)=>b-a);
+  $('#pickYil').innerHTML='<option value="">Tümü</option>'+years.map(y=>`<option value="${y}"${String(y)===PF.yil?' selected':''}>${y}</option>`).join('')+`<option value="eski"${PF.yil==='eski'?' selected':''}>2025 ve öncesi</option>`;
+  $('#pickYakit').innerHTML='<option value="">Tümü</option>'+PF_FUEL.filter(([v])=>all.some(x=>fuelCat(x.s.yakit)===v)).map(([v,t])=>`<option value="${v}"${v===PF.yakit?' selected':''}>${t}</option>`).join('');
+  $('#pickKasa').innerHTML='<option value="">Tümü</option>'+PF_BODY.filter(([v])=>all.some(x=>bodyCat(x.s.kasa)===v)).map(([v,t])=>`<option value="${v}"${v===PF.kasa?' selected':''}>${t}</option>`).join('');
+  $('#pickSatis').checked=PF.satis;
+  const brands=[...new Set(pool.map(x=>x.marka))].sort(trSort);
+  $('#pickMarka').innerHTML=brands.map(b=>`<option value="${esc(b)}"${b===c.marka?' selected':''}>${esc(b)} (${pool.filter(x=>x.marka===b).length})</option>`).join('');
+  const models=[...new Set(pool.filter(x=>x.marka===c.marka).map(x=>x.model))].sort(trSort);
   $('#pickModel').innerHTML=models.map(m=>`<option value="${esc(m)}"${m===c.model?' selected':''}>${esc(m)}</option>`).join('');
+  const vers=pool.filter(x=>x.marka===c.marka&&x.model===c.model).sort((a,b)=>b.yil-a.yil||trSort(a.versiyon,b.versiyon));
+  $('#pickVer').innerHTML=vers.map(v=>`<option value="${esc(v.id)}"${v.id===c.id?' selected':''}>${v.yil} · ${esc(v.versiyon)}</option>`).join('');
+  ['#pickYil','#pickYakit','#pickKasa'].forEach(id=>$(id).classList.toggle('on',!!$(id).value));
+  const active=PF.yil||PF.yakit||PF.kasa||PF.satis;
+  $('#pickClear').hidden=!active;
+  $('#pickCount').textContent=active?`Filtrelere uyan ${pool.length} versiyon, ${brands.length} marka`:'';
 }
+function goCar(id){ state.carId=id; state.filter=null; renderAll(); history.replaceState(null,'','#'+id); }
+function pfChanged(){
+  const pool=Object.values(CARS).filter(pfMatch);
+  if(!pool.length){ renderCarPicker(); $('#pickCount').textContent='Bu filtrelere uyan araç yok.'; return; }
+  const c=car();
+  if(pfMatch(c)){ renderCarPicker(); return; }
+  const best=pool.find(x=>x.marka===c.marka&&x.model===c.model)||pool.find(x=>x.marka===c.marka)||pool.sort((a,b)=>trSort(a.marka,b.marka)||trSort(a.model,b.model))[0];
+  goCar(best.id);
+}
+$('#pickYil').addEventListener('change',e=>{PF.yil=e.target.value;pfChanged();});
+$('#pickYakit').addEventListener('change',e=>{PF.yakit=e.target.value;pfChanged();});
+$('#pickKasa').addEventListener('change',e=>{PF.kasa=e.target.value;pfChanged();});
+$('#pickSatis').addEventListener('change',e=>{PF.satis=e.target.checked;pfChanged();});
+$('#pickClear').addEventListener('click',()=>{PF.yil='';PF.yakit='';PF.kasa='';PF.satis=false;renderCarPicker();});
 $('#pickMarka').addEventListener('change',e=>{
-  const marka=e.target.value;
-  const first=Object.values(CARS).find(x=>x.marka===marka);
-  state.carId=first.id; state.filter=null;
-  renderAll();
-  history.replaceState(null,'','#'+state.carId);
+  const marka=e.target.value, pool=Object.values(CARS).filter(x=>pfMatch(x)&&x.marka===marka).sort((a,b)=>trSort(a.model,b.model)||b.yil-a.yil);
+  if(pool.length) goCar(pool[0].id);
 });
 $('#pickModel').addEventListener('change',e=>{
   const c=car(), model=e.target.value;
-  const matches=Object.values(CARS).filter(x=>x.marka===c.marka && x.model===model).sort((a,b)=>b.yil-a.yil);
-  state.carId=matches[0].id; state.filter=null;
-  renderAll();
-  history.replaceState(null,'','#'+state.carId);
+  const m=Object.values(CARS).filter(x=>pfMatch(x)&&x.marka===c.marka&&x.model===model).sort((a,b)=>b.yil-a.yil);
+  if(m.length) goCar(m[0].id);
 });
+$('#pickVer').addEventListener('change',e=>goCar(e.target.value));
 
 function renderHero(){
   const c=car();
@@ -9787,10 +9822,10 @@ function renderSistemPuani(){
   const c=car(), sp=(window.PUANLAR||{})[c.id];
   const more='<p class="note"><a href="sistem-puani.html" style="color:var(--accent-soft)">Puan nasıl hesaplanıyor?</a></p>';
   if(!sp||!sp.kriterler.length){ $('#sysScoreBody').innerHTML='<p class="score-meta">Bu versiyon için puan hesaplamaya yetecek veri henüz yok.</p>'+more; return; }
-  const subs=sp.kriterler.map(k=>`<li><span>${esc(k.ad)} <small style="color:var(--muted)">%${Math.round(k.agirlik*100)}</small></span><span class="meter" aria-hidden="true"><i style="width:${k.puan/k.max*100}%"></i></span><b>${nf(k.puan,1)}</b></li>`).join('');
+  const subs=sp.kriterler.map(k=>`<li><span>${esc(k.ad)} <small style="color:var(--muted)">%${Math.round(k.agirlik*100)}</small></span><span class="meter" aria-hidden="true"><i style="width:${k.puan/k.max*100}%"></i></span><b>${nf(k.puan,1)}</b>${k.aciklama?`<span class="why">${esc(k.aciklama)}</span>`:''}</li>`).join('');
   const veriYok=sp.veriYokKriterler&&sp.veriYokKriterler.length ? `<p class="note">Veri yok: ${sp.veriYokKriterler.map(esc).join(', ')}. Bu kriterler hesaba katılmadı.</p>` : '';
   const notlar=(sp.notlar||[]).map(n=>`<p class="note">${esc(n)}</p>`).join('');
-  const head = sp.toplam!=null ? `<div class="score-num">${nf(sp.toplam,1)}<small>/ 10</small></div><p class="score-meta">${sp.kriterler.length} kriterden, aynı kasa tipindeki araçlarla kıyaslanarak</p>` : `<p class="score-meta">Toplam puan için yeterli veri yok; mevcut alt puanlar:</p>`;
+  const head = sp.toplam!=null ? `<div class="score-num">${nf(sp.toplam,1)}<small>/ 10</small></div><p class="score-meta">${sp.kriterler.length} kriterden, sabit ölçeklerle. Her satırın altında puanın hangi değerden geldiği yazıyor.</p>` : `<p class="score-meta">Toplam puan için yeterli veri yok; mevcut alt puanlar:</p>`;
   $('#sysScoreBody').innerHTML=`${head}<ul class="subs">${subs}</ul>${veriYok}${notlar}${more}`;
 }
 

@@ -14,6 +14,10 @@
 .wbar .t{height:12px;background:var(--surface2);border-radius:2px;overflow:hidden}
 .wbar .t i{display:block;height:100%;background:var(--accent-grad)}
 .wbar b{text-align:right;font-variant-numeric:tabular-nums}
+.olcek{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}
+.olcek th,.olcek td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+.olcek th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.note{font-size:.86rem;color:var(--muted)}
 @media (max-width:520px){.wbar{grid-template-columns:120px 1fr 40px}}
 </style>
 </head>
@@ -40,7 +44,7 @@
     <span class="eyebrow">Yöntem</span>
     <h1>Sistem puanı nasıl hesaplanır?</h1>
     <div class="rule" aria-hidden="true"></div>
-    <p class="lead">Sistem puanı, sitedeki kaynaklı verilerden otomatik hesaplanan 10 üzerinden bir özet puandır. Kullanıcı yorumu, reklam ya da editör görüşü içermez. Bir aracı "iyi" ya da "kötü" ilan etmez; aynı sınıftaki araçlar arasında nerede durduğunu gösterir.</p>
+    <p class="lead">Sistem puanı, sitedeki kaynaklı verilerden otomatik hesaplanan 10 üzerinden bir özet puandır. Kullanıcı yorumu, reklam ya da editör görüşü içermez. Her kriter açıklanmış sabit bir ölçekle puanlanır; aynı değer her araçta aynı puanı alır.</p>
     <span class="stamp" id="cov">Hesaplanıyor…</span>
   </div>
 </section>
@@ -52,39 +56,37 @@
   </section>
 
   <section class="section">
-    <h2>Her kriter neyi ölçüyor?</h2>
-    <div class="grid2">
-      <div class="panel prose"><h3>Güvenlik (%30)</h3>
-        <ul>
-          <li><b>Euro NCAP yıldızı</b> (bu kriterin %60'ı). Euro NCAP testleri yıllar içinde sıkılaştığı için 6 yıldan eski testlerde yıldızdan gelen puan %15 düşürülür.</li>
-          <li><b>Hava yastığı sayısı</b> (%15), aynı kasa tipindeki araçlarla kıyaslanarak.</li>
-          <li><b>Sürüş destek ve güvenlik donanımı</b> (%25): ESP, ABS, adaptif hız sabitleyici, şerit takip, yorgunluk tespiti, geri görüş kamerası, yokuş kalkış desteği. Bilgisi olan kalemlerden kaçının var olduğuna bakılır.</li>
-        </ul></div>
-      <div class="panel prose"><h3>Verimlilik (%20)</h3>
-        <ul>
-          <li>Benzinli, dizel, hibrit ve LPG'li araçlarda WLTP ortalama tüketim (l/100 km), aynı kasa tipindeki araçlarla kıyaslanır.</li>
-          <li>Elektrikliler yalnızca elektriklilerle (kWh/100 km), plug-in hibritler yalnızca plug-in hibritlerle kıyaslanır; farklı enerji türlerini aynı ölçüde karşılaştırmak yanıltıcı olurdu.</li>
-        </ul></div>
-      <div class="panel prose"><h3>Performans (%15)</h3>
-        <ul><li>0-100 km/s hızlanma süresi, aynı kasa tipindeki araçlarla kıyaslanarak. Bu süre yoksa güç/ağırlık oranı kullanılır.</li></ul></div>
-      <div class="panel prose"><h3>Donanım (%15)</h3>
-        <ul><li>Klima, koltuk ısıtma, açılır tavan, anahtarsız giriş, start-stop, Apple CarPlay / Android Auto, dijital gösterge ve ses sistemi. En az 4 kalemin bilgisi olmalı; "opsiyonel" yarım puan sayılır.</li></ul></div>
-      <div class="panel prose"><h3>Pratiklik (%10)</h3>
-        <ul><li>Bagaj hacmi, aynı kasa tipindeki araçlarla kıyaslanarak.</li></ul></div>
-      <div class="panel prose"><h3>Garanti (%10)</h3>
-        <ul><li>Araç garantisi yılı esas alınır; boya, paslanmazlık ve (elektriklilerde) batarya garantisi ek katkı sağlar.</li></ul></div>
+    <h2>Her kriter nasıl puanlanıyor?</h2>
+    <p class="lead" style="margin-bottom:14px">Her kriterin sabit bir ölçeği var: ölçeğin bir ucundaki değer 0, diğer ucundaki 10 puan, arası doğrusal. Araç diğer araçlarla sıralanmaz; aynı değer her zaman aynı puanı alır. Araç detay sayfasında her alt puanın altında hangi değerden geldiği yazar.</p>
+    <div class="panel" style="overflow-x:auto">
+      <table class="olcek">
+        <thead><tr><th>Kriter (ağırlık)</th><th>Ölçülen değer</th><th>0 puan</th><th>10 puan</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><b>Güvenlik</b> (%30)</td><td>Euro NCAP yıldızı (kriterin %60'ı)</td><td>0 yıldız</td><td>5 yıldız (her yıldız 2 puan; 6 yıldan eski testte %15 düşülür)</td></tr>
+          <tr><td>Hava yastığı sayısı (%15)</td><td>2</td><td>8 ve üstü</td></tr>
+          <tr><td>Sürüş destek donanımı (%25): ESP, ABS, adaptif hız sabitleyici, şerit takip, yorgunluk tespiti, geri görüş kamerası, yokuş kalkış desteği</td><td>hiçbiri yok</td><td>bilgisi olanların hepsi var</td></tr>
+          <tr><td rowspan="3"><b>Verimlilik</b> (%20)</td><td>WLTP tüketim: benzin, dizel, hibrit, LPG</td><td>10 l/100 km</td><td>4 l/100 km ve altı</td></tr>
+          <tr><td>WLTP tüketim: plug-in hibrit</td><td>2,5 l/100 km</td><td>0,5 l/100 km ve altı</td></tr>
+          <tr><td>Elektrik tüketimi</td><td>24 kWh/100 km</td><td>14 kWh/100 km ve altı</td></tr>
+          <tr><td rowspan="2"><b>Performans</b> (%15)</td><td>0-100 km/s</td><td>14 sn ve üstü</td><td>4,5 sn ve altı</td></tr>
+          <tr><td>0-100 yoksa: ton başına beygir</td><td>45 HP/ton</td><td>160 HP/ton ve üstü</td></tr>
+          <tr><td><b>Donanım</b> (%15)</td><td>Klima, koltuk ısıtma, açılır tavan, anahtarsız giriş, start-stop, CarPlay/Android Auto, dijital gösterge, ses sistemi (en az 4'ünün bilgisi olmalı; opsiyonel = yarım)</td><td>hiçbiri yok</td><td>bilgisi olanların hepsi var</td></tr>
+          <tr><td><b>Pratiklik</b> (%10)</td><td>Bagaj hacmi</td><td>200 L</td><td>600 L ve üstü</td></tr>
+          <tr><td><b>Garanti</b> (%10)</td><td>Araç garantisi (yıl). Boya, paslanma ve batarya garantisi detayda gösterilir, puana katılmaz.</td><td colspan="2">2 yıl (yasal asgari) = 5; her ek yıl +1,25; 6 yıl ve üstü = 10</td></tr>
+        </tbody>
+      </table>
     </div>
+    <p class="note" style="margin-top:12px">Örnek: 0-100'ü 10,9 sn olan bir araç performanstan (14 − 10,9) ÷ (14 − 4,5) × 10 = 3,3 puan alır. Bu, aracın kötü olduğu anlamına gelmez; yalnızca hızlanmanın ölçeğin yavaş tarafında olduğunu gösterir. Aile aracı seçen biri için bu kriterin ağırlığı zaten düşük (%15).</p>
   </section>
 
   <section class="section">
     <h2>Hesaplama kuralları</h2>
     <div class="panel prose">
       <ul>
-        <li><b>Kıyaslama sınıf içinde yapılır.</b> Sayısal değerler, aynı kasa tipindeki (SUV, sedan, hatchback…) araçlar arasındaki sırasına göre 0–10'a çevrilir. Böylece bir şehir otomobilinin bagajı bir SUV'unkiyle değil, kendi sınıfıyla kıyaslanır. Bir sınıfta yeterli araç (5'ten az) yoksa tüm araçlarla kıyaslanır.</li>
         <li><b>Veri yoksa tahmin yapılmaz.</b> Bilgisi olmayan kriter hesaba katılmaz ve ağırlığı diğer kriterlere oransal dağıtılır. Hangi kriterin eksik olduğu puanın yanında yazar.</li>
         <li><b>Toplam puan için alt sınır:</b> Güvenlik verisi olmalı, en az 4 kriter hesaplanmalı ve bu kriterler toplam ağırlığın en az %60'ını oluşturmalı. Bu sağlanmazsa toplam puan gösterilmez, yalnızca alt puanlar görünür.</li>
         <li><b>Fiyat puana girmez.</b> Fiyat yalnızca satıştaki araçlarda var ve zamanla değişiyor; puanın her araç için aynı ölçüyle hesaplanması için dışarıda bırakıldı.</li>
-        <li><b>Puan değişebilir.</b> Bir araca yeni bir doğrulanmış veri eklendiğinde ya da veritabanına yeni araçlar girdiğinde puanlar yeniden hesaplanır.</li>
+        <li><b>Puan değişebilir.</b> Bir araca yeni doğrulanmış veri eklendiğinde (ör. NCAP sonucu, 0-100 süresi) o aracın puanı yeniden hesaplanır.</li>
       </ul>
     </div>
   </section>
