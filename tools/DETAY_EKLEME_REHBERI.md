@@ -35,6 +35,17 @@ C.filter(c=>!ex.has(c.id)).forEach(c=>console.log(c.marka,'|',c.id,'|',c.model,c
    - Playwright ile (Chromium `/opt/pw-browsers/chromium`, dış istekleri engelle) birkaç yeni kaydı `arac-detay.html#<id>` ile aç: sayfa hatası yok, başlık doğru, geri çağırmalar ve artı-eksiler görünüyor.
 4. Commit mesajı Türkçe; hangi markadan kaç versiyon eklendiğini ve önemli bulguları (hariç tutulan kampanyalar, NCAP uyarıları) yaz.
 
+## Sitede görünen metinlerin dili
+
+Sitedeki her metin (notlar, açıklamalar, artı-eksiler, geri çağırma özetleri) bir otomotiv editörünün yazacağı gibi yazılır:
+
+- Kısa ve doğrudan cümleler. Süreç anlatılmaz: "bu oturumda", "araştırmamızda bulamadık", "erişemedik", "uydurmuyoruz", "tahmin yazmıyoruz" gibi ifadeler kullanılmaz. Bilgi yoksa alan boş bırakılır, açıklama yazılmaz.
+- Kod ve alan adları metne girmez (`s.guc_hp`, `RECALLS`, `ncap_yildiz` vb.).
+- "ÖNEMLİ:", "NOT:" gibi büyük harfli etiketler yerine gerekiyorsa "Not:" yazılır; tamamı büyük harfli kelimeler kullanılmaz.
+- Uzun tire (—) yerine virgül, iki nokta ya da nokta tercih edilir.
+- Belirsizlik gerçekten okuru ilgilendiriyorsa tek cümleyle ve okura dönük söylenir: "Türkiye'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın."
+- Kod içine yorum (`/* ... */`) yazılmaz; kayıtların nasıl araştırıldığı commit mesajında anlatılır.
+
 ---
 
 # Eksik teknik alanları doldurma

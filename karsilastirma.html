@@ -208,7 +208,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope" id="scope">Veritabanı, güncel Türkiye lineup'ı ve tarihsel referans amaçlı, satıştan kalkmış modellerden oluşuyor. Veri bulunmayan satırlar "—" ile görünür; tahmin yazılmaz.</p>
+    <p class="scope" id="scope">Veritabanı, güncel Türkiye model gamı ve tarihsel referans amaçlı, satıştan kalkmış modellerden oluşuyor. Verisi olmayan satırlarda "—" görünür.</p>
   </div>
 </section>
 
@@ -222,7 +222,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 
   <section class="presets" aria-labelledby="presetsTitle">
     <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
-    <p class="sub">Aynı sınıftan seçilmiş örnek eşleşmeler. Kullanım istatistiğine dayalı bir "en popüler" listesi değildir.</p>
+    <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
     <div class="plist" id="presetList"></div>
   </section>
 
@@ -258,7 +258,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
   <section class="faq" aria-labelledby="faqTitle">
     <h2 id="faqTitle">Sık sorulan sorular</h2>
     <details><summary>Veriler nereden geliyor?</summary><p>Her versiyonun kaynağı tablonun başında ve bu sayfanın "Kaynaklar" bölümünde linkli. Önceliğimiz resmi marka siteleri ve resmi fiyat listeleri; bunlarda olmayan değerler için güvenilir otomotiv basını ve teknik veri siteleri kullanılır. İlan sitelerindeki fiyatlar kullanılmaz.</p></details>
-    <details><summary>"—" işareti ne anlama geliyor?</summary><p>O satır için doğrulanmış bir değer bulamadık ya da henüz araştırmadık. Boşluğu tahminle doldurmuyoruz; veri bulundukça satır dolar.</p></details>
+    <details><summary>"—" işareti ne anlama geliyor?</summary><p>Bu değer için henüz kaynak bulamadık. Bulduğumuzda satır dolar.</p></details>
     <details><summary>Neden bazı araçlarda fiyat yok?</summary><p>Fiyatı yalnızca Türkiye'de satışta olan sıfır araçlar için, resmi liste fiyatından veriyoruz. Satıştan kalkmış modellerde ve eski model yıllarında fiyat göstermiyoruz; bu satırda "Satışta değil" yazar.</p></details>
     <details><summary>✓ işareti neyi gösteriyor?</summary><p>Sayısal satırlarda daha iyi olan değeri: daha yüksek güç, tork ya da bagaj; daha düşük tüketim, hızlanma süresi ya da fiyat gibi. Bu işaret bir satın alma önerisi değildir; hangi satırın sizin için önemli olduğuna siz karar verirsiniz.</p></details>
     <details><summary>Sistem puanı nasıl hesaplanıyor?</summary><p>Güvenlik, yakıt/enerji verimliliği, performans, donanım, bagaj ve garanti verilerinden, her kriter için açıklanmış sabit bir ölçekle 10 üzerinden hesaplanır (ör. 0-100 km/s'de 14 sn = 0, 4,5 sn = 10). Verisi eksik araçta toplam puan gösterilmez. Ayrıntılar: <a href="sistem-puani.html">Sistem puanı nasıl hesaplanır</a>.</p></details>
@@ -864,10 +864,10 @@ const CARS = [
   kaynakAd:"skoda.com.tr", kaynakUrl:"https://www.skoda.com.tr/modeller/elroq",
   s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vitesli Otomatik",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:null,silindir:null,guc_hp:190,tork_nm:350,sifirYuz_sn:8.5,hiz_kmh:160,tuketim_l100km:null,co2_gkm:0,batarya_kwh:61,menzil_km_wltp:445,uzunluk_mm:4488,genislik_mm:1884,yukseklik_mm:1632,dingil_mm:2770,bagaj_l:470,airbag_sayisi:null,ncap_yildiz:null,liste_fiyati_tl:3314900,garanti_yil:2,garanti_km:null,mtv_yillik_tl:10460,boya_garanti_yil:3,pas_garanti_yil:12,batarya_garanti_yil:8,batarya_tipi:"Lityum İyon (LFP)",ac_sarj_dk:390,dc_hizli_sarj_dk_20_80:26,elektrik_tuketim_kwh100km:15.4,bakim_araligi_ay:24}},
  {id:"skoda-enyaq-60-e-prestige-190ps-2026", marka:"Skoda", model:"Enyaq", yil:2026, versiyon:"60 e-Prestige",
-  kaynakAd:"Wikipedia (gövde ölçüleri) -- NOT: guç verisi çelişkili, doldurulmadı", kaynakUrl:"https://en.wikipedia.org/wiki/%C5%A0koda_Enyaq",
+  kaynakAd:"Wikipedia (gövde ölçüleri) -- Not: guç verisi çelişkili, doldurulmadı", kaynakUrl:"https://en.wikipedia.org/wiki/%C5%A0koda_Enyaq",
   s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vitesli Otomatik",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:null,silindir:null,guc_hp:190,tork_nm:null,sifirYuz_sn:null,hiz_kmh:null,tuketim_l100km:null,co2_gkm:0,batarya_kwh:null,menzil_km_wltp:null,uzunluk_mm:4648,genislik_mm:1877,yukseklik_mm:1618,dingil_mm:2765,bagaj_l:585,airbag_sayisi:null,ncap_yildiz:null,liste_fiyati_tl:3999900,garanti_yil:2,garanti_km:null,mtv_yillik_tl:10460,boya_garanti_yil:3,pas_garanti_yil:12}},
  {id:"skoda-enyaq-coupe-60-e-sportline-190ps-2026", marka:"Skoda", model:"Enyaq Coupe", yil:2026, versiyon:"60 e-Sportline",
-  kaynakAd:"Wikipedia (gövde ölçüleri) -- NOT: guç verisi çelişkili, doldurulmadı", kaynakUrl:"https://en.wikipedia.org/wiki/%C5%A0koda_Enyaq",
+  kaynakAd:"Wikipedia (gövde ölçüleri) -- Not: guç verisi çelişkili, doldurulmadı", kaynakUrl:"https://en.wikipedia.org/wiki/%C5%A0koda_Enyaq",
   s:{kasa:"SUV Coupe",yakit:"Elektrik",sanziman:"Tek Vitesli Otomatik",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:null,silindir:null,guc_hp:190,tork_nm:null,sifirYuz_sn:null,hiz_kmh:null,tuketim_l100km:null,co2_gkm:0,batarya_kwh:null,menzil_km_wltp:null,uzunluk_mm:4644,genislik_mm:1877,yukseklik_mm:1624,dingil_mm:2765,bagaj_l:null,airbag_sayisi:null,ncap_yildiz:null,liste_fiyati_tl:4099900,garanti_yil:2,garanti_km:null,mtv_yillik_tl:10460,boya_garanti_yil:3,pas_garanti_yil:12}},
  {id:"skoda-enyaq-coupe-e-rs-4x4-340ps-2026", marka:"Skoda", model:"Enyaq Coupe", yil:2026, versiyon:"e-RS 4x4",
   kaynakAd:"skoda.com.tr", kaynakUrl:"https://www.skoda.com.tr/modeller/enyaq-coupe",
@@ -1314,11 +1314,6 @@ const CARS = [
   kaynakAd:"bmw.com.tr (resmi teknik veriler)", kaynakUrl:"https://www.bmw.com.tr/tr/all-models/i-series/ix/bmw-ix-technical-data.html",
   s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4 (xDrive)",koltuk:5,kapi:5,guc_hp:544,tork_nm:765,sifirYuz_sn:4.6,hiz_kmh:200,batarya_kwh:109.1,batarya_tipi:"Lityum İyon",menzil_km_wltp:632,ac_sarj_dk:345,dc_hizli_sarj_dk_20_80:35,elektrik_tuketim_kwh100km:19.9,uzunluk_mm:4965,genislik_mm:1970,yukseklik_mm:1695,dingil_mm:3000,bagaj_l:500,agirlik_kg:2580,ncap_yildiz:5,ncap_test_yili:2021,abs:"Var",esp:"Var",liste_fiyati_tl:10783400,garanti_yil:3,garanti_km:null,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12,mtv_yillik_tl:62888}},
 
- /* --- Aşağıdakiler Türkiye'de artık satılmayan (üretimi/satışı durdurulmuş) modellerdir.
-    2010-2026 model boşluk analizinin "öncelikli/güncel" sanılan kalemleri araştırıldığında hepsinin
-    aslında satıştan kaldırıldığı ortaya çıktı (bkz. research/model-gap-2010-2026.md).
-    Her biri "durum" alanıyla işaretlenmiştir; karşılaştırma ekranında bu bir uyarı notu olarak gösterilir
-    ve liste fiyatı (varsa) güncel olmadığı için "s" içine değil sadece "durum" metnine yazılmıştır. */
  {id:"alfa-romeo-giulia-2023-veloce-q4", marka:"Alfa Romeo", model:"Giulia", yil:2023, versiyon:"Veloce Q4 2.0 Turbo 280 HP AWD",
   kaynakAd:"albayrac.com (yetkili bayi) / epey.com (motor verisi)", kaynakUrl:"https://albayrac.com/yenilenen-alfa-romeo-giulia-ve-stelvio-turkiyede-satisa-sunuldu/",
   durum:"Türkiye'de satıştan kaldırıldı (son satılan facelift: 2023). Güncel liste fiyatı yok.",
@@ -1396,10 +1391,6 @@ const CARS = [
   durum:"Türkiye'de Ocak 2024'te satıştan kaldırıldı.",
   s:{segment:"B-Segment Hatchback",kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik (6 ileri)",cekis:"Önden Çekiş",koltuk:5,kapi:5,cc:1368,silindir:4,besleme:"Atmosferik",guc_hp:100,tork_nm:133,sifirYuz_sn:12.9,hiz_kmh:183,tuketim_sehir_ici:8.2,tuketim_sehir_disi:5.0,tuketim_l100km:6.2,co2_gkm:142,depo_l:45,uzunluk_mm:4065,genislik_mm:1725,yukseklik_mm:1450,agirlik_kg:1090,bagaj_l:300,ncap_yildiz:3,garanti_yil:7,garanti_km:150000,boya_garanti_yil:5,pas_garanti_yil:10}},
 
- /* --- Yeni markalar (Tesla, Subaru, Lexus, Isuzu, KGM/SsangYong) — 2026-10-04 araştırması.
-    Hepsi güncel/satışta olan modellerdir, "durum" alanı yok. Her satış-durumu ayrıca doğrulandı
-    (bkz. research/model-gap-2010-2026.md) — doğrulanamayan veya artık satılmayan modeller
-    (Tesla Model 3, Subaru Outback/XV, Lexus ES/LS/RZ, KGM Tivoli) bilerek eklenmedi. */
  {id:"tesla-model-y-2026-premium-long-range-rwd", marka:"Tesla", model:"Model Y", yil:2026, versiyon:"Premium Long Range Arkadan Çekiş (Juniper)",
   kaynakAd:"eceenerji.com.tr (teknik) + milliirade.com (Eylül 2026 fiyat)", kaynakUrl:"https://www.eceenerji.com.tr/elektrikli-araba/tesla/tesla-model-y-premium-rwd-juniper-tesla-4680-2026",
   s:{segment:"C-SUV / Kompakt Crossover",kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites Otomatik",cekis:"Arkadan İtiş (RWD)",koltuk:5,kapi:5,guc_hp:299,sifirYuz_sn:5.6,hiz_kmh:201,co2_gkm:0,batarya_kwh:74.0,menzil_km_wltp:603,uzunluk_mm:4790,genislik_mm:1982,yukseklik_mm:1624,agirlik_kg:1966,bagaj_l:854,carplay_android_auto:"Yok",liste_fiyati_tl:3682800}},
@@ -1457,11 +1448,6 @@ const CARS = [
  {id:"kgm-musso-ev-2026-standard", marka:"KGM (SsangYong)", model:"Musso EV", yil:2026, versiyon:"Musso EV (Elektrikli Pickup, Önden Çekiş)",
   kaynakAd:"ssangyong.com.tr (resmi Türkiye sitesi)", kaynakUrl:"https://www.ssangyong.com.tr/musso-ev",
   s:{segment:"Pickup / Elektrikli Kamyonet",kasa:"Pickup (Double Cab)",yakit:"Elektrik",sanziman:"Otomatik (1 ileri)",cekis:"4x2 (Önden Çekiş)",kapi:4,guc_hp:206.9,tork_nm:339,hiz_kmh:162,co2_gkm:0,batarya_kwh:80.6,elektrik_tuketim_kwh100km:23.0,uzunluk_mm:5160,genislik_mm:1920,yukseklik_mm:1740,agirlik_kg:2165,jant_inch:17,liste_fiyati_tl:2454874}},
- /* --- Audi — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
-    audi.com.tr WebFetch'e kapalı olduğu için Google indeksi + fiyatlistesi.audi.com.tr + arabam.com/sifiraracal.com/teknoblog gibi
-    güncel (Eylül-Ekim 2026) fiyat listesi haberleri çapraz doğrulanarak araştırıldı. Araştırılıp satıştan kaldırıldığı/
-    ikame edildiği için EKLENMEYEN modeller: Q8 e-tron (Q6 e-tron'un yerini aldı), A4 (A5 ailesi yerini aldı),
-    RS 6 Avant (güncel fiyat listesinde doğrulanamadı). */
  {id:"audi-a3-sedan-2026-advanced-35-tfsi", marka:"Audi", model:"A3", yil:2026, versiyon:"Sedan Advanced 35 TFSI S tronic (110 kW/150 hp)",
   kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / otoviraj.com / borlease.com.tr", kaynakUrl:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/audi-fiyat-listesi/",
   s:{segment:"C (Kompakt)",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (7 ileri S tronic)",cekis:"Önden çekiş",koltuk:5,kapi:4,cc:1498,silindir:4,besleme:"Turbo + Mild Hybrid (MHEV)",guc_hp:150,tork_nm:250,sifirYuz_sn:8.4,hiz_kmh:232,uzunluk_mm:4504,genislik_mm:1816,yukseklik_mm:1417,dingil_mm:2636,bagaj_l:425,esp:"Var",yokus_kalkis:"Var",dijital_gosterge:"Var",liste_fiyati_tl:4297796,garanti_yil:2,boya_garanti_yil:3,pas_garanti_yil:12,bakim_araligi_km:15000,bakim_araligi_ay:12}},
@@ -1502,13 +1488,6 @@ const CARS = [
   kaynakAd:"arabam.com Audi Fiyat Listesi (Eylül 2026) / sifiraracal.com", kaynakUrl:"https://www.sifiraracal.com/audi-modelleri/e-tron-gt-quattro",
   s:{segment:"E (Elektrikli performans GT)",kasa:"Sedan/Fastback (4 kapılı)",yakit:"Elektrik",sanziman:"Tek viteslı (önde) / 2 kademeli (arkada)",cekis:"quattro (4x4, çift motor)",koltuk:4,kapi:4,guc_hp:585,tork_nm:625,sifirYuz_sn:4,hiz_kmh:245,batarya_kwh:97,batarya_tipi:"Lityum-iyon (105 kWh brüt / 97 kWh net)",menzil_km_wltp:689,dc_hizli_sarj_dk_20_80:18,uzunluk_mm:4989,genislik_mm:1964,yukseklik_mm:1414,dingil_mm:2900,bagaj_l:405,liste_fiyati_tl:12137766,garanti_yil:2,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
 
- /* --- Mini — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
-    mini.com.tr resmi sayfaları + arabam.com/webtekno.com fiyat listesi haberleri (Ekim 2026) ile doğrulandı.
-    Araştırılıp EKLENMEYEN modeller: Aceman (henüz TR'de resmi satışta değil, 2026 için hedefleniyor olarak duyuruldu),
-    Clubman (küresel üretimi durduruldu, güncel listede yok). Bazı bagaj hacmi değerleri kaynakta "koltuklar katlanmış"
-    max rakam olarak verildiği (Countryman: 1530 L) veya aralık olarak verildiği (ör. yakıt tüketimi) için, tek bir
-    doğrulanmış taban değer bulunamayan alanlar boş bırakıldı. Araç garantisi km'si resmi kaynakta "sınırsız" olarak
-    belirtildiği için garanti_km alanına sayısal bir üst sınır uydurmak yerine "Sınırsız" metni yazıldı. */
  {id:"mini-cooper-3kapi-2026-cooper-c", marka:"Mini", model:"Cooper 3 Kapı", yil:2026, versiyon:"Cooper C",
   kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/mini-cooper-3-door/performance.html",
   s:{kasa:"Hatchback",yakit:"Benzin",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:4,kapi:3,cc:1499,silindir:3,besleme:"Turbo (TwinPower Turbo)",guc_hp:156,tork_nm:230,sifirYuz_sn:7.7,hiz_kmh:225,uzunluk_mm:3876,genislik_mm:1744,bagaj_l:210,liste_fiyati_tl:3442700,garanti_yil:3,garanti_km:"Sınırsız",boya_garanti_yil:3,pas_garanti_yil:12}},
@@ -1530,12 +1509,6 @@ const CARS = [
  {id:"mini-countryman-electric-2026-e", marka:"Mini", model:"Countryman Electric", yil:2026, versiyon:"Countryman E",
   kaynakAd:"MINI Türkiye Resmi Site", kaynakUrl:"https://www.mini.com.tr/tr_TR/home/range/tamamen-elektrikli-mini-countryman.html",
   s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Tek Vites (Otomatik)",guc_hp:204,batarya_kwh:65.2,menzil_km_wltp:501,liste_fiyati_tl:3921300,garanti_yil:3,garanti_km:"Sınırsız",batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
- /* --- Land Rover — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
-    landrover.com.tr resmi fiyat listesi sayfaları doğrulandı: Defender, Discovery, Discovery Sport, Range Rover,
-    Range Rover Sport, Range Rover Velar, Range Rover Evoque — 7 model de hâlâ satışta. Teknik özellik alt sayfaları
-    JS ile render olduğundan WebFetch ile çekilemedi; bu yüzden çoğu versiyonda sadece fiyat listesinde statik metin
-    olarak bulunan alanlar (motor, güç, tüketim, fiyat) dolduruldu — tork/0-100/boyut/ağırlık/garanti gibi alanlar
-    doğrulanamadığı için kasıtlı olarak boş bırakıldı. */
  {id:"land-rover-defender-2026-110-ultimate-d200", marka:"Land Rover", model:"Defender 110", yil:2026, versiyon:"Ultimate D200",
   kaynakAd:"Land Rover Türkiye Resmi Site - Defender Fiyat Listesi", kaynakUrl:"https://www.landrover.com.tr/build-and-price/defender-fiyat-listesi",
   s:{segment:"Orta-Büyük SUV / Arazi Aracı",kasa:"SUV",yakit:"Dizel (Mild Hybrid)",sanziman:"Otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:2997,silindir:6,besleme:"Turbo",guc_hp:200,tork_nm:500,sifirYuz_sn:10.2,hiz_kmh:175,tuketim_l100km:8.5,carplay_android_auto:"Var",liste_fiyati_tl:14398444,uzunluk_mm:5018,genislik_mm:2008,dingil_mm:3022,agirlik_kg:2436,bagaj_l:786,depo_l:89,ncap_yildiz:5,ncap_test_yili:2020,emisyon_normu:"Euro 6e"},ekKaynak:{uzunluk_mm:{"ad":"Land Rover Defender Technical Specification (XI) PDF - Defender 110, stepne dahil (stepnesiz 4758)","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Defender-TD-Insert-1L6632600000XIEN01P.pdf","tarih":"2026-10-15"},genislik_mm:{"ad":"Land Rover Defender Technical Specification (XI) PDF - Defender 110, aynalar katlı (aynalar açık 2105)","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Defender-TD-Insert-1L6632600000XIEN01P.pdf","tarih":"2026-10-15"},dingil_mm:{"ad":"Land Rover Defender Technical Specification (XI) PDF - Defender 110","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Defender-TD-Insert-1L6632600000XIEN01P.pdf","tarih":"2026-10-15"},agirlik_kg:{"ad":"Land Rover Defender Technical Specification (XI) PDF - D200 5 koltuk, boş ağırlık EU (75 kg sürücü dahil); DIN 2361","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Defender-TD-Insert-1L6632600000XIEN01P.pdf","tarih":"2026-10-15"},bagaj_l:{"ad":"Land Rover Defender Technical Specification (XI) PDF - 5 koltuk, 2. sıra arkası kuru (dry) hacim; ıslak 972","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Defender-TD-Insert-1L6632600000XIEN01P.pdf","tarih":"2026-10-15"},depo_l:{"ad":"Land Rover Defender Technical Specification (XI) PDF - D200 kullanılabilir depo","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Defender-TD-Insert-1L6632600000XIEN01P.pdf","tarih":"2026-10-15"},ncap_yildiz:{"ad":"Euro NCAP Land Rover Defender (2020) - 3.0 dizel 4x4 kapsamda","url":"https://www.euroncap.com/assessments/land-rover/defender/0811/","tarih":"2026-10-15"},ncap_test_yili:{"ad":"Euro NCAP Land Rover Defender (2020) - 2020-12-09 yayın, süresi dolmamış","url":"https://www.euroncap.com/assessments/land-rover/defender/0811/","tarih":"2026-10-15"},emisyon_normu:{"ad":"Ultimatespecs Land Rover Defender 110 2026 D200","url":"https://www.ultimatespecs.com/car-specs/Land-Rover/153224/Land-Rover-Defender-110-2026-D200.html","tarih":"2026-10-15"}}},
@@ -1570,11 +1543,6 @@ const CARS = [
   kaynakAd:"Land Rover Türkiye Resmi Site - Range Rover Evoque Fiyat Listesi", kaynakUrl:"https://www.landrover.com.tr/build-and-price/range-rover-evoque-fiyat-listesi",
   s:{segment:"Lüks Kompakt SUV",kasa:"SUV",yakit:"Benzin (Plug-in Hibrit)",sanziman:"Otomatik",koltuk:5,kapi:5,cc:1498,silindir:3,besleme:"Turbo (Plug-in Hibrit)",guc_hp:269,tuketim_l100km:3.7,carplay_android_auto:"Var",liste_fiyati_tl:8165959,cekis:"4x4",tork_nm:540,sifirYuz_sn:7.2,hiz_kmh:190,uzunluk_mm:4371,genislik_mm:1996,yukseklik_mm:1649,dingil_mm:2681,agirlik_kg:2082,bagaj_l:472,depo_l:56.5,emisyon_normu:"Euro 6e"},ekKaynak:{cekis:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - P270e PHEV: AWD","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},tork_nm:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - P270e sistem torku (elektrik motoru dahil)","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},sifirYuz_sn:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - P270e","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},hiz_kmh:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - P270e","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},uzunluk_mm:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},genislik_mm:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - aynalar katlı (aynalar açık 2100)","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},yukseklik_mm:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},dingil_mm:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},agirlik_kg:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - P270e boş ağırlık DIN (sürücüsüz; P160 kaydıyla aynı esas); EU 2157","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},bagaj_l:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - 2. sıra arkası kuru (dry) hacim; ıslak 591","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},depo_l:{"ad":"Land Rover Range Rover Evoque Technical Specification 2026 (XI) PDF - P270e kullanılabilir depo","url":"https://www.landrover.com/content/dam/lrdx/pdfs/xi/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L55126.7500XIEN01P.pdf","tarih":"2026-10-15"},emisyon_normu:{"ad":"Ultimatespecs Range Rover Evoque (L551) P270e AWD Auto (2025-)","url":"https://www.ultimatespecs.com/car-specs/Land-Rover/149458/Land-Rover-Range-Rover-Evoque-(L551)-P270e-AWD-Auto.html","tarih":"2026-10-15"}}},
 
- /* --- Porsche — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
-    porsche.com.tr resmi sayfaları ile doğrulandı: 911, Macan Electric, Cayenne (ICE S + yeni Electric), Panamera,
-    Taycan — 5 model, 9 versiyon. 718 (Boxster/Cayman) EKLENMEDİ: ICE üretimi 2025'te global olarak durduruldu ve
-    güncel TR fiyat listesinde yer almıyor. Aralık olarak verilen veya net tek değeri doğrulanamayan alanlar
-    (tüketim, CO2, WLTP menzil, şarj süresi, çoğu donanım alanı) boş bırakıldı. */
  {id:"porsche-911-2026-carrera", marka:"Porsche", model:"911", yil:2026, versiyon:"Carrera",
   kaynakAd:"Porsche Türkiye Resmi Site", kaynakUrl:"https://www.porsche.com.tr/911-carrera",
   s:{kasa:"Coupe",yakit:"Benzin",sanziman:"Otomatik",cekis:"Arkadan itiş (RWD)",kapi:2,cc:2981,silindir:6,guc_hp:394,tork_nm:450,sifirYuz_sn:4.1,hiz_kmh:294,uzunluk_mm:4542,genislik_mm:1852,yukseklik_mm:1302,dingil_mm:2450,agirlik_kg:1520,bagaj_l:135,liste_fiyati_tl:33245279,garanti_yil:2,boya_garanti_yil:12,pas_garanti_yil:12}},
@@ -1602,10 +1570,6 @@ const CARS = [
  {id:"porsche-taycan-2026-4s", marka:"Porsche", model:"Taycan", yil:2026, versiyon:"4S",
   kaynakAd:"Porsche Türkiye Resmi Site", kaynakUrl:"https://www.porsche.com.tr/taycan-4s",
   s:{kasa:"Sedan",yakit:"Elektrik",sanziman:"Otomatik (2 vitesli)",cekis:"4 tekerlekten çekiş (AWD)",kapi:4,guc_hp:598,tork_nm:665,sifirYuz_sn:3.7,hiz_kmh:250,co2_gkm:0,batarya_kwh:105,uzunluk_mm:4963,genislik_mm:1966,yukseklik_mm:1379,dingil_mm:2900,agirlik_kg:2250,bagaj_l:407,liste_fiyati_tl:17623806,garanti_yil:2,boya_garanti_yil:12,pas_garanti_yil:12}},
- /* --- DS Automobiles — 2026-10-06 araştırması (Claude ajanları ile). Güncel/satışta olan modellerdir, "durum" alanı yok.
-    talep.dsautomobiles.com.tr resmi fiyat listeleri (01.10.2026) ile doğrulandı. Model isimleri değişti: eski DS 4
-    artık N°4, eski DS 9 artık N°8 olarak satılıyor; DS 3 ve eski DS 9 Türkiye'de artık satışta değil. N°7 (yeni
-    nesil DS 7 halefi) Ekim 2026'da satışa çıkıyor ama henüz resmi TL fiyatı yayınlanmadığı için EKLENMEDİ. */
  {id:"ds-n4-2026-pallas-bluehdi-130", marka:"DS Automobiles", model:"DS N°4", yil:2026, versiyon:"Pallas BlueHDi 130 Otomatik",
   kaynakAd:"sifiraracal.com (teknik özellikler) / talep.dsautomobiles.com.tr (resmi fiyat listesi, 01.10.2026)", kaynakUrl:"https://www.sifiraracal.com/ds-automobiles-modelleri/ds-4-ozellikleri/pallas--bluehdi-130-otomatik",
   s:{segment:"C segmenti (premium hatchback)",kasa:"Hatchback (5 kapı)",yakit:"Dizel",sanziman:"Otomatik (8 ileri)",kapi:5,cc:1499,silindir:4,guc_hp:130,tork_nm:300,sifirYuz_sn:10.9,hiz_kmh:203,tuketim_sehir_ici:4.2,tuketim_sehir_disi:3.5,tuketim_l100km:3.8,co2_gkm:109,depo_l:53,uzunluk_mm:4400,genislik_mm:1830,yukseklik_mm:1490,bagaj_l:430,abs:"Var",esp:"Var",serit_takip:"Var",klima:"Var (iki bölgeli otomatik)",liste_fiyati_tl:3326450,garanti_yil:3,garanti_km:100000,boya_garanti_yil:3,pas_garanti_yil:12}},
@@ -1615,12 +1579,6 @@ const CARS = [
  {id:"ds-n8-2026-etoile-fwd-long-range", marka:"DS Automobiles", model:"DS N°8", yil:2026, versiyon:"ÉTOILE FWD Long Range",
   kaynakAd:"otomobil.com.tr (teknik özellikler) / talep.dsautomobiles.com.tr (resmi fiyat listesi, 01.10.2026) / media.stellantis.com (basın bülteni)", kaynakUrl:"https://www.otomobil.com.tr/ds-n8-fiyati-teknik-ozellikleri/",
   s:{segment:"D segmenti (premium elektrikli SUV Coupe)",kasa:"SUV Coupe (5 kapı)",yakit:"Elektrik",cekis:"Önden çekiş (FWD)",kapi:5,guc_hp:213,tork_nm:343,sifirYuz_sn:9,hiz_kmh:190,co2_gkm:0,batarya_kwh:97.2,menzil_km_wltp:710,dc_hizli_sarj_dk_20_80:27,elektrik_tuketim_kwh100km:16.9,uzunluk_mm:4820,genislik_mm:1900,yukseklik_mm:1580,dingil_mm:2900,agirlik_kg:2180,bagaj_l:620,jant_inch:20,ncap_yildiz:4,abs:"Var",esp:"Var",koltuk_isitma:"Var",ekran_inch:16,ses_sistemi:"Var (opsiyonel 14 hoparlörlü 690W FOCAL sistem)",dijital_gosterge:"Var (10,25 inç HD dijital gösterge paneli)",liste_fiyati_tl:4990000,garanti_yil:3,garanti_km:100000,batarya_garanti_yil:8,boya_garanti_yil:3,pas_garanti_yil:12}},
- /* --- Mazda — 2026-10-06 araştırması (Claude ajanları ile). Mazda Kasım 2023'te Türkiye'deki resmi satışını
-    TAMAMEN durdurdu (distribütör anlaşması sona erdi); tüm versiyonlar "durum" ile işaretli, liste fiyatı
-    bilerek boş bırakıldı (son bilinen tarihsel fiyat "durum" metninde). CX-5 ve MX-5/MX-5 RF markanın
-    TR'deki son satıştaki modelleriydi (Kasım 2023 fiyat listesi). Mazda3'ün 4. nesli (2019+) TR'ye hiç
-    resmi olarak gelmedi; son satılan Mazda3, 3. nesil facelift (2020). Mazda2 için en güncel doğrulanabilir
-    veri 2021'e ait. CX-3/CX-30/CX-60/Mazda6 güvenilir resmi kaynak bulunamadığı için eklenmedi. */
  {id:"mazda-cx5-2023-20-sky-g-4x4-power-sense", marka:"Mazda", model:"CX-5", yil:2023, versiyon:"2.0 SKY-G 4x4 AT Power Sense",
   kaynakAd:"Mazda Türkiye Resmi Fiyat Listesi (Kasım 2023) + otoloji.com teknik özellikler", kaynakUrl:"https://media-assets.mazda.eu/raw/upload//mazdatr/globalassets/pdfs/pricelist/mazda-fiyat-listesi-november-2023-website.pdf",
   durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı (distribütör anlaşması sona erdi).",
@@ -1653,11 +1611,6 @@ const CARS = [
   kaynakAd:"aracbulten.com - Mazda Fiyat Listesi 2020", kaynakUrl:"https://aracbulten.com/mazda-fiyat-listesi-2020/",
   durum:"Mazda, Türkiye'de Kasım 2023'te satıştan kaldırıldı; Türkiye'de satılan son Mazda3 nesli bu modeldi.",
   s:{segment:"C Segment (Kompakt)",kasa:"Hatchback",yakit:"Benzin",sanziman:"6 ileri otomatik",cekis:"Önden çekiş (FWD)",koltuk:5,kapi:5,cc:1496,silindir:4,besleme:"Çok noktalı enjeksiyon (MPI)",guc_hp:120,tork_nm:150,sifirYuz_sn:11.6,hiz_kmh:185,tuketim_sehir_ici:6.8,tuketim_sehir_disi:4.8,tuketim_l100km:5.5,co2_gkm:129,depo_l:51,uzunluk_mm:4585,genislik_mm:1795,yukseklik_mm:1450,agirlik_kg:1295,bagaj_l:419,airbag_sayisi:6,ncap_yildiz:5,abs:"Var",esp:"Var (DSC)"}},
- /* --- Voyah + Leapmotor — 2026-10-06 araştırması (Claude ajanları ile). Türkiye'de henüz hiç bulunmayan
-    21 markadan "Çinli markalar önce" sırasına göre ilk grup. Voyah: distribütör Marcar Otomotiv, GÜNCEL
-    olarak Free (SUV) ve Dream (MPV) satılıyor; Courage/Passion modellerinin TR'de satıldığına dair kanıt
-    bulunamadı, eklenmedi. Leapmotor: distribütör ULU MOTOR SANAYİ VE TİCARET A.Ş., GÜNCEL olarak sadece
-    T03 satılıyor; C10 ve B10 Avrupa'da lanse edildi ama TR pazarına henüz girmedi, eklenmedi. */
  {id:"voyah-free-2026-high-489hp", marka:"Voyah", model:"Free", yil:2026, versiyon:"High 489HP (360kW)",
   kaynakAd:"Sifiraracal.com - Voyah Free Modelleri (fiyat), Donanımhaber.com - Voyah Free Türkiye (teknik veri, çapraz doğrulama: dolubatarya.com, arabam.com)", kaynakUrl:"https://www.sifiraracal.com/voyah-modelleri/free",
   s:{kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik",cekis:"4x4",koltuk:5,kapi:5,guc_hp:489,tork_nm:720,sifirYuz_sn:4.4,hiz_kmh:200,co2_gkm:0,batarya_kwh:106,menzil_km_wltp:500,dc_hizli_sarj_dk_20_80:45,uzunluk_mm:4905,genislik_mm:1950,yukseklik_mm:1645,dingil_mm:2960,agirlik_kg:2340,bagaj_l:560,jant_inch:20,airbag_sayisi:6,ncap_yildiz:5,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",acilir_tavan:"Var",ses_sistemi:"Var (Dyaudio Premium Hi-Fi)",dijital_gosterge:"Var",liste_fiyati_tl:5428120,garanti_yil:5,batarya_garanti_yil:8}},
@@ -1667,16 +1620,6 @@ const CARS = [
  {id:"leapmotor-t03-2026-basic-400", marka:"Leapmotor", model:"T03", yil:2026, versiyon:"Basic 400",
   kaynakAd:"sifiraracal.com - Leapmotor T03 Basic 400 Teknik Özellikleri", kaynakUrl:"https://www.sifiraracal.com/leapmotor-modelleri/t03-ozellikleri/basic-400",
   s:{segment:"A Segment (Şehir Arabası)",kasa:"Hatchback",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"Önden Çekiş",koltuk:5,kapi:5,guc_hp:109,tork_nm:155,sifirYuz_sn:14,hiz_kmh:130,co2_gkm:0,batarya_kwh:41.3,batarya_tipi:"LFP (Lityum Demir Fosfat)",menzil_km_wltp:417,ac_sarj_dk:210,dc_hizli_sarj_dk_20_80:36,uzunluk_mm:3620,genislik_mm:1652,yukseklik_mm:1577,bagaj_l:210,abs:"Var",esp:"Var",yokus_kalkis:"Var",geri_gorus_kamera:"Var",klima:"Var",acilir_tavan:"Var",ekran_inch:10.1,dijital_gosterge:"Var (8 inç)",liste_fiyati_tl:995000,batarya_garanti_yil:6}},
- /* --- Forthing + Skywell — 2026-10-06 araştırması (Claude ajanları ile). Çinli markalar grubunun 2. ikilisi.
-    Forthing: distribütör Ulu Motor San. ve Tic. A.Ş.; GÜNCEL olarak T5 Evo (SUV, 3 donanım) ve M4 U-Tour
-    (7 koltuklu MPV, 2 donanım) satılıyor, 5 versiyon eklendi. Tüm versiyonlar artık otomatik şanzımanlı
-    (resmi güncel fiyat listesi manuel seçeneği kaldırmış); SX6/Xinghai/Jingyi/Lingzhi/S500/Yacht gibi
-    Çin pazarı modelleri TR'de satıldığına dair kanıt bulunamadığı için eklenmedi; T5 HEV/EV Friday/S7 EV
-    henüz "yakında" aşamasında, satışta değil, eklenmedi. Skywell: distribütör Ulu Motor (Ulubaşlar
-    Grubu); GÜNCEL olarak sadece ET5 LR (Legend/Exclusive, 86 kWh, 642 km WLTP) satılıyor, 2 versiyon
-    eklendi; Skyhome EV ve HT-i defalarca duyurulmuş ama hiç satışa çıkmamış, eklenmedi. NOT: 2026
-    içinde ET5 ile ilgili tekrarlayan yangın haberleri basına yansıdı, resmi geri çağırma doğrulanamadı
-    — veri bu yüzden değiştirilmedi ama takip edilmesi gereken bir güvenlik gündemi. */
  {id:"forthing-t5evo-2026-premium", marka:"Forthing", model:"T5 Evo", yil:2026, versiyon:"Premium",
   kaynakAd:"Forthing Türkiye Resmi Web Sitesi - Fiyat Listesi", kaynakUrl:"https://forthing.com.tr/fiyat-listesi/",
   s:{segment:"D",kasa:"SUV",yakit:"Benzin",sanziman:"Otomatik (7 ileri DCT)",koltuk:5,cc:1500,besleme:"Turbo",guc_hp:175,tork_nm:285,sifirYuz_sn:9.7,hiz_kmh:200,tuketim_l100km:6.6,uzunluk_mm:4565,genislik_mm:1860,yukseklik_mm:1690,dingil_mm:2715,abs:"Var",esp:"Var",yokus_kalkis:"Var",klima:"Var",acilir_tavan:"Var",anahtarsiz_giris:"Var",ekran_inch:12.3,carplay_android_auto:"Var",liste_fiyati_tl:2800000}},
@@ -1698,18 +1641,6 @@ const CARS = [
  {id:"skywell-et5-lr-2026-exclusive", marka:"Skywell", model:"ET5 LR", yil:2026, versiyon:"Exclusive",
   kaynakAd:"arabam.com Skywell Fiyat Listesi (Haziran 2026) / skywell.com.tr resmi broşür", kaynakUrl:"https://www.arabam.com/blog/otomobil-inceleme/fiyat-listeleri/skywell-fiyat-listesi/",
   s:{segment:"D",kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik",cekis:"Önden Çekiş (FWD)",koltuk:5,kapi:5,guc_hp:204,tork_nm:320,sifirYuz_sn:7.9,co2_gkm:0,batarya_kwh:86,menzil_km_wltp:642,ac_sarj_dk:480,uzunluk_mm:4720,genislik_mm:1908,yukseklik_mm:1696,dingil_mm:2800,yerden_yukseklik_mm:159,agirlik_kg:2005,bagaj_l:467,jant_inch:19,abs:"Var",esp:"Var",yokus_kalkis:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",dijital_gosterge:"Var",liste_fiyati_tl:2800000,batarya_garanti_yil:8}},
- /* --- SWM + Hongqi — 2026-10-06 araştırması (Claude ajanları ile). Çinli markalar grubunun son (4.) ikilisi;
-    bu grupla "Çinli markalar önce" fazı tamamlandı. SWM: distribütör ATMO Group, Eskişehir'de (Urzat
-    Otomotiv/Urzema Holding ortaklığı) yerli üretilen G01 Pro, Aralık 2025'te üretime başladı ama Eylül
-    2026'da GSR2 tip onayı/ADAS gerekliliklerini karşılayamadığı için üretimi durduruldu; marka TR'den
-    tamamen çekilmiş olabilir ama 6 Ekim 2026 itibarıyla resmi site ve arabam.com canlı ilanı aracı hâlâ
-    aktif (2.099.000 TL) gösteriyor — net "satıştan kalktı" teyidi olmadığından güncel fiyatla birlikte
-    durum notu eklendi (istisnai: diğer durum-işaretli kayıtların aksine burada fiyat GÜNCEL/doğrulanmış
-    olduğu için liste_fiyati_tl silinmedi). G01F/G03F/G05 Pro gibi eski modeller için 2026'ya ait güncel
-    kaynak bulunamadı, eklenmedi. Hongqi: distribütör Yeniköy Motors (D ve D Motorlu Araçlar A.Ş.);
-    GÜNCEL olarak sadece E-HS9 Deluxe (tam elektrikli lüks SUV) satılıyor; H9/H5/H7/HS5/HS7/HS6 için
-    güvenilir TR satış kanıtı bulunamadı, eklenmedi; E-HS9 için güncel resmi fiyat bulunamadığından
-    liste_fiyati_tl bilerek boş bırakıldı (sadece 2023 lansman fiyatları var, güncel değil). */
  {id:"swm-g01-pro-2026-dct", marka:"SWM", model:"G01 Pro", yil:2026, versiyon:"1.5 TGDI DCT (tek versiyon, yerli üretim)",
   kaynakAd:"arabam.com - Sıfır KM SWM G01 Pro Fiyat Listesi ve Yakıt Tüketimi (01.08.2026 güncel)", kaynakUrl:"https://www.arabam.com/sifir-km/swm-g01-pro-fiyat-listesi-yakit-tuketimi",
   durum:"Eskişehir'deki yerli üretim (Urzat Otomotiv / ATMO Group-Urzema), Aralık 2025'te başladıktan ~9 ay sonra Eylül 2026'da GSR2 tip onayı/ADAS gerekliliklerinin karşılanamaması nedeniyle durduruldu; bazı kaynaklar markanın TR'den tamamen çekildiğini yazdı. Ancak 6 Ekim 2026 itibarıyla resmi site hâlâ satış/servis bilgisi yayınlıyor ve arabam.com canlı listesinde araç hâlâ aktif (2.099.000 TL) — net 'tamamen satıştan kalktı' teyidi yok, bu yüzden güncel fiyatla birlikte işaretlendi.",
@@ -1717,18 +1648,6 @@ const CARS = [
  {id:"hongqi-e-hs9-2025-deluxe", marka:"Hongqi", model:"E-HS9", yil:2025, versiyon:"Deluxe",
   kaynakAd:"Yeniköy Motors (Hongqi Türkiye Resmi Distribütörü - D ve D Motorlu Araçlar A.Ş.)", kaynakUrl:"https://www.yenikoymotors.com/hongi/e-hs9/27789",
   s:{segment:"Lüks SUV",kasa:"SUV",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:7,kapi:5,guc_hp:551,tork_nm:751,sifirYuz_sn:4.9,batarya_kwh:99,menzil_km_wltp:550,co2_gkm:0,uzunluk_mm:5209,genislik_mm:2010,yukseklik_mm:1731,jant_inch:21,acilir_tavan:"Var",koltuk_isitma:"Var",carplay_android_auto:"Var",serit_takip:"Var",dijital_gosterge:"Var",garanti_yil:5,garanti_km:150000,batarya_garanti_yil:8}},
- /* --- Jaguar + Bentley — 2026-10-06 araştırması (Claude ajanları ile). Lüks/egzotik markalar grubunun ilk
-    ikilisi. Jaguar: distribütör Borusan Otomotiv; resmi açıklama (İcra Kurulu Başkanı Hakan Tiftik, 3 Kasım
-    2025) ile doğrulandı — marka tüm eski modelleri (XE/XF/F-Type/E-Pace/F-Pace/I-Pace) üretimden kaldırdı,
-    tamamen elektrikli/ultra-lüks segmente geçiyor, Türkiye'de 2027 yılının ilk yarısına kadar HİÇ Jaguar
-    satışı olmayacak — bu yüzden veritabanına hiç eklenmedi (ne güncel ne de güvenilir tarihsel kayıt
-    bulunabildi). Bentley: resmi bayi "Bentley Istanbul" (bentleymotors.com bayi ağı); Continental GT,
-    Continental GTC, Flying Spur (üçü de Ultra Performance Hybrid, taban versiyon) ve Bentayga (V8 ve
-    Hybrid PHEV, taban versiyon) eklendi — 5 versiyon. Bentley TL fiyat yayınlamadığı için liste_fiyati_tl
-    hiçbir versiyonda doldurulamadı (bilerek boş); Torcal (ilk elektrikli Bentley) henüz satışa sunulmadı,
-    Supersports "pre-production" aşamasında, Mulsanne üretimi 2020'de durdu — bunlar eklenmedi; sadece
-    her model hattının taban/standart donanımı dahil edildi, üst donanım/varyant isimleri (Speed, Azure,
-    Mulliner, EWB vb.) eklenmedi. */
  {id:"bentley-continental-gt-2026-hybrid", marka:"Bentley", model:"Continental GT", yil:2026, versiyon:"Ultra Performance Hybrid (Taban Versiyon)",
   kaynakAd:"Bentley Motors Resmi Global Sitesi", kaynakUrl:"https://www.bentleymotors.com/en/models/continental-gt/continental-gt.html",
   s:{segment:"Lüks Spor Coupe (Grand Tourer)",kasa:"Coupe",yakit:"Hibrit",sanziman:"8 ileri çift kavramalı otomatik (DCT)",cekis:"4x4",koltuk:4,kapi:2,cc:3996,silindir:8,besleme:"Turbo + Elektrik Motoru",guc_hp:680,tork_nm:930,sifirYuz_sn:3.7,hiz_kmh:270,tuketim_l100km:4.1,co2_gkm:93,depo_l:80,batarya_kwh:25.9,batarya_tipi:"Lityum-İyon (Plug-in Hybrid)",menzil_km_wltp:84,uzunluk_mm:4895,genislik_mm:2187,yukseklik_mm:1397,dingil_mm:2851,agirlik_kg:2459,bagaj_l:260,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",acilir_tavan:"Var (opsiyonel - panoramik cam tavan)",anahtarsiz_giris:"Var",start_stop:"Var",ekran_inch:12.3,carplay_android_auto:"Var (detay: Apple CarPlay doğrulandı, Android Auto net doğrulanamadı)",ses_sistemi:"Standart 10 hoparlör 650W / Opsiyonel Bang & Olufsen 16 hoparlör 1500W / Opsiyonel Naim for Bentley 18 hoparlör 2200W",dijital_gosterge:"Var",garanti_yil:3}},
@@ -1744,16 +1663,6 @@ const CARS = [
  {id:"bentley-bentayga-2026-hybrid", marka:"Bentley", model:"Bentayga", yil:2026, versiyon:"Hybrid PHEV (Taban Versiyon)",
   kaynakAd:"Bentley Motors Resmi Global Sitesi", kaynakUrl:"https://www.bentleymotors.com/en/models/bentayga/bentayga.html",
   s:{segment:"Lüks SUV",kasa:"SUV",yakit:"Hibrit",sanziman:"8 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:2995,silindir:6,besleme:"Turbo + Elektrik Motoru",guc_hp:462,tork_nm:700,hiz_kmh:254,tuketim_l100km:6.7,co2_gkm:153,batarya_kwh:18,batarya_tipi:"Lityum-İyon (Plug-in Hybrid)",menzil_km_wltp:45,uzunluk_mm:5125,genislik_mm:2222,yukseklik_mm:1710,dingil_mm:2995,agirlik_kg:2510,bagaj_l:479,jant_inch:21,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",start_stop:"Var",carplay_android_auto:"Var",garanti_yil:3}},
- /* --- Lamborghini + Maserati — 2026-10-06 araştırması (Claude ajanları ile). Lüks/egzotik grubunun 2.
-    ikilisi. Lamborghini: resmi bayi "Lamborghini Istanbul" (Doğuş Otomotiv); Urus SE (Huracán/Urus S/
-    Performante'nin yerini aldı), Temerario (Huracán'ın yerini aldı) ve Revuelto eklendi — 3 versiyon;
-    Urus SE Performante henüz sadece teaser aşamasında, eklenmedi; ultra-lüks marka TL fiyat yayınlamadığı
-    için liste_fiyati_tl hiçbir versiyonda doldurulamadı. Maserati: distribütör Fer-Mas (Stellantis TR
-    bayi ağı); Grecale (GT/Modena/Trofeo/Folgore — 4), GranTurismo (Trofeo/Folgore — 2), GranCabrio
-    (Trofeo, Ekim 2026'da TR'ye giriyor, fiyat henüz yayınlanmadığı için liste_fiyati_tl boş) ve MC20
-    (Cielo) eklendi — 8 versiyon; Ghibli/Levante/Quattroporte resmi global sitede "artık üretimde değil"
-    olarak doğrulandı (TR fiyat karşılaştırma siteleri hâlâ eski/güncellenmemiş sayfalarını listeliyor
-    olsa da resmi kaynak önceliği gereği eklenmedi); GT2 Stradale için TR satış kanıtı bulunamadı. */
  {id:"lamborghini-urus-se-2026", marka:"Lamborghini", model:"Urus SE", yil:2026, versiyon:"SE (Plug-in Hibrit)",
   kaynakAd:"Lamborghini.com Resmi Basın Bülteni / autoevolution / autocarindia.com", kaynakUrl:"https://www.lamborghini.com/en-en/news/lamborghini-urus-se-the-first-plug-in-hybrid-super-suv",
   s:{segment:"Lüks Performans SUV",kasa:"SUV",yakit:"Hibrit",sanziman:"8 ileri otomatik",cekis:"4x4",koltuk:5,kapi:5,cc:3996,silindir:8,besleme:"Twin-turbo",guc_hp:789,tork_nm:950,sifirYuz_sn:3.4,hiz_kmh:312,depo_l:85,batarya_kwh:25.9,batarya_tipi:"Lityum-İyon",menzil_km_wltp:60,uzunluk_mm:5123,genislik_mm:2022,yukseklik_mm:1638,dingil_mm:3003,agirlik_kg:2505,bagaj_l:454,jant_inch:21}},
@@ -1787,19 +1696,6 @@ const CARS = [
  {id:"maserati-mc20-2025-cielo", marka:"Maserati", model:"MC20", yil:2025, versiyon:"Cielo (Açılır Tavan)",
   kaynakAd:"Sifiraracal.com (fiyat/versiyon) + Maserati.com resmi global spec sayfası", kaynakUrl:"https://www.sifiraracal.com/maserati-modelleri/mc20",
   s:{segment:"Süper Spor",kasa:"Cabrio",yakit:"Benzin",sanziman:"Otomatik (8 ileri DCT)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,cc:2992,silindir:6,besleme:"Twin-Turbo (Nettuno V6)",guc_hp:630,tork_nm:730,sifirYuz_sn:2.9,hiz_kmh:325,depo_l:50,liste_fiyati_tl:38963400}},
- /* --- Ferrari + Aston Martin — 2026-10-06 araştırması (Claude ajanları ile). Lüks/egzotik grubunun 3.
-    ikilisi. Ferrari: distribütör Fer-Mas Oto Ticaret A.Ş. (Tofaş iştiraki, 2005'ten beri); Amalfi
-    (Roma'nın yerini aldı, TR fiyatı 3 bağımsız kaynakla teyitli), Purosangue, 296 GTB, 296 GTS eklendi
-    — 4 versiyon. 12Cilindri (Coupe/Spider) kasıtlı olarak eklenmedi: araştırmacı ajan bunun TR'ye özgü
-    doğrudan satış/teslim kanıtı bulamadığını, sadece markanın güncel global modeli olmasından dolaylı
-    çıkarım yaptığını belirtti — siteninin katı kaynak standardı gereği dışarıda bırakıldı. Roma/
-    Portofino M/812 Superfast/F8 Tributo/SF90 Stradale yeni modellerle değiştirildi, 849 Testarossa
-    sadece tanıtıldı (TR satışı yok) — eklenmedi; hiçbirinde TL fiyat bulunamadı (Amalfi hariç).
-    Aston Martin: distribütör Yeniköy Motors (D ve D Motorlu Araçlar A.Ş., Hongqi'yi de temsil ediyor);
-    Vantage (Coupe/S/Roadster), DB12 (Coupe/S/Volante), DBX (707/S), Vanquish (Coupe/Volante) eklendi
-    — 10 versiyon. astonmartin.com.tr hiçbir modelde TL fiyat/garanti yayınlamadığı için bu alanlar
-    boş; Valhalla/Valour/Valiant/Valen gibi ultra-sınırlı "Specials" (sold-out/tahsisli) ve DB12
-    Goldfinger Edition eklenmedi. */
  {id:"ferrari-amalfi-2026-coupe", marka:"Ferrari", model:"Amalfi", yil:2026, versiyon:"Coupe (2+)",
   kaynakAd:"Ensonhaber - Ferrari Amalfi Türkiye'de satışa çıktı", kaynakUrl:"https://www.ensonhaber.com/ferrari-amalfi-turkiyede-satisa-cikti-iste-fiyati-ve-ozellikleri-h1545954",
   s:{segment:"Lüks Spor GT (Gran Turismo)",kasa:"Coupe",yakit:"Benzin",sanziman:"Otomatik (8 ileri çift kavramalı)",cc:3855,silindir:8,besleme:"Çift Turbo",guc_hp:640,sifirYuz_sn:3.3,agirlik_kg:1470,ekran_inch:10.25,dijital_gosterge:"Var",abs:"Var (ABS Evo)",liste_fiyati_tl:45000000}},
@@ -1842,15 +1738,6 @@ const CARS = [
  {id:"aston-martin-vanquish-2026-volante", marka:"Aston Martin", model:"Vanquish", yil:2026, versiyon:"Volante",
   kaynakAd:"Aston Martin Resmi Global Site + Aston Martin Türkiye Resmi Site", kaynakUrl:"https://www.astonmartin.com/en-us/models/vanquish-volante",
   s:{segment:"Süper GT",kasa:"Cabrio",yakit:"Benzin",sanziman:"8 ileri otomatik (ZF)",cekis:"Arkadan İtiş (RWD)",koltuk:2,kapi:2,silindir:12,besleme:"Çift Turbo (V12)",guc_hp:835,tork_nm:1000,sifirYuz_sn:3.4,hiz_kmh:345,tuketim_l100km:14.1,co2_gkm:321,depo_l:82,uzunluk_mm:4855,genislik_mm:2044,yukseklik_mm:1295,dingil_mm:2885,agirlik_kg:2005,bagaj_l:219,abs:"Var",esp:"Var",klima:"Var"}},
- /* --- Rolls-Royce — 2026-10-06 araştırması (Claude ajanları ile). Lüks/egzotik grubunun son (4.) ikilisi;
-    bu eklemeyle "lüks/egzotik önce" fazı tamamlandı. Rolls-Royce: distribütör Royal Motors ("Rolls-Royce
-    Motor Cars Istanbul" showroom); Ghost/Ghost Extended/Ghost Black Badge, Phantom/Phantom Extended,
-    Cullinan/Cullinan Black Badge, Spectre/Spectre Black Badge (Series II, hepsi) eklendi — 9 versiyon.
-    Resmi site hiçbir modelde TL fiyat yayınlamadığı için liste_fiyati_tl hiçbirinde doldurulamadı.
-    Bugatti: Türkiye'de HİÇ resmi/yetkili satış kanalı (bayi, distribütör, showroom) bulunamadı —
-    ensonmodeller.com'un "Bugatti Türkiye yetkili bayi ve servis yok" sayfasıyla doğrulandı; ayrıca
-    global ölçekte de Mistral/Tourbillon lansmandan önce sold-out olmuş, Chiron üretimi bitmiş —
-    bu yüzden hiç eklenmedi (boş sonuç, beklenen ve doğru sonuçtu). */
  {id:"rolls-royce-ghost-2026-series-ii", marka:"Rolls-Royce", model:"Ghost", yil:2026, versiyon:"Series II",
   kaynakAd:"Rolls-Royce Press Club (Ghost Series II resmi basın bülteni) + Wikipedia (teyit) + automobiledimension.com", kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0445483EN/ghost-series-ii",
   s:{segment:"Ultra Lüks Sedan",kasa:"Sedan",yakit:"Benzin",sanziman:"Otomatik (8 ileri)",cekis:"4x4",koltuk:5,kapi:4,cc:6750,silindir:12,besleme:"Twin-turbo",guc_hp:563,tork_nm:850,sifirYuz_sn:4.3,hiz_kmh:249,tuketim_l100km:15.7,co2_gkm:357,uzunluk_mm:5545,genislik_mm:1998,yukseklik_mm:1573,dingil_mm:3295,agirlik_kg:2553,bagaj_l:464,jant_inch:22,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
@@ -1878,21 +1765,6 @@ const CARS = [
  {id:"rolls-royce-spectre-black-badge-2026-series-ii", marka:"Rolls-Royce", model:"Spectre Black Badge", yil:2026, versiyon:"Black Badge Series II",
   kaynakAd:"Rolls-Royce Press Club (Spectre Series II resmi basın bülteni) + Wikipedia", kaynakUrl:"https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0458258EN/rolls-royce-presents-spectre-series-ii",
   s:{segment:"Ultra Lüks Performans Elektrikli Coupe",kasa:"Coupe",yakit:"Elektrik",sanziman:"Otomatik (Tek Vites)",cekis:"4x4",koltuk:4,kapi:2,guc_hp:680,tork_nm:1100,hiz_kmh:250,co2_gkm:0,batarya_kwh:101.7,batarya_tipi:"Lityum-İyon",menzil_km_wltp:628,uzunluk_mm:5453,genislik_mm:2080,yukseklik_mm:1559,dingil_mm:3210,agirlik_kg:2975,bagaj_l:378,jant_inch:23,abs:"Var",esp:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",carplay_android_auto:"Var",dijital_gosterge:"Var"}},
- /* --- Cadillac + Chevrolet — 2026-10-06 araştırması (Claude ajanları ile). "GM dönüşü + diğer" grubunun
-    ilk ikilisi. GM'nin Türkiye dönüşü GERÇEK ve satış aşamasında: resmi distribütör Tur Oto
-    ("GM-SV Tur Oto"), resmi lansman 18-22 Haziran 2026, İstanbul. Cadillac TR'de SADECE 6.2L V8
-    BENZİNLİ Escalade ailesi satılıyor (LYRIQ/OPTIQ/ESCALADE IQ gibi elektrikli modeller satışta
-    DEĞİL — global pazarlamada görünse de TR'de resmi kanalda yok, bu yüzden eklenmedi): Escalade,
-    Escalade ESV, Escalade V-Series (682hp süperşarjlı) — 3 versiyon. Chevrolet TR'de SADECE Tahoe
-    (RST, High Country) ve Suburban (High Country) satışta — 3 versiyon. Silverado lansmanda
-    "ürün gamında olacağı" açıklanmış ama resmi sitenin güncel model sayfasında YOK (lanse edildi ≠
-    güncel satışta kuralı gereği eklenmedi); Corvette, Camaro, Equinox EV için TR'de satış kanıtı
-    bulunamadı. Chevrolet modellerinde liste_fiyati_tl YOK: resmi site "bayiden teklif isteyin"
-    modeliyle çalışıyor, güncel/resmi bir TL fiyatı doğrulanamadı (Haziran 2026 lansman basın
-    fiyatları resmi sitede yok, bu yüzden kullanılmadı). Cadillac'ta tork_nm değerleri resmi TR
-    sitesiyle örtüşen hp rakamları üzerinden Cadillac'ın global resmi teknik verisinden alındı;
-    Chevrolet'te kaynak sadece lb-ft verdiği ve Nm'ye çevirmek türetme sayılacağı için tork_nm
-    hiç eklenmedi. Chevrolet garanti: 2 yıl/100.000 km araç + 2 yıl/60.000 km orijinal parça. */
  {id:"cadillac-escalade-2026-sport-platinum", marka:"Cadillac", model:"Escalade", yil:2026, versiyon:"Sport Platinum / Luxury Platinum",
   kaynakAd:"otomobil.com.tr (Tur Oto resmi lansman haberi) / gmsv-turoto.com.tr (resmi distribütör sitesi) / cadillac.com (resmi global teknik veri)", kaynakUrl:"https://www.otomobil.com.tr/cadillac-chevrolet-gmc-turkiye-fiyatlari/",
   foto:"assets/car-photos/cadillac-escalade.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Cadillac_Escalade",
@@ -1917,19 +1789,6 @@ const CARS = [
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör Sitesi)", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/chevrolet/suburban",
   foto:"assets/car-photos/chevrolet-suburban.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:Chevrolet_Suburban",
   s:{segment:"Tam boy SUV",kasa:"SUV",yakit:"Benzin",sanziman:"10 ileri otomatik",koltuk:7,cc:6200,silindir:8,besleme:"EcoTec3 V8 (Dynamic Fuel Management)",guc_hp:420,uzunluk_mm:5748,genislik_mm:2057,yukseklik_mm:1935,jant_inch:24,adaptif_hiz_sabitleyici:"Var",serit_takip:"Var",geri_gorus_kamera:"Var",klima:"Var",koltuk_isitma:"Var",anahtarsiz_giris:"Var",ekran_inch:17.7,carplay_android_auto:"Var",dijital_gosterge:"Var",garanti_yil:2,garanti_km:100000}},
- /* --- GMC + Alpine — 2026-10-06 araştırması (Claude ajanları ile). "GM dönüşü + diğer" grubunun
-    2. ikilisi. GMC — resmi distribütör GM-SV Tur Oto; GÜNCEL olarak sadece Sierra Denali (3.0L
-    Duramax dizel 4x4 pickup) ve Yukon Denali (6.2L V8 SUV) satışta, ✅ eklendi, 2 versiyon.
-    Terrain/Acadia/Canyon/Sierra HD gibi diğer global GMC modelleri TR sitesinde yok, eklenmedi.
-    Chevrolet'teki gibi resmi site artık TL fiyat yayınlamıyor (sadece teklif formu) — Haziran 2026
-    lansman basın fiyatları resmi/güncel kaynak sayılmadığı için liste_fiyati_tl hiç eklenmedi.
-    Alpine — distribütör MAIS (Renault/OYAK), ayrı "Alpine Cars Türkiye" showroom/site
-    (alpinecars.com.tr); A110 Eylül 2026 itibarıyla ARTIK SATIŞTA DEĞİL (global üretimi de bitti) —
-    eklenmedi. GÜNCEL satışta: A290 GT Performance + A290 GTS (elektrikli hot-hatch, Renault 5
-    tabanlı; lansmandaki GT/GT Premium versiyonları artık güncel fiyat listesinde yok, eklenmedi)
-    ve A390 GT (elektrikli performans fastback; GTS versiyonu 2026 yıl sonuna planlı ama henüz
-    fiyat listesinde yok, eklenmedi) — ✅ eklendi, 3 versiyon. Garanti bilgisi hiçbir Alpine
-    kaynağında bulunamadığı için eklenmedi. */
  {id:"gmc-sierra-2026-denali", marka:"GMC", model:"Sierra", yil:2026, versiyon:"Denali 3.0 Duramax Turbo Dizel 4x4",
   kaynakAd:"GM-SV Tur Oto (Resmi Distribütör) / donanimhaber.com / pece4x4.com", kaynakUrl:"https://www.gmsv-turoto.com.tr/en/gmc/sierra",
   foto:"assets/car-photos/gmc-sierra.jpg", fotoKaynakAd:"Wikimedia Commons", fotoKaynakUrl:"https://commons.wikimedia.org/wiki/Category:GMC_Sierra",
@@ -1952,8 +1811,6 @@ const CARS = [
   s:{segment:"Elektrikli performans fastback",kasa:"Fastback (5 kapı)",yakit:"Elektrik",sanziman:"Tek ileri vites (Otomatik, 4 çeker - AWD)",koltuk:5,kapi:5,guc_hp:400,tork_nm:661,uzunluk_mm:4615,genislik_mm:1885,yukseklik_mm:1532,bagaj_l:532,jant_inch:20,abs:"Var",esp:"Var",adaptif_hiz_sabitleyici:"Var",geri_gorus_kamera:"Var",koltuk_isitma:"Var",ekran_inch:12,carplay_android_auto:"Var",dijital_gosterge:"Var",liste_fiyati_tl:6300000,batarya_kwh:89,menzil_km_wltp:555,hizlanma_0_100_sn:4.8}},
 ];
 
-/* Kategori şeması: epey.com/araba ve arabavs.com taranarak çıkarıldı, kullanılan başlıkların tamamı burada.
-   Bir aracın verisi olmayan satırlar "—" gösterir; hiçbir satır gizlenmez, tüm başlıklar her zaman görünür. */
 const GROUPS = [
  {name:'Genel', rows:[
   ['segment','Segment'],['kasa','Kasa tipi'],['yakit','Yakıt tipi'],
@@ -2027,7 +1884,6 @@ const state = {
 };
 let sides = ['a','b'];
 
-/* --- Filtreler --- */
 const isDiscontinued = c => !!c.durum && !c.s.liste_fiyati_tl;
 const FUEL_CATS = [['elektrik','Elektrikli'],['phev','Plug-in hibrit'],['hibrit','Hibrit'],['mhev','Hafif (mild) hibrit'],['lpg','Benzin / LPG'],['dizel','Dizel'],['benzin','Benzin']];
 const BODY_CATS = [['suv','SUV / Crossover'],['sedan','Sedan'],['hatchback','Hatchback'],['sw','Station wagon'],['mpv','MPV / Minivan'],['coupe','Coupe / Cabrio / Roadster'],['pickup','Pick-up'],['diger','Diğer']];
@@ -2068,7 +1924,6 @@ function renderFilters(){
   $('fCount').textContent = `Seçim listelerinde ${num(p.length)} versiyon, ${num(uniq(p.map(c=>c.marka)).length)} marka gösteriliyor.`;
 }
 
-/* --- Hazır karşılaştırmalar (aynı sınıftan örnek eşleşmeler) --- */
 const PRESETS = [
   {seg:'Kompakt sedan', ids:['egea-sedan-2026-1.4-fire-95','toyota-corolla-sedan-1-5-vision-plus-2026','renault-megane-sedan-touch-1-3-tce-edc-140-2026']},
   {seg:'Elektrikli C-SUV', ids:['togg-t10x-2026-v1-rwd-standart','tesla-model-y-2026-premium-long-range-rwd']},
@@ -2094,7 +1949,6 @@ function renderPresets(){
   }));
 }
 
-/* --- Boyut karşılaştırması: sıfırdan başlayan, aynı ölçekli çubuklar --- */
 const DIM_ROWS = [['uzunluk_mm','Uzunluk'],['genislik_mm','Genişlik'],['yukseklik_mm','Yükseklik'],['dingil_mm','Dingil mesafesi'],['bagaj_l','Bagaj hacmi','L']];
 function renderDims(cars){
   let out='';
@@ -2111,7 +1965,6 @@ function renderDims(cars){
   $('dimsBody').innerHTML = out || '<p class="dnone">Seçili araçlar için ölçü verisi yok.</p>';
 }
 
-/* --- Donuk başlık: tablo başlığı ekrandan çıkınca araç adları üstte sabit kalır --- */
 function placeStickyHead(){
   const sh=$('shead'), sheet=document.querySelector('.sheet'), top=document.querySelector('.top');
   const off = getComputedStyle(top).position==='sticky' ? top.getBoundingClientRect().bottom : 0;
@@ -2123,7 +1976,6 @@ function placeStickyHead(){
 window.addEventListener('scroll', placeStickyHead, {passive:true});
 window.addEventListener('resize', placeStickyHead);
 
-/* --- Paylaşılabilir adres --- */
 function readHash(){
   const m = location.hash.match(/k=([^&]+)/);
   if(!m) return;
@@ -2295,7 +2147,7 @@ $('share').addEventListener('click',async()=>{
 });
 window.addEventListener('hashchange',()=>{ readHash(); render(); });
 
-$('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Veri bulunmayan satırlar "—" ile görünür; tahmin yazılmaz.`;
+$('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Verisi olmayan satırlarda "—" görünür.`;
 CARS.forEach(c=>{ const f=window.fotoFor?window.fotoFor(c):null; if(f){ c.foto=f.src; c._fotoKredi=window.fotoKredi(f); } const p=(window.PUANLAR||{})[c.id]; c.s.sistem_puani_10 = p&&p.toplam!=null ? p.toplam : null; });
 readHash();
 renderPresets();
