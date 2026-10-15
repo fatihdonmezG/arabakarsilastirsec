@@ -9,6 +9,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 |---|---|---|
 | Mercedes-Benz | tamamlandı | 2026-10-14 |
 | Volkswagen | tamamlandı | 2026-10-14 |
+| Hyundai | tamamlandı | 2026-10-15 |
+| Land Rover | tamamlandı | 2026-10-15 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -183,3 +185,132 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - vw-touareg-3-0-v6-tdi-286-tiptronic-elegance-2025 | ncap_yildiz | Euro NCAP 2018 sonucunun geçerliliği 1 Ocak 2025'te sona ermiş (expired)
 - vw-touareg-3-0-v6-tdi-286-tiptronic-elegance-2025 | ncap_test_yili | Euro NCAP 2018 sonucunun geçerliliği 1 Ocak 2025'te sona ermiş (expired)
 - vw-touareg-3-0-v6-tdi-286-tiptronic-elegance-2025 | emisyon_normu | auto-data "Euro 6 EA" yazıyor (net Euro normu değil); ultimatespecs Touareg sayfası 429 hız sınırı nedeniyle açılamadı
+
+## 2026-10-15 — Hyundai, Land Rover
+
+- Doldurulan alan: 207 (Hyundai 102, Land Rover 105), 31 versiyon.
+- Araştırılıp bulunamayan: 106 alan (Hyundai 56, Land Rover 50; aşağıda).
+- Kaynaklar: Euro NCAP, Hyundai Türkiye model sayfaları/IONIQ 6 broşürü, Hyundai Avusturya Kona Elektro teknik veri, Hyundai Avustralya Inster spec, Land Rover teknik özellik PDF'leri (Defender/Discovery/Evoque XI, Discovery Sport/Range Rover/RR Sport 2026, Velar 2024), auto-data.net, ultimatespecs, ADAC (i30 silindir), CarExpert NZ (Defender OCTA airbag).
+- Land Rover genişlikleri "aynalar katlı" değerdir (LR aynasız genişlik vermiyor); bagaj 2. sıra arkası kuru (VDA) hacim.
+- Kayıtta fark edilen, bu araçla düzeltilemeyen eski/şüpheli değerler (elle kontrol önerilir):
+  - Hyundai i20: tüketim 6.3 / CO2 142 (auto-data 90 hp: 5.7-5.9 / 129-134).
+  - Hyundai i30 1.6 T-GDI: tüketim 6.8, CO2 154, 0-100 9.2 (ADAC 01/26: 6.3, 142, 8.9).
+  - Hyundai Tucson Comfort 4x2: birleşik 7.3 < şehir dışı 7.8 (tutarsız); bagaj 598 (makyajlı benzinli 620 L); uzunluk 4500 (makyajlı 4510-4525; Tucson Hybrid için de).
+  - Hyundai Tucson 1.6 CRDi 136: AB'de yalnız 48V MHEV satılıyor, kayıtta MHEV ibaresi yok.
+  - Hyundai Santa Fe Hybrid: TR WLTP sayfası 215 PS HEV için 7.3 / 166; kayıtta 239 PS, 7.2 / 163.
+  - Hyundai IONIQ 9: kapı 4 (Euro NCAP: 5 kapı), airbag 8 (Hyundai TR: 10). Inster airbag 6 (Hyundai TR: 7).
+  - Hyundai Accent Blue 1.4 CVT: ncap_yildiz 5 — Accent Blue Euro NCAP'te test edilmedi (muhtemelen ANCAP 2011).
+  - Hyundai Elantra 2023 Elite: tüketim 7.1 ile CO2 134 tutarsız; uzunluk 4650 (auto-data 4675).
+  - Land Rover Evoque P160: genişlik 2100 aynalar açık (katlı 1996); bagaj 591 ıslak hacim (kuru 472); ağırlık 1717 DIN (EU 1792).
+  - Land Rover Discovery Sport PHEV tüketim 3.9 (LR UK 2026 WLTP 1.5-1.6); Range Rover P460e tüketim 2.7 (LR 2026 WLTP 0.7-0.9).
+  - Land Rover Range Rover Sport SV Black guc_hp 615 (üretici 635 PS).
+  - Land Rover Evoque P160 çekiş "Önden Çekiş" LR 2026 PDF ve ultimatespecs'e göre yazıldı; TR fiyat listesi çekiş belirtmiyor.
+
+### Araştırıldı, bulunamadı (id | alan | neden)
+
+- hyundai-i20-jump-gsr-2026 | agirlik_kg | Kaynaklar yalnız aralık veriyor (auto-data 1070-1185, Hyundai UK 1065-1175); versiyon ucu belirsiz
+- hyundai-i20-elite-gsr-dct-2026 | agirlik_kg | Kaynaklar yalnız aralık veriyor (auto-data DCT 1095-1210); versiyon ucu belirsiz
+- hyundai-i30-comfort-dct-2026 | segment | Euro NCAP sonucu süresi dolmuş (2017, 2024-01-01 expired), sınıf verilmiyor; üretici kaynağı açılamadı
+- hyundai-i30-comfort-dct-2026 | agirlik_kg | Yalnız ADAC Almanya Trend donanımı için 1405 kg (EU); TR donanımı/jantı için doğrulanamadı
+- hyundai-i30-comfort-dct-2026 | airbag_sayisi | Üretici TR kaynağı açılamadı; ADAC Almanya listesi TR donanımına uyarlanamaz
+- hyundai-i30-comfort-dct-2026 | ncap_yildiz | Euro NCAP 2017 sonucu 2024-01-01'de expired
+- hyundai-i30-comfort-dct-2026 | ncap_test_yili | Euro NCAP 2017 sonucu 2024-01-01'de expired
+- hyundai-i30-prime-dct-2026 | segment | Euro NCAP sonucu süresi dolmuş (2017, 2024-01-01 expired), sınıf verilmiyor; üretici kaynağı açılamadı
+- hyundai-i30-prime-dct-2026 | agirlik_kg | Yalnız ADAC Almanya Trend donanımı için 1405 kg (EU); TR donanımı/jantı için doğrulanamadı
+- hyundai-i30-prime-dct-2026 | airbag_sayisi | Üretici TR kaynağı açılamadı; ADAC Almanya listesi TR donanımına uyarlanamaz
+- hyundai-i30-prime-dct-2026 | ncap_yildiz | Euro NCAP 2017 sonucu 2024-01-01'de expired
+- hyundai-i30-prime-dct-2026 | ncap_test_yili | Euro NCAP 2017 sonucu 2024-01-01'de expired
+- hyundai-bayon-style-gsr-dct-2026 | segment | Euro NCAP BAYON sayfasında sınıf yok (yalnız gövde SUV); üretici TR sayfası açılamadı
+- hyundai-bayon-style-gsr-dct-2026 | agirlik_kg | Yalnız aralık bulundu (auto-data 1120-1230); 90 PS makyajlı versiyon için tek değer yok
+- hyundai-kona-prime-dct-2026 | agirlik_kg | auto-data aralık veriyor (1375-1505); versiyon ucu belirsiz
+- hyundai-kona-prime-dct-2026 | airbag_sayisi | Açık sayı veren kaynak yok; Euro NCAP tablosu kişi bazlı, sayı belirsiz
+- hyundai-kona-prime-dct-2026 | co2_gkm | auto-data aralık veriyor (147-150); versiyon ucu belirsiz
+- hyundai-kona-electric-advance-gsr-2026 | agirlik_kg | Hyundai AT aralık veriyor (1615-1690); versiyon ucu belirsiz
+- hyundai-kona-electric-advance-gsr-2026 | airbag_sayisi | Açık sayı veren kaynak yok
+- hyundai-kona-electric-advance-gsr-2026 | dc_hizli_sarj_dk_20_80 | Kaynakta %20-80 süresi yok
+- hyundai-tucson-elite-plus-4x4-2026 | uzunluk_mm | Makyajlı Tucson'da donanıma göre 4510/4525 mm; TR versiyonu için belirsiz
+- hyundai-tucson-elite-plus-4x4-2026 | agirlik_kg | auto-data aralık veriyor (1560-1703)
+- hyundai-tucson-elite-plus-4x4-2026 | bagaj_l | auto-data 620 l (min) veriyor ancak 4x4 için TR değeriyle (598) tutarsız; doğrulanamadı
+- hyundai-tucson-elite-plus-4x4-2026 | tuketim_l100km | auto-data aralık veriyor (7.6-7.7)
+- hyundai-tucson-elite-plus-4x4-2026 | co2_gkm | auto-data aralık veriyor (172-174)
+- hyundai-tucson-hybrid-elite-2025 | tork_nm | auto-data sistem torku 264 Nm veriyor (elektrik motoru 265 Nm) – tutarsız, güvenilmez
+- hyundai-tucson-hybrid-elite-2025 | tuketim_l100km | auto-data aralık veriyor (5.7-5.9)
+- hyundai-tucson-hybrid-elite-2025 | co2_gkm | auto-data aralık veriyor (129-134)
+- hyundai-santafe-hybrid-4x4-2026 | agirlik_kg | Hyundai UK: 1965-2095 kg aralık, TR versiyon ucu belirsiz
+- hyundai-santafe-hybrid-4x4-2026 | ncap_yildiz | Euro NCAP 2024 çift derecelendirme (standart 4, güvenlik paketiyle 5 yıldız); TR donanımının hangisine denk geldiği belirsiz; euroncap.com sayfası erişilemedi
+- hyundai-santafe-hybrid-4x4-2026 | ncap_test_yili | ncap_yildiz yazılamadığı için birlikte yazılmadı (test yılı 2024)
+- hyundai-santafe-hybrid-4x4-2026 | besleme | Açık okunan kaynakta 239 PS versiyon için enjeksiyon tipi bulunamadı (auto-data 239 PS sayfası erişilemedi)
+- hyundai-ioniq5-dynamic-visionroof-2026 | agirlik_kg | Hyundai UK 63 kWh: 1880-1960 kg aralık, versiyon ucu belirsiz
+- hyundai-ioniq6-standard-advance-2026 | agirlik_kg | TR broşür 63 kWh: 1892-1954 kg aralık, Advance ucu belirsiz
+- hyundai-ioniq9-progressive-2026 | segment | Üretici/Euro NCAP kaynağında sınıf adı yok (yalnız 'SUV')
+- hyundai-ioniq9-progressive-2026 | agirlik_kg | TR broşür/WLTP PDF erişilemedi; sürüm bazlı ağırlık bulunamadı
+- hyundai-inster-dynamic-2026 | agirlik_kg | Hyundai AU 42 kWh: 1305-1393 kg aralık, versiyon ucu belirsiz
+- hyundai-accent-blue-2018-mode-1-6-crdi-136hp-mt | ncap_yildiz | Accent Blue (RB) Euro NCAP'te test edilmemiş; olsa da süresi dolmuş
+- hyundai-accent-blue-2018-mode-1-6-crdi-136hp-mt | ncap_test_yili | Euro NCAP testi yok
+- hyundai-accent-blue-2018-mode-1-6-crdi-136hp-mt | emisyon_normu | 2018 TR versiyonu için emisyon normu kabul edilen kaynakta bulunamadı
+- hyundai-accent-blue-2018-mode-plus-1-4-dcvvt-100hp-cvt | ncap_test_yili | Accent Blue (RB) Euro NCAP'te test edilmemiş; mevcut ncap_yildiz şüpheli
+- hyundai-accent-blue-2018-mode-plus-1-4-dcvvt-100hp-cvt | emisyon_normu | 2018 TR versiyonu için emisyon normu kabul edilen kaynakta bulunamadı
+- hyundai-elantra-2024-prime-1-6-mpi-cvt | airbag_sayisi | 2024 TR Prime donanımı için hava yastığı sayısı kaynağı bulunamadı (TR sayfası yayında değil)
+- hyundai-elantra-2024-prime-1-6-mpi-cvt | ncap_yildiz | Elantra CN7 Euro NCAP'te test edilmemiş
+- hyundai-elantra-2024-prime-1-6-mpi-cvt | ncap_test_yili | Euro NCAP testi yok
+- hyundai-elantra-2024-prime-1-6-mpi-cvt | emisyon_normu | TR 2024 versiyonu için emisyon normu kaynağı bulunamadı
+- hyundai-elantra-2023-elite-1-6-mpi-cvt | airbag_sayisi | 2023 TR Elite donanımı için hava yastığı sayısı kaynağı bulunamadı
+- hyundai-elantra-2023-elite-1-6-mpi-cvt | ncap_yildiz | Elantra CN7 Euro NCAP'te test edilmemiş
+- hyundai-elantra-2023-elite-1-6-mpi-cvt | ncap_test_yili | Euro NCAP testi yok
+- hyundai-elantra-2023-elite-1-6-mpi-cvt | emisyon_normu | TR 2023 versiyonu için emisyon normu kaynağı bulunamadı
+- land-rover-defender-2026-110-ultimate-d200 | yukseklik_mm | Kaynak yaylı 1972 / havalı süspansiyon 1967 veriyor; TR Ultimate D200'ün süspansiyon tipi doğrulanamadı
+- land-rover-defender-2026-110-ultimate-d200 | airbag_sayisi | Kaynaklarda D200 için açık sayı yok; Euro NCAP yalnız tür listesi veriyor
+- land-rover-defender-2026-110-ultimate-d200 | co2_gkm | WLTP aralık (5 koltuk 222-240 g/km), versiyon ucu belirsiz
+- land-rover-defender-2026-110-octa | uzunluk_mm | Kaynaklar çelişkili (OCTA PDF stepnesiz 4813, CarExpert 4758); stepneli değer etiketle eşleşmiyor
+- land-rover-defender-2026-110-octa | ncap_yildiz | Euro NCAP Defender 2020 kapsamında 4.4 V8 (OCTA) varyantı yok
+- land-rover-defender-2026-110-octa | ncap_test_yili | Euro NCAP Defender 2020 kapsamında 4.4 V8 (OCTA) varyantı yok
+- land-rover-defender-2026-110-octa | co2_gkm | WLTP aralık (294-313 g/km), versiyon ucu belirsiz
+- land-rover-discovery-2026-dynamic-hse-d350 | koltuk | TR Dynamic HSE için 5/7 koltuk standart olduğu doğrulanamadı
+- land-rover-discovery-2026-dynamic-hse-d350 | agirlik_kg | 5 koltuk 2391 / 7 koltuk 2442 kg (EU); koltuk düzeni belirsiz
+- land-rover-discovery-2026-dynamic-hse-d350 | bagaj_l | 5 koltuk 986 / 7 koltuk 922 L (dry); koltuk düzeni belirsiz
+- land-rover-discovery-2026-dynamic-hse-d350 | airbag_sayisi | Kaynaklarda açık sayı yok
+- land-rover-discovery-2026-dynamic-hse-d350 | ncap_yildiz | Euro NCAP 2017 sonucu 2024-01-01'de expired
+- land-rover-discovery-2026-dynamic-hse-d350 | ncap_test_yili | Euro NCAP 2017 sonucu 2024-01-01'de expired
+- land-rover-discovery-2026-dynamic-hse-d350 | co2_gkm | WLTP aralık (5K 209-221 / 7K 212-223 g/km), versiyon ucu belirsiz
+- land-rover-discovery-2026-dynamic-hse-d350 | emisyon_normu | Üretici PDF'inde yok; 2026 D350 için açık veritabanı kaydı açılamadı
+- land-rover-discovery-sport-2026-dynamic-s-phev | airbag_sayisi | Kaynaklarda açık sayı yok
+- land-rover-discovery-sport-2026-dynamic-s-phev | ncap_yildiz | Euro NCAP Discovery Sport 2022 (5 yıldız) 1.5 PHEV varyantlarını kapsamıyor
+- land-rover-discovery-sport-2026-dynamic-s-phev | ncap_test_yili | Euro NCAP Discovery Sport 2022 1.5 PHEV varyantlarını kapsamıyor
+- land-rover-discovery-sport-2026-dynamic-s-phev | co2_gkm | WLTP aralık (GB 2026: 33-36 g/km), versiyon ucu belirsiz
+- land-rover-discovery-sport-2026-dynamic-s-phev | emisyon_normu | Üretici PDF'inde yok; Ultimatespecs kaydı 2024-2025 üretim (2026 değil)
+- land-rover-range-rover-evoque-2026-s-p160 | airbag_sayisi | Kaynaklarda açık sayı yok
+- land-rover-range-rover-evoque-2026-s-p160 | ncap_yildiz | Euro NCAP 2019 sonucu 2026-01-01'de expired
+- land-rover-range-rover-evoque-2026-s-p160 | ncap_test_yili | Euro NCAP 2019 sonucu 2026-01-01'de expired
+- land-rover-range-rover-evoque-2026-s-p160 | co2_gkm | WLTP aralık (177-184 g/km), versiyon ucu belirsiz
+- land-rover-range-rover-evoque-2026-s-p160 | depo_l | Üretici 67 L'yi "large tank" olarak veriyor; standart depo hacmi belirsiz
+- land-rover-range-rover-evoque-2026-s-phev269 | airbag_sayisi | Kaynaklarda açık sayı yok
+- land-rover-range-rover-evoque-2026-s-phev269 | ncap_yildiz | Euro NCAP 2019 sonucu 2026-01-01'de expired
+- land-rover-range-rover-evoque-2026-s-phev269 | ncap_test_yili | Euro NCAP 2019 sonucu 2026-01-01'de expired
+- land-rover-range-rover-evoque-2026-s-phev269 | co2_gkm | WLTP aralık (85-90 g/km), versiyon ucu belirsiz
+- land-rover-range-rover-2026-autobiography-lwb-d350 | airbag_sayisi | Üretici sayı vermiyor; Euro NCAP yalnız konum listesi veriyor, fiziksel sayı belirsiz
+- land-rover-range-rover-2026-autobiography-lwb-d350 | co2_gkm | WLTP aralık 192-208 g/km, versiyon ucu belirsiz
+- land-rover-range-rover-2026-autobiography-lwb-d350 | emisyon_normu | Kaynaklarda Euro normu belirtilmiyor; landrover.com.tr sayfaları açılamadı
+- land-rover-range-rover-2026-autobiography-p460e | bagaj_l | Belgede PHEV için bagajın farklı olabileceği belirtiliyor, PHEV değeri yok
+- land-rover-range-rover-2026-autobiography-p460e | airbag_sayisi | Üretici sayı vermiyor; Euro NCAP yalnız konum listesi veriyor
+- land-rover-range-rover-2026-autobiography-p460e | co2_gkm | WLTP aralık 16-18 g/km, versiyon ucu belirsiz
+- land-rover-range-rover-2026-autobiography-p460e | emisyon_normu | Kaynaklarda Euro normu belirtilmiyor
+- land-rover-range-rover-sport-2026-dynamic-se-d300 | airbag_sayisi | Üretici sayı vermiyor; Euro NCAP yalnız konum listesi veriyor
+- land-rover-range-rover-sport-2026-dynamic-se-d300 | co2_gkm | WLTP aralık 186-204 g/km, versiyon ucu belirsiz
+- land-rover-range-rover-sport-2026-dynamic-se-d300 | emisyon_normu | Kaynaklarda Euro normu belirtilmiyor
+- land-rover-range-rover-sport-2026-sv-black | sifirYuz_sn | 3.8 sn yalnız karbon seramik fren + karbon jantla; SV Black'te karbon jant yok, kendi değeri bulunamadı
+- land-rover-range-rover-sport-2026-sv-black | bagaj_l | Belge SV modellerde değerlerin farklı olabileceğini belirtiyor, SV değeri yok
+- land-rover-range-rover-sport-2026-sv-black | airbag_sayisi | Üretici sayı vermiyor; Euro NCAP yalnız konum listesi veriyor
+- land-rover-range-rover-sport-2026-sv-black | co2_gkm | WLTP aralık 266-282 g/km, versiyon ucu belirsiz
+- land-rover-range-rover-sport-2026-sv-black | emisyon_normu | Kaynaklarda Euro normu belirtilmiyor
+- land-rover-range-rover-velar-2026-s-d204 | yukseklik_mm | Havalı (1678) / helezon (1683) süspansiyona göre değişiyor, S versiyonunun süspansiyonu belirsiz
+- land-rover-range-rover-velar-2026-s-d204 | airbag_sayisi | Üretici sayı vermiyor; açık kaynak bulunamadı
+- land-rover-range-rover-velar-2026-s-d204 | ncap_yildiz | Euro NCAP testi 2017; 6 yıllık süre dolduğu için geçersiz (expired)
+- land-rover-range-rover-velar-2026-s-d204 | ncap_test_yili | Euro NCAP 2017 sonucu süresi dolmuş
+- land-rover-range-rover-velar-2026-s-d204 | co2_gkm | WLTP aralık 167-183 g/km, versiyon ucu belirsiz
+- land-rover-range-rover-velar-2026-s-d204 | emisyon_normu | Kaynaklarda Euro normu belirtilmiyor
+- hyundai-tucson-crdi-comfort-4x4-2026 | sifirYuz_sn | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
+- hyundai-tucson-crdi-comfort-4x4-2026 | hiz_kmh | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
+- hyundai-tucson-crdi-comfort-4x4-2026 | tuketim_l100km | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
+- hyundai-tucson-crdi-comfort-4x4-2026 | co2_gkm | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
+- hyundai-tucson-crdi-comfort-4x4-2026 | emisyon_normu | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
+- hyundai-tucson-crdi-comfort-4x4-2026 | agirlik_kg | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
