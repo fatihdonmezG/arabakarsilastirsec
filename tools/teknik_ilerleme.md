@@ -11,6 +11,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Volkswagen | tamamlandı | 2026-10-14 |
 | Hyundai | tamamlandı | 2026-10-15 |
 | Land Rover | tamamlandı | 2026-10-15 |
+| Skoda | tamamlandı | 2026-10-16 |
+| Renault | tamamlandı | 2026-10-16 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -314,3 +316,116 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - hyundai-tucson-crdi-comfort-4x4-2026 | co2_gkm | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
 - hyundai-tucson-crdi-comfort-4x4-2026 | emisyon_normu | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
 - hyundai-tucson-crdi-comfort-4x4-2026 | agirlik_kg | yalnız AB 48V MHEV kaynağı (auto-data); TR 136 PS CRDi'nin MHEV olduğu doğrulanamadı
+
+## 2026-10-16 — Skoda, Renault
+
+- Doldurulan alan: 176 (Skoda 92, Renault 84), 42 versiyon.
+- Araştırılıp bulunamayan: 86 alan (Skoda 48, Renault 38; aşağıda).
+- Kaynaklar: Euro NCAP (sonuç sayfaları, datasheet'ler, news.euroncap.com), Škoda TR model sayfaları ve Elroq kataloğu, Škoda Storyboard, Renault TR teknik/versiyon sayfaları, Renault TR Boreal teknik broşürü, ADAC Autokatalog (aynı motor/donanımın AB versiyonu, ikincil), auto-data.net, encycarpedia, electrive.net.
+- Euro NCAP sınıfı: Fabia, Scala, Kamiq, Clio 6, R5, Megane E-Tech ve Scenic "Small Family Car" (Supermini değil). Euro NCAP sınıfı olmayan Renault modellerinde segment Renault TR ifadesi (C-SUV, D-SUV, C-Sedan). Duster TCe 145 ve Boreal TCe 145 emisyon normu Renault TR'deki "EUR06" ibaresine göre "Euro 6".
+- Süresi dolan NCAP sonuçları (Kamiq, Scala, Karoq, Megane Sedan) yazılmadı; segment aynı nesil olduğu için bu sayfalardan alındı.
+- Kayıtta fark edilen, bu araçla düzeltilemeyen eski/şüpheli değerler (elle kontrol önerilir):
+  - Škoda TR gamı: Fabia sayfasında yalnız Premium ve Monte Carlo 130 Edition var (Elite ve 1.5 TSI 150 MC yok); Superb ve Kodiaq'ta 2.0 TDI 193 artık listelenmiyor.
+  - Škoda emisyon "Euro 6" (Fabia 1.5 MC, Scala 1.0/1.5, Kamiq 1.5 MC): ADAC "Euro 6e-bis".
+  - Škoda airbag: Fabia 1.5 MC 8 (AB standardı 6), Kamiq 1.5 MC 6 (ADAC: diz dahil 7).
+  - Škoda ağırlık (kayıt / ADAC EU): Kodiaq 1.5 mHEV 1842 / 1684 (TDI değeri kopyalanmış), Karoq Sportline 1525 / 1455, Kamiq 1.5 MC 1289 / 1340, Fabia 1.0 1199 / 1235.
+  - Škoda CO2: Kodiaq TDI 166 (ADAC 157), Fabia 1.0 119 (117), Octavia mHEV 5,0/115 (5,1/117).
+  - Octavia ve Superb kasa "Sedan" (gerçekte 5 kapı liftback). Octavia NCAP: euroncap.com 2022 yayın, ayrıca 2025 yeniden değerlendirme var — kontrol edilmeli.
+  - Enyaq / Enyaq Coupé çekiş "Önden Çekiş" (arkadan itiş); Elroq da muhtemelen arkadan itiş. Elroq batarya 61 brüt (net 58), DC 26 dk aslında %10-80.
+  - Enyaq Coupé e-RS: TR sayfası 82 kWh (kayıt 84), %10-80 29 dk (kayıt 26 ve alan 20-80), yükseklik 1618 (Coupé 60: 1624).
+  - Renault Duster full hybrid 160: besleme "Çok Noktadan Enjeksiyon" (Renault TR Boreal broşürü ve ADAC 1.8 E-Tech için direkt enjeksiyon diyor); genişlik 1813 diğer Duster'larla (2069 aynalı, aynasız 1921) tutarsız.
+  - Renault Duster Hybrid 4x4 150: aslında 1.2 TCe benzin/LPG 48V mild hibrit; yakıt yalnız "Hibrit". Duster NCAP 3★/2024 Dacia Duster sonucu.
+  - Renault Clio: depo 39 L (Renault TR) / 42 L (ADAC); manuel TCe 115 Renault TR'de listelenmiyor.
+  - Renault Captur: TR 6,0 l/100km ve 1406 kg (kayıt 6,1 / 1398). Rafale kapı 4 (ADAC/Euro NCAP 5).
+  - Renault Boreal: şanzıman "Yari Otomatik" (EDC); hibrit tüketim TR 4,8 (kayıt 4,7); TCe ağırlık broşürde 1435 (kayıt 1434).
+  - Renault Scenic: ncap_test_yili 2022 (Euro NCAP yayın 2024-05-29) kontrol edilmeli; menzil ADAC 598 / TR 604.
+  - Fiyat farkları (bu araçla değişmez): Duster Techno TCe 145 TR 2.200.000 (kayıt 2.080.000), Boreal Evolution TR 2.269.000 (kayıt 2.379.000).
+
+### Araştırıldı, bulunamadı (id | alan | neden)
+
+- skoda-fabia-1.0-tsi-elite-115ps-2026 | airbag_sayisi | Škoda TR donanım listesi/katalog PDF açılamadı; TR model sayfasında hava yastığı sayısı yok (TR sayfası artık Premium ve Monte Carlo 130 Edition donanımlarını listeliyor)
+- skoda-fabia-1.5-tsi-montecarlo-edition130-177ps-2026 | airbag_sayisi | TR donanıma özel hava yastığı listesi bulunamadı (TR katalog PDF erişilemedi; ADAC yalnızca Almanya donanımı)
+- skoda-scala-1.0-tsi-elite-115ps-2026 | airbag_sayisi | TR donanıma özel hava yastığı listesi bulunamadı (TR katalog PDF erişilemedi)
+- skoda-scala-1.0-tsi-elite-115ps-2026 | ncap_yildiz | Scala Euro NCAP 2019 (Temmuz) derecelendirmesi; aynı dönem Kamiq 2019 sayfası 01.01.2026'da expired gösteriyor, Scala sonuç sayfası açılamadı, geçerli derecelendirme yok
+- skoda-scala-1.0-tsi-elite-115ps-2026 | ncap_test_yili | Geçerli (süresi dolmamış) Euro NCAP derecelendirmesi doğrulanamadı (2019 sonucu 6 yıl kuralıyla süresi dolmuş olmalı)
+- skoda-scala-1.5-tsi-montecarlo-150ps-2026 | airbag_sayisi | TR donanıma özel hava yastığı listesi bulunamadı (TR katalog PDF erişilemedi)
+- skoda-scala-1.5-tsi-montecarlo-150ps-2026 | ncap_yildiz | Scala 2019 Euro NCAP derecelendirmesi süresi dolmuş (01.01.2026, Kamiq ile aynı dönem); geçerli sonuç yok
+- skoda-scala-1.5-tsi-montecarlo-150ps-2026 | ncap_test_yili | Geçerli Euro NCAP derecelendirmesi yok (2019 sonucu süresi dolmuş)
+- skoda-kamiq-1.0-tsi-elite-115ps-2026 | airbag_sayisi | TR donanıma özel hava yastığı listesi bulunamadı (TR katalog PDF erişilemedi)
+- skoda-kamiq-1.0-tsi-elite-115ps-2026 | ncap_yildiz | euroncap.com Kamiq 2019 sonucu "Rating Expired 2026-01-01"; makyajlı Kamiq yeniden test edilmemiş
+- skoda-kamiq-1.0-tsi-elite-115ps-2026 | ncap_test_yili | Euro NCAP derecelendirmesi süresi dolmuş (01.01.2026)
+- skoda-kamiq-1.5-tsi-montecarlo-150ps-2026 | ncap_yildiz | euroncap.com Kamiq 2019 sonucu "Rating Expired 2026-01-01"
+- skoda-kamiq-1.5-tsi-montecarlo-150ps-2026 | ncap_test_yili | Euro NCAP derecelendirmesi süresi dolmuş (01.01.2026)
+- skoda-karoq-1.5-tsi-premium-150ps-2026 | ncap_yildiz | Karoq Euro NCAP 2017 derecelendirmesi süresi dolmuş; yeni test yok
+- skoda-karoq-1.5-tsi-premium-150ps-2026 | ncap_test_yili | Karoq Euro NCAP 2017 derecelendirmesi süresi dolmuş
+- skoda-karoq-1.5-tsi-sportline-150ps-2026 | ncap_yildiz | Karoq Euro NCAP 2017 derecelendirmesi süresi dolmuş; yeni test yok
+- skoda-karoq-1.5-tsi-sportline-150ps-2026 | ncap_test_yili | Karoq Euro NCAP 2017 derecelendirmesi süresi dolmuş
+- skoda-octavia-1.5-tsi-mhev-elite-150ps-2026 | airbag_sayisi | TR Elite donanımına özel hava yastığı listesi bulunamadı (TR Octavia katalog PDF erişilemedi)
+- skoda-octavia-1.5-tsi-mhev-prestige-150ps-2026 | airbag_sayisi | TR Prestige donanımına özel hava yastığı listesi bulunamadı (TR Octavia katalog PDF erişilemedi)
+- skoda-octavia-2.0-tsi-rs-265ps-2026 | emisyon_normu | 2026 Octavia RS 2.0 TSI için emisyon normu belirten kaynak bulunamadı (ADAC'ta makyajlı RS sayfası çıkmadı, TR katalog erişilemedi)
+- skoda-superb-1.5-tsi-mhev-sportline-150ps-2026 | airbag_sayisi | TR Sportline donanımına özel hava yastığı listesi bulunamadı (TR model sayfasında yok, katalog PDF erişilemedi)
+- skoda-kodiaq-2.0-tsi-rs-4x4-265ps-2026 | emisyon_normu | Kaynaklar çelişkili/belirsiz: auto-data "Euro 6e", Škoda Media DE "EU 6 EB" (ön değer); net 2026 TR değeri yok
+- skoda-elroq-60-e-prestige-190ps-2026 | agirlik_kg | Škoda TR Elroq katalogu boş ağırlığı 2032–2075 kg aralık olarak veriyor; e-Prestige için tek değer yok
+- skoda-enyaq-60-e-prestige-190ps-2026 | agirlik_kg | TR sayfasında ağırlık yok; ev-database/automoto.it 2064 kg (EU) temel donanım için, 20" jantlı/panoramik tavanlı e-Prestige için net değer yok
+- skoda-enyaq-60-e-prestige-190ps-2026 | airbag_sayisi | TR Enyaq sayfasında hava yastığı sayısı yok; TR katalog PDF erişilemedi
+- skoda-enyaq-60-e-prestige-190ps-2026 | menzil_km_wltp | Škoda TR yalnızca aralık veriyor (WLTP birleşik 428–456 km); e-Prestige için hangi uç geçerli belirtilmemiş
+- skoda-enyaq-60-e-prestige-190ps-2026 | dc_hizli_sarj_dk_20_80 | Kaynaklar yalnızca %10–80 (26 dk, 105 kW) veriyor; %20–80 değeri yok
+- skoda-enyaq-60-e-prestige-190ps-2026 | elektrik_tuketim_kwh100km | Škoda TR yalnızca aralık veriyor (15,0–16,0 kWh/100 km); donanım ucu belirsiz
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | segment | Euro NCAP Enyaq 2025 sayfası Coupé gövdeyi anmıyor; Coupé için sınıf kaynağı yok
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | agirlik_kg | Kaynaklar çelişkili: ev-database 2070 kg (EU), automoto.it 1995 kg; TR sayfasında yok
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | airbag_sayisi | TR Enyaq Coupé sayfasında hava yastığı sayısı yok; katalog PDF erişilemedi
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | ncap_yildiz | Euro NCAP Enyaq 2025 sonucunun Coupé gövdeyi kapsadığı euroncap kaynağında doğrulanamadı
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | ncap_test_yili | Coupé kapsamı doğrulanamadı
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | menzil_km_wltp | Škoda TR yalnızca aralık veriyor (440–453 km); donanım ucu belirsiz
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | dc_hizli_sarj_dk_20_80 | Kaynaklar yalnızca %10–80 (26 dk) veriyor; %20–80 değeri yok
+- skoda-enyaq-coupe-60-e-sportline-190ps-2026 | elektrik_tuketim_kwh100km | Škoda TR yalnızca aralık veriyor (15,1–15,7 kWh/100 km); donanım ucu belirsiz
+- skoda-enyaq-coupe-e-rs-4x4-340ps-2026 | segment | Euro NCAP Enyaq 2025 sayfası Coupé gövdeyi anmıyor; Coupé için sınıf kaynağı yok
+- skoda-enyaq-coupe-e-rs-4x4-340ps-2026 | agirlik_kg | Škoda Storyboard yalnızca aralık veriyor (Coupé RS 2239–2354 kg, sürücü dahil); TR sayfasında yok
+- skoda-enyaq-coupe-e-rs-4x4-340ps-2026 | airbag_sayisi | TR Enyaq Coupé sayfasında hava yastığı sayısı yok; katalog PDF erişilemedi
+- skoda-enyaq-coupe-e-rs-4x4-340ps-2026 | ncap_yildiz | Euro NCAP Enyaq 2025 sonucunun Coupé gövdeyi kapsadığı doğrulanamadı
+- skoda-enyaq-coupe-e-rs-4x4-340ps-2026 | ncap_test_yili | Coupé kapsamı doğrulanamadı
+- skoda-octavia-1.5-tsi-mhev-elite-150ps-2026 | ncap_yildiz | Euro NCAP sayfası 2022 yayın tarihi, 2025 yeniden değerlendirme datasheet’i açılamadı; test yılı belirsiz
+- skoda-octavia-1.5-tsi-mhev-elite-150ps-2026 | ncap_test_yili | Euro NCAP sayfası 2022 yayın tarihi, 2025 yeniden değerlendirme datasheet’i açılamadı; test yılı belirsiz
+- skoda-octavia-1.5-tsi-mhev-prestige-150ps-2026 | ncap_yildiz | Euro NCAP sayfası 2022 yayın tarihi, 2025 yeniden değerlendirme datasheet’i açılamadı; test yılı belirsiz
+- skoda-octavia-1.5-tsi-mhev-prestige-150ps-2026 | ncap_test_yili | Euro NCAP sayfası 2022 yayın tarihi, 2025 yeniden değerlendirme datasheet’i açılamadı; test yılı belirsiz
+- skoda-octavia-2.0-tsi-rs-265ps-2026 | ncap_yildiz | Euro NCAP sayfası 2022 yayın tarihi, 2025 yeniden değerlendirme datasheet’i açılamadı; test yılı belirsiz
+- skoda-octavia-2.0-tsi-rs-265ps-2026 | ncap_test_yili | Euro NCAP sayfası 2022 yayın tarihi, 2025 yeniden değerlendirme datasheet’i açılamadı; test yılı belirsiz
+- skoda-elroq-60-e-prestige-190ps-2026 | segment | Euro NCAP kaynakları çelişkili (small family car / mid-size SUV)
+- renault-megane-sedan-touch-1-3-tce-edc-140-2026 | agirlik_kg | Megane IV Sedan 1.3 TCe 140 için yalnızca aralık (1280-1372 kg) bulundu; Renault TR teknik sayfada ağırlık yok
+- renault-megane-sedan-touch-1-3-tce-edc-140-2026 | ncap_yildiz | Megane IV için Euro NCAP 2015 sonucu süresi dolmuş; sedan için güncel sonuç yok
+- renault-megane-sedan-touch-1-3-tce-edc-140-2026 | ncap_test_yili | Geçerli Euro NCAP sonucu yok (2015 Megane IV sonucu süresi dolmuş)
+- renault-megane-sedan-touch-1-3-tce-edc-140-2026 | emisyon_normu | Sadece 2021 lansman haberi 'Euro 6D' diyor; güncel versiyon için kaynak yok
+- renault-megane-sedan-icon-1-3-tce-edc-140-2026 | agirlik_kg | Megane IV Sedan 1.3 TCe 140 için yalnızca aralık (1280-1372 kg) bulundu
+- renault-megane-sedan-icon-1-3-tce-edc-140-2026 | airbag_sayisi | Renault TR sayfalarında icon donanımına özgü hava yastığı listesi açılamadı (yalnızca touch teyitli)
+- renault-megane-sedan-icon-1-3-tce-edc-140-2026 | ncap_yildiz | Megane IV için Euro NCAP 2015 sonucu süresi dolmuş
+- renault-megane-sedan-icon-1-3-tce-edc-140-2026 | ncap_test_yili | Geçerli Euro NCAP sonucu yok
+- renault-megane-sedan-icon-1-3-tce-edc-140-2026 | emisyon_normu | Güncel versiyon için emisyon normu kaynağı yok (yalnızca 2021 'Euro 6D')
+- renault-megane-e-tech-techno-ev60-220-2026 | dc_hizli_sarj_dk_20_80 | Renault TR yalnızca %15-80 (130 kW, 32 dk) veriyor; %20-80 kaynağı yok
+- renault-duster-evolution-eco-g-120-2026 | segment | euroncap.com Duster sayfasında sınıf yok (yalnızca Dacia Duster), Renault TR segment belirtmiyor
+- renault-duster-evolution-eco-g-120-2026 | bagaj_l | Renault TR motor bazlı bagaj hacmi vermiyor ('594 L'ye varan'); Eco-G için yalnızca Dacia (456 L) verisi var
+- renault-duster-evolution-eco-g-120-2026 | emisyon_normu | Renault TR teknik sayfası yalnızca TCe 145 için EUR06 gösteriyor; Eco-G için Renault kaynağı yok
+- renault-duster-techno-turbo-tce-edc-145-2026 | segment | euroncap.com Duster sayfasında sınıf yok, Renault TR segment belirtmiyor
+- renault-duster-techno-full-hybrid-e-tech-160-2026 | segment | euroncap.com Duster sayfasında sınıf yok, Renault TR segment belirtmiyor
+- renault-duster-techno-full-hybrid-e-tech-160-2026 | sifirYuz_sn | Renault TR full hybrid 160 için 0-100 vermiyor; teknik broşür PDF açılamadı
+- renault-duster-techno-full-hybrid-e-tech-160-2026 | hiz_kmh | Renault TR full hybrid 160 için maksimum hız vermiyor; broşür PDF açılamadı
+- renault-duster-techno-full-hybrid-e-tech-160-2026 | agirlik_kg | Renault TR full hybrid 160 için ağırlık vermiyor; broşür PDF açılamadı
+- renault-duster-techno-full-hybrid-e-tech-160-2026 | bagaj_l | Renault TR motor bazlı bagaj hacmi vermiyor
+- renault-duster-techno-full-hybrid-e-tech-160-2026 | emisyon_normu | Full hybrid 160 için Renault kaynağı yok
+- renault-duster-techno-hybrid-4x4-150-2026 | segment | euroncap.com Duster sayfasında sınıf yok, Renault TR segment belirtmiyor
+- renault-duster-techno-hybrid-4x4-150-2026 | bagaj_l | Renault TR motor bazlı bagaj hacmi vermiyor; yalnızca Dacia 4x4 LPG (348 L) verisi var
+- renault-duster-techno-hybrid-4x4-150-2026 | emisyon_normu | Hybrid 4x4 150 için Renault kaynağı yok (yalnızca Dacia ADAC verisi)
+- renault-boreal-evolution-1-3-tce-145-2026 | ncap_yildiz | euroncap.com'da Renault Boreal testi yok
+- renault-boreal-evolution-1-3-tce-145-2026 | ncap_test_yili | euroncap.com'da Renault Boreal testi yok
+- renault-boreal-techno-1-3-tce-145-2026 | ncap_yildiz | euroncap.com'da Renault Boreal testi yok
+- renault-boreal-techno-1-3-tce-145-2026 | ncap_test_yili | euroncap.com'da Renault Boreal testi yok
+- renault-boreal-iconic-1-8-e-tech-hybrid-160-2026 | ncap_yildiz | euroncap.com'da Renault Boreal testi yok
+- renault-boreal-iconic-1-8-e-tech-hybrid-160-2026 | ncap_test_yili | euroncap.com'da Renault Boreal testi yok
+- renault-boreal-iconic-1-8-e-tech-hybrid-160-2026 | emisyon_normu | Renault TR broşürü/teknik sayfa 1.8 E-Tech için emisyon normu vermiyor
+- renault-scenic-e-tech-esprit-alpine-ev87-220-2026 | dc_hizli_sarj_dk_20_80 | %20-80 süresi kaynakta yok (ADAC yalnızca '%80: 37 dk, 150 kW')
+- renault-scenic-e-tech-esprit-alpine-ev87-220-2026 | elektrik_tuketim_kwh100km | Renault TR tüketim vermiyor; ADAC Esprit Alpine 17,5 kWh fakat menzil 598 km (TR 604 km) - versiyon uyuşmazlığı
+- renault-5-e-tech-techno-ev40-120-2025 | agirlik_kg | Renault TR EV40 120 için ağırlık vermiyor; ADAC (1447 kg EU) menzili 317 km, TR 312 km - homologasyon farkı
+- renault-5-e-tech-techno-ev40-120-2025 | dc_hizli_sarj_dk_20_80 | Kaynaklarda yalnızca %10-80 (ADAC 31 dk) var
+- renault-5-e-tech-techno-ev40-120-2025 | elektrik_tuketim_kwh100km | Renault TR tüketim vermiyor; ADAC değeri (14,4) farklı menzile (317 km) ait
+- renault-5-e-tech-techno-ev52-150-2026 | dc_hizli_sarj_dk_20_80 | Renault TR yalnızca %15-80 (30 dk) veriyor
+- renault-5-e-tech-techno-ev52-150-2026 | elektrik_tuketim_kwh100km | Renault TR tüketim vermiyor; ADAC değeri (14,4) farklı menzile (417 km, TR 410 km) ait
+- renault-rafale-esprit-alpine-e-tech-full-hybrid-200-2026 | airbag_sayisi | Renault TR listelemiyor; Euro NCAP kaynağı Austral sayfası, Rafale için doğrudan doğrulanamadı
