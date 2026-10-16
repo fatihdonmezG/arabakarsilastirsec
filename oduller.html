@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ödüllü Araçlar | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Yılın Otomobili, basın ödülleri, güvenlik ve tasarım ödülleri: Türkiye'de satılan ve satılmış araçların aldığı ödüllerin özet tablosu, kaynaklarıyla.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+@media (min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--divider);padding:14px 16px}
+.stat b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--accent-soft);line-height:1.1}
+.stat span{font-size:.82rem;color:var(--muted)}
+.fbar{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:22px;padding:18px 20px;background:var(--surface);border:1px solid var(--divider)}
+.fbar .q{grid-column:1/-1}
+@media (min-width:760px){.fbar{grid-template-columns:2fr 1fr 1fr 1fr}.fbar .q{grid-column:auto}}
+.fbar label{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted);margin-bottom:6px}
+.fbar input,.fbar select{width:100%;height:44px;padding-inline:12px;font:inherit;font-size:.92rem;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:2px}
+.fbar select.on{border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font:inherit;font-size:.82rem;font-weight:600;min-height:36px;padding:0 14px;color:var(--muted);background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-grad);color:var(--on-accent);border-color:transparent}
+.frow{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-top:14px}
+.switch{display:inline-flex;align-items:center;gap:9px;cursor:pointer;min-height:40px;font-size:.9rem;color:var(--muted)}
+.switch input{width:18px;height:18px;accent-color:var(--accent);margin:0}
+.count{font-size:.86rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:.92rem}
+.tbl th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;padding:10px 12px;border-bottom:1px solid var(--line-strong);background:var(--surface);position:sticky;top:0}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:hover td{background:rgba(255,255,255,.02)}
+.yr{font-family:var(--display);font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.car a{color:var(--ink);font-weight:600;text-decoration:none}
+.car a:hover{color:var(--accent-soft)}
+.car small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px}
+.aw{line-height:1.4}
+.aw .cat{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:3px}
+.src a{color:var(--muted);font-size:.82rem;white-space:nowrap}
+.bdg{font-size:.68rem;font-weight:600;padding:1px 7px;border-radius:2px;border:1px solid rgba(231,161,90,.5);color:#F2C08A;margin-left:6px;white-space:nowrap}
+.empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px solid var(--divider);margin-top:16px}
+@media (max-width:700px){
+  .tbl thead{display:none}
+  .tbl tr{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .tbl td{border:0;padding:0}
+  .tbl td.yr{grid-row:span 3}
+  .tbl td.src{grid-column:2}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="oduller.html" aria-current="page">Ödüller</a>
+      <a href="ehliyet.html">Ehliyet</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="mtv-hesaplama.html">MTV</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Ödüller</span>
+    <h1>Ödüllü araçlar</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lead">Veritabanımızdaki modellerin aldığı Yılın Otomobili, dergi, güvenlik ve tasarım ödülleri tek tabloda. Her ödülün kaynağı linkli; modelin adına tıklayıp detay sayfasına geçebilirsin.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="section" style="padding-top:20px">
+    <div class="stats" id="stats"></div>
+
+    <div class="fbar" role="search">
+      <div class="q"><label for="q">Ara</label><input id="q" type="search" placeholder="Model ya da ödül adı" autocomplete="off"></div>
+      <div><label for="fMarka">Marka</label><select id="fMarka"></select></div>
+      <div><label for="fYil">Ödül yılı</label><select id="fYil"></select></div>
+      <div><label for="fSirala">Sırala</label><select id="fSirala">
+        <option value="yil">Yeniden eskiye</option>
+        <option value="marka">Marka (A–Z)</option>
+        <option value="sayi">En çok ödül alan model</option>
+      </select></div>
+    </div>
+    <div class="chips" id="cats" role="group" aria-label="Ödül türü"></div>
+    <div class="frow">
+      <label class="switch"><input type="checkbox" id="fSatis"> Sadece Türkiye'de satıştaki modeller</label>
+      <span class="count" id="count" aria-live="polite">Yükleniyor…</span>
+    </div>
+
+    <div style="overflow-x:auto">
+      <table class="tbl" id="tbl">
+        <thead><tr><th>Yıl</th><th>Model</th><th>Ödül</th><th>Kaynak</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Ödüller çoğunlukla modelin tamamına verilir; belirli bir motor ya da donanıma verilen ödüllerde bu, aracın detay sayfasında ayrıca belirtilir.</p>
+  </div>
+</footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nf = v => v.toLocaleString('tr-TR');
+const $ = id => document.getElementById(id);
+const CATS = [
+  ['yilin','Yılın Otomobili'],
+  ['guvenlik','Güvenlik'],
+  ['guvenilirlik','Güvenilirlik'],
+  ['tasarim','Tasarım'],
+  ['basin','Kategori ve dergi ödülleri']
+];
+// Sınıflandırma, parantez içi açıklamalar çıkarılmış ödül adına göre yapılır.
+// "Yılın Otomobili" yalnızca genel birincilik ödülleri (World Car of the Year, Avrupa COTY, bir derginin genel "Car of the Year"ı);
+// "Luxury Car of the Year", "Large Company Car of the Year" gibi sınıf ödülleri kategori ödülüdür.
+const KATEGORI = /\bbest\b|crossover|coup[eé]|cabrio|pickup|truck|business|company|supercar|luxury|lüks|kategori|dynamics|ikinci|İkinci|okur|reader|new car|runner|used|fleet|performance|beautiful|family|medium|small|large|premium|electric suv|sports? car/i;
+function catOf(sp, ham){
+  const t = sp.baslik+' : '+sp.alt;
+  if(/safety|güvenlik|iihs|top safety/i.test(t)) return 'guvenlik';
+  if(/car of the year|yılın otomobili|\bcoty\b/i.test(t) && !KATEGORI.test(t)) return 'yilin';
+  if(/design|tasarım|güzel|beautiful|red dot|dashboard|interior/i.test(t)) return 'tasarim';
+  if(/reliab|güvenilir|j\.?d\.? power|dependab|which\?|adac|tüv|dekra/i.test(t)) return 'guvenilirlik';
+  return 'basin';
+}
+const host = u => { try { return new URL(u).hostname.replace(/^www\./,''); } catch(e) { return 'kaynak'; } };
+function split(ad){
+  // "Ödül adı — kategori (açıklama)" → başlık ve kategori; parantez içi açıklama tabloda gösterilmez
+  const clean = ad.replace(/\s*\([^()]*\)/g,'').replace(/\s+/g,' ').trim();
+  const i = clean.indexOf(' — ');
+  return i>0 ? {baslik:clean.slice(0,i).trim(), alt:clean.slice(i+3).trim()} : {baslik:clean, alt:''};
+}
+let ROWS=[], cat='';
+
+async function load(){
+  let C;
+  try{
+    const d = await fetch('arac-detay.html').then(r=>r.text());
+    const a=d.indexOf('const CARS = {'), b=d.indexOf('const RECALLS');
+    C = new Function(d.slice(a,b)+';return CARS;')();
+  }catch(err){ $('count').textContent='Liste yüklenemedi.'; return; }
+  const byModel = new Map();
+  for(const c of Object.values(C)){
+    const key=c.marka+'|'+c.model;
+    const m = byModel.get(key) || {marka:c.marka, model:c.model, ids:[], satista:false, oduller:new Map()};
+    m.ids.push(c); if(!(c.durum && !c.s.liste_fiyati_tl)) m.satista=true;
+    for(const o of (c.odul||[])){
+      const sp=split(o.ad), k=(o.yil||'')+'|'+sp.baslik.toLocaleLowerCase('tr')+'|'+sp.alt.toLocaleLowerCase('tr');
+      if(!m.oduller.has(k)) m.oduller.set(k,{...sp, yil:o.yil?Number(o.yil):null, kaynak:o.kaynak, ham:o.ad});
+    }
+    byModel.set(key,m);
+  }
+  for(const m of byModel.values()){
+    if(!m.oduller.size) continue;
+    const best = m.ids.slice().sort((a,b)=>b.yil-a.yil || (a.durum?1:0)-(b.durum?1:0))[0];
+    for(const o of m.oduller.values()) ROWS.push({...o, marka:m.marka, model:m.model, id:best.id, satista:m.satista, n:m.oduller.size, cat:catOf(o,o.ham), q:(m.marka+' '+m.model+' '+o.ham).toLocaleLowerCase('tr')});
+  }
+  const models=new Set(ROWS.map(r=>r.marka+'|'+r.model)), brands=[...new Set(ROWS.map(r=>r.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
+  const yil=ROWS.filter(r=>r.cat==='yilin').length, son=ROWS.filter(r=>r.yil>=2024).length;
+  $('stats').innerHTML=[[ROWS.length,'ödül'],[models.size,'ödüllü model'],[yil,'Yılın Otomobili ödülü'],[son,'2024 ve sonrası']].map(([v,t])=>`<div class="stat"><b>${nf(v)}</b><span>${t}</span></div>`).join('');
+  $('fMarka').innerHTML='<option value="">Tümü</option>'+brands.map(b=>`<option>${esc(b)}</option>`).join('');
+  const years=[...new Set(ROWS.map(r=>r.yil).filter(Boolean))].sort((a,b)=>b-a);
+  $('fYil').innerHTML='<option value="">Tümü</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
+  $('cats').innerHTML=[['','Tümü'],...CATS.map(c=>[c[0],c[1]])].map(([v,t])=>{const n=v?ROWS.filter(r=>r.cat===v).length:ROWS.length;return n?`<button type="button" class="chip" data-cat="${v}" aria-pressed="${v===cat}">${t} (${n})</button>`:''}).join('');
+  const p=new URLSearchParams(location.hash.slice(1));
+  if(p.get('marka')) $('fMarka').value=p.get('marka');
+  if(p.get('tur')){ cat=p.get('tur'); document.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.cat===cat))); }
+  render();
+}
+
+function render(){
+  const q=$('q').value.trim().toLocaleLowerCase('tr'), m=$('fMarka').value, y=$('fYil').value, sat=$('fSatis').checked, srt=$('fSirala').value;
+  let r=ROWS.filter(x=>(!q||q.split(/\s+/).every(w=>x.q.includes(w)))&&(!m||x.marka===m)&&(!y||x.yil===Number(y))&&(!cat||x.cat===cat)&&(!sat||x.satista));
+  const byYear=(a,b)=>(b.yil||0)-(a.yil||0)||a.marka.localeCompare(b.marka,'tr')||a.model.localeCompare(b.model,'tr');
+  r.sort(srt==='marka'?(a,b)=>a.marka.localeCompare(b.marka,'tr')||a.model.localeCompare(b.model,'tr')||(b.yil||0)-(a.yil||0)
+       : srt==='sayi'?(a,b)=>b.n-a.n||a.marka.localeCompare(b.marka,'tr')||a.model.localeCompare(b.model,'tr')||(b.yil||0)-(a.yil||0)
+       : byYear);
+  ['fMarka','fYil'].forEach(id=>$(id).classList.toggle('on',!!$(id).value));
+  const models=new Set(r.map(x=>x.marka+'|'+x.model)).size;
+  $('count').textContent=`${nf(r.length)} ödül, ${nf(models)} model`;
+  $('rows').innerHTML = r.length ? r.map(x=>`<tr>
+    <td class="yr">${x.yil||'—'}</td>
+    <td class="car"><a href="arac-detay.html#${encodeURIComponent(x.id)}">${esc(x.marka+' '+x.model)}</a>${x.satista?'':'<span class="bdg">Satışta değil</span>'}${srt==='sayi'?`<small>${x.n} ödül</small>`:''}</td>
+    <td class="aw"><span class="cat">${esc(CATS.find(c=>c[0]===x.cat)[1])}</span><br>${esc(x.baslik)}${x.alt?`<br><span style="color:var(--muted)">${esc(x.alt)}</span>`:''}</td>
+    <td class="src">${x.kaynak?`<a href="${esc(x.kaynak)}" target="_blank" rel="noopener">${esc(host(x.kaynak))} ↗</a>`:''}</td>
+  </tr>`).join('') : `<tr><td colspan="4"><div class="empty">Bu filtrelere uyan ödül yok.</div></td></tr>`;
+  const hp=new URLSearchParams(); if(m) hp.set('marka',m); if(cat) hp.set('tur',cat);
+  history.replaceState(null,'',hp.toString()?'#'+hp:location.pathname);
+}
+document.addEventListener('click',e=>{ const b=e.target.closest('.chip'); if(!b) return; cat=b.dataset.cat; document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); render(); });
+['q','fMarka','fYil','fSirala','fSatis'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));
+load();
+</script>
+</body>
+</html>
