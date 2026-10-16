@@ -181,7 +181,50 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
   .cell{padding:15px 28px}
   .cat{padding:40px 28px 14px}
 }
+
+/* Telefonda araç seçim panelleri */
+@media (max-width:759px){
+  .pickers{margin-top:28px;gap:10px}
+  .panel h2{margin-bottom:10px}
+  .fields{gap:8px 10px}
+  .field label{margin-bottom:4px;font-size:.64rem}
+  select{height:40px;font-size:.88rem;padding-inline:10px}
+  .plist{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:6px}
+  .pcard{flex:0 0 78%;scroll-snap-align:start;padding:12px 14px}
+  .pcard .pnames{font-size:.9rem}
+}
+/* Çok araçlı karşılaştırmada yazı ve boşluklar küçülür */
+.cell,.hname,.hsub,.row .label{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.cell{overflow-wrap:break-word}
+@media (max-width:759px){
+  .panel{padding:20px 18px}
+  .cat{padding:24px 14px 8px}
+  .row .label{padding:10px 14px 0;font-size:.8rem}
+  .cell{padding:4px 14px 12px;font-size:.92rem}
+  .hcell{padding:16px 14px}
+  [data-cols="3"] .cell,[data-cols="4"] .cell{padding:4px 8px 10px;font-size:.78rem;line-height:1.35}
+  [data-cols="3"] .row .label,[data-cols="4"] .row .label{padding:9px 8px 0;font-size:.74rem}
+  [data-cols="3"] .cat,[data-cols="4"] .cat{padding:20px 8px 6px;font-size:.66rem}
+  [data-cols="3"] .hcell,[data-cols="4"] .hcell{padding:12px 8px}
+  [data-cols="3"] .hname,[data-cols="4"] .hname{font-size:.84rem}
+  [data-cols="3"] .hsub,[data-cols="4"] .hsub{font-size:.7rem}
+  [data-cols="3"] .hcredit,[data-cols="4"] .hcredit,[data-cols="3"] .hfill,[data-cols="4"] .hfill,[data-cols="3"] .hsrc,[data-cols="4"] .hsrc{display:none}
+  [data-cols="3"] .hphoto-ph,[data-cols="4"] .hphoto-ph{font-size:.6rem;padding:0 4px}
+  [data-cols="3"] .delta,[data-cols="4"] .delta{font-size:.66rem}
+  [data-cols="3"] .tick,[data-cols="4"] .tick{margin-right:2px}
+  [data-cols="4"] .cell{font-size:.74rem;padding:4px 6px 10px}
+  [data-cols="4"] .hcell{padding:10px 6px}
+  [data-cols="4"] .hname{font-size:.78rem}
+}
+@media (min-width:760px){
+  [data-cols="4"] .cell{padding:13px 18px;font-size:.92rem}
+  [data-cols="4"] .hcell{padding:20px 18px}
+  [data-cols="4"] .hname{font-size:1.1rem}
+  [data-cols="4"] .row .label{padding:13px 22px;font-size:.86rem}
+  [data-cols="3"] .cell{padding:14px 22px;font-size:.96rem}
+}
 </style>
+<link rel="stylesheet" href="assets/mobil.css">
 </head>
 <body>
 
@@ -1835,15 +1878,17 @@ const GROUPS = [
   ['bagaj_l','Bagaj hacmi','L','high'],['jant_inch','Jant çapı','"']]},
  {name:'Güvenlik', rows:[
   ['airbag_sayisi','Hava yastığı sayısı','','high'],['ncap_yildiz','Euro NCAP puanı'],['ncap_test_yili','Euro NCAP test yılı'],
-  ['abs','ABS'],['esp','ESP / ESC'],['yokus_kalkis','Yokuş kalkış desteği'],
-  ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],
-  ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['geri_gorus_kamera','Geri görüş kamerası']]},
+  ['abs','ABS'],['esp','ESP / ESC'],['otonom_acil_fren','Otonom acil fren (AEB)'],['yokus_kalkis','Yokuş kalkış desteği'],
+  ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],['kor_nokta','Kör nokta uyarısı'],
+  ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['park_sensoru','Park sensörü'],['geri_gorus_kamera','Geri görüş kamerası'],['kamera_360','360° kamera']]},
  {name:'Konfor ve donanım', rows:[
   ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],
+  ['elektrikli_koltuk','Elektrikli koltuk ayarı'],['deri_doseme','Deri döşeme'],
   ['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
-  ['start_stop','Start-stop sistemi']]},
+  ['elektrikli_bagaj','Elektrikli bagaj kapağı'],['led_far','LED farlar'],['start_stop','Start-stop sistemi']]},
  {name:'Multimedya ve bağlantı', rows:[
   ['ekran_inch','Dokunmatik ekran boyutu','"'],['carplay_android_auto','Apple CarPlay / Android Auto'],
+  ['kablosuz_sarj','Kablosuz telefon şarjı'],['navigasyon','Navigasyon'],
   ['ses_sistemi','Ses sistemi'],['dijital_gosterge','Dijital gösterge paneli']]},
  {name:'Değerlendirme', rows:[
   ['sistem_puani_10','Sistem puanı (10 üzerinden)','','high']]},
@@ -2022,6 +2067,7 @@ function removeSide(side){
 
 function renderPickerPanels(){
   document.documentElement.style.setProperty('--cols', sides.length);
+  document.documentElement.dataset.cols = sides.length;
   const panel = (side,i) => {
     const rm = sides.length>MIN_SIDES ? `<button type="button" class="rm" data-rm="${side}" aria-label="Araç ${i+1} kaldır">✕</button>` : '';
     return `<div class="panel ${side}">${rm}<h2>Araç ${i+1}</h2><div class="fields">

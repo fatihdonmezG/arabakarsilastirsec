@@ -151,7 +151,7 @@ button.bar{cursor:pointer}
 button.bar:hover{background:var(--surface2)}
 button.bar[aria-pressed="true"]{background:var(--surface2);box-shadow:inset 3px 0 0 var(--accent)}
 .note{font-size:.83rem;color:var(--muted);margin-top:8px}
-.emptystate{padding:22px;border:1px dashed var(--line-strong);color:var(--muted);margin-top:12px;font-size:.92rem}
+.emptystate{padding:10px 14px;border:1px dashed var(--line-strong);color:var(--muted);margin-top:10px;font-size:.86rem}
 .emptystate .btn{width:auto;margin-top:12px;display:inline-block}
 
 .adslot{margin:32px 0 0;min-height:90px;display:grid;place-items:center;border:1px dashed var(--line-strong);color:var(--muted);font-size:.83rem}
@@ -159,6 +159,7 @@ button.bar[aria-pressed="true"]{background:var(--surface2);box-shadow:inset 3px 
 .sponsor p{max-width:52ch;color:var(--ink)}
 .sponsor .tag{margin-bottom:6px}
 
+[hidden]{display:none!important}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:16px}
 .toolbar .grow{flex:1 1 auto}
 .toolbar select{width:auto;min-width:170px;height:44px}
@@ -186,6 +187,39 @@ button.bar[aria-pressed="true"]{background:var(--surface2);box-shadow:inset 3px 
 .pending{margin-top:10px;font-size:.86rem;color:var(--muted);background:var(--surface2);border:1px solid var(--line-strong);padding:6px 12px;border-radius:2px;display:inline-block}
 
 .specs{display:grid;gap:24px 48px;margin-top:16px}
+.equip{display:grid;gap:22px 48px;margin-top:14px}
+.equip h3{font-size:1rem;margin-bottom:6px}
+.equip ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:0}
+.equip li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.equip li .v{text-align:right;color:var(--ink)}
+.equip li .v.yes::before{content:"✓ ";color:var(--accent)}
+.equip li .v.no{color:var(--muted)}
+.equip li .v.no::before{content:"✕ ";}
+.equip li .v.opt{color:var(--accent-soft)}
+.equip li .v.unk{color:var(--line-strong)}
+.equip li a.src{margin-left:4px}
+.eqhint{font-size:.8rem;color:var(--muted);margin-top:10px}
+@media (min-width:760px){.equip{grid-template-columns:1fr 1fr}}
+@media (max-width:979px){.rail{order:2}}
+@media (max-width:640px){
+  .carpicker{padding:12px 14px;margin-top:12px}
+  .carpicker .fields{gap:8px 10px}
+  .carpicker select{height:40px;font-size:.88rem;padding-inline:10px}
+  .carpicker .field label,.carpicker .pl{margin-bottom:4px;font-size:.66rem}
+  .hero{padding-top:18px;gap:10px}
+  .sub{font-size:.92rem}
+  .chip{font-size:.82rem;min-height:34px;padding:0 12px}
+  .ks{padding:10px 12px}
+  .ks dt{font-size:.66rem}
+  .ks dd{font-size:1.2rem}
+  .subnav a{font-size:.82rem;padding:11px 10px 9px}
+  .sec{padding:22px 0 6px}
+  .specgroup dl div,.equip li{padding:7px 0;font-size:.86rem}
+  .score-num{font-size:2.2rem}
+  .block h3{font-size:1rem}
+  .recall summary{font-size:.88rem}
+  .crumbs{font-size:.78rem;margin-top:10px}
+}
 .specgroup h3{font-size:1rem;margin-bottom:6px;font-weight:700}
 .specgroup dl{margin:0}
 .specgroup dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
@@ -196,6 +230,7 @@ button.bar[aria-pressed="true"]{background:var(--surface2);box-shadow:inset 3px 
 .rivals li{display:grid;gap:8px 16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
 .rivals .rn b{display:block;font-weight:700}
 .rivals .rn span{color:var(--muted);font-size:.86rem}
+.rivals a.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:36px;width:auto;padding:0 14px}
 .rnums{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.88rem;font-variant-numeric:tabular-nums;color:var(--muted)}
 
 footer{margin:48px 0 56px;padding-top:24px;border-top:1px solid var(--divider);color:var(--muted);font-size:.85rem;max-width:72ch;line-height:1.6}
@@ -248,6 +283,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   .rail{grid-column:2;grid-row:1;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px)}
 }
 </style>
+<link rel="stylesheet" href="assets/mobil.css">
 </head>
 <body>
 <header class="top">
@@ -322,13 +358,14 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   <dl class="keystats" id="keystats"></dl>
 
   <nav class="subnav" aria-label="Sayfa bölümleri" id="subnav">
-    <a href="#artilar">Artı & eksi</a>
-    <a href="#sorunlar">Sorunlar</a>
-    <a href="#yorumlar">Yorumlar</a>
-    <a href="#fiyatvergi">Fiyat & vergi</a>
-    <a href="#bakim">Bakım</a>
     <a href="#teknik">Teknik özellikler</a>
-    <a href="#karsilastir">Karşılaştır</a>
+    <a href="#donanim">Donanım</a>
+    <a href="#fiyatvergi">Fiyat & vergi</a>
+    <a href="#artilar">Artı & eksi</a>
+    <a href="#sorunlar">Geri çağırmalar</a>
+    <a href="#bakim" id="navBakim">Bakım</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#karsilastir">Rakipler</a>
   </nav>
 
   <div class="layout">
@@ -336,9 +373,8 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <section class="box" aria-labelledby="sysScoreT">
         <h2 id="sysScoreT">Sistem puanı</h2>
         <div id="sysScoreBody"></div>
-        <p class="note" style="margin-top:0">Kullanıcı yorumlarından bağımsız; belirli kriterlere göre otomatik hesaplanır.</p>
       </section>
-      <section class="box" aria-labelledby="scoreT">
+      <section class="box" aria-labelledby="scoreT" id="ownerBox">
         <h2 id="scoreT">Sahip puanı</h2>
         <div id="scoreBody"></div>
       </section>
@@ -351,39 +387,57 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </aside>
 
     <div class="content">
+      <section class="sec" id="teknik" aria-labelledby="teknikT">
+        <h2 id="teknikT">Teknik özellikler</h2>
+        <div class="specs" id="specs"></div>
+      </section>
+
+      <section class="sec" id="donanim" aria-labelledby="donanimT">
+        <h2 id="donanimT">Donanım, konfor ve güvenlik</h2>
+        <div id="equip"></div>
+      </section>
+
+      <section class="sec" id="fiyatvergi" aria-labelledby="fiyatvergiT">
+        <h2 id="fiyatvergiT">Fiyat, vergi ve garanti</h2>
+        <div class="keystats" id="fiyatStats" style="margin-top:8px"></div>
+        <div class="block" id="fiyatDetay"></div>
+      </section>
+
       <section class="sec" id="artilar" aria-labelledby="artilarT">
         <h2 id="artilarT">Artılar ve dikkat edilecekler</h2>
-        <p class="lead">Rakiplerine göre öne çıkanlar, dikkat çeken eksikler ve küçük konfor detayları.</p>
         <div id="odulBlock"></div>
         <div class="pc block" id="artiEksiBlock"></div>
         <div class="block" id="ncapVsBlock"></div>
-        <div class="block" id="kucukDetayBlock">
+        <div class="block" id="kucukDetayBlock" hidden>
           <h3>Küçük konfor detayları</h3>
           <div id="kucukDetayList"></div>
         </div>
       </section>
 
       <section class="sec" id="sorunlar" aria-labelledby="sorunlarT">
-        <h2 id="sorunlarT">Bilinen sorunlar ve geri çağırmalar</h2>
-        <p class="lead">Resmi kayıtlar ve sahip yorumları yan yana. Sayılar kesin hüküm vermez, nelere dikkat edeceğini gösterir.</p>
-        <p class="caution">Şikayetleri araç sahipleri yazar ve kurumlar bunları doğrulamaz. Bir parçanın çok şikayet alması, o parçanın kronik sorunu olduğunu tek başına kanıtlamaz.</p>
+        <h2 id="sorunlarT">Geri çağırmalar ve bilinen sorunlar</h2>
+        <p class="caution" id="probCaution" hidden>Şikayetleri araç sahipleri yazar ve kurumlar bunları doğrulamaz. Bir parçanın çok şikayet alması, o parçanın kronik sorunu olduğunu tek başına kanıtlamaz.</p>
 
         <div class="block">
-          <h3>Geri çağırmalar</h3>
-          <p class="src">Kaynak: NHTSA (ABD) ve marka duyuruları</p>
           <div class="recalls" id="recalls"></div>
         </div>
 
-        <div class="problem-grid block">
+        <div class="problem-grid block" id="probGrid">
           <div id="officialBlock"></div>
           <div id="userBlock"></div>
         </div>
       </section>
 
+      <section class="sec" id="bakim" aria-labelledby="bakimT">
+        <h2 id="bakimT">Bakım</h2>
+        <p class="lead" id="bakimLead"></p>
+        <div class="block" id="bakimNoktalari"></div>
+      </section>
+
       <section class="sec" id="yorumlar" aria-labelledby="yorumlarT">
         <h2 id="yorumlarT">Sahip yorumları</h2>
         <p class="lead" id="reviewLead"></p>
-        <div class="toolbar">
+        <div class="toolbar" id="reviewTools">
           <label for="sortSel" class="sr" style="position:absolute;left:-9999px">Sırala</label>
           <select id="sortSel" aria-label="Yorumları sırala">
             <option value="yeni">En yeni</option>
@@ -397,28 +451,12 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
         <div id="reviews"></div>
       </section>
 
-      <section class="sec" id="fiyatvergi" aria-labelledby="fiyatvergiT">
-        <h2 id="fiyatvergiT">Fiyat, vergi ve garanti</h2>
-        <div class="keystats" id="fiyatStats" style="margin-top:8px"></div>
-        <div class="block" id="fiyatDetay"></div>
-      </section>
-
-      <section class="sec" id="bakim" aria-labelledby="bakimT">
-        <h2 id="bakimT">Bakım</h2>
-        <p class="lead" id="bakimLead"></p>
-        <div class="block" id="bakimNoktalari"></div>
-      </section>
-
-      <section class="sec" id="teknik" aria-labelledby="teknikT">
-        <h2 id="teknikT">Teknik özellikler</h2>
-        <div class="specs" id="specs"></div>
-      </section>
-
       <section class="sec" id="karsilastir" aria-labelledby="karsilastirT">
         <h2 id="karsilastirT">Rakipleriyle karşılaştır</h2>
-        <p class="lead">Veritabanımızdaki diğer araçlarla tüm özellikleri satır satır yan yana gör. Rakipler otomatik seçilir: aynı kasa tipinden, başka markadan, yakıt türü aynı ve motor gücü en yakın modeller. Segmentler her zaman birebir örtüşmeyebilir.</p>
+        <p class="lead">Aynı kasa tipinden, aynı yakıt türünde ve gücü en yakın modeller.</p>
         <ul class="rivals" id="rivals"></ul>
       </section>
+
     </div>
   </div>
 
@@ -9867,26 +9905,39 @@ const GROUPS = [
   ['dingil_mm','Dingil mesafesi','mm'],['yerden_yukseklik_mm','Yerden yükseklik','mm'],
   ['agirlik_kg','Boş ağırlık','kg'],['istiap_kg','Azami yük (istiap haddi)','kg'],
   ['bagaj_l','Bagaj hacmi','L'],['jant_inch','Jant çapı','"']]},
- {name:'Güvenlik',rows:[
-  ['airbag_sayisi','Hava yastığı sayısı'],['ncap_yildiz','Euro NCAP','yıldız'],['ncap_test_yili','NCAP test yılı'],
-  ['abs','ABS'],['esp','ESP / ESC'],['yokus_kalkis','Yokuş kalkış desteği'],
-  ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],
-  ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['geri_gorus_kamera','Geri görüş kamerası']]},
- {name:'Konfor ve donanım',rows:[
-  ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],
-  ['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
-  ['start_stop','Start-stop sistemi']]},
- {name:'Multimedya ve bağlantı',rows:[
-  ['ekran_inch','Dokunmatik ekran boyutu','"'],['carplay_android_auto','Apple CarPlay / Android Auto'],
-  ['ses_sistemi','Ses sistemi'],['dijital_gosterge','Dijital gösterge paneli']]},
- {name:'Fiyat ve vergi',rows:[
-  ['liste_fiyati_tl','Güncel liste fiyatı','TL'],['mtv_yillik_tl','Yıllık MTV (1-3 yaş bandı)','TL']]},
- {name:'Garanti ve bakım',rows:[
-  ['garanti_yil','Araç garantisi','yıl'],['garanti_km','Araç garantisi','km'],
-  ['batarya_garanti_yil','Batarya garantisi','yıl'],
-  ['boya_garanti_yil','Boya garantisi','yıl'],['pas_garanti_yil','Paslanmazlık garantisi','yıl'],
-  ['bakim_araligi_km','Standart bakım aralığı','km'],['bakim_araligi_ay','Standart bakım aralığı','ay']]}
+ {name:'Güvenlik testleri',rows:[
+  ['airbag_sayisi','Hava yastığı sayısı'],['ncap_yildiz','Euro NCAP','yıldız'],['ncap_test_yili','NCAP test yılı']]}
 ];
+const EQUIP = [
+ {name:'Güvenlik ve sürüş destek',rows:[
+  ['abs','ABS'],['esp','ESP / ESC'],['otonom_acil_fren','Otonom acil fren (AEB)'],['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],
+  ['serit_takip','Şerit takip sistemi'],['kor_nokta','Kör nokta uyarısı'],['yorgunluk_tespit','Yorgunluk tespit sistemi'],
+  ['yokus_kalkis','Yokuş kalkış desteği'],['park_sensoru','Park sensörü'],['geri_gorus_kamera','Geri görüş kamerası'],['kamera_360','360° kamera']]},
+ {name:'Konfor',rows:[
+  ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],['elektrikli_koltuk','Elektrikli koltuk ayarı'],
+  ['deri_doseme','Deri döşeme'],['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
+  ['elektrikli_bagaj','Elektrikli bagaj kapağı'],['led_far','LED farlar'],['start_stop','Start-stop sistemi']]},
+ {name:'Multimedya ve bağlantı',rows:[
+  ['ekran_inch','Dokunmatik ekran','"'],['carplay_android_auto','Apple CarPlay / Android Auto'],['kablosuz_sarj','Kablosuz telefon şarjı'],
+  ['navigasyon','Navigasyon'],['dijital_gosterge','Dijital gösterge paneli'],['ses_sistemi','Ses sistemi']]}
+];
+function eqVal(v,u){
+  if(v==null||v==='') return ['—','unk'];
+  if(typeof v==='number') return [nf(v,dec(v))+(u||''),'yes'];
+  const t=String(v).trim();
+  if(/^Yok/i.test(t)) return [t.replace(/^Yok\s*[-–:(]?\s*/i,'').replace(/\)$/,'')||'Yok','no'];
+  if(/^Opsiyonel/i.test(t)) return [t,'opt'];
+  if(/^Var$/i.test(t)) return ['Var','yes'];
+  const m=t.match(/^Var\s*[(:–-]\s*(.*?)\)?$/i);
+  return [m&&m[1]?m[1]:t,'yes'];
+}
+function renderEquip(){
+  const c=car(), s=c.s, ek=c.ekKaynak||{};
+  const known=EQUIP.reduce((n,g)=>n+g.rows.filter(([k])=>s[k]!=null&&s[k]!=='').length,0);
+  if(!known){ $('#equip').innerHTML='<div class="emptystate">Bu versiyonun donanım listesi henüz eklenmedi.</div>'; return; }
+  $('#equip').innerHTML='<div class="equip">'+EQUIP.map(g=>`<div><h3>${esc(g.name)}</h3><ul>${g.rows.map(([k,l,u])=>{const [t,cls]=eqVal(s[k],u);return `<li><span>${esc(l)}</span><span class="v ${cls}">${esc(t)}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</span></li>`}).join('')}</ul></div>`).join('')+'</div><p class="eqhint">✓ standart · ✕ yok · "—" bilgi henüz eklenmedi. Donanımlar paket ve yıla göre değişebilir.</p>';
+}
+
 
 const $ = (s,el=document)=>el.querySelector(s);
 const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
@@ -10001,29 +10052,27 @@ function renderArtilar(){
   const c=car();
   $('#odulBlock').innerHTML = c.odul&&c.odul.length
     ? `<div class="block"><h3>Ödüller</h3><ul>${c.odul.map(o=>`<li>${esc(o.ad)}${o.yil?` (${esc(o.yil)})`:''} <a class="src" href="${esc(o.kaynak)}" target="_blank" rel="noopener">kaynak ↗</a></li>`).join('')}</ul><p class="note"><a href="oduller.html" style="color:var(--accent-soft)">Tüm ödüllü araçlar →</a></p></div>`
-    : `<p class="note">Bu araç için kayıtlı bir ödül yok.</p>`;
+    : '';
 
   const pro=(c.gucluYanlar||[]).map(g=>`<li>${esc(g.metin)} <a class="src" href="${esc(g.kaynak)}" target="_blank" rel="noopener">↗</a></li>`).join('');
   const con=(c.dikkatEdilecekler||[]).map(g=>`<li>${esc(g.metin)} <a class="src" href="${esc(g.kaynak)}" target="_blank" rel="noopener">↗</a></li>`).join('');
   $('#artiEksiBlock').innerHTML = (pro||con)
-    ? `${pro?`<div class="pro"><h5>Öne çıkanlar</h5><ul>${pro}</ul></div>`:'<div class="pro"><h5>Öne çıkanlar</h5><p class="note">Bu versiyon için henüz not eklenmedi.</p></div>'}${con?`<div class="con"><h5>Dikkat edilecekler</h5><ul>${con}</ul></div>`:''}`
-    : '<p class="note">Henüz not eklenmedi.</p>';
+    ? `${pro?`<div class="pro"><h5>Öne çıkanlar</h5><ul>${pro}</ul></div>`:''}${con?`<div class="con"><h5>Dikkat edilecekler</h5><ul>${con}</ul></div>`:''}`
+    : '<div class="emptystate">Bu versiyon için henüz değerlendirme notu eklenmedi.</div>';
 
   const others=rivalsFor(c).map(r=>r.s.ncap_yildiz).filter(n=>n!=null);
   const my=c.s.ncap_yildiz;
   let ncapMsg='';
-  if(my!=null && others.length){
-    const best=Math.max(my,...others), worst=Math.min(my,...others);
-    if(my===best && my>worst) ncapMsg=`<p>Bu versiyonun NCAP puanı (${my} yıldız), karşılaştırmadaki diğer araçlar arasında <b>en yüksek</b> — ancak testin yapıldığı yılın ve test otoritesinin (Euro NCAP, ANCAP, NHTSA vb.) farklı olabileceğini unutma. ${c.ncapNot?esc(c.ncapNot):''}</p>`;
-    else if(my===worst && my<best) ncapMsg=`<p>Bu versiyonun NCAP puanı (${my} yıldız), karşılaştırmadaki diğer araçlara göre <b>daha düşük</b> (en yükseği ${best} yıldız). Test otoritesi (Euro NCAP, ANCAP, NHTSA vb.) farklı olabilir. ${c.ncapNot?esc(c.ncapNot):''}</p>`;
-    else ncapMsg=`<p>Bu versiyonun NCAP puanı: ${my} yıldız. ${c.ncapNot?esc(c.ncapNot):''}</p>`;
+  if(my!=null){
+    const best=others.length?Math.max(...others):null;
+    const kars = best==null ? '' : my>=best ? ' Benzer rakipler arasında en yüksek sonuç.' : ` Benzer rakiplerde en yüksek sonuç ${best} yıldız.`;
+    ncapMsg=`<p><b>${my} yıldız</b>${c.s.ncap_test_yili?` (${c.s.ncap_test_yili} testi)`:''}.${kars}</p>${c.ncapNot?`<p class="src" style="margin-top:6px">${esc(c.ncapNot)}</p>`:''}`;
   }
-  $('#ncapVsBlock').innerHTML = ncapMsg ? `<h3>NCAP karşılaştırması</h3>${ncapMsg}<p class="src">Kaynak: <a href="${esc(c.ncapKaynak||'')}" target="_blank" rel="noopener">NCAP sonuç kaynağı</a></p>` : '';
+  $('#ncapVsBlock').innerHTML = ncapMsg ? `<h3>Euro NCAP</h3>${ncapMsg}${c.ncapKaynak?`<p class="src"><a href="${esc(c.ncapKaynak)}" target="_blank" rel="noopener">Test sonucu ↗</a></p>`:''}` : '';
 
   const kd=c.kucukDetaylar||[];
-  $('#kucukDetayList').innerHTML = kd.length
-    ? `<ul class="bars" style="display:grid;gap:0">${kd.map(d=>`<li style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.93rem"><span>${esc(d.ozellik)}</span><span style="color:var(--muted);text-align:right">${esc(d.deger)}</span></li>`).join('')}</ul>`
-    : '<p class="note">Henüz bilgi eklenmedi.</p>';
+  $('#kucukDetayBlock').hidden = !kd.length;
+  $('#kucukDetayList').innerHTML = kd.map(d=>`<div style="padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem"><b style="font-weight:600">${esc(d.ozellik)}</b><div style="color:var(--muted);margin-top:2px">${esc(d.deger)}</div></div>`).join('');
 }
 
 function renderFiyatVergi(){
@@ -10050,6 +10099,8 @@ function renderBakim(){
     ? `Standart bakım aralığı: her ${nf(s.bakim_araligi_km)} km veya ${s.bakim_araligi_ay} ayda bir (hangisi önce dolarsa).`
     : 'Bu versiyon için bakım aralığı bilgisi henüz eklenmedi.';
   const ab=c.agirBakim||[];
+  const varBakim = !!(s.bakim_araligi_km||ab.length);
+  $('#bakim').hidden=!varBakim; $('#navBakim').hidden=!varBakim;
   $('#bakimNoktalari').innerHTML = ab.length
     ? `<h3>Ağır bakım noktaları</h3><ul class="bars" style="display:grid;gap:0">${ab.map(b=>`<li style="padding:10px 0;border-bottom:1px solid var(--line)"><b>${nf(b.km)} km</b> — ${esc(b.islem)}</li>`).join('')}</ul><p class="src">Kaynak: ${esc(ab[0].kaynak)}. Kesin aralıklar için aracın bakım kitapçığına bakın.</p>`
     : '';
@@ -10058,9 +10109,10 @@ function renderBakim(){
 function renderScore(){
   const pub=published(), n=pub.length;
   if(!n){
-    $('#scoreBody').innerHTML='<p class="score-meta">Henüz sahip yorumu yok.</p>';
+    $('#ownerBox').hidden=true;
     return;
   }
+  $('#ownerBox').hidden=false;
   const a=avg(pub.map(r=>r.puan));
   let subs='';
   Object.entries(SUBS).forEach(([k,l])=>{
@@ -10076,14 +10128,14 @@ function renderProblems(){
   const id=state.carId;
   const rc=RECALLS[id];
   const gcNot = car().geriCagirmaNot ? `<p class="note" style="margin-top:8px">${esc(car().geriCagirmaNot)}</p>` : '';
-  if(rc===null) $('#recalls').innerHTML=`<div class="emptystate">Bu model yılı için geri çağırma verisi henüz eklenmedi.</div>${gcNot}`;
+  if(rc==null) $('#recalls').innerHTML=`<div class="emptystate">Geri çağırma bilgisi henüz eklenmedi.</div>${gcNot}`;
   else if(!rc.length){
-    $('#recalls').innerHTML=`<div class="emptystate">Bu model yılı için kayıtlı geri çağırma bulunamadı.</div>${gcNot}`;
+    $('#recalls').innerHTML=`<div class="emptystate">Bu model yılı için kayıtlı geri çağırma yok.</div>${gcNot}`;
   }
   else $('#recalls').innerHTML=rc.map(r=>`<details class="recall"><summary><span class="rdate">${fmtMonth(r.tarih)}</span><span class="rtitle">${esc(r.baslik)}</span><span class="tag">${esc(r.parca)}</span></summary><div class="rbody"><p>${esc(r.ozet)}</p><p><b>Çözüm:</b> ${esc(r.cozum)}</p><p class="src">Kaynak: ${esc(r.kaynak)}</p></div></details>`).join('')+gcNot;
 
   const off=OFFICIAL[id];
-  if(!off) $('#officialBlock').innerHTML='<h3>Resmi şikayetler</h3><p class="src">Kaynak: NHTSA (ABD)</p><div class="emptystate">Bu model yılı için şikayet verisi henüz eklenmedi.</div>';
+  if(!off) $('#officialBlock').innerHTML='';
   else{
     const max=Math.max(...off.bilesenler.map(b=>b[1]));
     $('#officialBlock').innerHTML=`<h3>Resmi şikayetler</h3><p class="src">Kaynak: NHTSA (ABD), toplam ${off.toplam} şikayet</p><ul class="bars">${off.bilesenler.map(([l,n])=>`<li class="bar"><span>${esc(l)}</span><span class="bt"><i style="width:${n/max*100}%"></i></span><span class="bn">${n}</span></li>`).join('')}</ul><p class="note">Şikayet sayısı, o parça için bildirilen kayıt adedidir.</p>`;
@@ -10091,7 +10143,8 @@ function renderProblems(){
 
   const pub=published(), n=pub.length;
   if(!n){
-    $('#userBlock').innerHTML='<h3>Sahiplerin bildirdiği sorunlar</h3><p class="src">Kaynak: Araba Karşılaştır ve Seç sahip yorumları</p><div class="emptystate">Bu araç için henüz sahip yorumu yok.</div>';
+    $('#userBlock').innerHTML='';
+    $('#probGrid').hidden=!off; $('#probCaution').hidden=!off;
     return;
   }
   const counts={};
@@ -10101,12 +10154,14 @@ function renderProblems(){
   const bars=list.length
     ? `<ul class="bars">${list.map(([k,c])=>`<li><button type="button" class="bar" data-prob="${k}" aria-pressed="${state.filter===k}"><span>${esc(PROBLEMS[k])}</span><span class="bt"><i style="width:${c/n*100}%"></i></span><span class="bn">${c} / ${n}</span></button></li>`).join('')}</ul><p class="note">Bir satıra dokun, o sorunu bildiren yorumları gör.</p>`
     : '<div class="emptystate">Yorum yazanların hiçbiri sorun bildirmedi.</div>';
+  $('#probGrid').hidden=false; $('#probCaution').hidden=false;
   $('#userBlock').innerHTML=`<h3>Sahiplerin bildirdiği sorunlar</h3><p class="src">Kaynak: Araba Karşılaştır ve Seç sahip yorumları. Sorun bildiren yorum: ${withProblem} / ${n}</p>${bars}${n<10?`<p class="note">Yorum sayısı az (${n}). Bu oranlar henüz güvenilir bir eğilim göstermez.</p>`:''}`;
 }
 
 function renderReviews(){
   const all=reviews[state.carId], pub=published();
-  $('#reviewLead').textContent = pub.length ? `${pub.length} yorum. Her yorum sahibinin kullanım süresi ve kilometresiyle birlikte gösterilir.` : 'Yorumlar burada görünür.';
+  $('#reviewLead').textContent = pub.length ? `${pub.length} yorum. Her yorum sahibinin kullanım süresi ve kilometresiyle birlikte gösterilir.` : '';
+  $('#reviewLead').hidden = !pub.length; $('#reviewTools').hidden = !all.length;
   $('#filterTag').innerHTML = state.filter ? `<span class="activefilter">Filtre: ${esc(PROBLEMS[state.filter])} sorunu<button type="button" id="clearFilter">Kaldır</button></span>` : '';
   let list=all.filter(r=>!state.filter || r.sorun.includes(state.filter));
   const pend=list.filter(r=>r.durum==='bekliyor'), rest=list.filter(r=>r.durum!=='bekliyor');
@@ -10148,7 +10203,7 @@ function renderRivals(){
     : '<li><div class="rn"><span>Bu kasa tipinde veritabanımızda başka marka yok.</span></div></li>';
 }
 
-function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); }
+function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); renderEquip(); }
 
 function buildForm(){
   $('#f-puan').innerHTML=[1,2,3,4,5].map(n=>`<label class="segopt"><input type="radio" name="puan" value="${n}" ${n===1?'required':''}><span>${n}</span></label>`).join('');

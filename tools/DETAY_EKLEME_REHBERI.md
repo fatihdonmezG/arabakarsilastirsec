@@ -74,6 +74,16 @@ C.filter(c=>!MARKA||c.marka===MARKA).forEach(c=>{const ev=/^Elektrik/i.test(c.s.
 - Fiyat alanları bu araçla doldurulamaz.
 - sahibinden yalnızca satıştan kalkmış eski modellerde, son çare, tek seferlik ve elle okunarak; `kaynakTuru:"sahibinden"`.
 
+## Donanım alanları
+
+Detay sayfasındaki "Donanım, konfor ve güvenlik" bölümü ve karşılaştırma tablosu şu alanları gösterir:
+
+- Güvenlik ve sürüş destek: `abs`, `esp`, `otonom_acil_fren`, `adaptif_hiz_sabitleyici`, `serit_takip`, `kor_nokta`, `yorgunluk_tespit`, `yokus_kalkis`, `park_sensoru`, `geri_gorus_kamera`, `kamera_360`
+- Konfor: `klima`, `koltuk_isitma`, `elektrikli_koltuk`, `deri_doseme`, `acilir_tavan`, `anahtarsiz_giris`, `elektrikli_bagaj`, `led_far`, `start_stop`
+- Multimedya: `ekran_inch` (sayı, inç), `carplay_android_auto`, `kablosuz_sarj`, `navigasyon`, `dijital_gosterge`, `ses_sistemi`
+
+Değer biçimi: `"Var"`, `"Yok"`, `"Opsiyonel"` ya da kısa açıklamayla `"Var (çift bölgeli otomatik)"`, `"Var (ön ve arka)"`. Kaynak öncelikle markanın Türkiye fiyat listesi / donanım listesi PDF'i; donanım versiyona (donanım paketine) göre değiştiği için yalnızca o versiyonun sütunundaki bilgi girilir.
+
 ## Uygulama
 
 1. Bulguları satır satır JSON olarak (JSONL) yaz: `{"id":"...","alan":"agirlik_kg","deger":1425,"kaynakAd":"...","kaynakUrl":"https://...","kaynakTuru":"birincil","sonDogrulama":"2026-10-14"}`. Sayısal değerler tırnaksız; birim alan adındaki birimle aynı olmalı (mm, kg, L, HP, Nm, sn, km/s, l/100km, g/km, kWh, km, dk).

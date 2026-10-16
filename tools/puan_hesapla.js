@@ -24,7 +24,7 @@ function varlik(v){ if(v==null) return null; const t=String(v).trim(); if(/^Yok/
 // Sabit ölçek: değer a'da 0, b'de 10 puan (arası doğrusal, uçlarda kırpılır). a>b ise küçük değer iyidir.
 const olcek = (v, a, b) => r1(Math.max(0, Math.min(10, (v - a) / (b - a) * 10)));
 const nf = (v, d=1) => Number(v).toLocaleString('tr-TR', { maximumFractionDigits: d });
-const ADAS = ['esp','abs','adaptif_hiz_sabitleyici','serit_takip','yorgunluk_tespit','geri_gorus_kamera','yokus_kalkis'];
+const ADAS = ['esp','abs','otonom_acil_fren','adaptif_hiz_sabitleyici','serit_takip','kor_nokta','yorgunluk_tespit','geri_gorus_kamera','yokus_kalkis'];
 const DONANIM = ['klima','koltuk_isitma','acilir_tavan','anahtarsiz_giris','start_stop','carplay_android_auto','dijital_gosterge','ses_sistemi'];
 const r1 = x => Math.round(x * 10) / 10;
 
