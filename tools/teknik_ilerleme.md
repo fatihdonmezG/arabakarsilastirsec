@@ -13,6 +13,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Land Rover | tamamlandı | 2026-10-15 |
 | Skoda | tamamlandı | 2026-10-16 |
 | Renault | tamamlandı | 2026-10-16 |
+| Maserati | tamamlandı | 2026-10-17 |
+| Fiat | tamamlandı | 2026-10-17 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -429,3 +431,111 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - renault-5-e-tech-techno-ev52-150-2026 | dc_hizli_sarj_dk_20_80 | Renault TR yalnızca %15-80 (30 dk) veriyor
 - renault-5-e-tech-techno-ev52-150-2026 | elektrik_tuketim_kwh100km | Renault TR tüketim vermiyor; ADAC değeri (14,4) farklı menzile (417 km, TR 410 km) ait
 - renault-rafale-esprit-alpine-e-tech-full-hybrid-200-2026 | airbag_sayisi | Renault TR listelemiyor; Euro NCAP kaynağı Austral sayfası, Rafale için doğrudan doğrulanamadı
+
+## 2026-10-17 — Maserati, Fiat
+
+- Doldurulan alan: 148 (Maserati 79, Fiat 69), 22 versiyon.
+- Araştırılıp bulunamayan: 88 alan (Maserati 42, Fiat 46; aşağıda).
+- Kaynaklar: Maserati Grecale resmi kataloğu ve GranTurismo MY23 broşürü (maserati.com), maserati.com MC20 Cielo sayfası, Fiat TR Egea teknik veriler / Egea Sedan / 600 sayfaları, media.stellantis.com bültenleri ve teknik föyleri (Grande Panda, Topolino, 600e, Tipo/Tipo Cross), Euro NCAP 500e değerlendirmesi ve datasheet'i, auto-data.net, ultimatespecs.com, ev-database.org, cars-data.com (hava yastıkları listeden sayıldı).
+- Segment: Egea Sedan "C segmenti", Egea Cross "C segmenti (crossover)", Grande Panda ve 600 "B segmenti" (Fiat/Stellantis ifadesi; Euro NCAP sınıfı bulunamadı), Topolino "Elektrikli dörttekerlekli (quadricycle)", 500e ve 500e Cabrio Euro NCAP "Supermini".
+- Grande Panda Hybrid tork/0-100/azami hız ultimatespecs'ten (aynı 1.2 Hybrid eDCT; içten yanmalı motor 74 kW/100 HP, TR "110 HP" sistem gücü). Hava yastığı sayısı yalnızca İtalya Pop donanımı için bulunduğundan yazılmadı.
+- Kayıtta fark edilen, bu araçla düzeltilemeyen eski/şüpheli değerler (elle kontrol önerilir):
+  - Maserati Grecale GT: güç 330 HP yazıyor; resmi katalog 300 HP / 221 kW (330 HP Modena'ya ait).
+  - Maserati GranCabrio Trofeo 2026: azami hız 320 km/s yazıyor; auto-data ve resmi broşür 316 km/s.
+  - Maserati MC20 Cielo: depo 50 L yazıyor; auto-data, ultimatespecs, cars-data 60 L.
+  - Maserati GranTurismo Trofeo 2025 (550 HP) makyaj öncesi araç; 2026 makyajlı versiyon ayrı. Grecale için de 2026 makyajlı kayıtlar var.
+  - Maserati Grecale Folgore menzil 500 km, WLTP en iyi uç (TEL 501, TEH 431).
+  - Fiat Egea: Tofaş üretimi 6 Temmuz 2026'da bitti (Stellantis bülteni); Fiat TR Sedan sayfasında yalnız 1.6 dizel (otomatik/manuel) var, 1.4 Fire 95 Sedan gamda görünmüyor. Egea Sedan 1.6 kaydının şanzımanı (otomatik/manuel) belirsiz.
+  - Fiat Egea Sedan 1.4 tüketim 6.6 (auto-data WLTP 6.4-6.5). Egea Cross Street 121 g/km (auto-data 122-123, manuel için); 0-100 Fiat TR 10.2, auto-data 10.5.
+  - Fiat Egea Sedan ve Cross: Euro NCAP 2016 Tipo sonucu (3★) 2022'de süresi doldu; Egea Sedan kayıtlarında hâlâ 3★/2016 yazıyor.
+
+### Araştırıldı, bulunamadı (id | alan | neden)
+
+- maserati-grecale-2025-gt | ncap_yildiz | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-gt | ncap_test_yili | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-modena | ncap_yildiz | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-modena | ncap_test_yili | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-trofeo | ncap_yildiz | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-trofeo | ncap_test_yili | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-folgore | ncap_yildiz | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-folgore | ncap_test_yili | euroncap.com'da Grecale sonucu bulunamadı (Maserati için yalnız 2013 Ghibli testi görünüyor)
+- maserati-grecale-2025-gt | tuketim_l100km | resmi katalog aralık veriyor 8.7–9.2 l/100km (WLTP), donanım ucu belirsiz
+- maserati-grecale-2025-gt | co2_gkm | resmi katalog aralık veriyor 198–208 g/km, donanım ucu belirsiz
+- maserati-grecale-2025-gt | emisyon_normu | kaynaklar Euro 6d Final/6d diyor (2022 homologasyonu); 2025 MY için Euro 6e olabilir, güncel kaynak açılamadı
+- maserati-grecale-2025-modena | tuketim_l100km | resmi katalog aralık veriyor 8.8–9.3 l/100km (WLTP), donanım ucu belirsiz
+- maserati-grecale-2025-modena | co2_gkm | resmi katalog aralık veriyor 199–210 g/km, donanım ucu belirsiz
+- maserati-grecale-2025-modena | emisyon_normu | kaynaklar Euro 6d Final/6d diyor (2022 homologasyonu); 2025 MY için Euro 6e olabilir, güncel kaynak açılamadı
+- maserati-grecale-2025-trofeo | emisyon_normu | kaynaklar Euro 6d Final/6d diyor (2022 homologasyonu); 2025 MY için Euro 6e olabilir, güncel kaynak açılamadı
+- maserati-grecale-2025-folgore | agirlik_kg | kaynaklar çelişiyor: 2480 kg (Auto-Data/Ultimate Specs) vs 2555 kg EU sürücülü (EV Database); resmi değer açılamadı
+- maserati-grecale-2025-folgore | dc_hizli_sarj_dk_20_80 | yalnız %10-80 bulundu (40 dk, EV Database); %20-80 resmi değer yok
+- maserati-grecale-2025-folgore | elektrik_tuketim_kwh100km | aralık/çelişki: 23.9–27.8 kWh/100km TEL/TEH (EV Database), 23.6 (Auto-Data/Ultimate Specs)
+- maserati-granturismo-2025-trofeo | ncap_yildiz | euroncap.com'da test yok
+- maserati-granturismo-2025-trofeo | ncap_test_yili | euroncap.com'da test yok
+- maserati-granturismo-2025-trofeo | emisyon_normu | Ultimate Specs Euro 6d diyor, resmi broşürde yok; 2025 MY için Euro 6e olabilir
+- maserati-granturismo-2024-folgore | agirlik_kg | resmi broşürde TBD; 2260 kg (Auto-Data/Ultimate Specs, sürücüsüz) vs 2335 kg EU (EV Database)
+- maserati-granturismo-2024-folgore | ncap_yildiz | euroncap.com'da test yok
+- maserati-granturismo-2024-folgore | ncap_test_yili | euroncap.com'da test yok
+- maserati-granturismo-2024-folgore | menzil_km_wltp | aralık: 450–459 km WLTP TEH/TEL (EV Database); maserati.com 542 km diyor ama 'homologasyon sürüyor', çevrim belirtilmemiş
+- maserati-granturismo-2024-folgore | dc_hizli_sarj_dk_20_80 | yalnız %10-80 bulundu (17 dk, EV Database); resmi %20-80 değeri yok
+- maserati-granturismo-2024-folgore | elektrik_tuketim_kwh100km | aralık: 21.9–22.3 kWh/100km WLTP TEL/TEH (EV Database), resmi değer yok
+- maserati-grancabrio-2026-trofeo | agirlik_kg | aralık: 1895–1958 kg (Auto-Data 2026 facelift), donanım ucu belirsiz
+- maserati-grancabrio-2026-trofeo | bagaj_l | resmi (önceki MY) 172/131 L veriyor, tavan açık/kapalı ayrımı yok; Auto-Data 2026 yalnız min 131 L
+- maserati-grancabrio-2026-trofeo | airbag_sayisi | yalnız önceki MY için Cars-Data listesi var (cabrio'da perde hava yastığı şüpheli), güvenilir sayı yok
+- maserati-grancabrio-2026-trofeo | ncap_yildiz | euroncap.com'da test yok
+- maserati-grancabrio-2026-trofeo | ncap_test_yili | euroncap.com'da test yok
+- maserati-grancabrio-2026-trofeo | tuketim_l100km | aralık: 10.3–10.6 l/100km WLTP (Auto-Data 2026), donanım ucu belirsiz
+- maserati-grancabrio-2026-trofeo | co2_gkm | aralık: 235–242 g/km WLTP (Auto-Data 2026), donanım ucu belirsiz
+- maserati-mc20-2025-cielo | agirlik_kg | kaynaklarda yalnız 1540 kg (kuru ağırlık olduğu anlaşılıyor: coupé +65 kg), homologe/boş ağırlık yok
+- maserati-mc20-2025-cielo | bagaj_l | kaynaklar çelişiyor: 50 L (Auto-Data), 100 L (Ultimate Specs), 150 L (Cars-Data, ön+arka toplam olabilir)
+- maserati-mc20-2025-cielo | airbag_sayisi | yalnız Cars-Data listesi (spyder'da ön perde hava yastığı şüpheli), güvenilir sayı yok
+- maserati-mc20-2025-cielo | ncap_yildiz | euroncap.com'da test yok
+- maserati-mc20-2025-cielo | ncap_test_yili | euroncap.com'da test yok
+- maserati-mc20-2025-cielo | tuketim_l100km | kaynaklar çelişiyor: 11.5 (Auto-Data) vs 11.7 l/100km WLTP (Ultimate Specs); maserati.com'da alan boş
+- maserati-mc20-2025-cielo | co2_gkm | kaynaklar çelişiyor: 261 (Auto-Data) vs 265 g/km (Ultimate Specs)
+- maserati-mc20-2025-cielo | emisyon_normu | Ultimate Specs Euro 6d diyor (2022 homologasyonu); 2025 MY için doğrulanamadı
+- egea-sedan-2026-1.4-fire-95 | airbag_sayisi | Fiat TR Egea Sedan sayfası güncel gamda 1.4 Fire'ı listelemiyor; bu motor/donanım için hava yastığı listesi bulunamadı
+- egea-sedan-2026-1.4-fire-95 | co2_gkm | auto-data yalnız aralık veriyor (145-150 g/km, WLTP); Fiat TR sayfasında CO2 yok
+- egea-sedan-2026-1.6-multijet-130 | sanziman | Fiat TR Egea Sedan sayfasında aynı motor hem "6 İleri Otomatik" hem "6 İleri Manuel" var; kayıt hangisi belirsiz
+- egea-sedan-2026-1.6-multijet-130 | agirlik_kg | auto-data 1300 kg yalnız manuel için; şanzıman belirsiz olduğundan yazılmadı
+- egea-sedan-2026-1.6-multijet-130 | co2_gkm | auto-data aralık veriyor (114-118 g/km, manuel); Fiat TR'de CO2 yok, şanzıman belirsiz
+- fiat-egea-cross-1-6-multijet-street-130hp-2026 | ncap_yildiz | Euro NCAP Tipo Cross/Egea Cross'u ayrıca test etmedi; Tipo 2016 sonucu (3 yıldız) 6 yıl kuralıyla süresi dolmuş
+- fiat-egea-cross-1-6-multijet-street-130hp-2026 | ncap_test_yili | geçerli Euro NCAP sonucu yok (Tipo 2016 süresi dolmuş, Cross ayrıca test edilmedi)
+- fiat-egea-cross-1-6-multijet-urban-130hp-2026 | ncap_yildiz | Euro NCAP Tipo Cross/Egea Cross'u ayrıca test etmedi; Tipo 2016 sonucu süresi dolmuş
+- fiat-egea-cross-1-6-multijet-urban-130hp-2026 | ncap_test_yili | geçerli Euro NCAP sonucu yok
+- fiat-egea-cross-1-6-multijet-urban-130hp-2026 | co2_gkm | Fiat TR Cross sayfasında CO2 yok; auto-data yalnız 122-123 g/km aralığı (manuel), donanım/jant eşlemesi yok
+- fiat-egea-cross-1-6-multijet-lounge-130hp-2026 | ncap_yildiz | Euro NCAP Tipo Cross/Egea Cross'u ayrıca test etmedi; Tipo 2016 sonucu süresi dolmuş
+- fiat-egea-cross-1-6-multijet-lounge-130hp-2026 | ncap_test_yili | geçerli Euro NCAP sonucu yok
+- fiat-egea-cross-1-6-multijet-lounge-130hp-2026 | co2_gkm | Fiat TR Cross sayfasında CO2 yok; auto-data yalnız aralık (122-123 g/km)
+- fiat-egea-cross-1-6-multijet-limited-130hp-2026 | ncap_yildiz | Euro NCAP Tipo Cross/Egea Cross'u ayrıca test etmedi; Tipo 2016 sonucu süresi dolmuş
+- fiat-egea-cross-1-6-multijet-limited-130hp-2026 | ncap_test_yili | geçerli Euro NCAP sonucu yok
+- fiat-egea-cross-1-6-multijet-limited-130hp-2026 | tuketim_l100km | Fiat TR Cross sayfasında WLTP tüketim tablosu yok (Limited 17" jant); auto-data yalnız 4.6-4.7 aralığı
+- fiat-egea-cross-1-6-multijet-limited-130hp-2026 | co2_gkm | Fiat TR'de CO2 yok; auto-data yalnız aralık (122-123 g/km)
+- fiat-grande-panda-1-2-mhev-icon-110hp-2026 | ncap_yildiz | Euro NCAP'te Grande Panda için sonuç bulunamadı
+- fiat-grande-panda-1-2-mhev-icon-110hp-2026 | ncap_test_yili | Euro NCAP'te Grande Panda için sonuç bulunamadı
+- fiat-grande-panda-1-2-mhev-icon-110hp-2026 | emisyon_normu | kaynaklar çelişkili/geçici: Fiat basın föyü "Euro 6.4" (homologasyon öncesi), ultimatespecs 2025 "Euro 6e"; 2026 TR versiyonu için doğrulanamadı
+- fiat-grande-panda-1-2-mhev-la-prima-110hp-2026 | ncap_yildiz | Euro NCAP'te Grande Panda için sonuç bulunamadı
+- fiat-grande-panda-1-2-mhev-la-prima-110hp-2026 | ncap_test_yili | Euro NCAP'te Grande Panda için sonuç bulunamadı
+- fiat-grande-panda-1-2-mhev-la-prima-110hp-2026 | emisyon_normu | kaynaklar çelişkili/geçici ("Euro 6.4" basın föyü, "Euro 6e" ultimatespecs 2025); 2026 TR için doğrulanamadı
+- fiat-grande-panda-electric-la-prima-113hp-2026 | ncap_yildiz | Euro NCAP'te Grande Panda (elektrikli) için sonuç bulunamadı
+- fiat-grande-panda-electric-la-prima-113hp-2026 | ncap_test_yili | Euro NCAP'te Grande Panda (elektrikli) için sonuç bulunamadı
+- fiat-topolino-5-4kwh-2026 | kasa | Fiat TR kasa tipi belirtmiyor (yalnız "kompakt, %100 elektrikli"); emin olunamadı
+- fiat-topolino-5-4kwh-2026 | sifirYuz_sn | azami hız 45 km/s, 0-100 yok (Fiat föyü yalnız 0-45 km/s: 10 sn)
+- fiat-topolino-5-4kwh-2026 | bagaj_l | bagaj hacmi verilmiyor; Fiat UK basın bülteni yalnız "toplam 63 l iç depolama" diyor (bagaj değil)
+- fiat-topolino-5-4kwh-2026 | airbag_sayisi | Fiat TR sayfası ve teknik föyde hava yastığı bilgisi yok
+- fiat-topolino-5-4kwh-2026 | ncap_yildiz | quadricycle; Euro NCAP otomobil derecelendirmesi yok
+- fiat-topolino-5-4kwh-2026 | ncap_test_yili | quadricycle; Euro NCAP otomobil derecelendirmesi yok
+- fiat-topolino-5-4kwh-2026 | dc_hizli_sarj_dk_20_80 | DC hızlı şarj desteklemiyor (Fiat föyü yalnız 2,3 kW AC ev prizi, %0-100 4 saat)
+- fiat-topolino-plus-5-4kwh-2026 | kasa | Fiat TR kasa tipi belirtmiyor; emin olunamadı
+- fiat-topolino-plus-5-4kwh-2026 | sifirYuz_sn | azami hız 45 km/s, 0-100 yok (0-45 km/s: 10 sn)
+- fiat-topolino-plus-5-4kwh-2026 | bagaj_l | bagaj hacmi verilmiyor; yalnız "toplam 63 l iç depolama" (Fiat UK basın)
+- fiat-topolino-plus-5-4kwh-2026 | airbag_sayisi | Fiat TR sayfası ve teknik föyde hava yastığı bilgisi yok
+- fiat-topolino-plus-5-4kwh-2026 | ncap_yildiz | quadricycle; Euro NCAP otomobil derecelendirmesi yok
+- fiat-topolino-plus-5-4kwh-2026 | ncap_test_yili | quadricycle; Euro NCAP otomobil derecelendirmesi yok
+- fiat-topolino-plus-5-4kwh-2026 | dc_hizli_sarj_dk_20_80 | DC hızlı şarj desteklemiyor (yalnız 2,3 kW AC, %0-100 4 saat)
+- fiat-500e-giorgio-armani-42kwh-2026 | airbag_sayisi | Euro NCAP konum bazında listeliyor (ön, yan göğüs, perde) ama sayı vermiyor; Fiat TR'de hava yastığı sayısı yok
+- fiat-500e-la-prima-cabrio-42kwh-2026 | agirlik_kg | kaynaklar çelişkili (auto-data 1405 kg, ultimatespecs 1480 kg, ultimatespecs gamı 1356-1480)
+- fiat-500e-la-prima-cabrio-42kwh-2026 | airbag_sayisi | Euro NCAP konum bazında listeliyor, sayı vermiyor; Fiat TR'de sayı yok
+- fiat-600-la-prima-54kwh-2026 | ncap_yildiz | Euro NCAP'te Fiat 600/600e güvenlik sonucu bulunamadı (yalnız Green NCAP var)
+- fiat-600-la-prima-54kwh-2026 | ncap_test_yili | Euro NCAP'te Fiat 600/600e güvenlik sonucu bulunamadı
+- fiat-grande-panda-1-2-mhev-icon-110hp-2026 | airbag_sayisi | Hava yastığı sayısı yalnızca Fiat İtalya Pop donanımı için verilmiş; Icon donanımı için kaynak yok
+- fiat-grande-panda-1-2-mhev-la-prima-110hp-2026 | airbag_sayisi | Hava yastığı sayısı yalnızca Fiat İtalya Pop donanımı için verilmiş; La Prima donanımı için kaynak yok
