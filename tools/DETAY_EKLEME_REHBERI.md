@@ -140,6 +140,14 @@ Amaç: Türkiye'de 2010–2025 arasında satılmış, bugün satışta olmayan m
 - **`durum`:** Kısa ve okura dönük: "Türkiye'de satıştan kalktı; yerini Clio V aldı (2019)."
 - **id biçimi:** `marka-model-yil-motor` (ör. `renault-clio-2017-1.5-dci-90`), küçük harf; mevcut id'lerle çakışmamalı.
 
+## Kota tasarrufu (eski modeller)
+
+- **Detay kaydı sade:** Eski modellerde yalnızca Euro NCAP (aynı nesil, test yılıyla) ve geri çağırmalar araştırılır. Basın artı-eksileri (`gucluYanlar`, `dikkatEdilecekler`), ödüller ve küçük detaylar araştırılmaz, boş bırakılır.
+- **Nesil başına bir kez:** NCAP ve geri çağırma araştırması nesil başına bir kez yapılır ve `"ids": [...]` ile o neslin bütün yıllarına yazılır.
+- **Nesil başına tek teknik kaynak:** Bir neslin bütün motorlarını tek sayfada veren kaynak tercih edilir (ör. auto-data.net nesil sayfası, markanın o neslin teknik broşürü). Türkiye'de hangi yıllar ve motorlarla satıldığı nesil başına bir kez, mümkünse tek kaynakla (marka Türkiye arşivi/fiyat listesi, basın bülteni) gösterilir; yıl yıl ayrı sayfa açılmaz.
+- **Önce çok satanlar:** Marka içinde Türkiye'de çok satmış modellerden başlanır (ör. Renault: Clio, Megane, Fluence, Symbol, Captur, Kadjar, Talisman; Fiat: Linea, Egea, Doblo, Punto, Fiorino Combi). Düşük hacimli modeller, özel ve sınırlı seriler markanın sonuna bırakılır.
+- Aynı sayfayı ikinci kez açma; okuduğun sayfadan gereken tüm alanları tek seferde çıkar.
+
 ## Kaynaklar
 
 1. Markanın Türkiye sitesinin arşivlenmiş fiyat/teknik listesi (web.archive.org), e-broşür PDF'leri, basın bültenleri.
