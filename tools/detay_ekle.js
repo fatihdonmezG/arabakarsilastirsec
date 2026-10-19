@@ -41,7 +41,8 @@ function obj(name) { const b = block(name); return new Function('return ' + h.sl
 function append(name, text) { const b = block(name); let p = b.end - 1; while (/\s/.test(h[p])) p--; const comma = h[p] === ',' ? '' : ','; h = h.slice(0, p + 1) + comma + '\n' + text + '\n' + h.slice(b.end); }
 
 const CARS = obj('CARS');
-const input = process.argv[2] ? JSON.parse(fs.readFileSync(process.argv[2], 'utf8')) : [];
+// "ids": [...] verilirse aynı detay bilgisi (NCAP, geri çağırma, artı-eksi) bu id'lerin hepsine yazılır.
+const input = (process.argv[2] ? JSON.parse(fs.readFileSync(process.argv[2], 'utf8')) : []).flatMap(e => Array.isArray(e.ids) ? e.ids.map(id => { const { ids, ...r } = e; return { ...r, id }; }) : [e]);
 const errors = [];
 const urlOk = u => typeof u === 'string' && /^https?:\/\//.test(u);
 for (const e of input) {

@@ -24,7 +24,7 @@ C.filter(c=>!ex.has(c.id)).forEach(c=>console.log(c.marka,'|',c.id,'|',c.model,c
 4. **Euro NCAP:** Sonucu yalnızca test edilen model/nesil bu versiyonla aynıysa kullan; `ncap_test_yili` ve `ncapKaynak` (euroncap.com sayfası) zorunlu. Farklı gövde/nesil/elektrikli-benzinli ayrımı varsa yıldızı yazma, `ncapNot`'ta açıkla. 6 yıldan eski testlerde "Test X yıldan eski" diye not düş.
 5. **Artı-eksi (`gucluYanlar`, `dikkatEdilecekler`):** Tanınmış basın incelemeleri (What Car, Auto Express, Top Gear, Car and Driver, ADAC, Autocar, Türk otomotiv dergileri) ya da güvenilirlik anketleri (What Car? Reliability Survey, Which?). Kendi cümlelerinle, en fazla 3'er madde. İnceleme farklı motor/donanım için yapıldıysa bunu metinde belirt.
 6. **Ödül:** Tam teyit edemediğin ödülü ekleme.
-7. **Fiyat yazma.** Fiyat zaten karşılaştırma verisinde (yalnızca satıştaki sıfır araçlar için); detay kaydına fiyat bilgisi koyma.
+7. **Fiyat yazma.** Fiyat yalnızca 2026 model yılı, satıştaki sıfır araçlarda ve yalnızca resmi fiyat listesinden karşılaştırma verisine girilir; 2026 dışındaki araçlar için fiyat araştırılmaz. Detay kaydına fiyat bilgisi koyma.
 
 ## Kayıt nasıl eklenir?
 
@@ -132,8 +132,9 @@ Amaç: Türkiye'de 2010–2025 arasında satılmış, bugün satışta olmayan m
 
 - **Marka sırası** (Türkiye satış hacmine göre): Renault, Fiat, Volkswagen, Hyundai, Toyota, Ford, Peugeot, Mercedes-Benz, Skoda, Opel, Citroën, Dacia, BMW, Kia, Nissan, Honda, Audi, Seat, Volvo, Mazda, Suzuki, Chevrolet, Mitsubishi, Jeep, Alfa Romeo, Land Rover, Mini, Subaru, Lexus, Porsche, Infiniti, DS, Cupra, Lancia, Saab ve diğerleri. Togg'un eski modeli yoktur.
 - **Kapsam:** Markanın Türkiye'de 2010–2025 arasında satılan binek modellerinin (otomobil, SUV, MPV, pick-up; hafif ticari panelvanlar hariç) her **nesli**. Nesil Türkiye'de satıldığına dair kaynak olmalı (marka Türkiye sitesi/arşivi, basın bülteni, ODMD satış verisi, Türk otomotiv basını).
-- **Versiyon seçimi:** Her nesil için Türkiye'de en yaygın satılan 1–3 motor/şanzıman seçeneği. Donanım paketlerini tek tek değil, temsil eden birini girin. Makyajla teknik değerler belirgin değiştiyse makyajlı hal ayrı `yil` ile eklenebilir.
-- **`yil`:** Teknik verinin ait olduğu model yılı (2010–2025). Aynı nesilde genelde son tam satış yılı ya da makyaj yılı seçilir.
+- **Kapsam her model yılıdır:** Bir model 2010–2025 arasında Türkiye'de hangi yıllarda satıldıysa, **her model yılı** ayrı versiyon olarak girilir (ör. Clio IV için 2013, 2014, …, 2019). Her yıl için o yıl Türkiye'de sunulan motor/şanzıman seçenekleri girilir; donanım paketleri tek tek değil, her motor/şanzıman için temsil eden bir paket.
+- **Yıllar arası tekrar:** Teknik değerleri birkaç yıl aynı kalan versiyon için `yillar: [2013, 2014, 2015]` kullanılır (bkz. `tools/arac_ekle.js`); motor gamı, güç, tüketim ya da makyaj değiştiği yıldan itibaren yeni kayıt açılır. Bir motorun o yıl Türkiye'de satıldığı kaynakla gösterilemiyorsa o yıl eklenmez.
+- **`yil`:** Versiyonun model yılı (2010–2025).
 - **`model` adı:** Aynı isim tabelası devam ediyorsa mevcut adla aynı yazılır (ör. "Clio", "Corolla", "Egea Sedan"); nesil `nesil` alanında belirtilir ("Clio IV", "Corolla E170"). Böylece detay sayfasında yıllar aynı modelin altında listelenir.
 - **`donem`:** Neslin Türkiye'de satıldığı yıllar ("2012–2019"). Bilinmiyorsa yazılmaz.
 - **`durum`:** Kısa ve okura dönük: "Türkiye'de satıştan kalktı; yerini Clio V aldı (2019)."
@@ -146,10 +147,10 @@ Amaç: Türkiye'de 2010–2025 arasında satılmış, bugün satışta olmayan m
 3. sahibinden.com yalnızca son çare, yalnızca teknik özellik için, elle okunarak; `kaynakTuru:"sahibinden"`. Fiyat, km, ilan bilgisi asla alınmaz.
 4. Rakip karşılaştırma siteleri (sifiraracal, arabalar.com.tr, epey, araclo, ekiyasla, otobul, arabakarsilastirma.com.tr, mukayese) ve diğer ilan siteleri (arabam.com vb.) kaynak olamaz.
 
-Satıştan kalkmış araçlara **fiyat yazılmaz**. Kaynak, aynı nesil ve motor için olmalı (başka pazarın farklı motorlu versiyonu kullanılmaz). Emin olunmayan alan boş bırakılır.
+**Fiyat yalnızca 2026 model yılı, Türkiye'de satıştaki sıfır araçlar için yazılır.** 2026 dışındaki hiçbir araç için fiyat araştırılmaz ve yazılmaz (ikinci el fiyatı dahil). Kaynak, aynı nesil ve motor için olmalı (başka pazarın farklı motorlu versiyonu kullanılmaz). Emin olunmayan alan boş bırakılır.
 
 ## Uygulama
 
 1. Versiyonları JSON dizi olarak yaz (biçim `tools/arac_ekle.js` başında) ve `node tools/arac_ekle.js yeni.json` çalıştır. Script hata verirse hiçbir şey yazmaz; düzelt, zorlamayla yazma.
-2. Aynı id'ler için detay kaydı hazırla (Euro NCAP aynı nesil için, o model yıllarını kapsayan geri çağırmalar, basın artı-eksileri; bulunamayan bölüm `null`/boş bırakılır) ve `node tools/detay_ekle.js detay.json` çalıştır. Her yeni versiyonun detay kaydı olmalı.
+2. Aynı id'ler için detay kaydı hazırla; aynı nesildeki yıllar aynı NCAP ve geri çağırma araştırmasını paylaşabilir, bunun için `"ids": [...]` kullan (bkz. `tools/detay_ekle.js`). (Euro NCAP aynı nesil için, o model yıllarını kapsayan geri çağırmalar, basın artı-eksileri; bulunamayan bölüm `null`/boş bırakılır) ve `node tools/detay_ekle.js detay.json` çalıştır. Her yeni versiyonun detay kaydı olmalı.
 3. Doğrulama: iki HTML'in sözdizimi; Playwright ile birkaç yeni versiyonu `arac-detay.html#<id>` ve `karsilastirma.html#k=<eski id>,<aynı modelin güncel id'si>` ile aç; sayfa hatası olmamalı, "Satıştan kalktı" etiketi ve dönem görünmeli, fiyat satırı "Satışta değil" olmalı.

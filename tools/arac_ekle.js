@@ -15,6 +15,9 @@
  *   "s": { teknik alanlar; alan adları tools/teknik_yama.js'teki ALANLAR listesiyle aynı },
  *   "ekKaynak": { "alan": {"ad":"...","url":"https://...","tarih":"YYYY-MM-DD"} }   // isteğe bağlı, alan bazında ek kaynak
  * }
+ * Aynı teknik değerlerle birden çok model yılında satılan versiyon için "yil" yerine "yillar": [2013,2014,2015,2016] yazılabilir;
+ * her yıl için ayrı kayıt oluşur (id: "renault-clio-{yil}-1.5-dci-90" → renault-clio-2013-1.5-dci-90 ...). Yalnızca kaynak o motorun
+ * o yıllarda Türkiye'de satıldığını gösteriyorsa kullanın.
  * Kurallar: fiyat alanı (liste_fiyati_tl, mtv_yillik_tl) yazılamaz; rakip karşılaştırma ve ilan siteleri kaynak olamaz
  * (sahibinden yalnızca kaynakTuru "sahibinden" ile ve yalnızca teknik veri için); kasa, yakit, guc_hp zorunlu.
  * Hata varsa hiçbir şey yazılmaz. Başarılı olursa sayıları ve sistem puanlarını günceller.
@@ -33,8 +36,14 @@ const ALANLAR = new Function('return ' + ty.match(/const ALANLAR = (new Set\(\[[
 const FIYAT = new Set(['liste_fiyati_tl', 'mtv_yillik_tl']);
 const YASAK = /(sifiraracal|arabalar\.com\.tr|epey\.com|araclo|ekiyasla|otobul|arabakarsilastirma\.com\.tr|mukayese\.com|arabam\.com|letgo|otoplus|vavacars)/i;
 
-const input = process.argv[2] ? JSON.parse(fs.readFileSync(process.argv[2], 'utf8')) : null;
-if (!input || !Array.isArray(input)) { console.error('Kullanım: node tools/arac_ekle.js yeni_araclar.json'); process.exit(1); }
+const raw = process.argv[2] ? JSON.parse(fs.readFileSync(process.argv[2], 'utf8')) : null;
+if (!raw || !Array.isArray(raw)) { console.error('Kullanım: node tools/arac_ekle.js yeni_araclar.json'); process.exit(1); }
+// "yillar": [2016, 2017, 2018] verilirse kayıt her model yılı için ayrı versiyon olarak çoğaltılır.
+// id içinde {yil} varsa yıl oraya yazılır, yoksa id'nin sonuna "-<yıl>" eklenir.
+const input = raw.flatMap(a => Array.isArray(a.yillar) ? a.yillar.map(y => {
+  const { yillar, ...rest } = a;
+  return { ...rest, yil: y, id: a.id.includes('{yil}') ? a.id.replace('{yil}', y) : `${a.id}-${y}` };
+}) : [a]);
 
 const err = [], seen = new Set();
 const url = u => /^https:\/\/[^\s]+$/.test(u || '');
