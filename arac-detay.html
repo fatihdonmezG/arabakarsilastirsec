@@ -10013,7 +10013,7 @@ $('#pickVer').addEventListener('change',e=>goCar(e.target.value));
 function renderHero(){
   const c=car();
   $('#title').textContent=c.marka+' '+c.model;
-  $('#subtitle').textContent=c.yil+' model, '+c.versiyon;
+  $('#subtitle').textContent=c.yil+' model, '+c.versiyon+(c.nesil?' · '+c.nesil:'')+(c.donem?' · Türkiye\'de '+c.donem+' arası satıldı':'');
   const dn=$('#durumNote');
   if(c.durum){ dn.hidden=false; dn.innerHTML=(satista(c)?'<b>Satış durumu:</b> ':'<b>Bu versiyon artık Türkiye\'de satılmıyor.</b> ')+esc(c.durum); } else { dn.hidden=true; dn.innerHTML=''; }
   $('#heroSrc').innerHTML = c.kaynakUrl ? `Kaynak: <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener" style="color:inherit">${esc(c.kaynakAd)}</a> ↗` : '';

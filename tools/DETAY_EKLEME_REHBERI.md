@@ -121,3 +121,35 @@ Bulut ortamının kabuğu Wikimedia'ya erişemez; API, kullanıcının bilgisaya
 1. JSON dizi hazırla (biçim `tools/foto_ekle.js` başında). `src` = API'deki `thumburl` (1280px, `upload.wikimedia.org/wikipedia/commons/thumb/...`), `sayfa` = `descriptionurl`, `baslik` = Commons dosya adı.
 2. `node tools/foto_ekle.js fotolar.json`. Marka/model karşılaştırmada yoksa, lisans izinli değilse, adresler Commons değilse hiçbir şey yazmaz. Sonda kaç modelin fotoğrafı olduğunu yazar.
 3. araclar.html, arac-detay.html ve karsilastirma.html'de birkaç modeli aç; fotoğraf ve kredi satırı görünmeli.
+
+---
+
+# Eski modelleri (2010–2025) ekleme
+
+Amaç: Türkiye'de 2010–2025 arasında satılmış, bugün satışta olmayan model ve nesilleri veritabanına eklemek. İlerleme `tools/eski_model_ilerleme.md` dosyasında tutulur.
+
+## Hangi modeller, hangi versiyonlar?
+
+- **Marka sırası** (Türkiye satış hacmine göre): Renault, Fiat, Volkswagen, Hyundai, Toyota, Ford, Peugeot, Mercedes-Benz, Skoda, Opel, Citroën, Dacia, BMW, Kia, Nissan, Honda, Audi, Seat, Volvo, Mazda, Suzuki, Chevrolet, Mitsubishi, Jeep, Alfa Romeo, Land Rover, Mini, Subaru, Lexus, Porsche, Infiniti, DS, Cupra, Lancia, Saab ve diğerleri. Togg'un eski modeli yoktur.
+- **Kapsam:** Markanın Türkiye'de 2010–2025 arasında satılan binek modellerinin (otomobil, SUV, MPV, pick-up; hafif ticari panelvanlar hariç) her **nesli**. Nesil Türkiye'de satıldığına dair kaynak olmalı (marka Türkiye sitesi/arşivi, basın bülteni, ODMD satış verisi, Türk otomotiv basını).
+- **Versiyon seçimi:** Her nesil için Türkiye'de en yaygın satılan 1–3 motor/şanzıman seçeneği. Donanım paketlerini tek tek değil, temsil eden birini girin. Makyajla teknik değerler belirgin değiştiyse makyajlı hal ayrı `yil` ile eklenebilir.
+- **`yil`:** Teknik verinin ait olduğu model yılı (2010–2025). Aynı nesilde genelde son tam satış yılı ya da makyaj yılı seçilir.
+- **`model` adı:** Aynı isim tabelası devam ediyorsa mevcut adla aynı yazılır (ör. "Clio", "Corolla", "Egea Sedan"); nesil `nesil` alanında belirtilir ("Clio IV", "Corolla E170"). Böylece detay sayfasında yıllar aynı modelin altında listelenir.
+- **`donem`:** Neslin Türkiye'de satıldığı yıllar ("2012–2019"). Bilinmiyorsa yazılmaz.
+- **`durum`:** Kısa ve okura dönük: "Türkiye'de satıştan kalktı; yerini Clio V aldı (2019)."
+- **id biçimi:** `marka-model-yil-motor` (ör. `renault-clio-2017-1.5-dci-90`), küçük harf; mevcut id'lerle çakışmamalı.
+
+## Kaynaklar
+
+1. Markanın Türkiye sitesinin arşivlenmiş fiyat/teknik listesi (web.archive.org), e-broşür PDF'leri, basın bültenleri.
+2. Teknik veritabanları: auto-data.net, ultimatespecs.com, encycarpedia; Euro NCAP.
+3. sahibinden.com yalnızca son çare, yalnızca teknik özellik için, elle okunarak; `kaynakTuru:"sahibinden"`. Fiyat, km, ilan bilgisi asla alınmaz.
+4. Rakip karşılaştırma siteleri (sifiraracal, arabalar.com.tr, epey, araclo, ekiyasla, otobul, arabakarsilastirma.com.tr, mukayese) ve diğer ilan siteleri (arabam.com vb.) kaynak olamaz.
+
+Satıştan kalkmış araçlara **fiyat yazılmaz**. Kaynak, aynı nesil ve motor için olmalı (başka pazarın farklı motorlu versiyonu kullanılmaz). Emin olunmayan alan boş bırakılır.
+
+## Uygulama
+
+1. Versiyonları JSON dizi olarak yaz (biçim `tools/arac_ekle.js` başında) ve `node tools/arac_ekle.js yeni.json` çalıştır. Script hata verirse hiçbir şey yazmaz; düzelt, zorlamayla yazma.
+2. Aynı id'ler için detay kaydı hazırla (Euro NCAP aynı nesil için, o model yıllarını kapsayan geri çağırmalar, basın artı-eksileri; bulunamayan bölüm `null`/boş bırakılır) ve `node tools/detay_ekle.js detay.json` çalıştır. Her yeni versiyonun detay kaydı olmalı.
+3. Doğrulama: iki HTML'in sözdizimi; Playwright ile birkaç yeni versiyonu `arac-detay.html#<id>` ve `karsilastirma.html#k=<eski id>,<aynı modelin güncel id'si>` ile aç; sayfa hatası olmamalı, "Satıştan kalktı" etiketi ve dönem görünmeli, fiyat satırı "Satışta değil" olmalı.

@@ -213,7 +213,7 @@ function card(c){
   if(c.s.bagaj_l!=null) nums.push(`<span><b>${nf(c.s.bagaj_l)}</b> L bagaj</span>`);
   const ph=window.fotoFor?window.fotoFor(c):null;
   return `<article class="vcard${on?' sel':''}">${ph?`<div class="vphoto"><img src="${esc(ph.src)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy" decoding="async"></div><div class="vcredit">${window.fotoKredi(ph)}</div>`:''}
-    <div class="vtop"><div><div class="vname">${esc(c.marka+' '+c.model)}</div><div class="vver">${c.yil} · ${esc(c.versiyon)}</div></div>${c._p!=null?`<a class="score" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)">${nf(c._p,1)}</a>`:''}</div>
+    <div class="vtop"><div><div class="vname">${esc(c.marka+' '+c.model)}</div><div class="vver">${c.yil} · ${esc(c.versiyon)}${c.donem?` · <span title="Türkiye\'de satıldığı yıllar">${esc(c.donem)}</span>`:''}</div></div>${c._p!=null?`<a class="score" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)">${nf(c._p,1)}</a>`:''}</div>
     <div class="badges">${c.s.yakit?`<span class="bdg">${esc(c.s.yakit)}</span>`:''}${c.s.kasa?`<span class="bdg">${esc(c.s.kasa)}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}</div>
     <div class="vnums">${nums.join('')||'<span>Temel değerler henüz eklenmedi</span>'}</div>
     <div class="vact">
