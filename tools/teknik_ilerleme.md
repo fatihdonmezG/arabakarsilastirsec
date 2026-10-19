@@ -15,6 +15,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Renault | tamamlandı | 2026-10-16 |
 | Maserati | tamamlandı | 2026-10-17 |
 | Fiat | tamamlandı | 2026-10-17 |
+| Opel | tamamlandı | 2026-10-19 |
+| BMW | tamamlandı | 2026-10-19 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -539,3 +541,148 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - fiat-600-la-prima-54kwh-2026 | ncap_test_yili | Euro NCAP'te Fiat 600/600e güvenlik sonucu bulunamadı
 - fiat-grande-panda-1-2-mhev-icon-110hp-2026 | airbag_sayisi | Hava yastığı sayısı yalnızca Fiat İtalya Pop donanımı için verilmiş; Icon donanımı için kaynak yok
 - fiat-grande-panda-1-2-mhev-la-prima-110hp-2026 | airbag_sayisi | Hava yastığı sayısı yalnızca Fiat İtalya Pop donanımı için verilmiş; La Prima donanımı için kaynak yok
+
+## 2026-10-19 — Opel, BMW
+
+- Doldurulan alan: 84 (Opel 59, BMW 25), 31 versiyon.
+- Araştırılıp bulunamayan: 122 alan (Opel 44, BMW 78; aşağıda).
+- Kaynaklar: Euro NCAP veri sayfaları ve sonuç sayfaları (Corsa 2019, Astra 2022, Mokka 2021, Rifter/Combo 2018, BMW 2 Serisi Gran Coupé, 2 Serisi Active Tourer, 5 Serisi, 4 Serisi Coupé, X5, X2, iX), ADAC Autokatalog, auto-data.net, ev-database.org, autotijd.be (Combo), BMW TR X2/iX2 broşürleri ve X3 teknik veri sayfası, BMW UK X6 teknik veriler, BMW PressClub 740d teknik verileri. opel.com.tr bu çalışmada açılamadı; Opel teknik değerlerinin tamamı ikincil kaynaklı.
+- Segment Euro NCAP "Class" alanından: Corsa/Corsa-e Supermini, Astra ve BMW 1/2 Serisi Small Family Car, Mokka Small Off-Road, Combo Small MPV (Rifter ikizi), 5 Serisi/i5 Executive Car, 4 Serisi Coupé Large Family Car, X5 ve iX Large SUV, X2 Small SUV. Grandland için resmi sınıf okunamadı (yalnız haber etiketi), yazılmadı.
+- Opel ağırlıkları sürücüsüz (DIN/auto-data); Grandland Electric AWD GS'de Edition kaydıyla tutarlılık için ADAC EU (sürücülü) 2325 kg kullanıldı.
+- Kayıtta fark edilen, bu araçla düzeltilemeyen eski/şüpheli değerler (elle kontrol önerilir):
+  - Opel Grandland Electric genişlik 1934 aynalar katlı değer; aynasız 1905 (hibritlere 1905 yazıldı).
+  - Opel Astra 1.5 D AT8: 4,5 l / 117 g/km / 1441 mm makyaj öncesi Euro 6d değerleri; 2026 makyajlı: 4,8-5,0 l, 127-132 g/km, 1460-1470 mm.
+  - Opel Corsa-e: 0-100 8,2 sn ve 1530 kg kaynaklarla uyuşmuyor (8,7 sn, 1455 kg). Corsa 1.2 hava yastığı 4 şüpheli.
+  - Opel Mokka Hybrid 1415 kg şüpheli (auto-data 1287). Combo yükseklik 1841 kaynaklarla uyuşmuyor (1775-1812).
+  - Opel Mokka 1.2 MT, Frontera Hybrid, Grandland Hybrid tüketim/hız değerleri eski görünüyor (ör. Frontera Hybrid ADAC 09/25+ 5,3 l / 119 g/km).
+  - BMW X3 "20 xDrive M Sport": TR'de satılan benzinli X3 "X3 20" (190 bg, arkadan itiş); kayıttaki performans değerleri bununla aynı. Ad ve 4x4 çekiş muhtemelen yanlış; ağırlık ve bagaj X3 20 satırından girildi.
+  - BMW X1 xDrive25e (1,0) ve 230e Active Tourer (0,9) tüketimi eski görünüyor; 2026 TR fiyat listesi Euro 6e-bis için 2,8 / 2,9 l/100km veriyor.
+  - BMW EV'lerde DC şarj süreleri (iX3 21, iX1/iX2 29, muhtemelen i4/i5/i7/iX) BMW TR'de 10-80% süresi; alan 20-80%.
+  - BMW iX3 50 xDrive güç 218 HP şüpheli (TR sayfası hatalı görünüyor).
+  - BMW 3 Serisi Euro NCAP 2019 sonucu 2026-01-01 itibarıyla süresi dolmuş; kayıtta hâlâ 5★/2019. X2 Euro NCAP test yılı 2022 (kayıtta 2024).
+  - BMW X5: 06/2026'da yeni nesil (G65) tanıtıldı; kayıt eski nesil (G05).
+
+### Araştırıldı, bulunamadı (id | alan | neden)
+
+- opel-corsa-hybrid-110-100hp-edcm6-2026 | airbag_sayisi | Kaynaklar sayı vermiyor (ADAC yalnızca tür listesi; perde hava yastığı sayımı belirsiz); opel.com.tr açılamadı
+- opel-corsa-hybrid-110-100hp-edcm6-2026 | co2_gkm | Kaynaklar çelişkili (ADAC 102, auto-data 103-104 aralık, cars-data 101); kayıttaki 4,6 l ile eşleşen tek değer yok
+- opel-corsa-hybrid-145-136hp-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-corsa-e-100kw-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-corsa-e-100kw-gs-2026 | elektrik_tuketim_kwh100km | auto-data 15,8-16,1 aralık; ADAC 15,7 yalnızca YES donanımı için; GS ucu belirsiz
+- opel-astra-1.5-130hp-diesel-at8-edition-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-astra-1.5-130hp-diesel-at8-edition-2026 | emisyon_normu | Facelift öncesi Euro 6d/6e, 2026 facelift Euro 6e-bis; TR'deki 2026 versiyonun hangisi olduğu belirsiz (kayıt verisi facelift öncesi Euro 6d değerleriyle eşleşiyor)
+- opel-astra-1.5-130hp-diesel-at8-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-astra-1.5-130hp-diesel-at8-gs-2026 | emisyon_normu | Edition ile aynı neden (versiyon belirsiz)
+- opel-mokka-1.2-136hp-mt6-edition-2026 | co2_gkm | auto-data/ADAC 129 g/km ama 5,7 l/100 km diyor; kayıttaki 5,6 l ile tutarsız, TR kaynağı açılamadı
+- opel-mokka-1.2-136hp-mt6-edition-2026 | emisyon_normu | auto-data (10/24 üretim) Euro 6e, ADAC (08/26+) Euro 6e-bis; TR versiyonu belirsiz
+- opel-mokka-hybrid-145-136hp-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-mokka-gse-electric-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-mokka-gse-electric-2026 | dc_hizli_sarj_dk_20_80 | ADAC yalnızca "%80'e 27 dk" diyor, başlangıç yüzdesi yok; auto-data şarj süresi üyelik arkasında
+- opel-grandland-electric-157kw-edition-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-grandland-electric-157kw-edition-2026 | dc_hizli_sarj_dk_20_80 | ADAC yalnızca "%80'e 30 dk" diyor, 20-80 aralığı belirtilmemiş
+- opel-grandland-electric-239kw-awd-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-frontera-hybrid-145-136hp-edition-2026 | segment | Euro NCAP sonucu bulunamadı; üreticinin sınıf ifadesi bulunamadı
+- opel-frontera-hybrid-145-136hp-edition-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-frontera-hybrid-145-136hp-edition-2026 | ncap_yildiz | euroncap.com'da Frontera (2024) sonucu bulunamadı (yalnızca 2002 eski Frontera)
+- opel-frontera-hybrid-145-136hp-edition-2026 | ncap_test_yili | Aynı neden
+- opel-frontera-hybrid-145-136hp-gs-2026 | segment | Euro NCAP sonucu / üretici sınıfı bulunamadı
+- opel-frontera-hybrid-145-136hp-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-frontera-hybrid-145-136hp-gs-2026 | ncap_yildiz | euroncap.com'da güncel Frontera sonucu bulunamadı
+- opel-frontera-hybrid-145-136hp-gs-2026 | ncap_test_yili | Aynı neden
+- opel-frontera-electric-44-gs-2026 | segment | Euro NCAP sonucu / üretici sınıfı bulunamadı
+- opel-frontera-electric-44-gs-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-frontera-electric-44-gs-2026 | ncap_yildiz | euroncap.com'da güncel Frontera sonucu bulunamadı
+- opel-frontera-electric-44-gs-2026 | ncap_test_yili | Aynı neden
+- opel-frontera-electric-44-gs-2026 | elektrik_tuketim_kwh100km | EV Database 18,1-18,5 (TEL/TEH) aralık, ADAC GS 18,3 ama 307 km diyor (kayıt 305 km); versiyon ucu belirsiz
+- opel-frontera-electric-54-gs-longrange-2026 | segment | Euro NCAP sonucu / üretici sınıfı bulunamadı
+- opel-frontera-electric-54-gs-longrange-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-frontera-electric-54-gs-longrange-2026 | ncap_yildiz | euroncap.com'da güncel Frontera sonucu bulunamadı
+- opel-frontera-electric-54-gs-longrange-2026 | ncap_test_yili | Aynı neden
+- opel-frontera-electric-54-gs-longrange-2026 | elektrik_tuketim_kwh100km | EV Database 15,7-16,5 (TEL/TEH) aralık, ADAC GS 16,3 / 400 km (kayıt 408 km); versiyon ucu belirsiz
+- opel-combo-1.5-130hp-diesel-at8-edition-2026 | bagaj_l | Kaynaklar çelişkili (autotijd 597 L, auto-data 775 L, ölçüm yöntemi belirtilmemiş)
+- opel-combo-1.5-130hp-diesel-at8-edition-2026 | airbag_sayisi | Kaynak açık sayı vermiyor
+- opel-combo-1.5-130hp-diesel-at8-edition-2026 | ncap_yildiz | Euro NCAP Rifter/Combo 2018 notunun süresi dolmuş ("Rating Expired"); güncel test yok
+- opel-combo-1.5-130hp-diesel-at8-edition-2026 | ncap_test_yili | Aynı neden (2018 testi 6 yıldan eski, süresi dolmuş)
+- opel-combo-1.5-130hp-diesel-at8-edition-2026 | emisyon_normu | autotijd (AT8) Euro 6e, auto-data (manuel) Euro 6e-bis; çelişkili
+- opel-grandland-hybrid-136hp-edition-2026 | segment | Euro NCAP 2025 Grandland veri sayfasında sınıf alanı okunamadı; yalnız haber etiketi var
+- opel-grandland-hybrid-136hp-gs-2026 | segment | Euro NCAP 2025 Grandland veri sayfasında sınıf alanı okunamadı; yalnız haber etiketi var
+- opel-grandland-electric-157kw-edition-2026 | segment | Euro NCAP 2025 Grandland veri sayfasında sınıf alanı okunamadı; yalnız haber etiketi var
+- opel-grandland-electric-239kw-awd-gs-2026 | segment | Euro NCAP 2025 Grandland veri sayfasında sınıf alanı okunamadı; yalnız haber etiketi var
+- bmw-1-serisi-2026-120-sport-line | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-1-serisi-2026-120-sport-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-1-serisi-2026-120-sport-line | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-2-serisi-gran-coupe-2026-220-sport-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-2-serisi-gran-coupe-2026-220-sport-line | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-2-serisi-active-tourer-2026-220i-luxury-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-2-serisi-active-tourer-2026-220i-luxury-line | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-2-serisi-active-tourer-2026-230e-xdrive-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-2-serisi-active-tourer-2026-230e-xdrive-m-sport | emisyon_normu | TR fiyat listesi Euro 6e-bis ve Euro 6-EA iki varyant gösteriyor; kayıttaki tüketim (0,9) 6e-bis değeriyle (2,9) uyuşmuyor, hangisi belirsiz
+- bmw-3-serisi-sedan-2026-320i-sport-line | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-3-serisi-sedan-2026-320i-sport-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-3-serisi-sedan-2026-320i-sport-line | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-4-serisi-coupe-2026-420i-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-4-serisi-coupe-2026-420i-m-sport | ncap_yildiz | Euro NCAP 2019 sonucu (3 Serisi'nden türetilmiş, 5 yıldız) 2026-01-01 itibarıyla 'Expired' işaretli; yazılmadı
+- bmw-4-serisi-coupe-2026-420i-m-sport | ncap_test_yili | Euro NCAP 2019 sonucu (3 Serisi'nden türetilmiş, 5 yıldız) 2026-01-01 itibarıyla 'Expired' işaretli; yazılmadı
+- bmw-4-serisi-coupe-2026-420i-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-5-serisi-sedan-2026-520i-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-5-serisi-sedan-2026-520i-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-5-serisi-sedan-2026-520d-xdrive-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-5-serisi-sedan-2026-520d-xdrive-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-7-serisi-2026-740d-xdrive-pure-excellence | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-7-serisi-2026-740d-xdrive-pure-excellence | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-7-serisi-2026-740d-xdrive-pure-excellence | ncap_yildiz | Euro NCAP'ta bu model/nesil için test yok
+- bmw-7-serisi-2026-740d-xdrive-pure-excellence | ncap_test_yili | Euro NCAP'ta bu model/nesil için test yok
+- bmw-7-serisi-2026-740d-xdrive-pure-excellence | co2_gkm | bmw.com.tr 740d sayfasında CO2 yok; PressClub 2022 değeri (178-160) TR tüketimiyle (6,9-6,8) uyuşmuyor
+- bmw-7-serisi-2026-740d-xdrive-pure-excellence | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-7-serisi-2026-740-xdrive-m-excellence | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-7-serisi-2026-740-xdrive-m-excellence | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-7-serisi-2026-740-xdrive-m-excellence | ncap_yildiz | Euro NCAP'ta bu model/nesil için test yok
+- bmw-7-serisi-2026-740-xdrive-m-excellence | ncap_test_yili | Euro NCAP'ta bu model/nesil için test yok
+- bmw-7-serisi-2026-740-xdrive-m-excellence | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-x1-2026-sdrive20i-x-line | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-x1-2026-sdrive20i-x-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x1-2026-sdrive20i-x-line | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-x1-2026-xdrive25e-m-sport | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-x1-2026-xdrive25e-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x1-2026-xdrive25e-m-sport | emisyon_normu | TR fiyat listesi Euro 6e-bis ve Euro 6-EA (ÖTV %75) homologasyonlu iki varyant gösteriyor; kayıttaki tüketim (1,0) 6e-bis değeriyle (2,8) uyuşmuyor, hangisi belirsiz
+- bmw-x2-2026-sdrive20i-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x2-2026-sdrive20i-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-x3-2026-20-xdrive-m-sport | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-x3-2026-20-xdrive-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x3-2026-20-xdrive-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-x5-2026-xdrive40d-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x5-2026-xdrive40d-m-sport | ncap_yildiz | Euro NCAP 2018 sonucu 2025-01-01 itibarıyla 'Expired'; yıldız sayfa metninde teyit edilemedi
+- bmw-x5-2026-xdrive40d-m-sport | ncap_test_yili | Euro NCAP 2018 sonucu 2025-01-01 itibarıyla 'Expired'; yıldız sayfa metninde teyit edilemedi
+- bmw-x5-2026-xdrive40d-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-x6-2026-xdrive40d-m-sport | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-x6-2026-xdrive40d-m-sport | agirlik_kg | TR kaynağı yok; BMW UK 2320 kg (EU) veriyor ama TR donanım/WLTP aralığı farklı (TR CO2 212-198, UK 198-190), yazılmadı
+- bmw-x6-2026-xdrive40d-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x6-2026-xdrive40d-m-sport | ncap_yildiz | Euro NCAP'ta X6 testi yok; X5 sayfası X6'yı kapsadığını söylemiyor
+- bmw-x6-2026-xdrive40d-m-sport | ncap_test_yili | Euro NCAP'ta X6 testi yok; X5 sayfası X6'yı kapsadığını söylemiyor
+- bmw-x6-2026-xdrive40d-m-sport | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-x7-2026-xdrive40d-m-excellence | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-x7-2026-xdrive40d-m-excellence | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-x7-2026-xdrive40d-m-excellence | ncap_yildiz | Euro NCAP'ta bu model/nesil için test yok
+- bmw-x7-2026-xdrive40d-m-excellence | ncap_test_yili | Euro NCAP'ta bu model/nesil için test yok
+- bmw-x7-2026-xdrive40d-m-excellence | emisyon_normu | bmw.com.tr teknik verileri yalnız WLTP/715/2007 atfı veriyor; 2026 MY için versiyona özgü Euro normu bulunamadı (PressClub verileri eski MY: Euro 6d/6e)
+- bmw-i4-2026-edrive40-sport-line | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-i4-2026-edrive40-sport-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-i5-2026-edrive40-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-i5-touring-2026-xdrive40-m-sport | segment | Euro NCAP 5 Series sayfası Touring'i kapsamıyor
+- bmw-i5-touring-2026-xdrive40-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-i5-touring-2026-xdrive40-m-sport | ncap_yildiz | Euro NCAP 5 Series/i5 2023 sayfası Touring gövdeyi listelemiyor
+- bmw-i5-touring-2026-xdrive40-m-sport | ncap_test_yili | Euro NCAP 5 Series/i5 2023 sayfası Touring gövdeyi listelemiyor
+- bmw-i7-2026-xdrive60-pure-excellence | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-i7-2026-xdrive60-pure-excellence | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-i7-2026-xdrive60-pure-excellence | ncap_yildiz | Euro NCAP'ta bu model/nesil için test yok
+- bmw-i7-2026-xdrive60-pure-excellence | ncap_test_yili | Euro NCAP'ta bu model/nesil için test yok
+- bmw-ix1-2026-edrive20-sport-line | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-ix1-2026-edrive20-sport-line | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-ix2-2026-edrive20-m-sport | segment | Euro NCAP X2 sayfası (Small SUV) iX2'yi varyant olarak listelemiyor
+- bmw-ix2-2026-edrive20-m-sport | agirlik_kg | TR broşürü (2024) 1885/1960 kg DIN/EU veriyor ama 2026 MY menzil/tüketim güncellenmiş (477-516 km); teyitsiz
+- bmw-ix2-2026-edrive20-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-ix2-2026-edrive20-m-sport | dc_hizli_sarj_dk_20_80 | kaynak yalnız 10-80% veriyor (29 dk)
+- bmw-ix3-2026-50-xdrive-m-sport | segment | Euro NCAP sayfasında sınıf (Class) alanı yok ya da bu versiyon için test yok; üretici sınıf ifadesi bulunamadı
+- bmw-ix3-2026-50-xdrive-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+- bmw-ix3-2026-50-xdrive-m-sport | elektrik_tuketim_kwh100km | bmw.com.tr yalnız aralık veriyor (18,1-15,1 / teknikoto 17,9-15,1); teknik veri sayfasında hatalı '400' değeri var; versiyon ucu belirsiz
+- bmw-ix-2026-xdrive60-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
