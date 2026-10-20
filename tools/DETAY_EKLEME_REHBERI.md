@@ -168,3 +168,21 @@ Amaç: Türkiye'de 2010–2025 arasında satılmış, bugün satışta olmayan m
 1. Versiyonları JSON dizi olarak yaz (biçim `tools/arac_ekle.js` başında) ve `node tools/arac_ekle.js yeni.json` çalıştır. Script hata verirse hiçbir şey yazmaz; düzelt, zorlamayla yazma.
 2. Aynı id'ler için detay kaydı hazırla; aynı nesildeki yıllar aynı NCAP ve geri çağırma araştırmasını paylaşabilir, bunun için `"ids": [...]` kullan (bkz. `tools/detay_ekle.js`). (Euro NCAP aynı nesil için, o model yıllarını kapsayan geri çağırmalar, basın artı-eksileri; bulunamayan bölüm `null`/boş bırakılır) ve `node tools/detay_ekle.js detay.json` çalıştır. Her yeni versiyonun detay kaydı olmalı.
 3. Doğrulama: iki HTML'in sözdizimi; Playwright ile birkaç yeni versiyonu `arac-detay.html#<id>` ve `karsilastirma.html#k=<eski id>,<aynı modelin güncel id'si>` ile aç; sayfa hatası olmamalı, "Satıştan kalktı" etiketi ve dönem görünmeli, fiyat satırı "Satışta değil" olmalı.
+
+## Yasaklı kaynak temizliği (kademeli)
+
+Rakip karşılaştırma siteleri (sifiraracal, arabakarsilastirma.com.tr, arabalar.com.tr, epey, mukayese, araclo, ekiyasla, otobul) ve ilan siteleri (arabam.com vb.) hiçbir alan için kaynak olamaz. Geçmişte bu sitelerle girilmiş kayıtlar resmi kaynaklara taşınıyor.
+
+1. Listeyi al: `node tools/yasak_kaynak.js` (marka özeti), `node tools/yasak_kaynak.js --marka Volkswagen` (ayrıntı).
+2. Markanın resmi Türkiye kaynağını bul: güncel fiyat listesi, teknik özellik sayfası ya da e-broşür PDF'i. Satıştan kalkmış eski modellerde markanın o yıla ait broşürü ya da basın bülteni; bulunamazsa son çare olarak teknik veri için sahibinden (`kaynakTuru:"sahibinden"`). Üretici küresel basın sitesi (ör. media.*) ikincil kaynak olarak kullanılabilir.
+3. Kaydın her dolu alanını yeni kaynakla karşılaştır:
+   - Kaynakta aynı değer varsa dokunma.
+   - Kaynakta farklı değer varsa `alan_kaynak` ile `deger` vererek düzelt.
+   - Ana kaynakta olmayıp başka bir resmi kaynakta bulduğun değer için `alan_kaynak` (değer vermeden) yaz.
+   - Hiçbir resmi kaynakta doğrulanamayan değeri `alan_sil` ile sil. Tahmin ya da yuvarlama yapma.
+   - Fiyat (`liste_fiyati_tl`) yalnızca 2026 model yılında ve yalnızca markanın resmi fiyat listesinden; değilse sil.
+4. Ana kaynağı `ana_kaynak` ile değiştir. Detay kaydında (artılar, küçük detaylar, durum metni) yasaklı kaynak varsa `detay_deger` ile resmi kaynağa çevir ya da `detay_sil` ile kaldır.
+5. JSONL'i önce `node tools/kaynak_degistir.js temizlik.jsonl --kuru` ile dene, sonra kurusuz uygula. Araç kalan yasaklı kayıt sayısını yazar.
+6. tools/kaynak_temizlik.md dosyasına tarih, marka, temizlenen versiyon sayısı, silinen alanlar (id ve alan adıyla) ve kalan sayıyı yaz.
+
+teknik_yama.js, detay_ekle.js ve arac_ekle.js yasaklı kaynakları artık reddeder.

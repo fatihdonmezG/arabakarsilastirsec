@@ -16,6 +16,7 @@
  * marka/model/yil/versiyon/kaynak/durum ve teknik özellikler (s) karsilastirma.html'den otomatik kopyalanır.
  */
 const fs = require('fs'), path = require('path');
+const { YASAK } = require('./yasak_kaynak.js');
 const ROOT = path.join(__dirname, '..');
 const DF = path.join(ROOT, 'arac-detay.html'), KF = path.join(ROOT, 'karsilastirma.html');
 let h = fs.readFileSync(DF, 'utf8');
@@ -49,6 +50,7 @@ for (const e of input) {
   const kc = KMAP[e.id];
   if (!kc) { errors.push(`${e.id}: karsilastirma.html'de yok`); continue; }
   if (CARS[e.id]) { errors.push(`${e.id}: arac-detay.html'de zaten var`); continue; }
+  if (YASAK.test(JSON.stringify(e))) errors.push(`${e.id}: yasaklı kaynak (rakip karşılaştırma ya da ilan sitesi) kullanılamaz`);
   for (const r of (e.recalls || [])) {
     if (!/^\d{4}-\d{2}$/.test(r.tarih || '')) errors.push(`${e.id}: geri çağırma tarihi YYYY-AA olmalı (${r.tarih})`);
     if (!urlOk(r.kaynak)) errors.push(`${e.id}: geri çağırma kaynağı URL değil`);

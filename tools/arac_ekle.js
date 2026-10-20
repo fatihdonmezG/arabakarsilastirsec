@@ -55,6 +55,7 @@ for (const a of input) {
   for (const f of ['marka', 'model', 'versiyon', 'durum', 'kaynakAd']) if (!String(a[f] || '').trim()) err.push(`${t}: ${f} boş`);
   if (!Number.isInteger(a.yil) || a.yil < 2010 || a.yil > 2025) err.push(`${t}: yil 2010–2025 arası tam sayı olmalı`);
   if (!url(a.kaynakUrl)) err.push(`${t}: kaynakUrl https adresi olmalı`);
+  if (YASAK.test(a.kaynakAd || '')) err.push(`${t}: kaynakAd yasaklı site adı içeriyor`);
   const tur = a.kaynakTuru || 'ikincil';
   if (!['birincil', 'ikincil', 'sahibinden'].includes(tur)) err.push(`${t}: kaynakTuru geçersiz`);
   const allUrls = [a.kaynakUrl, ...Object.values(a.ekKaynak || {}).map(x => x && x.url)];

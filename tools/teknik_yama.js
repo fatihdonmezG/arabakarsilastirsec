@@ -7,6 +7,7 @@
  * kullanılması ya da fiyat alanı reddedilir. Hata varsa hiçbir dosyaya yazmaz.
  */
 const fs = require('fs'), path = require('path');
+const { YASAK } = require('./yasak_kaynak.js');
 const ROOT = path.join(__dirname, '..');
 const KF = path.join(ROOT, 'karsilastirma.html'), DF = path.join(ROOT, 'arac-detay.html');
 let k = fs.readFileSync(KF, 'utf8'), d = fs.readFileSync(DF, 'utf8');
@@ -47,6 +48,7 @@ for (const r of lines) {
   if (!ALANLAR.has(r.alan)) { errors.push(`${r.id}: bilinmeyen/izin verilmeyen alan ${r.alan}`); continue; }
   if (r.deger === null || r.deger === '' || r.deger === undefined) { errors.push(`${r.id}.${r.alan}: boş değer`); continue; }
   if (!/^https?:\/\//.test(r.kaynakUrl || '')) { errors.push(`${r.id}.${r.alan}: kaynak URL yok`); continue; }
+  if (YASAK.test(r.kaynakUrl + ' ' + (r.kaynakAd || ''))) { errors.push(`${r.id}.${r.alan}: yasaklı kaynak (rakip karşılaştırma ya da ilan sitesi): ${r.kaynakUrl}`); continue; }
   if (/sahibinden/i.test(r.kaynakUrl + ' ' + r.kaynakTuru) && !(c.durum && !c.s.liste_fiyati_tl)) { errors.push(`${r.id}.${r.alan}: sahibinden yalnızca satıştan kalkmış eski modellerde kullanılabilir`); continue; }
   // Klimada yalnızca "Var" yazıyorsa tipi (manuel / dijital / bölge sayısı) ile güncellenebilir.
   const klimaIyilestir = r.alan === 'klima' && /^\s*Var\s*$/i.test(String(c.s.klima || '')) && !/^\s*Var\s*$/i.test(String(r.deger));
