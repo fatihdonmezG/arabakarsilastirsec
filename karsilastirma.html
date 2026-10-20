@@ -319,6 +319,8 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 
 <script src="assets/puanlar.js"></script>
 <script src="assets/fotolar.js"></script>
+<script src="assets/logolar.js"></script>
+<script src="assets/secici.js"></script>
 <script>
 const CARS = [
  {id:"egea-sedan-2026-1.4-fire-95", marka:"Fiat", model:"Egea Sedan", yil:2026, versiyon:"1.4 Fire 95 HP",
@@ -2026,14 +2028,7 @@ const byId = id => CARS.find(c => c.id === id);
 const SIDE_KEYS = ['a','b','c','d'];
 const MAX_SIDES = 4, MIN_SIDES = 2;
 
-const MARKA_LOGO = {
-  'Alfa Romeo':'alfa-romeo-logo.svg','BYD':'byd-logo.svg','Chery':'chery-logo.png','Citroën':'citroen-logo.svg',
-  'Cupra':'cupra-logo.svg','Dacia':'dacia-logo.svg','Fiat':'fiat-logo.svg','Ford':'ford-logo.png','Honda':'honda-logo.png',
-  'Hyundai':'hyundai-logo.svg','Jaecoo':'jaecoo-logo.svg','Jeep':'jeep-logo.svg','Kia':'kia-logo.svg','MG':'mg-logo.png',
-  'Mitsubishi':'mitsubishi-logo.svg','Nissan':'nissan-logo.svg','Omoda':'omoda-logo.png','Opel':'opel-logo.svg',
-  'Peugeot':'peugeot-logo.svg','Renault':'renault-logo.svg','Seat':'seat-logo.svg','Skoda':'skoda-logo.svg',
-  'Suzuki':'suzuki-logo.svg','Togg':'togg-logo.svg','Toyota':'toyota-logo.svg','Volkswagen':'volkswagen-logo.svg','Volvo':'volvo-logo.svg'
-};
+const MARKA_LOGO = window.MARKA_LOGO || {};
 
 const state = {
   a:{marka:'Fiat',model:'Egea Sedan',yil:2026,id:'egea-sedan-2026-1.6-multijet-130'},
@@ -2203,6 +2198,13 @@ function renderPickerPanels(){
     const logoFile = MARKA_LOGO[st.marka];
     if(logoFile){ logoEl.src = 'assets/logos/'+logoFile; logoEl.alt = st.marka+' amblemi'; logoEl.style.visibility = 'visible'; }
     else { logoEl.removeAttribute('src'); logoEl.style.visibility = 'hidden'; }
+    if (window.Secici) {
+      const n = 'Araç ' + (sides.indexOf(side) + 1);
+      Secici.bagla($(side+'-marka'), {baslik:'Marka seç', adim:()=>n+' · Adım 1 / 4', logo:true, sonraki:()=>$(side+'-model')});
+      Secici.bagla($(side+'-model'), {baslik:'Model seç', adim:()=>n+' · Adım 2 / 4', alt:()=>state[side].marka+' modelleri', sonraki:()=>$(side+'-yil')});
+      Secici.bagla($(side+'-yil'), {baslik:'Model yılı seç', adim:()=>n+' · Adım 3 / 4', alt:()=>state[side].marka+' '+state[side].model, sonraki:()=>$(side+'-id')});
+      Secici.bagla($(side+'-id'), {baslik:'Versiyon seç', adim:()=>n+' · Adım 4 / 4', alt:()=>state[side].marka+' '+state[side].model+' '+state[side].yil});
+    }
   });
 
   if($('addSide')) $('addSide').addEventListener('click', addSide);

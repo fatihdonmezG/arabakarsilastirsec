@@ -88,3 +88,5 @@ main .section .eyebrow{color:color-mix(in srgb,var(--sc) 70%,#fff)}
   main .section > h2,main .section > .section-head > h2{font-size:1.1rem}
   main .section > h2::before,main .section > .section-head > h2::before,main .section > h2 .num{width:30px;height:30px;border-radius:8px;font-size:.82rem}
 }
+/* Seçim alanları uzun metinle genişlemesin */
+.pickers .fields > *,.carpicker .fields > *{min-width:0}
