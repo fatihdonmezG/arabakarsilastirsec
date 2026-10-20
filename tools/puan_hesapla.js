@@ -4,7 +4,7 @@
  * ve assets/puanlar.js dosyasına yazar. Veri değiştiğinde yeniden çalıştırılır (detay_ekle.js ve teknik_yama.js bunu otomatik yapar).
  *
  * Yöntem (sistem-puani.html sayfasında da anlatılır):
- *  Kriter ve ağırlıklar: Güvenlik %30, Verimlilik %20, Performans %15, Donanım %15, Pratiklik %10, Garanti %10.
+ *  Kriter ve ağırlıklar: Güvenlik %32, Verimlilik %22, Performans %16, Donanım %16, Pratiklik %3, Garanti %11 (Ekim 2026'da bagaj %10'dan %3'e indi, fark diğerlerine oranla dağıtıldı).
  *  Her kriter sabit, açıklanmış bir ölçekle 0–10'a çevrilir (ölçekler aşağıdaki O nesnesinde ve sistem-puani.html'de).
  *  Araç başka araçlarla sıralanmaz; aynı değer her zaman aynı puanı alır.
  *  Veri yoksa o kriter hesaba katılmaz, ağırlığı diğerlerine dağıtılır; güvenlik verisi, en az 4 kriter ve toplam ağırlığın en az %60'ı yoksa toplam puan verilmez.
@@ -82,7 +82,7 @@ function garanti(c){
   const ek=[num(s.boya_garanti_yil)!=null?`boya ${s.boya_garanti_yil} yıl`:null, num(s.pas_garanti_yil)!=null?`paslanma ${s.pas_garanti_yil} yıl`:null, num(s.batarya_garanti_yil)!=null?`batarya ${s.batarya_garanti_yil} yıl`:null].filter(Boolean);
   return {puan:p,notes:[],aciklama:`${s.garanti_yil} yıl araç garantisi (2 yıl yasal asgari = 5, her ek yıl +1,25, 6 yıl ve üstü = 10)${ek.length?`; ayrıca ${ek.join(', ')} (puana katılmaz)`:''}`};
 }
-const KRITER = [['Güvenlik',0.30,guvenlik],['Verimlilik',0.20,verimlilik],['Performans',0.15,performans],['Donanım',0.15,donanim],['Pratiklik (bagaj)',0.10,pratiklik],['Garanti',0.10,garanti]];
+const KRITER = [['Güvenlik',0.32,guvenlik],['Verimlilik',0.22,verimlilik],['Performans',0.16,performans],['Donanım',0.16,donanim],['Pratiklik (bagaj)',0.03,pratiklik],['Garanti',0.11,garanti]];
 
 const out = {};
 for (const c of CARS){

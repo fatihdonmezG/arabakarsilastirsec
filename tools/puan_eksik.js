@@ -2,11 +2,11 @@
 /*
  * Toplam sistem puanı hesaplanamayan versiyonlar için, puanı açmak için bulunması gereken EN AZ veriyi listeler.
  * Puan kuralı (tools/puan_hesapla.js): Güvenlik kriteri zorunlu, en az 4 kriter ve toplam ağırlığın en az %60'ı.
- *   Güvenlik  %30: Euro NCAP yıldızı  YA DA  hava yastığı sayısı + en az 3 sürüş destek kalemi (esp, abs, otonom_acil_fren, ...)
- *   Verimlilik %20: tuketim_l100km (elektrikli: elektrik_tuketim_kwh100km)
- *   Performans %15: sifirYuz_sn  YA DA  guc_hp + agirlik_kg
- *   Donanım   %15: 8 konfor kaleminden en az 4'ünün bilgisi (klima, koltuk_isitma, acilir_tavan, anahtarsiz_giris, start_stop, carplay_android_auto, dijital_gosterge, ses_sistemi)
- *   Pratiklik %10: bagaj_l       Garanti %10: garanti_yil
+ *   Güvenlik  %32: Euro NCAP yıldızı  YA DA  hava yastığı sayısı + en az 3 sürüş destek kalemi (esp, abs, otonom_acil_fren, ...)
+ *   Verimlilik %22: tuketim_l100km (elektrikli: elektrik_tuketim_kwh100km)
+ *   Performans %16: sifirYuz_sn  YA DA  guc_hp + agirlik_kg
+ *   Donanım   %16: 8 konfor kaleminden en az 4'ünün bilgisi (klima, koltuk_isitma, acilir_tavan, anahtarsiz_giris, start_stop, carplay_android_auto, dijital_gosterge, ses_sistemi)
+ *   Pratiklik %3: bagaj_l       Garanti %11: garanti_yil
  * Kullanım: node tools/puan_eksik.js              → marka özeti
  *           node tools/puan_eksik.js --marka Renault   → o markanın versiyonları ve gereken alanlar
  *           node tools/puan_eksik.js --alan       → hangi alan kaç versiyonun puanını açar
@@ -19,7 +19,7 @@ const s0 = k.indexOf('const CARS = ['), CARS = new Function(k.slice(s0, k.indexO
 const ADAS = ['esp','abs','otonom_acil_fren','adaptif_hiz_sabitleyici','serit_takip','kor_nokta','yorgunluk_tespit','geri_gorus_kamera','yokus_kalkis'];
 const DONANIM = ['klima','koltuk_isitma','acilir_tavan','anahtarsiz_giris','start_stop','carplay_android_auto','dijital_gosterge','ses_sistemi'];
 const has = v => v != null && v !== '';
-const W = { G: .30, V: .20, P: .15, D: .15, B: .10, R: .10 };
+const W = { G: .32, V: .22, P: .16, D: .16, B: .03, R: .11 };  // tools/puan_hesapla.js ile aynı
 
 // Her kriter için: zaten var mı, yoksa onu açmak için gereken alanlar (en ucuz seçenek) ve maliyeti (alan sayısı)
 function secenekler(c) {

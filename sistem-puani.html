@@ -66,17 +66,17 @@
       <table class="olcek">
         <thead><tr><th>Kriter (ağırlık)</th><th>Ölçülen değer</th><th>0 puan</th><th>10 puan</th></tr></thead>
         <tbody>
-          <tr><td rowspan="3"><b>Güvenlik</b> (%30)</td><td>Euro NCAP yıldızı (kriterin %60'ı)</td><td>0 yıldız</td><td>5 yıldız (her yıldız 2 puan; 6 yıldan eski testte %15 düşülür)</td></tr>
+          <tr><td rowspan="3"><b>Güvenlik</b> (%32)</td><td>Euro NCAP yıldızı (kriterin %60'ı)</td><td>0 yıldız</td><td>5 yıldız (her yıldız 2 puan; 6 yıldan eski testte %15 düşülür)</td></tr>
           <tr><td>Hava yastığı sayısı (%15)</td><td>2</td><td>8 ve üstü</td></tr>
           <tr><td>Sürüş destek donanımı (%25): ESP, ABS, otonom acil fren, adaptif hız sabitleyici, şerit takip, kör nokta uyarısı, yorgunluk tespiti, geri görüş kamerası, yokuş kalkış desteği</td><td>hiçbiri yok</td><td>bilgisi olanların hepsi var</td></tr>
-          <tr><td rowspan="3"><b>Verimlilik</b> (%20)</td><td>WLTP tüketim: benzin, dizel, hibrit, LPG</td><td>10 l/100 km</td><td>4 l/100 km ve altı</td></tr>
+          <tr><td rowspan="3"><b>Verimlilik</b> (%22)</td><td>WLTP tüketim: benzin, dizel, hibrit, LPG</td><td>10 l/100 km</td><td>4 l/100 km ve altı</td></tr>
           <tr><td>WLTP tüketim: plug-in hibrit</td><td>2,5 l/100 km</td><td>0,5 l/100 km ve altı</td></tr>
           <tr><td>Elektrik tüketimi</td><td>24 kWh/100 km</td><td>14 kWh/100 km ve altı</td></tr>
-          <tr><td rowspan="2"><b>Performans</b> (%15)</td><td>0-100 km/s</td><td>14 sn ve üstü</td><td>4,5 sn ve altı</td></tr>
+          <tr><td rowspan="2"><b>Performans</b> (%16)</td><td>0-100 km/s</td><td>14 sn ve üstü</td><td>4,5 sn ve altı</td></tr>
           <tr><td>0-100 yoksa: ton başına beygir</td><td>45 HP/ton</td><td>160 HP/ton ve üstü</td></tr>
-          <tr><td><b>Donanım</b> (%15)</td><td>Klima, koltuk ısıtma, açılır tavan, anahtarsız giriş, start-stop, CarPlay/Android Auto, dijital gösterge, ses sistemi (en az 4'ünün bilgisi olmalı; opsiyonel = yarım)</td><td>hiçbiri yok</td><td>bilgisi olanların hepsi var</td></tr>
-          <tr><td><b>Pratiklik</b> (%10)</td><td>Bagaj hacmi</td><td>200 L</td><td>600 L ve üstü</td></tr>
-          <tr><td><b>Garanti</b> (%10)</td><td>Araç garantisi (yıl). Boya, paslanma ve batarya garantisi detayda gösterilir, puana katılmaz.</td><td colspan="2">2 yıl (yasal asgari) = 5; her ek yıl +1,25; 6 yıl ve üstü = 10</td></tr>
+          <tr><td><b>Donanım</b> (%16)</td><td>Klima, koltuk ısıtma, açılır tavan, anahtarsız giriş, start-stop, CarPlay/Android Auto, dijital gösterge, ses sistemi (en az 4'ünün bilgisi olmalı; opsiyonel = yarım)</td><td>hiçbiri yok</td><td>bilgisi olanların hepsi var</td></tr>
+          <tr><td><b>Pratiklik</b> (%3)</td><td>Bagaj hacmi</td><td>200 L</td><td>600 L ve üstü</td></tr>
+          <tr><td><b>Garanti</b> (%11)</td><td>Araç garantisi (yıl). Boya, paslanma ve batarya garantisi detayda gösterilir, puana katılmaz.</td><td colspan="2">2 yıl (yasal asgari) = 5; her ek yıl +1,25; 6 yıl ve üstü = 10</td></tr>
         </tbody>
       </table>
     </div>
@@ -104,8 +104,8 @@
 
 <script src="assets/puanlar.js"></script>
 <script>
-const W=[['Güvenlik',30],['Verimlilik',20],['Performans',15],['Donanım',15],['Pratiklik (bagaj)',10],['Garanti',10]];
-document.getElementById('weights').innerHTML=W.map(([a,w])=>`<div class="wbar"><span>${a}</span><span class="t"><i style="width:${w/30*100}%"></i></span><b>%${w}</b></div>`).join('');
+const W=[['Güvenlik',32],['Verimlilik',22],['Performans',16],['Donanım',16],['Pratiklik (bagaj)',3],['Garanti',11]];
+document.getElementById('weights').innerHTML=W.map(([a,w])=>`<div class="wbar"><span>${a}</span><span class="t"><i style="width:${w/32*100}%"></i></span><b>%${w}</b></div>`).join('');
 const P=window.PUANLAR||{}, all=Object.values(P), n=all.filter(x=>x.toplam!=null).length;
 document.getElementById('cov').textContent=`Şu an ${n.toLocaleString('tr-TR')} / ${all.length.toLocaleString('tr-TR')} versiyonun toplam puanı var; diğerlerinde veri tamamlandıkça hesaplanacak.`;
 </script>
