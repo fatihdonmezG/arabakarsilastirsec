@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teknik Sözlük | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="DSG, CVT, ABS, ESP, AEB, turbo, hibrit, WLTP ve daha fazlası: otomobil teknik terimleri nasıl çalışır, artısı ve eksisi ne?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/kartlar.css">
+<style>
+.arama{position:sticky;top:0;z-index:20;margin-top:8px;padding:14px 0 12px;background:linear-gradient(180deg,#2B2E34 85%,rgba(43,46,52,0))}
+.arama .kutu{position:relative}
+.arama input{width:100%;height:54px;padding:0 48px 0 50px;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:12px}
+.arama input:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,169,97,.2)}
+.arama .ikon{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.arama input::-webkit-search-cancel-button{display:none}
+.arama .temizle{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.arama .temizle:hover{color:var(--ink);background:var(--surface2)}
+.cipler{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:thin}
+.cipler button{flex:none;font:inherit;font-size:.84rem;font-weight:600;min-height:38px;padding:0 14px;border-radius:99px;border:1px solid var(--line-strong);background:transparent;color:var(--muted);cursor:pointer}
+.cipler button[aria-pressed="true"]{background:var(--accent-grad);color:var(--on-accent);border-color:transparent}
+.cipler button span{opacity:.7;margin-left:4px;font-weight:500}
+.sonuc{font-size:.84rem;color:var(--muted);margin-top:8px;min-height:1.3em}
+.terimler{display:grid;gap:12px;margin-top:16px}
+.terim{padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.14);scroll-margin-top:170px}
+.terim:target,.terim.vurgu{border-color:var(--sc);box-shadow:0 0 0 2px color-mix(in srgb,var(--sc) 40%,transparent)}
+.terim h3{font-size:1.12rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.terim h3 a.bag{font-size:.78rem;font-weight:500;color:var(--muted);text-decoration:none;font-family:var(--body)}
+.terim h3 a.bag:hover{color:var(--accent-soft)}
+.terim .diger{font-size:.8rem;color:var(--muted);margin-top:4px}
+.terim .ne{margin-top:10px;line-height:1.65;max-width:78ch}
+.ae{display:grid;gap:10px 22px;margin-top:12px}
+@media (min-width:760px){.ae{grid-template-columns:1fr 1fr}}
+.ae h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;font-family:var(--body)}
+.ae .a h4{color:#A8DDBA}.ae .e h4{color:#F3B4A8}
+.ae ul{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:.92rem}
+.ae li{position:relative;padding-left:20px;line-height:1.5}
+.ae .a li::before{content:"+";position:absolute;left:2px;color:#A8DDBA;font-weight:800}
+.ae .e li::before{content:"−";position:absolute;left:2px;color:#F3B4A8;font-weight:800}
+.terim .kay{margin-top:12px;font-size:.78rem;color:var(--muted)}
+.terim .kay a{color:var(--accent-soft)}
+mark{background:rgba(233,196,106,.35);color:inherit;border-radius:2px;padding:0 1px}
+.bos{margin-top:24px;padding:22px;border:1px dashed var(--line-strong);border-radius:10px;color:var(--muted)}
+[hidden]{display:none!important}
+@media (max-width:640px){.terim{padding:14px 14px;scroll-margin-top:190px}.arama input{height:50px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="ehliyet.html">Ehliyet</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="sozluk.html" aria-current="page">Sözlük</a>
+      <a href="mtv-hesaplama.html">MTV</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Teknik sözlük</span>
+    <h1>DSG nedir, ESP ne işe yarar?</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lead">Teknik özellik tablolarında karşınıza çıkan terimlerin kısa açıklamaları: nasıl çalışır, artısı ne, eksisi ne? Aradığınız terimi yazın ya da kategoriye göre göz atın.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="arama" role="search">
+    <div class="kutu">
+      <svg class="ikon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <label for="ara" class="sr" style="position:absolute;left:-9999px">Sözlükte ara</label>
+      <input type="search" id="ara" placeholder="Terim ara: DSG, ABS, hibrit, AdBlue..." autocomplete="off" enterkeyhint="search">
+      <button type="button" class="temizle" id="temizle" aria-label="Aramayı temizle" hidden>×</button>
+    </div>
+    <div class="cipler" id="cipler" aria-label="Kategori"></div>
+    <p class="sonuc" id="sonuc" aria-live="polite"></p>
+  </div>
+
+  <div id="liste"></div>
+  <div class="bos" id="bos" hidden></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Açıklamalar genel bilgi amaçlıdır; aynı adı taşıyan sistemler markadan markaya farklı çalışabilir. Aracınıza özel bilgi için kullanım kılavuzuna bakın. Her maddenin altında kaynağı verilmiştir.</p>
+  </div>
+</footer>
+
+<script src="assets/sozluk.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Türkçe karakterleri sadeleştirerek ara: "sanziman" da "şanzıman" da bulsun
+const sade = s => String(s).toLocaleLowerCase('tr').replace(/ı/g, "i").replace(/ş/g, 's').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c').replace(/â/g, 'a');
+const KAT = window.SOZLUK_KAT, T = window.SOZLUK;
+T.forEach(t => t._s = sade([t.ad, t.diger, t.id, t.ne].join(' ')));
+const durum = { q: '', kat: 'hepsi' };
+
+// Vurgulama: sade haldeki eşleşmeyi orijinal metinde aynı konuma işaretler (harf sayısı korunur)
+function isaretle(metin, q) {
+  if (!q) return esc(metin);
+  const s = sade(metin), out = [];
+  let i = 0, j;
+  while ((j = s.indexOf(q, i)) >= 0 && q) {
+    out.push(esc(metin.slice(i, j)), '<mark>', esc(metin.slice(j, j + q.length)), '</mark>');
+    i = j + q.length;
+  }
+  out.push(esc(metin.slice(i)));
+  return out.join('');
+}
+
+function ciz() {
+  const q = sade(durum.q.trim());
+  const kelimeler = q.split(/\s+/).filter(Boolean);
+  const uyan = T.filter(t => (durum.kat === 'hepsi' || t.kat === durum.kat) && kelimeler.every(k => t._s.includes(k)));
+  // kategori çipleri (sayılar aramaya göre)
+  const say = k => T.filter(t => (k === 'hepsi' || t.kat === k) && kelimeler.every(w => t._s.includes(w))).length;
+  $('#cipler').innerHTML = [['hepsi', 'Tümü'], ...KAT].map(([k, l]) => `<button type="button" data-kat="${k}" aria-pressed="${durum.kat === k}">${esc(l)}<span>${say(k)}</span></button>`).join('');
+  const ilk = kelimeler[0] || '';
+  $('#liste').innerHTML = KAT.map(([k, l]) => {
+    const g = uyan.filter(t => t.kat === k);
+    if (!g.length) return '';
+    return `<section class="section" id="kat-${k}"><h2>${esc(l)}</h2><div class="terimler">${g.map(t => `
+      <article class="terim" id="${esc(t.id)}">
+        <h3>${isaretle(t.ad, ilk)} <a class="bag" href="#${esc(t.id)}" aria-label="${esc(t.ad)} bağlantısı">#</a></h3>
+        ${t.diger ? `<p class="diger">Diğer adları: ${isaretle(t.diger, ilk)}</p>` : ''}
+        <p class="ne">${isaretle(t.ne, ilk)}</p>
+        <div class="ae">
+          ${t.arti && t.arti.length ? `<div class="a"><h4>Artıları</h4><ul>${t.arti.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+          ${t.eksi && t.eksi.length ? `<div class="e"><h4>Eksileri ve dikkat</h4><ul>${t.eksi.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        </div>
+        <p class="kay">Kaynak: <a href="${esc(t.k)}" target="_blank" rel="noopener">${esc(t.k.includes('wikipedia') ? 'Wikipedia: ' + decodeURIComponent(t.k.split('/wiki/')[1]).replace(/_/g, ' ') : t.k.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a></p>
+      </article>`).join('')}</div></section>`;
+  }).join('');
+  $('#sonuc').textContent = durum.q || durum.kat !== 'hepsi' ? `${uyan.length} terim bulundu.` : `${T.length} terim.`;
+  const b = $('#bos');
+  b.hidden = !!uyan.length;
+  if (!uyan.length) b.innerHTML = `“${esc(durum.q)}” için sonuç yok. Farklı bir yazım deneyin ya da <a href="#" id="hepsiniGoster" style="color:var(--accent-soft)">tüm terimleri gösterin</a>.`;
+  $('#temizle').hidden = !durum.q;
+}
+
+$('#ara').addEventListener('input', e => { durum.q = e.target.value; ciz(); });
+$('#temizle').addEventListener('click', () => { durum.q = ''; $('#ara').value = ''; ciz(); $('#ara').focus(); });
+$('#cipler').addEventListener('click', e => {
+  const b = e.target.closest('[data-kat]'); if (!b) return;
+  durum.kat = b.dataset.kat; ciz();
+  if (durum.kat !== 'hepsi') { const s = document.getElementById('kat-' + durum.kat); if (s) window.scrollTo({ top: s.getBoundingClientRect().top + scrollY - 170 }); }
+});
+document.addEventListener('click', e => { if (e.target.id === 'hepsiniGoster') { e.preventDefault(); durum.q = ''; durum.kat = 'hepsi'; $('#ara').value = ''; ciz(); } });
+document.addEventListener('keydown', e => { if (e.key === '/' && document.activeElement !== $('#ara')) { e.preventDefault(); $('#ara').focus(); } });
+
+// ?q=dsg ile arama, #dct ile doğrudan madde
+const qp = new URLSearchParams(location.search).get('q');
+if (qp) { durum.q = qp; $('#ara').value = qp; }
+ciz();
+function hedefeGit() {
+  const id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+  const el = document.getElementById(id); if (!el) return;
+  document.querySelectorAll('.terim.vurgu').forEach(x => x.classList.remove('vurgu'));
+  el.classList.add('vurgu'); el.scrollIntoView({ block: 'start' });
+}
+hedefeGit();
+window.addEventListener('hashchange', () => { if (!document.getElementById(decodeURIComponent(location.hash.slice(1)))) { durum.q = ''; durum.kat = 'hepsi'; $('#ara').value = ''; ciz(); } hedefeGit(); });
+</script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
+</body>
+</html>

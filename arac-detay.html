@@ -324,6 +324,8 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 .dnote{font-size:.86rem;color:var(--muted);background:var(--surface2);border:1px solid var(--line-strong);padding:10px 12px;border-radius:6px}
 .dnote a{color:var(--accent-soft)}
 @media (max-width:640px){.sec{padding:18px 16px 20px;border-radius:10px}.sec:first-child{padding-top:18px}.sec > h2{gap:10px}.sec > h2::before{width:36px;height:36px;border-radius:9px;background-size:20px}.content{gap:16px}.review{padding:16px}.yz-cta .btn.primary{width:100%}}
+.sozluk{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;margin-left:6px;border-radius:50%;font-size:.68rem;font-weight:700;line-height:1;text-decoration:none;color:var(--accent-soft);border:1px solid rgba(201,169,97,.5);vertical-align:1px}
+.sozluk:hover{background:var(--accent);color:var(--on-accent)}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -340,6 +342,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <a href="oduller.html">Ödüller</a>
       <a href="ehliyet.html">Ehliyet</a>
       <a href="rehber.html">El kitabı</a>
+      <a href="sozluk.html">Sözlük</a>
       <a href="mtv-hesaplama.html">MTV</a>
       <a class="cta" href="karsilastirma.html">Karşılaştır</a>
     </nav>
@@ -10463,7 +10466,7 @@ function renderEquip(){
   const known=EQUIP.reduce((n,g)=>n+g.rows.filter(([k])=>has(k)).length,0);
   const total=EQUIP.reduce((n,g)=>n+g.rows.length,0);
   if(!known){ $('#equip').innerHTML='<div class="emptystate">Bu versiyonun donanım listesi henüz eklenmedi.</div>'; return; }
-  const li=(k,l,u)=>{const [t,cls]=eqVal(s[k],u,k);return `<li class="${cls==='unk'?'eq-unk':''}"><span>${esc(l)}</span><span class="v ${cls}">${esc(t)}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</span></li>`;};
+  const li=(k,l,u)=>{const [t,cls]=eqVal(s[k],u,k);return `<li class="${cls==='unk'?'eq-unk':''}"><span>${esc(l)}${sozLink(SOZ.has(k)?k:null,l)}</span><span class="v ${cls}">${esc(t)}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</span></li>`;};
   $('#equip').innerHTML='<div class="equip" id="equipGrid">'+EQUIP.map(g=>{
     const n=g.rows.filter(([k])=>has(k)).length;
     return `<div><h3>${esc(g.name)}</h3>${n?'':'<p class="eqhint" style="margin-top:4px">Bu grup için henüz bilgi eklenmedi.</p>'}<ul>${g.rows.map(([k,l,u])=>li(k,l,u)).join('')}</ul></div>`;
@@ -10777,12 +10780,16 @@ function renderReviews(){
   }).join('');
 }
 
+// Teknik sözlük bağlantıları (sozluk.html#<id>)
+const SOZ = new Set(['guc_hp','tork_nm','dingil_mm','sifirYuz_sn','airbag_sayisi','ncap_yildiz','emisyon_normu','batarya_kwh','menzil_km_wltp','abs','esp','otonom_acil_fren','adaptif_hiz_sabitleyici','serit_takip','kor_nokta','yorgunluk_tespit','yokus_kalkis','park_sensoru','geri_gorus_kamera','kamera_360','klima','anahtarsiz_giris','carplay_android_auto','dijital_gosterge','led_far','start_stop']);
+const SOZ_VITES = {otomatik:'otomatik',dct:'dct',cvt:'cvt',tek:'tek-vites',amt:'amt',manuel:'manuel'};
+const sozLink = (id,ad)=>id?` <a class="sozluk" href="sozluk.html#${id}" title="${esc(ad)} nedir?" aria-label="${esc(ad)} nedir?">?</a>`:'';
 function renderSpecs(){
   const c=car(), s=c.s, ek=c.ekKaynak||{};
   $('#specs').innerHTML=GROUPS.map(g=>{
     const sv={...s, _vites_tipi: (()=>{const t=gearType(s.sanziman,s.yakit);return t?GEAR_TYPES.find(x=>x[0]===t)[1]:null;})()};
     const ALWAYS=new Set(['sanziman']);
-    const rows=g.rows.filter(([k])=>ALWAYS.has(k)||(sv[k]!=null&&sv[k]!=='')).map(([k,l,u])=>`<div><dt>${esc(l)}</dt><dd${sv[k]==null||sv[k]===''?' style="color:var(--muted)"':''}>${sv[k]==null||sv[k]===''?'Bilgi henüz eklenmedi':esc(fmtVal(sv[k],u,k))}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</dd></div>`).join('');
+    const rows=g.rows.filter(([k])=>ALWAYS.has(k)||(sv[k]!=null&&sv[k]!=='')).map(([k,l,u])=>`<div><dt>${esc(l)}${sozLink(k==='_vites_tipi'?SOZ_VITES[gearType(s.sanziman,s.yakit)]:(SOZ.has(k)?k:null),l)}</dt><dd${sv[k]==null||sv[k]===''?' style="color:var(--muted)"':''}>${sv[k]==null||sv[k]===''?'Bilgi henüz eklenmedi':esc(fmtVal(sv[k],u,k))}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</dd></div>`).join('');
     return rows?`<div class="specgroup"><h3>${esc(g.name)}</h3><dl>${rows}</dl></div>`:'';
   }).join('');
 }
