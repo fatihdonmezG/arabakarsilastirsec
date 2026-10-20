@@ -75,3 +75,14 @@
   .top .cta-mobil{padding:0 9px;font-size:.54rem;letter-spacing:.04em}
   .menu-btn{width:40px;height:40px}
 }
+
+/* Masaüstü: menü tek satıra sığsın; araç detayındaki bölüm menüsü üst menünün altında dursun */
+@media (min-width:981px) and (max-width:1300px){
+  .top .nav a{padding:8px 9px;font-size:.82rem}
+  .top .nav a.cta{padding-inline:14px;margin-left:6px}
+  .brand{font-size:1rem}
+}
+@media (min-width:981px){
+  .top .nav{flex-wrap:nowrap}
+  .subnav{top:72px}
+}

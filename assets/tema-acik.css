@@ -1,0 +1,121 @@
+/* Açık tema. Her sayfada en son yüklenir; koyu temanın renklerini ezer.
+   Ana renk html[data-renk] ile seçilir: varsayılan mavi, "kirmizi" kırmızı (assets/tema.js). */
+html:root{
+  color-scheme: light;
+  --bg:#F4F6FA; --surface:#FFFFFF; --surface2:#F3F6FA; --ink:#0F1A2B; --muted:#5A6577; --line:#E3E8EF; --line-strong:#C9D2DE;
+  --divider:#E3E8EF;
+  --accent:#1E5BD8; --accent-soft:#1A4FBF; --accent-tint:rgba(30,91,216,.08);
+  --accent-grad:linear-gradient(135deg,#3B7BF0 0%,#1E5BD8 55%,#1747B0 100%); --on-accent:#FFFFFF;
+  --focus:#1E5BD8; --good:#1E5BD8; --good-tint:rgba(30,91,216,.08); --win-tint:rgba(30,91,216,.07); --warn:#C2410C;
+  --series-1:#1E5BD8; --series-2:#F59E0B;
+  --kart-zemin:#FFFFFF;
+  --k1:var(--accent); --k2:#0E7490; --k3:#15803D; --k4:#0F766E; --k5:#C2410C; --k6:#7C3AED; --k7:#B45309; --k8:#475569;
+  --golge:0 1px 2px rgba(15,26,43,.05),0 8px 24px -14px rgba(15,26,43,.18);
+}
+html[data-renk="kirmizi"]:root{
+  --accent:#D21F2F; --accent-soft:#B3141F; --accent-tint:rgba(210,31,47,.07);
+  --accent-grad:linear-gradient(135deg,#EF4444 0%,#D21F2F 55%,#A4161A 100%);
+  --focus:#D21F2F; --good:#D21F2F; --good-tint:rgba(210,31,47,.07); --win-tint:rgba(210,31,47,.06);
+  --series-1:#D21F2F; --series-2:#1E3A8A;
+}
+
+/* Zemin, üst menü, genel metin */
+html body{background:var(--bg);color:var(--ink)}
+html .top{background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(15,26,43,.02)}
+html .top .nav{background:transparent}
+html .nav a{color:#3B4658}
+html .nav a:hover,html .nav a[aria-current]{color:var(--ink)}
+html .brandmark,html .cta,html .cta-mobil,html .btn.primary{color:#fff}
+html .hero{background:linear-gradient(180deg,#FFFFFF 0%,var(--bg) 100%);border-bottom:1px solid var(--line)}
+html .prose{color:#243042}
+html .lead,html .sub,html .section-lead{color:var(--muted)}
+html .lead,html .section-lead,html .sub{font-weight:400}
+html .src a{color:var(--accent-soft);border-bottom-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+html .stamp{border-color:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--accent-soft)}
+html .note{background:#FFF7ED;color:#3B2A1A}
+html footer{color:var(--muted);border-top:1px solid var(--line);background:#fff}
+html mark{background:rgba(250,204,21,.45)}
+html ::selection{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+
+/* Form öğeleri */
+html select,html input[type=text],html input[type=number],html input[type=search],html input[type=email],html input[type=password],html textarea{background:#fff;color:var(--ink);border-color:var(--line-strong)}
+html .btn.primary{background:var(--accent-grad);border-color:transparent;color:#fff}
+
+/* Mobil menü paneli */
+@media (max-width:980px){
+  html .top .nav{background:#fff;box-shadow:0 22px 34px rgba(15,26,43,.16)}
+  html .top .nav a{color:var(--ink)}
+  html .top .nav a[aria-current]:not(.cta){color:var(--accent-soft)}
+  html .menu-btn{color:var(--ink);background:#fff}
+}
+
+/* Kartlar (assets/kartlar.css ve araç detayındaki bölümler) */
+html main .section,html .karsilastirma-kart,html .sheet .catgroup,html .pickers .panel,html .box,html .carpicker,html .sec,html .uye .kart{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--sc,var(--accent)) 6%,#fff) 0,#fff 120px);box-shadow:var(--golge)}
+html .box,html .carpicker{--sc:var(--k1);border-color:color-mix(in srgb,var(--k1) 22%,var(--line));border-top-color:var(--k1)}
+html .panel{background:#fff;border-color:var(--line)}
+html main .section .panel{background:var(--surface2);border-color:var(--line)}
+html main .section .eyebrow{color:color-mix(in srgb,var(--sc) 85%,#000)}
+html .tile,html .stat{background:#fff;border-color:var(--line)}
+
+/* Araç detayı: bölüm renkleri koyu zemine göre seçilmişti, açık zeminde koyulaştır */
+html #teknik{--sc:var(--accent)} html #donanim{--sc:#0E7490} html #fiyatvergi{--sc:#15803D} html #artilar{--sc:#0F766E}
+html #sorunlar{--sc:#C2410C} html #bakim{--sc:#7C3AED} html #yorumlar{--sc:#B45309} html #karsilastir{--sc:#475569}
+html .sec > h2::before{filter:brightness(.62) saturate(1.5)}
+html #yorumlar{background:linear-gradient(180deg,#FFF7E6 0,#fff 220px);box-shadow:var(--golge),0 0 0 1px rgba(180,83,9,.12)}
+html .yz-cta{background:#FFFBEB;border-color:#FCD34D}
+html .yz-panel{background:var(--surface2)}
+html .yz-tabs button{color:var(--muted);background:#fff}
+html .yz-tabs button[aria-selected="true"]{color:#fff}
+html .review{background:#fff}
+html .rbadge.sahip{background:#FEF3C7;color:#92400E}
+html .rbadge.izlenim{background:#DBEAFE;color:#1E40AF}
+html .rver em{color:var(--accent-soft)}
+html .dnote{background:var(--surface2)}
+html .durumbox{background:#FFF7ED;border-left-color:#EA580C;color:#3B2A1A}
+html .durumbox b{color:#9A3412}
+html .carphoto{background:radial-gradient(ellipse 70% 60% at 50% 62%,#FFFFFF 0%,#EEF2F7 60%,#E2E8F0 100%);border-color:var(--line)}
+html .carphoto::after{box-shadow:none}
+html .subnav{background:rgba(255,255,255,.97);border-bottom-color:var(--line)}
+html .subnav a{color:var(--muted)}
+html .subnav a[aria-current="true"]{color:var(--ink)}
+html .caution,html .emptystate{background:var(--surface2)}
+html .pending{background:#FFFBEB;border-color:#FCD34D;color:#78350F}
+html .sozluk{color:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+html .sozluk:hover{color:#fff}
+html .meter{background:#E5EAF1}
+html dialog{background:#fff;color:var(--ink)}
+html dialog::backdrop{background:rgba(15,26,43,.45)}
+
+/* Seçim paneli (assets/secici.js) */
+html .sec-btn{background-color:#fff}
+html .sec-logo,html .brandlogo{filter:none}
+html .sec-liste button[aria-selected="true"]{background:var(--accent-tint);color:var(--accent-soft)}
+html .sec-ust .adim{color:var(--accent-soft)}
+html .sec-harf{color:#fff}
+
+/* Sözlük */
+html .arama{background:linear-gradient(180deg,var(--bg) 85%,rgba(244,246,250,0))}
+html .arama input{background:#fff}
+html .terim{background:#fff;border-color:var(--line)}
+html .ae .a h4,html .ae .a li::before{color:#15803D}
+html .ae .e h4,html .ae .e li::before{color:#B91C1C}
+html .cipler button{background:#fff;color:#3B4658}
+html .cipler button[aria-pressed="true"]{color:#fff}
+
+/* Üyelik */
+html .mesaj.hata{background:#FEF2F2;border-color:#FECACA;color:#991B1B}
+html .mesaj.ok{background:var(--accent-tint);border-color:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--accent-soft)}
+html .durum.bekliyor{background:#FEF3C7;color:#92400E}
+html .durum.yayinda{background:#DCFCE7;color:#166534}
+html .durum.reddedildi{background:#FEE2E2;color:#991B1B}
+html .slot{background:#fff}
+
+/* Tablolar */
+html table th{color:var(--muted)}
+html tbody tr:hover{background:var(--surface2)}
+
+/* Sayfaya özel koyu kalıntılar */
+html .hphoto,html .vphoto{background:radial-gradient(ellipse 70% 60% at 50% 62%,#FFFFFF 0%,#EEF2F7 60%,#E2E8F0 100%)}
+html .bdg.off,html .oduller .bdg{color:#9A3412;border-color:#FDBA74;background:#FFF7ED}
+html .bdg{background:var(--surface2)}
