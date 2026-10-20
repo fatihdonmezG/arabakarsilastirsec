@@ -225,6 +225,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 }
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/kartlar.css">
 </head>
 <body>
 
@@ -257,14 +258,14 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 </section>
 
 <main class="wrap">
-  <section class="filters" aria-label="Araç listesini daralt">
+  <section class="filters karsilastirma-kart" aria-label="Araç listesini daralt">
     <div class="field"><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div>
     <div class="field"><label for="fKasa">Kasa tipi</label><select id="fKasa"></select></div>
     <label class="switch"><input type="checkbox" id="fSatis"> Sadece satıştaki araçlar</label>
     <p class="fcount" id="fCount" aria-live="polite"></p>
   </section>
 
-  <section class="presets" aria-labelledby="presetsTitle">
+  <section class="presets karsilastirma-kart" aria-labelledby="presetsTitle">
     <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
     <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
     <div class="plist" id="presetList"></div>
@@ -288,18 +289,18 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
   </section>
   <p class="legend">İşaretli (✓) değer, o satırda daha iyi olan araca aittir. Veri henüz bulunmayan satırlarda "—" görünür.</p>
 
-  <section class="dims" aria-labelledby="dimsTitle">
+  <section class="dims karsilastirma-kart" aria-labelledby="dimsTitle">
     <h2 id="dimsTitle">Boyutlar yan yana</h2>
     <p class="sub">Her ölçüde çubuklar sıfırdan başlar ve en büyük değere göre ölçeklenir; küçük farklar bu yüzden görsel olarak da küçük görünür.</p>
     <div id="dimsBody"></div>
   </section>
 
-  <section class="sources" aria-label="Kaynaklar">
+  <section class="sources karsilastirma-kart" aria-label="Kaynaklar">
     <h2>Bu karşılaştırmanın kaynakları</h2>
     <ul id="sourceList"></ul>
   </section>
 
-  <section class="faq" aria-labelledby="faqTitle">
+  <section class="faq karsilastirma-kart" aria-labelledby="faqTitle">
     <h2 id="faqTitle">Sık sorulan sorular</h2>
     <details><summary>Veriler nereden geliyor?</summary><p>Her versiyonun kaynağı tablonun başında ve bu sayfanın "Kaynaklar" bölümünde linkli. Önceliğimiz resmi marka siteleri ve resmi fiyat listeleri; bunlarda olmayan değerler için güvenilir otomotiv basını ve teknik veri siteleri kullanılır. İlan sitelerindeki fiyatlar kullanılmaz.</p></details>
     <details><summary>"—" işareti ne anlama geliyor?</summary><p>Bu değer için henüz kaynak bulamadık. Bulduğumuzda satır dolar.</p></details>

@@ -1,0 +1,58 @@
+/* Ortak bölüm çerçevesi: sayfadaki her bölüm renkli üst çizgili, simgeli ayrı bir kart.
+   Tüm sayfalarda mobil.css'ten sonra yüklenir. */
+:root{--k1:#C9A961;--k2:#6FA8DC;--k3:#7BC48F;--k4:#4FC1B5;--k5:#E7835A;--k6:#B48EE0;--k7:#E9C46A;--k8:#9AA3B5;--kart-zemin:#30333A}
+main{counter-reset:bolum}
+main .section,
+.karsilastirma-kart{
+  --sc:var(--k1);position:relative;margin-top:22px;padding:26px 26px 28px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--sc) 10%,var(--kart-zemin)) 0,var(--kart-zemin) 160px);
+  border:1px solid color-mix(in srgb,var(--sc) 28%,var(--line));border-top:3px solid var(--sc);border-radius:12px
+}
+main .section + .section{border-top:3px solid var(--sc)}
+main .section:nth-of-type(8n+2){--sc:var(--k2)}
+main .section:nth-of-type(8n+3){--sc:var(--k3)}
+main .section:nth-of-type(8n+4){--sc:var(--k4)}
+main .section:nth-of-type(8n+5){--sc:var(--k5)}
+main .section:nth-of-type(8n+6){--sc:var(--k6)}
+main .section:nth-of-type(8n+7){--sc:var(--k7)}
+main .section:nth-of-type(8n+8){--sc:var(--k8)}
+main .section:has(> h2, > .section-head > h2){counter-increment:bolum}
+main .section > h2,
+main .section > .section-head > h2{display:flex;align-items:center;gap:14px}
+main .section > h2:not(:has(.num))::before,
+main .section > .section-head > h2::before{
+  content:counter(bolum);flex:none;width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;
+  font:800 1rem/1 var(--display);color:var(--sc);background:color-mix(in srgb,var(--sc) 18%,transparent);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--sc) 45%,transparent)
+}
+main .section > h2 .num{flex:none;width:44px;height:44px;margin:0;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;
+  color:var(--sc);background:color-mix(in srgb,var(--sc) 18%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--sc) 45%,transparent);border:0}
+main .section .panel{border-radius:8px;background:rgba(0,0,0,.14);border-color:color-mix(in srgb,var(--sc) 18%,var(--line))}
+main .section .eyebrow{color:color-mix(in srgb,var(--sc) 70%,#fff)}
+
+/* Karşılaştırma ve araç detayı sayfasındaki kutular */
+.filters.karsilastirma-kart,.presets.karsilastirma-kart,.dims.karsilastirma-kart,.faq.karsilastirma-kart,.sources.karsilastirma-kart{margin-top:22px}
+.presets.karsilastirma-kart{--sc:var(--k2)}
+.dims.karsilastirma-kart{--sc:var(--k3)}
+.faq.karsilastirma-kart{--sc:var(--k6)}
+.sources.karsilastirma-kart{--sc:var(--k8)}
+.box,.carpicker{border-radius:12px;border:1px solid color-mix(in srgb,var(--k1) 28%,var(--line));border-top:3px solid var(--k1);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--k1) 9%,var(--kart-zemin)) 0,var(--kart-zemin) 140px)}
+
+@media (max-width:640px){
+  main .section,.karsilastirma-kart{padding:18px 16px 20px;border-radius:10px;margin-top:16px}
+  main .section > h2,main .section > .section-head > h2{gap:10px}
+  main .section > h2::before,main .section > .section-head > h2::before,main .section > h2 .num{width:36px;height:36px;border-radius:9px;font-size:.9rem}
+}
+.uye .kart{border-radius:12px;border:1px solid color-mix(in srgb,var(--k1) 28%,var(--line));border-top:3px solid var(--k1);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--k1) 9%,var(--kart-zemin)) 0,var(--kart-zemin) 140px)}
+.uye .kart:nth-of-type(n+4){border-top-color:var(--k2)}
+/* Karşılaştırma: araç seçim kartları */
+.pickers{margin-top:22px}
+.pickers .panel{--sc:var(--k1);border-radius:12px;border:1px solid color-mix(in srgb,var(--sc) 28%,var(--line));border-top:3px solid var(--sc);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--sc) 10%,var(--kart-zemin)) 0,var(--kart-zemin) 140px)}
+.pickers > :nth-child(2).panel,.pickers > :nth-child(2) .panel{--sc:var(--k2)}
+.pickers > :nth-child(3).panel,.pickers > :nth-child(3) .panel{--sc:var(--k3)}
+.pickers > :nth-child(4).panel,.pickers > :nth-child(4) .panel{--sc:var(--k5)}
+.pickers .panel h2{color:var(--sc)}
+.pickers .addcard{border-radius:12px}
