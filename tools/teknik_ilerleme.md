@@ -17,6 +17,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Fiat | tamamlandı | 2026-10-17 |
 | Opel | tamamlandı | 2026-10-19 |
 | BMW | tamamlandı | 2026-10-19 |
+| Audi | tamamlandı | 2026-10-20 |
+| Mini | tamamlandı | 2026-10-20 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -686,3 +688,88 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - bmw-ix3-2026-50-xdrive-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
 - bmw-ix3-2026-50-xdrive-m-sport | elektrik_tuketim_kwh100km | bmw.com.tr yalnız aralık veriyor (18,1-15,1 / teknikoto 17,9-15,1); teknik veri sayfasında hatalı '400' değeri var; versiyon ucu belirsiz
 - bmw-ix-2026-xdrive60-m-sport | airbag_sayisi | Kaynaklarda açık sayı yok; Euro NCAP listesinde kafa (perde) hava yastıkları koltuk konumu bazında gösteriliyor, sayı belirsiz
+
+## 2026-10-20 — Audi, Mini
+
+- Doldurulan alan: 117 (Audi 62, Mini 55), 19 versiyon.
+- Araştırılıp bulunamayan: 64 alan (Audi 34, Mini 30; aşağıda).
+- Kaynaklar: ADAC Autokatalog (versiyona özel sayfalar; ağırlıklar "Leergewicht EU", sürücülü), EV Database (A6 e-tron, Q6 e-tron, e-tron GT, Countryman E MY26), auto-data.net (Q8 genişlik/dingil, Cooper 5 kapı depo), BMW Group PressClub MINI teknik veri PDF'leri, Euro NCAP veri sayfaları/değerlendirmeleri (A3 2025, A5 2024, A6 e-tron 2025, Q3 2025, Q4 e-tron 2025, Q5 2025, Q6 e-tron 2024, MINI Cooper 3 kapı 2025, Countryman 2024). fiyatlistesi.audi.com.tr ve mini.com.tr bu çalışmada açılamadı.
+- Segment Euro NCAP "Class" alanından: Cooper 3 kapı "City and Supermini", Countryman (C, S ALL4, E) "Small SUV". Cooper 5 kapı ve Cabrio Euro NCAP kapsamında değil, segment yazılmadı.
+- Hava yastığı: kaynaklar yalnız konum listesi veriyor; Audi'de konum tablosundan sayılırsa çoğu modelde 7, Q2'de 6 çıkıyor ama açık sayı olmadığından yazılmadı.
+- Kayıtta fark edilen, bu araçla düzeltilemeyen eski/şüpheli değerler (elle kontrol önerilir):
+  - Audi A5 Sedan: kayıt kaynağı eski nesil A5 Sportback 40 TDI; yeni B10 Limousine TDI quattro (ADAC): 0-100 6,9 sn (kayıtta 7,4), 241 km/s (235), WLTP 5,2 l / 136 g (4,7 / 117), depo 60 L (61). Boş boyut/ağırlık/bagaj alanları B10 kaynağıyla dolduruldu.
+  - Audi A6 Sedan TDI: 0-100 7,8 → 6,9 sn; WLTP 4,8 / 126 → 5,4 / 141; ağırlık 1985 → ADAC EU 2055.
+  - Audi A8 L: tüketim 7,5 / CO2 171 NEDC görünüyor (WLTP 9,3 / 212); depo 72 → 82 L; uzunluk 5302 → 5320.
+  - Audi A3 Sedan 0-100 8,4 / 232 km/s → 8,1 / 231. Q3 TFSI tüketim 6,0 / 137 → ADAC (09/26+) 6,4 / 145. Q5 yükseklik 1661 → 1647, ağırlık 1896 (sürücüsüz) vs EU 1970.
+  - Audi Q6 e-tron quattro: kayıttaki 387 hp / 619 km MY24-25; MY26 462 PS, 642 km. TR versiyonu doğrulanmalı.
+  - Audi Q7: depo 100 L şüpheli (85 L); Euro NCAP 10/2026 yeni nesil Q7'yi yayımladı, TR 2026 modelinin nesli doğrulanmalı. 45 TFSI 195 kW'ın AB kaynağı yok (Almanya'da satılmıyor).
+  - Audi Q8: 10,3 l ile 247 g/km tutarsız. e-tron GT: 4989/1414 mm ve 689 km eski; 2025 makyajlı 5004/1394 mm, WLTP 622 km. A6 e-tron 367 hp / 756 km vs MY25 381 PS / 765 km.
+  - Mini Countryman S ALL4 yakıt "Benzin" — 48V hafif hibrit (ADAC sistem 160 kW), "Benzin (Hafif Hibrit)" olmalı.
+  - Mini Countryman E: MY26 boyutları (4433 / 1656 mm) MY24'ten (4445 / 1635) farklı; MY26 yazıldı.
+
+### Araştırıldı, bulunamadı (id | alan | neden)
+
+- audi-a3-sedan-2026-advanced-35-tfsi | airbag_sayisi | ADAC/Euro NCAP yalnızca konum listesi veriyor (sürücü, yolcu, ön yan, ön merkez, ön+arka perde "Windowbag"; arka yan opsiyonel). Toplam sayı yok, perde sayımı belirsiz.
+- audi-a5-sedan-2026-tdi-quattro-204 | airbag_sayisi | Euro NCAP/ADAC konum tablosu var (ön 2, ön yan, ön merkez, perde; arka yan opsiyonel), toplam sayı yok. Göğüs/pelvis ayrı yastık mı, perde kaç parça, belli değil.
+- audi-a6-sedan-2026-tdi-quattro-204 | airbag_sayisi | ADAC'ta yalnız konum listesi var (A5 ile aynı yapı), toplam sayı yok.
+- audi-a6-sportback-e-tron-2026-performance | airbag_sayisi | Euro NCAP konum tablosu var (ön 2, ön yan göğüs+pelvis, ön merkez, perde; arka yan opsiyonel), toplam sayı yok.
+- audi-a6-sportback-e-tron-2026-performance | elektrik_tuketim_kwh100km | EV Database WLTP'yi yalnız aralık olarak veriyor (13,8–15,9 kWh/100 km, TEL/TEH). Versiyon için tek değer yok.
+- audi-a8-l-2026-55-tfsi-quattro-340 | airbag_sayisi | ADAC'ta konum listesi var (ön, ön+arka yan, ön+arka perde; merkez airbag paket), toplam sayı yok.
+- audi-a8-l-2026-55-tfsi-quattro-340 | ncap_yildiz | Euro NCAP'te geçerli D5 sonucu yok. 2017 testi 6 yıllık geçerliliği aşmış.
+- audi-a8-l-2026-55-tfsi-quattro-340 | ncap_test_yili | Yukarıdaki nedenle yok.
+- audi-e-tron-gt-2026-quattro | airbag_sayisi | Açık sayı veren kaynak bulunamadı.
+- audi-e-tron-gt-2026-quattro | elektrik_tuketim_kwh100km | EV Database WLTP'yi yalnız aralık olarak veriyor (17,8–19,3 kWh/100 km).
+- audi-e-tron-gt-2026-quattro | ncap_yildiz | Euro NCAP e-tron GT'yi test etmemiş (aramada sonuç yok).
+- audi-e-tron-gt-2026-quattro | ncap_test_yili | Test yok.
+- audi-q2-2026-advanced-35-tfsi | airbag_sayisi | ADAC: sürücü, yolcu, ön yan, ön+arka perde. Toplam sayı yazılmamış, perde sayımı belirsiz.
+- audi-q2-2026-advanced-35-tfsi | ncap_yildiz | Tek Euro NCAP sonucu 2016'dan, süresi dolmuş.
+- audi-q2-2026-advanced-35-tfsi | ncap_test_yili | Süresi dolmuş, yazılmadı.
+- audi-q3-suv-2026-35-tfsi-150 | airbag_sayisi | Euro NCAP/ADAC konum tablosu var (ön 2, ön yan, ön merkez, perde; arka yan opsiyonel), toplam sayı yok.
+- audi-q4-e-tron-2026-45 | airbag_sayisi | Euro NCAP datasheet'te konum işaretleri okunamadı, sayı yok.
+- audi-q5-suv-2026-tfsi-quattro-204 | airbag_sayisi | ADAC'ta konum listesi var (ön 2, ön yan, ön merkez, perde; arka yan paket), toplam sayı yok.
+- audi-q6-e-tron-suv-2026-quattro | airbag_sayisi | Euro NCAP datasheet'te konum işaretleri okunamadı, sayı yok. euroncap.com assessments sayfası izin zaman aşımı nedeniyle açılamadı.
+- audi-q6-e-tron-suv-2026-quattro | elektrik_tuketim_kwh100km | EV Database yalnız aralık veriyor: MY24-25 17,0–19,8, MY26 16,3–19,3 kWh/100 km.
+- audi-q7-2026-45-tfsi-quattro-sline | airbag_sayisi | AB spesifikasyonlu 45 TFSI kaynağı bulunamadı.
+- audi-q7-2026-45-tfsi-quattro-sline | co2_gkm | ADAC'ta 45 TFSI yok (Almanya'da satılmıyor). auto-data sayfası ABD verisi (EPA, 261 hp), WLTP yok.
+- audi-q7-2026-45-tfsi-quattro-sline | emisyon_normu | AB 45 TFSI için güncel kaynak yok.
+- audi-q7-2026-45-tfsi-quattro-sline | hiz_kmh | auto-data'daki 210 km/s ABD sınırlı değeri, AB versiyonuna uygulanamaz.
+- audi-q7-2026-45-tfsi-quattro-sline | ncap_test_yili | 2019 sonucu süresi dolmuş. Euro NCAP 2026 (12.10.2026) sonucu yeni nesil Q7 için ve yalnız TDI 220/180 kW, TFSI 270 kW, eHybrid'i kapsıyor; 45 TFSI 195 kW kapsamda değil.
+- audi-q7-2026-45-tfsi-quattro-sline | ncap_yildiz | Aynı neden.
+- audi-q7-2026-45-tfsi-quattro-sline | sifirYuz_sn | AB 45 TFSI kaynağı yok. auto-data yalnız 0-60 mph veriyor (ABD).
+- audi-q7-2026-45-tfsi-quattro-sline | tuketim_l100km | auto-data değeri EPA (10,7), WLTP değil.
+- audi-q8-2026-tfsi-quattro-195kw | agirlik_kg | 45 TFSI 195 kW AB versiyonu ADAC'ta, auto-data'da ve ultimatespecs'te yok.
+- audi-q8-2026-tfsi-quattro-195kw | airbag_sayisi | Kaynak yok.
+- audi-q8-2026-tfsi-quattro-195kw | emisyon_normu | 45 TFSI için güncel kaynak yok.
+- audi-q8-2026-tfsi-quattro-195kw | ncap_test_yili | Euro NCAP yanma motorlu Q8'i test etmemiş. 2019 "e-tron (Q8 e-tron)" sonucu farklı bir araç.
+- audi-q8-2026-tfsi-quattro-195kw | ncap_yildiz | Aynı neden.
+- audi-q8-2026-tfsi-quattro-195kw | yukseklik_mm | auto-data nesil sayfası 1697 mm veriyor, ama 45 TFSI versiyonu listede yok. Yükseklik süspansiyona göre değiştiği için yazılmadı. Genişlik ve dingil gövde sabiti olduğu için yazıldı.
+- mini-cooper-3kapi-2026-cooper-c | airbag_sayisi | Euro NCAP/ADAC donanım listesi veriyor (ön, yan baş/göğüs/pelvis ön+arka, sürücü orta airbag) ama açık sayı yok; perde/yan kombine yastıklar net sayılamıyor
+- mini-cooper-3kapi-2026-cooper-c | tuketim_l100km | PressClub WLTP aralığı 6,1-5,9; Türkiye donanım ucu belirsiz (ADAC Classic Trim 5,9)
+- mini-cooper-3kapi-2026-cooper-c | co2_gkm | PressClub aralığı 137-133 g/km; uç belirsiz (ADAC Classic Trim 134)
+- mini-cooper-3kapi-2026-cooper-s | airbag_sayisi | aynı neden (açık sayı yok)
+- mini-cooper-3kapi-2026-cooper-s | tuketim_l100km | PressClub aralığı 6,3-6,1; uç belirsiz (ADAC Essential Trim 6,2)
+- mini-cooper-3kapi-2026-cooper-s | co2_gkm | PressClub aralığı 142-138; uç belirsiz (ADAC Essential Trim 139)
+- mini-cooper-5kapi-2026-cooper-c | segment | 5 kapı (F65) Euro NCAP'te ayrı test yok (2025 Cooper sonucu yalnız 3 kapı C/S/JCW'yi kapsıyor); üretici sınıf ifadesi bulunamadı
+- mini-cooper-5kapi-2026-cooper-c | airbag_sayisi | açık sayı veren kaynak yok
+- mini-cooper-5kapi-2026-cooper-c | ncap_yildiz | Euro NCAP 2025 MINI Cooper varyant tablosu 5 kapıyı kapsamıyor
+- mini-cooper-5kapi-2026-cooper-c | ncap_test_yili | aynı neden
+- mini-cooper-5kapi-2026-cooper-c | tuketim_l100km | PressClub aralığı 6,6-6,0; uç belirsiz
+- mini-cooper-5kapi-2026-cooper-c | co2_gkm | PressClub aralığı 149-136; uç belirsiz
+- mini-cooper-5kapi-2026-cooper-c | emisyon_normu | PressClub 07/2024 "EU6e-to-FCM", auto-data "Euro 6e" (2024 üretim); 5 kapı için 2026'ya ait 6e-bis kaydı bulunamadı (3 kapı aynı motor ADAC'ta Euro 6e-bis — muhtemelen aynı, ama gövdeye özel kaynak yok)
+- mini-cooper-cabrio-2026-cooper-s | segment | Cabrio Euro NCAP kapsamında değil; üretici sınıf ifadesi bulunamadı
+- mini-cooper-cabrio-2026-cooper-s | airbag_sayisi | açık sayı yok
+- mini-cooper-cabrio-2026-cooper-s | ncap_yildiz | Euro NCAP 2025 Cooper sonucu cabrioyu kapsamıyor
+- mini-cooper-cabrio-2026-cooper-s | ncap_test_yili | aynı neden
+- mini-cooper-cabrio-2026-cooper-s | tuketim_l100km | PressClub aralığı 6,6-6,5; uç belirsiz (ADAC Paul Smith Ed. 6,5)
+- mini-cooper-cabrio-2026-cooper-s | co2_gkm | PressClub aralığı 150-148; uç belirsiz (ADAC 148)
+- mini-countryman-2026-c | airbag_sayisi | ADAC/NCAP listesi var, açık sayı yok
+- mini-countryman-2026-c | tuketim_l100km | PressClub aralığı 6,2-5,9; uç belirsiz (ADAC Blackyard 5,9)
+- mini-countryman-2026-c | co2_gkm | PressClub aralığı 141-133; uç belirsiz (ADAC 133)
+- mini-countryman-2026-c | depo_l | Çelişki: PressClub (SI) "ca. 54 l", ADAC "45,0 l (optional 54,0 l)"; Türkiye standardı belirsiz
+- mini-countryman-2026-s-all4 | airbag_sayisi | açık sayı yok
+- mini-countryman-2026-s-all4 | tuketim_l100km | yalnız ADAC Essential Trim tekil değeri (6,5) bulundu; üretici aralığı (PressClub S ALL4 eki) açılamadı, uç belirsiz
+- mini-countryman-2026-s-all4 | co2_gkm | aynı neden (ADAC Essential Trim 147)
+- mini-countryman-2026-s-all4 | depo_l | ADAC 45,0 l diyor ama Countryman C'deki 45/54 opsiyon çelişkisi nedeniyle güvenilir değil
+- mini-countryman-electric-2026-e | airbag_sayisi | açık sayı yok
+- mini-countryman-electric-2026-e | dc_hizli_sarj_dk_20_80 | Kaynaklar yalnız %10-80 veriyor (üretici 29 dk @130 kW; EVDB testi 34 dk)
+- mini-countryman-electric-2026-e | elektrik_tuketim_kwh100km | MY26 WLTP aralığı 14,8-16,3 (EVDB), PressClub MY24 17,4-15,7; uç belirsiz (501 km menzil TEL ucu = 14,8 ile uyumlu olur)
