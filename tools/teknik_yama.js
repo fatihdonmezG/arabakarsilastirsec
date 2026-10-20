@@ -14,7 +14,7 @@ const ALANLAR = new Set(['segment','kasa','yakit','sanziman','cekis','koltuk','k
  'tuketim_sehir_ici','tuketim_sehir_disi','tuketim_l100km','co2_gkm','emisyon_normu','depo_l','batarya_kwh','batarya_tipi','menzil_km_wltp','ac_sarj_dk',
  'dc_hizli_sarj_dk_20_80','elektrik_tuketim_kwh100km','uzunluk_mm','genislik_mm','yukseklik_mm','dingil_mm','yerden_yukseklik_mm','agirlik_kg','istiap_kg',
  'bagaj_l','jant_inch','airbag_sayisi','ncap_yildiz','ncap_test_yili','abs','esp','yokus_kalkis','adaptif_hiz_sabitleyici','serit_takip','yorgunluk_tespit',
- 'geri_gorus_kamera','otonom_acil_fren','kor_nokta','park_sensoru','kamera_360','elektrikli_koltuk','deri_doseme','elektrikli_bagaj','led_far','kablosuz_sarj','navigasyon','klima','koltuk_isitma','acilir_tavan','anahtarsiz_giris','start_stop','ekran_inch','carplay_android_auto','ses_sistemi','dijital_gosterge',
+ 'geri_gorus_kamera','otonom_acil_fren','arka_klima_cikisi','kor_nokta','park_sensoru','kamera_360','elektrikli_koltuk','deri_doseme','elektrikli_bagaj','led_far','kablosuz_sarj','navigasyon','klima','koltuk_isitma','acilir_tavan','anahtarsiz_giris','start_stop','ekran_inch','carplay_android_auto','ses_sistemi','dijital_gosterge',
  'garanti_yil','garanti_km','batarya_garanti_yil','boya_garanti_yil','pas_garanti_yil','bakim_araligi_km','bakim_araligi_ay']);
 
 function closeOf(t, i) {
@@ -48,7 +48,9 @@ for (const r of lines) {
   if (r.deger === null || r.deger === '' || r.deger === undefined) { errors.push(`${r.id}.${r.alan}: boş değer`); continue; }
   if (!/^https?:\/\//.test(r.kaynakUrl || '')) { errors.push(`${r.id}.${r.alan}: kaynak URL yok`); continue; }
   if (/sahibinden/i.test(r.kaynakUrl + ' ' + r.kaynakTuru) && !(c.durum && !c.s.liste_fiyati_tl)) { errors.push(`${r.id}.${r.alan}: sahibinden yalnızca satıştan kalkmış eski modellerde kullanılabilir`); continue; }
-  if (c.s[r.alan] != null) { console.log(`atlandı (zaten dolu): ${r.id}.${r.alan}`); continue; }
+  // Klimada yalnızca "Var" yazıyorsa tipi (manuel / dijital / bölge sayısı) ile güncellenebilir.
+  const klimaIyilestir = r.alan === 'klima' && /^\s*Var\s*$/i.test(String(c.s.klima || '')) && !/^\s*Var\s*$/i.test(String(r.deger));
+  if (c.s[r.alan] != null && !klimaIyilestir) { console.log(`atlandı (zaten dolu): ${r.id}.${r.alan}`); continue; }
   todo.push(r);
 }
 if (errors.length) { console.error('HATA, hiçbir şey yazılmadı:\n' + errors.join('\n')); process.exit(1); }

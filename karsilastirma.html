@@ -1993,7 +1993,7 @@ const GROUPS = [
   ['adaptif_hiz_sabitleyici','Adaptif hız sabitleyici'],['serit_takip','Şerit takip sistemi'],['kor_nokta','Kör nokta uyarısı'],
   ['yorgunluk_tespit','Yorgunluk tespit sistemi'],['park_sensoru','Park sensörü'],['geri_gorus_kamera','Geri görüş kamerası'],['kamera_360','360° kamera']]},
  {name:'Konfor ve donanım', rows:[
-  ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],
+  ['klima','Klima'],['arka_klima_cikisi','Arka klima çıkışı'],['koltuk_isitma','Koltuk ısıtma'],
   ['elektrikli_koltuk','Elektrikli koltuk ayarı'],['deri_doseme','Deri döşeme'],
   ['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
   ['elektrikli_bagaj','Elektrikli bagaj kapağı'],['led_far','LED farlar'],['start_stop','Start-stop sistemi']]},
@@ -2225,8 +2225,19 @@ function pickWinners(better, entries){
   return new Set(nums.filter(e=>e.v===best).map(e=>e.side));
 }
 
-function fmt(v,unit){
+function klimaAd(t){
+  t=String(t||'');
+  if(/^Yok/i.test(t)) return t;
+  if(/4\s*bölge|dört bölge/i.test(t)) return 'Dijital, 4 bölgeli';
+  if(/3\s*bölge|üç bölge/i.test(t)) return 'Dijital, 3 bölgeli';
+  if(/çift|iki bölge|2\s*bölge|klimatronik/i.test(t)) return 'Dijital, çift bölgeli';
+  if(/otomatik|dijital|climatronic/i.test(t)) return 'Dijital (otomatik)';
+  if(/manuel/i.test(t)) return 'Manuel';
+  return 'Var (tipi belirtilmemiş)';
+}
+function fmt(v,unit,key){
   if(v==null) return '<span class="na">—</span>';
+  if(key==='klima') return esc(klimaAd(v));
   if(typeof v==='number') return esc(num(v,decimals(v)) + (unit?' '+unit:''));
   return esc(v);
 }
@@ -2260,7 +2271,7 @@ function render(){
         if(key==='liste_fiyati_tl' && v==null && isDiscontinued(car)) return `<div class="cell ${side}" role="cell"><span class="na">Satışta değil</span></div>`;
         const win = winners.has(side);
         const rivalVals = entries.filter(e=>e.side!==side).map(e=>e.v);
-        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}<span class="val">${fmt(v,unit)}</span>${v!=null&&car.ekKaynak&&car.ekKaynak[key]?` <a class="ek" href="${esc(car.ekKaynak[key].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(car.ekKaynak[key].ad)}">↗</a>`:''}${win?deltaText(better,v,rivalVals):''}</div>`;
+        return `<div class="cell ${side}${win?' win':''}" role="cell">${win?'<span class="tick" aria-hidden="true">✓</span><span class="sr">Daha iyi: </span>':''}<span class="val">${fmt(v,unit,key)}</span>${v!=null&&car.ekKaynak&&car.ekKaynak[key]?` <a class="ek" href="${esc(car.ekKaynak[key].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(car.ekKaynak[key].ad)}">↗</a>`:''}${win?deltaText(better,v,rivalVals):''}</div>`;
       }).join('');
       rowsHtml += `<div class="row" role="row"><div class="label" role="rowheader">${esc(label)}</div>${cellsHtml}</div>`;
     });

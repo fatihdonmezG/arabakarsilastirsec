@@ -52,7 +52,8 @@ p{margin:0}
 .carpicker{margin-top:20px;padding:16px 20px;background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--divider)}
 .carpicker .pl{display:block;font-size:.76rem;font-weight:600;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
 .carpicker .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
-@media (min-width:900px){.carpicker .fields{grid-template-columns:repeat(3,1fr) 1.3fr 1.3fr 2fr}}
+@media (min-width:900px){.carpicker .fields{grid-template-columns:repeat(4,1fr)}.carpicker .f-ver{grid-column:span 2}}
+@media (min-width:1100px){.carpicker .fields{grid-template-columns:1.1fr 1.2fr 2fr .9fr .9fr .9fr 1.2fr}.carpicker .f-ver{grid-column:auto}}
 .carpicker .pfoot{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin-top:10px;font-size:.82rem;color:var(--muted)}
 .carpicker .pfoot button{font:inherit;font-size:.8rem;color:var(--accent-soft);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline}
 .carpicker select.on{border-color:var(--accent)}
@@ -196,7 +197,10 @@ button.bar[aria-pressed="true"]{background:var(--surface2);box-shadow:inset 3px 
 .equip li .v.no{color:var(--muted)}
 .equip li .v.no::before{content:"✕ ";}
 .equip li .v.opt{color:var(--accent-soft)}
-.equip li .v.unk{color:var(--line-strong)}
+.equip li .v.unk{color:var(--muted);font-style:italic}
+.equip li.eq-unk{display:none}
+.equip.show-unk li.eq-unk{display:flex}
+.linkbtn{font:inherit;font-size:inherit;color:var(--accent-soft);background:none;border:0;padding:0;margin-left:6px;cursor:pointer;text-decoration:underline}
 .equip li a.src{margin-left:4px}
 .eqhint{font-size:.8rem;color:var(--muted);margin-top:10px}
 @media (min-width:760px){.equip{grid-template-columns:1fr 1fr}}
@@ -316,12 +320,13 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   <section class="carpicker" aria-label="Araç seç">
     <span class="pl" id="pickLbl">Araç seç · veritabanındaki 608 versiyondan birini aç</span>
     <div class="fields">
+      <div class="field f-marka"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
+      <div class="field f-model"><label for="pickModel">Model</label><select id="pickModel"></select></div>
+      <div class="field f-ver"><label for="pickVer">Versiyon</label><select id="pickVer"></select></div>
       <div class="field"><label for="pickYil">Model yılı</label><select id="pickYil"></select></div>
       <div class="field"><label for="pickYakit">Yakıt</label><select id="pickYakit"></select></div>
       <div class="field"><label for="pickKasa">Kasa</label><select id="pickKasa"></select></div>
-      <div class="field"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
-      <div class="field"><label for="pickModel">Model</label><select id="pickModel"></select></div>
-      <div class="field"><label for="pickVer">Versiyon</label><select id="pickVer"></select></div>
+      <div class="field"><label for="pickVites">Şanzıman</label><select id="pickVites"></select></div>
     </div>
     <div class="pfoot"><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="pickSatis" style="accent-color:var(--accent)"> Sadece satıştakiler</label><span id="pickCount"></span><button type="button" id="pickClear" hidden>Filtreleri temizle</button><a href="araclar.html" style="color:var(--accent-soft)">Tüm araçlar listesinde daha fazla filtre →</a></div>
   </section>
@@ -10331,8 +10336,9 @@ const REVIEWS = {
 const GROUPS = [
  {name:'Genel',rows:[
   ['segment','Segment'],['kasa','Kasa tipi'],['yakit','Yakıt tipi'],
-  ['sanziman','Şanzıman'],['cekis','Çekiş'],['koltuk','Koltuk sayısı'],['kapi','Kapı sayısı']]},
+  ['cekis','Çekiş'],['koltuk','Koltuk sayısı'],['kapi','Kapı sayısı']]},
  {name:'Motor ve performans',rows:[
+  ['sanziman','Şanzıman'],['_vites_tipi','Şanzıman tipi'],
   ['cc','Motor hacmi','cc'],['silindir','Silindir sayısı'],['besleme','Besleme tipi'],
   ['guc_hp','Beygir gücü','HP'],['tork_nm','Azami tork','Nm'],
   ['sifirYuz_sn','0-100 km/s hızlanma','sn'],['hiz_kmh','Azami hız','km/s']]},
@@ -10358,28 +10364,51 @@ const EQUIP = [
   ['serit_takip','Şerit takip sistemi'],['kor_nokta','Kör nokta uyarısı'],['yorgunluk_tespit','Yorgunluk tespit sistemi'],
   ['yokus_kalkis','Yokuş kalkış desteği'],['park_sensoru','Park sensörü'],['geri_gorus_kamera','Geri görüş kamerası'],['kamera_360','360° kamera']]},
  {name:'Konfor',rows:[
-  ['klima','Klima / iklim kontrolü'],['koltuk_isitma','Koltuk ısıtma'],['elektrikli_koltuk','Elektrikli koltuk ayarı'],
+  ['klima','Klima'],['arka_klima_cikisi','Arka klima çıkışı'],['koltuk_isitma','Koltuk ısıtma'],['elektrikli_koltuk','Elektrikli koltuk ayarı'],
   ['deri_doseme','Deri döşeme'],['acilir_tavan','Açılır / panoramik tavan'],['anahtarsiz_giris','Anahtarsız giriş ve çalıştırma'],
   ['elektrikli_bagaj','Elektrikli bagaj kapağı'],['led_far','LED farlar'],['start_stop','Start-stop sistemi']]},
  {name:'Multimedya ve bağlantı',rows:[
   ['ekran_inch','Dokunmatik ekran','"'],['carplay_android_auto','Apple CarPlay / Android Auto'],['kablosuz_sarj','Kablosuz telefon şarjı'],
   ['navigasyon','Navigasyon'],['dijital_gosterge','Dijital gösterge paneli'],['ses_sistemi','Ses sistemi']]}
 ];
-function eqVal(v,u){
-  if(v==null||v==='') return ['—','unk'];
+// Klima değerini standart ada çevirir: Manuel / Dijital (otomatik) / Çift bölgeli dijital / 3-4 bölgeli dijital
+function klimaAd(t){
+  t=String(t||'');
+  if(/^Yok/i.test(t)) return null;
+  if(/4\s*bölge|dört bölge/i.test(t)) return 'Dijital, 4 bölgeli';
+  if(/3\s*bölge|üç bölge/i.test(t)) return 'Dijital, 3 bölgeli';
+  if(/çift|iki bölge|2\s*bölge|klimatronik/i.test(t)) return 'Dijital, çift bölgeli';
+  if(/otomatik|dijital|tam otomatik|climatronic/i.test(t)) return 'Dijital (otomatik)';
+  if(/manuel/i.test(t)) return 'Manuel';
+  return 'Var (tipi belirtilmemiş)';
+}
+function eqVal(v,u,k){
+  if(v==null||v==='') return ['Bilgi yok','unk'];
   if(typeof v==='number') return [nf(v,dec(v))+(u||''),'yes'];
   const t=String(v).trim();
   if(/^Yok/i.test(t)) return [t.replace(/^Yok\s*[-–:(]?\s*/i,'').replace(/\)$/,'')||'Yok','no'];
   if(/^Opsiyonel/i.test(t)) return [t,'opt'];
+  if(k==='klima') return [klimaAd(t),'yes'];
   if(/^Var$/i.test(t)) return ['Var','yes'];
   const m=t.match(/^Var\s*[(:–-]\s*(.*?)\)?$/i);
-  return [m&&m[1]?m[1]:t,'yes'];
+  const out=m&&m[1]?m[1]:t;
+  return [out.charAt(0).toLocaleUpperCase('tr')+out.slice(1),'yes'];
 }
 function renderEquip(){
-  const c=car(), s=c.s, ek=c.ekKaynak||{};
-  const known=EQUIP.reduce((n,g)=>n+g.rows.filter(([k])=>s[k]!=null&&s[k]!=='').length,0);
+  const c=car(), s={...c.s}, ek=c.ekKaynak||{};
+  // Arka klima çıkışı klima açıklamasından anlaşılıyorsa göster
+  if(s.arka_klima_cikisi==null && /arka|ön\s*\+\s*arka|bölgeli.*arka/i.test(String(s.klima||''))) s.arka_klima_cikisi='Var';
+  const has=k=>s[k]!=null&&s[k]!=='';
+  const known=EQUIP.reduce((n,g)=>n+g.rows.filter(([k])=>has(k)).length,0);
+  const total=EQUIP.reduce((n,g)=>n+g.rows.length,0);
   if(!known){ $('#equip').innerHTML='<div class="emptystate">Bu versiyonun donanım listesi henüz eklenmedi.</div>'; return; }
-  $('#equip').innerHTML='<div class="equip">'+EQUIP.map(g=>`<div><h3>${esc(g.name)}</h3><ul>${g.rows.map(([k,l,u])=>{const [t,cls]=eqVal(s[k],u);return `<li><span>${esc(l)}</span><span class="v ${cls}">${esc(t)}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</span></li>`}).join('')}</ul></div>`).join('')+'</div><p class="eqhint">✓ standart · ✕ yok · "—" bilgi henüz eklenmedi. Donanımlar paket ve yıla göre değişebilir.</p>';
+  const li=(k,l,u)=>{const [t,cls]=eqVal(s[k],u,k);return `<li class="${cls==='unk'?'eq-unk':''}"><span>${esc(l)}</span><span class="v ${cls}">${esc(t)}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</span></li>`;};
+  $('#equip').innerHTML='<div class="equip" id="equipGrid">'+EQUIP.map(g=>{
+    const n=g.rows.filter(([k])=>has(k)).length;
+    return `<div><h3>${esc(g.name)}</h3>${n?'':'<p class="eqhint" style="margin-top:4px">Bu grup için henüz bilgi eklenmedi.</p>'}<ul>${g.rows.map(([k,l,u])=>li(k,l,u)).join('')}</ul></div>`;
+  }).join('')+'</div>'+
+  `<p class="eqhint">✓ standart · ✕ yok · Donanımlar paket ve yıla göre değişebilir.${known<total?` <button type="button" id="eqToggle" class="linkbtn">Bilgisi olmayan ${total-known} özelliği göster</button>`:''}</p>`;
+  const tg=$('#eqToggle'); if(tg) tg.addEventListener('click',()=>{const on=$('#equipGrid').classList.toggle('show-unk');tg.textContent=on?'Yalnızca bilinenleri göster':`Bilgisi olmayan ${total-known} özelliği göster`;});
 }
 
 
@@ -10406,10 +10435,24 @@ function toast(msg){
   clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),3400);
 }
 
-const PF={yil:'',yakit:'',kasa:'',satis:false};
+const PF={yil:'',yakit:'',kasa:'',vites:'',satis:false};
+// Şanzıman türü: serbest metinden standart kategoriye
+function gearType(t,yakit){
+  t=String(t||'');
+  if(!t) return /^Elektrik/i.test(yakit||'')?'tek':null;
+  if(/^Elektrik/i.test(yakit||'')&&!/manuel/i.test(t)) return /2 vites|2 kademe|iki vites/i.test(t)?'otomatik':'tek';
+  if(/manuel/i.test(t)&&!/^otomatik/i.test(t)) return 'manuel';
+  if(/\bAMT\b|yar[ıi] otomatik|robotize|dualogic|easy-?r/i.test(t)) return 'amt';
+  if(/cvt|multidrive|lineartronic|xtronic/i.test(t)) return 'cvt';
+  if(/tek (vites|ileri|h[ıi]zl[ıi])|tek viteslı|tek vitesli|red[üu]kt[öo]r|1 ileri|indirgeme/i.test(t)) return 'tek';
+  if(/dct|dsg|\bedc\b|çift kavramal[ıi]|s.?tronic|e-?dcs|\bdcs|pdk|powershift|ddct|7g-dct|8g-dct/i.test(t)) return 'dct';
+  if(/^\s*otomatik\s*$/i.test(t)) return 'belirsiz';
+  return 'otomatik';
+}
+const GEAR_TYPES=[['otomatik','Tam otomatik (tork konvertörlü)'],['dct','Çift kavramalı otomatik (DCT / DSG / EDC)'],['cvt','Sürekli değişken (CVT / e-CVT)'],['tek','Tek vitesli (elektrikli)'],['amt','Otomatikleştirilmiş manuel (AMT)'],['manuel','Manuel'],['belirsiz','Otomatik (tipi belirtilmemiş)']];
 const PF_FUEL=[['elektrik','Elektrikli'],['phev','Plug-in hibrit'],['hibrit','Hibrit'],['mhev','Hafif hibrit'],['lpg','Benzin / LPG'],['dizel','Dizel'],['benzin','Benzin']];
 const PF_BODY=[['suv','SUV / Crossover'],['sedan','Sedan'],['hatchback','Hatchback'],['sw','Station wagon'],['mpv','MPV'],['coupe','Coupe / Cabrio'],['pickup','Pick-up'],['diger','Diğer']];
-const pfMatch=x=>(!PF.yil||(PF.yil==='eski'?x.yil<=2025:x.yil===Number(PF.yil)))&&(!PF.yakit||fuelCat(x.s.yakit)===PF.yakit)&&(!PF.kasa||bodyCat(x.s.kasa)===PF.kasa)&&(!PF.satis||satista(x));
+const pfMatch=x=>(!PF.yil||(PF.yil==='eski'?x.yil<=2025:x.yil===Number(PF.yil)))&&(!PF.yakit||fuelCat(x.s.yakit)===PF.yakit)&&(!PF.kasa||bodyCat(x.s.kasa)===PF.kasa)&&(!PF.vites||gearType(x.s.sanziman,x.s.yakit)===PF.vites)&&(!PF.satis||satista(x));
 const trSort=(a,b)=>a.localeCompare(b,'tr');
 function renderCarPicker(){
   const c=car(), all=Object.values(CARS), pool=all.filter(pfMatch);
@@ -10417,6 +10460,7 @@ function renderCarPicker(){
   $('#pickYil').innerHTML='<option value="">Tümü</option>'+years.map(y=>`<option value="${y}"${String(y)===PF.yil?' selected':''}>${y}</option>`).join('')+`<option value="eski"${PF.yil==='eski'?' selected':''}>2025 ve öncesi</option>`;
   $('#pickYakit').innerHTML='<option value="">Tümü</option>'+PF_FUEL.filter(([v])=>all.some(x=>fuelCat(x.s.yakit)===v)).map(([v,t])=>`<option value="${v}"${v===PF.yakit?' selected':''}>${t}</option>`).join('');
   $('#pickKasa').innerHTML='<option value="">Tümü</option>'+PF_BODY.filter(([v])=>all.some(x=>bodyCat(x.s.kasa)===v)).map(([v,t])=>`<option value="${v}"${v===PF.kasa?' selected':''}>${t}</option>`).join('');
+  $('#pickVites').innerHTML='<option value="">Tümü</option>'+GEAR_TYPES.filter(([v])=>all.some(x=>gearType(x.s.sanziman,x.s.yakit)===v)).map(([v,t])=>`<option value="${v}"${v===PF.vites?' selected':''}>${t}</option>`).join('');
   $('#pickSatis').checked=PF.satis;
   const brands=[...new Set(pool.map(x=>x.marka))].sort(trSort);
   $('#pickMarka').innerHTML=brands.map(b=>`<option value="${esc(b)}"${b===c.marka?' selected':''}>${esc(b)} (${pool.filter(x=>x.marka===b).length})</option>`).join('');
@@ -10424,8 +10468,8 @@ function renderCarPicker(){
   $('#pickModel').innerHTML=models.map(m=>`<option value="${esc(m)}"${m===c.model?' selected':''}>${esc(m)}</option>`).join('');
   const vers=pool.filter(x=>x.marka===c.marka&&x.model===c.model).sort((a,b)=>b.yil-a.yil||trSort(a.versiyon,b.versiyon));
   $('#pickVer').innerHTML=vers.map(v=>`<option value="${esc(v.id)}"${v.id===c.id?' selected':''}>${v.yil} · ${esc(v.versiyon)}</option>`).join('');
-  ['#pickYil','#pickYakit','#pickKasa'].forEach(id=>$(id).classList.toggle('on',!!$(id).value));
-  const active=PF.yil||PF.yakit||PF.kasa||PF.satis;
+  ['#pickYil','#pickYakit','#pickKasa','#pickVites'].forEach(id=>$(id).classList.toggle('on',!!$(id).value));
+  const active=PF.yil||PF.yakit||PF.kasa||PF.vites||PF.satis;
   $('#pickClear').hidden=!active;
   $('#pickCount').textContent=active?`Filtrelere uyan ${pool.length} versiyon, ${brands.length} marka`:'';
 }
@@ -10442,7 +10486,8 @@ $('#pickYil').addEventListener('change',e=>{PF.yil=e.target.value;pfChanged();})
 $('#pickYakit').addEventListener('change',e=>{PF.yakit=e.target.value;pfChanged();});
 $('#pickKasa').addEventListener('change',e=>{PF.kasa=e.target.value;pfChanged();});
 $('#pickSatis').addEventListener('change',e=>{PF.satis=e.target.checked;pfChanged();});
-$('#pickClear').addEventListener('click',()=>{PF.yil='';PF.yakit='';PF.kasa='';PF.satis=false;renderCarPicker();});
+$('#pickVites').addEventListener('change',e=>{PF.vites=e.target.value;pfChanged();});
+$('#pickClear').addEventListener('click',()=>{PF.yil='';PF.yakit='';PF.kasa='';PF.vites='';PF.satis=false;renderCarPicker();});
 $('#pickMarka').addEventListener('change',e=>{
   const marka=e.target.value, pool=Object.values(CARS).filter(x=>pfMatch(x)&&x.marka===marka).sort((a,b)=>trSort(a.model,b.model)||b.yil-a.yil);
   if(pool.length) goCar(pool[0].id);
@@ -10647,7 +10692,9 @@ function renderReviews(){
 function renderSpecs(){
   const c=car(), s=c.s, ek=c.ekKaynak||{};
   $('#specs').innerHTML=GROUPS.map(g=>{
-    const rows=g.rows.filter(([k])=>s[k]!=null&&s[k]!=='').map(([k,l,u])=>`<div><dt>${esc(l)}</dt><dd>${esc(fmtVal(s[k],u,k))}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</dd></div>`).join('');
+    const sv={...s, _vites_tipi: (()=>{const t=gearType(s.sanziman,s.yakit);return t?GEAR_TYPES.find(x=>x[0]===t)[1]:null;})()};
+    const ALWAYS=new Set(['sanziman']);
+    const rows=g.rows.filter(([k])=>ALWAYS.has(k)||(sv[k]!=null&&sv[k]!=='')).map(([k,l,u])=>`<div><dt>${esc(l)}</dt><dd${sv[k]==null||sv[k]===''?' style="color:var(--muted)"':''}>${sv[k]==null||sv[k]===''?'Bilgi henüz eklenmedi':esc(fmtVal(sv[k],u,k))}${ek[k]?` <a class="src" href="${esc(ek[k].url)}" target="_blank" rel="noopener" title="Kaynak: ${esc(ek[k].ad)}">↗</a>`:''}</dd></div>`).join('');
     return rows?`<div class="specgroup"><h3>${esc(g.name)}</h3><dl>${rows}</dl></div>`:'';
   }).join('');
 }

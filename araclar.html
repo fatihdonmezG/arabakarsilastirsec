@@ -109,7 +109,7 @@
     </div>
     <div class="fbar2">
       <div><label for="fYil">Model yılı</label><select id="fYil"></select></div>
-      <div><label for="fSanziman">Şanzıman</label><select id="fSanziman"><option value="">Tümü</option><option value="otomatik">Otomatik</option><option value="manuel">Manuel</option></select></div>
+      <div><label for="fSanziman">Şanzıman</label><select id="fSanziman"><option value="">Tümü</option><option value="otomatik">Tam otomatik (tork konvertörlü)</option><option value="dct">Çift kavramalı (DCT / DSG / EDC)</option><option value="cvt">CVT / e-CVT</option><option value="tek">Tek vitesli (elektrikli)</option><option value="amt">Otomatikleştirilmiş manuel (AMT)</option><option value="manuel">Manuel</option><option value="belirsiz">Otomatik (tipi belirtilmemiş)</option></select></div>
       <div><label for="fCekis">Çekiş</label><select id="fCekis"><option value="">Tümü</option><option value="onden">Önden çekiş</option><option value="arkadan">Arkadan itiş</option><option value="4x4">4x4 / AWD</option></select></div>
       <div><label for="fKoltuk">Koltuk</label><select id="fKoltuk"><option value="">Tümü</option><option value="2">2 koltuk</option><option value="4">4–5 koltuk</option><option value="6">6 ve üstü</option></select></div>
       <div><label for="fGuc">Güç</label><select id="fGuc"><option value="">Tümü</option><option value="0-99">100 HP altı</option><option value="100-149">100–149 HP</option><option value="150-199">150–199 HP</option><option value="200-299">200–299 HP</option><option value="300-9999">300 HP ve üstü</option></select></div>
@@ -147,7 +147,18 @@ const nf = (v,d=0) => v.toLocaleString('tr-TR',{minimumFractionDigits:d,maximumF
 const FUEL = [['elektrik','Elektrikli'],['phev','Plug-in hibrit'],['hibrit','Hibrit'],['mhev','Hafif (mild) hibrit'],['lpg','Benzin / LPG'],['dizel','Dizel'],['benzin','Benzin']];
 const BODY = [['suv','SUV / Crossover'],['sedan','Sedan'],['hatchback','Hatchback'],['sw','Station wagon'],['mpv','MPV / Minivan'],['coupe','Coupe / Cabrio / Roadster'],['pickup','Pick-up'],['diger','Diğer']];
 function fuelCat(y){ y=y||''; if(/^Elektrik/i.test(y)) return 'elektrik'; if(/plug-?in/i.test(y)) return 'phev'; if(/hafif|mild/i.test(y)) return 'mhev'; if(/hibrit|hybrid|e-POWER/i.test(y)) return 'hibrit'; if(/LPG/.test(y)) return 'lpg'; if(/^Dizel/i.test(y)) return 'dizel'; if(/^Benzin/i.test(y)) return 'benzin'; return null; }
-function gearCat(t){ t=t||''; if(!t) return null; return /manuel/i.test(t) && !/^otomatik/i.test(t) ? 'manuel' : 'otomatik'; }
+function gearCat(t,yakit){
+  t=String(t||'');
+  if(!t) return /^Elektrik/i.test(yakit||'')?'tek':null;
+  if(/^Elektrik/i.test(yakit||'')&&!/manuel/i.test(t)) return /2 vites|2 kademe|iki vites/i.test(t)?'otomatik':'tek';
+  if(/manuel/i.test(t)&&!/^otomatik/i.test(t)) return 'manuel';
+  if(/\bAMT\b|yar[ıi] otomatik|robotize|dualogic|easy-?r/i.test(t)) return 'amt';
+  if(/cvt|multidrive|lineartronic|xtronic/i.test(t)) return 'cvt';
+  if(/tek (vites|ileri|h[ıi]zl[ıi])|tek viteslı|tek vitesli|red[üu]kt[öo]r|1 ileri|indirgeme/i.test(t)) return 'tek';
+  if(/dct|dsg|\bedc\b|çift kavramal[ıi]|s.?tronic|e-?dcs|\bdcs|pdk|powershift|ddct|7g-dct|8g-dct/i.test(t)) return 'dct';
+  if(/^\s*otomatik\s*$/i.test(t)) return 'belirsiz';
+  return 'otomatik';
+}
 function driveCat(t){ t=t||''; if(/4x4|AWD|4WD|quattro|4MATIC|xDrive|ALL4|dört|4 tekerlek|tüm tekerlek/i.test(t)) return '4x4'; if(/arka/i.test(t)) return 'arkadan'; if(/ön|on(den)? ?ce|FWD/i.test(t)) return 'onden'; return null; }
 function bodyCat(k){ k=k||''; if(/pick-?up/i.test(k)) return 'pickup'; if(/MPV|Minivan/i.test(k)) return 'mpv'; if(/Station|Estate/i.test(k)) return 'sw'; if(/SUV|Crossover/i.test(k)) return 'suv'; if(/Coupe|Cabrio|Roadster|Targa|Fastback/i.test(k)) return 'coupe'; if(/Sedan|Sportback/i.test(k)) return 'sedan'; if(/Hatchback/i.test(k)) return 'hatchback'; return 'diger'; }
 const $ = id => document.getElementById(id);
@@ -163,7 +174,7 @@ async function load(){
   }catch(err){
     $('count').textContent='Araç listesi yüklenemedi. Sayfayı bir web sunucusu üzerinden açın.'; return;
   }
-  CARS.forEach(c=>{ c._f=fuelCat(c.s.yakit); c._b=bodyCat(c.s.kasa); c._g=gearCat(c.s.sanziman); c._d=driveCat(c.s.cekis); c._foto=!!(window.fotoFor&&window.fotoFor(c)); c._off=!!c.durum && !c.s.liste_fiyati_tl; c._q=(c.marka+' '+c.model+' '+c.versiyon).toLocaleLowerCase('tr'); const p=(window.PUANLAR||{})[c.id]; c._p=p&&p.toplam!=null?p.toplam:null; });
+  CARS.forEach(c=>{ c._f=fuelCat(c.s.yakit); c._b=bodyCat(c.s.kasa); c._g=gearCat(c.s.sanziman,c.s.yakit); c._d=driveCat(c.s.cekis); c._foto=!!(window.fotoFor&&window.fotoFor(c)); c._off=!!c.durum && !c.s.liste_fiyati_tl; c._q=(c.marka+' '+c.model+' '+c.versiyon).toLocaleLowerCase('tr'); const p=(window.PUANLAR||{})[c.id]; c._p=p&&p.toplam!=null?p.toplam:null; });
   const brands=[...new Set(CARS.map(c=>c.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
   $('fMarka').innerHTML='<option value="">Tüm markalar ('+brands.length+')</option>'+brands.map(b=>`<option>${esc(b)}</option>`).join('');
   $('fYakit').innerHTML='<option value="">Tümü</option>'+FUEL.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');
