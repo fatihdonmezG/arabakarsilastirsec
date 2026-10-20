@@ -4,6 +4,7 @@
    Alttaki <select> yerinde kalır; seçim yapılınca onun değeri değişir ve 'change' olayı tetiklenir. */
 (function () {
   const css = `
+:has(> .sec-btn){min-width:0}
 .sec-gizli{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
 .sec-btn{box-sizing:border-box;max-width:100%;min-width:0;display:flex;align-items:center;gap:10px;width:100%;min-height:46px;padding:0 36px 0 12px;font:inherit;font-size:.95rem;text-align:left;color:var(--ink);background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239296A0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 10px center/18px no-repeat;border:1px solid var(--line-strong);border-radius:6px;cursor:pointer;position:relative}
 .sec-btn:hover,.sec-btn:focus-visible{border-color:var(--accent);outline:none}
@@ -67,7 +68,7 @@ dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
     const ciz = () => {
       const q = sade(ara.value.trim());
       const L = opts.filter(op => !q || sade(op.text).includes(q));
-      ul.innerHTML = L.length ? L.map(op => { const [ad, say] = ayir(op.text); return `<li><button type="button" role="option" data-v="${esc(op.value)}" aria-selected="${op.value === sel.value}">${amblem(ad, o.logo)}<span>${esc(ad)}${say ? ` <span class="say">${say} versiyon</span>` : ''}</span></button></li>`; }).join('')
+      ul.innerHTML = L.length ? L.map(op => { const [ad, say] = ayir(op.text); return `<li><button type="button" role="option" data-v="${esc(op.value)}" aria-selected="${op.value === sel.value}">${op.value ? amblem(ad, o.logo) : ''}<span>${esc(ad)}${say && op.value ? ` <span class="say">${say} versiyon</span>` : (say ? ` <span class="say">(${say})</span>` : '')}</span></button></li>`; }).join('')
         : '<li class="sec-bos">Sonuç yok</li>';
     };
     ara.oninput = ciz; ciz();
@@ -95,19 +96,21 @@ dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
       o,
       guncelle() {
         const op = sel.options[sel.selectedIndex], [ad] = ayir(op ? op.text : '');
-        b.innerHTML = `${op ? amblem(ad, api.o.logo) : ''}<span class="t">${esc(op ? ad : 'Seç')}</span>`;
+        b.innerHTML = `${op && op.value ? amblem(ad, api.o.logo) : ''}<span class="t">${esc(op ? ad : 'Seç')}</span>`;
         b.setAttribute('aria-label', `${lbl ? lbl.textContent + ': ' : ''}${op ? ad : 'seçilmedi'}`);
         b.classList.toggle('on', sel.classList.contains('on'));
         b.disabled = sel.disabled;
       },
       ac() { ac(sel, api.o); }
     };
-    sel._secici = api;
+    sel._secici = api; tum.add(api);
     b.addEventListener('click', () => api.ac());
     if (lbl) lbl.addEventListener('click', e => { e.preventDefault(); b.focus(); });
     new MutationObserver(() => api.guncelle()).observe(sel, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'disabled'] });
     sel.addEventListener('change', () => api.guncelle());
     api.guncelle();
   }
-  window.Secici = { bagla };
+  const tum = new Set();
+  // Değeri kodla (sel.value = ...) değiştirilen seçiciler için düğmeleri yenile
+  window.Secici = { bagla, yenile() { tum.forEach(a => a.guncelle()); } };
 })();

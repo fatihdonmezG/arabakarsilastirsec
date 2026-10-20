@@ -141,6 +141,8 @@
   </div>
 </footer>
 
+<script src="assets/logolar.js"></script>
+<script src="assets/secici.js"></script>
 <script src="assets/puanlar.js"></script>
 <script src="assets/fotolar.js"></script>
 <script>
@@ -268,6 +270,12 @@ $('clearSel').addEventListener('click',()=>{ sel=[]; render(); });
 Object.values(FMAP).forEach(id=>$(id).addEventListener(id==='q'?'input':'change',()=>{ shown=PAGE; render(); }));
 $('clearF').addEventListener('click',()=>{ Object.values(FMAP).forEach(id=>{ const el=$(id); if(el.type==='checkbox') el.checked=false; else if(id==='fSirala') el.value='marka'; else el.value=''; }); shown=PAGE; render(); });
 load();
+</script>
+<script>
+// Filtreler için sitenin kendi seçim paneli
+if (window.Secici) [['fMarka','Marka seç',true],['fYakit','Yakıt / enerji',false],['fKasa','Kasa tipi',false],['fSirala','Sırala',false],['fYil','Model yılı',false],['fSanziman','Şanzıman tipi',false],['fCekis','Çekiş',false],['fKoltuk','Koltuk sayısı',false],['fGuc','Güç',false],['fFiyat','Liste fiyatı',false],['fPuan','Sistem puanı',false]]
+  .forEach(([id,b,logo])=>Secici.bagla(document.getElementById(id),{baslik:b,adim:()=>id==='fSirala'?'Sıralama':'Filtre',logo}));
+if (window.Secici) { Secici.yenile(); window.addEventListener('hashchange',()=>setTimeout(Secici.yenile,0)); document.addEventListener('click',e=>{ if(e.target.closest('button,a')) setTimeout(Secici.yenile,0); }); }
 </script>
 <script src="assets/uye-ayar.js"></script>
 <script src="assets/uyelik.js"></script>

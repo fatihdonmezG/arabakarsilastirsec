@@ -46,7 +46,7 @@
   .menu-acik .menu-btn .m1{transform:translateY(5px) rotate(45deg)}
   .menu-acik .menu-btn .m2{opacity:0}
   .menu-acik .menu-btn .m3{transform:translateY(-5px) rotate(-45deg)}
-  .top .cta-mobil{display:inline-flex;align-items:center;margin-left:auto;min-height:40px;padding:0 14px;border-radius:8px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--on-accent);background:var(--accent-grad)}
+  .top .cta-mobil{display:inline-flex;align-items:center;margin-left:auto;min-height:32px;padding:0 11px;border-radius:7px;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--on-accent);background:var(--accent-grad)}
   .top .nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:60;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;margin:0;padding:6px 16px 14px;background:#2B2E34;border-bottom:1px solid var(--divider);box-shadow:0 22px 34px rgba(0,0,0,.5);max-height:calc(100vh - 70px);overflow-y:auto}
   .top.menu-acik .nav{display:flex}
   .top .nav a{font-size:.95rem;font-weight:500;padding:13px 6px;border-radius:0;border-bottom:1px solid var(--line);color:var(--ink)}
@@ -72,6 +72,6 @@
 @media (max-width:420px){
   .top .wrap{gap:6px}
   .top .brand{font-size:.84rem;gap:8px}
-  .top .cta-mobil{padding:0 10px;font-size:.64rem;letter-spacing:.04em}
+  .top .cta-mobil{padding:0 9px;font-size:.54rem;letter-spacing:.04em}
   .menu-btn{width:40px;height:40px}
 }
