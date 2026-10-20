@@ -83,3 +83,8 @@ main .section .eyebrow{color:color-mix(in srgb,var(--sc) 70%,#fff)}
 @container (max-width:250px){
   .pickers .brandlogo{display:none}
 }
+@media (max-width:640px){
+  main .section,.karsilastirma-kart{padding:16px 14px 18px}
+  main .section > h2,main .section > .section-head > h2{font-size:1.1rem}
+  main .section > h2::before,main .section > .section-head > h2::before,main .section > h2 .num{width:30px;height:30px;border-radius:8px;font-size:.82rem}
+}
