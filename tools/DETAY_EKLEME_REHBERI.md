@@ -186,3 +186,10 @@ Rakip karşılaştırma siteleri (sifiraracal, arabakarsilastirma.com.tr, arabal
 6. tools/kaynak_temizlik.md dosyasına tarih, marka, temizlenen versiyon sayısı, silinen alanlar (id ve alan adıyla) ve kalan sayıyı yaz.
 
 teknik_yama.js, detay_ekle.js ve arac_ekle.js yasaklı kaynakları artık reddeder.
+
+## Puanı açan eksik veriler
+
+Toplam sistem puanı için Güvenlik kriteri zorunlu, en az 4 kriter ve toplam ağırlığın en az %60'ı gerekir. `node tools/puan_eksik.js` puansız versiyonları, `--alan` hangi alanın kaç versiyonu açtığını, `--marka X` her versiyon için gereken en az alanı gösterir.
+- Güvenlik: Euro NCAP yıldızı (nesil bazlı; tek sonuç `ncap_yay.js` ile bütün nesle yayılır, en verimli yol budur). Euro NCAP'in hiç test etmediği modellerde (ör. Rolls-Royce, Bentley, Ferrari, Lamborghini, Aston Martin, bazı Çin markaları) hava yastığı sayısı + en az 3 sürüş destek kalemi (esp, abs, otonom_acil_fren, adaptif_hiz_sabitleyici, serit_takip, kor_nokta, yorgunluk_tespit, geri_gorus_kamera, yokus_kalkis).
+- Aynı neslin farklı adla satılan ikizi Euro NCAP'te test edildiyse (ör. Renault Symbol III ↔ Dacia Logan II) `ncap_yay.js --esle` kullanılabilir; yalnızca gerçekten aynı gövde ve platform ise ve kaynak bunu söylüyorsa.
+- Eski modellerde garanti (sıfırken verilen) zor bulunur; puan için genellikle tüketim, 0-100 (ya da ağırlık), bagaj yeterlidir.

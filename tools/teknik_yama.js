@@ -30,8 +30,10 @@ function closeOf(t, i) {
 }
 // Bir kaydın içinde s ve ekKaynak nesnelerini bul; kayıt metni [start,end]
 function entryRange(t, id, style) {
-  const key = style === 'k' ? `{id:"${id}"` : `'${id}':`;
-  const p = t.indexOf(key); if (p < 0) return null;
+  // karşılaştırma kayıtları iki biçimde olabilir: {id:"x"...} ve (arac_ekle.js ile eklenenler) {"id":"x"...}
+  let key = style === 'k' ? `{id:"${id}"` : `'${id}':`, p = t.indexOf(key);
+  if (p < 0 && style === 'k') { key = `{"id":"${id}"`; p = t.indexOf(key); }
+  if (p < 0) return null;
   const open = style === 'k' ? p : t.indexOf('{', p + key.length - 1);
   return [open, closeOf(t, open)];
 }
