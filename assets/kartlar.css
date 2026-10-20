@@ -56,3 +56,19 @@ main .section .eyebrow{color:color-mix(in srgb,var(--sc) 70%,#fff)}
 .pickers > :nth-child(4).panel,.pickers > :nth-child(4) .panel{--sc:var(--k5)}
 .pickers .panel h2{color:var(--sc)}
 .pickers .addcard{border-radius:12px}
+/* Karşılaştırma tablosundaki özellik grupları (Genel, Motor ve performans ...) */
+.sheet{counter-reset:grup}
+.sheet .catgroup{--sc:var(--k1);counter-increment:grup;border-radius:12px;border:1px solid color-mix(in srgb,var(--sc) 28%,var(--line));border-top:3px solid var(--sc);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--sc) 10%,var(--kart-zemin)) 0,var(--kart-zemin) 120px)}
+.sheet .catgroup + .catgroup{margin-top:16px}
+.sheet .catgroup:nth-of-type(8n+2){--sc:var(--k2)}
+.sheet .catgroup:nth-of-type(8n+3){--sc:var(--k3)}
+.sheet .catgroup:nth-of-type(8n+4){--sc:var(--k4)}
+.sheet .catgroup:nth-of-type(8n+5){--sc:var(--k5)}
+.sheet .catgroup:nth-of-type(8n+6){--sc:var(--k6)}
+.sheet .catgroup:nth-of-type(8n+7){--sc:var(--k7)}
+.sheet .catgroup:nth-of-type(8n+8){--sc:var(--k8)}
+.sheet .cat{display:flex;align-items:center;gap:12px;padding:20px 24px 12px;font-family:var(--display);font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--ink)}
+.sheet .cat::before{content:counter(grup);flex:none;width:36px;height:36px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+  font:800 .9rem/1 var(--display);color:var(--sc);background:color-mix(in srgb,var(--sc) 18%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--sc) 45%,transparent)}
+@media (max-width:640px){.sheet .cat{padding:16px 14px 10px;font-size:.98rem}.sheet .cat::before{width:30px;height:30px;font-size:.8rem}.sheet .catgroup + .catgroup{margin-top:12px}}
