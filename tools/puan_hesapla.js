@@ -94,3 +94,15 @@ const stamp = new Date().toISOString().slice(0,10);
 fs.writeFileSync(path.join(ROOT,'assets','puanlar.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. Tarih: ${stamp} */\nwindow.PUANLAR=${JSON.stringify(out)};\n`);
 const n = Object.values(out).filter(x=>x.toplam!=null).length;
 console.log(`Puan hesaplandı: ${n} / ${CARS.length} versiyon`);
+
+// Profil sayfasındaki garaj seçicisi için marka → model → model yılları dizini (assets/modeller.js)
+{
+  const M = {};
+  for (const c of CARS) {
+    const m = (M[c.marka] = M[c.marka] || {}), x = (m[c.model] = m[c.model] || { yillar: [], id: c.id });
+    if (!x.yillar.includes(c.yil)) x.yillar.push(c.yil);
+    if (c.yil >= (CARS.find(k => k.id === x.id) || {}).yil) x.id = c.id;   // en yeni yılın bir versiyonu (detay bağlantısı)
+  }
+  for (const m of Object.values(M)) for (const x of Object.values(m)) x.yillar.sort((a, b) => b - a);
+  fs.writeFileSync(path.join(ROOT, 'assets', 'modeller.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. */\nwindow.MODELLER=${JSON.stringify(M)};\n`);
+}

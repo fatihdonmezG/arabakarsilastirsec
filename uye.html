@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Üyelik ve Garajım | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Üye olun, sahip olduğunuz en fazla 5 aracı garajınıza ekleyin, sahip yorumu ve sürüş izlenimi yazın.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.uye{max-width:760px;margin:0 auto;padding:8px 0 64px}
+.kart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-top:20px}
+.kart h2{font-size:1.25rem}
+.kart .alt{color:var(--muted);font-size:.9rem;margin-top:6px}
+.sekmeler{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:-4px 0 18px}
+.sekmeler button{font:inherit;font-weight:600;background:none;border:0;color:var(--muted);padding:10px 14px;min-height:44px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.sekmeler button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+form.f{display:grid;gap:14px}
+form.f label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:6px;font-weight:600}
+form.f input[type=email],form.f input[type=password],form.f input[type=text],form.f select{width:100%;height:46px;padding:0 12px;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:6px}
+form.f input:focus-visible,form.f select:focus-visible{border-color:var(--accent);outline:none}
+.onay{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted)}
+.onay input{margin-top:3px;width:18px;height:18px;flex:none}
+.btn{font:inherit;font-weight:700;font-size:.88rem;min-height:46px;padding:0 18px;border-radius:6px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.ana{background:var(--accent-grad);color:var(--on-accent);border-color:transparent}
+.btn.kucuk{min-height:36px;padding:0 12px;font-size:.82rem;font-weight:600}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.mesaj{padding:12px 14px;border-radius:6px;font-size:.9rem;margin-top:14px}
+.mesaj.hata{background:rgba(231,110,90,.12);border:1px solid rgba(231,110,90,.4);color:#F3B4A8}
+.mesaj.ok{background:var(--good-tint);border:1px solid rgba(201,169,97,.4);color:var(--accent-soft)}
+.garaj{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:14px}
+.slot{border:1px solid var(--line);border-radius:8px;padding:14px;min-height:96px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.slot.bos{border-style:dashed;color:var(--muted);align-items:center;justify-content:center;font-size:.85rem}
+.slot b{font-family:var(--display);font-size:1.02rem}
+.slot .y{color:var(--muted);font-size:.84rem}
+.slot .ac{margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between}
+.slot a{color:var(--accent-soft);font-size:.84rem}
+.sayac{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:var(--on-accent);background:var(--accent-grad);padding:3px 10px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.ekle{display:grid;grid-template-columns:1fr 1fr 130px auto;gap:10px;align-items:end;margin-top:18px}
+@media (max-width:640px){.ekle{grid-template-columns:1fr 1fr}.ekle .btn{grid-column:1/-1}}
+.yorumlarim{list-style:none;margin:12px 0 0;padding:0}
+.yorumlarim li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.yorumlarim a{color:var(--ink)}
+.durum{font-size:.76rem;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;align-self:center}
+.durum.bekliyor{background:rgba(231,161,90,.15);color:#F2C08A}
+.durum.yayinda{background:rgba(110,190,140,.15);color:#A8DDBA}
+.durum.reddedildi{background:rgba(231,110,90,.15);color:#F3B4A8}
+.ust{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.geri{display:inline-flex;margin-top:14px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="arac-detay.html">Araç detayı</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="ehliyet.html">Ehliyet</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="mtv-hesaplama.html">MTV</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Üyelik</span>
+    <h1 id="baslik">Garajını kur, deneyimini paylaş</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lead">Sahip olduğun en fazla 5 aracı garajına ekle; bu araçlara <b>sahip yorumu</b> yazabilirsin. Test sürüşü, kiralama ya da bir yakınının aracı gibi kısa deneyimlerini de <b>sürüş izlenimi</b> olarak paylaşabilirsin.</p>
+  </div>
+</section>
+
+<main class="wrap uye">
+
+  <div class="kart" id="kapali" hidden>
+    <h2>Üyelik çok yakında açılıyor</h2>
+    <p class="alt">Üye girişi ve yorum yazma şu an hazırlanıyor. Açıldığında bu sayfadan üye olabileceksin.</p>
+  </div>
+
+  <!-- Giriş / kayıt -->
+  <div class="kart" id="girisKart" hidden>
+    <div class="sekmeler" role="tablist">
+      <button type="button" role="tab" aria-selected="true" data-sekme="giris">Giriş yap</button>
+      <button type="button" role="tab" aria-selected="false" data-sekme="kayit">Üye ol</button>
+      <button type="button" role="tab" aria-selected="false" data-sekme="sifre">Şifremi unuttum</button>
+    </div>
+
+    <form class="f" id="fGiris" data-panel="giris">
+      <div><label for="gEmail">E-posta</label><input type="email" id="gEmail" autocomplete="email" required></div>
+      <div><label for="gSifre">Şifre</label><input type="password" id="gSifre" autocomplete="current-password" required></div>
+      <button class="btn ana" type="submit">Giriş yap</button>
+    </form>
+
+    <form class="f" id="fKayit" data-panel="kayit" hidden>
+      <div><label for="kAd">Takma ad (yorumlarında bu görünür, 3–30 karakter)</label><input type="text" id="kAd" minlength="3" maxlength="30" required autocomplete="nickname"></div>
+      <div><label for="kEmail">E-posta</label><input type="email" id="kEmail" autocomplete="email" required></div>
+      <div><label for="kSifre">Şifre (en az 8 karakter)</label><input type="password" id="kSifre" minlength="8" autocomplete="new-password" required></div>
+      <label class="onay"><input type="checkbox" required><span>E-posta adresimin yalnızca üyelik ve giriş için saklanacağını, yorumlarımda yalnızca takma adımın görüneceğini biliyorum ve kabul ediyorum.</span></label>
+      <button class="btn ana" type="submit">Üye ol</button>
+    </form>
+
+    <form class="f" id="fSifre" data-panel="sifre" hidden>
+      <p class="alt" style="margin:0">E-posta adresine şifre yenileme bağlantısı göndereceğiz.</p>
+      <div><label for="sEmail">E-posta</label><input type="email" id="sEmail" autocomplete="email" required></div>
+      <button class="btn ana" type="submit">Bağlantı gönder</button>
+    </form>
+    <div id="girisMesaj"></div>
+  </div>
+
+  <!-- Yeni şifre (e-postadaki bağlantıdan gelince) -->
+  <div class="kart" id="yeniSifreKart" hidden>
+    <h2>Yeni şifre belirle</h2>
+    <form class="f" id="fYeniSifre" style="margin-top:14px">
+      <div><label for="ySifre">Yeni şifre (en az 8 karakter)</label><input type="password" id="ySifre" minlength="8" autocomplete="new-password" required></div>
+      <button class="btn ana" type="submit">Şifreyi kaydet</button>
+    </form>
+    <div id="yeniSifreMesaj"></div>
+  </div>
+
+  <!-- Profil -->
+  <div id="profil" hidden>
+    <div class="kart">
+      <div class="ust">
+        <div><h2>Merhaba, <span id="pAd"></span></h2><p class="alt" id="pEmail"></p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn kucuk" type="button" id="adDegistir">Takma adı değiştir</button>
+          <button class="btn kucuk" type="button" id="cikis">Çıkış yap</button>
+        </div>
+      </div>
+      <form class="f" id="fAd" hidden style="margin-top:14px;grid-template-columns:1fr auto;align-items:end">
+        <div><label for="yeniAd">Yeni takma ad</label><input type="text" id="yeniAd" minlength="3" maxlength="30" required></div>
+        <button class="btn ana" type="submit">Kaydet</button>
+      </form>
+      <a class="btn ana geri" id="geriLink" hidden href="#">Yorum yazmaya dön</a>
+      <div id="profilMesaj"></div>
+    </div>
+
+    <div class="kart">
+      <h2>Garajım <span class="sayac" id="sayac">0 / 5</span></h2>
+      <p class="alt">Sahip olduğun ya da uzun süre kullandığın en fazla 5 model. Bu modellerin her versiyonuna <b>sahip yorumu</b> yazabilirsin. Garajdan çıkardığın aracın yayındaki yorumları silinmez.</p>
+      <div class="garaj" id="garaj"></div>
+      <form class="ekle f" id="fGaraj">
+        <div><label for="gMarka">Marka</label><select id="gMarka" required></select></div>
+        <div><label for="gModel">Model</label><select id="gModel" required disabled></select></div>
+        <div><label for="gYil">Model yılı</label><select id="gYil" disabled></select></div>
+        <button class="btn ana" type="submit" id="gEkle">Garaja ekle</button>
+      </form>
+      <div id="garajMesaj"></div>
+    </div>
+
+    <div class="kart">
+      <h2>Yorumlarım</h2>
+      <p class="alt">Yeni yorumlar kısa bir kontrolden sonra yayınlanır.</p>
+      <ul class="yorumlarim" id="yorumlarim"></ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Yorumlar kullanıcıların kişisel deneyimidir. Kişisel veri, hakaret ya da reklam içeren yorumlar yayınlanmaz.</p>
+  </div>
+</footer>
+
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
+<script src="assets/modeller.js"></script>
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const U = window.Uyelik, M = window.MODELLER || {};
+const ilkHash = location.hash;
+const geri = new URLSearchParams(location.search).get('geri');
+const sifirlama = /type=recovery|yeni-sifre/.test(ilkHash);
+
+function mesaj(yer, metin, tur = 'hata') { $(yer).innerHTML = metin ? `<div class="mesaj ${tur}" role="${tur === 'hata' ? 'alert' : 'status'}">${esc(metin)}</div>` : ''; }
+function mesgul(form, on) { form.querySelectorAll('button').forEach(b => b.disabled = on); }
+
+// Sekmeler
+$$('[data-sekme]').forEach(b => b.addEventListener('click', () => {
+  $$('[data-sekme]').forEach(x => x.setAttribute('aria-selected', x === b));
+  $$('[data-panel]').forEach(p => p.hidden = p.dataset.panel !== b.dataset.sekme);
+  mesaj('#girisMesaj', '');
+}));
+
+async function ciz() {
+  if (!U.acik) { $('#kapali').hidden = false; return; }
+  let o = null;
+  try { o = await U.oturum(); } catch (e) { mesaj('#girisMesaj', U.turkce(e)); }
+  $('#yeniSifreKart').hidden = !(o && sifirlama);
+  $('#girisKart').hidden = !!o;
+  $('#profil').hidden = !o;
+  if (!o) { $('#baslik').textContent = 'Garajını kur, deneyimini paylaş'; return; }
+  $('#baslik').textContent = 'Profilim ve garajım';
+  $('#pAd').textContent = o.takma_ad; $('#pEmail').textContent = o.email || '';
+  if (geri) { const a = $('#geriLink'); a.hidden = false; a.href = 'arac-detay.html#' + encodeURIComponent(geri) + '&yorum'; }
+  await Promise.all([garajCiz(), yorumlarimCiz()]);
+}
+
+async function garajCiz() {
+  let g = [];
+  try { g = await U.garaj(); } catch (e) { mesaj('#garajMesaj', U.turkce(e)); }
+  $('#sayac').textContent = `${g.length} / 5`;
+  const slots = g.map(a => {
+    const x = (M[a.marka] || {})[a.model];
+    return `<div class="slot"><b>${esc(a.marka)} ${esc(a.model)}</b><span class="y">${a.yil ? esc(a.yil) + ' model' : 'Model yılı belirtilmedi'}</span>
+      <div class="ac">${x ? `<a href="arac-detay.html#${esc(a.arac_id || x.id)}&yorum">Sahip yorumu yaz</a>` : '<span></span>'}<button class="btn kucuk" type="button" data-sil="${a.id}">Çıkar</button></div></div>`;
+  });
+  for (let i = g.length; i < 5; i++) slots.push('<div class="slot bos">Boş yer</div>');
+  $('#garaj').innerHTML = slots.join('');
+  const dolu = g.length >= 5;
+  $('#fGaraj').hidden = dolu;
+  if (dolu) mesaj('#garajMesaj', 'Garajın dolu. Yeni araç eklemek için önce birini çıkar.', 'ok');
+}
+
+async function yorumlarimCiz() {
+  let y = [];
+  try { y = await U.benimYorumlarim(); } catch (e) {}
+  const D = { bekliyor: 'Kontrol ediliyor', yayinda: 'Yayında', reddedildi: 'Yayınlanmadı' };
+  $('#yorumlarim').innerHTML = y.length ? y.map(r => `<li><span><a href="arac-detay.html#${esc(r.arac_id)}">${esc(r.marka)} ${esc(r.model)} ${esc(r.yil || '')}</a>, ${r.tur === 'sahip' ? 'sahip yorumu' : 'sürüş izlenimi'}: “${esc(r.baslik)}”</span><span class="durum ${esc(r.durum)}">${D[r.durum] || esc(r.durum)}</span></li>`).join('')
+    : '<li style="color:var(--muted)">Henüz yorum yazmadın.</li>';
+}
+
+// Garaj seçicileri
+const markalar = Object.keys(M).sort((a, b) => a.localeCompare(b, 'tr'));
+$('#gMarka').innerHTML = '<option value="">Marka seç</option>' + markalar.map(m => `<option>${esc(m)}</option>`).join('');
+$('#gMarka').addEventListener('change', () => {
+  const m = M[$('#gMarka').value] || {};
+  const mod = Object.keys(m).sort((a, b) => a.localeCompare(b, 'tr'));
+  $('#gModel').innerHTML = '<option value="">Model seç</option>' + mod.map(x => `<option>${esc(x)}</option>`).join('');
+  $('#gModel').disabled = !mod.length; $('#gYil').innerHTML = ''; $('#gYil').disabled = true;
+});
+$('#gModel').addEventListener('change', () => {
+  const x = (M[$('#gMarka').value] || {})[$('#gModel').value];
+  $('#gYil').innerHTML = '<option value="">Belirtme</option>' + (x ? x.yillar.map(y => `<option>${y}</option>`).join('') : '');
+  $('#gYil').disabled = !x;
+});
+
+$('#fGaraj').addEventListener('submit', async e => {
+  e.preventDefault(); mesgul(e.target, true); mesaj('#garajMesaj', '');
+  try {
+    await U.garajEkle({ marka: $('#gMarka').value, model: $('#gModel').value, yil: Number($('#gYil').value) || null });
+    e.target.reset(); $('#gModel').disabled = true; $('#gYil').disabled = true;
+    await garajCiz();
+  } catch (err) { mesaj('#garajMesaj', U.turkce(err)); }
+  mesgul(e.target, false);
+});
+$('#garaj').addEventListener('click', async e => {
+  const b = e.target.closest('[data-sil]'); if (!b) return;
+  b.disabled = true;
+  try { await U.garajSil(Number(b.dataset.sil)); mesaj('#garajMesaj', ''); await garajCiz(); } catch (err) { mesaj('#garajMesaj', U.turkce(err)); b.disabled = false; }
+});
+
+$('#fGiris').addEventListener('submit', async e => {
+  e.preventDefault(); mesgul(e.target, true); mesaj('#girisMesaj', '');
+  try { await U.giris($('#gEmail').value.trim(), $('#gSifre').value); await ciz(); }
+  catch (err) { mesaj('#girisMesaj', U.turkce(err)); }
+  mesgul(e.target, false);
+});
+$('#fKayit').addEventListener('submit', async e => {
+  e.preventDefault(); mesgul(e.target, true); mesaj('#girisMesaj', '');
+  try {
+    const r = await U.kayit($('#kEmail').value.trim(), $('#kSifre').value, $('#kAd').value.trim());
+    if (r && r.dogrulamaGerekli) mesaj('#girisMesaj', 'Üyeliğin oluşturuldu. E-postana gelen doğrulama bağlantısına tıkladıktan sonra giriş yapabilirsin.', 'ok');
+    else await ciz();
+  } catch (err) { mesaj('#girisMesaj', U.turkce(err)); }
+  mesgul(e.target, false);
+});
+$('#fSifre').addEventListener('submit', async e => {
+  e.preventDefault(); mesgul(e.target, true);
+  try { await U.sifreSifirla($('#sEmail').value.trim()); mesaj('#girisMesaj', 'Bu e-postayla bir üyelik varsa yenileme bağlantısı gönderildi.', 'ok'); }
+  catch (err) { mesaj('#girisMesaj', U.turkce(err)); }
+  mesgul(e.target, false);
+});
+$('#fYeniSifre').addEventListener('submit', async e => {
+  e.preventDefault(); mesgul(e.target, true);
+  try { await U.sifreGuncelle($('#ySifre').value); mesaj('#yeniSifreMesaj', 'Şifren güncellendi.', 'ok'); e.target.hidden = true; }
+  catch (err) { mesaj('#yeniSifreMesaj', U.turkce(err)); }
+  mesgul(e.target, false);
+});
+$('#adDegistir').addEventListener('click', () => { const f = $('#fAd'); f.hidden = !f.hidden; if (!f.hidden) { $('#yeniAd').value = $('#pAd').textContent; $('#yeniAd').focus(); } });
+$('#fAd').addEventListener('submit', async e => {
+  e.preventDefault(); mesgul(e.target, true);
+  try { await U.takmaAdGuncelle($('#yeniAd').value.trim()); e.target.hidden = true; mesaj('#profilMesaj', ''); await ciz(); }
+  catch (err) { mesaj('#profilMesaj', /duplicate|unique/i.test(err.message) ? 'Bu takma ad başka bir üyede. Başka bir ad dene.' : U.turkce(err)); }
+  mesgul(e.target, false);
+});
+$('#cikis').addEventListener('click', async () => { await U.cikis(); await ciz(); });
+
+if (ilkHash === '#kayit') document.querySelector('[data-sekme="kayit"]').click();
+U.degisti(() => ciz());
+ciz();
+</script>
+</body>
+</html>

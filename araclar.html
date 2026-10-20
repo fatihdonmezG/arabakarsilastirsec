@@ -267,5 +267,7 @@ Object.values(FMAP).forEach(id=>$(id).addEventListener(id==='q'?'input':'change'
 $('clearF').addEventListener('click',()=>{ Object.values(FMAP).forEach(id=>{ const el=$(id); if(el.type==='checkbox') el.checked=false; else if(id==='fSirala') el.value='marka'; else el.value=''; }); shown=PAGE; render(); });
 load();
 </script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
 </body>
 </html>

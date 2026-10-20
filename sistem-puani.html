@@ -107,5 +107,7 @@ document.getElementById('weights').innerHTML=W.map(([a,w])=>`<div class="wbar"><
 const P=window.PUANLAR||{}, all=Object.values(P), n=all.filter(x=>x.toplam!=null).length;
 document.getElementById('cov').textContent=`Şu an ${n.toLocaleString('tr-TR')} / ${all.length.toLocaleString('tr-TR')} versiyonun toplam puanı var; diğerlerinde veri tamamlandıkça hesaplanacak.`;
 </script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
 </body>
 </html>

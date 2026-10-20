@@ -286,6 +286,44 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   .content{grid-column:1;grid-row:1}
   .rail{grid-column:2;grid-row:1;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px)}
 }
+
+/* Bölüm kartları: her bölüm kendi rengi ve simgesiyle ayrışır */
+.content{display:grid;gap:22px;align-content:start}
+.sec{--sc:var(--accent);position:relative;padding:24px 26px 26px;background:linear-gradient(180deg,color-mix(in srgb,var(--sc) 10%,#30333A) 0,#30333A 140px);border:1px solid color-mix(in srgb,var(--sc) 28%,var(--line));border-top:3px solid var(--sc);border-radius:12px}
+.sec + .sec{border-top:3px solid var(--sc)}
+.sec:first-child{padding-top:24px}
+.sec > h2{display:flex;align-items:center;gap:14px}
+.sec > h2::before{content:"";flex:none;width:46px;height:46px;border-radius:12px;background:color-mix(in srgb,var(--sc) 20%,transparent) var(--ikon) center/24px no-repeat;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--sc) 45%,transparent)}
+.sec > .lead{margin-top:10px}
+.subnav a::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px;background:var(--dc,var(--accent))}
+#teknik{--sc:#C9A961;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23C9A961%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%223%22/%3E%3Cpath%20d%3D%22M12%202v3M12%2019v3M4.9%204.9l2.1%202.1M17%2017l2.1%202.1M2%2012h3M19%2012h3M4.9%2019.1L7%2017M17%207l2.1-2.1%22/%3E%3C/svg%3E")}.subnav a[href="#teknik"]{--dc:#C9A961}
+#donanim{--sc:#6FA8DC;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%236FA8DC%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%2011l3%203%208-8%22/%3E%3Cpath%20d%3D%22M20%2012v6a2%202%200%200%201-2%202H6a2%202%200%200%201-2-2V6a2%202%200%200%201%202-2h9%22/%3E%3C/svg%3E")}.subnav a[href="#donanim"]{--dc:#6FA8DC}
+#fiyatvergi{--sc:#7BC48F;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%237BC48F%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22/%3E%3Cpath%20d%3D%22M10%207v10c3%200%206-2%206-5M8%2011l6-2M8%2014l6-2%22/%3E%3C/svg%3E")}.subnav a[href="#fiyatvergi"]{--dc:#7BC48F}
+#artilar{--sc:#4FC1B5;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%234FC1B5%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M7%204v6M4%207h6M14%2017h6%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%20rx%3D%223%22/%3E%3C/svg%3E")}.subnav a[href="#artilar"]{--dc:#4FC1B5}
+#sorunlar{--sc:#E7835A;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23E7835A%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M10.3%203.9L1.8%2018a2%202%200%200%200%201.7%203h17a2%202%200%200%200%201.7-3L13.7%203.9a2%202%200%200%200-3.4%200z%22/%3E%3Cpath%20d%3D%22M12%209v4M12%2017h.01%22/%3E%3C/svg%3E")}.subnav a[href="#sorunlar"]{--dc:#E7835A}
+#bakim{--sc:#B48EE0;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B48EE0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M14.7%206.3a4%204%200%200%200-5.4%205.4L3%2018l3%203%206.3-6.3a4%204%200%200%200%205.4-5.4l-2.6%202.6-2.4-.6-.6-2.4z%22/%3E%3C/svg%3E")}.subnav a[href="#bakim"]{--dc:#B48EE0}
+#yorumlar{--sc:#E9C46A;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23E9C46A%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M21%2012a8%208%200%200%201-11.6%207.1L3%2021l1.9-6.4A8%208%200%201%201%2021%2012z%22/%3E%3Cpath%20d%3D%22M8%2011h8M8%2014h5%22/%3E%3C/svg%3E")}.subnav a[href="#yorumlar"]{--dc:#E9C46A}
+#karsilastir{--sc:#9AA3B5;--ikon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%239AA3B5%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M8%203v18M16%203v18M3%208h5M16%2016h5%22/%3E%3C/svg%3E")}.subnav a[href="#karsilastir"]{--dc:#9AA3B5}
+#yorumlar{background:linear-gradient(180deg,rgba(233,196,106,.16) 0,#30333A 220px);box-shadow:0 20px 44px -24px rgba(233,196,106,.45)}
+#yorumlar > h2{font-size:clamp(1.5rem,3.8vw,2rem)}
+.yz-cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;margin-top:18px;padding:18px 20px;border-radius:10px;background:rgba(233,196,106,.1);border:1px solid rgba(233,196,106,.35)}
+.yz-cta b{display:block;font-family:var(--display);font-size:1.1rem}
+.yz-cta span{color:var(--muted);font-size:.9rem}
+.yz-cta .btn.primary{min-height:50px;padding:0 24px;border-radius:8px;font-size:.88rem}
+.yz-panel{margin-top:12px;padding:16px 18px;border-radius:10px;background:var(--surface2);border:1px solid var(--line-strong);font-size:.92rem}
+.yz-panel .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.yz-panel .btn{border-radius:6px;text-decoration:none;display:inline-flex;align-items:center}
+.yz-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.yz-tabs button{font:inherit;font-size:.86rem;font-weight:600;min-height:40px;padding:0 14px;border-radius:99px;border:1px solid var(--line-strong);background:transparent;color:var(--muted);cursor:pointer}
+.yz-tabs button[aria-selected="true"]{background:var(--accent-grad);color:var(--on-accent);border-color:transparent}
+.review{padding:20px;margin-top:12px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.12)}
+.review.sahip{border-left:4px solid #E9C46A}.review.izlenim{border-left:4px solid #6FA8DC}
+.rbadge{display:inline-flex;align-items:center;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-right:6px;vertical-align:1px}
+.rbadge.sahip{background:rgba(233,196,106,.18);color:#F1D58F}.rbadge.izlenim{background:rgba(111,168,220,.18);color:#A9CBEB}
+.rver{display:block;margin-top:6px;font-size:.82rem;color:var(--muted)}.rver em{font-style:normal;color:var(--accent-soft);font-weight:600}
+.dnote{font-size:.86rem;color:var(--muted);background:var(--surface2);border:1px solid var(--line-strong);padding:10px 12px;border-radius:6px}
+.dnote a{color:var(--accent-soft)}
+@media (max-width:640px){.sec{padding:18px 16px 20px;border-radius:10px}.sec:first-child{padding-top:18px}.sec > h2{gap:10px}.sec > h2::before{width:36px;height:36px;border-radius:9px;background-size:20px}.content{gap:16px}.review{padding:16px}.yz-cta .btn.primary{width:100%}}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 </head>
@@ -440,8 +478,18 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       </section>
 
       <section class="sec" id="yorumlar" aria-labelledby="yorumlarT">
-        <h2 id="yorumlarT">Sahip yorumları</h2>
+        <h2 id="yorumlarT">Sahip yorumları ve sürüş izlenimleri</h2>
         <p class="lead" id="reviewLead"></p>
+        <div class="yz-cta">
+          <div><b>Bu aracı kullandın mı?</b><span id="ctaAlt">Sahibiysen sahip yorumu, test sürüşü ya da kiralama gibi kısa bir deneyimin varsa sürüş izlenimi yaz.</span></div>
+          <button class="btn primary js-write" type="button">Sen de yorum yap</button>
+        </div>
+        <div class="yz-panel" id="yzPanel" hidden></div>
+        <div class="yz-tabs" role="tablist" aria-label="Yorum türü" id="yzTabs">
+          <button type="button" role="tab" data-tur="hepsi" aria-selected="true">Tümü <span></span></button>
+          <button type="button" role="tab" data-tur="sahip" aria-selected="false">Sahip yorumları <span></span></button>
+          <button type="button" role="tab" data-tur="izlenim" aria-selected="false">Sürüş izlenimleri <span></span></button>
+        </div>
         <div class="toolbar" id="reviewTools">
           <label for="sortSel" class="sr" style="position:absolute;left:-9999px">Sırala</label>
           <select id="sortSel" aria-label="Yorumları sırala">
@@ -474,9 +522,18 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   <form class="dform" id="rf">
     <h2 id="dlgT">Yorum yaz</h2>
     <p class="own" id="dlgCar"></p>
-    <div>
-      <label for="f-nick">Takma ad (gerçek adını yazmak zorunda değilsin)</label>
-      <input type="text" id="f-nick" name="nick" maxlength="30" required autocomplete="off">
+    <p class="dnote" id="dlgNot"></p>
+    <div id="f-izlenimWrap">
+      <label for="f-izlenim">Aracı nasıl kullandın?</label>
+      <select id="f-izlenim" name="izlenim">
+        <option value="">Seç</option>
+        <option value="test_surusu">Test sürüşü</option>
+        <option value="kiralama">Kiralama</option>
+        <option value="yakinin_araci">Ailemin ya da bir yakınımın aracı</option>
+        <option value="is_araci">İş ya da şirket aracı</option>
+        <option value="eski_sahip">Eskiden sahibiydim</option>
+        <option value="diger">Diğer</option>
+      </select>
     </div>
     <fieldset>
       <legend>Genel puan</legend>
@@ -486,7 +543,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <legend>Ayrıntılı puanlar (isteğe bağlı, 1 en kötü, 5 en iyi)</legend>
       <div class="grid2" id="f-subs"></div>
     </fieldset>
-    <div class="grid2">
+    <div class="grid2" id="f-kullanim">
       <div><label for="f-ay">Kaç aydır kullanıyorsun?</label><input type="number" id="f-ay" name="ay" min="0" max="600" required inputmode="numeric"></div>
       <div><label for="f-km">Toplam kilometre</label><input type="number" id="f-km" name="km" min="0" max="999999" required inputmode="numeric"></div>
     </div>
@@ -498,7 +555,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <div><label for="f-arti">Artılar (virgülle ayır)</label><input type="text" id="f-arti" name="arti" autocomplete="off"></div>
       <div><label for="f-eksi">Eksiler (virgülle ayır)</label><input type="text" id="f-eksi" name="eksi" autocomplete="off"></div>
     </div>
-    <fieldset>
+    <fieldset id="f-sorunWrap">
       <legend>Yaşadığın sorunlar</legend>
       <div class="pchips" id="f-sorun"></div>
     </fieldset>
@@ -507,6 +564,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
       <textarea id="f-metin" name="metin" minlength="30" required></textarea>
     </div>
     <label class="check"><input type="checkbox" id="f-kvkk" required><span>Yorumumda başkasına ait kişisel veri bulunmadığını ve yorumumun yayınlanmasına izin verdiğimi onaylıyorum. Aydınlatma metnini okudum.</span></label>
+    <p class="dnote" id="dlgHata" role="alert" hidden style="color:#F3B4A8;border-color:rgba(231,110,90,.5)"></p>
     <div class="actions">
       <button class="btn" type="button" id="dlgCancel">Vazgeç</button>
       <button class="btn primary" type="submit">Yorumu gönder</button>
@@ -516,6 +574,8 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
 <script src="assets/puanlar.js"></script>
 <script src="assets/fotolar.js"></script>
 <script>
@@ -10423,11 +10483,32 @@ const fmtDate = iso=>new Date(iso+'T12:00:00').toLocaleDateString('tr-TR',{day:'
 const fmtMonth = ym=>new Date(ym+'-15T12:00:00').toLocaleDateString('tr-TR',{month:'long',year:'numeric'});
 
 const ID_ALIAS = {"egea-1.6-multijet":"egea-sedan-2026-1.6-multijet-130","egea-1.4-fire":"egea-sedan-2026-1.4-fire-95","clio6-1.2-tce":"clio6-2026-1.2-tce-115","togg-t10x-v1":"togg-t10x-2026-v1-rwd-standart","mercedes-c-serisi-sedan-c200-4matic-amg-2026":"mercedes-benz-c-serisi-2026-c200-4matic-amg","bmw-3-serisi-sedan-320i-sport-line-2026":"bmw-3-serisi-sedan-2026-320i-sport-line","audi-a6-sedan-tdi-quattro-204-s-tronic-2026":"audi-a6-sedan-2026-tdi-quattro-204","tesla-model-y-premium-lr-rwd-juniper-2026":"tesla-model-y-2026-premium-long-range-rwd"};
-const state = {carId:'egea-sedan-2026-1.6-multijet-130',sort:'yeni',filter:null};
-const helped = new Set();
-const reviews = JSON.parse(JSON.stringify(REVIEWS));
+const state = {carId:'egea-sedan-2026-1.6-multijet-130',sort:'yeni',filter:null,tur:'hepsi'};
+let helped = new Set();
 const car = ()=>CARS[state.carId];
-const published = ()=>reviews[state.carId].filter(r=>r.durum!=='bekliyor');
+// Yorumlar üyelik sunucusundan model bazında (aynı marka + modelin tüm versiyonları) yüklenir.
+const yorumOnbellek = {};
+let ben = null, garajim = [];
+const mkey = c=>c.marka+'|'+c.model;
+const modelYorumlari = ()=>yorumOnbellek[mkey(car())]||[];
+const published = ()=>modelYorumlari().filter(r=>r.tur==='sahip' && r.durum==='yayinda');
+const IZLENIM = {test_surusu:'Test sürüşü',kiralama:'Kiralama',yakinin_araci:'Yakınının aracı',is_araci:'İş aracı',eski_sahip:'Eski sahibi',diger:'Diğer'};
+const hashId = ()=>decodeURIComponent(location.hash.slice(1).split('&')[0]);
+function satirdan(x){
+  return {id:x.id,ad:x.takma_ad||'Üye',tarih:String(x.olusturma).slice(0,10),puan:x.puan,sub:x.alt_puan||{},ay:x.ay,km:x.km,baslik:x.baslik,metin:x.metin,
+    arti:x.artilar||[],eksi:x.eksiler||[],sorun:x.sorunlar||[],faydali:x.faydali||0,durum:x.durum==='yayinda'?'yayinda':'bekliyor',
+    tur:x.tur,izlenim:x.izlenim_turu,arac_id:x.arac_id,yil:x.yil,versiyon:x.versiyon,benim:!!(ben && x.user_id===ben.id)};
+}
+async function yorumlariYukle(){
+  if(!window.Uyelik || !Uyelik.acik) return;
+  const c=car(), k=mkey(c);
+  try{
+    ben = await Uyelik.oturum();
+    yorumOnbellek[k] = ((await Uyelik.yorumlar(c.marka,c.model))||[]).map(satirdan);
+    if(ben){ try{ helped = await Uyelik.oylarim(); }catch(e){} }
+  }catch(e){ yorumOnbellek[k]=yorumOnbellek[k]||[]; }
+  if(mkey(car())===k){ renderScore(); renderProblems(); renderReviews(); }
+}
 
 let toastTimer;
 function toast(msg){
@@ -10610,7 +10691,7 @@ function renderScore(){
     const m=avg(vals);
     subs+=`<li><span>${l}</span><span class="meter" aria-hidden="true"><i style="width:${m/5*100}%"></i></span><b>${nf(m,1)}</b></li>`;
   });
-  $('#scoreBody').innerHTML=`<div class="score-num">${nf(a,1)}<small>/ 5</small></div><p class="score-meta">${n} sahip yorumuna göre</p><ul class="subs">${subs}</ul>`;
+  $('#scoreBody').innerHTML=`<div class="score-num">${nf(a,1)}<small>/ 5</small></div><p class="score-meta">${n} sahip yorumuna göre (modelin tüm versiyonları)</p><ul class="subs">${subs}</ul>`;
 }
 
 function renderProblems(){
@@ -10660,31 +10741,37 @@ function renderProblems(){
 }
 
 function renderReviews(){
-  const all=reviews[state.carId], pub=published();
-  $('#reviewLead').textContent = pub.length ? `${pub.length} yorum. Her yorum sahibinin kullanım süresi ve kilometresiyle birlikte gösterilir.` : '';
-  $('#reviewLead').hidden = !pub.length; $('#reviewTools').hidden = !all.length;
+  const c=car(), all=modelYorumlari().filter(r=>r.durum==='yayinda'||r.benim);
+  const yay=all.filter(r=>r.durum==='yayinda'), nS=yay.filter(r=>r.tur==='sahip').length, nI=yay.length-nS;
+  $$('#yzTabs button').forEach(b=>{
+    b.setAttribute('aria-selected', String(b.dataset.tur===state.tur));
+    const n={hepsi:nS+nI,sahip:nS,izlenim:nI}[b.dataset.tur];
+    b.querySelector('span').textContent = n?`(${n})`:'';
+  });
+  $('#reviewLead').textContent = yay.length ? `${c.marka} ${c.model} için ${nS} sahip yorumu ve ${nI} sürüş izlenimi. Seçili versiyona ait olanlar işaretlidir.` : '';
+  $('#reviewLead').hidden = !yay.length; $('#reviewTools').hidden = !all.length; $('#yzTabs').hidden = !all.length;
   $('#filterTag').innerHTML = state.filter ? `<span class="activefilter">Filtre: ${esc(PROBLEMS[state.filter])} sorunu<button type="button" id="clearFilter">Kaldır</button></span>` : '';
-  let list=all.filter(r=>!state.filter || r.sorun.includes(state.filter));
+  let list=all.filter(r=>state.tur==='hepsi'||r.tur===state.tur).filter(r=>!state.filter || r.sorun.includes(state.filter));
   const pend=list.filter(r=>r.durum==='bekliyor'), rest=list.filter(r=>r.durum!=='bekliyor');
   const sorters={yeni:(a,b)=>b.tarih.localeCompare(a.tarih),faydali:(a,b)=>b.faydali-a.faydali,yuksek:(a,b)=>b.puan-a.puan,dusuk:(a,b)=>a.puan-b.puan};
   rest.sort(sorters[state.sort]);
   list=[...pend,...rest];
   if(!list.length){
-    $('#reviews').innerHTML=`<div class="emptystate">${all.length?'Bu filtreyle eşleşen yorum yok.':'Bu araç için henüz sahip yorumu yok.'}</div>`;
+    $('#reviews').innerHTML=`<div class="emptystate">${all.length?'Bu seçimle eşleşen yorum yok.':`${esc(c.marka+' '+c.model)} için henüz yorum yok.${window.Uyelik&&Uyelik.acik?' İlk yorumu sen yaz.':''}`}</div>`;
     return;
   }
   $('#reviews').innerHTML=list.map(r=>{
-    const isP=r.durum==='bekliyor';
-    const isH=helped.has(r.id);
-    return `<article class="review">
-      <div class="rhead"><div><span class="who">${esc(r.ad)}</span> <span class="own">Kullanım: ${r.ay} ay, ${nf(r.km)} km</span></div>
+    const isP=r.durum==='bekliyor', isH=helped.has(r.id), sahip=r.tur==='sahip';
+    return `<article class="review ${sahip?'sahip':'izlenim'}">
+      <div class="rhead"><div>${sahip?'<span class="rbadge sahip">Sahip yorumu</span>':`<span class="rbadge izlenim">Sürüş izlenimi${r.izlenim?' · '+esc(IZLENIM[r.izlenim]||''):''}</span>`}<span class="who">${esc(r.ad)}</span>${sahip&&r.ay!=null?` <span class="own">Kullanım: ${r.ay} ay, ${nf(r.km)} km</span>`:''}</div>
       <div class="rrating"><span class="meter" aria-hidden="true"><i style="width:${r.puan/5*100}%"></i></span><b>${r.puan}/5</b></div></div>
+      <span class="rver">${esc([r.yil,r.versiyon].filter(Boolean).join(', '))}${r.arac_id===state.carId?' · <em>Seçili versiyon</em>':''}</span>
       <h4>${esc(r.baslik)}</h4>
       <p class="body">${esc(r.metin)}</p>
       ${(r.arti.length||r.eksi.length)?`<div class="pc">${r.arti.length?`<div class="pro"><h5>Artılar</h5><ul>${r.arti.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}${r.eksi.length?`<div class="con"><h5>Eksiler</h5><ul>${r.eksi.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}</div>`:''}
-      ${r.sorun.length?`<div class="rprob"><span>Bildirilen sorunlar:</span>${r.sorun.map(k=>`<span class="tag">${esc(PROBLEMS[k])}</span>`).join('')}</div>`:''}
-      ${isP?'<p class="pending">Onay bekliyor. Moderasyondan sonra yayınlanır, şimdilik yalnızca sen görüyorsun.</p>':''}
-      <div class="rfoot"><span class="rdated">${fmtDate(r.tarih)}</span>${isP?'':`<button type="button" class="btn small" data-help="${r.id}" aria-pressed="${isH}">Faydalı (${r.faydali+(isH?1:0)})</button>`}</div>
+      ${r.sorun.length?`<div class="rprob"><span>Bildirilen sorunlar:</span>${r.sorun.map(k=>`<span class="tag">${esc(PROBLEMS[k]||k)}</span>`).join('')}</div>`:''}
+      ${isP?'<p class="pending">Kontrol ediliyor. Yayınlanana kadar yalnızca sen görüyorsun.</p>':''}
+      <div class="rfoot"><span class="rdated">${fmtDate(r.tarih)}</span>${isP||r.benim?'':`<button type="button" class="btn small" data-help="${r.id}" aria-pressed="${isH}">Faydalı (${r.faydali})</button>`}</div>
     </article>`;
   }).join('');
 }
@@ -10706,7 +10793,7 @@ function renderRivals(){
     : '<li><div class="rn"><span>Bu kasa tipinde veritabanımızda başka marka yok.</span></div></li>';
 }
 
-function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); renderEquip(); }
+function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); renderEquip(); $('#yzPanel').hidden=true; yorumlariYukle(); }
 
 function buildForm(){
   $('#f-puan').innerHTML=[1,2,3,4,5].map(n=>`<label class="segopt"><input type="radio" name="puan" value="${n}" ${n===1?'required':''}><span>${n}</span></label>`).join('');
@@ -10716,26 +10803,48 @@ function buildForm(){
   none.addEventListener('change',()=>{ if(none.checked) $$('input[name="sorun"]').forEach(i=>i.checked=false); });
   $$('input[name="sorun"]').forEach(i=>i.addEventListener('change',()=>{ if(i.checked) none.checked=false; }));
 }
-function openForm(){
-  const c=car();
+function yzPanel(html){ const p=$('#yzPanel'); p.innerHTML=html; p.hidden=false; p.scrollIntoView({block:'nearest'}); }
+async function openForm(){
+  const c=car(), geri='uye.html?geri='+encodeURIComponent(state.carId);
+  if(!window.Uyelik || !Uyelik.acik) return yzPanel('<b>Üyelik çok yakında açılıyor.</b> Açıldığında üye olup bu araca yorum yazabileceksin.');
+  let o=null; try{ o=await Uyelik.oturum(); }catch(e){}
+  if(!o) return yzPanel(`<b>Yorum yazmak için üye girişi gerekiyor.</b> Yorumları yalnızca kayıtlı üyeler yazabilir.<div class="acts"><a class="btn primary" href="${geri}">Giriş yap</a><a class="btn" href="${geri}#kayit">Üye ol</a></div>`);
+  ben=o;
+  try{ garajim=await Uyelik.garaj(); }catch(e){ garajim=[]; }
+  const sahip=garajim.some(g=>g.marka===c.marka && g.model===c.model);
+  const mevcut=modelYorumlari().find(r=>r.benim && r.arac_id===state.carId);
+  if(mevcut) return yzPanel(`<b>Bu versiyon için zaten yorum yazdın.</b> ${mevcut.durum==='bekliyor'?'Yorumun kontrol ediliyor.':'Yorumun yayında.'}<div class="acts"><a class="btn" href="uye.html">Profilim</a></div>`);
+  $('#yzPanel').hidden=true;
+  const f=$('#rf'); f.dataset.tur = sahip?'sahip':'izlenim';
+  $('#dlgT').textContent = sahip?'Sahip yorumu yaz':'Sürüş izlenimi yaz';
   $('#dlgCar').textContent=`${c.marka} ${c.model} ${c.yil}, ${c.versiyon}`;
+  $('#dlgNot').innerHTML = sahip
+    ? `Bu model garajında olduğu için yorumun <b>sahip yorumu</b> olarak <b>${esc(o.takma_ad)}</b> adıyla yayınlanır.`
+    : `${esc(c.marka+' '+c.model)} garajında olmadığı için <b>sürüş izlenimi</b> yazıyorsun; <b>${esc(o.takma_ad)}</b> adıyla yayınlanır. Bu araca sahipsen önce <a href="${geri}">garajına ekle</a> (en fazla 5 araç), sonra sahip yorumu yaz.`;
+  $('#f-izlenimWrap').hidden=sahip; $('#f-izlenim').required=!sahip;
+  $('#f-kullanim').hidden=!sahip; $('#f-ay').required=sahip; $('#f-km').required=sahip;
+  $('#f-sorunWrap').hidden=!sahip;
+  $('#dlgHata').hidden=true;
   $('#dlg').showModal();
 }
-$('#rf').addEventListener('submit',e=>{
+$('#rf').addEventListener('submit',async e=>{
   e.preventDefault();
-  const f=e.target, fd=new FormData(f);
+  const f=e.target, fd=new FormData(f), c=car(), sahip=f.dataset.tur==='sahip';
   const subs={};
   Object.keys(SUBS).forEach(k=>{ const v=fd.get('sub-'+k); if(v) subs[k]=Number(v); });
   const split=s=>String(s||'').split(',').map(x=>x.trim()).filter(Boolean).slice(0,6);
-  const r={id:'n'+Date.now(),ad:String(fd.get('nick')).trim(),tarih:new Date().toISOString().slice(0,10),puan:Number(fd.get('puan')),sub:subs,
-    ay:Number(fd.get('ay')),km:Number(fd.get('km')),baslik:String(fd.get('baslik')).trim(),arti:split(fd.get('arti')),eksi:split(fd.get('eksi')),
-    metin:String(fd.get('metin')).trim(),sorun:fd.getAll('sorun'),faydali:0,durum:'bekliyor'};
-  reviews[state.carId].unshift(r);
-  f.reset();
-  $('#dlg').close();
-  renderReviews();
-  $('#yorumlar').scrollIntoView({block:'start'});
-  toast('Yorumun moderasyona gönderildi. Onaydan sonra yayınlanacak.');
+  const y={arac_id:state.carId,marka:c.marka,model:c.model,yil:c.yil,versiyon:c.versiyon,tur:sahip?'sahip':'izlenim',izlenim_turu:sahip?null:(fd.get('izlenim')||null),
+    puan:Number(fd.get('puan')),alt_puan:subs,ay:sahip?Number(fd.get('ay')):null,km:sahip?Number(fd.get('km')):null,
+    baslik:String(fd.get('baslik')).trim(),metin:String(fd.get('metin')).trim(),artilar:split(fd.get('arti')),eksiler:split(fd.get('eksi')),sorunlar:sahip?fd.getAll('sorun'):[]};
+  const btn=f.querySelector('[type=submit]'); btn.disabled=true;
+  try{
+    await Uyelik.yorumGonder(y);
+    f.reset(); $('#dlg').close();
+    await yorumlariYukle();
+    $('#yorumlar').scrollIntoView({block:'start'});
+    toast('Yorumun alındı. Kısa bir kontrolden sonra yayınlanacak.');
+  }catch(err){ const h=$('#dlgHata'); h.textContent=Uyelik.turkce(err); h.hidden=false; }
+  btn.disabled=false;
 });
 $('#dlgCancel').addEventListener('click',()=>$('#dlg').close());
 
@@ -10758,10 +10867,13 @@ document.addEventListener('click',e=>{
   }
   if(t.id==='clearFilter'){ state.filter=null; renderProblems(); return renderReviews(); }
   if(t.dataset.help){
-    const id=t.dataset.help;
-    helped.has(id)?helped.delete(id):helped.add(id);
-    return renderReviews();
+    const id=Number(t.dataset.help);
+    if(!ben) return openForm();
+    const on=!helped.has(id);
+    Uyelik.faydali(id,on).then(()=>{ on?helped.add(id):helped.delete(id); const r=modelYorumlari().find(x=>x.id===id); if(r) r.faydali+=on?1:-1; renderReviews(); }).catch(err=>toast(Uyelik.turkce(err)));
+    return;
   }
+  if(t.dataset.tur && t.closest('#yzTabs')){ state.tur=t.dataset.tur; return renderReviews(); }
   if(t.id==='cmpGo'){ const v=$('#cmpSel').value; if(v) location.href='karsilastirma.html#k='+encodeURIComponent(state.carId)+','+encodeURIComponent(v); return; }
 });
 $('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderReviews(); });
@@ -10781,18 +10893,23 @@ $('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderRe
 })();
 
 (function(){
-  const token = ID_ALIAS[location.hash.slice(1)] || location.hash.slice(1);
+  const token = ID_ALIAS[hashId()] || hashId();
   if(token && CARS[token]) state.carId = token;
 })();
 
 window.addEventListener('hashchange', ()=>{
-  const token = ID_ALIAS[location.hash.slice(1)] || location.hash.slice(1);
+  const token = ID_ALIAS[hashId()] || hashId();
   if(token && CARS[token] && token !== state.carId){ state.carId = token; state.filter = null; renderAll(); }
 });
 
 buildForm();
 renderRivals();
 renderAll();
+if(/&yorum\b/.test(location.hash)){
+  history.replaceState(null,'','#'+state.carId);
+  setTimeout(()=>{ $('#yorumlar').scrollIntoView({block:'start'}); openForm(); },300);
+}
+if(window.Uyelik) Uyelik.degisti(()=>yorumlariYukle());
 </script>
 </body>
 </html>

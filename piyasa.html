@@ -293,5 +293,7 @@ drawMonthly(); drawBrands(); drawFuel(); drawYears();
 let rz; let lastW=window.innerWidth; window.addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ if(window.innerWidth===lastW) return; lastW=window.innerWidth; drawMonthly(); drawBrands(); drawFuel(); drawYears(); renderModels(modelP); },150); });
 document.getElementById('tYears').innerHTML = D.yillik.map(d=>`<tr><td>${d.yil}</td><td class="n">${n(d.oto)}</td><td class="n">${n(d.hta)}</td><td class="n">${n(d.top)}</td><td><a href="${esc(d.src)}" target="_blank" rel="noopener" style="color:var(--accent-soft)">${esc(d.srcAd)}</a></td></tr>`).join('');
 </script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
 </body>
 </html>
