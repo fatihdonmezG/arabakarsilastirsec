@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 80 |
-| Fiat | bekliyor | 0 |
+| Renault | devam ediyor | 100 |
+| Fiat | devam ediyor | 11 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -62,7 +62,10 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] 1.5 dCi 90 EDC: 2015–2016, 2017–2019
   - [x] 1.2 TCe 120 EDC: 2015–2016, 2017–2019
   - Euro NCAP 2012 (5 yıldız); geri çağırma: 2014-09 fren kampanyası (2013–2014)
-- [ ] Clio IV Sport Tourer (2013–2019)
+- [x] Clio IV Sport Tourer (2013–2016) — 20 versiyon
+  - [x] 1.2 16V 75, 0.9 TCe 90, 1.5 dCi 75, 1.5 dCi 90: 2013–2016; 1.5 dCi 90 EDC, 1.2 TCe 120 EDC: 2015–2016
+  - [ ] Makyajlı Sport Tourer (2017–2019): kasaya göre Türkiye listesi bulunamadı
+  - Kaynak: otomobil.com.tr Şubat 2013 Clio Sport Tourer listesi
 - [ ] Clio III HB / Sport Tourer (2010–2012)
 - [ ] Clio V (2019–2025)
 - [ ] Symbol II (2010–2012)
@@ -93,4 +96,14 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
 
 Sıra: Linea, Egea (eski model yılları), Doblo Combi, Punto / Grande Punto / Punto Evo, Fiorino Combi, Bravo, 500 / 500L / 500X, Panda, Tipo HB/SW (2016–2020), Freemont, Fullback, Albea, Palio, Sedici, Qubo.
 
-- [ ] (henüz başlanmadı)
+Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları):
+- Ağustos 2015: https://otopark.com/2015/08/30/fiat-agustos-2015-fiyat-listesi/ (500, 500X, 500L, Panda, Punto, Linea, Linea Classic, Freemont, Fiorino/Doblo Panorama)
+- Temmuz 2016: https://otopark.com/2016/07/29/fiat-temmuz-2016-fiyat-listesi/ (+ Egea Sedan/HB, Fiorino Combi, Doblo Combi)
+
+- [x] Linea makyajlı (2012–2016) — 11 versiyon
+  - [x] 1.4 Fire 77 ve 1.3 Multijet 95: 2012–2016; 1.6 Multijet 105: 2012
+  - 1.3 Multijet 95 için tek kaynakta teknik veri bulunamadı; yalnızca güç ve boyutlar girildi
+  - [ ] Linea 2010–2011 (makyaj öncesi: 1.4 77, 1.3 MJ 90, 1.6 MJ 105, 1.4 T-Jet 120): Türkiye listesi bulunamadı
+  - Euro NCAP: test edilmedi
+- [ ] Egea (2016–2025 eski model yılları)
+- [ ] Doblo Combi, Fiorino Combi, Punto, 500 / 500L / 500X, Panda, Bravo, Tipo, Freemont, Fullback
