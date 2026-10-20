@@ -6,7 +6,7 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 35 |
+| Renault | devam ediyor | 80 |
 | Fiat | bekliyor | 0 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
@@ -65,8 +65,17 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
 - [ ] Clio IV Sport Tourer (2013–2019)
 - [ ] Clio III HB / Sport Tourer (2010–2012)
 - [ ] Clio V (2019–2025)
-- [ ] Symbol II (2010–2012), Symbol III (2013–2020)
-- [ ] Fluence (2010–2016)
+- [ ] Symbol II (2010–2012)
+- [x] Symbol III (2013–2020) — 14 versiyon
+  - [x] 1.2 16V 75: 2013–2016; 0.9 TCe 90: 2013 ve 2020 (makyajlı); 1.5 dCi 75: 2013
+  - [x] 1.5 dCi 90: 2015–2016, 2017–2018 (makyajlı); 1.5 dCi 90 Easy-R ve 1.0 SCe 75: 2018; 1.5 Blue dCi 95: 2020
+  - 2019 için Türkiye listesi bulunamadı (eklenmedi). Euro NCAP: sedan test edilmedi. Geri çağırma: araştırıldı, Symbol rozetli kayıt bulunamadı (null)
+  - Kaynaklar: otomobil.com.tr Şubat 2013, yenimodelarabalar.com Mayıs 2018, log.com.tr Ağustos 2020
+- [x] Fluence (2011–2016) — 31 versiyon
+  - [x] 2011–2012: 1.6 110, 1.6 105 BVA, 1.5 dCi 85, 1.5 dCi 105, 1.5 dCi 110 EDC (otoguncel.com listesi)
+  - [x] 2013–2016 (makyajlı): 1.6 110, 1.6 115 CVT, 1.5 dCi 90, 1.5 dCi 110, 1.5 dCi 110 EDC; 1.6 dCi 130: 2013
+  - [ ] 2010 model yılı: Türkiye listesi bulunamadı
+  - Euro NCAP: yalnızca Fluence Z.E. test edildi
 - [ ] Megane III HB / Sport Tourer / Coupe (2010–2016)
 - [ ] Megane IV HB / Sedan (2016–2025)
 - [ ] Captur I (2013–2019), Captur II (2020–2025)
