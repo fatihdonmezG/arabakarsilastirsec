@@ -20,8 +20,10 @@ C.filter(c=>!ex.has(c.id)).forEach(c=>console.log(c.marka,'|',c.id,'|',c.model,c
    - Kampanyanın kapsadığı **model yılı** bu versiyonun yılını içermiyorsa ya da kaynak açıkça başka bir motor/donanım diyorsa `recalls` listesine **ekleme**; `geriCagirmaNot` içinde "X kampanyası Y yıllarını kapsadığı için hariç tutuldu" diye yaz.
    - `tarih` mutlaka `YYYY-AA`. Kesin ay bilinmiyorsa listeye ekleme, nota yaz.
    - ABD kampanyası olduğunu `ozet`'te belirt; Türkiye'deki araçları kapsayıp kapsamadığı bilinmiyorsa bunu söyle.
-   - Hiç araştıramadıysan `recalls: null` ("veri eklenmedi" görünür). Araştırdın ve bu yıl için kayıt yoksa `recalls: []`.
-4. **Euro NCAP:** Sonucu yalnızca test edilen model/nesil bu versiyonla aynıysa kullan; `ncap_test_yili` ve `ncapKaynak` (euroncap.com sayfası) zorunlu. Farklı gövde/nesil/elektrikli-benzinli ayrımı varsa yıldızı yazma, `ncapNot`'ta açıkla. 6 yıldan eski testlerde "Test X yıldan eski" diye not düş.
+   - **Zaman aşımı yok:** Kampanya ne kadar eski olursa olsun (10–15 yıl önce bile) o model yılını kapsıyorsa eklenir. Eski modellerde de geri çağırma araştırması zorunludur; nesil başına bir kez yapılır ve kampanyalar kapsadığı model yıllarına göre ilgili versiyonlara yazılır.
+   - `recalls: null` yalnızca araştırma hiç yapılamadıysa kullanılır (sitede "henüz eklenmedi" görünür). Araştırdın ve bu yıl için kayıt yoksa `recalls: []`.
+   - Detay sayfası, aynı modelin diğer yıllarına ait kampanyaları ayrıca "Bu modelin diğer yıllarındaki geri çağırmalar" başlığıyla gösterir; bu yüzden bir kampanyayı yanlış yıla yazmak yerine doğru yıla yazmak yeterlidir.
+4. **Euro NCAP:** Euro NCAP'in bir model **nesline** verdiği sonuç, o neslin bütün versiyonlarına yazılır: benzinli, dizel, hibrit, elektrikli, farklı motor ve donanım paketleri arasında ayrım yapılmaz (ör. test dizel versiyonla yapıldıysa benzinli ve hibrit versiyonlar da aynı yıldızı alır; aynı neslin hatchback/sedan/SW/coupe gövdeleri de aynı sonucu paylaşır). Ayrım yalnızca **nesil** içindir: önceki neslin sonucu yeni nesle yazılmaz. `ncap_test_yili` ve `ncapKaynak` zorunlu. 6 yıldan eski testlerde "Test X yıldan eski" diye not düş.
 5. **Artı-eksi (`gucluYanlar`, `dikkatEdilecekler`):** Tanınmış basın incelemeleri (What Car, Auto Express, Top Gear, Car and Driver, ADAC, Autocar, Türk otomotiv dergileri) ya da güvenilirlik anketleri (What Car? Reliability Survey, Which?). Kendi cümlelerinle, en fazla 3'er madde. İnceleme farklı motor/donanım için yapıldıysa bunu metinde belirt.
 6. **Ödül:** Tam teyit edemediğin ödülü ekleme.
 7. **Fiyat yazma.** Fiyat yalnızca 2026 model yılı, satıştaki sıfır araçlarda ve yalnızca resmi fiyat listesinden karşılaştırma verisine girilir; 2026 dışındaki araçlar için fiyat araştırılmaz. Detay kaydına fiyat bilgisi koyma.
@@ -69,7 +71,7 @@ C.filter(c=>!MARKA||c.marka===MARKA).forEach(c=>{const ev=/^Elektrik/i.test(c.s.
 - Her değer, açıp okuduğun bir sayfaya dayanır (öncelik: üreticinin Türkiye sitesi, broşür/teknik katalog PDF'i, basın sitesi; sonra ultimatespecs, auto-data.net, encycarpedia gibi teknik veritabanları; NCAP için euroncap.com).
 - Kaynak, **aynı model yılı, motor ve donanım** için olmalı. Başka pazarın (ör. ABD) farklı motorlu versiyonunun değerini kullanma.
 - WLTP ve NEDC değerlerini karıştırma; 2026 araçlarda WLTP.
-- `ncap_yildiz` yalnızca Euro NCAP'in aynı nesil/gövde için verdiği sonuçsa; `ncap_test_yili` ile birlikte gir.
+- `ncap_yildiz`: Euro NCAP'in aynı nesil için verdiği sonuç; motor, yakıt türü, donanım ve gövde ayrımı yapılmaz. `ncap_test_yili` ile birlikte gir.
 - `segment` gibi sınıflandırmalar da kaynaktan gelir (üretici ya da Euro NCAP sınıfı); kendin sınıflandırma.
 - Fiyat alanları bu araçla doldurulamaz.
 - sahibinden yalnızca satıştan kalkmış eski modellerde, son çare, tek seferlik ve elle okunarak; `kaynakTuru:"sahibinden"`.
