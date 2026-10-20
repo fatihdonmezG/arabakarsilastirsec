@@ -11,6 +11,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Fiat | devam ediyor | 2026-10-17 | 249 |
 | Toyota | devam ediyor | 2026-10-19 | 147 |
 | Hyundai | devam ediyor | 2026-10-19 | 162 |
+| Volkswagen | devam ediyor | 2026-10-20 | 425 |
+| Peugeot | devam ediyor | 2026-10-20 | 86 |
 
 ## Çalışma günlüğü
 
@@ -56,3 +58,21 @@ Araştırıldı, bulunamadı:
 - Kona Elektrik: kablosuz_sarj, kamera_360 satırı yok
 
 Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Tucson Comfort (iki versiyon) anahtarsiz_giris=Yok ve carplay_android_auto=Yok, Hyundai sayfasında standart görünüyor; Corolla Sedan Vision Plus ekran_inch=7, PDF'te multimedya ekranı 9 inç (7 inç gösterge).
+
+### 2026-10-20: Volkswagen, Peugeot (179 alan, 18 versiyon)
+
+Kaynaklar: peugeot.com.tr teknik broşürleri (308 2026, Yeni 408 Nisan 2026, e-208 Haziran 2025, 3008/e-3008 Ekim 2025, 5008/e-5008 Temmuz 2026) ve 2008 model sayfası donanım listesi; binekarac.vw.com.tr ID.7 Front Assist özellik sayfası (P = Pro S standart).
+
+Doldurulan: Peugeot 178 alan (308 2, 408 2, e-208 GT, 2008 2, e-2008 2, 3008 2, e-3008 2, 5008 2, e-5008 2); Volkswagen 1 alan (ID.7 Pro S otonom acil fren).
+
+Araştırıldı, bulunamadı:
+- Volkswagen genel: binekarac.vw.com.tr model sayfalarında paket işaretleri (L/ST/R/E/P) yalnızca tek tek özellik katmanlarında görünüyor; fiyat/donanım listesi uygulaması (arac-fiyatlari.html), karşılaştırma sayfası ve ebrosur.vw.com.tr açılamadı. Tayron, Taigo, T-Cross, Golf, Golf GTI, Golf R, Passat, T-Roc, Tiguan, ID.4, Touareg alanları boş kaldı; bir sonraki denemede resmi PDF donanım listesi gerekli.
+- vw-tiguan-1-5-etsi-150-dsg-life-2026: acilir_tavan (panoramik tavan yalnızca Elegance ve R-Line için işaretli; Life için bilgi yok)
+- vw-id7-210kw-286hp-pro-s-2025: diğer alanlar (paket işareti yok ya da sayfada geçmiyor)
+- Peugeot e-208 GT: otonom_acil_fren, yorgunluk_tespit, koltuk_isitma, elektrikli_koltuk, elektrikli_bagaj, start_stop, navigasyon (broşürde yok); kamera_360 (yalnızca ön ve arka kamera), klima tipi, deri_doseme (yarı deri), acilir_tavan (cam tavan açılır değil/belirsiz)
+- Peugeot 308: koltuk_isitma, elektrikli_bagaj, start_stop (yok); GT elektrikli_koltuk (yalnızca bel desteği); deri_doseme (yarı deri); acilir_tavan (paket belirsiz)
+- Peugeot 408: kablosuz_sarj (yok); acilir_tavan ve GT ses_sistemi (Focal opsiyonu paket belirsiz); GT deri_doseme (Alcantara)
+- Peugeot 2008/e-2008: 2008 ve e-2008 teknik broşür PDF'leri açılamadı; model sayfası güvenlik destekleri, koltuk, multimedya ayrıntılarını kapsamıyor. Allure led_far belirsiz; GT kamera_360 belirtilmemiş.
+- Peugeot e-3008, e-5008: start_stop (yok); 5008/e-5008 Allure navigasyon belirsiz
+
+Kontrol edilmesi gereken: Peugeot 5008 teknik broşüründe hibrit 136 hp yazıyor, sitedeki kayıtlar 145 HP; donanım listesi paket bazında kullanıldı.
