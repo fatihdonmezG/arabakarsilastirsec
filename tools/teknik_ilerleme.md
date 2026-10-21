@@ -773,3 +773,12 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - mini-countryman-electric-2026-e | airbag_sayisi | açık sayı yok
 - mini-countryman-electric-2026-e | dc_hizli_sarj_dk_20_80 | Kaynaklar yalnız %10-80 veriyor (üretici 29 dk @130 kW; EVDB testi 34 dk)
 - mini-countryman-electric-2026-e | elektrik_tuketim_kwh100km | MY26 WLTP aralığı 14,8-16,3 (EVDB), PressClub MY24 17,4-15,7; uç belirsiz (501 km menzil TEL ucu = 14,8 ile uyumlu olur)
+
+## 2026-10-21 — Şanzıman (boş alanlar)
+
+Doldurulan: subaru-crosstrek-2025-e-boxer.sanziman (Subaru Türkiye performans sayfası). Kaynak temizliğinde VW/Škoda şanzımanları tip ve vites sayısıyla güncellendi.
+Bulunamayanlar:
+- egea-sedan-2026-1.6-multijet-130 | sanziman | Fiat sayfası 1.6 130 HP için hem "6 İleri Manuel" hem "6 İleri Otomatik" listeliyor; kaydın hangisi olduğu belirsiz
+- vw-t-cross-1-0-tsi-116-manuel-life-2026 | sanziman | resmi kaynakta 116 PS manuel seçenek doğrulanamadı (temizlikte silindi)
+- ds-n8-2026-etoile-fwd-long-range | sanziman | DS Türkiye sayfasında şanzıman bilgisi yok
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 84).
