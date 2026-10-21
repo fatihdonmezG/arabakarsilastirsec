@@ -782,3 +782,14 @@ Bulunamayanlar:
 - vw-t-cross-1-0-tsi-116-manuel-life-2026 | sanziman | resmi kaynakta 116 PS manuel seçenek doğrulanamadı (temizlikte silindi)
 - ds-n8-2026-etoile-fwd-long-range | sanziman | DS Türkiye sayfasında şanzıman bilgisi yok
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 84).
+
+## 2026-10-21 — Tüketim ve şanzıman: Volkswagen, Škoda, Porsche, Mercedes-Benz, Peugeot, Mini (+ Audi temizlik sırasında)
+
+Doldurulan: 126 alan (76 versiyon) + 11 şanzıman tip/vites güncellemesi (VW ID.4, Porsche 911 Carrera/Turbo S, Cayenne S, Panamera, Mini 6 benzinli). Aralık veren kaynaklarda aralığın ortası yazıldı (kaynak adında aralık belirtildi). Daha önce "uç belirsiz" diye bırakılan Mini aralıkları bu kuralla dolduruldu.
+Satıştaki versiyonlarda boş tüketim: 143 → 72.
+Bulunamayanlar:
+- audi-q7-2026-45-tfsi-quattro-sline | tuketim_l100km | resmi teknik sayfa 10,7 veriyor ama çevrim (WLTP) belirtilmemiş; Avrupa'da bu motor satılmıyor
+- audi-q7-2026-45-tfsi-quattro-sline | co2_gkm | hiçbir kaynakta yok
+- audi-q8-2026-tfsi-quattro-195kw | tuketim_l100km | 2.0 TFSI Q8 için WLTP değeri bulunamadı (Avrupa'da satılmıyor); eski değer temizlikte silindi
+- audi-q8-2026-tfsi-quattro-195kw | co2_gkm | aynı neden
+Not: toyota-yaris-hybrid-1-5-flame-2026 tüketim/CO₂ temizlikte silindi (resmi Yaris teknik PDF'i açılamadı); bir sonraki çalışmada aranabilir.
