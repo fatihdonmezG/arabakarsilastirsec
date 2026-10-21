@@ -71,6 +71,8 @@ C.filter(c=>!MARKA||c.marka===MARKA).forEach(c=>{const ev=/^Elektrik/i.test(c.s.
 - Her değer, açıp okuduğun bir sayfaya dayanır (öncelik: üreticinin Türkiye sitesi, broşür/teknik katalog PDF'i, basın sitesi; sonra ultimatespecs, auto-data.net, encycarpedia gibi teknik veritabanları; NCAP için euroncap.com).
 - Kaynak, **aynı model yılı, motor ve donanım** için olmalı. Başka pazarın (ör. ABD) farklı motorlu versiyonunun değerini kullanma.
 - WLTP ve NEDC değerlerini karıştırma; 2026 araçlarda WLTP.
+- **Aralık verilen değerler:** Kaynak bir değeri aralık olarak veriyorsa (ör. WLTP tüketim "5,8–6,1 l/100 km", CO₂ "131–139 g/km", menzil, ağırlık) aralığın ortasını yaz (5,95; 135) ve kaynak adına aralığı ekle: "... (5,8–6,1 l/100 km aralığının ortası)". Pakete açıkça karşılık gelen tek değer varsa onu yaz.
+- **Boş bırakma eşiği:** Kullanıcılar boş alanlardan şikâyetçi. Değer resmi Türkiye kaynağında yoksa aynı motor, şanzıman ve gövde için üreticinin Avrupa kaynağı, ardından ultimatespecs, auto-data.net, encycarpedia, autotijd gibi teknik veritabanları kullanılabilir. Aynı motor ve şanzımanla satılan donanım paketleri aynı değeri paylaşabilir. Yalnızca hiçbir kaynakta bulunamayan değer boş kalır.
 - `ncap_yildiz`: Euro NCAP'in aynı nesil için verdiği sonuç; motor, yakıt türü, donanım ve gövde ayrımı yapılmaz. `ncap_test_yili` ile birlikte gir.
 - `segment` gibi sınıflandırmalar da kaynaktan gelir (üretici ya da Euro NCAP sınıfı); kendin sınıflandırma.
 - Fiyat alanları bu araçla doldurulamaz.
