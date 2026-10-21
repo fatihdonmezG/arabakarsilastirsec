@@ -42,7 +42,7 @@ html select,html input[type=text],html input[type=number],html input[type=search
 html .btn.primary{background:var(--accent-grad);border-color:transparent;color:#fff}
 
 /* Mobil menü paneli */
-@media (max-width:980px){
+@media (max-width:1180px){
   html .top .nav{background:#fff;box-shadow:0 22px 34px rgba(15,26,43,.16)}
   html .top .nav a{color:var(--ink)}
   html .top .nav a[aria-current]:not(.cta){color:var(--accent-soft)}
@@ -119,3 +119,8 @@ html tbody tr:hover{background:var(--surface2)}
 html .hphoto,html .vphoto{background:radial-gradient(ellipse 70% 60% at 50% 62%,#FFFFFF 0%,#EEF2F7 60%,#E2E8F0 100%)}
 html .bdg.off,html .oduller .bdg{color:#9A3412;border-color:#FDBA74;background:#FFF7ED}
 html .bdg{background:var(--surface2)}
+html .nitem{background:#fff;border-color:var(--line)}
+html .nitem p{color:#334155}
+html .durumbox b{color:#9A3412}
+html #dlgHata{color:#991B1B!important;border-color:#FECACA!important;background:#FEF2F2}
+html .tip{background:#0F1A2B;color:#fff}

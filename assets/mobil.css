@@ -36,9 +36,9 @@
   select,input[type=search],input[type=text]{font-size:.9rem}
 }
 
-/* Üst menü: 980 px ve altında hamburger (assets/menu.js) */
+/* Üst menü: 1180 px ve altında hamburger (assets/menu.js); tam menü ancak 1181 px'ten itibaren tek satıra sığıyor */
 .menu-btn,.cta-mobil{display:none}
-@media (max-width:980px){
+@media (max-width:1180px){
   .top{position:relative}
   .top .wrap{flex-wrap:nowrap;min-height:58px;height:auto;padding-block:8px;gap:8px}
   .menu-btn{display:inline-flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;padding:0;border:1px solid var(--line-strong);border-radius:10px;background:transparent;color:var(--ink);cursor:pointer}
@@ -66,7 +66,7 @@
   .hero-inner{padding-block:24px 22px}
   .brand{font-size:.92rem}
 }
-@media (max-width:980px){
+@media (max-width:1180px){
   .top .brand{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 }
 @media (max-width:420px){
@@ -77,12 +77,14 @@
 }
 
 /* Masaüstü: menü tek satıra sığsın; araç detayındaki bölüm menüsü üst menünün altında dursun */
-@media (min-width:981px) and (max-width:1300px){
+@media (min-width:1181px){
   .top .nav a{padding:8px 9px;font-size:.82rem}
   .top .nav a.cta{padding-inline:14px;margin-left:6px}
   .brand{font-size:1rem}
 }
-@media (min-width:981px){
+@media (min-width:1181px){
   .top .nav{flex-wrap:nowrap}
   .subnav{top:72px}
 }
+/* Menü bağlantıları hiçbir zaman iki satıra kırılmasın */
+.nav a{white-space:nowrap}
