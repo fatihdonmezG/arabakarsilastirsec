@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 100 |
-| Fiat | devam ediyor | 11 |
+| Renault | devam ediyor | 123 |
+| Fiat | devam ediyor | 27 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -61,7 +61,7 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] 1.5 dCi 90: 2013–2016, 2017–2019
   - [x] 1.5 dCi 90 EDC: 2015–2016, 2017–2019
   - [x] 1.2 TCe 120 EDC: 2015–2016, 2017–2019
-  - Euro NCAP 2012 (5 yıldız); geri çağırma: 2014-09 fren kampanyası (2013–2014)
+  - Euro NCAP 2012 (5 yıldız); geri çağırma (HB ve ST): 2014-09 fren (2013–2014), 2017-11 arka koltuk sırtı (2013–2017), 2016-10 fren kaliperi (2016–2017), 2018-04 ön göbek (2017–2018), 2019-01 katalitik konvertör (2018), 2020-03 akü kutup başı (yalnız 0.9 TCe). Arka aks cıvatası kampanyası (Avusturya/Avustralya) tarihi bilinmediği için nota yazıldı
 - [x] Clio IV Sport Tourer (2013–2016) — 20 versiyon
   - [x] 1.2 16V 75, 0.9 TCe 90, 1.5 dCi 75, 1.5 dCi 90: 2013–2016; 1.5 dCi 90 EDC, 1.2 TCe 120 EDC: 2015–2016
   - [ ] Makyajlı Sport Tourer (2017–2019): kasaya göre Türkiye listesi bulunamadı
@@ -72,15 +72,21 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
 - [x] Symbol III (2013–2020) — 14 versiyon
   - [x] 1.2 16V 75: 2013–2016; 0.9 TCe 90: 2013 ve 2020 (makyajlı); 1.5 dCi 75: 2013
   - [x] 1.5 dCi 90: 2015–2016, 2017–2018 (makyajlı); 1.5 dCi 90 Easy-R ve 1.0 SCe 75: 2018; 1.5 Blue dCi 95: 2020
-  - 2019 için Türkiye listesi bulunamadı (eklenmedi). Euro NCAP: sedan test edilmedi. Geri çağırma: araştırıldı, Symbol rozetli kayıt bulunamadı (null)
+  - 2019 için Türkiye listesi bulunamadı (eklenmedi). Euro NCAP: sedan test edilmedi. Geri çağırma: araştırıldı, Symbol rozetli kayıt bulunamadı ([])
   - Kaynaklar: otomobil.com.tr Şubat 2013, yenimodelarabalar.com Mayıs 2018, log.com.tr Ağustos 2020
 - [x] Fluence (2011–2016) — 31 versiyon
   - [x] 2011–2012: 1.6 110, 1.6 105 BVA, 1.5 dCi 85, 1.5 dCi 105, 1.5 dCi 110 EDC (otoguncel.com listesi)
   - [x] 2013–2016 (makyajlı): 1.6 110, 1.6 115 CVT, 1.5 dCi 90, 1.5 dCi 110, 1.5 dCi 110 EDC; 1.6 dCi 130: 2013
   - [ ] 2010 model yılı: Türkiye listesi bulunamadı
   - Euro NCAP: yalnızca Fluence Z.E. test edildi
-- [ ] Megane III HB / Sport Tourer / Coupe (2010–2016)
-- [ ] Megane IV HB / Sedan (2016–2025)
+  - Geri çağırma: 2016-01 bijon (2015), 2016-12 arka porya cıvatası (2016); diğer yıllar []
+- [x] Megane III HB / Sport Tourer makyajlı Phase III (2014–2016) — 23 versiyon
+  - [x] HB: 1.6 16V 115 CVT, 1.5 dCi 90, 1.5 dCi 110, 1.5 dCi 110 EDC: 2014–2016; 1.6 dCi 130: 2014; 1.6 16V 110: 2016
+  - [x] Sport Tourer: 1.5 dCi 110, 1.5 dCi 110 EDC, 1.6 dCi 130: 2014–2016
+  - Kaynaklar: haberturk.com Mart 2014 haberi, otopark.com Ocak 2016 listesi; teknik: auto-data.net Phase III sayfaları (1.6 CVT ve 1.5 dCi 90 için yalnızca güç ve boyut)
+  - Euro NCAP 2008 (5 yıldız); geri çağırma: araştırıldı, Phase III'ü kapsayan kayıt yok ([])
+  - [ ] Megane III 2010–2013 (Phase I/II) ve Coupe: Türkiye listesi bulunamadı
+- [ ] Megane IV HB (2016–2020) (Sedan 2026'da satışta; kapsam dışı). akbak.com.tr Ocak 2017 Renault binek listesi Megane IV HB, Captur, Kadjar, Talisman 2016–2017 versiyonlarını veriyor: https://www.akbak.com.tr/public/upload/modelBrosur/17_renault-binek-201701-v2.pdf
 - [ ] Captur I (2013–2019), Captur II (2020–2025)
 - [ ] Kadjar (2015–2022)
 - [ ] Talisman (2016–2022)
@@ -103,7 +109,13 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
 - [x] Linea makyajlı (2012–2016) — 11 versiyon
   - [x] 1.4 Fire 77 ve 1.3 Multijet 95: 2012–2016; 1.6 Multijet 105: 2012
   - 1.3 Multijet 95 için tek kaynakta teknik veri bulunamadı; yalnızca güç ve boyutlar girildi
+  - Geri çağırma: araştırıldı, Türkiye üretimini kapsayan kayıt yok ([]); Brezilya kampanyaları hariç
   - [ ] Linea 2010–2011 (makyaj öncesi: 1.4 77, 1.3 MJ 90, 1.6 MJ 105, 1.4 T-Jet 120): Türkiye listesi bulunamadı
   - Euro NCAP: test edilmedi
 - [ ] Egea (2016–2025 eski model yılları)
-- [ ] Doblo Combi, Fiorino Combi, Punto, 500 / 500L / 500X, Panda, Bravo, Tipo, Freemont, Fullback
+- [x] Doblo Combi, Doblo II makyajlı (2016–2022) — 16 versiyon
+  - [x] 1.3 Multijet 90: 2016; 1.6 Multijet 105: 2016–2022; 1.3 Multijet 95 ve 1.6 Multijet 120: 2019–2022
+  - Kaynaklar: otopark.com Temmuz 2016, yenimodelarabalar.com 2019-2020, ensonhaber.com Ocak 2022 listeleri; teknik: auto-data.net Doblo II (263, makyajlı 2015)
+  - Euro NCAP 2017 (3 yıldız); geri çağırma: 2017-05 hava yastığı (2016–2017), 2021-07 ABS ünitesi (2020–2021)
+  - [ ] 2015 model yılı ve Comfortmatic/Ecojet versiyonları: teknik kaynak ya da yıl teyidi yok
+- [ ] Fiorino Combi, Punto, 500 / 500L / 500X, Panda, Bravo, Tipo, Freemont, Fullback
