@@ -13,6 +13,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Hyundai | devam ediyor | 2026-10-19 | 162 |
 | Volkswagen | devam ediyor | 2026-10-20 | 425 |
 | Peugeot | devam ediyor | 2026-10-20 | 86 |
+| Ford | devam ediyor | 2026-10-21 | 176 |
+| Skoda | devam ediyor | 2026-10-21 | 401 |
 
 ## Çalışma günlüğü
 
@@ -76,3 +78,21 @@ Araştırıldı, bulunamadı:
 - Peugeot e-3008, e-5008: start_stop (yok); 5008/e-5008 Allure navigasyon belirsiz
 
 Kontrol edilmesi gereken: Peugeot 5008 teknik broşüründe hibrit 136 hp yazıyor, sitedeki kayıtlar 145 HP; donanım listesi paket bazında kullanıldı.
+
+### 2026-10-21: Ford, Skoda (148 alan, 20 versiyon)
+
+Kaynaklar: ford.com.tr model sayfaları (Kuga, Puma, Puma Gen-E, Tourneo Courier, elektrikli Capri, elektrikli Explorer); skoda.com.tr model sayfalarının donanım bölümleri (Scala, Kamiq, Karoq, Octavia, Superb, Elroq, Enyaq, Enyaq Coupé). Teknik föy/broşür PDF'leri (ford.com.tr/getmedia robots engeli, cdnepws.azureedge.net, cdn.skoda.com.tr) açılamadı; Skoda fiyat listesi ve karşılaştırma sayfası donanımı JS ile yüklüyor.
+
+Doldurulan: Ford 73 alan (Capri 140 kW ve AWD 250 kW, Explorer 2, Puma Titanium ve ST-Line X, Puma Gen-E, Kuga 3, Tourneo Courier 2); Skoda 75 alan (Scala Elite, Kamiq Elite, Karoq Premium, Octavia mHEV Elite, Superb mHEV Premium, Elroq 60 e-Prestige, Enyaq 60 e-Prestige, Enyaq Coupé 60 e-Sportline). Klima tipiyle güncellenen: Kuga Titanium, Tourneo Courier Deluxe (manuel) ve Titanium; Elroq, Enyaq, Enyaq Coupé (boştu).
+
+Araştırıldı, bulunamadı:
+- Ford genel: arka_klima_cikisi, yorgunluk_tespit, navigasyon (dahili sistem teyit edilemedi) model sayfalarında yok; elektriklilerde start_stop yok. Klima tipi Capri, Explorer, Puma, Puma Gen-E, Kuga Active X ve ST-Line X için paket bazında yok.
+- ford-focus-titanium-style/titanium-x-sedan: Ford Türkiye Focus üretiminin sona erdiğini duyuruyor; sedan paketleri sayfada yok.
+- ford-capri-premium-125kw-2026: Capri sayfası yalnızca 140 ve 250 kW gösteriyor; yazılmadı.
+- Tourneo Courier: çarpışma önleme, şerit takip, yokuş kalkış ve kör nokta sayfada paket belirtilmeden geçiyor; yazılmadı. Sayfada "Journey" adı yok (paketler Trend, Deluxe, Titanium, Active).
+- Puma Gen-E deri_doseme (Neo Süet/Sensico); Explorer Premium standart ses sistemi; Kuga Titanium elektrikli koltuk tipi belirsiz.
+- Skoda: model sayfalarında yalnızca ilk paket sekmesi okunabildi. Fabia Monte Carlo ve Edition 130, Scala ve Kamiq Monte Carlo, Karoq Sportline, Octavia Prestige ve RS, Superb Sportline ve L&K Crystal, Kodiaq (üç versiyon; liste paketle açıkça eşleşmiyor), Enyaq Coupé e-RS için paket bazlı liste PDF gerekli.
+- skoda-fabia-1.0-tsi-elite-115ps-2026: sitede bu motor "Premium" adıyla satılıyor; paket adı uyuşmadığı için yazılmadı.
+- Skoda genel: abs, esp, yokus_kalkis, kamera_360 ve çoğu navigasyon öne çıkan listelerde geçmiyor. Scala Elite klima tipi listede yok. Elroq ana far tipi, Enyaq Coupé Sportline döşeme (süet) ve tavan belirsiz.
+
+Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Octavia Elite ve Superb Premium sayfalarında yalnızca normal hız sabitleyici geçiyor; Kamiq Elite klima "Var (Ön+Arka Havalandırma)" tipsiz; Fabia "Elite" adı sitede Premium; Focus Sedan 2026 kayıtları (üretim sona erdi); Capri 125 kW versiyonu resmi sayfada yok; Explorer ve Capri'de B&O opsiyonel.
