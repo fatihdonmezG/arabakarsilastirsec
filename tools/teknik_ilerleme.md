@@ -793,3 +793,12 @@ Bulunamayanlar:
 - audi-q8-2026-tfsi-quattro-195kw | tuketim_l100km | 2.0 TFSI Q8 için WLTP değeri bulunamadı (Avrupa'da satılmıyor); eski değer temizlikte silindi
 - audi-q8-2026-tfsi-quattro-195kw | co2_gkm | aynı neden
 Not: toyota-yaris-hybrid-1-5-flame-2026 tüketim/CO₂ temizlikte silindi (resmi Yaris teknik PDF'i açılamadı); bir sonraki çalışmada aranabilir.
+
+## 2026-10-21 (ek çalışma) — Tüketim ve şanzıman: Rolls-Royce, Maserati, Nissan, Dacia, Ferrari, Renault (+ Opel temizlik sırasında)
+
+Doldurulan: 49 alan (33 versiyon) + 21 şanzıman tip/vites güncellemesi (Maserati 5, Nissan 7, Dacia Jogger Extreme, Renault 8). Aralıklarda ortası yazıldı; önceki çalışmalarda "uç belirsiz" diye bırakılan Maserati ve Opel değerleri dolduruldu (Opel değerleri opel.com.tr WLTP tablosundaki tek değerler).
+Satıştaki versiyonlarda boş tüketim: 72 → 41.
+Bulunamayanlar:
+- ferrari-296-2025-gts | tuketim_l100km | ferrari.com'da yok; auto-data/autotijd GTS sayfalarında WLTP yok; encycarpedia değeri WLTP etiketsiz
+- ferrari-296-2025-gts | co2_gkm | aynı neden
+Şanzıman bilinçli olarak güncellenmedi (kaynak tutarsız): renault-boreal-iconic-1-8-e-tech-hybrid-160-2026, renault-duster-techno-hybrid-4x4-150-2026.
