@@ -6,7 +6,7 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 162 |
+| Renault | devam ediyor | 171 |
 | Fiat | devam ediyor | 73 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
@@ -98,7 +98,13 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - Euro NCAP 2015 (Megane IV, 5 yıldız); geri çağırma: 2023-06 yakıt buharı borusu (2022–2023), 2023-07 bijon (2023); Palencia üretimi kampanyalar hariç
   - [ ] Megane IV Sedan 2017–2019 (1.6 SCe 115 / CVT, 1.5 dCi 90/110 EDC, 1.3 TCe 140 2019): Türkiye listesi bulunamadı
 - [ ] Megane IV HB (2016–2020) (Sedan 2026'da satışta; kapsam dışı). akbak.com.tr Ocak 2017 Renault binek listesi Megane IV HB, Captur, Kadjar, Talisman 2016–2017 versiyonlarını veriyor: https://www.akbak.com.tr/public/upload/modelBrosur/17_renault-binek-201701-v2.pdf
-- [ ] Captur I (2013–2019), Captur II (2020–2025)
+- [x] Captur II (2020–2021) ve makyajlı (2025) — 9 versiyon
+  - [x] 2020: 1.0 TCe 100, 1.5 Blue dCi 95, 1.5 Blue dCi 115 EDC, 1.3 TCe 130 EDC, 1.3 TCe 155 EDC; 1.3 TCe 140 EDC: 2020–2021
+  - [x] Makyajlı 2025: Mild Hybrid 160 EDC, E-Tech Full Hybrid 145
+  - Kaynaklar: timeturk.com Mart 2021 (model yıllı), iscihaber.net Nisan 2025; teknik: auto-data.net Captur II ve Captur II (facelift 2024)
+  - Euro NCAP 2019 (5 yıldız); geri çağırma: 2020-02 direksiyon motoru (2020), 2025-09 park freni (2025); LPG tankı, Captur I cam tavan ve 2026 hibrit akü kampanyaları hariç
+  - [ ] 2022–2024 model yılları (1.3 Mild Hybrid 140/155 EDC dahil): model yıllı liste ya da tek kaynakta teknik veri yok
+- [ ] Captur I (2013–2019)
 - [ ] Kadjar (2015–2022)
 - [ ] Talisman (2016–2022)
 - [ ] Taliant (2021–2025)
