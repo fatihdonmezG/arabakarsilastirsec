@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 123 |
-| Fiat | devam ediyor | 27 |
+| Renault | devam ediyor | 144 |
+| Fiat | devam ediyor | 60 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -67,7 +67,12 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [ ] Makyajlı Sport Tourer (2017–2019): kasaya göre Türkiye listesi bulunamadı
   - Kaynak: otomobil.com.tr Şubat 2013 Clio Sport Tourer listesi
 - [ ] Clio III HB / Sport Tourer (2010–2012)
-- [ ] Clio V (2019–2025)
+- [x] Clio V (2020–2025) — 21 versiyon
+  - [x] Phase I: 1.0 TCe 100, 1.0 TCe 100 X-Tronic, 1.3 TCe 130 EDC, 1.5 Blue dCi 85 ve 115: 2020; 1.0 TCe 90: 2020–2023; 1.0 TCe 100 ECO-G (LPG): 2021; 1.0 SCe 65 ve 1.0 TCe 90 X-Tronic: 2021–2023
+  - [x] Makyajlı: 1.0 SCe 65: 2024; 1.0 TCe 90 X-Tronic ve E-Tech Full Hybrid 145: 2024–2025
+  - Kaynaklar: donanimhaber.com/tr.motor1.com Ocak 2020, timeturk.com Mart 2021 (model yıllı), gazetebirlik.com Mart 2023, istiklal.com.tr Ocak 2024, iscihaber.net Nisan 2025; teknik: auto-data.net Phase I/II, TCe 90 için ultimatespecs
+  - Euro NCAP 2019 (5 yıldız); geri çağırma: 2020-02 direksiyon motoru (2020), 2020-02 vites kolu anahtarı (2020 otomatik), 2023-06 arka koltuk sırtı (2022–2023); LPG tankı kampanyası (2023 üretimi) hariç
+  - [ ] 1.0 SCe 72 (2020): tek kaynakta 72 HP teknik verisi yok; 1.0 TCe 90 manuel (2024–2025) ve E-Tech 140 (Phase I): Türkiye listesinde teyit edilemedi
 - [ ] Symbol II (2010–2012)
 - [x] Symbol III (2013–2020) — 14 versiyon
   - [x] 1.2 16V 75: 2013–2016; 0.9 TCe 90: 2013 ve 2020 (makyajlı); 1.5 dCi 75: 2013
@@ -112,7 +117,12 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - Geri çağırma: araştırıldı, Türkiye üretimini kapsayan kayıt yok ([]); Brezilya kampanyaları hariç
   - [ ] Linea 2010–2011 (makyaj öncesi: 1.4 77, 1.3 MJ 90, 1.6 MJ 105, 1.4 T-Jet 120): Türkiye listesi bulunamadı
   - Euro NCAP: test edilmedi
-- [ ] Egea (2016–2025 eski model yılları)
+- [x] Egea Sedan (2016–2025 eski model yılları) — 33 versiyon
+  - [x] Makyaj öncesi: 1.4 Fire 95, 1.3 Multijet 95, 1.6 Multijet 120: 2016–2020 (2020 ayrı teknik kayıt); 1.6 Multijet 120 DCT: 2020
+  - [x] Makyajlı: 1.4 Fire 95, 1.6 Multijet 130 ve 130 DCT: 2021–2025; 1.3 Multijet 95 ve 1.0 FireFly 100: 2021
+  - Kaynaklar: otomobil.com.tr Ekim 2015 listesi ve Haziran 2020 satış haberi, tr.motor1.com Ocak 2021, shiftdelete.net Eylül 2025; teknik: auto-data.net Egea (356) ve (356, makyajlı 2020)
+  - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma (tip 356, AB Safety Gate/KBA): 2017-02 sürücü hava yastığı kablosu (2016), 2017-05 hava yastığı ateşleyicisi (2016–2017), 2021-04 hava yastığı yazılımı (2020–2021), 2022-03 jant (2021), 2024-07 jant/lastik tanımı (2021–2023), 2024-02 geri vites lambası/kamera (2023); 48V akü kampanyası (hibrit) hariç
+  - [ ] 1.6 E-Torq 110 otomatik, 1.6 Multijet DCT 2016–2019, Egea HB/SW/Cross eski yılları: liste teyidi yok ya da sıradaki çalışmalara
 - [x] Doblo Combi, Doblo II makyajlı (2016–2022) — 16 versiyon
   - [x] 1.3 Multijet 90: 2016; 1.6 Multijet 105: 2016–2022; 1.3 Multijet 95 ve 1.6 Multijet 120: 2019–2022
   - Kaynaklar: otopark.com Temmuz 2016, yenimodelarabalar.com 2019-2020, ensonhaber.com Ocak 2022 listeleri; teknik: auto-data.net Doblo II (263, makyajlı 2015)
