@@ -802,3 +802,15 @@ Bulunamayanlar:
 - ferrari-296-2025-gts | tuketim_l100km | ferrari.com'da yok; auto-data/autotijd GTS sayfalarında WLTP yok; encycarpedia değeri WLTP etiketsiz
 - ferrari-296-2025-gts | co2_gkm | aynı neden
 Şanzıman bilinçli olarak güncellenmedi (kaynak tutarsız): renault-boreal-iconic-1-8-e-tech-hybrid-160-2026, renault-duster-techno-hybrid-4x4-150-2026.
+
+## 2026-10-22 — Tüketim ve şanzıman: Hyundai, Ford, Subaru, Lamborghini, Cadillac, Chevrolet (+ Alpine; Hyundai/Ford temizlik sırasında)
+
+Doldurulan: 31 alan (14 versiyon) + 11 şanzıman tip/vites güncellemesi (Tucson 4, Puma 2, Tourneo Courier, Kuga 3, Bayon). Aralıklarda ortası yazıldı (kaynak adında aralık belirtildi). Kaynaklar: Hyundai Deutschland Tucson teknik veri PDF'leri, Ford Österreich Puma fiyat listesi, Ford Europe Tourneo Courier teknik PDF'i, autotijd.be, EV Database, autokatalog.pl.
+Satıştaki versiyonlarda boş tüketim: 41 → 28 (hyundai-tucson-comfort-4x2-2026 tüketimi temizlikte silindi).
+Bulunamayanlar:
+- hyundai-tucson-comfort-4x2-2026 | tuketim_l100km, co2_gkm, sifirYuz_sn, hiz_kmh, agirlik_kg | 180 PS önden çekişli DCT Avrupa'da satılmıyor; Hyundai Türkiye teknik sayfasına bu çalışmada erişilemedi
+- lamborghini-urus-se-2026 | tuketim_l100km | araştırıldı, bulunamadı (lamborghini.com IP'ye göre değer gösteriyor; autotijd'de boş)
+- cadillac-escalade-2026-sport-platinum, cadillac-escalade-esv-2026-sport-platinum, cadillac-escalade-2026-v-series | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (ABD aracı, WLTP değeri yok; autotijd Escalade sayfası boş)
+- chevrolet-tahoe-2026-rst, chevrolet-tahoe-2026-high-country, chevrolet-suburban-2026-high-country | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (ABD aracı, WLTP değeri yok)
+Şanzıman bilinçli olarak güncellenmedi (kaynak açılamadı): hyundai-i30-*, hyundai-kona-prime-dct-2026, hyundai-i20-jump-gsr-2026, hyundai-santafe-hybrid-4x4-2026, Ford Capri/Explorer/Puma Gen-E (elektrikli), Focus Sedan.
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 38).
