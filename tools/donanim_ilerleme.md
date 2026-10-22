@@ -15,6 +15,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Peugeot | devam ediyor | 2026-10-20 | 86 |
 | Ford | devam ediyor | 2026-10-21 | 176 |
 | Skoda | devam ediyor | 2026-10-21 | 401 |
+| Dacia | devam ediyor | 2026-10-22 | 71 |
+| Opel | devam ediyor | 2026-10-22 | 392 |
 
 ## Çalışma günlüğü
 
@@ -96,3 +98,20 @@ Araştırıldı, bulunamadı:
 - Skoda genel: abs, esp, yokus_kalkis, kamera_360 ve çoğu navigasyon öne çıkan listelerde geçmiyor. Scala Elite klima tipi listede yok. Elroq ana far tipi, Enyaq Coupé Sportline döşeme (süet) ve tavan belirsiz.
 
 Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Octavia Elite ve Superb Premium sayfalarında yalnızca normal hız sabitleyici geçiyor; Kamiq Elite klima "Var (Ön+Arka Havalandırma)" tipsiz; Fabia "Elite" adı sitede Premium; Focus Sedan 2026 kayıtları (üretim sona erdi); Capri 125 kW versiyonu resmi sayfada yok; Explorer ve Capri'de B&O opsiyonel.
+
+### 2026-10-22: Dacia, Opel (108 alan, 20 versiyon)
+
+Kaynaklar: dacia.com.tr karşılaştırma ve donanım sayfaları (Yeni Sandero, Sandero Stepway, Logan, Jogger), Jogger güvenlik sayfası, Logan Journey versiyon sayfası; fiyatlisteleri.opel.com.tr MY26 model fiyat listeleri (opsiyon tabloları: Grandland, Grandland Elektrik, Frontera Hybrid, Frontera Elektrik, Mokka, Astra); Opel Türkiye basın bültenleri (Grandland 15.01.2025, Frontera 17.05.2025) ve Stellantis Türkiye basın bültenleri (Mokka 25.01.2025, Mokka GSE 17.04.2026).
+
+Doldurulan: Dacia 37 alan (Sandero Expression, Stepway Expression ve Extreme, Logan Essential ve Journey, Jogger Extreme 2, Jogger Expression); Opel 71 alan (Grandland Hybrid Edition ve GS, Grandland Elektrik Edition ve GS AWD, Frontera 4, Mokka Edition, Mokka Hybrid GS, Mokka GSE, Astra GS). Klima tipiyle güncellenen: 7 Dacia versiyonu (Logan Essential manuel, diğerleri otomatik); Mokka GSE klima boştu, otomatik yazıldı.
+
+Araştırıldı, bulunamadı:
+- Dacia genel: dacia.com.tr karşılaştırma sayfaları yalnızca tek paketin değerlerini gösteriyor; broşür PDF'leri (cdn.group.renault.com) bu ortamdan açılamadı. arka_klima_cikisi, elektrikli_koltuk, elektrikli_bagaj, navigasyon sayfalarda geçmiyor. kamera_360: Sürüş Paketi (Jogger Extreme'de opsiyonel) multiview kamera içeriyor, ancak paketin Jogger içeriği sayfada açıklanmıyor; yazılmadı.
+- dacia-logan-expression-eco-g-120-2026, dacia-jogger-expression-eco-g-120-5koltuk-2026: versiyon sayfalarında donanım listesi yok; klima hâlâ yalnızca "Var" (broşür gerekli).
+- Opel genel: fiyatlisteleri.opel.com.tr sayfalarında standart donanım listesi yok, yalnızca opsiyon tablosu var; teknik föy PDF'leri robots.txt nedeniyle, OpelHub donanım görüntüleyicisi (data-ipl-live.opelhub.com) izin gerektirdiği için açılamadı.
+- Opel Corsa (4 versiyon): 2023 basın bülteni güncel Edition donanımıyla (10 inç ekran) uyuşmuyor; 2026 için paket bazlı kaynak yok. Panoramik cam tavanın açılır olup olmadığı belirtilmiyor.
+- Opel Astra Edition/GS, Combo Edition: 2026 basın bülteninde paket ayrımı yok; Astra GS dışında alan yazılmadı.
+- Grandland Edition: Konfor Paketi içeriği 2026'da değişmiş görünüyor (geri görüş kamerası ayrı opsiyon), bu yüzden koltuk ısıtma ve elektrikli bagaj yazılmadı. Grandland Elektrik Edition ve GS AWD 2025 bülteninde yok; yalnızca fiyat listesindeki opsiyonlar yazıldı. Klima tipi kaynaklarda yok.
+- Frontera Edition: ekran, kablosuz şarj, kör nokta ve geri görüş kamerası paket bazında belirtilmemiş.
+- Mokka Edition (MT6): 2025 bülteni AT8 130 HP versiyonu için; yalnızca acil fren yazıldı.
+
