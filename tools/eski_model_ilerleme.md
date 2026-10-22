@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 144 |
-| Fiat | devam ediyor | 60 |
+| Renault | devam ediyor | 162 |
+| Fiat | devam ediyor | 73 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -91,6 +91,12 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - Kaynaklar: haberturk.com Mart 2014 haberi, otopark.com Ocak 2016 listesi; teknik: auto-data.net Phase III sayfaları (1.6 CVT ve 1.5 dCi 90 için yalnızca güç ve boyut)
   - Euro NCAP 2008 (5 yıldız); geri çağırma: araştırıldı, Phase III'ü kapsayan kayıt yok ([])
   - [ ] Megane III 2010–2013 (Phase I/II) ve Coupe: Türkiye listesi bulunamadı
+- [x] Megane Sedan (Megane IV Sedan) 2020 ve makyajlı 2021–2025 — 18 versiyon
+  - [x] Makyaj öncesi 2020: 1.3 TCe 140 manuel/EDC, 1.5 Blue dCi 115 manuel/EDC
+  - [x] Makyajlı: 1.0 TCe 115: 2021; 1.3 TCe 140 manuel: 2021–2023; 1.3 TCe 140 EDC ve 1.5 Blue dCi 115 EDC: 2021–2025
+  - Kaynaklar: log.com.tr Haziran 2020 ve Nisan 2021, timeturk.com Mart 2021, tr.motor1.com Şubat 2021, webtekno.com Eylül 2021, istiklal.com.tr Ocak 2024, iscihaber.net Nisan 2025; teknik: auto-data.net Megane IV Sedan ve Phase II (2021) Sedan
+  - Euro NCAP 2015 (Megane IV, 5 yıldız); geri çağırma: 2023-06 yakıt buharı borusu (2022–2023), 2023-07 bijon (2023); Palencia üretimi kampanyalar hariç
+  - [ ] Megane IV Sedan 2017–2019 (1.6 SCe 115 / CVT, 1.5 dCi 90/110 EDC, 1.3 TCe 140 2019): Türkiye listesi bulunamadı
 - [ ] Megane IV HB (2016–2020) (Sedan 2026'da satışta; kapsam dışı). akbak.com.tr Ocak 2017 Renault binek listesi Megane IV HB, Captur, Kadjar, Talisman 2016–2017 versiyonlarını veriyor: https://www.akbak.com.tr/public/upload/modelBrosur/17_renault-binek-201701-v2.pdf
 - [ ] Captur I (2013–2019), Captur II (2020–2025)
 - [ ] Kadjar (2015–2022)
@@ -128,4 +134,9 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - Kaynaklar: otopark.com Temmuz 2016, yenimodelarabalar.com 2019-2020, ensonhaber.com Ocak 2022 listeleri; teknik: auto-data.net Doblo II (263, makyajlı 2015)
   - Euro NCAP 2017 (3 yıldız); geri çağırma: 2017-05 hava yastığı (2016–2017), 2021-07 ABS ünitesi (2020–2021)
   - [ ] 2015 model yılı ve Comfortmatic/Ecojet versiyonları: teknik kaynak ya da yıl teyidi yok
+- [x] Egea Cross (2021–2025 eski model yılları) — 13 versiyon
+  - [x] 1.4 Fire 95 ve 1.6 Multijet 130 DCT: 2021–2025; 1.6 Multijet 130 manuel, 1.3 Multijet 95, 1.0 FireFly 100: 2021
+  - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), 2024-02 geri vites lambası (2023)
+  - [ ] 1.5 Hybrid 130 (2022, Sedan/Cross/HB): tek kaynakta teknik veri yok
+- [ ] Egea HB / SW (eski yıllar)
 - [ ] Fiorino Combi, Punto, 500 / 500L / 500X, Panda, Bravo, Tipo, Freemont, Fullback
