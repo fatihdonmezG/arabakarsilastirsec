@@ -144,11 +144,12 @@ html .nav a.cta,html .top .cta-mobil,html .tray .go,html .toast{color:#fff}
 /* Premium vurgu bantları: sayfa beyaz ve ferah, yoğun lacivert (kırmızı temada bordo) yalnızca giriş bandında,
    araç fotoğraf sahnesinde ve altbilgide. Araç detay sayfasının özet bölümü beyaz kalır. */
 html:root{--bg:#FFFFFF;--surface2:#F5F9FD;--derin-1:#153655;--derin-2:#004C7D;--derin-halka:#1D5181;--derin-vurgu:#8EC5FF;--sahne-1:#2A6BA8;--sahne-2:#1D5181;--sahne-3:#153655}
-html[data-renk="kirmizi"]:root{--surface2:#FDF7F7;--derin-1:#3D0B12;--derin-2:#6E1420;--derin-halka:#7E1C28;--derin-vurgu:#FFB4B4;--sahne-1:#9E2A33;--sahne-2:#7E1C28;--sahne-3:#3D0B12}
+html[data-renk="kirmizi"]:root{--surface2:#FDF7F7;--derin-1:#7E1823;--derin-2:#A82230;--derin-halka:#BE2E3C;--derin-vurgu:#FFB4B4;--sahne-1:#9E2A33;--sahne-2:#7E1C28;--sahne-3:#3D0B12}
 html .hero:not([aria-label]){position:relative;overflow:hidden;border-bottom:0;color:#fff;
   background:
-    radial-gradient(circle at 78% 120%,transparent 0 30%,rgba(255,255,255,.05) 30.2% 30.6%,transparent 30.8% 44%,rgba(255,255,255,.045) 44.2% 44.6%,transparent 44.8% 58%,rgba(255,255,255,.04) 58.2% 58.6%,transparent 58.8%),
-    radial-gradient(ellipse 60% 90% at 85% 110%,color-mix(in srgb,var(--derin-halka) 90%,#fff 4%) 0%,transparent 70%),
+    linear-gradient(90deg,color-mix(in srgb,var(--derin-1) 72%,transparent) 0%,color-mix(in srgb,var(--derin-1) 35%,transparent) 45%,transparent 70%),
+    url(desen-logolar.png) center top/720px 400px repeat,
+    radial-gradient(ellipse 60% 90% at 85% 110%,color-mix(in srgb,var(--derin-halka) 85%,#fff 6%) 0%,transparent 70%),
     linear-gradient(135deg,var(--derin-1) 0%,var(--derin-2) 100%)}
 html .hero:not([aria-label]) h1{color:#fff}
 html .hero:not([aria-label]) .lead,html .hero:not([aria-label]) .sub,html .hero:not([aria-label]) p{color:rgba(255,255,255,.82)}
