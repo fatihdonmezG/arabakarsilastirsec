@@ -106,3 +106,38 @@ console.log(`Puan hesaplandı: ${n} / ${CARS.length} versiyon`);
   for (const m of Object.values(M)) for (const x of Object.values(m)) x.yillar.sort((a, b) => b - a);
   fs.writeFileSync(path.join(ROOT, 'assets', 'modeller.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. */\nwindow.MODELLER=${JSON.stringify(M)};\n`);
 }
+
+// İncelemeler sayfası için model bazında basın artı/eksi özeti (assets/incelemeler.js).
+// Her model için basın değerlendirmesi olan en yeni model yılı alınır; aynı metin tekrar edilmez.
+{
+  const d = fs.readFileSync(path.join(ROOT, 'arac-detay.html'), 'utf8');
+  const s = d.indexOf('const CARS = {'), o = d.indexOf('{', s);
+  let dp = 0, p = o;
+  for (; p < d.length; p++) {
+    const ch = d[p];
+    if (ch === '"' || ch === "'" || ch === '`') { const q = ch; p++; while (p < d.length && d[p] !== q) { if (d[p] === '\\') p++; p++; } continue; }
+    if (ch === '{' || ch === '[') dp++; else if (ch === '}' || ch === ']') { dp--; if (!dp) break; }
+  }
+  const DET = new Function('return ' + d.slice(o, p + 1))();
+  const KIS = Object.fromEntries(CARS.map(c => [c.id, c]));
+  const G = {};
+  for (const x of Object.values(DET)) {
+    const g = (x.gucluYanlar || []).filter(v => v && v.metin), e = (x.dikkatEdilecekler || []).filter(v => v && v.metin);
+    if (!g.length && !e.length) continue;
+    const k = x.marka + '|' + x.model, c = KIS[x.id] || {};
+    const m = G[k] || (G[k] = { marka: x.marka, model: x.model, yil: 0, ids: [], guclu: [], dikkat: [], kaynaklar: new Set() });
+    if (x.yil > m.yil) Object.assign(m, { yil: x.yil, id: x.id, nesil: c.nesil || x.nesil || null, kasa: (c.s || {}).kasa || null, satista: !c.durum, ids: [], guclu: [], dikkat: [], kaynaklar: new Set() });
+    if (x.yil < m.yil) continue;
+    m.ids.push(x.id);
+    for (const [hedef, kaynak] of [[m.guclu, g], [m.dikkat, e]]) for (const v of kaynak) if (!hedef.some(h => h.metin === v.metin)) { hedef.push({ metin: v.metin, kaynak: v.kaynak || null }); if (v.kaynak) m.kaynaklar.add(v.kaynak.split('/')[2].replace(/^www\./, '')); }
+    if (x.odul && !m.odul) m.odul = x.odul;
+  }
+  const L = Object.values(G).map(m => {
+    const pu = m.ids.map(i => (out[i] || {}).toplam).filter(v => v != null);
+    const r = { marka: m.marka, model: m.model, yil: m.yil, id: m.id, nesil: m.nesil, kasa: m.kasa, satista: m.satista, puan: pu.length ? Math.max(...pu) : null, guclu: m.guclu, dikkat: m.dikkat, kaynaklar: [...m.kaynaklar] };
+    if (m.odul) r.odul = m.odul;
+    return r;
+  }).sort((a, b) => b.yil - a.yil || a.marka.localeCompare(b.marka, 'tr') || a.model.localeCompare(b.model, 'tr'));
+  fs.writeFileSync(path.join(ROOT, 'assets', 'incelemeler.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. Basın değerlendirmelerinden model bazında artı/eksi özeti. */\nwindow.INCELEMELER=${JSON.stringify(L)};\n`);
+  console.log(`İnceleme özeti: ${L.length} model`);
+}

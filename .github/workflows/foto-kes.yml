@@ -2,7 +2,7 @@ name: Fotoğraf arka planı kaldır
 on:
   push:
     branches: [main]
-    paths: ['assets/fotolar.js', 'tools/foto_kes.py', '.github/workflows/foto-kes.yml']
+    paths: ['assets/fotolar.js', 'tools/foto_kes.py', 'tools/kesit_red.json', '.github/workflows/foto-kes.yml']
   workflow_dispatch:
     inputs:
       hepsi:

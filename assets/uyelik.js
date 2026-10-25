@@ -111,6 +111,19 @@
       if (c.yorumlar) return c.yorumlar(marka, model);
       return kontrol(await c.from('yorumlar').select('*').eq('marka', marka).eq('model', model).order('olusturma', { ascending: false }).limit(500));
     },
+    async sonYorumlar(f) {
+      // Bütün araçlar için yayındaki yorumlar (yorumlar sayfası). f: {marka, model, tur, sira: 'yeni'|'faydali', sayfa, adet}
+      f = f || {}; const c = await yukle();
+      if (c.sonYorumlar) return c.sonYorumlar(f);
+      const adet = f.adet || 20, bas = (f.sayfa || 0) * adet;
+      let q = c.from('yorumlar').select('id,takma_ad,arac_id,marka,model,yil,versiyon,tur,izlenim_turu,puan,alt_puan,ay,km,baslik,metin,artilar,eksiler,sorunlar,faydali,olusturma', { count: 'exact' }).eq('durum', 'yayinda');
+      if (f.marka) q = q.eq('marka', f.marka);
+      if (f.model) q = q.eq('model', f.model);
+      if (f.tur) q = q.eq('tur', f.tur);
+      q = f.sira === 'faydali' ? q.order('faydali', { ascending: false }).order('olusturma', { ascending: false }) : q.order('olusturma', { ascending: false });
+      const r = await q.range(bas, bas + adet - 1);
+      return { satirlar: kontrol(r) || [], toplam: r.count || 0 };
+    },
     async yorumGonder(y) {
       const c = await yukle();
       if (c.yorumGonder) return c.yorumGonder(y);

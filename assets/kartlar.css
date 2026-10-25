@@ -90,3 +90,10 @@ main .section .eyebrow{color:color-mix(in srgb,var(--sc) 70%,#fff)}
 }
 /* Seçim alanları uzun metinle genişlemesin */
 .pickers .fields > *,.carpicker .fields > *{min-width:0}
+
+/* Haber bölümleri sekmeleri (haberler, lansmanlar, incelemeler, yorumlar) */
+.sekmeler{display:flex;flex-wrap:wrap;gap:4px;margin-top:22px;border-bottom:1px solid var(--line)}
+.sekmeler a{padding:10px 14px;font-weight:700;font-size:.88rem;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;margin-bottom:-1px}
+.sekmeler a:hover{color:var(--ink)}
+.sekmeler a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+@media (max-width:560px){.sekmeler{flex-wrap:nowrap;overflow-x:auto}.sekmeler a{white-space:nowrap;padding:10px 10px}}

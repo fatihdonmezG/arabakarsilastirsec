@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Araç Sahibi Yorumları | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Araç sahiplerinin ve test sürüşü yapanların otomobil yorumları. Marka ve modele göre süzün, en faydalı yorumları okuyun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/kartlar.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+<style>
+.ifil,.yfil{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ifil select,.ifil input,.yfil select{font:inherit;font-size:.85rem;min-height:40px;padding:6px 10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);border-radius:2px}
+.ifil input{flex:1 1 200px}
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;margin-top:18px}
+@media (max-width:400px){.igrid{grid-template-columns:1fr}}
+.ikart{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.ikart .gor{aspect-ratio:16/8;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 85% 75% at 50% 100%,var(--sahne-1,#2C5FA8) 0%,var(--sahne-2,#1B3A66) 55%,var(--sahne-3,#132845) 100%)}
+.ikart .gor img{width:100%;height:100%;object-fit:cover;display:block}
+.ikart .gor.amb{background:#fff}
+.ikart .gor.amb .amblem-kart{width:100%;height:100%}
+.ikart .ic{padding:14px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ikart h3{font-size:1.05rem;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.ikart h3 small{font-weight:600;color:var(--muted);font-size:.78rem}
+.puan{flex:none;font-weight:900;font-size:.95rem;color:#fff;background:var(--accent);padding:2px 8px;border-radius:2px}
+.ikart ul{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:.86rem}
+.ikart li{padding-left:18px;position:relative}
+.ikart li::before{position:absolute;left:0;top:0;font-weight:900}
+.ikart .art li::before{content:'+';color:#15803D}
+.ikart .eks li::before{content:'−';color:#B42318}
+.ikart li a{text-decoration:none}
+.ikart .bas{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.ikart .alt{margin-top:auto;border-top:1px solid var(--line);padding-top:8px;font-size:.78rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.daha{margin:20px auto 0;display:block}
+.ylist{display:grid;gap:12px;margin-top:18px}
+.ykart{background:var(--surface);border:1px solid var(--line);padding:16px 18px;display:grid;gap:8px}
+.ykart .ust{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lg{width:30px;height:30px;object-fit:contain}
+.ykart .arac{font-weight:800}.ykart .arac a{color:inherit}
+.kim{font-size:.8rem;color:var(--muted)}
+.yildiz{color:#D97706;letter-spacing:1px;font-size:1rem}
+.ykart h3{font-size:1rem}.ykart p{margin:0;font-size:.9rem}
+.ykart .ae{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem}
+.ykart .ae b{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.ykart .alt{font-size:.78rem;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.kapali{margin-top:22px;padding:22px;border:1px dashed var(--line-strong);background:var(--surface)}
+.kapali h2{font-size:1.15rem}.kapali p{margin-top:8px;color:var(--muted)}
+.sayfala{display:flex;gap:8px;justify-content:center;margin-top:18px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html" aria-current="page">Haberler</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="ehliyet.html">Ehliyet</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="sozluk.html">Sözlük</a>
+      <a href="mtv-hesaplama.html">MTV</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Kullanıcı yorumları</span>
+    <h1>Sahipleri araçları için ne diyor?</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lead">Üyelerimizin kullandıkları araçlar için yazdığı yorumlar. Araç sahibi yorumları ile test sürüşü ya da kiralama izlenimleri ayrı işaretlenir; her yorum yayından önce kontrol edilir.</p>
+    
+  </div>
+</section>
+
+<main class="wrap">
+  <nav class="sekmeler" aria-label="Haber bölümleri"><a href="haberler.html">Haberler</a><a href="lansmanlar.html">Lansmanlar</a><a href="incelemeler.html">İncelemeler</a><a href="yorumlar.html" aria-current="page">Kullanıcı yorumları</a></nav>
+  <section class="section" id="acikBolum">
+    <div class="yfil">
+      <select id="fMarka" aria-label="Marka"></select>
+      <select id="fModel" aria-label="Model" disabled><option value="">Bütün modeller</option></select>
+      <select id="fTur" aria-label="Yorum türü"><option value="">Sahip ve izlenim</option><option value="sahip">Yalnızca araç sahipleri</option><option value="izlenim">Test sürüşü ve diğer izlenimler</option></select>
+      <select id="fSira" aria-label="Sıralama"><option value="yeni">En yeni</option><option value="faydali">En faydalı</option></select>
+    </div>
+    <div class="ylist" id="liste"></div>
+    <div class="sayfala" id="sayfala"></div>
+  </section>
+  <div class="kapali" id="kapali" hidden>
+    <h2>Yorumlar çok yakında açılıyor</h2>
+    <p>Üyelik sistemi devreye girdiğinde kullandığınız araç için yorum yazabilecek, diğer sahiplerin deneyimlerini burada marka ve modele göre okuyabileceksiniz. Şimdilik basın değerlendirmelerine <a href="incelemeler.html">İncelemeler</a> bölümünden bakabilirsiniz.</p>
+  </div>
+  <section class="section">
+    <h2>Yorum yazmak</h2>
+    <div class="prose" style="margin-top:12px"><p>Yorum, aracın kendi sayfasındaki "Kullanıcı yorumları" bölümünden yazılır. Önce <a href="araclar.html">aracınızı bulun</a>, sonra sayfanın altındaki formu doldurun. Bir üye aynı versiyon için bir yorum yazabilir.</p></div>
+  </section>
+</main>
+<footer><div class="wrap"><p>© 2026 Araba Karşılaştır ve Seç. Yorumlar üyelerin kişisel deneyimidir.</p></div></footer>
+<script src="assets/logolar.js"></script>
+<script src="assets/modeller.js"></script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
+<script>
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const AY = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const fdate = t => { const [y,m,d]=String(t).split('-').map(Number); return d?`${d} ${AY[m-1]} ${y}`:`${AY[m-1]} ${y}`; };
+const logo = mk => window.MARKA_LOGO && window.MARKA_LOGO[mk] ? `<img class="lg" src="assets/logos/${esc(window.MARKA_LOGO[mk])}" alt="" loading="lazy">` : '';
+const modelLink = (mk,md) => window.MODELLER && window.MODELLER[mk] && window.MODELLER[mk][md] ? `arac-detay.html#${encodeURIComponent(window.MODELLER[mk][md].id)}` : null;
+const $ = id => document.getElementById(id);
+const IZ = {test_surusu:'Test sürüşü',kiralama:'Kiralama',yakinin_araci:'Yakınının aracı',is_araci:'İş aracı',eski_sahip:'Eski sahibi',diger:'Diğer'};
+const M = window.MODELLER || {};
+$('fMarka').innerHTML = '<option value="">Bütün markalar</option>' + Object.keys(M).sort((a,b)=>a.localeCompare(b,'tr')).map(m=>`<option>${esc(m)}</option>`).join('');
+let sayfa = 0; const ADET = 20;
+const p = new URLSearchParams(location.hash.slice(1));
+function modeller(){ const m=$('fMarka').value; $('fModel').disabled=!m; $('fModel').innerHTML='<option value="">Bütün modeller</option>'+(m?Object.keys(M[m]||{}).sort((a,b)=>a.localeCompare(b,'tr')).map(x=>`<option>${esc(x)}</option>`).join(''):''); }
+if(p.get('marka')){ $('fMarka').value=p.get('marka'); modeller(); if(p.get('model')) $('fModel').value=p.get('model'); } else modeller();
+const yildiz = n => '★★★★★'.slice(0,n) + '☆☆☆☆☆'.slice(0,5-n);
+async function yukle(){
+  const f={marka:$('fMarka').value,model:$('fModel').value,tur:$('fTur').value,sira:$('fSira').value,sayfa,adet:ADET};
+  const hp=new URLSearchParams(); if(f.marka) hp.set('marka',f.marka); if(f.model) hp.set('model',f.model);
+  history.replaceState(null,'',hp.toString()?'#'+hp:location.pathname);
+  $('liste').innerHTML='<p>Yükleniyor…</p>';
+  try{
+    const r = await Uyelik.sonYorumlar(f);
+    $('liste').innerHTML = r.satirlar.length ? r.satirlar.map(y=>{ const u=`arac-detay.html#${encodeURIComponent(y.arac_id)}`; return `<article class="ykart">
+      <div class="ust">${logo(y.marka)}<span class="arac"><a href="${u}">${esc(y.marka)} ${esc(y.model)}</a></span><span class="kim">${esc(y.yil||'')} ${esc(y.versiyon||'')}</span></div>
+      <div class="ust"><span class="yildiz" aria-label="${y.puan} / 5">${yildiz(y.puan)}</span><span class="kim">${esc(y.takma_ad||'Üye')} · ${y.tur==='sahip'?'Araç sahibi'+(y.ay?`, ${y.ay} ay`:'')+(y.km?`, ${Number(y.km).toLocaleString('tr-TR')} km`:''):(IZ[y.izlenim_turu]||'İzlenim')} · ${fdate(String(y.olusturma).slice(0,10))}</span></div>
+      <h3>${esc(y.baslik)}</h3>
+      <p>${esc(y.metin.length>420?y.metin.slice(0,420)+'…':y.metin)}</p>
+      ${(y.artilar||[]).length||(y.eksiler||[]).length?`<div class="ae">${(y.artilar||[]).length?`<span><b>Artılar</b>${y.artilar.map(esc).join(', ')}</span>`:''}${(y.eksiler||[]).length?`<span><b>Eksiler</b>${y.eksiler.map(esc).join(', ')}</span>`:''}</div>`:''}
+      <div class="alt"><span>${y.faydali||0} kişi faydalı buldu</span><a href="${u}">Yorumun tamamı ve aracın sayfası →</a></div>
+    </article>`; }).join('') : '<p>Bu seçim için henüz yayında yorum yok. İlk yorumu siz yazın: aracın sayfasındaki yorum formunu kullanın.</p>';
+    const top=Math.ceil(r.toplam/ADET);
+    $('sayfala').innerHTML = top>1 ? `<button class="fbtn" ${sayfa?'':'disabled'} data-s="${sayfa-1}">Önceki</button><span class="kim" style="align-self:center">${sayfa+1} / ${top}</span><button class="fbtn" ${sayfa+1<top?'':'disabled'} data-s="${sayfa+1}">Sonraki</button>` : '';
+    $('sayfala').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{sayfa=+b.dataset.s;yukle();scrollTo(0,0);}));
+  }catch(e){ $('liste').innerHTML=`<p>Yorumlar yüklenemedi: ${esc(e.message)}</p>`; }
+}
+if(!window.Uyelik || !Uyelik.acik){ $('acikBolum').hidden=true; $('kapali').hidden=false; }
+else {
+  $('fMarka').addEventListener('change',()=>{modeller();sayfa=0;yukle();});
+  ['fModel','fTur','fSira'].forEach(id=>$(id).addEventListener('change',()=>{sayfa=0;yukle();}));
+  yukle();
+}
+</script>
+<script src="assets/menu.js"></script>
+</body>
+</html>

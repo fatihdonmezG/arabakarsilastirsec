@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sıfır Araç Kampanyaları | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Türkiye'de satıştaki 2026 model otomobillerde güncel kredi, indirim ve takas kampanyaları. Marka ve kampanya türüne göre süzün, koşulları ve kaynağı görün.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/kartlar.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+<style>
+.kfil{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
+.kfil select{font:inherit;font-size:.85rem;min-height:40px;padding:6px 10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);border-radius:2px}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:20px}
+.kkart{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);padding:16px 18px;border-top:3px solid var(--accent)}
+.kkart .ust{display:flex;align-items:center;gap:10px}
+.kkart .ust img{width:38px;height:38px;object-fit:contain}
+.kkart .marka{font-weight:800;font-size:.95rem}
+.kkart .mod{font-size:.85rem;color:var(--muted)}
+.kkart .mod a{color:inherit}
+.kkart h3{font-size:1.02rem;line-height:1.35}
+.kkart p{font-size:.88rem;color:var(--muted);margin:0}
+.kkart .alt{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.kkart .bitis{font-weight:700;color:var(--ink)}
+.kkart .yakin{color:#B42318}
+.tur{display:inline-block;padding:2px 8px;font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:2px;background:var(--accent);color:#fff}
+.tur.indirim{background:#0F766E}.tur.takas{background:#7C3AED}.tur.fiyat{background:#B45309}
+.bos{margin-top:20px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html" aria-current="page">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="ehliyet.html">Ehliyet</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="sozluk.html">Sözlük</a>
+      <a href="mtv-hesaplama.html">MTV</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Kampanyalar</span>
+    <h1>Bu ay hangi markada ne kampanya var?</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lead">Sıfır otomobillerde açıklanan kredi, indirim ve takas kampanyalarını tek yerde topluyoruz. Süresi dolan kampanya listeden kendiliğinden kalkar. Koşullar bayiye ve stoğa göre değişebilir; imzadan önce yetkili satıcıdan yazılı teklif alın.</p>
+    <span class="stamp" id="stamp"></span>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="section">
+    <div class="kfil">
+      <div class="filters" role="group" aria-label="Kampanya türü" id="turlar" style="margin-top:0"></div>
+      <select id="fMarka" aria-label="Marka"></select>
+      <select id="fMusteri" aria-label="Müşteri tipi"><option value="">Bireysel ve kurumsal</option><option value="bireysel">Bireysel müşteriye açık</option><option value="kurumsal">Kurumsal müşteriye açık</option></select>
+    </div>
+    <div class="kgrid" id="liste"></div>
+  </section>
+
+  <section class="section">
+    <h2>Kampanyaları nasıl topluyoruz?</h2>
+    <div class="prose" style="margin-top:12px">
+      <p>Markaların ve distribütörlerin duyurduğu kampanyaları, duyuruyu aktaran haber kaynağıyla birlikte veriyoruz. Yalnızca Türkiye'de satıştaki 2026 model yılı araçları alıyoruz. Kredide yazan faiz oranı aylık orandır; dosya masrafı, kasko ve sigorta şartı gibi ek koşullar toplam maliyeti değiştirir.</p>
+      <p>Liste her hafta yenilenir. Bitiş tarihi açıklanmayan kampanyaları duyurulduğu ayın sonuna kadar gösteriyoruz.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Araba Karşılaştır ve Seç. Kampanya bilgileri bilgi amaçlıdır; bağlayıcı teklif yetkili satıcıdan alınır.</p>
+  </div>
+</footer>
+
+<script src="assets/logolar.js"></script>
+<script src="assets/kampanyalar.js"></script>
+<script>
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const AY = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const fdate = t => { const [y,m,d]=t.split('-').map(Number); return `${d} ${AY[m-1]} ${y}`; };
+const TUR = {kredi:'Kredi', indirim:'İndirim', takas:'Takas desteği', fiyat:'Kampanya fiyatı'};
+const MUS = {bireysel:'Bireysel', kurumsal:'Kurumsal', hepsi:'Bireysel ve kurumsal'};
+const bugun = new Date().toISOString().slice(0,10);
+const K = (window.KAMPANYALAR.liste||[]).filter(k=>k.bitis>=bugun);
+let tur = '';
+const p = new URLSearchParams(location.hash.slice(1));
+document.getElementById('stamp').textContent = 'Son güncelleme: ' + fdate(window.KAMPANYALAR.guncelleme) + ' · ' + K.length + ' kampanya';
+const markalar = [...new Set(K.map(k=>k.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
+const fM = document.getElementById('fMarka'), fU = document.getElementById('fMusteri');
+fM.innerHTML = '<option value="">Tüm markalar</option>' + markalar.map(m=>`<option>${esc(m)}</option>`).join('');
+if (p.get('marka')) fM.value = p.get('marka');
+if (p.get('tur')) tur = p.get('tur');
+function gunKaldi(t){ return Math.round((new Date(t+'T23:59:59') - new Date())/864e5); }
+function render(){
+  const turler = [...new Set(K.map(k=>k.tur))];
+  document.getElementById('turlar').innerHTML = [['','Tümü']].concat(turler.map(t=>[t,TUR[t]])).map(([k,t])=>`<button type="button" class="fbtn" data-k="${k}" aria-pressed="${k===tur}">${t}</button>`).join('');
+  document.querySelectorAll('#turlar .fbtn').forEach(b=>b.addEventListener('click',()=>{ tur=b.dataset.k; render(); }));
+  const m = fM.value, u = fU.value;
+  const L = K.filter(k=>(!tur||k.tur===tur)&&(!m||k.marka===m)&&(!u||k.musteri===u||k.musteri==='hepsi'))
+    .sort((a,b)=>a.marka.localeCompare(b.marka,'tr')||a.bitis.localeCompare(b.bitis));
+  const logo = mk => window.MARKA_LOGO && window.MARKA_LOGO[mk] ? `<img src="assets/logos/${esc(window.MARKA_LOGO[mk])}" alt="" loading="lazy">` : '';
+  document.getElementById('liste').innerHTML = L.length ? L.map(k=>{
+    const g = gunKaldi(k.bitis);
+    return `<article class="kkart">
+      <div class="ust">${logo(k.marka)}<div><div class="marka">${esc(k.marka)}</div><div class="mod">${k.modeller.map(md=>`<a href="araclar.html#marka=${encodeURIComponent(k.marka)}&q=${encodeURIComponent(md)}&yil=2026">${esc(md)}</a>`).join(', ')}</div></div></div>
+      <div><span class="tur ${k.tur}">${TUR[k.tur]}</span></div>
+      <h3>${esc(k.baslik)}</h3>
+      ${k.kosul?`<p>${esc(k.kosul)}</p>`:''}
+      ${k.tarihNot?`<p>${esc(k.tarihNot)}</p>`:''}
+      <div class="alt"><span class="bitis${g<=3?' yakin':''}">Son gün: ${fdate(k.bitis)}${g<=3?(g<=0?' (bugün)':` (${g} gün kaldı)`):''}</span><span>${MUS[k.musteri]}</span><span>Kaynak: ${k.kaynak.map(([a,url])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(a)}</a>`).join(' · ')}</span></div>
+    </article>`; }).join('') : '<p class="bos">Bu seçime uyan güncel kampanya yok.</p>';
+  const hp = new URLSearchParams(); if (m) hp.set('marka', m); if (tur) hp.set('tur', tur);
+  history.replaceState(null, '', hp.toString() ? '#'+hp : location.pathname);
+}
+fM.addEventListener('change', render); fU.addEventListener('change', render);
+render();
+</script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
+<script src="assets/menu.js"></script>
+</body>
+</html>

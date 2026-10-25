@@ -326,6 +326,8 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 @media (max-width:640px){.sec{padding:18px 16px 20px;border-radius:10px}.sec:first-child{padding-top:18px}.sec > h2{gap:10px}.sec > h2::before{width:36px;height:36px;border-radius:9px;background-size:20px}.content{gap:16px}.review{padding:16px}.yz-cta .btn.primary{width:100%}}
 .sozluk{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;margin-left:6px;border-radius:50%;font-size:.68rem;font-weight:700;line-height:1;text-decoration:none;color:var(--accent-soft);border:1px solid rgba(201,169,97,.5);vertical-align:1px}
 .sozluk:hover{background:var(--accent);color:var(--on-accent)}
+.kampkutu{margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-left:4px solid #0F766E;background:var(--surface);font-size:.88rem}
+.kampkutu ul{margin:6px 0 6px 18px;padding:0}.kampkutu li{margin:2px 0}.kampkutu a{font-weight:700}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -338,7 +340,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
     <nav class="nav" aria-label="Site">
       <a href="araclar.html">Tüm araçlar</a>
-      <a href="arac-detay.html" aria-current="page">Araç detayı</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
       <a href="piyasa.html">Pazar</a>
       <a href="haberler.html">Haberler</a>
       <a href="oduller.html">Ödüller</a>
@@ -385,6 +387,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
         <div role="group" aria-labelledby="yilLbl"><span class="pl" id="yilLbl">Model yılı</span><div class="chips" id="years"></div></div>
         <div role="group" aria-labelledby="verLbl"><span class="pl" id="verLbl">Versiyon</span><div class="chips" id="versions"></div></div>
       </div>
+      <div class="kampkutu" id="kampKutu" hidden></div>
     </div>
     <figure class="art">
       <div class="carphoto" id="photoWrap" hidden><img id="photoImg" alt="" decoding="async"></div>
@@ -586,6 +589,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 <script src="assets/uye-ayar.js"></script>
 <script src="assets/uyelik.js"></script>
 <script src="assets/puanlar.js"></script>
+<script src="assets/kampanyalar.js"></script>
 <script src="assets/kesit.js"></script>
 <script src="assets/fotolar.js"></script>
 <script>
@@ -9554,6 +9558,9 @@ function renderHero(){
   const items=[['Beygir gücü',s.guc_hp,'HP'],['Azami tork',s.tork_nm,'Nm'],['0-100 km/s',s.sifirYuz_sn,'sn'],['Ortalama tüketim',s.tuketim_l100km,'l/100 km'],['Bagaj',s.bagaj_l,'L']];
   $('#keystats').innerHTML=items.map(([l,v,u])=>`<div class="ks"><dt>${l}</dt><dd>${v==null?'—':nf(v,dec(v))+`<small>${u}</small>`}</dd></div>`).join('');
   $('#fotoLink').href=c.fotoUrl||c.kaynakUrl||'#';
+  const kmp=(window.kampanyalarFor&&c.yil===2026&&!c.durum)?window.kampanyalarFor(c.marka,c.model):[];
+  $('#kampKutu').hidden=!kmp.length;
+  $('#kampKutu').innerHTML=kmp.length?`<b>Bu modelde güncel kampanya</b><ul>${kmp.map(k=>`<li>${esc(k.baslik)}${k.musteri==='kurumsal'?' (kurumsal)':''}</li>`).join('')}</ul><a href="kampanyalar.html#marka=${encodeURIComponent(c.marka)}">Koşullar ve son gün →</a>`:'';
   const ph=window.fotoFor?window.fotoFor(c):null;
   $('#photoWrap').hidden=!ph; $('#photoCredit').hidden=!ph; $('#artSvg').style.display='none'; $('#artCap').hidden=!!ph; $('#amblemWrap').hidden=!!ph; if(!ph) $('#amblemWrap').innerHTML=window.amblemKart?window.amblemKart(c):'';
   if(ph){ $('#photoImg').src=ph.src; $('#photoImg').alt=c.marka+' '+c.model; $('#photoCredit').innerHTML=window.fotoKredi(ph)+(ph.yilMin||ph.yilMax?` · ${ph.yilMin||''}–${ph.yilMax||''} model yılları için`:''); }
