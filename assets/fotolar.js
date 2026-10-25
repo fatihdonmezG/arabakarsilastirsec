@@ -11,11 +11,9 @@ window.fotoFor = function(c){
 };
 (function(){ if(typeof document==='undefined') return;
   const st=document.createElement('style');
-  st.textContent=`img[src^="assets/kesit/"]{object-fit:contain!important;object-position:center bottom!important;padding:5% 8% 8%;box-sizing:border-box;filter:drop-shadow(0 12px 9px rgba(0,0,0,.32)) drop-shadow(0 3px 2px rgba(0,0,0,.25))}
-.carphoto:has(img[src^="assets/kesit/"]),.vphoto:has(img[src^="assets/kesit/"]),img.hphoto[src^="assets/kesit/"]{background:radial-gradient(ellipse 60% 14% at 50% 90%,rgba(0,0,0,.28),transparent 70%),radial-gradient(ellipse 85% 75% at 50% 100%,var(--sahne-1,#2C5FA8) 0%,var(--sahne-2,#1B3A66) 55%,var(--sahne-3,#132845) 100%)!important}
-.carphoto:has(img[src^="assets/kesit/"])::after{display:none}
-html[data-renk="kirmizi"]{--sahne-1:#9E2A33;--sahne-2:#5E1A20;--sahne-3:#3A1014}
-html[data-renk="koyu"]{--sahne-1:#4A4E57;--sahne-2:#2E3137;--sahne-3:#1E2024}`;
+  st.textContent=`img[src^="assets/kesit/"]{object-fit:contain!important;object-position:center bottom!important;padding:4% 6% 7%;box-sizing:border-box;filter:drop-shadow(0 10px 8px rgba(15,26,43,.22)) drop-shadow(0 2px 2px rgba(15,26,43,.18))}
+.carphoto:has(img[src^="assets/kesit/"]),.vphoto:has(img[src^="assets/kesit/"]),img.hphoto[src^="assets/kesit/"],.gor:has(img[src^="assets/kesit/"]){background:radial-gradient(ellipse 52% 7% at 50% 92%,rgba(15,26,43,.16),transparent 70%)!important;border-color:transparent!important;box-shadow:none!important}
+.carphoto:has(img[src^="assets/kesit/"])::after{display:none}`;
   (document.head||document.documentElement).appendChild(st);
 })();
 window.fotoKredi = function(f){

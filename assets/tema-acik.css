@@ -160,11 +160,6 @@ html .hero:not([aria-label]) .btn:not(.primary){background:rgba(255,255,255,.08)
 html footer{background:linear-gradient(180deg,var(--derin-1) 0%,var(--derin-2) 100%);border-top:0;color:rgba(255,255,255,.75);margin-top:48px}
 html footer p{color:rgba(255,255,255,.75)}
 html footer a{color:#fff}
-/* Araç fotoğraf sahnesi: koyu zemin, arkada açık halka */
-html body .carphoto:has(img[src^="assets/kesit/"]),html body .vphoto:has(img[src^="assets/kesit/"]),html body img.hphoto[src^="assets/kesit/"],html body .ikart .gor:not(.amb){background:
-  radial-gradient(ellipse 55% 9% at 50% 91%,rgba(0,0,0,.35),transparent 70%),
-  radial-gradient(circle at 50% 135%,var(--derin-halka) 0 52%,transparent 52.4%),
-  linear-gradient(180deg,var(--derin-1) 0%,var(--derin-2) 100%)!important}
 html[data-renk="koyu"] footer{background:none}
 html .hero:not([aria-label]) .kicker,html .hero:not([aria-label]) .badge,html .hero:not([aria-label]) .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
 html .hero:not([aria-label]) .kicker *,html .hero:not([aria-label]) .badge svg{color:var(--derin-vurgu)}
