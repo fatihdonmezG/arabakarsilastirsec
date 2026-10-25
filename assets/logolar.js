@@ -1,5 +1,6 @@
 /* Marka amblemleri (assets/logos). Karşılaştırma ve seçim panellerinde kullanılır. */
 window.MARKA_LOGO = {
+  'Mercedes-Benz':'mercedes-benz-logo.png','BMW':'bmw-logo.svg','Audi':'audi-logo.svg','Land Rover':'land-rover-logo.svg','Aston Martin':'aston-martin-logo.png','Porsche':'porsche-logo.png','Rolls-Royce':'rolls-royce-logo.svg','Mazda':'mazda-logo.png','Maserati':'maserati-logo.png','Mini':'mini-logo.svg','KGM (SsangYong)':'kgm-logo.svg','Lexus':'lexus-logo.png','Bentley':'bentley-logo.png','Subaru':'subaru-logo.svg','Ferrari':'ferrari-logo.png','DS Automobiles':'ds-automobiles-logo.svg','Lamborghini':'lamborghini-logo.svg','Cadillac':'cadillac-logo.png','Chevrolet':'chevrolet-logo.png','Tesla':'tesla-logo.png','Isuzu':'isuzu-logo.png','GMC':'gmc-logo.png','Leapmotor':'leapmotor-logo.png','Skywell':'skywell-logo.png',
   'Alfa Romeo':'alfa-romeo-logo.svg','BYD':'byd-logo.svg','Chery':'chery-logo.png','Citroën':'citroen-logo.svg',
   'Cupra':'cupra-logo.svg','Dacia':'dacia-logo.svg','Fiat':'fiat-logo.svg','Ford':'ford-logo.png','Honda':'honda-logo.png',
   'Hyundai':'hyundai-logo.svg','Jaecoo':'jaecoo-logo.svg','Jeep':'jeep-logo.svg','Kia':'kia-logo.svg','MG':'mg-logo.png',
