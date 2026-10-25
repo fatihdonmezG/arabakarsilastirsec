@@ -140,3 +140,31 @@ html .tray{background:#fff;border-color:var(--accent);box-shadow:0 -10px 28px -1
 html .tray .names{color:var(--muted)}
 html .tray .names b,html .tray .names strong{color:var(--ink)}
 html .nav a.cta,html .top .cta-mobil,html .tray .go,html .toast{color:#fff}
+
+/* Premium vurgu bantları: sayfa beyaz ve ferah, yoğun lacivert (kırmızı temada bordo) yalnızca giriş bandında,
+   araç fotoğraf sahnesinde ve altbilgide. Araç detay sayfasının özet bölümü beyaz kalır. */
+html:root{--bg:#FFFFFF;--surface2:#F5F9FD;--derin-1:#153655;--derin-2:#004C7D;--derin-halka:#1D5181;--derin-vurgu:#8EC5FF;--sahne-1:#2A6BA8;--sahne-2:#1D5181;--sahne-3:#153655}
+html[data-renk="kirmizi"]:root{--surface2:#FDF7F7;--derin-1:#3D0B12;--derin-2:#6E1420;--derin-halka:#7E1C28;--derin-vurgu:#FFB4B4;--sahne-1:#9E2A33;--sahne-2:#7E1C28;--sahne-3:#3D0B12}
+html .hero:not([aria-label]){position:relative;overflow:hidden;border-bottom:0;color:#fff;
+  background:
+    radial-gradient(circle at 78% 120%,transparent 0 30%,rgba(255,255,255,.05) 30.2% 30.6%,transparent 30.8% 44%,rgba(255,255,255,.045) 44.2% 44.6%,transparent 44.8% 58%,rgba(255,255,255,.04) 58.2% 58.6%,transparent 58.8%),
+    radial-gradient(ellipse 60% 90% at 85% 110%,color-mix(in srgb,var(--derin-halka) 90%,#fff 4%) 0%,transparent 70%),
+    linear-gradient(135deg,var(--derin-1) 0%,var(--derin-2) 100%)}
+html .hero:not([aria-label]) h1{color:#fff}
+html .hero:not([aria-label]) .lead,html .hero:not([aria-label]) .sub,html .hero:not([aria-label]) p{color:rgba(255,255,255,.82)}
+html .hero:not([aria-label]) .eyebrow{color:var(--derin-vurgu)}
+html .hero:not([aria-label]) .rule{background:var(--derin-vurgu)}
+html .hero:not([aria-label]) .stamp{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff}
+html .hero:not([aria-label]) a:not(.btn):not(.cta){color:#fff}
+html .hero:not([aria-label]) .btn:not(.primary){background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}
+html footer{background:linear-gradient(180deg,var(--derin-1) 0%,var(--derin-2) 100%);border-top:0;color:rgba(255,255,255,.75);margin-top:48px}
+html footer p{color:rgba(255,255,255,.75)}
+html footer a{color:#fff}
+/* Araç fotoğraf sahnesi: koyu zemin, arkada açık halka */
+html body .carphoto:has(img[src^="assets/kesit/"]),html body .vphoto:has(img[src^="assets/kesit/"]),html body img.hphoto[src^="assets/kesit/"],html body .ikart .gor:not(.amb){background:
+  radial-gradient(ellipse 55% 9% at 50% 91%,rgba(0,0,0,.35),transparent 70%),
+  radial-gradient(circle at 50% 135%,var(--derin-halka) 0 52%,transparent 52.4%),
+  linear-gradient(180deg,var(--derin-1) 0%,var(--derin-2) 100%)!important}
+html[data-renk="koyu"] footer{background:none}
+html .hero:not([aria-label]) .kicker,html .hero:not([aria-label]) .badge,html .hero:not([aria-label]) .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
+html .hero:not([aria-label]) .kicker *,html .hero:not([aria-label]) .badge svg{color:var(--derin-vurgu)}
