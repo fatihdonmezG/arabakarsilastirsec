@@ -388,6 +388,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </div>
     <figure class="art">
       <div class="carphoto" id="photoWrap" hidden><img id="photoImg" alt="" decoding="async"></div>
+      <div class="carphoto" id="amblemWrap" hidden></div>
       <p class="credit" id="photoCredit" hidden></p>
       <svg id="artSvg" viewBox="0 0 480 190" role="img" aria-label="Araç fotoğrafı için ayrılan alan, örnek çizim">
         <line x1="10" y1="176" x2="470" y2="176" stroke="var(--line)" stroke-width="2"/>
@@ -9553,7 +9554,7 @@ function renderHero(){
   $('#keystats').innerHTML=items.map(([l,v,u])=>`<div class="ks"><dt>${l}</dt><dd>${v==null?'—':nf(v,dec(v))+`<small>${u}</small>`}</dd></div>`).join('');
   $('#fotoLink').href=c.fotoUrl||c.kaynakUrl||'#';
   const ph=window.fotoFor?window.fotoFor(c):null;
-  $('#photoWrap').hidden=!ph; $('#photoCredit').hidden=!ph; $('#artSvg').style.display=ph?'none':''; $('#artCap').hidden=!!ph;
+  $('#photoWrap').hidden=!ph; $('#photoCredit').hidden=!ph; $('#artSvg').style.display='none'; $('#artCap').hidden=!!ph; $('#amblemWrap').hidden=!!ph; if(!ph) $('#amblemWrap').innerHTML=window.amblemKart?window.amblemKart(c):'';
   if(ph){ $('#photoImg').src=ph.src; $('#photoImg').alt=c.marka+' '+c.model; $('#photoCredit').innerHTML=window.fotoKredi(ph)+(ph.yilMin||ph.yilMax?` · ${ph.yilMin||''}–${ph.yilMax||''} model yılları için`:''); }
   const turEl=$('#turWrap'), turA=$('#turLink');
   if(c.sanalTurUrl){ turEl.hidden=false; turA.href=c.sanalTurUrl; } else { turEl.hidden=true; }

@@ -84,7 +84,7 @@ select:focus-visible{border-color:var(--accent)}
 .hphoto{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 58%;background:radial-gradient(ellipse 70% 60% at 50% 62%,#50545e 0%,#33363d 55%,#26282d 100%);border:1px solid var(--line);margin-bottom:6px}
 .hcredit{font-size:.66rem;color:var(--muted);margin-bottom:10px;line-height:1.35}
 .hcredit a{color:var(--muted)}
-.hphoto-ph{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/10;background:var(--surface2);border:1px solid var(--line);margin-bottom:12px;color:var(--muted);font-size:.72rem;text-align:center;padding:0 10px}
+.hphoto-ph{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/10;background:#fff;border:1px solid var(--line);margin-bottom:12px;color:var(--muted);font-size:.72rem;text-align:center;padding:0;overflow:hidden}
 .hname{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25;overflow-wrap:anywhere;color:var(--ink)}
 .hsub{font-size:.82rem;color:var(--muted);line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
 .hsrc{display:inline-block;margin-top:10px;font-size:.76rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line-strong)}
@@ -209,7 +209,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
   [data-cols="3"] .hname,[data-cols="4"] .hname{font-size:.84rem}
   [data-cols="3"] .hsub,[data-cols="4"] .hsub{font-size:.7rem}
   [data-cols="3"] .hcredit,[data-cols="4"] .hcredit,[data-cols="3"] .hfill,[data-cols="4"] .hfill,[data-cols="3"] .hsrc,[data-cols="4"] .hsrc{display:none}
-  [data-cols="3"] .hphoto-ph,[data-cols="4"] .hphoto-ph{font-size:.6rem;padding:0 4px}
+  [data-cols="3"] .hphoto-ph,[data-cols="4"] .hphoto-ph{font-size:.6rem}
   [data-cols="3"] .delta,[data-cols="4"] .delta{font-size:.66rem}
   [data-cols="3"] .tick,[data-cols="4"] .tick{margin-right:2px}
   [data-cols="4"] .cell{font-size:.74rem;padding:4px 6px 10px}
@@ -2165,7 +2165,7 @@ function render(){
 
   const photoHtml = c => c.foto
     ? `<img class="hphoto" src="${esc(c.foto)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy">${c._fotoKredi?`<div class="hcredit">${c._fotoKredi}</div>`:''}`
-    : `<div class="hphoto-ph" aria-hidden="true">Fotoğraf eklenmedi</div>`;
+    : `<div class="hphoto-ph">${window.amblemKart?window.amblemKart(c,{versiyonYok:true}):'Fotoğraf eklenmedi'}</div>`;
   const fotoSrcHtml = c => c.fotoKaynakUrl
     ? `<a class="hsrc" href="${esc(c.fotoKaynakUrl)}" target="_blank" rel="noopener">Fotoğraf: ${esc(c.fotoKaynakAd||'Kaynak')} ↗</a>`
     : '';
