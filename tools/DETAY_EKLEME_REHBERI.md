@@ -200,3 +200,12 @@ Toplam sistem puanı için Güvenlik kriteri zorunlu, en az 4 kriter ve toplam a
 ## Fotoğrafı aynı nesle yayma
 
 `node tools/foto_yay.js` her fotoğrafın kapsadığı versiyonların nesil adını bulur ve fotoğrafı aynı marka + model + nesildeki fotoğrafsız yıllara yayar (kasa değişmediği için). Farklı nesle yaymaz; kapsadığı kayıtlarda nesil yazılı değilse atlar. Yeni eski model yılları eklendikten sonra ya da bir 2026 kaydına nesil adı yazıldıktan sonra çalıştırılır. 2026 kaydına nesil yazmak için: `{"id":"...","islem":"detay_deger","yol":"nesil","deger":"Egea Sedan (makyajlı)"}` satırıyla `node tools/kaynak_degistir.js`. Nesil adı, eski model kayıtlarındaki adla birebir aynı olmalı ve yalnızca kasa gerçekten aynıysa (aynı makyaj dönemi) yazılır.
+
+## Satıştaki araçların geri çağırmaları
+
+`node tools/geri_cagirma_yaz.js --liste --satista` araştırılmamış (null) versiyonları marka | model | nesil grubunda listeler; `--marka X` grup içindeki id'leri verir. Aynı nesil aynı kampanyaları paylaşır, grup başına bir araştırma yapılır.
+- Kaynaklar: NHTSA (static.nhtsa.gov / nhtsa.gov), KBA Rückrufdatenbank, EU Safety Gate, Transport Canada, üretici ya da Türkiye distribütörü duyurusu. Şikâyet ve forum yazıları geri çağırma değildir.
+- Zaman sınırı yok; neslin üretim başından bu yana bütün kampanyalar. Kampanya belirli model yıllarını ya da motorları kapsıyorsa yalnızca o versiyonlara yaz ("kapsam" alanı). Türkiye'deki kapsamı açıklanmamışsa özet ya da çözüm metnine "Türkiye'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın." ekle.
+- Araştırıp kampanya bulamadıysan `"recalls": []` yaz (null kalmaz). Yalnızca hiç araştıramadıysan null bırak.
+- Biçim: {"tarih":"YYYY-AA","parca":"kısa parça adı","baslik":"...","ozet":"...","cozum":"...","kaynak":"https://..."}; metinler kendi cümlelerinle, uzun tire yok.
+- Yazma: `node tools/geri_cagirma_yaz.js kampanyalar.json --kuru`, sonra kurusuz.
