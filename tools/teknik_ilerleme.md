@@ -773,3 +773,44 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 - mini-countryman-electric-2026-e | airbag_sayisi | açık sayı yok
 - mini-countryman-electric-2026-e | dc_hizli_sarj_dk_20_80 | Kaynaklar yalnız %10-80 veriyor (üretici 29 dk @130 kW; EVDB testi 34 dk)
 - mini-countryman-electric-2026-e | elektrik_tuketim_kwh100km | MY26 WLTP aralığı 14,8-16,3 (EVDB), PressClub MY24 17,4-15,7; uç belirsiz (501 km menzil TEL ucu = 14,8 ile uyumlu olur)
+
+## 2026-10-21 — Şanzıman (boş alanlar)
+
+Doldurulan: subaru-crosstrek-2025-e-boxer.sanziman (Subaru Türkiye performans sayfası). Kaynak temizliğinde VW/Škoda şanzımanları tip ve vites sayısıyla güncellendi.
+Bulunamayanlar:
+- egea-sedan-2026-1.6-multijet-130 | sanziman | Fiat sayfası 1.6 130 HP için hem "6 İleri Manuel" hem "6 İleri Otomatik" listeliyor; kaydın hangisi olduğu belirsiz
+- vw-t-cross-1-0-tsi-116-manuel-life-2026 | sanziman | resmi kaynakta 116 PS manuel seçenek doğrulanamadı (temizlikte silindi)
+- ds-n8-2026-etoile-fwd-long-range | sanziman | DS Türkiye sayfasında şanzıman bilgisi yok
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 84).
+
+## 2026-10-21 — Tüketim ve şanzıman: Volkswagen, Škoda, Porsche, Mercedes-Benz, Peugeot, Mini (+ Audi temizlik sırasında)
+
+Doldurulan: 126 alan (76 versiyon) + 11 şanzıman tip/vites güncellemesi (VW ID.4, Porsche 911 Carrera/Turbo S, Cayenne S, Panamera, Mini 6 benzinli). Aralık veren kaynaklarda aralığın ortası yazıldı (kaynak adında aralık belirtildi). Daha önce "uç belirsiz" diye bırakılan Mini aralıkları bu kuralla dolduruldu.
+Satıştaki versiyonlarda boş tüketim: 143 → 72.
+Bulunamayanlar:
+- audi-q7-2026-45-tfsi-quattro-sline | tuketim_l100km | resmi teknik sayfa 10,7 veriyor ama çevrim (WLTP) belirtilmemiş; Avrupa'da bu motor satılmıyor
+- audi-q7-2026-45-tfsi-quattro-sline | co2_gkm | hiçbir kaynakta yok
+- audi-q8-2026-tfsi-quattro-195kw | tuketim_l100km | 2.0 TFSI Q8 için WLTP değeri bulunamadı (Avrupa'da satılmıyor); eski değer temizlikte silindi
+- audi-q8-2026-tfsi-quattro-195kw | co2_gkm | aynı neden
+Not: toyota-yaris-hybrid-1-5-flame-2026 tüketim/CO₂ temizlikte silindi (resmi Yaris teknik PDF'i açılamadı); bir sonraki çalışmada aranabilir.
+
+## 2026-10-21 (ek çalışma) — Tüketim ve şanzıman: Rolls-Royce, Maserati, Nissan, Dacia, Ferrari, Renault (+ Opel temizlik sırasında)
+
+Doldurulan: 49 alan (33 versiyon) + 21 şanzıman tip/vites güncellemesi (Maserati 5, Nissan 7, Dacia Jogger Extreme, Renault 8). Aralıklarda ortası yazıldı; önceki çalışmalarda "uç belirsiz" diye bırakılan Maserati ve Opel değerleri dolduruldu (Opel değerleri opel.com.tr WLTP tablosundaki tek değerler).
+Satıştaki versiyonlarda boş tüketim: 72 → 41.
+Bulunamayanlar:
+- ferrari-296-2025-gts | tuketim_l100km | ferrari.com'da yok; auto-data/autotijd GTS sayfalarında WLTP yok; encycarpedia değeri WLTP etiketsiz
+- ferrari-296-2025-gts | co2_gkm | aynı neden
+Şanzıman bilinçli olarak güncellenmedi (kaynak tutarsız): renault-boreal-iconic-1-8-e-tech-hybrid-160-2026, renault-duster-techno-hybrid-4x4-150-2026.
+
+## 2026-10-22 — Tüketim ve şanzıman: Hyundai, Ford, Subaru, Lamborghini, Cadillac, Chevrolet (+ Alpine; Hyundai/Ford temizlik sırasında)
+
+Doldurulan: 31 alan (14 versiyon) + 11 şanzıman tip/vites güncellemesi (Tucson 4, Puma 2, Tourneo Courier, Kuga 3, Bayon). Aralıklarda ortası yazıldı (kaynak adında aralık belirtildi). Kaynaklar: Hyundai Deutschland Tucson teknik veri PDF'leri, Ford Österreich Puma fiyat listesi, Ford Europe Tourneo Courier teknik PDF'i, autotijd.be, EV Database, autokatalog.pl.
+Satıştaki versiyonlarda boş tüketim: 41 → 28 (hyundai-tucson-comfort-4x2-2026 tüketimi temizlikte silindi).
+Bulunamayanlar:
+- hyundai-tucson-comfort-4x2-2026 | tuketim_l100km, co2_gkm, sifirYuz_sn, hiz_kmh, agirlik_kg | 180 PS önden çekişli DCT Avrupa'da satılmıyor; Hyundai Türkiye teknik sayfasına bu çalışmada erişilemedi
+- lamborghini-urus-se-2026 | tuketim_l100km | araştırıldı, bulunamadı (lamborghini.com IP'ye göre değer gösteriyor; autotijd'de boş)
+- cadillac-escalade-2026-sport-platinum, cadillac-escalade-esv-2026-sport-platinum, cadillac-escalade-2026-v-series | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (ABD aracı, WLTP değeri yok; autotijd Escalade sayfası boş)
+- chevrolet-tahoe-2026-rst, chevrolet-tahoe-2026-high-country, chevrolet-suburban-2026-high-country | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (ABD aracı, WLTP değeri yok)
+Şanzıman bilinçli olarak güncellenmedi (kaynak açılamadı): hyundai-i30-*, hyundai-kona-prime-dct-2026, hyundai-i20-jump-gsr-2026, hyundai-santafe-hybrid-4x4-2026, Ford Capri/Explorer/Puma Gen-E (elektrikli), Focus Sedan.
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 38).
