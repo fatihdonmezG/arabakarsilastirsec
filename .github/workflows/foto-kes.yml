@@ -1,0 +1,41 @@
+name: Fotoğraf arka planı kaldır
+on:
+  push:
+    branches: [main]
+    paths: ['assets/fotolar.js', 'tools/foto_kes.py', '.github/workflows/foto-kes.yml']
+  workflow_dispatch:
+    inputs:
+      hepsi:
+        description: 'Bütün fotoğrafları yeniden işle'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: foto-kes
+  cancel-in-progress: false
+jobs:
+  kes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Kurulum
+        run: pip install "rembg[cpu]==2.0.86" scipy pillow numpy
+      - uses: actions/cache@v4
+        with:
+          path: ~/.rembg
+          key: rembg-isnet-general-use
+      - name: Arka planı kaldır
+        run: python tools/foto_kes.py ${{ inputs.hepsi && '--hepsi' || '' }}
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/kesit assets/kesit.js
+          if git diff --cached --quiet; then echo "değişiklik yok"; exit 0; fi
+          git commit -m "Fotoğraf kesitleri güncellendi"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done
