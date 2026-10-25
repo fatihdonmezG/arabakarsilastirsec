@@ -328,6 +328,9 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 .sozluk:hover{background:var(--accent);color:var(--on-accent)}
 .kampkutu{margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-left:4px solid #0F766E;background:var(--surface);font-size:.88rem}
 .kampkutu ul{margin:6px 0 6px 18px;padding:0}.kampkutu li{margin:2px 0}.kampkutu a{font-weight:700}
+.fpkutu{margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-left:4px solid #0F766E;background:var(--surface)}
+.fpust{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:800}.fpust b{font-size:1.5rem;color:#0F766E;white-space:nowrap}.fpust small{font-size:.8rem;color:var(--muted);margin-left:3px}
+.fpkutu p{margin:6px 0 0;font-size:.86rem;color:var(--muted)}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -9575,7 +9578,10 @@ function renderSistemPuani(){
   const veriYok=sp.veriYokKriterler&&sp.veriYokKriterler.length ? `<p class="note">Veri yok: ${sp.veriYokKriterler.map(esc).join(', ')}. Bu kriterler hesaba katılmadı.</p>` : '';
   const notlar=(sp.notlar||[]).map(n=>`<p class="note">${esc(n)}</p>`).join('');
   const head = sp.toplam!=null ? `<div class="score-num">${nf(sp.toplam,1)}<small>/ 10</small></div><p class="score-meta">${sp.kriterler.length} kritere göre hesaplandı.</p>` : `<p class="score-meta">Toplam puan için yeterli veri yok; mevcut alt puanlar:</p>`;
-  $('#sysScoreBody').innerHTML=`${head}<ul class="subs">${subs}</ul>${veriYok}${notlar}${more}`;
+  const fp=sp.fiyatPerformans, tl=v=>Number(v).toLocaleString('tr-TR')+' TL';
+  const fpHtml = fp ? `<div class="fpkutu"><div class="fpust"><span>Fiyat/performans</span><b>${nf(fp.puan,1)}<small>/ 10</small></b></div><p><b>${fp.oran<0.97?`Sınıfına göre %${Math.round((1-fp.oran)*100)} daha uygun.`:fp.oran>1.03?`Sınıfına göre %${Math.round((fp.oran-1)*100)} daha pahalı.`:'Sınıf ortancasıyla aynı düzeyde.'}</b> Sistem puanının bir puanı ${tl(fp.tlPuan)}; ${esc(fp.grup)} araçlarda (${fp.grupAdet} versiyon) ortanca ${tl(fp.ortancaTlPuan)}.</p><p style="font-size:.78rem">${esc(fp.fiyatAyi)} liste fiyatıyla. Sistem puanını etkilemez.</p></div>`
+    : (c.yil===2026&&!c.durum&&sp.toplam!=null&&!c.s.liste_fiyati_tl ? '<p class="note">Fiyat/performans puanı için resmi liste fiyatı bekleniyor.</p>' : '');
+  $('#sysScoreBody').innerHTML=`${head}${fpHtml}<ul class="subs">${subs}</ul>${veriYok}${notlar}${more}`;
 }
 
 function renderArtilar(){

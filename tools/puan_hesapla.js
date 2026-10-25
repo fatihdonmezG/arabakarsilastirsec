@@ -91,6 +91,39 @@ for (const c of CARS){
   out[c.id] = (kr.length>=4 && wsum>=0.6 && kr.some(x=>x.ad==='Güvenlik')) ? { toplam: r1(total/wsum), kriterler: kr, veriYokKriterler: yok, notlar } : { toplam:null, kriterler: kr, veriYokKriterler: yok, notlar:['Toplam puan için güvenlik verisi ve en az 4 kriter gerekiyor; şimdilik yalnızca alt puanlar gösteriliyor'] };
 }
 const stamp = new Date().toISOString().slice(0,10);
+// Fiyat/performans puanı (yalnızca satıştaki 2026 model yılı, resmi liste fiyatı ve toplam sistem puanı olan versiyonlar).
+// Sistem puanını DEĞİŞTİRMEZ; ayrı alan olarak yazılır (out[id].fiyatPerformans).
+// Yöntem: aracın "sistem puanının bir puanı için ödenen fiyat"ı (liste fiyatı / sistem puanı) aynı sınıftaki araçların ortancasıyla kıyaslanır.
+//   oran = (fiyat / puan) / sınıf ortancası;  puan = 5 - 2,5 × log2(oran), 0–10 arası.
+//   Ortancayla aynı → 5; puan başına yarı fiyat → 7,5, dörtte bir → 10; iki katı → 2,5, dört katı → 0.
+// Sınıf: kasa grubu (SUV, binek: hatchback/sedan/station, MPV, spor: coupe/cabrio/roadster, pick-up) × boy (uzunluğa göre A-B, C, D, E-F).
+//   Sınıfta 8'den az araç varsa yalnızca boy sınıfına, o da yetmezse bütün piyasaya bakılır (kullanılan grup kayda yazılır).
+{
+  const kasaG = k => { k = k || ''; if (/pick/i.test(k)) return ['pickup', 'pick-up']; if (/MPV|Minivan|Van/i.test(k)) return ['mpv', 'MPV']; if (/SUV|Crossover|Arazi|Off-?Road/i.test(k)) return ['suv', 'SUV']; if (/Coupe|Coupé|Cabrio|Roadster|Targa|Spider|Spyder/i.test(k)) return ['spor', 'coupe ve cabrio']; return ['binek', 'binek (hatchback, sedan, station)']; };
+  const boyG = l => !l ? null : l < 4200 ? ['AB', 'A-B sınıfı'] : l < 4600 ? ['C', 'C sınıfı'] : l < 4900 ? ['D', 'D sınıfı'] : ['EF', 'E-F sınıfı'];
+  const AY = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  const ADAY = CARS.filter(c => c.yil === 2026 && !c.durum && num(c.s.liste_fiyati_tl) && out[c.id] && out[c.id].toplam != null && out[c.id].toplam > 0)
+    .map(c => { const kg = kasaG(c.s.kasa), bg = boyG(num(c.s.uzunluk_mm)); return { c, tlp: c.s.liste_fiyati_tl / out[c.id].toplam, kg, bg }; });
+  const ortanca = a => { const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const gruplar = {};
+  const ekle = (k, x) => (gruplar[k] = gruplar[k] || []).push(x);
+  for (const x of ADAY) { if (x.bg) { ekle('s:' + x.kg[0] + x.bg[0], x); ekle('b:' + x.bg[0], x); } ekle('h', x); }
+  const ESIK = 8;
+  // fiyat listesinin ayı: kaynakTarih alanlarından en yenisi (yoksa bugün)
+  const tarih = CARS.map(c => c.kaynakTarih).filter(Boolean).sort().pop() || new Date().toISOString().slice(0, 10);
+  const ay = AY[Number(tarih.slice(5, 7)) - 1] + ' ' + tarih.slice(0, 4);
+  let say = 0;
+  for (const x of ADAY) {
+    let g, ad;
+    if (x.bg && (gruplar['s:' + x.kg[0] + x.bg[0]] || []).length >= ESIK) { g = gruplar['s:' + x.kg[0] + x.bg[0]]; ad = x.bg[1] + ' ' + x.kg[1]; }
+    else if (x.bg && (gruplar['b:' + x.bg[0]] || []).length >= ESIK) { g = gruplar['b:' + x.bg[0]]; ad = x.bg[1] + ' (bütün kasalar)'; }
+    else { g = gruplar.h; ad = 'bütün piyasa'; }
+    const med = ortanca(g.map(y => y.tlp)), oran = x.tlp / med;
+    out[x.c.id].fiyatPerformans = { puan: r1(Math.max(0, Math.min(10, 5 - 2.5 * Math.log2(oran)))), oran: Math.round(oran * 100) / 100, grup: ad, grupAdet: g.length, tlPuan: Math.round(x.tlp), ortancaTlPuan: Math.round(med), fiyatAyi: ay };
+    say++;
+  }
+  console.log(`Fiyat/performans puanı: ${say} versiyon`);
+}
 fs.writeFileSync(path.join(ROOT,'assets','puanlar.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. Tarih: ${stamp} */\nwindow.PUANLAR=${JSON.stringify(out)};\n`);
 const n = Object.values(out).filter(x=>x.toplam!=null).length;
 console.log(`Puan hesaplandı: ${n} / ${CARS.length} versiyon`);

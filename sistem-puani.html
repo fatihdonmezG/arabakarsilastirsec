@@ -90,8 +90,22 @@
       <ul>
         <li><b>Veri yoksa tahmin yapılmaz.</b> Bilgisi olmayan kriter hesaba katılmaz ve ağırlığı diğer kriterlere oransal dağıtılır. Hangi kriterin eksik olduğu puanın yanında yazar.</li>
         <li><b>Toplam puan için alt sınır:</b> Güvenlik verisi olmalı, en az 4 kriter hesaplanmalı ve bu kriterler toplam ağırlığın en az %60'ını oluşturmalı. Bu sağlanmazsa toplam puan gösterilmez, yalnızca alt puanlar görünür.</li>
-        <li><b>Fiyat puana girmez.</b> Fiyat yalnızca satıştaki araçlarda var ve zamanla değişiyor; puanın her araç için aynı ölçüyle hesaplanması için dışarıda bırakıldı.</li>
+        <li><b>Fiyat sistem puanına girmez.</b> Fiyat yalnızca satıştaki araçlarda var ve her ay değişiyor. Sistem puanı her model yılı için aynı ölçüyle hesaplanır; fiyat ayrı bir puanda, aşağıdaki fiyat/performans puanında değerlendirilir.</li>
         <li><b>Puan değişebilir.</b> Bir araca yeni doğrulanmış veri eklendiğinde (ör. NCAP sonucu, 0-100 süresi) o aracın puanı yeniden hesaplanır.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="fiyat-performans">
+    <h2>Fiyat/performans puanı</h2>
+    <div class="panel prose">
+      <p>Satıştaki 2026 model araçlarda sistem puanının yanında ikinci bir puan görürsünüz: aracın parasının karşılığını ne kadar verdiği. Sistem puanını değiştirmez; eski model yıllarında hiç hesaplanmaz.</p>
+      <ul>
+        <li><b>Neye bakıyoruz?</b> Resmi liste fiyatını sistem puanına bölüyoruz: sistem puanının bir puanı kaç TL'ye geliyor? Kampanya fiyatı kullanılmaz, çünkü geçici ve bayiye göre değişir.</li>
+        <li><b>Kiminle kıyaslıyoruz?</b> Aynı sınıftaki araçlarla. Sınıf, kasa grubu (SUV, hatchback/sedan/station, MPV, coupe ve cabrio, pick-up) ve boyla (uzunluğa göre A-B, C, D, E-F) belirlenir. Bir sınıfta 8'den az araç varsa yalnızca boy sınıfına, o da yetmezse bütün piyasaya bakılır; hangi grubun kullanıldığı aracın sayfasında yazar.</li>
+        <li><b>Puan nasıl çıkıyor?</b> Aracın "puan başına fiyatı" sınıf ortancasıyla aynıysa 5 alır. Yarı fiyatına geliyorsa 7,5, dörtte birine geliyorsa 10; iki katına geliyorsa 2,5, dört katına geliyorsa 0 alır.</li>
+        <li><b>Neden değişebilir?</b> Bu puan aynı sınıftaki diğer araçların fiyatına da bağlıdır. Fiyat listeleri güncellendikçe yeniden hesaplanır; hangi ayın fiyatlarıyla hesaplandığı puanın yanında yazar.</li>
+        <li><b>Yakıt ve bakım masrafı:</b> Tüketim zaten sistem puanının Verimlilik kriterinde. Aynı şeyi iki kez saymamak için fiyat/performans puanı yalnızca satın alma fiyatına bakar.</li>
       </ul>
     </div>
   </section>

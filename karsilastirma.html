@@ -1885,7 +1885,7 @@ const GROUPS = [
   ['kablosuz_sarj','Kablosuz telefon şarjı'],['navigasyon','Navigasyon'],
   ['ses_sistemi','Ses sistemi'],['dijital_gosterge','Dijital gösterge paneli']]},
  {name:'Değerlendirme', rows:[
-  ['sistem_puani_10','Sistem puanı (10 üzerinden)','','high']]},
+  ['sistem_puani_10','Sistem puanı (10 üzerinden)','','high'],['fiyat_performans_10','Fiyat/performans puanı (satıştaki 2026, 10 üzerinden)','','high']]},
  {name:'Fiyat ve vergi', rows:[
   ['liste_fiyati_tl','Güncel liste fiyatı (satıştaki sıfır araç)','TL','low'],['mtv_yillik_tl','Yıllık MTV (1-3 yaş)','TL','low']]},
  {name:'Garanti ve bakım', rows:[
@@ -2200,7 +2200,7 @@ $('share').addEventListener('click',async()=>{
 window.addEventListener('hashchange',()=>{ readHash(); render(); });
 
 $('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Verisi olmayan satırlarda "—" görünür.`;
-CARS.forEach(c=>{ const f=window.fotoFor?window.fotoFor(c):null; if(f){ c.foto=f.src; c._fotoKredi=window.fotoKredi(f); } const p=(window.PUANLAR||{})[c.id]; c.s.sistem_puani_10 = p&&p.toplam!=null ? p.toplam : null; });
+CARS.forEach(c=>{ const f=window.fotoFor?window.fotoFor(c):null; if(f){ c.foto=f.src; c._fotoKredi=window.fotoKredi(f); } const p=(window.PUANLAR||{})[c.id]; c.s.sistem_puani_10 = p&&p.toplam!=null ? p.toplam : null; c.s.fiyat_performans_10 = p&&p.fiyatPerformans ? p.fiyatPerformans.puan : null; });
 readHash();
 renderPresets();
 render();

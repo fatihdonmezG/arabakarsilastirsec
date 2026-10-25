@@ -56,6 +56,7 @@
 .vcredit{font-size:.64rem;color:var(--muted);line-height:1.3}
 .vcredit a{color:var(--muted)}
 .empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px solid var(--divider);margin-top:16px}
+.bdg.fp{border-color:color-mix(in srgb,#0F766E 45%,transparent);color:#0F766E;font-weight:800}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -100,6 +101,7 @@
       <div><label for="fSirala">Sırala</label><select id="fSirala">
         <option value="marka">Marka ve model (A–Z)</option>
         <option value="puan">Sistem puanı (yüksekten düşüğe)</option>
+        <option value="fp">Fiyat/performans (satıştaki 2026)</option>
         <option value="gucDesc">Güç (yüksekten düşüğe)</option>
         <option value="tuketim">Tüketim (düşükten yükseğe)</option>
         <option value="fiyatAsc">Fiyat (düşükten yükseğe)</option>
@@ -180,7 +182,7 @@ async function load(){
   }catch(err){
     $('count').textContent='Araç listesi yüklenemedi. Sayfayı bir web sunucusu üzerinden açın.'; return;
   }
-  CARS.forEach(c=>{ c._f=fuelCat(c.s.yakit); c._b=bodyCat(c.s.kasa); c._g=gearCat(c.s.sanziman,c.s.yakit); c._d=driveCat(c.s.cekis); c._foto=!!(window.fotoFor&&window.fotoFor(c)); c._off=!!c.durum && !c.s.liste_fiyati_tl; c._q=(c.marka+' '+c.model+' '+c.versiyon).toLocaleLowerCase('tr'); const p=(window.PUANLAR||{})[c.id]; c._p=p&&p.toplam!=null?p.toplam:null; });
+  CARS.forEach(c=>{ c._f=fuelCat(c.s.yakit); c._b=bodyCat(c.s.kasa); c._g=gearCat(c.s.sanziman,c.s.yakit); c._d=driveCat(c.s.cekis); c._foto=!!(window.fotoFor&&window.fotoFor(c)); c._off=!!c.durum && !c.s.liste_fiyati_tl; c._q=(c.marka+' '+c.model+' '+c.versiyon).toLocaleLowerCase('tr'); const p=(window.PUANLAR||{})[c.id]; c._p=p&&p.toplam!=null?p.toplam:null; c._fp=p&&p.fiyatPerformans?p.fiyatPerformans.puan:null; });
   const brands=[...new Set(CARS.map(c=>c.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
   $('fMarka').innerHTML='<option value="">Tüm markalar ('+brands.length+')</option>'+brands.map(b=>`<option>${esc(b)}</option>`).join('');
   $('fYakit').innerHTML='<option value="">Tümü</option>'+FUEL.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');
@@ -212,6 +214,7 @@ function filtered(){
     tuketim:(a,b)=>(a.s.tuketim_l100km??1e9)-(b.s.tuketim_l100km??1e9),
     yil:(a,b)=>b.yil-a.yil||a.marka.localeCompare(b.marka,'tr'),
     puan:(a,b)=>(b._p??-1)-(a._p??-1),
+    fp:(a,b)=>(b._fp??-1)-(a._fp??-1),
     fiyatAsc:(a,b)=>(a._off?1e15:a.s.liste_fiyati_tl??1e15)-(b._off?1e15:b.s.liste_fiyati_tl??1e15),
     fiyatDesc:(a,b)=>(b._off?-1:b.s.liste_fiyati_tl??-1)-(a._off?-1:a.s.liste_fiyati_tl??-1),
     hiz:(a,b)=>(a.s.sifirYuz_sn??1e9)-(b.s.sifirYuz_sn??1e9),
@@ -231,7 +234,7 @@ function card(c){
   const ph=window.fotoFor?window.fotoFor(c):null;
   return `<article class="vcard${on?' sel':''}">${ph?`<div class="vphoto"><img src="${esc(ph.src)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy" decoding="async"></div><div class="vcredit">${window.fotoKredi(ph)}</div>`:(window.amblemKart?`<div class="vphoto vphoto-amblem">${window.amblemKart(c,{versiyonYok:true})}</div><div class="vcredit">&nbsp;</div>`:'')}
     <div class="vtop"><div><div class="vname">${esc(c.marka+' '+c.model)}</div><div class="vver">${c.yil} · ${esc(c.versiyon)}${c.donem?` · <span title="Türkiye\'de satıldığı yıllar">${esc(c.donem)}</span>`:''}</div></div>${c._p!=null?`<a class="score" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)">${nf(c._p,1)}</a>`:''}</div>
-    <div class="badges">${c.s.yakit?`<span class="bdg">${esc(c.s.yakit)}</span>`:''}${c.s.kasa?`<span class="bdg">${esc(c.s.kasa)}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}</div>
+    <div class="badges">${c.s.yakit?`<span class="bdg">${esc(c.s.yakit)}</span>`:''}${c.s.kasa?`<span class="bdg">${esc(c.s.kasa)}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}${c._fp!=null?`<span class="bdg fp" title="Fiyat/performans puanı: aynı sınıftaki 2026 araçlara göre sistem puanı başına fiyat">F/P ${nf(c._fp,1)}</span>`:''}</div>
     <div class="vnums">${nums.join('')||'<span>Temel değerler henüz eklenmedi</span>'}</div>
     <div class="vact">
       <button type="button" class="sbtn" data-sel="${esc(c.id)}" aria-pressed="${on}"${full?' aria-disabled="true"':''}>${on?'Seçildi':'Karşılaştırmaya ekle'}</button>
