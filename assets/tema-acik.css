@@ -158,9 +158,9 @@ html .hero:not([aria-label]) .rule{background:var(--derin-vurgu)}
 html .hero:not([aria-label]) .stamp{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff}
 html .hero:not([aria-label]) a:not(.btn):not(.cta){color:#fff}
 html .hero:not([aria-label]) .btn:not(.primary){background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}
-html footer{background:linear-gradient(180deg,var(--derin-1) 0%,var(--derin-2) 100%);border-top:0;color:rgba(255,255,255,.75);margin-top:48px}
-html footer p{color:rgba(255,255,255,.75)}
-html footer a{color:#fff}
+html footer{background:#fff;border-top:1px solid var(--line);color:var(--muted);margin-top:48px}
+html footer p{color:var(--muted)}
+html footer a{color:var(--accent-soft)}
 html[data-renk="koyu"] footer{background:none}
 html .hero:not([aria-label]) .kicker,html .hero:not([aria-label]) .badge,html .hero:not([aria-label]) .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
 html .hero:not([aria-label]) .kicker *,html .hero:not([aria-label]) .badge svg{color:var(--derin-vurgu)}
