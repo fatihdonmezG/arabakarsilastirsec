@@ -47,7 +47,7 @@ def kes(im, oturum):
     # yarı saydam kalan arka plan nesneleri (arkadaki araçlar) silinsin: kenar yumuşaklığı korunur, soluk bölgeler atılır
     m = a > 200
     a = np.where(ndimage.binary_dilation(m, iterations=2), a, 0).astype('uint8')
-    if m.sum() < 0.05 * m.size: return None, 'maske çok küçük'
+    if m.sum() < 0.10 * m.size: return None, 'uzaktan çekim: araç fotoğrafta çok küçük'
     lab, n = ndimage.label(m)
     if n > 1:
         boy = ndimage.sum(m, lab, range(1, n + 1))
