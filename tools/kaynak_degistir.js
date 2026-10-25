@@ -13,7 +13,7 @@
  *  {"id":"...","islem":"detay_sil","yol":"kucukDetaylar.1"}
  *      Detay kaydında bir dizi öğesini siler (kaynağı yasaklı olan artı/eksi, küçük detay vb.).
  *  {"id":"...","islem":"detay_deger","yol":"kucukDetaylar.0.kaynak","deger":"https://..."}
- *      Detay kaydında bir değeri değiştirir. "yol":"durum" ise iki dosyadaki durum metni birlikte değişir.
+ *      Detay kaydında bir değeri değiştirir. "yol" "durum", "nesil" ya da "donem" ise iki dosyada birlikte değişir.
  *
  * Kurallar: yeni URL https olmalı ve yasaklı site olamaz; fiyat alanları yalnızca 2026 model yılında belgelenebilir;
  * sahibinden yalnızca satıştan kalkmış eski modellerde ve teknik veri için (kaynakTuru "sahibinden").
@@ -97,9 +97,9 @@ for (const [i, op] of ops.entries()) {
       for (const c of [ck, cd]) if (c) { delete c.s[op.alan]; if (c.ekKaynak) { delete c.ekKaynak[op.alan]; if (!Object.keys(c.ekKaynak).length) delete c.ekKaynak; } }
     } else if (op.islem === 'detay_sil' || op.islem === 'detay_deger') {
       if (!op.yol) throw 'yol yok';
-      if (op.yol === 'durum') {
-        if (op.islem !== 'detay_deger' || !String(op.deger || '').trim() || YASAK.test(op.deger)) throw 'durum için geçerli bir metin verin';
-        for (const c of [ck, cd]) if (c) c.durum = op.deger;
+      if (['durum', 'nesil', 'donem'].includes(op.yol)) {
+        if (op.islem !== 'detay_deger' || !String(op.deger || '').trim() || YASAK.test(op.deger)) throw op.yol + ' için geçerli bir metin verin';
+        for (const c of [ck, cd]) if (c) c[op.yol] = op.deger;
       } else {
         if (!cd) throw 'detay kaydı yok';
         if (/^(s|id|marka|model|yil|versiyon)(\.|$)/.test(op.yol)) throw 'bu yol bu işlemle değiştirilemez';

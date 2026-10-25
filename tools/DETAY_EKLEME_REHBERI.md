@@ -196,3 +196,7 @@ Toplam sistem puanı için Güvenlik kriteri zorunlu, en az 4 kriter ve toplam a
 - Aynı neslin farklı adla satılan ikizi Euro NCAP'te test edildiyse (ör. Renault Symbol III ↔ Dacia Logan II) `ncap_yay.js --esle` kullanılabilir; yalnızca gerçekten aynı gövde ve platform ise ve kaynak bunu söylüyorsa.
 - Bagaj hacmi bir versiyonda bulunduğunda `node tools/bagaj_yay.js` aynı nesil, aynı kasa, aynı güç tipi (içten yanmalı/hafif hibrit, tam hibrit, plug-in, elektrikli) ve aynı çekiş türündeki diğer versiyonlara yayar. Farklı nesle yaymaz. Bu yüzden bagajı her grubun yalnızca bir versiyonu için araştırmak yeterlidir.
 - Eski modellerde garanti (sıfırken verilen) zor bulunur; puan için genellikle tüketim, 0-100 (ya da ağırlık), bagaj yeterlidir.
+
+## Fotoğrafı aynı nesle yayma
+
+`node tools/foto_yay.js` her fotoğrafın kapsadığı versiyonların nesil adını bulur ve fotoğrafı aynı marka + model + nesildeki fotoğrafsız yıllara yayar (kasa değişmediği için). Farklı nesle yaymaz; kapsadığı kayıtlarda nesil yazılı değilse atlar. Yeni eski model yılları eklendikten sonra ya da bir 2026 kaydına nesil adı yazıldıktan sonra çalıştırılır. 2026 kaydına nesil yazmak için: `{"id":"...","islem":"detay_deger","yol":"nesil","deger":"Egea Sedan (makyajlı)"}` satırıyla `node tools/kaynak_degistir.js`. Nesil adı, eski model kayıtlarındaki adla birebir aynı olmalı ve yalnızca kasa gerçekten aynıysa (aynı makyaj dönemi) yazılır.
