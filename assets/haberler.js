@@ -3,6 +3,27 @@
  * lansman haberlerinde isteğe bağlı marka ve model (karsilastirma.html adlarıyla). */
 window.KAT = {lansman:'Lansman',uretim:'Üretim',geri:'Geri çağırma',pazar:'Pazar',mevzuat:'Mevzuat',odul:'Ödül'};
 window.NEWS = [
+  {tarih:'2026-10-24', kat:'lansman', baslik:'Yeni DS N°7 Türkiye\'de satışa çıktı', marka:'DS', model:'N°7',
+   ozet:'DS 7\'nin yerini alan model Pallas ve Étoile donanımlarıyla satışta. Lansmanda 145 hp sistem gücüne sahip, 21 kW elektrik motorlu hibrit ve altı ileri çift kavramalı şanzıman sunuluyor. Bagaj hacmi 560 litre.',
+   kaynak:[['CNBC-e','https://www.cnbce.com/otomotiv/yeni-ds-n7-turkiyede-satisa-cikti-iste-fiyati-ve-ozellikleri-g40225']], ic:['Lansman takvimi →','lansmanlar.html']},
+  {tarih:'2026-10-24', kat:'geri', baslik:'Range Rover için ABD\'de geri görüş kamerası geri çağırması',
+   ozet:'ABD\'de 2022-2026 model yılı 93.997 Range Rover geri çağrıldı (NHTSA 26V678). Bagaj kapağındaki tahliye delikleri yetersiz kaldığı için kamera çevresinde su birikip görüntüyü bozabilir ya da kesebilir. Servis yeni tahliye delikleri açacak, gerekirse kamerayı değiştirecek.',
+   kaynak:[['autoevolution','https://www.autoevolution.com/news/jlr-north-america-recalls-nearly-94000-range-rover-vehicles-over-failing-rearview-cameras-277494.html'],['VehicleServicePros','https://www.vehicleservicepros.com/industry-news/service-repair/article/55414001/national-highway-traffic-safety-administration-nhtsa-nhtsa-recalls-oct-1923-porsche-ram-toyota']], not:'Türkiye\'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın.'},
+  {tarih:'2026-10-23', kat:'lansman', baslik:'Togg T10F 4More için Kehribar serisi tanıtıldı', marka:'Togg', model:'T10F',
+   ozet:'Çift motorlu T10F 4More\'a özel seri yedi gövde rengiyle geliyor. Jant, ön panjur, logo ve yan aynalarda kehribar detaylar, içeride kabartma desenli koltuklar var. Versiyon 320 kW güç, 89,6 kWh batarya ve 500 km WLTP menzil sunuyor.',
+   kaynak:[['Habertürk','https://www.haberturk.com/ekonomi/togg-t10f-4more-kehribar-serisi-tanitildi-iste-ozellikleri-3922036'],['Ekonomi Gazetesi','https://www.ekonomigazetesi.com/sirket-haberleri/toggun-yeni-modeli-tanitildi-90417']]},
+  {tarih:'2026-10-22', kat:'geri', baslik:'Toyota Land Cruiser Hybrid için ABD\'de yakıt sızıntısı geri çağırması',
+   ozet:'ABD\'de 2024 ve sonrası model yılı 105.794 Land Cruiser Hybrid geri çağrıldı (NHTSA 26V673). Yakıt deposu ile motor arasındaki boru bağlantısının klipsi gevşeyip sızıntıya ve yangın riskine yol açabilir. Servis ek kelepçe takacak, gerekirse boruyu değiştirecek.',
+   kaynak:[['Motor1','https://www.motor1.com/news/812890/toyota-land-cruiser-recall-targets/'],['Webtekno','https://www.webtekno.com/toyota-105-bin-land-cruiser-geri-cagirdi-h227773.html']], not:'Türkiye\'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın.'},
+  {tarih:'2026-10-21', kat:'geri', baslik:'Volkswagen grubu 72 bin elektrikliyi batarya hücreleri için çağırdı',
+   ozet:'Almanya\'daki KBA kayıtlarına göre 2022-2025 üretimi ID.3, ID.4, ID.7, ID. Buzz ve Cupra Born\'larda bazı yüksek voltaj hücreleri hızlı şarjda aşırı ısınabiliyor. Dünyada 72.668, Almanya\'da 9.881 araç kapsamda. Geçici önlem şarjı %80 ile sınırlamak.',
+   kaynak:[['Presseportal (KBA kayıtları)','https://www.presseportal.de/pm/105254/6375292'],['Timeturk','https://www.timeturk.com/volkswagen-72-bin-700-elektrikli-araci-batarya-hatasi-nedeniyle-geri-cagirdi']], not:'Türkiye\'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın.'},
+  {tarih:'2026-10-21', kat:'mevzuat', baslik:'Avrupa Parlamentosu\'nda 2035 hedefini %87,5\'e çeken uzlaşma',
+   ozet:'EPP, S&D ve Renew grupları, yeni otomobillerde 2035 CO₂ azaltım hedefini 2021\'e göre %87,5\'e çekmekte anlaştı. 7,5 puanlık kısım AB\'de üretilen düşük karbonlu çelik kredisiyle karşılanabilecek. Hafif ticaride 2030 hedefi %35\'e indi.',
+   kaynak:[['Motor1','https://www.motor1.com/news/812687/eu-moves-closer-delay-ice-ban/'],['NTV','https://www.ntv.com.tr/otomobil/avrupa-birliginden-otomotivde-kritik-degisiklik-2035-hedefi-esniyor-1747537']], not:'Uzlaşma henüz yasa değil; Parlamento ile üye ülkeler nihai metni müzakere edecek.'},
+  {tarih:'2026-10-21', kat:'lansman', baslik:'Hyundai yeni Bayon ve Tucson için Türkiye takvimini açıkladı',
+   ozet:'İzmit\'te üretilecek yeni Bayon\'un üretimi aralıkta başlıyor, Türkiye satışı şubatta planlanıyor; 1.0 turbonun ardından 1.6 hibrit eklenecek. Yeni nesil Tucson\'un Türkiye satışı 2027\'nin ikinci çeyreğinde bekleniyor.',
+   kaynak:[['AA','https://www.aa.com.tr/tr/isdunyasi/otomotiv/-hyundai-turkiyedeki-elektrikli-arac-vizyonunu-ilk-uc-hedefiyle-guclendiriyor/705094']], ic:['Lansman takvimi →','lansmanlar.html']},
   {tarih:'2026-10-19', kat:'uretim', baslik:'Tofaş Bursa\'da 7,5 milyonuncu aracını üretti',
    ozet:'Bursa fabrikasından çıkan 7,5 milyonuncu araç bir Fiat Ulysse oldu. 1971\'de seri üretime geçen fabrikanın yıllık kapasitesi 500 bin adet. Şirket, Kuzey Amerika\'ya ihracatın 2027 başında yeniden başlayacağını açıkladı.',
    kaynak:[['Habertürk','https://www.haberturk.com/ekonomi/tofas-ta-75-milyonuncu-arac-uretildi-3920559']]},
@@ -44,8 +65,5 @@ window.NEWS = [
    kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-yilin-otomobili-yarisinda-cin-etkisi-adaylarin-yarisi-cinli-1743931']]},
   {tarih:'2026-09-29', kat:'lansman', baslik:'Elektrikli Volkswagen ID. Tiguan\'ın takvimi belli oldu',
    ozet:'Volkswagen, ID.4 ve ID.5\'in yerini alacak modelin adının ID. Tiguan olacağını doğruladı. Dünya prömiyeri Ekim başında, Avrupa satışı 2027 başında planlanıyor.',
-   kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-bir-efsane-daha-elektrikleniyor-volkswagen-id-tiguan-icin-tarih-belli-oldu-1743932']]},
-  {tarih:'2026-09-27', kat:'mevzuat', baslik:'Yargıtay: Sıfır araçtaki üretim kaynaklı boya kusuru değişim sebebi',
-   ozet:'Yargıtay 3. Hukuk Dairesi, sıfır kilometre bir aracın tavanındaki üretimden kaynaklanan boya kabarmasını gizli ayıp saydı ve aracın ayıpsız yenisiyle değiştirilmesi kararını oybirliğiyle onadı.',
-   kaynak:[['NTV','https://www.ntv.com.tr/otomobil/sifir-otomobil-alacaklar-dikkat-yargitaydan-emsal-nitelikte-karar-yenisiyle-degistirilecek-1743751']], not:'Haberde kararın esas ve karar numarası verilmemiş.'}
+   kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-bir-efsane-daha-elektrikleniyor-volkswagen-id-tiguan-icin-tarih-belli-oldu-1743932']]}
 ];;
