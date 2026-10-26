@@ -17,6 +17,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Skoda | devam ediyor | 2026-10-21 | 401 |
 | Dacia | devam ediyor | 2026-10-22 | 71 |
 | Opel | devam ediyor | 2026-10-22 | 392 |
+| Citroën | devam ediyor | 2026-10-26 | 237 |
+| Kia | devam ediyor | 2026-10-26 | 107 |
 
 ## Çalışma günlüğü
 
@@ -114,4 +116,21 @@ Araştırıldı, bulunamadı:
 - Grandland Edition: Konfor Paketi içeriği 2026'da değişmiş görünüyor (geri görüş kamerası ayrı opsiyon), bu yüzden koltuk ısıtma ve elektrikli bagaj yazılmadı. Grandland Elektrik Edition ve GS AWD 2025 bülteninde yok; yalnızca fiyat listesindeki opsiyonlar yazıldı. Klima tipi kaynaklarda yok.
 - Frontera Edition: ekran, kablosuz şarj, kör nokta ve geri görüş kamerası paket bazında belirtilmemiş.
 - Mokka Edition (MT6): 2025 bülteni AT8 130 HP versiyonu için; yalnızca acil fren yazıldı.
+
+### 2026-10-26: Citroën, Kia (190 alan, 19 versiyon)
+
+Kaynaklar: kia.com/tr model donanım sayfaları (Sportage, XCeed, Stonic, Picanto, EV3, EV6, EV9, Niro EV, EV2); talep.citroen.com.tr model PDF'leri (C3 Aircross Hybrid 145 26.10.2026, ë-C3 Aircross 26.10.2026, Berlingo 09.10.2026). Citroën PDF'lerinde ● işareti metne geçmiyor; yalnızca "-" ve "Opsiyonel" okunuyor. Satırda işaret yoksa tüm paketlerde standart, "- -" ise yalnızca üst pakette (Max) var olarak okundu.
+
+Doldurulan: Kia 132 alan (Sportage Live, Elegance, GT-Line 4x4; XCeed Cool; Stonic Cool ve Elegance; Picanto Feel; EV3 Cool ve GT-Line; EV6 Elegance; EV9 Prestige ve GT-Line; Niro EV Elegance; EV2 Cool); Citroën 58 alan (C3 Aircross Plus ve Max, ë-C3 Aircross Standard Max ve Extended Collection, Berlingo Plus). Klima tipiyle güncellenen: 17 versiyon (Kia 12, Citroën 5).
+
+Araştırıldı, bulunamadı:
+- Kia genel: yorgunluk_tespit, yokus_kalkis, arka_klima_cikisi donanım sayfalarında yok; "hız sabitleyici" satırı adaptif olduğunu belirtmeyen modellerde (Picanto, Stonic, XCeed) adaptif alanı boş bırakıldı.
+- kia-sorento-prestige-smart-5seat-2026: kia.com/tr Sorento donanım sayfası 22MY; güncel liste bulunamadı.
+- Kia Stonic: klima satırı sütun hizası okunamadı (Cool ve Elegance klima tipi belirsiz).
+- Kia EV3: geri görüş/360 kamera, kablosuz şarj ve elektrikli bagaj satırlarında sütun hizası belirsiz; yazılmadı.
+- Kia EV6, Niro EV: kör nokta (EV6), 360 kamera, elektrikli bagaj sayfada yok. EV6 sayfası MY25 görsellerini kullanıyor.
+- Citroën C4, C4 X, ë-C4, ë-C3, ë-C5 Aircross, Ami: model PDF bağlantısı (model=c4, c4x vb.) C5 Aircross ya da C3 Aircross belgesine düşüyor; dijital katalog ve karşılaştırma sayfaları JS ile yükleniyor. Resmi paket bazlı liste bulunamadı.
+- Citroën C5 Aircross Plus ve Max: model=yeni-c5-ac belgesi önceki nesil (4500 mm, yalnızca Max); sitedeki yeni nesil kayıtlarla eşleşmiyor.
+- Citroën genel: arka_klima_cikisi, koltuk_isitma, elektrikli_koltuk, deri_doseme, elektrikli_bagaj, dijital_gosterge C3 Aircross / ë-C3 Aircross belgelerinde yok; adaptif hız sabitleyici yok (yalnızca hız sabitleyici).
+- Berlingo Plus: geri görüş kamerası, dijital gösterge, ekran ve hoparlör satırlarında paket ayrımı okunamadı.
 
