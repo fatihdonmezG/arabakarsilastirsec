@@ -54,3 +54,33 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - renault-megane-sedan-2020-1.3-tce-140-edc, -1.5-blue-dci-115-edc .tuketim_l100km — Faz I sedan EDC sayfası bulunamadı.
 - renault-symbol-2018-1.5-dci-90-easy-r — yalnızca makyaj öncesi (2016) Logan Easy-R verisi var.
 - fiat-egea-sedan/cross-202[1-5]-1.6-multijet-130-dct .tuketim_l100km, .sifirYuz_sn — model yılına ait resmi/teknik kaynak bulunamadı (yalnızca yasaklı siteler).
+
+## 2026-10-26
+
+- Önce: Toplam puanı olmayan 231 / 762 → Sonra: 208 / 762 (23 versiyon puanlandı).
+- Euro NCAP (6 kayıt + ncap_yay.js ile 5 yayılım; 22 alan):
+  - Lexus RX 2026 (2): 5★, 2022 (euroncap.com/en/results/lexus/rx/48753; RX 350h/450h+/500h).
+  - Mercedes-Benz GLC 2026 (1): 5★, 2022 (X254; euroncap.com/en/results/mercedes-benz/glc/48755).
+  - Alfa Romeo Giulia 2023 (2): 5★, 2016 (news.euroncap.com Giulia 2016; yıldız: autobiz.ie). Test 10 yıldan eski.
+  - Alfa Romeo Stelvio 2023 (2): 5★, 2017 (euroncap.com/en/results/alfa-romeo/stelvio/27419; Euro NCAP basın bülteni 05.07.2017). Test 9 yıldan eski. Stelvio versiyonlarının tüketim/0-100/bagajı hâlâ eksik.
+  - Nissan Navara 2021 (2): 4★, 2015 (NP300 Navara D23, tüm çift kabin; cdn.euroncap.com/en/results/nissan/navara/22037; yıldız: australiancar.reviews). Test 11 yıldan eski.
+  - Mazda 2 2021 (2): 4★, 2015 (DJ nesli; news.euroncap.com Mazda 2 2015; yıldız: paultan.org). Test 11 yıldan eski.
+- Diğer alanlar (Renault, Fiat + Citroën güvenlik): 27 alan, 15 versiyon
+  - Renault Taliant 1.0 SCe 65 ×3: tüketim 5,7 (WLTP, autotijd.be); 1.0 TCe 90 X-Tronic ×5: tüketim 6,1 (WLTP, autotijd.be).
+  - Renault Megane III (Faz III) 1.5 dCi 110 manuel 2014–2016 ×3: tüketim 4,4, 0-100 10,8, ağırlık 1215 (auto-data.net).
+  - Renault Megane III Sport Tourer 1.5 dCi 110 EDC 2014–2016 ×3: tüketim 4,2, 0-100 12,1, ağırlık 1289 (auto-data.net Grandtour Faz III).
+  - Citroën C3 Aircross 1.2 Hybrid 145 Max: 6 hava yastığı (Stellantis Türkiye basın bülteni) → Euro NCAP olmadan güvenlik açıldı.
+  - Fiat: kalan tüm eksikler önceki listelerde (bulunamadı / Euro NCAP testi yok).
+  - Bagaj yayılımı: yeni değer yok.
+
+### Euro NCAP testi yok / bulunamadı (2026-10-26)
+- Mercedes-Benz S-Serisi (W223), Mercedes-Maybach S-Serisi, BMW 7 Serisi (G70) / i7 — euroncap.com'da sonuç bulunamadı.
+
+### Araştırıldı, bulunamadı (2026-10-26)
+- renault-taliant-2021-1.0-turbo-eco-100-lpg.tuketim_l100km — autotijd yalnızca benzin/LPG ayrımsız aralık (5,7–7,0) veriyor.
+- renault-fluence-201[1-2]-1.6-105-otomatik, -1.5-dci-85, -1.5-dci-105 .tuketim_l100km, .sifirYuz_sn — auto-data Fluence (2009–2012) sayfasında bu Türkiye motorları yok; fiches-auto yalnız kullanıcı ortalaması.
+- renault-megane-201[4-6]-st-1.5-dci-110 — auto-data Grandtour manuel (20171) sayfası açılamadı; tekrar denenebilir. renault-megane-201[4-6]-st-1.6-dci-130 — auto-data Grandtour Faz III'te 1.6 dCi 130 yok.
+- renault-clio-201[5-6]-1.5-dci-90-edc — auto-data Clio IV Faz I hatchback'te EDC yok (yalnız Grandtour ve Faz II).
+- renault-megane-sedan-2021-1.0-tce-115.tuketim_l100km — auto-data sayfasında tüketim yok.
+- fiat-grande-panda-1-2-mhev-*.airbag_sayisi — Stellantis Türkiye bülteninde hava yastığı sayısı yok.
+- citroen-c3-aircross-1.2-hybrid-145-plus-2026.airbag_sayisi — bültende yalnız tipler var, sayı yok.
