@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 171 |
-| Fiat | devam ediyor | 73 |
+| Renault | devam ediyor | 181 |
+| Fiat | devam ediyor | 83 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -107,7 +107,10 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
 - [ ] Captur I (2013–2019)
 - [ ] Kadjar (2015–2022)
 - [ ] Talisman (2016–2022)
-- [ ] Taliant (2021–2025)
+- [x] Taliant (2021–2025) — 10 versiyon
+  - [x] 1.0 SCe 65: 2021–2023; 1.0 Turbo 90 X-Tronic: 2021–2025; 1.0 Turbo 90 manuel ve 1.0 Turbo ECO 100 (fabrika LPG): 2021
+  - Kaynaklar: donanimhaber.com Mayıs 2021 ve Kasım 2022, shiftdelete.net Şubat 2024 (2023 model yılı), milliyet.com.tr Mayıs 2024, iscihaber.net Nisan 2025; teknik: autotijd.be (SCe 65, TCe 90 otomatik, TCe eco 100 LPG), auto-data.net (TCe 90 manuel, gövde ölçüleri)
+  - Euro NCAP 2021 (Dacia Logan III, 2 yıldız; aynı gövde); geri çağırma: araştırıldı, kayıt yok ([])
 - [ ] Latitude (2011–2015)
 - [ ] Scenic III / Grand Scenic III, Scenic IV
 - [ ] Laguna III
@@ -144,5 +147,11 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - [x] 1.4 Fire 95 ve 1.6 Multijet 130 DCT: 2021–2025; 1.6 Multijet 130 manuel, 1.3 Multijet 95, 1.0 FireFly 100: 2021
   - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), 2024-02 geri vites lambası (2023)
   - [ ] 1.5 Hybrid 130 (2022, Sedan/Cross/HB): tek kaynakta teknik veri yok
-- [ ] Egea HB / SW (eski yıllar)
+- [x] Egea Hatchback — 10 versiyon
+  - [x] Makyajlı: 1.4 Fire 95: 2021–2023; 1.3 Multijet 95: 2021–2022; 1.6 Multijet 130 manuel ve 1.0 FireFly 100: 2021; 1.6 Multijet 130 DCT: 2022
+  - [x] Makyaj öncesi: 1.6 Multijet 120 manuel ve DCT: 2017 (karar.com Mart 2017 incelemesi)
+  - Kaynaklar: shiftdelete.net Kasım 2021, donanimhaber.com Nisan 2022, gazetebirlik.com Ekim 2023; teknik: auto-data.net Egea Hatchback (357, makyajlı 2020)
+  - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), KBA 2024-02 geri vites lambası (2023); sedan (tip 356) kampanyaları ve 48V hibrit kampanyası hariç
+  - [ ] Makyaj öncesi diğer motorlar ve yıllar (2017–2020: 1.4 Fire 95, 1.3 MJ 95, 1.6 E-Torq 110 otomatik), 2024–2025 ve 1.5 Hybrid: model yıllı liste ya da teknik veri yok
+- [ ] Egea SW / Cross Wagon (eski yıllar)
 - [ ] Fiorino Combi, Punto, 500 / 500L / 500X, Panda, Bravo, Tipo, Freemont, Fullback
