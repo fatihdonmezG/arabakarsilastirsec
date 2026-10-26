@@ -814,3 +814,17 @@ Bulunamayanlar:
 - chevrolet-tahoe-2026-rst, chevrolet-tahoe-2026-high-country, chevrolet-suburban-2026-high-country | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (ABD aracı, WLTP değeri yok)
 Şanzıman bilinçli olarak güncellenmedi (kaynak açılamadı): hyundai-i30-*, hyundai-kona-prime-dct-2026, hyundai-i20-jump-gsr-2026, hyundai-santafe-hybrid-4x4-2026, Ford Capri/Explorer/Puma Gen-E (elektrikli), Focus Sedan.
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 38).
+
+## 2026-10-26 — Tüketim ve şanzıman: Lexus, Maserati (temizlik sırasında), Toyota, Citroën; aranıp bulunamayan: Skywell, Audi, Fiat, Tesla, Lexus LM, Volvo
+
+Doldurulan: 28 alan (8 versiyon) + 5 şanzıman tip/vites güncellemesi (Lexus LBX, NX, RX 350h → e-CVT; RX 500h → Otomatik (6 ileri); MC20 Cielo → Çift kavramalı otomatik (8 ileri)). Lexus LBX tüketim/CO₂ ve diğer boş teknik alanları (ultimatespecs), NX/RX CO₂, emisyon normu, dingil, depo; Toyota Yaris Hybrid tüketim/CO₂ (autotijd, aralık ortası); Citroën Ami elektrik tüketimi (EV Specs, WLTP TEL).
+Satıştaki versiyonlarda boş tüketim: 28 → 25.
+Bulunamayanlar:
+- skywell-et5-lr-2026-legend, skywell-et5-lr-2026-exclusive | elektrik_tuketim_kwh100km | araştırıldı, bulunamadı (bulunan 19,5 kWh/100 km değeri WLTP etiketsiz)
+- audi-q7-2026-45-tfsi-quattro-sline | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (45 TFSI Avrupa'da listelenmiyor; autotijd Q7 sayfasında yok)
+- fiat-egea-cross-1-6-multijet-limited-130hp-2026 | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (auto-data/automoto yalnızca 6 ileri manuel değeri veriyor; DCT değeri yok)
+- tesla-model-y-2026-premium-long-range-rwd | elektrik_tuketim_kwh100km | araştırıldı, bulunamadı (ev-database Long Range RWD 77 kWh/657 km; kayıttaki 74 kWh/603 km versiyonla eşleşmiyor)
+- lexus-lm-2026-350h-7-koltuk | tuketim_l100km | araştırıldı, bulunamadı (auto-data 6,7 ve autotijd 7,2 l/100 km önden çekişli versiyon için; E-Four değeri yok)
+- volvo-ex30-cross-country-twin-motor-2026 | elektrik_tuketim_kwh100km | araştırıldı, bulunamadı (resmi WLTP değeri açılamadı; evkx değeri hesaplanmış)
+Şanzıman bilinçli olarak güncellenmedi: Citroën hibrit/elektrikli versiyonlar (autotijd Citroën C4 sayfası çelişkili: "otomatik" metin, "manuel" tablo).
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 29).
