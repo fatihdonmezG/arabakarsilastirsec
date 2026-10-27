@@ -63,7 +63,7 @@ function lit(v) { return typeof v === 'number' ? String(v) : JSON.stringify(Stri
 function patch(t, id, style, rows) {
   const rg = entryRange(t, id, style); if (!rg) return t;
   let body = t.slice(rg[0], rg[1] + 1);
-  const sKey = body.match(/(["']?)s\1:\{/); if (!sKey) throw new Error(id + ': s bulunamadı');
+  const sKey = body.match(/(?<![\w$])(["']?)s\1:\{/); if (!sKey) throw new Error(id + ': s bulunamadı');
   const sOpen = body.indexOf('{', sKey.index); const sClose = (() => { const tt = t; return closeOf(body, sOpen); })();
   const quoted = sKey[1] === '"';
   const add = rows.map(r => `${quoted ? JSON.stringify(r.alan) : r.alan}:${lit(r.deger)}`).join(',');
@@ -73,7 +73,7 @@ function patch(t, id, style, rows) {
   const ekRe = /(["']?)ekKaynak\1:\{/; const m = body.match(ekRe);
   const ekAdd = rows.map(r => `${quoted ? JSON.stringify(r.alan) : r.alan}:${JSON.stringify({ ad: r.kaynakAd + (r.kaynakTuru === 'sahibinden' ? ' (satıcı beyanı)' : ''), url: r.kaynakUrl, tarih: r.sonDogrulama || null })}`).join(',');
   if (m) { const eo = body.indexOf('{', m.index), ec = closeOf(body, eo); const emp = body.slice(eo + 1, ec).trim() === ''; body = body.slice(0, ec) + (emp ? '' : ',') + ekAdd + body.slice(ec); }
-  else { const sEnd = closeOf(body, body.indexOf('{', body.match(/(["']?)s\1:\{/).index)); body = body.slice(0, sEnd + 1) + `,${quoted ? '"ekKaynak"' : 'ekKaynak'}:{${ekAdd}}` + body.slice(sEnd + 1); }
+  else { const sEnd = closeOf(body, body.indexOf('{', body.match(/(?<![\w$])(["']?)s\1:\{/).index)); body = body.slice(0, sEnd + 1) + `,${quoted ? '"ekKaynak"' : 'ekKaynak'}:{${ekAdd}}` + body.slice(sEnd + 1); }
   return t.slice(0, rg[0]) + body + t.slice(rg[1] + 1);
 }
 const byId = {}; todo.forEach(r => (byId[r.id] ??= []).push(r));

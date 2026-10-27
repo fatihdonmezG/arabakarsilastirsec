@@ -828,3 +828,20 @@ Bulunamayanlar:
 - volvo-ex30-cross-country-twin-motor-2026 | elektrik_tuketim_kwh100km | araştırıldı, bulunamadı (resmi WLTP değeri açılamadı; evkx değeri hesaplanmış)
 Şanzıman bilinçli olarak güncellenmedi: Citroën hibrit/elektrikli versiyonlar (autotijd Citroën C4 sayfası çelişkili: "otomatik" metin, "manuel" tablo).
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 29).
+
+## 2026-10-27 — Tüketim ve şanzıman: Honda, BMW, Voyah (+ Mercedes-Benz, Fiat temizlik sırasında); aranıp bulunamayan: Bentley, Hongqi, Leapmotor, GMC; şanzıman: Volvo, Ford
+
+Doldurulan (teknik_yama): honda-prelude-2026-2-0-ehev-advance.tuketim_l100km (5,2 WLTP, auto-data), .co2_gkm (117, Honda TR), .emisyon_normu; bmw-ix3-2026-50-xdrive-m-sport.elektrik_tuketim_kwh100km (16,5; autotijd 15,1–17,9 aralığının ortası — bmw.com.tr sayfası kendi içinde çelişkili, kullanılmadı); voyah-free-2026-high-489hp.elektrik_tuketim_kwh100km (20,2; ev-database WLTP); temizlik sırasında egea-sedan-2026-1.4-fire-95.co2_gkm (147,5) ve 3 Mercedes emisyon_normu. Toplam 9 alan.
+Şanzıman tip/vites güncellemesi: 7 (Volvo XC60/XC90 B5 ve T8 "Otomatik (8 ileri, Geartronic)", Ford Focus Sedan 1.5 EcoBlue ×2 "Otomatik (8 ileri)", Ford Capri AWD 250 kW tek vitesli) + temizlikte 5 (Mercedes 3, Egea, 500e Armani).
+Satıştaki versiyonlarda boş tüketim: 25 → 22.
+Not: teknik_yama.js'te `s:{` arayan düzenli ifade `cekis:{` gibi anahtarlara takılıyordu (ekKaynak s'den önce gelen detay kayıtlarında "detay doğrulama hatası"); sözcük sınırı eklendi.
+Not: honda-prelude-2026-2-0-ehev-advance kaydındaki guc_hp 200, Honda TR sayfasındaki 184 PS (elektrik motoru) ile uyuşmuyor; eksik veri adımında kontrol edilmeli. bmw-ix3-2026-50-xdrive-m-sport.guc_hp 218 da 50 xDrive (469 PS) ile uyuşmuyor.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- bentley-continental-gtc-2026-hybrid | tuketim_l100km | araştırıldı, bulunamadı (auto-data 680 PS GTC sayfasında WLTP yok; autotijd yalnız GTC Speed 782 PS)
+- hongqi-e-hs9-2025-deluxe | elektrik_tuketim_kwh100km | araştırıldı, bulunamadı (fdrive.cz'de değer yok; evkx değeri hesaplanmış)
+- leapmotor-t03-2026-basic-400 | elektrik_tuketim_kwh100km | araştırıldı, bulunamadı (ev-database Avrupa T03 70 kW/95 PS; kayıttaki 109 HP versiyonla eşleşmiyor)
+- gmc-sierra-2026-denali, gmc-yukon-2026-denali | tuketim_l100km | araştırıldı, bulunamadı (ABD aracı, WLTP değeri yok)
+- ford-explorer-premium-140kw-2026, ford-explorer-premium-awd-250kw-2026 | sanziman | autotijd "0 vites" yazıyor (tutarsız), kullanılmadı
+- ford-capri-premium-125kw-2026, ford-capri-premium-140kw-2026 | sanziman | autotijd'de bu güç seviyeleri yok
+Şanzıman bu çalışmada yapılmadı: Land Rover (10; landrover.com.tr sayfaları şanzıman bilgisini metin olarak vermiyor), Citroën (çelişkili kaynak, önceki not geçerli).
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 24).
