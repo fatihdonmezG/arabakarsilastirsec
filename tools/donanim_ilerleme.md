@@ -19,6 +19,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Opel | devam ediyor | 2026-10-22 | 392 |
 | Citroën | devam ediyor | 2026-10-26 | 237 |
 | Kia | devam ediyor | 2026-10-26 | 107 |
+| Nissan | devam ediyor | 2026-10-27 | 151 |
+| Togg | devam ediyor | 2026-10-27 | 14 |
 
 ## Çalışma günlüğü
 
@@ -134,3 +136,17 @@ Araştırıldı, bulunamadı:
 - Citroën genel: arka_klima_cikisi, koltuk_isitma, elektrikli_koltuk, deri_doseme, elektrikli_bagaj, dijital_gosterge C3 Aircross / ë-C3 Aircross belgelerinde yok; adaptif hız sabitleyici yok (yalnızca hız sabitleyici).
 - Berlingo Plus: geri görüş kamerası, dijital gösterge, ekran ve hoparlör satırlarında paket ayrımı okunamadı.
 
+
+### 2026-10-27: Nissan, Togg (95 alan, 14 versiyon)
+
+Kaynaklar: Nissan Türkiye Qashqai teknik broşürü (Haziran 2026, Nisan 2026 üretimi; www-europe.nissan-cdn.net/.../Qashqai_Teknik_Brosur_Haziran_2026.pdf); nissan.com.tr Juke model sayfası (MY26 paket öne çıkanları); Ekim 2026 fiyat listesi (paket adları). Togg: togg.com.tr T10X, fiyat listesi, ADAS bilgi sayfası ve medya merkezi.
+
+Doldurulan: Nissan 95 alan (Qashqai mHEV ve e-POWER Designpack, Skypack, Skypack 4x4, e-POWER N-Design, Platinum, Platinum 4x4, Platinum Premium, Platinum Premium 4x4; Juke Tekna Plus park sensörü, Juke Platinum 360 kamera ve kablosuz şarj). Togg 0 alan. Klima tipiyle güncellenen: 0 (Nissan klimaları zaten tipli; Togg kaynakta yok).
+
+Araştırıldı, bulunamadı:
+- Nissan genel: nissan.com.tr karşılaştırma sayfası JS ile yükleniyor; Juke MY26 ve X-Trail teknik broşürleri (Juke_MY26_Teknik_Brosur_Haziran_2026.pdf, X-Trail_Teknik_Brosur_Haziran_2026.pdf) ile Qashqai INFOBOARD 20261001 bu ortamdan açılamadı (yalnızca model sayfasındaki bağlantı olarak görüldü). Bir sonraki denemede bu PDF'ler gerekli.
+- Qashqai: arka_klima_cikisi ve navigasyon broşür listesinde yok; Designpack 360 kamera, kablosuz şarj, döşeme listede yok (Yok yazılmadı). nissan-qashqai-2026-1-3-digt-158-n-design: broşürde N-Design yalnızca e-POWER başlığıyla geçiyor; yazılmadı.
+- Juke: Aralık 2025 broşürü (JUKE_BROCHURE_WEB_251226) MY26 paket yapısıyla uyuşmuyor (Tekna Plus yok, Platinum'da 360 kamera yok); kullanılmadı. Platinum Premium için model sayfası yalnızca ProPILOT, BOSE, ısıtmalı koltuk gösteriyor.
+- X-Trail Platinum ve Platinum Premium: model sayfasında paket ayrımı yok.
+- Townstar Combi EV Designpack ve Platinum: model sayfasında paket ayrımı yok; broşür listede yok.
+- togg-t10x-2026-v1-rwd-standart: togg.com.tr sayfalarında versiyon bazlı donanım listesi yok; T10X katalog PDF'i (trumore-cdn.togg.cloud/ToggT10XKatalog.pdf) açılamadı. Klima hâlâ yalnızca "Var".
