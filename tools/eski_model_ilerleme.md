@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 182 |
-| Fiat | devam ediyor | 83 |
+| Renault | devam ediyor | 215 |
+| Fiat | devam ediyor | 95 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -106,8 +106,17 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] 1.3 TCe 140 EDC: 2022 (donanimhaber.com Kasım 2022 listesi, 2022 model yılı)
   - [ ] 1.3 Mild Hybrid 140/155 EDC (2022) ve 2023–2024 model yılları: model yıllı liste ya da tek kaynakta teknik veri yok
 - Not: 2026 Megane Sedan'a nesil adı yazılmadı; 2026'da yeni makyaj haberi var (iscihaber.net Temmuz 2026)
-- [ ] Captur I (2013–2019)
-- [ ] Kadjar (2015–2022)
+- [x] Captur I makyaj öncesi (2013–2016) — 13 versiyon
+  - [x] 0.9 TCe 90, 1.2 TCe 120 EDC, 1.5 dCi 90: 2013–2016; 1.5 dCi 90 EDC: 2016
+  - Kaynaklar: otomobil.com.tr Mayıs 2013 lansman listesi, otopark.com Ağustos 2016 Renault listesi (https://otopark.com/2016/08/20/renault-agustos-2016-fiyat-listesi/, Megane IV HB, Kadjar, Talisman 2016 versiyonlarını da veriyor); teknik: ADAC Autokatalog (06/13–05/15 sayfaları)
+  - Euro NCAP 2013 (5 yıldız); geri çağırma: Safety Gate fren hortumu kampanyası (A12/0471/15, ay kesin değil) nota yazıldı, dCi 110 NOx kampanyası hariç ([])
+  - [ ] Makyajlı Captur I (2017–2019): Türkiye listesi bulunamadı
+- [x] Kadjar (2015–2019) — 20 versiyon
+  - [x] Makyaj öncesi: 1.2 TCe 130, 1.5 dCi 110, 1.5 dCi 110 EDC, 1.6 dCi 130 4x4: 2015–2018
+  - [x] Makyajlı 2019: 1.3 TCe 140 manuel ve EDC, 1.3 TCe 160 EDC, 1.5 Blue dCi 115 EDC
+  - Kaynaklar: haberturk.com Haziran 2015, otopark.com Ağustos 2016, yenimodelarabalar.com Ekim 2017 (2018 listesi), donanimhaber.com Haziran 2019; teknik: auto-data.net, alvolante.it (dCi 110 manuel), ultimatespecs (4x4)
+  - Euro NCAP 2015 (5 yıldız); geri çağırma: 2017-10 perde hava yastığı (2016–2017), 2020-11 çocuk kilidi (2015–2018), 2019-06 soğutma fanı (2019 dizel), 2020-07 katalizör (2019)
+  - [ ] 1.2 TCe 130 EDC (tek kaynakta teknik veri yok), 1.5 Blue dCi 115 manuel (2019), 2020–2022 model yılları: kaynak yok
 - [ ] Talisman (2016–2022)
 - [x] Taliant (2021–2025) — 10 versiyon
   - [x] 1.0 SCe 65: 2021–2023; 1.0 Turbo 90 X-Tronic: 2021–2025; 1.0 Turbo 90 manuel ve 1.0 Turbo ECO 100 (fabrika LPG): 2021
@@ -156,4 +165,14 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), KBA 2024-02 geri vites lambası (2023); sedan (tip 356) kampanyaları ve 48V hibrit kampanyası hariç
   - [ ] Makyaj öncesi diğer motorlar ve yıllar (2017–2020: 1.4 Fire 95, 1.3 MJ 95, 1.6 E-Torq 110 otomatik), 2024–2025 ve 1.5 Hybrid: model yıllı liste ya da teknik veri yok
 - [ ] Egea SW / Cross Wagon (eski yıllar)
-- [ ] Fiorino Combi, Punto, 500 / 500L / 500X, Panda, Bravo, Tipo, Freemont, Fullback
+- [x] 500X makyaj öncesi (2015–2016) — 8 versiyon
+  - [x] 1.6 E-torQ 110, 1.4 MultiAir 140 DCT, 1.6 MultiJet 120, 1.4 MultiAir 170 AT9 4x4: 2015–2016
+  - Kaynaklar: otopark.com Ağustos 2015 ve Temmuz 2016 Fiat listeleri; teknik: auto-data.net (E-torQ), ADAC (140 DCT, MJ 120), autoplenum.de (170 4x4)
+  - Euro NCAP 2015 (4 yıldız); geri çağırma: NHTSA 16V-529 şanzıman (2015 AT9); 17V-146 (2017 MY) hariç
+  - [ ] 1.4 MultiAir 140 manuel (2015), 1.3 MultiJet 95 (2016), makyajlı 500X (2018–): teknik veri ya da liste yok
+- [x] 500L makyaj öncesi (2015–2016) — 4 versiyon
+  - [x] 1.4 Fire 95: 2015–2016; 1.3 MultiJet 85 Dualogic ve 1.6 MultiJet 105: 2015
+  - Euro NCAP 2012 (5 yıldız); geri çağırma: NHTSA 15V-590 yolcu hava yastığı (2015); 17V-192 (ABD motoru) hariç
+  - [ ] 1.3 MultiJet 85 manuel, 2016 dizelleri (1.3 MJ 95 / Dualogic, 1.6 MJ 120), 500L Living: teknik kaynak açılamadı
+- [ ] Punto (makyajlı 2012): 2012 lansman (otomobil.com.tr/milliyet) ve 2015–2016 listeleri var; 75 HP MJ ve 1.4 Fire 77 için tek kaynakta teknik veri bulunamadı (ADAC sayfası 84 PS)
+- [ ] Fiorino Combi, 500, Panda, Bravo, Tipo, Freemont, Fullback (2015–2016 versiyonları otopark.com listelerinde: https://otopark.com/2015/08/30/fiat-agustos-2015-fiyat-listesi/ ve https://otopark.com/2016/07/29/fiat-temmuz-2016-fiyat-listesi/)
