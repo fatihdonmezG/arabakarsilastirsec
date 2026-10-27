@@ -84,3 +84,24 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - renault-megane-sedan-2021-1.0-tce-115.tuketim_l100km — auto-data sayfasında tüketim yok.
 - fiat-grande-panda-1-2-mhev-*.airbag_sayisi — Stellantis Türkiye bülteninde hava yastığı sayısı yok.
 - citroen-c3-aircross-1.2-hybrid-145-plus-2026.airbag_sayisi — bültende yalnız tipler var, sayı yok.
+
+## 2026-10-27
+
+- Önce: Toplam puanı olmayan 210 / 807 → Sonra: 202 / 807 (8 versiyon puanlandı).
+- Euro NCAP (8 versiyon; ncap_yay.js ile 1 yayılım):
+  - MG ZS EV 2022 (2): 5★, 2019 (44,5 kWh makyaj öncesi nesil; cdn.euroncap.com 2019 MG ZS EV veri sayfası; yıldız: MG Motor UK bülteni/insideevs). Test 7 yıldan eski. Elektrik tüketimi 18,6 kWh/100 km (auto-data.net) ×2.
+  - Toyota Yaris 2026 (1): 5★, 2020 (Euro NCAP basın bülteni 18.09.2020).
+  - Toyota Yaris Cross 2026 (1): 5★, 2021 (euroncap.com/en/results/toyota/yaris-cross/43819).
+  - Jaecoo 7 2025 (1): 5★, 2025 (Euro NCAP Jaecoo 7 PHEV sonucu; aynı nesil, benzinli versiyona da yazıldı).
+  - VW Touareg 2025 (1): 5★, 2018 (euroncap.com/en/results/vw/touareg/33478, "tüm Touaregler"). Test 8 yıldan eski.
+  - KGM Korando 2026 (1): 5★, 2019 (Euro NCAP basın bülteni 04.09.2019). Test 7 yıldan eski.
+  - Renault Megane Sedan 2026 Icon/Touch (2 kayıt, 1 versiyon puan açtı): 5★, 2015 (Megane IV; diğer Megane IV Sedan kayıtlarıyla aynı kaynak). 2026 kayıtlarında `nesil` alanı yok, bu yüzden ncap_yay ile eşleşmiyordu.
+- Diğer alanlar (Renault, Fiat): yeni değer yok; Fiat'ın kalan eksikleri önceki listelerde. Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 18.
+
+### Euro NCAP testi yok / bu çalışmada uygulanmadı (2026-10-27)
+- Mercedes-Benz GLB 2026 — yeni nesil (X244); euroncap.com'daki 2019 sonucu önceki nesle (X247) ait, yazılmadı.
+
+### Araştırıldı, bulunamadı (2026-10-27)
+- renault-kadjar-2019-1.3-tce-160-edc.tuketim_l100km — ADAC yalnız NEDC 5,6 ve WLTP CO₂ 148 veriyor; WLTP l/100 km yok (diğer makyajlı Kadjar kayıtları WLTP), auto-data sayfasında tüketim yok.
+- renault-megane-201[4-6]-st-1.5-dci-110 — auto-data Grandtour Faz III manuel sayfası yine bulunamadı (yalnız EDC ve diğer gövdeler).
