@@ -21,6 +21,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Kia | devam ediyor | 2026-10-26 | 107 |
 | Nissan | devam ediyor | 2026-10-27 | 151 |
 | Togg | devam ediyor | 2026-10-27 | 14 |
+| Mercedes-Benz | devam ediyor | 2026-10-28 | 521 |
+| BMW | devam ediyor | 2026-10-28 | 523 |
 
 ## Çalışma günlüğü
 
@@ -150,3 +152,18 @@ Araştırıldı, bulunamadı:
 - X-Trail Platinum ve Platinum Premium: model sayfasında paket ayrımı yok.
 - Townstar Combi EV Designpack ve Platinum: model sayfasında paket ayrımı yok; broşür listede yok.
 - togg-t10x-2026-v1-rwd-standart: togg.com.tr sayfalarında versiyon bazlı donanım listesi yok; T10X katalog PDF'i (trumore-cdn.togg.cloud/ToggT10XKatalog.pdf) açılamadı. Klima hâlâ yalnızca "Var".
+
+### 2026-10-28: Mercedes-Benz, BMW (303 alan, 23 versiyon)
+
+Seçim notu: öncelik listesindeki 14 markanın hepsi en az bir kez işlendi ve kalan boş alanlarının çoğu "bulunamadı" olarak işaretli; satıştaki versiyonlarda en çok boş alanı olan, daha önce işlenmemiş iki marka (Mercedes-Benz 27, BMW 25 versiyon) seçildi.
+
+Kaynaklar: fiyat.mercedes-benz.com.tr model donanım listeleri (/model/<model>/donanimlar; fiyatlar 01.10.2026): A-Serisi, GLA, C-Serisi Sedan, C-Serisi All-Terrain, E-Serisi, CLE Coupé, GLC, GLC Coupé, EQE. bmw.com.tr model sayfalarının SSS "standart donanımlar" yanıtları: 1 Serisi (120), 2 Serisi Active Tourer (230e xDrive), 4 Serisi Coupé (420i), 5 Serisi Sedan (520i), X2 (sDrive20i), X3 (X3 20), X7 (xDrive40d), iX1 (eDrive20), iX2 (eDrive20), i5, i5 Touring (xDrive40), iX (xDrive60).
+
+Doldurulan: Mercedes-Benz 201 alan (A 200 AMG, GLA 200 AMG, C 200 4MATIC AMG, C 200 4MATIC All-Terrain, E 180 AMG, E 220 d 4MATIC AMG, CLE 300 4MATIC Coupé AMG, GLC 300 d 4MATIC AMG, GLC 180 Coupé AMG, EQE 350 4MATIC AMG, EQE 280 AMG); BMW 102 alan (120 Sport Line, 230e xDrive AT M Sport, 420i Coupé M Sport, 520i M Sport, X2 sDrive20i, X3 20 xDrive, X7 xDrive40d, iX1 eDrive20, iX2 eDrive20, i5 eDrive40, i5 Touring xDrive40, iX xDrive60). Klima tipiyle doldurulan: 14 (hepsi boştu; "Var" kaydı yoktu).
+
+Araştırıldı, bulunamadı:
+- Mercedes genel: donanım listelerinde ABS, ESP, yokuş kalkış, ECO start/stop ve arka havalandırma satırı yok; hız sabitleyici yalnızca "HOLD fonksiyonlu hız sabitleyici ve sınırlayıcı" (DISTRONIC yalnızca EQE'de); navigasyon çoğu modelde yalnızca "TR navigasyon ön hazırlığı" (yazılmadı); geri görüş kamerası 360° kameralı modellerde ayrı satır değil.
+- Mercedes: CLA (iki versiyon), GLB (x244), EQA, GLE, GLS, G-Serisi, S-Serisi (fl), EQS (fl), GLC elektrikli (glc-x540), CLE Cabriolet donanım sayfaları tabloyu JavaScript ya da görselle yüklüyor; metin okunamadı. GLE Coupé ve Maybach S denenmedi. AMG C 63 S E PERFORMANCE C-Serisi listesinde ayrı sütun değil.
+- BMW genel: bmw.com.tr fiyat listesi (fastlane) erişim izni alınamadı; bayi fiyat listelerinde donanım yok. SSS listeleri klima tipi, döşeme, CarPlay, navigasyon ve kamera bilgisini çoğu modelde vermiyor; panoramik cam tavanın açılır olduğu yalnızca 4 Serisi Coupé ve iX1'de belirtiliyor.
+- BMW: 220 Gran Coupé, 220i Active Tourer (SSS listesi 230e için), 320i, 520d xDrive (SSS yalnızca 520i), 740d/740, X1 (iki versiyon), X5, X6, i4 (4 Serisi Gran Coupé sayfası yalnızca 420i), i7, iX3 (sayfa M60 için) için versiyona bağlı standart liste bulunamadı.
+
