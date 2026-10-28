@@ -105,3 +105,29 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 ### Araştırıldı, bulunamadı (2026-10-27)
 - renault-kadjar-2019-1.3-tce-160-edc.tuketim_l100km — ADAC yalnız NEDC 5,6 ve WLTP CO₂ 148 veriyor; WLTP l/100 km yok (diğer makyajlı Kadjar kayıtları WLTP), auto-data sayfasında tüketim yok.
 - renault-megane-201[4-6]-st-1.5-dci-110 — auto-data Grandtour Faz III manuel sayfası yine bulunamadı (yalnız EDC ve diğer gövdeler).
+
+## 2026-10-28
+
+- Önce: Toplam puanı olmayan 206 / 820 → Sonra: 195 / 820 (11 versiyon puanlandı).
+- Euro NCAP (7 kayıt + ncap_yay.js ile 1 eşleme + 5 yayılım; 16 alan):
+  - Range Rover Velar 2026 (1): 5★, 2017 (Euro NCAP basın bülteni 04.10.2017). Test 9 yıldan eski.
+  - Mitsubishi Space Star 2026 (1): 4★, 2013 (aynı nesil A05A, 2019 makyajlı; cdn.euroncap.com 2013 Space Star/Mirage belgesi). Test 13 yıldan eski.
+  - Mazda MX-5 ND 2023 roadster + RF (2 kayıt, roadster puan açtı): 4★, 2015 (caradvice). Test 11 yıldan eski. RF'nin tüketim ve 0-100/ağırlığı hâlâ eksik.
+  - Mercedes-AMG C-Serisi Sedan 2026 (1): 5★, 2022 — `--esle` ile C-Serisi Sedan (W206) sonucundan.
+  - Fiat Fiorino Combi (makyajlı) 2020–2022 (6): 3★, 2010 — Euro NCAP Citroën Nemo Combi 2010 (aynı platform/gövde ikizi; sicurauto.it). Test 16 yıldan eski.
+  - Audi Q8 2026 (1, puan açılmadı): 5★, 2019 (euroncap.com/en/results/audi/q8/39673; süresi doldu). Tüketim ve 0-100/ağırlık hâlâ eksik.
+  - Land Rover Discovery 2026 (1, puan açılmadı): 5★, 2017 (euroncap.com/en/results/land+rover/discovery/26434; süresi doldu). Bagaj hâlâ eksik.
+- Diğer alanlar (Fiat; Renault'nun kalan tüm eksikleri önceki "bulunamadı" listelerinde): 4 alan
+  - Fiat Fiorino Combi 1.3 MultiJet 95 ×3: ağırlık 1090 kg (auto-data.net, makyajlı 2016 minivan).
+  - Fiat 500L 2015 1.6 MultiJet 105: tüketim 4,5 (cars-data.com).
+  - Bagaj yayılımı: Fiorino Combi 360 L → 1.4 Fire 77 ×3.
+- Eklenen alan: 20 (+ 3 bagaj yayılımı).
+
+### Euro NCAP testi yok (2026-10-28)
+- Toyota Camry XV70 (2021) — drivingelectric: Euro NCAP Camry'yi test etmedi (yalnız ANCAP/ASEAN NCAP).
+- BYD Han — Euro NCAP'te sonuç yok (2022'de yalnız Atto 3, sonra Tang/Seal U test edildi).
+- Mercedes-Benz GLC Coupé (X254) — Euro NCAP GLC 2022 sonucu yalnız 5 kapılı SUV'yi kapsıyor; coupé için yazılmadı.
+
+### Araştırıldı, bulunamadı (2026-10-28)
+- audi-a8-l-2026-55-tfsi-quattro-340.ncap_yildiz — euroncap.com'da A8 (D5) sonucu bulunamadı.
+- fiat-fiorino-combi-202[0-2]-1.3-multijet-95.sifirYuz_sn — auto-data sayfasında yok (ağırlık yazıldı).
