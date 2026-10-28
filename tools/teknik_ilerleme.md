@@ -845,3 +845,19 @@ Not: honda-prelude-2026-2-0-ehev-advance kaydındaki guc_hp 200, Honda TR sayfas
 - ford-capri-premium-125kw-2026, ford-capri-premium-140kw-2026 | sanziman | autotijd'de bu güç seviyeleri yok
 Şanzıman bu çalışmada yapılmadı: Land Rover (10; landrover.com.tr sayfaları şanzıman bilgisini metin olarak vermiyor), Citroën (çelişkili kaynak, önceki not geçerli).
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 24).
+
+## 2026-10-28 — Tüketim: Cadillac, Chevrolet (+ Subaru, Kia temizlik sırasında); aranıp bulunamayan: Audi Q8, Hyundai, Lamborghini, Ferrari, Cadillac V-Series
+
+Doldurulan (teknik_yama): 38 alan, 9 versiyon.
+- Cadillac Escalade / Escalade ESV Sport Platinum: tuketim_l100km (16,5 / 16,9), co2_gkm (393 / 403), emisyon_normu Euro 6d (alVolante.it listino)
+- Chevrolet Tahoe RST, Tahoe High Country, Suburban High Country: tuketim_l100km (16,5 / 16,5 / 16,9), co2_gkm (391 / 391 / 402), emisyon_normu, tork_nm 624 (alVolante.it listino)
+- Temizlik belgelerinden: subaru-forester-2025-2-0i-fun.dingil_mm, .airbag_sayisi, .jant_inch, .ncap_yildiz (5), .ncap_test_yili (2024); subaru-solterra-2025-e-xcellent-awd.guc_hp, .sifirYuz_sn, .hiz_kmh, .uzunluk_mm, .genislik_mm, .yukseklik_mm, .dingil_mm, .yerden_yukseklik_mm, .agirlik_kg, .jant_inch, .ekran_inch; Kia Rio (2 versiyon) .dingil_mm, .ncap_test_yili
+Şanzıman: subaru-solterra-2025-e-xcellent-awd "Tek vitesli (elektrikli)". Diğer "Otomatik" kayıtlar (Citroën, Fiat, Ford elektrikli, Land Rover vb.) bu çalışmada yapılmadı.
+Satıştaki versiyonlarda boş tüketim: 22 → 17.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- audi-q8-2026-tfsi-quattro-195kw | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (audi.com Q8 teknik verisinde 2.0 TFSI 195 kW yok; yalnızca TDI 170/210 kW ve TFSI 250 kW)
+- hyundai-tucson-comfort-4x2-2026 | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (Hyundai TR e-broşürü Eylül 2025 ve Hyundai DE teknik veride 180 PS yalnızca 4WD; 4x2 DCT 160 PS: 7,4 l/100 km, 167 g/km — kaydın gücü/çekişi kontrol edilmeli)
+- lamborghini-urus-se-2026 | tuketim_l100km | araştırıldı, bulunamadı (autotijd Urus SE sayfasında resmi veri yok; lamborghini.com basın sayfası yönlendirildi)
+- ferrari-296-2025-gts | tuketim_l100km | araştırıldı, bulunamadı (motor.es değeri 8,5 l/100 km / 205 g/km, sayfa yakıt türü ve ölçülerde kendi içinde çelişkili — kullanılmadı)
+- cadillac-escalade-2026-v-series | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (alVolante V-Series sayfası torku 653 Nm veriyor — lb-ft değeri Nm yazılmış, tutarsız; kullanılmadı)
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 20).
