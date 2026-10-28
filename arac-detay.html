@@ -328,6 +328,9 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 .sozluk:hover{background:var(--accent);color:var(--on-accent)}
 .kampkutu{margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-left:4px solid #0F766E;background:var(--surface);font-size:.88rem}
 .kampkutu ul{margin:6px 0 6px 18px;padding:0}.kampkutu li{margin:2px 0}.kampkutu a{font-weight:700}
+.mlkutu{border-left-color:var(--accent,#1d4ed8)}.mlsatir{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:8px}.mlbas{font-size:.78rem;color:var(--muted);min-width:7.5em}
+.mlink{display:inline-block;padding:5px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-size:.84rem;font-weight:600;background:var(--bg,transparent)}.mlink:hover{border-color:var(--ink)}
+.mlnot{margin:8px 0 0;font-size:.76rem;color:var(--muted)}
 .fpkutu{margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-left:4px solid #0F766E;background:var(--surface)}
 .fpust{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:800}.fpust b{font-size:1.5rem;color:#0F766E;white-space:nowrap}.fpust small{font-size:.8rem;color:var(--muted);margin-left:3px}
 .fpkutu p{margin:6px 0 0;font-size:.86rem;color:var(--muted)}
@@ -390,6 +393,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
         <div role="group" aria-labelledby="verLbl"><span class="pl" id="verLbl">Versiyon</span><div class="chips" id="versions"></div></div>
       </div>
       <div class="kampkutu" id="kampKutu" hidden></div>
+      <div class="kampkutu mlkutu" id="linkKutu" hidden></div>
     </div>
     <figure class="art">
       <div class="carphoto" id="photoWrap" hidden><img id="photoImg" alt="" decoding="async"></div>
@@ -594,6 +598,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 <script src="assets/kampanyalar.js"></script>
 <script src="assets/kesit.js"></script>
 <script src="assets/fotolar.js"></script>
+<script src="assets/marka_linkleri.js"></script>
 <script>
 const MTV_URL = 'mtv-hesaplama.html';
 const CARS = {
@@ -9572,6 +9577,8 @@ function renderHero(){
   const kmp=(window.kampanyalarFor&&c.yil===2026&&!c.durum)?window.kampanyalarFor(c.marka,c.model):[];
   $('#kampKutu').hidden=!kmp.length;
   $('#kampKutu').innerHTML=kmp.length?`<b>Bu modelde güncel kampanya</b><ul>${kmp.map(k=>`<li>${esc(k.baslik)}${k.musteri==='kurumsal'?' (kurumsal)':''}</li>`).join('')}</ul><a href="kampanyalar.html#marka=${encodeURIComponent(c.marka)}">Koşullar ve son gün →</a>`:'';
+  const ml=window.markaLinkKutusu?window.markaLinkKutusu(c.marka,satista(c)):'';
+  $('#linkKutu').hidden=!ml; $('#linkKutu').innerHTML=ml;
   const ph=window.fotoFor?window.fotoFor(c):null;
   $('#photoWrap').hidden=!ph; $('#photoCredit').hidden=!ph; $('#artSvg').style.display='none'; $('#artCap').hidden=!!ph; $('#amblemWrap').hidden=!!ph; if(!ph) $('#amblemWrap').innerHTML=window.amblemKart?window.amblemKart(c):'';
   if(ph){ $('#photoImg').src=ph.src; $('#photoImg').alt=c.marka+' '+c.model; $('#photoCredit').innerHTML=window.fotoKredi(ph)+(ph.yilMin||ph.yilMax?` · ${ph.yilMin||''}–${ph.yilMax||''} model yılları için`:''); }

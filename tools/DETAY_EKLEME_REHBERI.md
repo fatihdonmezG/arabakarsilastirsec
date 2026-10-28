@@ -210,3 +210,11 @@ Toplam sistem puanı için Güvenlik kriteri zorunlu, en az 4 kriter ve toplam a
 - Araştırıp kampanya bulamadıysan `"recalls": []` yaz (null kalmaz). Yalnızca hiç araştıramadıysan null bırak.
 - Biçim: {"tarih":"YYYY-AA","parca":"kısa parça adı","baslik":"...","ozet":"...","cozum":"...","kaynak":"https://..."}; metinler kendi cümlelerinle, uzun tire yok.
 - Yazma: `node tools/geri_cagirma_yaz.js kampanyalar.json --kuru`, sonra kurusuz.
+
+# Resmi marka bağlantıları (teklif, test sürüşü, servis)
+
+`assets/marka_linkleri.js` marka başına markanın resmi Türkiye sitesindeki sayfaları tutar: `teklif`, `test`, `bayi`, `servis` (randevu formu), `bakim` (bakım paketi/fiyat sayfası). Detay sayfasında satıştaki araçlar için satın alma ve servis bağlantıları, satıştan kalkmış araçlar için yalnızca servis bağlantıları gösterilir; karşılaştırma başlığında en çok iki kısa bağlantı çıkar.
+- Yalnızca markanın resmi alan adı (bayi alt alan adları değil, ana site). İlan ve karşılaştırma siteleri kullanılmaz.
+- Giriş (üyelik) isteyen, mobilde açılmayan ya da sık değişen PDF bağlantıları eklenmez. Bulunamayan tür boş bırakılır; düğme görünmez.
+- Yeni marka eklerken sayfayı açıp türünü doğrula (ör. "bilgi talep formu" `teklif`tir, `test` değil).
+- Kontrol: `node tools/link_kontrol.js` (normal internet erişimi olan bir makinede). 4xx/5xx ya da bağlantı hatası verenleri yeniden bul ya da kaldır.

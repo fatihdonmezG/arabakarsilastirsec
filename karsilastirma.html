@@ -223,6 +223,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
   [data-cols="4"] .row .label{padding:13px 22px;font-size:.86rem}
   [data-cols="3"] .cell{padding:14px 22px;font-size:.96rem}
 }
+.hml{margin-top:6px;font-size:.78rem}.hml a{color:inherit;font-weight:600}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -321,6 +322,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 <script src="assets/puanlar.js"></script>
 <script src="assets/kesit.js"></script>
 <script src="assets/fotolar.js"></script>
+<script src="assets/marka_linkleri.js"></script>
 <script src="assets/logolar.js"></script>
 <script src="assets/secici.js"></script>
 <script>
@@ -2212,6 +2214,7 @@ function render(){
   $$('#head .hcell').forEach((el,i)=>{
     const c = cars[i], filled = ALL_KEYS.filter(k=>c.s[k]!=null).length;
     el.insertAdjacentHTML('beforeend', `<span class="hfill"><b>${filled}</b> / ${ALL_KEYS.length} satırda doğrulanmış veri</span>`);
+    if(window.markaLinkKisa) el.insertAdjacentHTML('beforeend', window.markaLinkKisa(c.marka, !isDiscontinued(c)));
   });
   renderDims(cars);
   $('shead').innerHTML = '<div class="sgap">Karşılaştırılan</div>' + cars.map((c,i)=>`<div class="scell"><div class="snum">Araç ${i+1}</div><div class="sname">${esc(c.marka+' '+c.model)}</div><div class="ssub">${c.yil} · ${esc(c.versiyon)}</div></div>`).join('');
