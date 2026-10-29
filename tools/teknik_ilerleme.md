@@ -861,3 +861,14 @@ Satıştaki versiyonlarda boş tüketim: 22 → 17.
 - ferrari-296-2025-gts | tuketim_l100km | araştırıldı, bulunamadı (motor.es değeri 8,5 l/100 km / 205 g/km, sayfa yakıt türü ve ölçülerde kendi içinde çelişkili — kullanılmadı)
 - cadillac-escalade-2026-v-series | tuketim_l100km, co2_gkm | araştırıldı, bulunamadı (alVolante V-Series sayfası torku 653 Nm veriyor — lb-ft değeri Nm yazılmış, tutarsız; kullanılmadı)
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 20).
+
+## 2026-10-29 — Kaynak temizliği: Ford, Hyundai; Şanzıman: Land Rover, Kia, Hyundai, Toyota
+
+Tüketim: satıştaki 17 eksiğin tamamı önceki çalışmalarda "araştırıldı, bulunamadı" olarak işaretli; bu çalışmada yeni tüketim girilmedi (kalan 17).
+Doldurulan (teknik_yama): ford-focus-titanium-style-sedan-1.5-ecoblue-115ps-2026.agirlik_kg, ford-focus-titanium-x-sedan-1.5-ecoblue-115ps-2026.agirlik_kg (1388 kg, autocritica.ro). Temizlikte Focus Sedan tüketim 4,7 l/100 km ve CO₂ 124 g/km olarak düzeltildi.
+Şanzıman tip/vites güncellemesi: 13 — Land Rover 10 ("Otomatik (8 ileri)": Defender D200, Defender OCTA, Discovery D350, Discovery Sport P270e, Range Rover D350 LWB, Range Rover P460e, Range Rover Sport D300, RR Sport SV Black, Velar D200, Evoque P270e; autotijd / auto-data / Parkers), Kia Sorento HEV "Otomatik (6 ileri)" (Kia TR), Hyundai Santa Fe Hybrid 4x4 "Otomatik (6 ileri)" (autocritica.ro), Toyota Hilux 2.8 48V "Otomatik (6 ileri)" (automoto.it).
+Satıştaki versiyonlarda şanzımanı boş ya da yalnızca "Otomatik" olan: 46 → 33.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- mg-hs-hybrid-plus-luxury-2026 | sanziman | MG Bahreyn sayfasında vites sayısı yok; mg-turkey.com sayfası açılamadı
+- ford-focus-titanium-style-sedan-1.5-ecoblue-115ps-2026, ford-focus-titanium-x-sedan-1.5-ecoblue-115ps-2026 | airbag_sayisi | autocritica sayfasında yok; ford.com.tr fiyat/donanım listesi açılamadı
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 16).
