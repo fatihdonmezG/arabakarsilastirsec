@@ -9,6 +9,7 @@ Kaynak listesi: `node tools/geri_cagirma_yaz.js --liste --satista`
 | 2026-10-26 | Volkswagen | Taigo, T-Cross, Passat (B9), Touareg (2025) kayıt yok olarak yazıldı; Golf, Golf GTI, Golf R, Tiguan, Tayron, T-Roc, ID.4, ID.7 araştırılamadı | 10 | 0 | 319 versiyon |
 | 2026-10-27 | Nissan, Skoda | Nissan Qashqai (e-Power 1 kampanya, 1.3 DIG-T kayıt yok), X-Trail 1.5 VC-T (kayıt yok); Skoda Fabia, Octavia, Superb, Kodiaq, Scala, Kamiq, Karoq, Enyaq Coupe, Elroq, Enyaq araştırılamadı | 15 | 1 | 304 versiyon |
 | 2026-10-28 | Hyundai | Tucson 2026 (2 kampanya), Tucson Hybrid 2025 (3), Kona 2026 (2), Santa Fe Hybrid 2026 (1), IONIQ 6 2026 (1); Kona Electric, IONIQ 5, IONIQ 9, Inster, i20, i30, Bayon araştırılamadı. Renault ve Skoda için KBA/Safety Gate resmi sayfaları yine açılamadı | 7 | 13 kayıt (6 ayrı kampanya) | 297 versiyon |
+| 2026-10-29 | Volvo, Kia, Toyota | Volvo XC90 (2: T8 fren yazılımı 25V392, B5 emniyet kemeri 25V589), XC60 (aynı 2), EX30 ve EX30 Cross Country (1: baş desteği 26V671), EX40 (1: tek pedal fren yazılımı 25V392); Kia Sorento Hybrid (1: gösterge paneli 26V046), EV9 (1: gösterge paneli, Transport Canada 2026032), Niro EV kayıt yok; Toyota Land Cruiser Prado kayıt yok. Volvo V60, EC40 ve Kia EV6 araştırılamadı | 15 | 13 kayıt (6 ayrı kampanya) | 282 versiyon |
 
 ## Araştırılamadı
 
@@ -30,6 +31,10 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Hyundai notu: NHTSA 26V047 (çok modelli gösterge paneli yazılımı, Ocak 2026) model yılları netleşmediği için yazılmadı. ABD fabrikasına özgü montaj kampanyaları (25V549 biyel cıvatası, 25V809 perde hava yastığı, 26V254 B direği sensörü) Avrupa üretimi Tucson ve Santa Fe için hariç tutuldu.
 - Renault (2026-10-28 denemesi): car-recalls.eu kayıtlarına göre 0EY9 park freni (OR/00145/25, üretim 12.04.2024 - 07.05.2025; Austral, Captur, Megane E-Tech, Rafale, Scenic E-Tech, Symbioz, Espace) ve 0EN9 Austral ABS-ESP (SR/01910/26, üretim 03.2023 - 01.2025) var; Captur için 2025-2026 çekiş bataryası bara montajı (Ekim 2026). Safety Gate detay sayfaları ve PDF'leri arama sonucunda çıkmadığı için açılamadı.
 
+- Volvo | V60 | 2026, EC40 | 2026 (2026-10-29): tek aday AB Safety Gate SR/03370/25 (ön emniyet kemeri burulma çubuğu, sınırlı şasi aralıkları; PDF: ec.europa.eu/safety-gate-alerts/api/download/notification/detail/pdf/10096062/en). Yayın ayı PDF'te yok, alertDetail sayfası açılamadı; ABD/Kanada karşılığı (25V589, 2025471) yalnızca V60 Cross Country'yi kapsıyor. EC40 için 25V392 ABD listesinde yalnızca 2025 model yılı var. Ay doğrulanınca yazılmalı.
+- Kia | EV6 | 2026 (2026-10-29): tek aday Avustralya REC-006557 (2025 üretimi CV1 EV6 dahil çok modelli gösterge paneli yazılımı); resmi sayfada tarih yok (basına göre Mart 2026). Ay doğrulanınca yazılmalı. NHTSA 24V867 (ICCU, üretim 07.2024'e kadar) ve 26V431 (2021-2023 üretimi) hariç.
+- Erişim notu (2026-10-29): api.nhtsa.gov ve kba-online.de proxy tarafından reddediliyor; WebFetch yalnızca arama sonuçlarında çıkan adresleri açabiliyor.
+
 ## Hariç tutulanlar (kayıt yok yazılan gruplar)
 
 - Taigo, T-Cross: VW 90V6 emniyet kemeri uyarısı yazılımı (2020-2022 üretimi); Taigo için ayrıca VW 69UK yolcu hava yastığı (üretim 05.2025'te bitiyor).
@@ -38,3 +43,9 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Nissan Qashqai 2026 1.3 DIG-T: PG5CA yalnızca e-Power; REC-006308, REC-006450, REC-006618 2022-2024 model yıllarını kapsıyor.
 - Nissan X-Trail 2026 1.5 VC-T: Safety Gate SR/01993/26 ve Avustralya REC-006653 (Nissan R26A5, batarya kontrol ünitesi, üretim 12.2021 - 04.2026) yalnızca e-Power versiyonlarını kapsıyor.
 - Hyundai Tucson 2026, Kona 2026: AU REC-006589 (2025 model yılı gösterge paneli) yalnızca 2025 model yılına yazıldı.
+- Volvo XC90/XC60 2026: 25V282 ve 25V908 geri görüş kamerası kampanyaları 2025 model yılına kadar; XC60 25V818 (oturak cıvatası) yalnızca üç belirli şasiyi kapsadığı için yazılmadı.
+- Volvo EX30 2026: 26V001/26V103 yüksek gerilim batarya kampanyaları 2025 model yılı (AB/İngiltere'de yalnızca sağdan direksiyonlu pazarlar); 26V136 Premium Sound kemer uyarı sesi Kuzey Amerika'ya özgü göründüğü için hariç.
+- Kia EV9 2026: 26V545 (hava yastığı sensör matı) ve 25V115 yalnızca ABD Georgia üretimi; 24V757 ve 24V962 2024-2025 model yılı.
+- Kia Sorento 2026: 25V006 (2024 üretimi), 25V745 (Georgia üretimi stepne) hariç.
+- Kia Niro EV 2026: 25V024 (üretim 12.2024'e kadar) hariç.
+- Toyota Land Cruiser Prado 2026 2.8 dizel: AU REC-006616 / Toyota NZ gösterge paneli (2024-2025 model yılı, üretim 08.2024 - 06.2025), REC-006302 aksesuar fren kontrolcüsü (2024), NHTSA 26V179 ve 26V673 (yalnızca ABD 2.4 hibrit) hariç.
