@@ -131,3 +131,26 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 ### Araştırıldı, bulunamadı (2026-10-28)
 - audi-a8-l-2026-55-tfsi-quattro-340.ncap_yildiz — euroncap.com'da A8 (D5) sonucu bulunamadı.
 - fiat-fiorino-combi-202[0-2]-1.3-multijet-95.sifirYuz_sn — auto-data sayfasında yok (ağırlık yazıldı).
+
+## 2026-10-29
+
+- Önce: Toplam puanı olmayan 199 / 827 → Sonra: 195 / 827 (4 versiyon puanlandı).
+- Euro NCAP (5 kayıt, 10 alan; ncap_yay.js ile 1 detay yayılımı — Mercedes-AMG C63 S E Performance, önceki C-Serisi eşlemesinden):
+  - Lexus LBX 2026 (1): 5★, 2024 (cdn.euroncap.com 2024 LBX veri sayfası "tüm LBX'ler"; yıldız: Lexus Avrupa duyurusu).
+  - Citroën Berlingo 2026 (1): 4★, 2018 (euroncap.com Berlingo 33738, Rifter testi; derecelendirme 01.01.2025'te süresi doldu; yıldız: Euro NCAP 24.10.2018 duyurusu). Test 8 yıldan eski.
+  - Opel Combo 2026 (1): 4★, 2018 (news.euroncap.com Opel/Vauxhall Combo 2018). Test 8 yıldan eski.
+  - Mini Cooper 5 Kapı 2026 (1): 5★, 2025 (MINI basın bülteni 08.09.2025: benzinli Cooper C/S/JCW; test 3 kapılı gövdeyle, 5 kapılı aynı neslin gövde türevi). Cabrio'ya yazılmadı (gövde yapısı farklı, kaynak kapsamıyor).
+  - Audi Q7 2026 (1, puan açılmadı): 5★, 2015 (4M; Euro NCAP basın bülteni 02.09.2015). Test 11 yıldan eski. Tüketim hâlâ eksik.
+- Diğer alanlar: Renault ve Fiat'ın kalan tüm eksikleri önceki "bulunamadı / Euro NCAP testi yok" listelerinde; sıradaki markalar Aston Martin ve Rolls-Royce (yalnız hava yastığı sayısı + 1 sürüş destek kalemi gerekli) denendi, kaynaklar çeliştiği için yazılmadı. Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 10.
+
+### Euro NCAP testi yok (2026-10-29)
+- Hyundai Accent Blue (RB, 2018) — yalnız ANCAP/Latin NCAP sonuçları var; Euro NCAP sonucu yok. Güvenlik hava yastığı + sürüş destek kalemleriyle açılmalı.
+- Mini Cooper Cabrio (F67) — Euro NCAP 2025 sonucu yalnız 3 kapılı benzinliyi kapsıyor.
+- Mercedes-Benz S-Serisi (W223) — tekrar kontrol edildi, sonuç bulunamadı.
+
+### Araştırıldı, bulunamadı (2026-10-29)
+- rolls-royce-*.airbag_sayisi — carexpert (makyaj öncesi, 8) ile carsales Ghost Series II MY26 (6) çelişiyor; resmi kaynak yok.
+- aston-martin-db12-*.airbag_sayisi — carexpert DB12 2025 (8) ile carsales DB12 S MY26 (7) çelişiyor; resmi kaynak yok.
+- audi-q7-2026-45-tfsi-quattro-sline.tuketim_l100km — autotijd'de 45 TFSI yok; auto-data değeri (10,7) WLTP olduğu belirsiz.
+- land-rover-discovery-2026-dynamic-hse-d350.bagaj_l, land-rover-range-rover-2026-autobiography-p460e.bagaj_l — parkers tek değer veriyor (172 / 1.093 L), hangi koltuk düzeni olduğu belirsiz.
