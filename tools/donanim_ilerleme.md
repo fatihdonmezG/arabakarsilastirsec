@@ -23,6 +23,10 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Togg | devam ediyor | 2026-10-27 | 14 |
 | Mercedes-Benz | devam ediyor | 2026-10-28 | 521 |
 | BMW | devam ediyor | 2026-10-28 | 523 |
+| Audi | devam ediyor | 2026-10-29 | 351 |
+| Land Rover | devam ediyor | 2026-10-29 | 286 |
+| Mini | devam ediyor | 2026-10-29 | 164 |
+| Volvo | devam ediyor | 2026-10-29 | 210 |
 
 ## Çalışma günlüğü
 
@@ -166,4 +170,19 @@ Araştırıldı, bulunamadı:
 - Mercedes: CLA (iki versiyon), GLB (x244), EQA, GLE, GLS, G-Serisi, S-Serisi (fl), EQS (fl), GLC elektrikli (glc-x540), CLE Cabriolet donanım sayfaları tabloyu JavaScript ya da görselle yüklüyor; metin okunamadı. GLE Coupé ve Maybach S denenmedi. AMG C 63 S E PERFORMANCE C-Serisi listesinde ayrı sütun değil.
 - BMW genel: bmw.com.tr fiyat listesi (fastlane) erişim izni alınamadı; bayi fiyat listelerinde donanım yok. SSS listeleri klima tipi, döşeme, CarPlay, navigasyon ve kamera bilgisini çoğu modelde vermiyor; panoramik cam tavanın açılır olduğu yalnızca 4 Serisi Coupé ve iX1'de belirtiliyor.
 - BMW: 220 Gran Coupé, 220i Active Tourer (SSS listesi 230e için), 320i, 520d xDrive (SSS yalnızca 520i), 740d/740, X1 (iki versiyon), X5, X6, i4 (4 Serisi Gran Coupé sayfası yalnızca 420i), i7, iX3 (sayfa M60 için) için versiyona bağlı standart liste bulunamadı.
+
+### 2026-10-29: Audi, Land Rover (0 alan); Mini (24 alan, 2 versiyon)
+
+Seçim notu: önceki 16 markadan sonra satıştaki versiyonlarda en çok boş alanı olan, daha önce işlenmemiş iki marka Audi (13 versiyon, tamamı boş) ve Land Rover (11 versiyon) seçildi. İkisinde de resmi Türkiye kaynağında paket bazlı liste okunamayınca Volvo ve Mini denendi.
+
+Kaynaklar: mini.com.tr üzerindeki MINI Cooper 3 Kapı standart donanım PDF'i (mini-F66-standard-equipment, Classic) ve Yeni MINI Cooper 3 Kapı e-broşürü (Classic tasarım paketi standart donanımları).
+
+Doldurulan: Mini 24 alan (Cooper 3 Kapı Cooper C ve Cooper S: acil fren, şerit takip, kör nokta, park sensörü, geri görüş kamerası, klima, LED far, 24 cm OLED ekran (9,4 inç), CarPlay/Android Auto, navigasyon, anahtarsız giriş, kablosuz şarj). Klima tipiyle doldurulan: 2 (boştu).
+
+Araştırıldı, bulunamadı:
+- Audi genel: fiyatlistesi.audi.com.tr model sayfaları (ör. 2026/4M Q7) yalnızca fiyat ve paket kodu veriyor, standart donanım yok; audi.com.tr model sayfaları bu ortamdan açılamadı. 13 versiyonun tüm alanları boş kaldı; donanım listesi PDF'i ya da e-broşür gerekli.
+- Land Rover genel: landrover.com.tr fiyat listesi PDF'leri yalnızca fiyat ve tüketim içeriyor. "Modeller ve teknik özellikler" sayfalarında giriş paketleri (Evoque S, Velar S, Range Rover Signature) için donanım listesi yok; Range Rover Autobiography listeleri dingil mesafesi/motor ayrımı yapmadan birden çok blokta veriliyor, versiyonla eşleştirilemedi. Defender, Discovery, Discovery Sport, Range Rover Sport sayfaları bu ortamdan açılamadı.
+- Volvo: volvocars.com/tr fiyat listesi (1 Ekim 2026) yalnızca fiyat tablosu; teknik özellik sayfalarında standart/opsiyonel işaretleri (ikon) metne geçmiyor. EX30 yalnızca Ultra paketle satılıyor. Klima "Var" kayıtları (12) tipiyle güncellenemedi.
+- Mini Cooper 5 Kapı: model sayfasındaki standart donanım PDF'i (mini-F65-standard-equipment) bu ortamdan açılamadı. Countryman: tasarım paketleri PDF'i (Signature, Edition Iconic) hangi versiyona ait olduğunu belirtmiyor, model sayfasında da paket eşlemesi yok; yazılmadı. MINI Electric tasarım paketleri PDF'i (Inspired) önceki nesle ait görünüyor; Countryman E için kullanılmadı. Cabrio için liste bulunamadı.
+- Mini Cooper 3 Kapı: hız sabitleyici "Dynamic Cruise Control" (frenlemeli, adaptif değil); adaptif alanı boş bırakıldı. Sürücü kamera sistemi yorgunluk tespiti olarak yazılmadı. ABS/ESP, start-stop, arka havalandırma, ısıtmalı koltuk (Classic'te yok, opsiyon bloğunda) listede açıkça yok; "Yok" yazılmadı.
 
