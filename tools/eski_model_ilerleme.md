@@ -7,7 +7,7 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
 | Renault | devam ediyor | 224 |
-| Fiat | devam ediyor | 105 |
+| Fiat | devam ediyor | 106 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -202,4 +202,7 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
 - [x] Freemont — 1 versiyon
   - [x] 2.0 MultiJet 170 AWD 6AT: 2015 (otopark.com Ağustos 2015 listesi; Temmuz 2016 listesinde yok); teknik: auto-data.net
   - Euro NCAP 2011 (5 yıldız); geri çağırma: 2016-02 motor kaplaması (Nisan 2011–Nisan 2015), 2017-11 direksiyon kablosu (Ekim 2010–Nisan 2015)
-- [ ] Bravo, Tipo, Fullback, Linea Classic (2015)
+- [x] Linea Classic (makyaj öncesi gövde) — 1 versiyon
+  - [x] 1.4 Fire 77: 2015 (otopark.com Ağustos 2015 listesi); teknik: auto-data.net Linea 1.4 77 (2007–2012 verisi); 1.3 MultiJet 95 için tek kaynakta veri yok
+  - Euro NCAP: test edilmedi; geri çağırma: Linea araştırması ([])
+- [ ] Bravo, Tipo, Fullback
