@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 222 |
-| Fiat | devam ediyor | 101 |
+| Renault | devam ediyor | 224 |
+| Fiat | devam ediyor | 105 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -128,8 +128,14 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] 1.0 SCe 65: 2021–2023; 1.0 Turbo 90 X-Tronic: 2021–2025; 1.0 Turbo 90 manuel ve 1.0 Turbo ECO 100 (fabrika LPG): 2021
   - Kaynaklar: donanimhaber.com Mayıs 2021 ve Kasım 2022, shiftdelete.net Şubat 2024 (2023 model yılı), milliyet.com.tr Mayıs 2024, iscihaber.net Nisan 2025; teknik: autotijd.be (SCe 65, TCe 90 otomatik, TCe eco 100 LPG), auto-data.net (TCe 90 manuel, gövde ölçüleri)
   - Euro NCAP 2021 (Dacia Logan III, 2 yıldız; aynı gövde); geri çağırma: araştırıldı, kayıt yok ([])
-- [ ] Latitude (2011–2015)
-- [ ] Scenic III / Grand Scenic III, Scenic IV
+- [x] Latitude — 1 versiyon
+  - [x] 2.0 dCi 175 BVA: 2015 (otopark.com Eylül 2015 ve Ocak 2016 listeleri, 2015 model yılı); teknik: auto-data.net
+  - Euro NCAP: test edilmedi; geri çağırma: Temmuz 2011 hava yastığı ünitesi kampanyası (Ekim 2010'a kadar üretim) hariç ([])
+  - [ ] 1.5 dCi 110 EDC (2015): tek kaynakta teknik veri yok; 2011–2014 model yılları: liste bulunamadı
+- [x] Scenic III makyajlı (Phase III) — 1 versiyon
+  - [x] 1.5 dCi 110 EDC: 2015 (aynı listeler); teknik: auto-data.net Scenic III (Phase III)
+  - Euro NCAP 2009 (Grand Scenic, 5 yıldız); geri çağırma: 2016-10 ön koltuk rayı (25.05.2016'ya kadar üretim); 2012 fren servosu (2009–2012) ve Scenic IV kampanyaları hariç
+  - [ ] Grand Scenic III, 2010–2014 model yılları, Scenic IV: Türkiye listesi bulunamadı
 - [ ] Laguna III
 - [ ] Koleos I / II
 - [ ] Zoe, Fluence Z.E., Twizy
@@ -185,4 +191,15 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - [x] 1.4 Fire 77 ve 1.3 Multijet 95: 2020–2022 (log.com.tr Eylül 2020, Haziran 2021, Mart 2022 listeleri); teknik: autodata1.com (1.4), ultimatespecs (1.3 MJ)
   - Euro NCAP: Fiorino adıyla sonuç yok (ikiz Citroën Nemo 2010 sonucu euroncap.com'da açılamadı, yazılmadı); geri çağırma: Mayıs 2017 hava yastığı kampanyası 2016 üretimi, bu yıllara []
   - [ ] 1.4 EKO (fabrika LPG) ve 2016–2019, 2023 model yılları: teknik kaynak ya da model yıllı liste yok
-- [ ] 500, Panda, Bravo, Tipo, Freemont, Fullback (2015–2016 versiyonları otopark.com listelerinde: https://otopark.com/2015/08/30/fiat-agustos-2015-fiyat-listesi/ ve https://otopark.com/2016/07/29/fiat-temmuz-2016-fiyat-listesi/)
+- [x] 500 makyaj öncesi — 1 versiyon
+  - [x] 1.2 Fire 69 Dualogic: 2015 (otopark.com Ağustos 2015 listesi); teknik: ADAC Autokatalog (11/13–07/15)
+  - Euro NCAP 2007 (5 yıldız; 2017 yeniden testi 3 yıldız nota yazıldı); geri çağırma: Mart 2015 emniyet kemeri kampanyası (üretim aralığı yok) nota, makyajlı 500 koltuk kampanyası hariç ([])
+  - [ ] 500C 1.2 Dualogic (2015–2016), 2016 listesindeki 500 (Pop, manuel; makyajlı olabilir): ayrı teknik kaynak/nesil teyidi yok
+- [x] Panda III — 2 versiyon
+  - [x] 1.2 Fire 69: 2015–2016 (otopark.com Ağustos 2015 ve Temmuz 2016 listeleri); teknik: auto-data.net Panda III (319)
+  - Euro NCAP 2011 (4 yıldız; 2018 yeniden testi yıldızsız, nota yazıldı); geri çağırma: 2017-04 yan hava yastığı ve 2017-05 hava yastığı ateşleyicisi (Eylül–Kasım 2016 üretimi, 2016'ya); 2015 için []
+  - [ ] 0.9 TwinAir 85 Dualogic, 1.3 MultiJet 75 4x4, Panda Cross 1.3 MultiJet 80: tek kaynakta teknik veri yok
+- [x] Freemont — 1 versiyon
+  - [x] 2.0 MultiJet 170 AWD 6AT: 2015 (otopark.com Ağustos 2015 listesi; Temmuz 2016 listesinde yok); teknik: auto-data.net
+  - Euro NCAP 2011 (5 yıldız); geri çağırma: 2016-02 motor kaplaması (Nisan 2011–Nisan 2015), 2017-11 direksiyon kablosu (Ekim 2010–Nisan 2015)
+- [ ] Bravo, Tipo, Fullback, Linea Classic (2015)
