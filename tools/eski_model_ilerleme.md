@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 224 |
-| Fiat | devam ediyor | 106 |
+| Renault | devam ediyor | 226 |
+| Fiat | devam ediyor | 107 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -137,7 +137,12 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - Euro NCAP 2009 (Grand Scenic, 5 yıldız); geri çağırma: 2016-10 ön koltuk rayı (25.05.2016'ya kadar üretim); 2012 fren servosu (2009–2012) ve Scenic IV kampanyaları hariç
   - [ ] Grand Scenic III, 2010–2014 model yılları, Scenic IV: Türkiye listesi bulunamadı
 - [ ] Laguna III
-- [ ] Koleos I / II
+- [x] Koleos II — 2 versiyon
+  - [x] 1.6 dCi 130 X-Tronic 4x2 ve 2.0 dCi 175 X-Tronic 4x4: 2017 (sozcu.com.tr Haziran 2017 lansman haberi); teknik: auto-data.net Koleos II CVT sayfaları (NEDC)
+  - Euro NCAP 2017 (5 yıldız); geri çağırma: araştırıldı, 2017'yi kapsayan kayıt yok ([]); İngiltere Ağustos 2018 direksiyon somunu kampanyası (kapsam açıklanmadı) nota yazıldı; 2019–2023 yakıt hattı ve 2021–2023 kaput kampanyaları hariç
+  - [ ] 2018–2020 model yılları: Türkiye listesi bulunamadı
+- [ ] Koleos I
+- [ ] Zoe (ZE50 R110, Türkiye lansmanı Aralık 2020, haberturk.com/webtekno): model yılı teyit edilemedi, eklenmedi
 - [ ] Zoe, Fluence Z.E., Twizy
 - [ ] Kangoo Multix (binek)
 
@@ -205,4 +210,8 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
 - [x] Linea Classic (makyaj öncesi gövde) — 1 versiyon
   - [x] 1.4 Fire 77: 2015 (otopark.com Ağustos 2015 listesi); teknik: auto-data.net Linea 1.4 77 (2007–2012 verisi); 1.3 MultiJet 95 için tek kaynakta veri yok
   - Euro NCAP: test edilmedi; geri çağırma: Linea araştırması ([])
-- [ ] Bravo, Tipo, Fullback
+- [x] Fullback — 1 versiyon
+  - [x] 2.4 MultiJet 180 4x4 5AT çift kabin: 2016 (otomobil.com.tr Haziran 2016 lansman haberi; 7 hava yastığı otometre.com); teknik: auto-data.net (NEDC)
+  - Euro NCAP: Fullback adıyla test yok; geri çağırma: Safety Gate A12/1191/19 yan basamak (2019-08, Şubat–Eylül 2016 üretimi)
+  - [ ] 2.4 MultiJet 150 4x2 manuel (motor-çekiş eşleşmesi kaynakta net değil), 2017–2019 model yılları: liste yok
+- [ ] Bravo, Tipo
