@@ -154,3 +154,26 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - aston-martin-db12-*.airbag_sayisi — carexpert DB12 2025 (8) ile carsales DB12 S MY26 (7) çelişiyor; resmi kaynak yok.
 - audi-q7-2026-45-tfsi-quattro-sline.tuketim_l100km — autotijd'de 45 TFSI yok; auto-data değeri (10,7) WLTP olduğu belirsiz.
 - land-rover-discovery-2026-dynamic-hse-d350.bagaj_l, land-rover-range-rover-2026-autobiography-p460e.bagaj_l — parkers tek değer veriyor (172 / 1.093 L), hangi koltuk düzeni olduğu belirsiz.
+
+## 2026-10-30
+
+- Önce: Toplam puanı olmayan 198 / 830 → Sonra: 190 / 830 (8 versiyon puanlandı).
+- Euro NCAP (2 kayıt + ncap_yay.js ile 1 yayılım; 6 alan):
+  - Isuzu D-Max 2026 (2): 5★, 2022 (Euro NCAP D-MAX Crew Cab 2022 sonucu; 2020 testinin diz hava yastığı iyileştirmesiyle güncellenmiş hâli, news.euroncap.com).
+  - DS 7 2026 (1): 5★, 2017 (euroncap.com/fr/results/ds/7+crossback/28749 "tüm DS 7 Crossback'ler"; yıldız: Stellantis basın bülteni 30.11.2017). Test 9 yıldan eski.
+- Diğer alanlar (Renault ve Fiat'ın kalan tüm eksikleri önceki "bulunamadı / Euro NCAP testi yok" listelerinde; sıradaki Citroën ve Bentley işlendi): 5 alan
+  - Citroën ë-C3 Plus/Max ×2: 6 hava yastığı (Stellantis Türkiye basın bülteni).
+  - Citroën C3 Aircross 1.2 Hybrid 145 Plus, ë-C3 Aircross ×2: 6 hava yastığı (Citroën Almanya fiyat listesi 06/2024, tüm donanımlarda standart).
+  - Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 11.
+
+### Euro NCAP testi yok (2026-10-30)
+- Honda Prelude (2026) — carexpert.co.uk: "Eylül 2026 itibarıyla Euro NCAP tarafından değerlendirilmedi".
+- Mercedes-Benz GLC (Elektrikli, EQ teknolojili) — carexpert.co.uk: "Ağustos 2026 itibarıyla değerlendirilmedi".
+- Leapmotor T03 — carexpert.co.uk: Euro NCAP testi yok (Eylül 2026'daki Leapmotor sonucu B05'e ait).
+- Land Rover Discovery Sport PHEV (P300e) — Euro NCAP 2022 sonucu (5★) yalnız dizel/benzinli versiyonları kapsıyor; P300e için "ek test gerekli" yazıyor. PHEV kaydına yazılmadı.
+
+### Araştırıldı, bulunamadı (2026-10-30)
+- bentley-*.airbag_sayisi — carsales Bentayga 2026 (8, ama 6 tip sayıyor) ile carexpert Bentayga 2026 (6) çelişiyor; resmi kaynak yok.
+- maserati-grecale-2025-*.(sürüş destek kalemleri) — Grecale dijital kataloğunda (AT) donanım listesi yok; İngilizce katalog açılamadı.
+- mercedes-benz-glc-coupe-2026-glc180-amg.airbag_sayisi — yalnız ABD/ANCAP kaynakları, Türkiye/Avrupa sayısı bulunamadı.
