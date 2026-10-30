@@ -27,6 +27,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Land Rover | devam ediyor | 2026-10-29 | 286 |
 | Mini | devam ediyor | 2026-10-29 | 164 |
 | Volvo | devam ediyor | 2026-10-29 | 210 |
+| Suzuki | devam ediyor | 2026-10-30 | 68 |
+| Jeep | devam ediyor | 2026-10-30 | 25 |
 
 ## Çalışma günlüğü
 
@@ -186,3 +188,18 @@ Araştırıldı, bulunamadı:
 - Mini Cooper 5 Kapı: model sayfasındaki standart donanım PDF'i (mini-F65-standard-equipment) bu ortamdan açılamadı. Countryman: tasarım paketleri PDF'i (Signature, Edition Iconic) hangi versiyona ait olduğunu belirtmiyor, model sayfasında da paket eşlemesi yok; yazılmadı. MINI Electric tasarım paketleri PDF'i (Inspired) önceki nesle ait görünüyor; Countryman E için kullanılmadı. Cabrio için liste bulunamadı.
 - Mini Cooper 3 Kapı: hız sabitleyici "Dynamic Cruise Control" (frenlemeli, adaptif değil); adaptif alanı boş bırakıldı. Sürücü kamera sistemi yorgunluk tespiti olarak yazılmadı. ABS/ESP, start-stop, arka havalandırma, ısıtmalı koltuk (Classic'te yok, opsiyon bloğunda) listede açıkça yok; "Yok" yazılmadı.
 
+### 2026-10-30: Suzuki, Jeep (92 alan, 14 versiyon)
+
+Seçim notu: daha önce işlenmemiş ve en çok boş alanı olan markalardan Porsche (configurator teknik veri/standart donanım sayfaları robots.txt ile kapalı, model sayfası yalnızca jant/koltuk satırlarını veriyor), Aston Martin (Türkiye donanım kaynağı yok), KGM ve Lexus (resmi güncel liste bulunamadı; Lexus LBX broşürü 2023 tarihli) denendi ya da elendi; Seat fiyat listesindeki Style Plus paketi resmi model/versiyon sayfalarında yok (yalnızca Style ve FR). Resmi paket bazlı liste okunabilen Suzuki ve Jeep işlendi.
+
+Kaynaklar: suzuki.com.tr model sayfalarının donanım tabloları (Vitara Hibrit, S-Cross, Yeni Swift Hibrit); jeep.com.tr Yeni Avenger 2026 broşürü (04/2026) ve Compass 2026 broşürü (07/2026; Summit listesi "Limited'e ek olarak").
+
+Doldurulan: Suzuki 49 alan (40 boş alan ve 9 klima tipi; Vitara 4, S-Cross 4, Swift Life); Jeep 43 alan (40 boş alan ve 3 klima tipi; Avenger 3, Compass Limited ve Summit).
+
+Araştırıldı, bulunamadı:
+- Suzuki genel: arka_klima_cikisi, elektrikli_koltuk, elektrikli_bagaj, kablosuz_sarj, navigasyon donanım tablolarında yok. Vitara klimanın bölge sayısı tabloda yok ("Otomatik Klima"); otomatik olarak yazıldı. Vitara 360 kamera ve ses sistemi tabloda yok; S-Cross LED far (tabloda yalnızca LED gündüz farı) yazılmadı. Swift Life led_far (yalnızca LED gündüz farı) yazılmadı.
+- Jeep Avenger Summit (Elektrik, e-Hybrid): klima satırı listede yok, hâlâ yalnızca "Var". Döşeme "kumaş/suni deri" (deri değil, belirsiz) yazılmadı. Avenger arka havalandırma, start-stop, navigasyon, ses sistemi broşürde yok.
+- Jeep Compass Limited: kör nokta, 360 kamera, koltuk ısıtma, elektrikli bagaj, kablosuz şarj yalnızca Summit ek listesinde; Limited için "Yok" yazılmadı. Arka havalandırma, yorgunluk, yokuş kalkış, start-stop, ses sistemi broşürde yok.
+- Porsche, Aston Martin, KGM, Lexus, Seat: yukarıdaki seçim notuna bakın.
+
+Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Vitara sayfasında yalnızca "Hız Sabitleme Sistemi (Cruise Control)" geçiyor, sitede adaptif hız sabitleyici "Var"; Vitara geri görüş kamerası iki pakette de var. Avenger acilir_tavan "Var", broşürde yalnızca "Cam Tavan".
