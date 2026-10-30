@@ -872,3 +872,15 @@ Satıştaki versiyonlarda şanzımanı boş ya da yalnızca "Otomatik" olan: 46 
 - mg-hs-hybrid-plus-luxury-2026 | sanziman | MG Bahreyn sayfasında vites sayısı yok; mg-turkey.com sayfası açılamadı
 - ford-focus-titanium-style-sedan-1.5-ecoblue-115ps-2026, ford-focus-titanium-x-sedan-1.5-ecoblue-115ps-2026 | airbag_sayisi | autocritica sayfasında yok; ford.com.tr fiyat/donanım listesi açılamadı
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 16).
+
+## 2026-10-30 — Kaynak temizliği: Isuzu, DS Automobiles; Şanzıman: Citroën, Ford
+
+Doldurulan (teknik_yama): 21 alan, 4 versiyon — ds-n4-2026-pallas-bluehdi-130.tuketim_l100km (4,85; autotijd 4,8–4,9 aralığının ortası), .co2_gkm (128; 126–130 ortası), .dingil_mm, .agirlik_kg, .emisyon_normu, .cekis, .koltuk (ADAC); ds-7-2026-etoile-bluehdi-130.dingil_mm, .agirlik_kg, .emisyon_normu, .cekis, .koltuk (ADAC); Isuzu D-Max (2 versiyon) .dingil_mm, .co2_gkm, .emisyon_normu, .sifirYuz_sn, V-Life .hiz_kmh (auto-data.net, aynı motor ve 6 ileri otomatik).
+Şanzıman tip/vites güncellemesi: 15 — Citroën C4 Hybrid 145 ×2, C4 X Hybrid 145, C5 Aircross Hybrid 145 ×2, C3 Aircross Hybrid 145 ×2 → "Çift kavramalı otomatik (6 ileri, ë-DCS6)" (Citroën DE/BE fiyat listeleri, Stellantis basın bülteni); ë-C4, ë-C5 Aircross, ë-C3 ×2, ë-C3 Aircross ×2 → "Tek vitesli (elektrikli)" (Citroën DE/BE fiyat listeleri: sabit oranlı redüktör); Ford Puma Gen-E, Explorer AWD 250 kW → "Tek vitesli (elektrikli)" (ford.de fiyat listeleri).
+Satıştaki versiyonlarda boş tüketim: 17 (temizlikte N°4 tüketimi silinip yeniden dolduruldu; kalan 17'nin tamamı önceki çalışmalarda "araştırıldı, bulunamadı").
+Satıştaki versiyonlarda şanzımanı boş ya da yalnızca "Otomatik" olan: 33 → 18.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- fiat-grande-panda-electric-la-prima-113hp-2026 | sanziman | FCA Austria fiyat listesinde (05.05.2026) elektrikli versiyon için şanzıman satırı yok
+- ford-explorer-premium-140kw-2026 | sanziman | ford.de Explorer fiyat listesi (26.03.2024) yalnızca 125/210/250 kW
+- ds-n8-2026-etoile-fwd-long-range | sanziman | ev-database sayfasında şanzıman bilgisi yok
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 12).
