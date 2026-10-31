@@ -30,6 +30,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Suzuki | devam ediyor | 2026-10-30 | 68 |
 | Jeep | devam ediyor | 2026-10-30 | 25 |
 | Honda | devam ediyor | 2026-10-31 | 31 |
+| Alfa Romeo | devam ediyor | 2026-10-31 | 11 |
+| Jaecoo | devam ediyor | 2026-10-31 | 31 |
 
 ## Çalışma günlüğü
 
@@ -222,3 +224,21 @@ Araştırıldı, bulunamadı:
 - MG, Cupra, Subaru: seçim notuna bakın.
 
 Kontrol edilmesi gereken mevcut değerler (dokunulmadı): HR-V ses_sistemi "10 hoparlör"; broşürde Elegance 4, Advance 6 hoparlör.
+
+### 2026-10-31 (ikinci çalışma): Alfa Romeo, Jaecoo (71 alan, 7 versiyon)
+
+Seçim notu: daha önce işlenmemiş markalardan Chery (chery.com.tr Tiggo 7 sayfası ve T7 kataloğu Temmuz 2026 paket ayrımı yapmıyor; fiyat sayfası güncelleniyor), DS Automobiles (N°4, N°8 broşür PDF'leri robots.txt nedeniyle açılamadı; talep fiyat listesi sayfasında donanım yok) elendi. Resmi paket bazlı liste okunabilen Alfa Romeo ve Jaecoo işlendi.
+
+Kaynaklar: alfaromeo.com.tr araç kataloğu sayfasındaki Yeni Tonale broşürü (Haziran 2026; Ti ve Speciale sütunları) ve Junior broşürü (2026; Ibrida Speciale+, Ibrida Speciale, Elettrica Speciale+ sütunları; Ibrida Speciale+ değerleri junior-ibrida model sayfasıyla doğrulandı); omodajaecoo.com.tr Jaecoo 7 Revive, Evolve 4x2 ve Evolve 4x4 paket sayfaları.
+
+Doldurulan: Alfa Romeo 38 alan (Tonale Ti ve Speciale, Junior Elettrica ve Ibrida Speciale Plus); Jaecoo 33 alan (7 Revive, Evolve 4x2, Evolve 4x4; 2026). Klima tipiyle güncellenen ("Var" kayıtları): 7 (Tonale 2 çift bölgeli, Junior 2 otomatik, Jaecoo 3 çift bölgeli).
+
+Araştırıldı, bulunamadı:
+- Alfa Romeo Tonale: "Start/Stop" satırı direksiyondaki çalıştırma düğmesi; motor start-stop sistemi değil (Ti start_stop boş kaldı). Ti elektrikli koltuk yalnızca elektrikli bel desteği; yazılmadı. Yokuş kalkış ve Matrix LED listede yok.
+- Alfa Romeo Junior: 360 kamera (yalnızca 180° geri görüş kamerası), arka havalandırma, start-stop, CarPlay, navigasyon listede yok. Döşeme "kumaş/deri"; deri olarak yazılmadı. Klima bölge sayısı belirtilmiyor ("Otomatik klima").
+- Alfa Romeo Giulia ve Stelvio 2023 kayıtları: satıştaki güncel katalogda yok.
+- Jaecoo genel: yokuş kalkış, arka havalandırma, start-stop, navigasyon paket sayfalarında yok. 360 kamera yerine "540° Gelişmiş Görüş Sistemi" yazıldı.
+- jaecoo-7-revive-2025: güncel paket sayfası 2026 donanımı; 2025 ile aynı olduğu doğrulanamadı, yazılmadı. Klima hâlâ yalnızca "Var".
+- Jaecoo Evolve 4x2 ve 4x4: "Gelişmiş Ses Sistemi" yok, SONY var; mevcut ses sistemi değerleri dolu olduğu için dokunulmadı.
+
+Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Junior (iki versiyon) acilir_tavan "Opsiyonel"; broşürde açılır tavan Speciale+ için standart. Jaecoo 7 hız sabitleyici sayfada "Akıllı Hız Sabitleme Sistemi" (adaptif ifadesi geçmiyor), sitede "Var".
