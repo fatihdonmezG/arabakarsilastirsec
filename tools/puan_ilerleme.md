@@ -177,3 +177,31 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - bentley-*.airbag_sayisi — carsales Bentayga 2026 (8, ama 6 tip sayıyor) ile carexpert Bentayga 2026 (6) çelişiyor; resmi kaynak yok.
 - maserati-grecale-2025-*.(sürüş destek kalemleri) — Grecale dijital kataloğunda (AT) donanım listesi yok; İngilizce katalog açılamadı.
 - mercedes-benz-glc-coupe-2026-glc180-amg.airbag_sayisi — yalnız ABD/ANCAP kaynakları, Türkiye/Avrupa sayısı bulunamadı.
+
+## 2026-10-31
+
+- Önce: Toplam puanı olmayan 198 / 842 → Sonra: 195 / 842 (3 versiyon puanlandı).
+- Euro NCAP: yeni sonuç yok. Kalan nesil gruplarının tamamı Euro NCAP'te test edilmemiş ya da önceki listelerde (aşağıya eklenenler).
+- Euro NCAP'siz güvenlik (hava yastığı + sürüş destek) ile açılanlar: 7 alan, 3 versiyon
+  - Toyota Camry 2021 Hybrid Passion: otonom acil fren, ACC, şerit takip (LTA), kör nokta (BSM), yokuş kalkış (HAC) — Toyota Türkiye Camry 2021 Teknik ve Donanım Özellikleri (tek donanım sütunu).
+  - Forthing T5 EVO Executive ve Sport Edition: 6 hava yastığı (forthing.com.tr/t5-evo "6 hava yastığı ile tam koruma"; tablo bu iki donanımda tüm hava yastıklarını gösteriyor).
+  - Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 7.
+
+### Euro NCAP testi yok (2026-10-31)
+- KGM Torres ve Torres EVX — thecarexpert.co.uk: "Euro NCAP tarafından değerlendirilmedi" (Şubat/Mart 2026).
+- Porsche 911 (992) — thecarexpert.co.uk: 911 serisi hiç test edilmedi (Ekim 2025). Porsche Panamera — autoexpress: Euro NCAP sonucu yok.
+- Mercedes-Benz GLS (X167) — thecarexpert.co.uk (Temmuz 2025); autoexpress yalnız GLE'nin test edildiğini söylüyor (GLE sonucu GLS'ye yazılmadı).
+- BMW X7 — thecarexpert.co.uk (Şubat 2026). Audi e-tron GT — thecarexpert.co.uk (Mayıs 2025).
+- Voyah Free / Dream — euroncap.com'da yalnız Voyah Courage sonucu var.
+
+### Araştırıldı, bulunamadı (2026-10-31)
+- forthing-t5evo-2026-premium.airbag_sayisi — tablo sürücü, yolcu ve ön yan hava yastığı gösteriyor ama sayı yazmıyor (sayfanın "6" sayımı tablo satırlarıyla tutarsız; sayı türetilmedi).
+- forthing-m4utour-2026-*.airbag_sayisi, .agirlik_kg, .bagaj_l — forthing.com.tr/m4 sayfasında sayı, ağırlık ve bagaj yok.
+- hyundai-elantra-202[3-4]-*.airbag_sayisi, kia-cerato-2024-*.airbag_sayisi — Hyundai 2023 broşürü, motor1/donanımhaber ve Kia Türkiye haberi yalnız tipleri (sürücü, yolcu, yan, perde) veriyor; sayı yok.
+- byd-han-executive-380kw-2025.airbag_sayisi — BYD Türkiye teknik broşürü (23.06.2025) yalnız tipleri veriyor (ön, sürücü dizi, ön yan, perde).
+- honda-prelude-2026-2-0-ehev-advance.airbag_sayisi — Honda Türkiye sayfalarında sayı yok.
+- cadillac-*/chevrolet-*/gmc-*.airbag_sayisi — gmsv-turoto.com.tr model sayfalarında hava yastığı bilgisi yok.
+- opel-frontera-*.airbag_sayisi — Opel Türkiye fiyat listesi sayfası ve basın bülteninde yok; tüm modeller PDF'i açılamadı.
+- skywell-et5-lr-2026-*.airbag_sayisi, .elektrik_tuketim_kwh100km — autotalli: WLTP tüketim "ei ilmoitettu", hava yastığı yok.
+- fiat-fullback-2016-*.ncap_yildiz — L200 ikizliğini ve Euro NCAP sonucunu birlikte veren erişilebilir kaynak bulunamadı.
