@@ -10,7 +10,7 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Renault | devam ediyor | 2026-10-17 | 231 |
 | Fiat | devam ediyor | 2026-10-17 | 249 |
 | Toyota | devam ediyor | 2026-10-19 | 147 |
-| Hyundai | devam ediyor | 2026-10-19 | 162 |
+| Hyundai | devam ediyor | 2026-10-31 | 95 |
 | Volkswagen | devam ediyor | 2026-10-20 | 425 |
 | Peugeot | devam ediyor | 2026-10-20 | 86 |
 | Ford | devam ediyor | 2026-10-21 | 176 |
@@ -29,6 +29,7 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Volvo | devam ediyor | 2026-10-29 | 210 |
 | Suzuki | devam ediyor | 2026-10-30 | 68 |
 | Jeep | devam ediyor | 2026-10-30 | 25 |
+| Honda | devam ediyor | 2026-10-31 | 31 |
 
 ## Çalışma günlüğü
 
@@ -203,3 +204,21 @@ Araştırıldı, bulunamadı:
 - Porsche, Aston Martin, KGM, Lexus, Seat: yukarıdaki seçim notuna bakın.
 
 Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Vitara sayfasında yalnızca "Hız Sabitleme Sistemi (Cruise Control)" geçiyor, sitede adaptif hız sabitleyici "Var"; Vitara geri görüş kamerası iki pakette de var. Avenger acilir_tavan "Var", broşürde yalnızca "Cam Tavan".
+
+### 2026-10-31: Honda, Hyundai (90 alan, 15 versiyon)
+
+Seçim notu: daha önce işlenmemiş markalardan MG (mgmotor.com.tr bu ortamdan açılamadı), Cupra (Formentor model kataloğunda S/O işaretleri metne geçmiyor) ve Subaru (güncel paket listesi yok; broşür önceki paket adlarını kullanıyor) elendi. Honda işlendi; ikinci marka olarak Hyundai'nin yalnızca "Var" yazan klimaları ve boş arka havalandırma alanları donanım sayfalarından tamamlandı.
+
+Kaynaklar: honda.com.tr broşürleri (HR-V Temmuz 2026, ZR-V Temmuz 2026, CR-V Temmuz 2026, Jazz Ocak 2026, Prelude Şubat 2026); hyundai.com/tr donanımlar sayfaları (i20, Bayon, i30, Kona, Kona Elektrik, Santa Fe Hibrit, IONIQ 9).
+
+Doldurulan: Honda 76 alan (HR-V Elegance ve Advance, ZR-V Advance, CR-V Advance, Jazz Crosstar, Prelude Advance); Hyundai 14 alan (8 klima tipi, 6 arka havalandırma). Klima tipiyle güncellenen: 9 ("Var" kayıtları: Jazz Crosstar ve 8 Hyundai); tipiyle doldurulan boş klima: 5 (Honda).
+
+Araştırıldı, bulunamadı:
+- Honda genel: start_stop ve navigasyon broşürlerde yok; HR-V, Jazz, Prelude elektrikli koltuk yok (yalnızca yükseklik ayarı; "Yok" yazılmadı). HR-V Advance kumaş-deri döşeme yazılmadı. Jazz kör nokta, 360 kamera, arka havalandırma, tavan, bagaj, kablosuz şarj listede yok.
+- ZR-V Advance: kör nokta "İlave Donanım" başlığında, yazılmadı; 360 kamera, yorgunluk listede yok (sürücü dikkat kamerası var, yazılmadı).
+- Prelude: geri görüş kamerası işareti okunamadı; 360 kamera, arka havalandırma, tavan, bagaj listede yok.
+- CR-V: kamera_360 için "Çok Açılı Görüş Kamerası" yazıldı.
+- Hyundai i20, Bayon: arka havalandırma satırı yok. Kona Prime elektrikli bagaj ("akıllı bagaj kapağı" Elite'te). Inster Dynamic klima hâlâ "Var" (denenmedi; sayfa açılamadı).
+- MG, Cupra, Subaru: seçim notuna bakın.
+
+Kontrol edilmesi gereken mevcut değerler (dokunulmadı): HR-V ses_sistemi "10 hoparlör"; broşürde Elegance 4, Advance 6 hoparlör.
