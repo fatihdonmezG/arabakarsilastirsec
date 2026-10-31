@@ -884,3 +884,12 @@ Satıştaki versiyonlarda şanzımanı boş ya da yalnızca "Otomatik" olan: 33 
 - ford-explorer-premium-140kw-2026 | sanziman | ford.de Explorer fiyat listesi (26.03.2024) yalnızca 125/210/250 kW
 - ds-n8-2026-etoile-fwd-long-range | sanziman | ev-database sayfasında şanzıman bilgisi yok
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 12).
+
+## 2026-10-31 — Kaynak temizliği: Voyah, Skywell; Şanzıman: Fiat, Renault, Citroën, Voyah, Skywell
+
+Temizlikte düzeltilen: Skywell ET5 LR ×2 menzil 642 → 489 km (642 WLTP şehir içi değeriydi; Autotalli WLTP 489), Legend AC şarj 480 → 840 dk (6,6 kW, CNN Türk), klima → "Otomatik (3 bölgeli)"; Voyah Free ağırlık 2340 → 2310 kg (autotijd); Voyah Dream tüketim 20 → 24,3 kWh/100 km (ev-database WLTP 243 Wh/km), ağırlık 2692 → 2682 kg (auto-data).
+Doldurulan (teknik_yama): 5 alan, 4 versiyon — skywell-et5-lr-2026-legend.hiz_kmh, skywell-et5-lr-2026-exclusive.hiz_kmh (160, autoboom.co.il), voyah-free-2026-high-489hp.kamera_360 (Mobilsiden), voyah-dream-2026-standart-7-koltuk.bagaj_l (427, ev-database), .kapi (5, auto-data).
+Tüketim: satıştaki 17 eksiğin tamamı önceki çalışmalarda "araştırıldı, bulunamadı"; yeni tüketim girilmedi (kalan 17).
+Şanzıman tip/vites güncellemesi: 11 — Fiat 600 La Prima, 500e Cabrio, Topolino, Topolino Plus; Citroën Ami; Voyah Free, Dream; Skywell ET5 ×2 → "Tek vitesli (elektrikli)" (auto-data / autotijd); Renault Duster Hybrid 4x4 150 → "Çift kavramalı otomatik (6 ileri; arka elektrik motorunda 2 kademeli)" (Dacia/Renault basın bülteni); Renault Boreal E-Tech 160 → "Çok modlu otomatik (benzinli motor için 4, elektrik motoru için 2 vites)" (Renault Group).
+Satıştaki versiyonlarda şanzımanı boş ya da yalnızca "Otomatik" olan: 18 → 7 (kalanların tamamı önceki çalışmalarda "araştırıldı, bulunamadı").
+Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 8).
