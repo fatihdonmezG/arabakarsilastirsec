@@ -6,7 +6,7 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 239 |
+| Renault | devam ediyor | 247 |
 | Fiat | devam ediyor | 129 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
@@ -142,7 +142,10 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] Koleos II 1.6 dCi 130 X-Tronic ve 2.0 dCi 175 X-Tronic 4x4, Talisman 1.6 dCi 160 EDC, Megane IV HB 1.2 TCe 130, 1.5 dCi 90, 1.5 dCi 110 ve 110 EDC: teknik veri aynı neslin önceki yıl kayıtlarından (aynı kaynak)
   - [x] Captur I makyajlı: 0.9 TCe 90, 1.2 TCe 120 EDC, 1.5 dCi 90 manuel ve EDC; teknik: auto-data.net Captur (facelift 2017)
   - Geri çağırma: Talisman NOx sensörü (2019-11) ve yakıt hattı (2020-08); Megane IV yakıt hattı (2020-08), soğutma fanı (2019-04, yalnız dizel); Captur katalitik konvertör (2019-01); Koleos []
-  - [ ] Aynı listede kalanlar: Clio IV makyajlı Sport Tourer (1.2 75, 1.5 dCi 75, 1.5 dCi 90 manuel/EDC, 1.2 TCe 120 EDC), Megane IV Sedan (1.6 16V 115, 1.5 dCi 90, 1.5 dCi 110 manuel/EDC, 1.2 TCe 130 EDC), Megane HB 1.6 16V 115 ve 1.2 TCe 130 EDC, Talisman 1.6 dCi 130 manuel/EDC: tek kaynakta teknik veri gerekiyor
+  - [x] Megane IV Sedan 2018: 1.6 SCe 115, 1.5 dCi 90, 1.5 dCi 110 manuel ve EDC, 1.2 TCe 130 EDC (auto-data.net Megane IV Sedan); soğutma fanı kampanyası (2019-04) dizellere, Palencia yakıt hattı kampanyası hariç
+  - [x] Clio IV makyajlı Sport Tourer 2018: 1.2 16V 75, 1.5 dCi 75, 1.5 dCi 90 manuel (auto-data.net Clio IV Grandtour Phase II); Clio HB 2018 kampanyaları (2018-04 göbek, 2019-01 katalizör)
+  - Captur 2018 kayıtlarına 2018-04 ön göbek kampanyası (Clio, Captur, Zoe) eklendi
+  - [ ] Kalanlar: Clio ST 1.5 dCi 90 EDC ve 1.2 TCe 120 EDC (auto-data'da Phase II Grandtour EDC sayfası yok), Megane HB 1.6 16V 115 ve 1.2 TCe 130 EDC, Talisman 1.6 dCi 130 manuel/EDC
 - [ ] Laguna III
 - [x] Koleos II — 2 versiyon
   - [x] 1.6 dCi 130 X-Tronic 4x2 ve 2.0 dCi 175 X-Tronic 4x4: 2017 (sozcu.com.tr Haziran 2017 lansman haberi); teknik: auto-data.net Koleos II CVT sayfaları (NEDC)
