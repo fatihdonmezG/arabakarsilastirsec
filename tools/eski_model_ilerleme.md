@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 228 |
-| Fiat | devam ediyor | 117 |
+| Renault | devam ediyor | 239 |
+| Fiat | devam ediyor | 129 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -138,6 +138,11 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] 1.5 dCi 110 EDC: 2015 (aynı listeler); teknik: auto-data.net Scenic III (Phase III)
   - Euro NCAP 2009 (Grand Scenic, 5 yıldız); geri çağırma: 2016-10 ön koltuk rayı (25.05.2016'ya kadar üretim); 2012 fren servosu (2009–2012) ve Scenic IV kampanyaları hariç
   - [ ] Grand Scenic III, 2010–2014 model yılları, Scenic IV: Türkiye listesi bulunamadı
+- [x] 2018 model yılı (tr.motor1.com Kasım 2018 Renault fiyat listesi: https://tr.motor1.com/news/274419/otv-kdv-renault-fiyat/) — 11 versiyon
+  - [x] Koleos II 1.6 dCi 130 X-Tronic ve 2.0 dCi 175 X-Tronic 4x4, Talisman 1.6 dCi 160 EDC, Megane IV HB 1.2 TCe 130, 1.5 dCi 90, 1.5 dCi 110 ve 110 EDC: teknik veri aynı neslin önceki yıl kayıtlarından (aynı kaynak)
+  - [x] Captur I makyajlı: 0.9 TCe 90, 1.2 TCe 120 EDC, 1.5 dCi 90 manuel ve EDC; teknik: auto-data.net Captur (facelift 2017)
+  - Geri çağırma: Talisman NOx sensörü (2019-11) ve yakıt hattı (2020-08); Megane IV yakıt hattı (2020-08), soğutma fanı (2019-04, yalnız dizel); Captur katalitik konvertör (2019-01); Koleos []
+  - [ ] Aynı listede kalanlar: Clio IV makyajlı Sport Tourer (1.2 75, 1.5 dCi 75, 1.5 dCi 90 manuel/EDC, 1.2 TCe 120 EDC), Megane IV Sedan (1.6 16V 115, 1.5 dCi 90, 1.5 dCi 110 manuel/EDC, 1.2 TCe 130 EDC), Megane HB 1.6 16V 115 ve 1.2 TCe 130 EDC, Talisman 1.6 dCi 130 manuel/EDC: tek kaynakta teknik veri gerekiyor
 - [ ] Laguna III
 - [x] Koleos II — 2 versiyon
   - [x] 1.6 dCi 130 X-Tronic 4x2 ve 2.0 dCi 175 X-Tronic 4x4: 2017 (sozcu.com.tr Haziran 2017 lansman haberi); teknik: auto-data.net Koleos II CVT sayfaları (NEDC)
@@ -225,4 +230,12 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - [x] 2.4 MultiJet 180 4x4 5AT çift kabin: 2016 (otomobil.com.tr Haziran 2016 lansman haberi; 7 hava yastığı otometre.com); teknik: auto-data.net (NEDC)
   - Euro NCAP: Fullback adıyla test yok; geri çağırma: Safety Gate A12/1191/19 yan basamak (2019-08, Şubat–Eylül 2016 üretimi)
   - [ ] 2.4 MultiJet 150 4x2 manuel (motor-çekiş eşleşmesi kaynakta net değil), 2017–2019 model yılları: liste yok
+- [x] Punto makyajlı 2012 nesli (2014–2016) — 7 versiyon
+  - [x] 1.4 Fire 77 S&S: 2014–2016; 1.2 69: 2014–2015; 1.4 Fire 77 Dualogic ve 1.3 Multijet 95: 2014
+  - Kaynaklar: ototeknikveri.com Ocak 2014 Punto listesi, otopark.com Ağustos 2015 ve Temmuz 2016 listeleri; teknik: autodata1.com (1.4 manuel), auto-abc.eu Punto 2012 (diğerleri)
+  - Euro NCAP 2017 (0 yıldız, makyajlı Punto); geri çağırma: 2017-08 emniyet kemeri gergisi (Mayıs 2016–Ocak 2017 üretimi, 2016'ya)
+  - [ ] 1.3 Multijet 75 (2014–2015): tek kaynakta teknik veri yok
+- [x] 2020 model yılı (takvim.com.tr Kasım 2020 listesi) — 5 versiyon
+  - [x] 500 makyajlı 1.2 69 Dualogic; 500L makyajlı 1.4 Fire 95 ve 1.3 MultiJet 95 Dualogic; Panda III 1.2 69 ve 4x4 0.9 TwinAir 85; teknik: auto-data.net
+  - Euro NCAP: 500 2017 (3 yıldız, makyajlı), 500L 2012 (5), Panda 2011 (4); geri çağırma: üçü de araştırıldı, 2020 model yılını kapsayan kayıt yok ([])
 - [ ] Bravo, Tipo
