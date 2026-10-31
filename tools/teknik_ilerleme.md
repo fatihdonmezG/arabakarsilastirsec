@@ -19,6 +19,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | BMW | tamamlandı | 2026-10-19 |
 | Audi | tamamlandı | 2026-10-20 |
 | Mini | tamamlandı | 2026-10-20 |
+| Nissan | tamamlandı | 2026-10-31 |
+| Peugeot | tamamlandı | 2026-10-31 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -893,3 +895,23 @@ Tüketim: satıştaki 17 eksiğin tamamı önceki çalışmalarda "araştırıld
 Şanzıman tip/vites güncellemesi: 11 — Fiat 600 La Prima, 500e Cabrio, Topolino, Topolino Plus; Citroën Ami; Voyah Free, Dream; Skywell ET5 ×2 → "Tek vitesli (elektrikli)" (auto-data / autotijd); Renault Duster Hybrid 4x4 150 → "Çift kavramalı otomatik (6 ileri; arka elektrik motorunda 2 kademeli)" (Dacia/Renault basın bülteni); Renault Boreal E-Tech 160 → "Çok modlu otomatik (benzinli motor için 4, elektrik motoru için 2 vites)" (Renault Group).
 Satıştaki versiyonlarda şanzımanı boş ya da yalnızca "Otomatik" olan: 18 → 7 (kalanların tamamı önceki çalışmalarda "araştırıldı, bulunamadı").
 Eksik veri adımı yapılmadı: yasaklı kaynak temizliği sürüyor (kalan 8).
+
+## 2026-10-31 (ikinci çalışma) — Kaynak temizliği: Togg, Renault; Eksik veri: Nissan, Peugeot
+
+Temizlik belgelerinden doldurulan (teknik_yama): renault-megane-e-tech-techno-ev60-220-2026.jant_inch (20, Renault TR teknik broşür), togg-t10x-2026-v1-rwd-standart.agirlik_kg (1904,5; auto-data 1874–1935 aralığının ortası). Temizlikte Togg şanzımanı "Tek vitesli (elektrikli)" olarak düzeltildi.
+Tüketim: satıştaki 17 eksiğin tamamı önceki çalışmalarda "araştırıldı, bulunamadı"; yeni tüketim girilmedi (kalan 17). Şanzıman: kalan 7 kaydın tamamı önceki çalışmalarda "araştırıldı, bulunamadı".
+Eksik veri — doldurulan: 66 alan, 35 versiyon (Nissan 44, Peugeot 22).
+- Nissan Qashqai (13 versiyon): segment "Küçük Off-Road (Euro NCAP: Small Off-Road)"; agirlik_kg 1465 (4x2) / 1574 (4x4) / 1665 (e-POWER) (autotijd DIN); e-POWER bagaj_l 455, emisyon_normu Euro 6d-ISC-FCM (autotijd)
+- Nissan Juke ×3 agirlik_kg 1282; X-Trail ×2 agirlik_kg 1664, emisyon_normu Euro 6d; Townstar Combi EV ×2 segment "Küçük MPV (Euro NCAP: Small MPV)", kapi 5
+- Peugeot e-208 GT agirlik_kg 1455; 408 Hybrid ×2 koltuk 5; 2008 Hybrid ×2 dingil_mm 2605; e-2008 ×2 dc_hizli_sarj_dk_20_80 30; e-3008 ×2 menzil 518,5 (510–527 aralığının ortası); e-5008 ×2 menzil 502; 3008/e-3008 ×4 segment "Küçük SUV (Euro NCAP: Small SUV)", 5008/e-5008 ×4 segment "Büyük SUV (Euro NCAP: Large SUV)"
+Not: Qashqai e-POWER 190 kaydındaki tüketim 4,5 l/100 km / 100 g/km; autotijd aynı versiyon için 5,1–5,3 l/100 km / 116–119 g/km veriyor — elle kontrol önerilir.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- nissan-qashqai-2026-epower-190-* (5 versiyon) | besleme, depo_l | Nissan TR broşür PDF'i açılamadı; autotijd sayfalarında yok
+- nissan-juke-2026-1-0-digt-115-* (3), nissan-xtrail-2026-1-5-vct-163-* (2) | segment | Euro NCAP sayfalarında sınıf yazmıyor
+- nissan-townstar-combi-ev-2026-designpack, -platinum | agirlik_kg, airbag_sayisi | autotijd ağırlık sayfasında değer yok
+- peugeot-e208-gt-2026, peugeot-308-*-bluehdi-2026, peugeot-408-*-hybrid-2026, peugeot-2008-*-hybrid-2026, peugeot-e2008-*-2026 | segment | Euro NCAP sayfalarında sınıf yazmıyor
+- peugeot-308-*-bluehdi-2026 | agirlik_kg, besleme, emisyon_normu | peugeot.com.tr broşürü açılamadı; autotijd'de yalnız manuel/2021–2025 sürümü
+- peugeot-408/2008/3008/5008-*-hybrid-2026 | besleme, emisyon_normu (3008 Allure: tork_nm; 2008: agirlik_kg) | Hybrid 145 autotijd'de yok (yalnız 136 PS); broşürler açılamadı
+- peugeot-5008-*-hybrid-2026, peugeot-e5008-*-2026 | bagaj_l | autotijd 259 L değerini 5 koltuk diye veriyor, 7 koltuklu kayıtla tutarsız — kullanılmadı
+Yasaklı kaynak kalan: 6.
+
