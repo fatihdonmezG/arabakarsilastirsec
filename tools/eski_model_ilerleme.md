@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 226 |
-| Fiat | devam ediyor | 107 |
+| Renault | devam ediyor | 228 |
+| Fiat | devam ediyor | 111 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -107,6 +107,7 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - Kaynaklar: timeturk.com Mart 2021 (model yıllı), iscihaber.net Nisan 2025; teknik: auto-data.net Captur II ve Captur II (facelift 2024)
   - Euro NCAP 2019 (5 yıldız); geri çağırma: 2020-02 direksiyon motoru (2020), 2025-09 park freni (2025); LPG tankı, Captur I cam tavan ve 2026 hibrit akü kampanyaları hariç
   - [x] 1.3 TCe 140 EDC: 2022 (donanimhaber.com Kasım 2022 listesi, 2022 model yılı)
+  - [x] 1.0 TCe 90 manuel: 2021 (tr.motor1.com Ağustos 2021 Renault fiyat karşılaştırması, 2021 model yılı); teknik: auto-data.net Captur II 1.0 TCe 91
   - [ ] 1.3 Mild Hybrid 140/155 EDC (2022) ve 2023–2024 model yılları: model yıllı liste ya da tek kaynakta teknik veri yok
 - Not: 2026 Megane Sedan'a nesil adı yazılmadı; 2026'da yeni makyaj haberi var (iscihaber.net Temmuz 2026)
 - [x] Captur I makyaj öncesi (2013–2016) — 13 versiyon
@@ -119,7 +120,8 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] Makyajlı 2019: 1.3 TCe 140 manuel ve EDC, 1.3 TCe 160 EDC, 1.5 Blue dCi 115 EDC
   - Kaynaklar: haberturk.com Haziran 2015, otopark.com Ağustos 2016, yenimodelarabalar.com Ekim 2017 (2018 listesi), donanimhaber.com Haziran 2019; teknik: auto-data.net, alvolante.it (dCi 110 manuel), ultimatespecs (4x4)
   - Euro NCAP 2015 (5 yıldız); geri çağırma: 2017-10 perde hava yastığı (2016–2017), 2020-11 çocuk kilidi (2015–2018), 2019-06 soğutma fanı (2019 dizel), 2020-07 katalizör (2019)
-  - [ ] 1.2 TCe 130 EDC (tek kaynakta teknik veri yok), 1.5 Blue dCi 115 manuel (2019), 2020–2022 model yılları: kaynak yok
+  - [x] 1.3 TCe 160 EDC: 2021 (tr.motor1.com Ağustos 2021 Renault fiyat karşılaştırması: https://tr.motor1.com/features/525262/mayis-agustos-renault-fiyat-karsilastirmasi/); geri çağırma: 2021 için []
+  - [ ] 1.2 TCe 130 EDC (tek kaynakta teknik veri yok), 1.5 Blue dCi 115 manuel (2019), 2020 ve 2022 model yılları: kaynak yok
 - [x] Talisman — 2 versiyon
   - [x] Makyaj öncesi 2016: 1.6 dCi 160 EDC (takvim.com.tr Şubat 2016, finans.mynet.com Mart 2016); makyajlı 2021: 1.3 TCe 160 EDC (log.com.tr Şubat 2021, tek motor); teknik: auto-data.net
   - Euro NCAP 2015 (5 yıldız, bütün Talisman'lar); geri çağırma (car-recalls.eu/Safety Gate): 2016 için 2016-08 ABS/ESC, 2017-05 çocuk kilidi ve gösterge paneli kaplaması, 2017-06 fren kaliperi ve perde hava yastığı; 2021 için []
@@ -174,14 +176,19 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
 - [x] Egea Cross (2021–2025 eski model yılları) — 13 versiyon
   - [x] 1.4 Fire 95 ve 1.6 Multijet 130 DCT: 2021–2025; 1.6 Multijet 130 manuel, 1.3 Multijet 95, 1.0 FireFly 100: 2021
   - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), 2024-02 geri vites lambası (2023)
-  - [ ] 1.5 Hybrid 130 (2022, Sedan/Cross/HB): tek kaynakta teknik veri yok
+  - [x] 1.5 T4 Hybrid 130 DCT: 2022, Sedan, Cross ve Hatchback (log.com.tr Nisan 2022 Egea Hibrit incelemesi, 2022 model yılı; tr.motor1.com Mart 2022 fiyat haberi); teknik: auto-data.net Tipo Cross 1.5 T4 GSE (Cross), log.com.tr (Sedan/HB motor değerleri, ölçüler mevcut auto-data kayıtlarından)
+  - Geri çağırma (hibrit): AB Safety Gate A12/01603/23 48 volt akü (2023-07, 18.11.2022–12.05.2023 üretimi) 2022 hibritlere yazıldı
+  - [ ] 1.5 Hybrid 2023–2025 ve Cross Wagon Hybrid: model yıllı liste ya da teknik veri yok
 - [x] Egea Hatchback — 10 versiyon
   - [x] Makyajlı: 1.4 Fire 95: 2021–2023; 1.3 Multijet 95: 2021–2022; 1.6 Multijet 130 manuel ve 1.0 FireFly 100: 2021; 1.6 Multijet 130 DCT: 2022
   - [x] Makyaj öncesi: 1.6 Multijet 120 manuel ve DCT: 2017 (karar.com Mart 2017 incelemesi)
   - Kaynaklar: shiftdelete.net Kasım 2021, donanimhaber.com Nisan 2022, gazetebirlik.com Ekim 2023; teknik: auto-data.net Egea Hatchback (357, makyajlı 2020)
   - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), KBA 2024-02 geri vites lambası (2023); sedan (tip 356) kampanyaları ve 48V hibrit kampanyası hariç
   - [ ] Makyaj öncesi diğer motorlar ve yıllar (2017–2020: 1.4 Fire 95, 1.3 MJ 95, 1.6 E-Torq 110 otomatik), 2024–2025 ve 1.5 Hybrid: model yıllı liste ya da teknik veri yok
-- [ ] Egea SW / Cross Wagon (eski yıllar)
+- [x] Egea Station Wagon (makyajlı) — 1 versiyon
+  - [x] 1.6 Multijet 130 DCT: 2022 (tr.motor1.com Mart 2022 Egea fiyat haberi); teknik: autodata1.com Tipo (358, makyajlı 2020) Wagon 1.6 MultiJet 130
+  - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023); sedan ve hibrit kampanyaları hariç
+  - [ ] Makyaj öncesi Egea SW (2016–2020), diğer yıllar ve Cross Wagon (1.6 MJ DCT ve Hybrid, 2022): liste ya da tek kaynakta teknik veri yok
 - [x] 500X makyaj öncesi (2015–2016) — 8 versiyon
   - [x] 1.6 E-torQ 110, 1.4 MultiAir 140 DCT, 1.6 MultiJet 120, 1.4 MultiAir 170 AT9 4x4: 2015–2016
   - Kaynaklar: otopark.com Ağustos 2015 ve Temmuz 2016 Fiat listeleri; teknik: auto-data.net (E-torQ), ADAC (140 DCT, MJ 120), autoplenum.de (170 4x4)
