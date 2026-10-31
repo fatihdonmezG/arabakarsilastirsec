@@ -7,7 +7,7 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
 | Renault | devam ediyor | 228 |
-| Fiat | devam ediyor | 111 |
+| Fiat | devam ediyor | 117 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -178,7 +178,8 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: KBA 2024-07 jant/lastik (2021–2023), 2024-02 geri vites lambası (2023)
   - [x] 1.5 T4 Hybrid 130 DCT: 2022, Sedan, Cross ve Hatchback (log.com.tr Nisan 2022 Egea Hibrit incelemesi, 2022 model yılı; tr.motor1.com Mart 2022 fiyat haberi); teknik: auto-data.net Tipo Cross 1.5 T4 GSE (Cross), log.com.tr (Sedan/HB motor değerleri, ölçüler mevcut auto-data kayıtlarından)
   - Geri çağırma (hibrit): AB Safety Gate A12/01603/23 48 volt akü (2023-07, 18.11.2022–12.05.2023 üretimi) 2022 hibritlere yazıldı
-  - [ ] 1.5 Hybrid 2023–2025 ve Cross Wagon Hybrid: model yıllı liste ya da teknik veri yok
+  - [x] 2023: Sedan ve Cross 1.5 T4 Hybrid 130 DCT, 1.3 Multijet 95 (gazetebirlik.com Mayıs 2023 Fiat listesi, 2023 model yılı: https://www.gazetebirlik.com/otomobil/fiat-fiyat-listesi-mayis-2023-egea-sedan-panda-500-500x-ne-kadar-ve-kac-para-guncel-fiyat-listesi/100290); teknik: 2021/2022 kayıtlarıyla aynı kaynak
+  - [ ] 1.5 Hybrid 2024–2025, Cross Wagon (2022–2023: 1.6 MJ DCT, Hybrid, 1.0 FireFly 100): model yıllı liste ya da tek kaynakta teknik veri yok
 - [x] Egea Hatchback — 10 versiyon
   - [x] Makyajlı: 1.4 Fire 95: 2021–2023; 1.3 Multijet 95: 2021–2022; 1.6 Multijet 130 manuel ve 1.0 FireFly 100: 2021; 1.6 Multijet 130 DCT: 2022
   - [x] Makyaj öncesi: 1.6 Multijet 120 manuel ve DCT: 2017 (karar.com Mart 2017 incelemesi)
@@ -193,7 +194,10 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - [x] 1.6 E-torQ 110, 1.4 MultiAir 140 DCT, 1.6 MultiJet 120, 1.4 MultiAir 170 AT9 4x4: 2015–2016
   - Kaynaklar: otopark.com Ağustos 2015 ve Temmuz 2016 Fiat listeleri; teknik: auto-data.net (E-torQ), ADAC (140 DCT, MJ 120), autoplenum.de (170 4x4)
   - Euro NCAP 2015 (4 yıldız); geri çağırma: NHTSA 16V-529 şanzıman (2015 AT9); 17V-146 (2017 MY) hariç
-  - [ ] 1.4 MultiAir 140 manuel (2015), 1.3 MultiJet 95 (2016), makyajlı 500X (2018–): teknik veri ya da liste yok
+  - [x] Makyajlı 500X: 1.0 FireFly 120 manuel ve 1.3 FireFly 150 DCT: 2020 (takvim.com.tr Kasım 2020 Fiat listesi: https://www.takvim.com.tr/otomobil/fiat-egea-fiorino-doblo-fiyatlari-2020-kasim-fiat-guncel-fiyat-listesi-hangi-model-ne-kadar-4443701); teknik: autotijd.be 500X (2018–2021)
+  - Geri çağırma (makyajlı, 2020): NHTSA 19V-909 sağ arka kaliper, 24V-510 kemer tokası sensörü (2019–2023)
+  - [ ] 1.6 MultiJet 120 DCT (2020; autotijd'de yalnız 130 HP manuel), 1.3 FireFly 150 DCT Soft Top (2023, gazetebirlik Mayıs 2023; teknik kaynak 2018–2021), 1.4 MultiAir 140 manuel (2015), 1.3 MultiJet 95 (2016): teknik veri yok
+  - Not: aynı Kasım 2020 listesi 500 1.2 69 MTA (500/500C), 500L makyajlı (1.4 Fire 95 MT, 1.3 MJ 95 MTA), Panda 1.2 69 ve 0.9 TwinAir 85 4x4 versiyonlarını da veriyor; tek kaynakta teknik veri bulunursa eklenebilir
 - [x] 500L makyaj öncesi (2015–2016) — 4 versiyon
   - [x] 1.4 Fire 95: 2015–2016; 1.3 MultiJet 85 Dualogic ve 1.6 MultiJet 105: 2015
   - Euro NCAP 2012 (5 yıldız); geri çağırma: NHTSA 15V-590 yolcu hava yastığı (2015); 17V-192 (ABD motoru) hariç
