@@ -205,3 +205,28 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - opel-frontera-*.airbag_sayisi — Opel Türkiye fiyat listesi sayfası ve basın bülteninde yok; tüm modeller PDF'i açılamadı.
 - skywell-et5-lr-2026-*.airbag_sayisi, .elektrik_tuketim_kwh100km — autotalli: WLTP tüketim "ei ilmoitettu", hava yastığı yok.
 - fiat-fullback-2016-*.ncap_yildiz — L200 ikizliğini ve Euro NCAP sonucunu birlikte veren erişilebilir kaynak bulunamadı.
+
+## 2026-10-31 (2. çalışma)
+
+- Önce: Toplam puanı olmayan 195 / 842 → Sonra: 185 / 842 (10 versiyon puanlandı).
+- Euro NCAP: yeni sonuç yok. Kalan nesil gruplarının tamamı Euro NCAP'te test edilmemiş (aşağıya eklenenler) ya da önceki listelerde.
+- Diğer alanlar (Renault ve Fiat'ın kalan tüm eksikleri önceki listelerde; sıradaki çözülebilir markalar işlendi): 20 alan, 12 versiyon
+  - VW Golf 1.5 TSI 116 manuel: 0-100 9,9, ağırlık 1229; Golf 1.5 eTSI 150 DSG: 0-100 8,4, ağırlık 1301; Golf R: bagaj 341 L (auto-data.net Golf VIII makyajlı).
+  - VW Passat Variant B9 1.5 eTSI 150 DSG (R-Line + Impression): 0-100 9,2; R-Line ağırlık 1572 (auto-data.net).
+  - Alpine A290 GT Performance / GTS (220 ch): 0-100 6,4 (Alpine Fransa broşürü); A390 GT: 0-100 4,8, ağırlık 2124 (Alpine Belçika broşürü).
+  - Volvo EX30 Cross Country: tüketim 18,7 kWh/100 km, bagaj 318 L (auto-data.net).
+  - Tesla Model Y Premium Long Range RWD (4680, 74 kWh): 14,0 kWh/100 km (EV Database WLTP 225 Wh/mil).
+  - Subaru Crosstrek e-Boxer: 0-100 10,8, ağırlık 1597, bagaj 315 L (Subaru UK teknik özellikler; CO₂ Türkiye ile aynı).
+  - Subaru Solterra e-Xtreme: 0-100 6,9, ağırlık 2088 (Subaru TR teknik föy) — bagaj eksik olduğundan puan açılmadı.
+  - Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 20.
+
+### Euro NCAP testi yok (2026-10-31, 2. çalışma)
+- Opel Frontera (2025) — thecarexpert.co.uk: "Şubat 2026 itibarıyla değerlendirilmedi" (Vauxhall Frontera).
+- Fiat Grande Panda — thecarexpert.co.uk: "Ağustos 2026 itibarıyla değerlendirilmedi".
+- KGM Actyon — thecarexpert.co.uk: "Şubat 2026 itibarıyla değerlendirilmedi".
+- Lexus LM — thecarexpert.co.uk: "Mart 2026 itibarıyla test edilmedi".
+- BMW X6 (G06) — Auto Express: Euro NCAP güncel X6'yı test etmedi (yalnız X5).
+
+### Araştırıldı, bulunamadı (2026-10-31, 2. çalışma)
+- subaru-solterra-2025-e-xtreme-awd.bagaj_l, subaru-solterra-2025-e-xcellent-awd.bagaj_l — TR teknik föyde üç donanım için yalnız iki değer (452 / 441 L) var; hangi donanıma ait olduğu belirsiz. (452 yazılsaydı bagaj_yay e-Xcellent'e de yayardı.)
