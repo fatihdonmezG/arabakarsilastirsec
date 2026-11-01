@@ -15,6 +15,9 @@
 dialog.sec-panel{box-sizing:border-box;padding:0;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);width:min(480px,calc(100% - 24px));max-height:min(78vh,640px);border-radius:16px;display:flex;flex-direction:column;overflow:hidden}
 dialog.sec-panel:not([open]){display:none}
 dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
+dialog.sec-panel.sec-yedek[open]{position:fixed;z-index:10000;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
+.sec-perde{position:fixed;inset:0;z-index:9999;background:rgba(8,9,11,.65)}
+@media (max-width:640px){dialog.sec-panel.sec-yedek[open]{left:0;right:0;top:auto;bottom:0;transform:none}}
 .sec-ust{display:flex;align-items:flex-start;gap:12px;padding:16px 16px 10px;border-bottom:1px solid var(--line)}
 .sec-ust .adim{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-soft)}
 .sec-ust h2{margin:2px 0 0;font-size:1.15rem;font-family:var(--display,sans-serif)}
@@ -24,7 +27,7 @@ dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
 .sec-ara input{width:100%;height:42px;padding:0 12px 0 36px;font:inherit;font-size:.92rem;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:10px}
 .sec-ara input:focus-visible{outline:none;border-color:var(--accent)}
 .sec-ara svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted)}
-.sec-liste{list-style:none;margin:0;padding:6px 8px 12px;overflow-y:auto;flex:1}
+.sec-liste{list-style:none;margin:0;padding:6px 8px 12px;overflow-y:auto;flex:1 1 auto;min-height:0;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .sec-liste button{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:6px 10px;font:inherit;font-size:.95rem;text-align:left;color:var(--ink);background:transparent;border:0;border-radius:10px;cursor:pointer}
 .sec-liste button:hover,.sec-liste button:focus-visible{background:var(--surface2);outline:none}
 .sec-liste button[aria-selected="true"]{background:rgba(201,169,97,.16);color:var(--accent-soft);font-weight:600}
@@ -32,7 +35,7 @@ dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
 .sec-liste .say{color:var(--muted);font-size:.8rem;font-weight:400}
 .sec-bos{padding:18px;color:var(--muted);font-size:.9rem;text-align:center}
 @media (max-width:640px){
-  dialog.sec-panel{width:100%;max-width:none;margin:auto 0 0;max-height:82vh;border-radius:18px 18px 0 0;border-bottom:0}
+  dialog.sec-panel{position:fixed;inset:auto 0 0 0;top:auto;bottom:0;width:100%;max-width:none;margin:0;max-height:82vh;max-height:82dvh;border-radius:18px 18px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom)}
   .sec-ust{padding:14px 14px 10px}
   .sec-ust::before{content:"";position:absolute;left:50%;top:6px;width:40px;height:4px;margin-left:-20px;border-radius:2px;background:var(--line-strong)}
 }`;
@@ -53,6 +56,15 @@ dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
       <div class="sec-ara" id="secAraKutu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="secAra" placeholder="Ara" autocomplete="off" aria-label="Listede ara"></div>
       <ul class="sec-liste" id="secListe" role="listbox"></ul>`;
     document.body.appendChild(dlg);
+    // <dialog> desteklemeyen eski tarayıcılar (iOS 15.3 ve öncesi Safari) için yedek açma/kapama
+    if (typeof dlg.showModal !== 'function') {
+      dlg.classList.add('sec-yedek');
+      let perde = null;
+      dlg.showModal = () => { perde = document.createElement('div'); perde.className = 'sec-perde'; perde.addEventListener('click', () => dlg.close()); document.body.appendChild(perde); dlg.setAttribute('open', ''); };
+      dlg.close = () => { dlg.removeAttribute('open'); if (perde) { perde.remove(); perde = null; } dlg.dispatchEvent(new Event('close')); };
+    }
+    // Açıkken arkadaki sayfa kaymasın (iOS'ta liste yerine sayfanın kaymasını önler)
+    dlg.addEventListener('close', () => { document.documentElement.style.overflow = ''; document.body.style.overflow = ''; });
     dlg.querySelector('.sec-kapat').addEventListener('click', () => dlg.close());
     dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });   // arka plana dokununca kapan
     return dlg;
@@ -80,8 +92,9 @@ dialog.sec-panel::backdrop{background:rgba(8,9,11,.65)}
       if (s && s._secici && s.options.length > 1) setTimeout(() => s._secici.ac(), 120);
     };
     d.showModal();
+    document.documentElement.style.overflow = 'hidden'; document.body.style.overflow = 'hidden';
     const secili = ul.querySelector('[aria-selected="true"]');
-    if (secili) secili.scrollIntoView({ block: 'center' });
+    if (secili) ul.scrollTop = Math.max(0, secili.getBoundingClientRect().top - ul.getBoundingClientRect().top + ul.scrollTop - ul.clientHeight / 2);
     if (!kutu.hidden && window.matchMedia('(min-width:641px)').matches) ara.focus(); else (secili || ul.querySelector('button') || d).focus?.();
   }
 
