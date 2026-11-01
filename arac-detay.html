@@ -338,6 +338,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
 <link rel="stylesheet" href="assets/tema-acik.css">
+<link rel="stylesheet" href="assets/detay.css">
 <script src="assets/tema.js"></script>
 </head>
 <body>
@@ -358,7 +359,7 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap dt2">
   <nav class="crumbs" aria-label="Sayfa yolu">
     <ol>
       <li><a href="index.html">Ana sayfa</a></li>
@@ -368,165 +369,180 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </ol>
   </nav>
 
-  <section class="carpicker" aria-label="Araç seç">
-    <span class="pl" id="pickLbl">Araç seç · veritabanındaki 892 versiyondan birini aç</span>
-    <div class="fields">
-      <div class="field f-marka"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
-      <div class="field f-model"><label for="pickModel">Model</label><select id="pickModel"></select></div>
-      <div class="field f-ver"><label for="pickVer">Versiyon</label><select id="pickVer"></select></div>
-      <div class="field"><label for="pickYil">Model yılı</label><select id="pickYil"></select></div>
-      <div class="field"><label for="pickYakit">Yakıt</label><select id="pickYakit"></select></div>
-      <div class="field"><label for="pickKasa">Kasa</label><select id="pickKasa"></select></div>
-      <div class="field"><label for="pickVites">Şanzıman</label><select id="pickVites"></select></div>
+  <details class="aracdegis" id="aracDegis">
+    <summary><span>Başka bir araç aç</span><small id="pickLblKisa">892 versiyon arasından marka, model ve versiyon seç</small></summary>
+    <section class="carpicker" aria-label="Araç seç">
+      <span class="pl" id="pickLbl">Araç seç · veritabanındaki 892 versiyondan birini aç</span>
+      <div class="fields">
+        <div class="field f-marka"><label for="pickMarka">Marka</label><select id="pickMarka"></select></div>
+        <div class="field f-model"><label for="pickModel">Model</label><select id="pickModel"></select></div>
+        <div class="field f-ver"><label for="pickVer">Versiyon</label><select id="pickVer"></select></div>
+        <div class="field"><label for="pickYil">Model yılı</label><select id="pickYil"></select></div>
+        <div class="field"><label for="pickYakit">Yakıt</label><select id="pickYakit"></select></div>
+        <div class="field"><label for="pickKasa">Kasa</label><select id="pickKasa"></select></div>
+        <div class="field"><label for="pickVites">Şanzıman</label><select id="pickVites"></select></div>
+      </div>
+      <div class="pfoot"><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="pickSatis" style="accent-color:var(--accent)"> Sadece satıştakiler</label><span id="pickCount"></span><button type="button" id="pickClear" hidden>Filtreleri temizle</button><a href="araclar.html">Tüm araçlar listesinde daha fazla filtre →</a></div>
+    </section>
+  </details>
+
+  <section class="ust" aria-label="Araç özeti">
+    <div class="ust-sol">
+      <div class="adbaslik">
+        <a class="marka-logo" id="markaLogo" href="araclar.html"></a>
+        <div>
+          <h1 id="title"></h1>
+          <p class="tanim" id="tanim"></p>
+        </div>
+      </div>
+      <div class="puanserit" id="puanSerit"></div>
+      <ul class="ciplar" id="ciplar"></ul>
+      <p class="durumbox" id="durumNote" hidden></p>
     </div>
-    <div class="pfoot"><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="pickSatis" style="accent-color:var(--accent)"> Sadece satıştakiler</label><span id="pickCount"></span><button type="button" id="pickClear" hidden>Filtreleri temizle</button><a href="araclar.html" style="color:var(--accent-soft)">Tüm araçlar listesinde daha fazla filtre →</a></div>
+    <figure class="sahne" id="sahne">
+      <div class="rozetler" id="rozetler"></div>
+      <div class="carphoto" id="photoWrap" hidden><img id="photoImg" alt="" decoding="async"></div>
+      <div class="carphoto amblemli" id="amblemWrap" hidden></div>
+      <svg id="artSvg" viewBox="0 0 480 190" aria-hidden="true" style="display:none"></svg>
+      <figcaption>
+        <span class="credit" id="photoCredit" hidden></span>
+        <span id="artCap" hidden>Bu model için henüz fotoğrafımız yok. <a id="fotoLink" href="#" target="_blank" rel="noopener">Üreticinin fotoğraf galerisi ↗</a></span>
+        <span id="turWrap"> · <a id="turLink" href="#" target="_blank" rel="noopener">360° / sanal tur ↗</a></span>
+      </figcaption>
+    </figure>
   </section>
 
-  <section class="hero" aria-label="Araç özeti">
-    <div>
-      <h1 id="title"></h1>
-      <p class="sub" id="subtitle"></p>
-      <p class="src" id="heroSrc" style="font-size:.85rem;color:var(--muted);margin-top:4px"></p>
-      <p class="durumbox" id="durumNote" hidden></p>
-      <div class="picks">
-        <div role="group" aria-labelledby="yilLbl"><span class="pl" id="yilLbl">Model yılı</span><div class="chips" id="years"></div></div>
-        <div role="group" aria-labelledby="verLbl"><span class="pl" id="verLbl">Versiyon</span><div class="chips" id="versions"></div></div>
+  <section class="secili" aria-labelledby="seciliT">
+    <div class="secili-ust">
+      <div>
+        <span class="etiket" id="seciliT">Seçili versiyon</span>
+        <p class="secili-ad" id="subtitle"></p>
+        <p class="src" id="heroSrc"></p>
       </div>
-      <div class="kampkutu" id="kampKutu" hidden></div>
-      <div class="kampkutu mlkutu" id="linkKutu" hidden></div>
+      <div class="fiyatkutu" id="fiyatKutu"></div>
     </div>
-    <figure class="art">
-      <div class="carphoto" id="photoWrap" hidden><img id="photoImg" alt="" decoding="async"></div>
-      <div class="carphoto" id="amblemWrap" hidden></div>
-      <p class="credit" id="photoCredit" hidden></p>
-      <svg id="artSvg" viewBox="0 0 480 190" role="img" aria-label="Araç fotoğrafı için ayrılan alan, örnek çizim">
-        <line x1="10" y1="176" x2="470" y2="176" stroke="var(--line)" stroke-width="2"/>
-        <path d="M44 146 L44 114 Q44 102 56 98 L112 90 L128 66 Q138 50 176 46 L292 46 Q332 48 352 76 L420 90 Q440 94 440 114 L440 146 Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M138 84 L150 66 Q158 58 178 56 L200 56 L200 84 Z" fill="var(--accent-tint)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M210 56 L288 56 Q318 58 334 80 L338 84 L210 84 Z" fill="var(--accent-tint)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
-        <line x1="205" y1="56" x2="205" y2="140" stroke="var(--ink)" stroke-width="1.5"/>
-        <rect x="422" y="102" width="16" height="9" rx="2" fill="var(--accent)"/>
-        <rect x="45" y="104" width="9" height="12" rx="2" fill="var(--line-strong)"/>
-        <circle cx="120" cy="148" r="30" fill="var(--ink)"/><circle cx="120" cy="148" r="13" fill="var(--surface2)"/>
-        <circle cx="370" cy="148" r="30" fill="var(--ink)"/><circle cx="370" cy="148" r="13" fill="var(--surface2)"/>
-      </svg>
-      <figcaption id="artCap">Bu model için henüz fotoğrafımız yok. Üreticinin fotoğraf galerisi:<br><a id="fotoLink" href="#" target="_blank" rel="noopener" style="color:var(--accent-soft);font-weight:600">Gerçek fotoğraf galerisini gör ↗</a><span id="turWrap"><br><a id="turLink" href="#" target="_blank" rel="noopener" style="color:var(--accent-soft);font-weight:600">360° / sanal turu gör ↗</a></span></figcaption>
-    </figure>
+    <div class="picks">
+      <div role="group" aria-labelledby="yilLbl"><span class="pl" id="yilLbl">Model yılı</span><div class="chips" id="years"></div></div>
+      <div role="group" aria-labelledby="verLbl"><span class="pl" id="verLbl">Versiyon</span><div class="chips" id="versions"></div></div>
+    </div>
+    <div class="eylemler">
+      <a class="btn primary" id="btnKarsilastir" href="karsilastirma.html">Karşılaştırmaya ekle</a>
+      <a class="btn" href="#karsilastir">Rakipleriyle karşılaştır</a>
+      <button class="btn js-write" type="button">Puan ver ve yorum yaz</button>
+    </div>
+    <div class="kampkutu" id="kampKutu" hidden></div>
+    <div class="kampkutu mlkutu" id="linkKutu" hidden></div>
   </section>
 
   <dl class="keystats" id="keystats"></dl>
 
   <nav class="subnav" aria-label="Sayfa bölümleri" id="subnav">
-    <a href="#teknik">Teknik özellikler</a>
-    <a href="#donanim">Donanım</a>
-    <a href="#fiyatvergi">Fiyat & vergi</a>
+    <span class="subnav-ad" id="subnavAd" aria-hidden="true"></span>
+    <a href="#sinif">Sınıfındaki yeri</a>
+    <a href="#uygun">Kimler için</a>
     <a href="#artilar">Artı & eksi</a>
+    <a href="#teknik">Teknik & donanım</a>
+    <a href="#puan">Puanlar</a>
+    <a href="#fiyatvergi">Fiyat & vergi</a>
     <a href="#sorunlar">Geri çağırmalar</a>
     <a href="#bakim" id="navBakim">Bakım</a>
-    <a href="#yorumlar">Yorumlar</a>
     <a href="#karsilastir">Rakipler</a>
+    <a href="#yorumlar">Yorumlar</a>
   </nav>
 
-  <div class="layout">
-    <aside class="rail" aria-label="Puanlar ve karşılaştırma">
-      <section class="box" aria-labelledby="sysScoreT">
-        <h2 id="sysScoreT">Sistem puanı</h2>
-        <div id="sysScoreBody"></div>
-      </section>
-      <section class="box" aria-labelledby="scoreT" id="ownerBox">
-        <h2 id="scoreT">Sahip puanı</h2>
-        <div id="scoreBody"></div>
-      </section>
-      <section class="box" aria-labelledby="cmpT">
-        <h2 id="cmpT">Karşılaştır</h2>
-        <label for="cmpSel">Bu aracı şununla karşılaştır</label>
-        <select id="cmpSel"></select>
-        <button class="btn" type="button" id="cmpGo">Karşılaştırmayı aç</button>
-      </section>
-    </aside>
+  <div class="content">
+    <section class="sec" id="sinif" aria-labelledby="sinifT">
+      <div class="sbas"><span class="no">01</span><div><h2 id="sinifT">Sınıfındaki yeri</h2><p class="lead" id="sinifLead"></p></div></div>
+      <div class="sinif" id="sinifBody"></div>
+    </section>
 
-    <div class="content">
-      <section class="sec" id="teknik" aria-labelledby="teknikT">
-        <h2 id="teknikT">Teknik özellikler</h2>
-        <div class="specs" id="specs"></div>
-      </section>
+    <section class="sec" id="uygun" aria-labelledby="uygunT">
+      <div class="sbas"><span class="no">02</span><div><h2 id="uygunT">Kimler için uygun?</h2><p class="lead">Bu versiyonun verilerine ve sınıfındaki yerine göre kısa bir eleme.</p></div></div>
+      <div class="uygun" id="uygunBody"></div>
+    </section>
 
-      <section class="sec" id="donanim" aria-labelledby="donanimT">
-        <h2 id="donanimT">Donanım, konfor ve güvenlik</h2>
-        <div id="equip"></div>
-      </section>
+    <section class="sec" id="artilar" aria-labelledby="artilarT">
+      <div class="sbas"><span class="no">03</span><div><h2 id="artilarT">Artıları ve eksileri</h2><p class="lead" id="artiLead"></p></div></div>
+      <div class="pc block" id="artiEksiBlock"></div>
+      <div id="odulBlock"></div>
+      <div class="block" id="ncapVsBlock"></div>
+      <div class="block" id="kucukDetayBlock" hidden>
+        <h3>Küçük konfor detayları</h3>
+        <div id="kucukDetayList"></div>
+      </div>
+    </section>
 
-      <section class="sec" id="fiyatvergi" aria-labelledby="fiyatvergiT">
-        <h2 id="fiyatvergiT">Fiyat, vergi ve garanti</h2>
-        <div class="keystats" id="fiyatStats" style="margin-top:8px"></div>
-        <div class="block" id="fiyatDetay"></div>
-      </section>
+    <section class="sec" id="teknik" aria-labelledby="teknikT">
+      <div class="sbas"><span class="no">04</span><div><h2 id="teknikT">Teknik özellikler ve donanım</h2><p class="lead" id="teknikLead"></p></div></div>
+      <div class="tekdon">
+        <div class="tek-kol"><h3 class="kolbas">Teknik özellikler</h3><div class="specs" id="specs"></div></div>
+        <div class="don-kol" id="donanim"><h3 class="kolbas">Donanım, konfor ve güvenlik</h3><div id="equip"></div></div>
+      </div>
+    </section>
 
-      <section class="sec" id="artilar" aria-labelledby="artilarT">
-        <h2 id="artilarT">Artılar ve dikkat edilecekler</h2>
-        <div id="odulBlock"></div>
-        <div class="pc block" id="artiEksiBlock"></div>
-        <div class="block" id="ncapVsBlock"></div>
-        <div class="block" id="kucukDetayBlock" hidden>
-          <h3>Küçük konfor detayları</h3>
-          <div id="kucukDetayList"></div>
-        </div>
-      </section>
+    <section class="sec" id="puan" aria-labelledby="puanT">
+      <div class="sbas"><span class="no">05</span><div><h2 id="puanT">Puanlar</h2><p class="lead">Sistem puanı yalnızca kaynaklı verilerden hesaplanır. Sahip puanı, bu modelin sahiplerinin verdiği puanların ortalamasıdır.</p></div></div>
+      <div class="puanlar2">
+        <div class="kutu" aria-labelledby="sysScoreT"><h3 id="sysScoreT">Sistem puanı</h3><div id="sysScoreBody"></div></div>
+        <div class="kutu" id="ownerBox" aria-labelledby="scoreT"><h3 id="scoreT">Sahip puanı</h3><div id="scoreBody"></div></div>
+      </div>
+    </section>
 
-      <section class="sec" id="sorunlar" aria-labelledby="sorunlarT">
-        <h2 id="sorunlarT">Geri çağırmalar ve bilinen sorunlar</h2>
-        <p class="caution" id="probCaution" hidden>Şikayetleri araç sahipleri yazar ve kurumlar bunları doğrulamaz. Bir parçanın çok şikayet alması, o parçanın kronik sorunu olduğunu tek başına kanıtlamaz.</p>
+    <section class="sec" id="fiyatvergi" aria-labelledby="fiyatvergiT">
+      <div class="sbas"><span class="no">06</span><div><h2 id="fiyatvergiT">Fiyat, vergi ve garanti</h2></div></div>
+      <div class="keystats mini" id="fiyatStats"></div>
+      <div class="block" id="fiyatDetay"></div>
+    </section>
 
-        <div class="block">
-          <div class="recalls" id="recalls"></div>
-        </div>
+    <section class="sec" id="sorunlar" aria-labelledby="sorunlarT">
+      <div class="sbas"><span class="no">07</span><div><h2 id="sorunlarT">Geri çağırmalar ve bilinen sorunlar</h2></div></div>
+      <p class="caution" id="probCaution" hidden>Şikayetleri araç sahipleri yazar ve kurumlar bunları doğrulamaz. Bir parçanın çok şikayet alması, o parçanın kronik sorunu olduğunu tek başına kanıtlamaz.</p>
+      <div class="block"><div class="recalls" id="recalls"></div></div>
+      <div class="problem-grid block" id="probGrid">
+        <div id="officialBlock"></div>
+        <div id="userBlock"></div>
+      </div>
+    </section>
 
-        <div class="problem-grid block" id="probGrid">
-          <div id="officialBlock"></div>
-          <div id="userBlock"></div>
-        </div>
-      </section>
+    <section class="sec" id="bakim" aria-labelledby="bakimT">
+      <div class="sbas"><span class="no">08</span><div><h2 id="bakimT">Bakım</h2><p class="lead" id="bakimLead"></p></div></div>
+      <div class="block" id="bakimNoktalari"></div>
+    </section>
 
-      <section class="sec" id="bakim" aria-labelledby="bakimT">
-        <h2 id="bakimT">Bakım</h2>
-        <p class="lead" id="bakimLead"></p>
-        <div class="block" id="bakimNoktalari"></div>
-      </section>
+    <section class="sec" id="karsilastir" aria-labelledby="karsilastirT">
+      <div class="sbas"><span class="no">09</span><div><h2 id="karsilastirT">Rakipleriyle karşılaştırın</h2><p class="lead">Aynı kasa tipinden, aynı yakıt türünde ve gücü en yakın modeller.</p></div></div>
+      <ul class="rivals" id="rivals"></ul>
+      <div class="cmpkutu">
+        <label for="cmpSel">Başka bir rakiple karşılaştır</label>
+        <div class="cmpsatir"><select id="cmpSel"></select><button class="btn primary" type="button" id="cmpGo">Karşılaştır</button></div>
+      </div>
+    </section>
 
-      <section class="sec" id="yorumlar" aria-labelledby="yorumlarT">
-        <h2 id="yorumlarT">Sahip yorumları ve sürüş izlenimleri</h2>
-        <p class="lead" id="reviewLead"></p>
-        <div class="yz-cta">
-          <div><b>Bu aracı kullandın mı?</b><span id="ctaAlt">Sahibiysen sahip yorumu, test sürüşü ya da kiralama gibi kısa bir deneyimin varsa sürüş izlenimi yaz.</span></div>
-          <button class="btn primary js-write" type="button">Sen de yorum yap</button>
-        </div>
-        <div class="yz-panel" id="yzPanel" hidden></div>
-        <div class="yz-tabs" role="tablist" aria-label="Yorum türü" id="yzTabs">
-          <button type="button" role="tab" data-tur="hepsi" aria-selected="true">Tümü <span></span></button>
-          <button type="button" role="tab" data-tur="sahip" aria-selected="false">Sahip yorumları <span></span></button>
-          <button type="button" role="tab" data-tur="izlenim" aria-selected="false">Sürüş izlenimleri <span></span></button>
-        </div>
-        <div class="toolbar" id="reviewTools">
-          <label for="sortSel" class="sr" style="position:absolute;left:-9999px">Sırala</label>
-          <select id="sortSel" aria-label="Yorumları sırala">
-            <option value="yeni">En yeni</option>
-            <option value="faydali">En faydalı</option>
-            <option value="yuksek">En yüksek puan</option>
-            <option value="dusuk">En düşük puan</option>
-          </select>
-          <span id="filterTag"></span>
-          <span class="grow"></span>
-          </div>
-        <div id="reviews"></div>
-      </section>
-
-      <section class="sec" id="karsilastir" aria-labelledby="karsilastirT">
-        <h2 id="karsilastirT">Rakipleriyle karşılaştır</h2>
-        <p class="lead">Aynı kasa tipinden, aynı yakıt türünde ve gücü en yakın modeller.</p>
-        <ul class="rivals" id="rivals"></ul>
-      </section>
-
-    </div>
+    <section class="sec" id="yorumlar" aria-labelledby="yorumlarT">
+      <div class="sbas"><span class="no">10</span><div><h2 id="yorumlarT">Sahip yorumları ve sürüş izlenimleri</h2><p class="lead" id="reviewLead"></p></div></div>
+      <div class="yz-cta">
+        <div><b>Bu aracı kullandın mı?</b><span id="ctaAlt">Sahibiysen sahip yorumu, test sürüşü ya da kiralama gibi kısa bir deneyimin varsa sürüş izlenimi yaz.</span></div>
+        <button class="btn primary js-write" type="button">Sen de yorum yap</button>
+      </div>
+      <div class="yz-panel" id="yzPanel" hidden></div>
+      <div class="yz-tabs" role="tablist" aria-label="Yorum türü" id="yzTabs">
+        <button type="button" role="tab" data-tur="hepsi" aria-selected="true">Tümü <span></span></button>
+        <button type="button" role="tab" data-tur="sahip" aria-selected="false">Sahip yorumları <span></span></button>
+        <button type="button" role="tab" data-tur="izlenim" aria-selected="false">Sürüş izlenimleri <span></span></button>
+      </div>
+      <div class="toolbar" id="reviewTools">
+        <label for="sortSel" class="sr" style="position:absolute;left:-9999px">Sırala</label>
+        <select id="sortSel" aria-label="Yorumları sırala">
+          <option value="yeni">En yeni</option>
+          <option value="faydali">En faydalı</option>
+          <option value="yuksek">En yüksek puan</option>
+          <option value="dusuk">En düşük puan</option>
+        </select>
+        <span id="filterTag"></span>
+        <span class="grow"></span>
+      </div>
+      <div id="reviews"></div>
+    </section>
   </div>
 
   <footer>
@@ -9251,7 +9267,268 @@ function renderRivals(){
     : '<li><div class="rn"><span>Bu kasa tipinde veritabanımızda başka marka yok.</span></div></li>';
 }
 
-function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); renderEquip(); $('#yzPanel').hidden=true; yorumlariYukle(); }
+
+/* ---------- Yeni detay düzeni: sınıf konumu, kimler için, otomatik artı/eksi, üst bölüm ---------- */
+const KASA_G = k => { k = k || ''; if (/pick/i.test(k)) return 'pickup'; if (/MPV|Minivan|Van/i.test(k)) return 'mpv'; if (/SUV|Crossover|Arazi|Off-?Road/i.test(k)) return 'suv'; if (/Coupe|Coupé|Cabrio|Roadster|Targa|Spider|Spyder/i.test(k)) return 'spor'; return 'binek'; };
+const BOY_G = l => !l ? null : l < 4200 ? 'AB' : l < 4600 ? 'C' : l < 4900 ? 'D' : 'EF';
+const SINIF_AD = {
+  suv: {AB:'Küçük SUV', C:'Kompakt SUV', D:'Orta boy SUV', EF:'Büyük SUV'},
+  binek: {AB:'Küçük otomobil', C:'Kompakt otomobil', D:'Orta sınıf otomobil', EF:'Üst sınıf otomobil'},
+  mpv: {AB:'Küçük MPV', C:'Kompakt MPV', D:'Orta boy MPV', EF:'Büyük MPV'},
+  spor: {AB:'Küçük spor otomobil', C:'Spor otomobil', D:'Spor otomobil', EF:'Büyük spor otomobil'},
+  pickup: {AB:'Pick-up', C:'Pick-up', D:'Pick-up', EF:'Pick-up'}
+};
+const BOY_ACIK = {AB:'4,2 m altı', C:'4,2 ile 4,6 m arası', D:'4,6 ile 4,9 m arası', EF:'4,9 m üstü'};
+const isEV = c => /^Elektrik/i.test(c.s.yakit || '');
+const isPHEV = c => /plug-?in/i.test(c.s.yakit || '');
+const sinifAdi = c => { const b = BOY_G(c.s.uzunluk_mm); return b ? SINIF_AD[KASA_G(c.s.kasa)][b] : null; };
+const guncel = c => c.yil === 2026 && satista(c);
+
+const sinifOnbellek = {};
+function sinifHavuzu(c){
+  if (sinifOnbellek[c.id]) return sinifOnbellek[c.id];
+  const kg = KASA_G(c.s.kasa), bg = BOY_G(c.s.uzunluk_mm), g = guncel(c);
+  const zaman = Object.values(CARS).filter(x => g ? guncel(x) : (!guncel(x) && Math.abs(x.yil - c.yil) <= 3));
+  let havuz = [], ad = '';
+  const a = bg ? zaman.filter(x => KASA_G(x.s.kasa) === kg && BOY_G(x.s.uzunluk_mm) === bg) : [];
+  if (a.length >= 8) { havuz = a; ad = SINIF_AD[kg][bg]; }
+  else {
+    const b = bg ? zaman.filter(x => BOY_G(x.s.uzunluk_mm) === bg) : [];
+    if (b.length >= 8) { havuz = b; ad = 'boyu ' + BOY_ACIK[bg] + ' olan araçlar'; }
+    else { havuz = zaman.filter(x => KASA_G(x.s.kasa) === kg); ad = {suv:'SUV',binek:'binek',mpv:'MPV',spor:'spor',pickup:'pick-up'}[kg] + ' araçlar'; }
+  }
+  return (sinifOnbellek[c.id] = {havuz, ad, guncel: g});
+}
+
+// [alan, ad, birim, iyi yön, kimlerle kıyaslanır]
+const SINIF_OLCU = [
+  ['tuketim_l100km', 'Ortalama tüketim (WLTP)', 'l/100 km', 'az', 'yakitli'],
+  ['elektrik_tuketim_kwh100km', 'Elektrik tüketimi', 'kWh/100 km', 'az', 'ev'],
+  ['menzil_km_wltp', 'Menzil (WLTP)', 'km', 'cok', 'ev'],
+  ['guc_hp', 'Beygir gücü', 'HP', 'cok', 'hepsi'],
+  ['sifirYuz_sn', '0-100 km/s', 'sn', 'az', 'hepsi'],
+  ['tork_nm', 'Azami tork', 'Nm', 'cok', 'hepsi'],
+  ['bagaj_l', 'Bagaj hacmi', 'L', 'cok', 'hepsi'],
+  ['co2_gkm', 'CO₂ emisyonu', 'g/km', 'az', 'yakitli']
+];
+function konum(c, key){
+  const o = SINIF_OLCU.find(m => m[0] === key); if (!o) return null;
+  const v = c.s[key]; if (typeof v !== 'number') return null;
+  const ev = isEV(c);
+  if (o[4] === 'ev' && !ev) return null;
+  if (o[4] === 'yakitli' && ev) return null;
+  const {havuz} = sinifHavuzu(c), ph = isPHEV(c);
+  // Tüketim ve CO2'de plug-in hibritler (WLTP değeri çok düşük çıkar) yalnızca birbiriyle kıyaslanır
+  const vals = havuz.filter(x => o[4] === 'hepsi' || (o[4] === 'ev' ? isEV(x) : (!isEV(x) && isPHEV(x) === ph))).map(x => x.s[key]).filter(n => typeof n === 'number' && n > 0);
+  if (vals.length < 5) return null;
+  const az = o[3] === 'az';
+  const enKotu = az ? Math.max(...vals) : Math.min(...vals), enIyi = az ? Math.min(...vals) : Math.max(...vals);
+  const ort = vals.reduce((a, b) => a + b, 0) / vals.length;
+  const daha = vals.filter(n => az ? n > v : n < v).length, esit = vals.filter(n => n === v).length;
+  const p = (daha + Math.max(0, esit - 1) / 2) / Math.max(1, vals.length - 1);  // 0 = en kötü, 1 = en iyi
+  // Şeritteki yer sıralamaya göre (uç değerler şeridi bozmasın): sağ uç sınıfın en iyisi, sol uç en zayıfı
+  const sira = x => vals.filter(n => az ? n > x : n < x).length / Math.max(1, vals.length - 1);
+  const pp = Math.max(0, Math.min(1, p));
+  return {key, ad: o[1], birim: o[2], v, ort, enIyi, enKotu, n: vals.length, p: pp, x: pp, ox: Math.max(0, Math.min(1, sira(ort)))};
+}
+const konumEtiket = p => p >= .9 ? ['Sınıfının en iyileri arasında', 'iyi'] : p >= .65 ? ['Sınıf ortalamasının üstünde', 'iyi'] : p > .35 ? ['Sınıf ortalamasında', 'orta'] : p > .1 ? ['Sınıf ortalamasının altında', 'zayif'] : ['Sınıfının en zayıfları arasında', 'zayif'];
+
+function renderSinif(){
+  const c = car(), h = sinifHavuzu(c);
+  const list = SINIF_OLCU.map(m => konum(c, m[0])).filter(Boolean);
+  $('#sinifLead').textContent = list.length
+    ? `${h.guncel ? 'Satıştaki' : c.yil + ' civarı model yıllarındaki'} ${h.ad} sınıfındaki ${h.havuz.length} versiyonla kıyaslandı. Araçlar şeritte iyiden kötüye sıralı: sağ uç sınıfın en iyisi, ince çizgi sınıf ortalaması.`
+    : '';
+  if (!list.length) { $('#sinifBody').innerHTML = '<div class="emptystate">Bu versiyonu sınıfıyla kıyaslamaya yetecek veri henüz yok.</div>'; return; }
+  const f = (v, b) => nf(v, dec(Math.round(v * 10) / 10) ? 1 : 0) + ' ' + b;
+  $('#sinifBody').innerHTML = list.map(k => {
+    const [et, cls] = konumEtiket(k.p);
+    return `<div class="sn ${cls}">
+      <div class="sn-ust"><span>${esc(k.ad)}</span><b>${f(k.v, k.birim)}</b></div>
+      <div class="sn-serit" role="img" aria-label="${esc(k.ad)}: ${esc(et)}. Sınıf ortalaması ${f(k.ort, k.birim)}, en iyi ${f(k.enIyi, k.birim)}.">
+        <i class="sn-dolu" style="--x:${(k.x * 100).toFixed(1)}%"></i>
+        <i class="sn-ort" style="left:${(k.ox * 100).toFixed(1)}%"></i>
+        <i class="sn-nokta" style="--x:${(k.x * 100).toFixed(1)}%"></i>
+      </div>
+      <div class="sn-alt"><span>${f(k.enKotu, '')}</span><em>${esc(et)}</em><span>${f(k.enIyi, '')}</span></div>
+    </div>`;
+  }).join('');
+  animasyonIzle($('#sinifBody'));
+}
+
+function animasyonIzle(el){
+  if (!el) return;
+  el.classList.remove('gorundu');
+  if (!('IntersectionObserver' in window)) { el.classList.add('gorundu'); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { el.classList.add('gorundu'); io.disconnect(); } }), {threshold: .2});
+  io.observe(el);
+}
+
+function cekisDort(c){ return /4x4|4WD|AWD|dört|4MOTION|quattro|xDrive|4Matic|ALL4|Q4|e-?4ORCE|4Drive/i.test((c.s.cekis || '') + ' ' + c.versiyon); }
+function uygunluk(c){
+  const s = c.s, uy = [], deg = [], K = k => konum(c, k);
+  const bg = K('bagaj_l'), tk = K('tuketim_l100km'), hz = K('sifirYuz_sn'), mz = K('menzil_km_wltp'), et = K('elektrik_tuketim_kwh100km');
+  const fp = ((window.PUANLAR || {})[c.id] || {}).fiyatPerformans;
+  const vt = gearType(s.sanziman, s.yakit);
+  if (s.koltuk >= 7) uy.push(['Kalabalık aileler', `${s.koltuk} koltuk`]);
+  if (bg && bg.p >= .7) uy.push(['Geniş bagaj isteyen aileler', `${nf(s.bagaj_l)} L, sınıfının üst kısmında`]);
+  if (tk && tk.p >= .7) uy.push(['Çok yol yapıp yakıttan tasarruf etmek isteyenler', `${nf(s.tuketim_l100km, 1)} l/100 km`]);
+  if (et && et.p >= .7) uy.push(['Elektrik masrafını düşük tutmak isteyenler', `${nf(s.elektrik_tuketim_kwh100km, 1)} kWh/100 km`]);
+  if (mz && s.menzil_km_wltp >= 450) uy.push(['Elektrikliyle uzun yola çıkmak isteyenler', `${nf(s.menzil_km_wltp)} km WLTP menzil`]);
+  if (isEV(c)) uy.push(['Evinde ya da işinde şarj imkânı olanlar', 'Şarj maliyeti en düşük evde olur']);
+  if (hz && (hz.p >= .75 || s.sifirYuz_sn <= 7)) uy.push(['Güçlü hızlanma isteyenler', `0-100 km/s ${nf(s.sifirYuz_sn, 1)} sn`]);
+  if (cekisDort(c)) uy.push(['Karlı, çamurlu ya da bozuk yolda çekiş güvenliği isteyenler', 'Dört tekerden çekiş']);
+  if (s.yerden_yukseklik_mm >= 190) uy.push(['Toprak ve bozuk yolu sık kullananlar', `${nf(s.yerden_yukseklik_mm)} mm yerden yükseklik`]);
+  if (s.uzunluk_mm && s.uzunluk_mm <= 4100) uy.push(['Şehirde kolay park etmek isteyenler', `${nf(s.uzunluk_mm)} mm uzunluk`]);
+  if (s.ncap_yildiz === 5) uy.push(['Güvenlikten ödün vermek istemeyenler', `Euro NCAP 5 yıldız${s.ncap_test_yili ? ' (' + s.ncap_test_yili + ')' : ''}`]);
+  if (s.garanti_yil >= 5) uy.push(['Uzun garanti isteyenler', `${s.garanti_yil} yıl garanti`]);
+  if (fp && fp.puan >= 6.5) uy.push(['Ödediğinin karşılığını almak isteyenler', `Fiyat/performans ${nf(fp.puan, 1)} / 10`]);
+
+  if (bg && bg.p <= .3) deg.push(['Bagajı sık dolduranlar', `${nf(s.bagaj_l)} L, sınıfının alt kısmında`]);
+  if (tk && tk.p <= .3) deg.push(['Yakıt tüketimine hassas olanlar', `${nf(s.tuketim_l100km, 1)} l/100 km`]);
+  if (isEV(c) && s.menzil_km_wltp && s.menzil_km_wltp < 320) deg.push(['Sık sık uzun yola çıkanlar', `${nf(s.menzil_km_wltp)} km WLTP menzil`]);
+  if (isEV(c)) deg.push(['Evinde ya da işinde şarj imkânı olmayanlar', 'Sadece halka açık şarjla kullanım pahalı ve zahmetli olur']);
+  if (hz && hz.p <= .25) deg.push(['Sık sollama yapan, güçlü hızlanma isteyenler', `0-100 km/s ${nf(s.sifirYuz_sn, 1)} sn`]);
+  if (s.uzunluk_mm >= 4700) deg.push(['Dar sokak ve otoparklarda park edenler', `${nf(s.uzunluk_mm)} mm uzunluk`]);
+  if (s.ncap_yildiz != null && s.ncap_yildiz <= 3) deg.push(['En yüksek güvenlik puanını arayanlar', `Euro NCAP ${s.ncap_yildiz} yıldız`]);
+  if (s.koltuk && s.koltuk <= 4) deg.push(['Çocuklu aileler', `${s.koltuk} koltuk`]);
+  if (vt === 'manuel') deg.push(['Yoğun trafikte otomatik vites isteyenler', 'Manuel şanzıman']);
+  if (fp && fp.puan <= 3.5) deg.push(['Bütçesine dikkat edenler', `Fiyat/performans ${nf(fp.puan, 1)} / 10`]);
+  if (s.garanti_yil != null && s.garanti_yil <= 2) deg.push(['Uzun garanti isteyenler', `${s.garanti_yil} yıl garanti`]);
+  return {uy: uy.slice(0, 5), deg: deg.slice(0, 5)};
+}
+function renderUygun(){
+  const {uy, deg} = uygunluk(car());
+  const li = ([t, n]) => `<li><span>${esc(t)}</span><small>${esc(n)}</small></li>`;
+  $('#uygunBody').innerHTML = (uy.length || deg.length)
+    ? `<div class="uy evet"><h3>Uygun</h3>${uy.length ? `<ul>${uy.map(li).join('')}</ul>` : '<p class="note">Verilerden belirgin bir öne çıkan kullanım çıkmadı.</p>'}</div>
+       <div class="uy hayir"><h3>Daha uygun seçenek arayın</h3>${deg.length ? `<ul>${deg.map(li).join('')}</ul>` : '<p class="note">Verilerde belirgin bir zayıf nokta görünmüyor.</p>'}</div>`
+    : '<div class="emptystate">Bu versiyon için kullanım önerisi çıkarmaya yetecek veri henüz yok.</div>';
+}
+
+function otoArtiEksi(c){
+  const s = c.s, ar = [], ek = [];
+  const yaz = {tuketim_l100km:['Düşük yakıt tüketimi','Yüksek yakıt tüketimi'], elektrik_tuketim_kwh100km:['Düşük elektrik tüketimi','Yüksek elektrik tüketimi'], menzil_km_wltp:['Uzun menzil','Kısa menzil'], guc_hp:['Güçlü motor','Sınıfına göre düşük güç'], sifirYuz_sn:['Çevik hızlanma','Yavaş hızlanma'], tork_nm:['Yüksek tork','Düşük tork'], bagaj_l:['Geniş bagaj','Küçük bagaj'], co2_gkm:['Düşük CO₂ emisyonu','Yüksek CO₂ emisyonu']};
+  SINIF_OLCU.forEach(([k,,b]) => { const x = konum(c, k); if (!x) return; const d = nf(x.v, dec(x.v)) + ' ' + b;
+    if (x.p >= .8) ar.push(`${yaz[k][0]}: ${d}, sınıfının ilk %20'sinde`);
+    else if (x.p <= .2) ek.push(`${yaz[k][1]}: ${d}, sınıfının son %20'sinde`); });
+  if (s.ncap_yildiz === 5) ar.push(`Euro NCAP'te 5 yıldız${s.ncap_test_yili ? ' (' + s.ncap_test_yili + ' testi)' : ''}`);
+  else if (s.ncap_yildiz != null && s.ncap_yildiz <= 3) ek.push(`Euro NCAP'te ${s.ncap_yildiz} yıldız${s.ncap_test_yili ? ' (' + s.ncap_test_yili + ' testi)' : ''}`);
+  if (s.garanti_yil >= 5) ar.push(`${s.garanti_yil} yıl araç garantisi`); else if (s.garanti_yil != null && s.garanti_yil <= 2) ek.push(`Garanti ${s.garanti_yil} yıl ile kısa`);
+  const fp = ((window.PUANLAR || {})[c.id] || {}).fiyatPerformans;
+  if (fp && fp.oran < .85) ar.push(`Sınıfına göre fiyat/performansı yüksek (${nf(fp.puan, 1)} / 10)`);
+  if (fp && fp.oran > 1.2) ek.push(`Sınıfına göre fiyatı yüksek (fiyat/performans ${nf(fp.puan, 1)} / 10)`);
+  const rc = RECALLS[c.id]; if (rc && rc.length) ek.push(`${rc.length} geri çağırma kampanyası kaydı var`);
+  return {ar, ek};
+}
+
+function renderArtiEksi(){
+  const c = car(), {ar, ek} = otoArtiEksi(c);
+  const pro = (c.gucluYanlar || []).map(g => `<li>${esc(g.metin)} <a class="src" href="${esc(g.kaynak)}" target="_blank" rel="noopener" title="Kaynak">↗</a></li>`);
+  const con = (c.dikkatEdilecekler || []).map(g => `<li>${esc(g.metin)} <a class="src" href="${esc(g.kaynak)}" target="_blank" rel="noopener" title="Kaynak">↗</a></li>`);
+  const A = pro.concat(ar.map(t => `<li>${esc(t)} <a class="src ic" href="#sinif" title="Verilerimize göre">veri</a></li>`));
+  const E = con.concat(ek.map(t => `<li>${esc(t)} <a class="src ic" href="${/geri çağırma/.test(t) ? '#sorunlar' : '#sinif'}" title="Verilerimize göre">veri</a></li>`));
+  $('#artiLead').textContent = `${c.versiyon} için. "veri" işaretli maddeler sitemizdeki kaynaklı verilerden ve sınıf kıyaslamasından çıkarıldı; ↗ işaretliler inceleme ve resmi kaynaklardan.`;
+  $('#artiEksiBlock').innerHTML = (A.length || E.length)
+    ? `<div class="pro"><h5>Artıları</h5>${A.length ? `<ul>${A.join('')}</ul>` : '<p class="note">Henüz eklenmedi.</p>'}</div><div class="con"><h5>Eksileri</h5>${E.length ? `<ul>${E.join('')}</ul>` : '<p class="note">Verilerde belirgin bir eksi görünmüyor.</p>'}</div>`
+    : '<div class="emptystate">Bu versiyon için henüz değerlendirme notu eklenmedi.</div>';
+}
+
+function renderUst(){
+  const c = car(), s = c.s, sp = (window.PUANLAR || {})[c.id] || {};
+  const lg = (window.MARKA_LOGO || {})[c.marka];
+  $('#markaLogo').innerHTML = lg ? `<img src="assets/logos/${esc(lg)}" alt="${esc(c.marka)} amblemi">` : `<span>${esc(c.marka.slice(0, 2))}</span>`;
+  $('#markaLogo').href = 'araclar.html#marka=' + encodeURIComponent(c.marka);
+  $('#title').innerHTML = `<span class="mk">${esc(c.marka)}</span> <b>${esc(c.model)}</b>`;
+  const vers = Object.values(CARS).filter(x => x.marka === c.marka && x.model === c.model && x.yil === c.yil);
+  const sa = sinifAdi(c);
+  const parca = [sa || s.kasa || 'Otomobil', `${c.yil} model`];
+  if (s.bagaj_l) parca.push(`${nf(s.bagaj_l)} litre bagaj`);
+  if (isEV(c) && s.menzil_km_wltp) parca.push(`${nf(s.menzil_km_wltp)} km menzil`);
+  parca.push(`${vers.length} versiyon`);
+  $('#tanim').textContent = parca.join(', ') + (c.nesil ? ` · ${c.nesil}` : '');
+
+  // Puan şeridi
+  const pub = published(), so = pub.length ? avg(pub.map(r => r.puan)) : null;
+  const fp = sp.fiyatPerformans;
+  const halka = (v, max) => `<span class="halka" style="--p:${Math.max(0, Math.min(1, v / max)) * 100}"><b>${nf(v, 1)}</b></span>`;
+  $('#puanSerit').innerHTML =
+    `<a class="ps" href="#puan">${sp.toplam != null ? halka(sp.toplam, 10) : '<span class="halka bos"><b>?</b></span>'}<span><b>Sistem puanı</b><small>${sp.toplam != null ? '10 üzerinden, kaynaklı verilerle' : 'Yeterli veri yok'}</small></span></a>` +
+    (fp ? `<a class="ps" href="#puan">${halka(fp.puan, 10)}<span><b>Fiyat/performans</b><small>${fp.oran < .97 ? 'Sınıfına göre uygun' : fp.oran > 1.03 ? 'Sınıfına göre pahalı' : 'Sınıf ortancasında'}</small></span></a>` : '') +
+    `<div class="ps">${so != null ? halka(so, 5) : '<span class="halka bos"><b>–</b></span>'}<span><b>Sahip puanı</b><small>${so != null ? `5 üzerinden, ${pub.length} sahip` : 'Henüz puan yok'}</small></span><button type="button" class="btn small js-write">Puan ver</button></div>`;
+
+  // Bilgi çipleri
+  const vt = gearType(s.sanziman, s.yakit), vtAd = vt ? (GEAR_TYPES.find(x => x[0] === vt) || [])[1] : null;
+  const cip = [['Model yılı', c.yil], ['Kasa', s.kasa], ['Sınıf', sa], ['Yakıt', s.yakit], ['Şanzıman', vtAd ? vtAd.replace(/\s*\(.*\)/, '') : null], ['Versiyon', vers.length + ' seçenek']].filter(x => x[1]);
+  $('#ciplar').innerHTML = cip.map(([l, v]) => `<li><span>${esc(l)}</span><b>${esc(v)}</b></li>`).join('');
+
+  // Rozetler
+  const rz = [];
+  if (s.yakit) rz.push(esc(s.yakit));
+  if (s.ncap_yildiz != null) rz.push(`Euro NCAP ${s.ncap_yildiz}★`);
+  if (cekisDort(c)) rz.push('Dört çeker');
+  const kmp = (window.kampanyalarFor && guncel(c)) ? window.kampanyalarFor(c.marka, c.model) : [];
+  if (kmp.length) rz.push('<a href="kampanyalar.html#marka=' + encodeURIComponent(c.marka) + '">Kampanya var</a>');
+  if (!satista(c)) rz.push('Satıştan kalktı');
+  $('#rozetler').innerHTML = rz.map(t => `<span>${t}</span>`).join('');
+
+  // Fiyat kutusu (yalnızca 2026 ve satıştaki araçlar)
+  const tl = v => Number(v).toLocaleString('tr-TR') + ' TL';
+  if (guncel(c)) {
+    const fiyatlar = vers.map(v => v.s.liste_fiyati_tl).filter(Boolean);
+    $('#fiyatKutu').innerHTML = s.liste_fiyati_tl
+      ? `<span class="etiket">Liste fiyatı${fp ? ' · ' + esc(fp.fiyatAyi) : ''}</span><b>${tl(s.liste_fiyati_tl)}</b>${fiyatlar.length > 1 ? `<small>Bu modelde ${tl(Math.min(...fiyatlar))} ile ${tl(Math.max(...fiyatlar))} arası</small>` : ''}<small>Kampanya ve bayiye göre değişebilir.</small>`
+      : `<span class="etiket">Liste fiyatı</span><small>Resmi liste fiyatı henüz eklenmedi.</small>`;
+    $('#fiyatKutu').hidden = false;
+  } else { $('#fiyatKutu').innerHTML = ''; $('#fiyatKutu').hidden = true; }
+
+  $('#btnKarsilastir').href = 'karsilastirma.html#k=' + encodeURIComponent(c.id);
+  $('#subnavAd').innerHTML = `<b>${esc(c.marka)} ${esc(c.model)}</b><small>${esc(c.versiyon)}</small>`;
+  const tek = c.kaynakUrl ? `Kaynak: <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener" title="${esc(c.kaynakAd || '')}">${esc(kaynakSite(c.kaynakUrl))}</a> ↗. Değerin yanında ↗ olanların kaynağı ayrıca belirtildi.` : '';
+  $('#teknikLead').innerHTML = tek;
+
+  // Öne çıkan değerler
+  const ks = [['Güç', s.guc_hp, 'HP'], ['Tork', s.tork_nm, 'Nm'], ['0-100 km/s', s.sifirYuz_sn, 'sn'],
+    isEV(c) ? ['Menzil (WLTP)', s.menzil_km_wltp, 'km'] : ['Tüketim (WLTP)', s.tuketim_l100km, 'l/100 km'],
+    ['Bagaj', s.bagaj_l, 'L'], ['Euro NCAP', s.ncap_yildiz, '★']];
+  $('#keystats').innerHTML = ks.map(([l, v, u]) => `<div class="ks${v == null ? ' yok' : ''}"><dt>${l}</dt><dd>${v == null ? '—' : nf(v, dec(v)) + `<small>${u}</small>`}</dd></div>`).join('');
+}
+
+function renderRakipKart(){
+  const c = car(), rv = rivalsFor(c), P = window.PUANLAR || {};
+  $('#cmpSel').innerHTML = Object.values(CARS).filter(x => x.marka !== c.marka && satista(x) === satista(c) && KASA_G(x.s.kasa) === KASA_G(c.s.kasa))
+    .sort((a, b) => (a.marka + a.model + a.versiyon).localeCompare(b.marka + b.model + b.versiyon, 'tr'))
+    .map(r => `<option value="${esc(r.id)}">${esc(r.marka + ' ' + r.model + ', ' + r.yil + ', ' + r.versiyon)}</option>`).join('');
+  $('#rivals').innerHTML = rv.length ? rv.map(r => {
+    const ph = window.fotoFor ? window.fotoFor(r) : null, sp = P[r.id] || {};
+    const gorsel = ph ? `<img src="${esc(ph.src)}" alt="${esc(r.marka + ' ' + r.model)}" loading="lazy" decoding="async">` : (window.amblemKart ? window.amblemKart(r, {versiyonYok: true}) : '');
+    const ev = isEV(r);
+    return `<li class="rk">
+      <a class="rk-foto${ph && ph.kesit ? ' kesit' : ''}" href="arac-detay.html#${encodeURIComponent(r.id)}">${gorsel}</a>
+      <div class="rk-ad"><b>${esc(r.marka)} ${esc(r.model)}</b><span>${r.yil}, ${esc(r.versiyon)}</span></div>
+      <dl class="rk-say">
+        <div><dt>Güç</dt><dd>${r.s.guc_hp != null ? r.s.guc_hp + ' HP' : '—'}</dd></div>
+        <div><dt>${ev ? 'Menzil' : 'Tüketim'}</dt><dd>${ev ? (r.s.menzil_km_wltp != null ? nf(r.s.menzil_km_wltp) + ' km' : '—') : (r.s.tuketim_l100km != null ? nf(r.s.tuketim_l100km, 1) + ' l' : '—')}</dd></div>
+        <div><dt>Bagaj</dt><dd>${r.s.bagaj_l != null ? nf(r.s.bagaj_l) + ' L' : '—'}</dd></div>
+        <div><dt>Puan</dt><dd>${sp.toplam != null ? nf(sp.toplam, 1) : '—'}</dd></div>
+      </dl>
+      <div class="rk-btn"><a class="btn small primary" href="karsilastirma.html#k=${encodeURIComponent(c.id)},${encodeURIComponent(r.id)}">Karşılaştır</a><a class="btn small" href="arac-detay.html#${encodeURIComponent(r.id)}">İncele</a></div>
+    </li>`;
+  }).join('') : '<li class="rk-bos">Bu kasa tipinde veritabanımızda başka marka yok.</li>';
+}
+
+function tekdonDuzen(){ const bos = !!$('#equip .emptystate'); $('.tekdon').classList.toggle('donbos', bos); }
+function renderYeniDuzen(){ tekdonDuzen(); renderUst(); renderSinif(); renderUygun(); renderArtiEksi(); renderRakipKart(); }
+
+const _renderScore0 = renderScore;
+renderScore = function(){
+  _renderScore0();
+  const ob = $('#ownerBox');
+  if (ob.hidden) { ob.hidden = false; $('#scoreBody').innerHTML = '<p class="score-meta">Bu model için henüz sahip puanı yok.</p><button type="button" class="btn small js-write">İlk puanı sen ver</button>'; }
+  if ($('#puanSerit').innerHTML) renderUst();
+};
+
+function renderAll(){ renderRivals(); renderHero(); renderSistemPuani(); renderArtilar(); renderScore(); renderProblems(); renderReviews(); renderFiyatVergi(); renderBakim(); renderSpecs(); renderEquip(); $('#yzPanel').hidden=true; yorumlariYukle(); renderYeniDuzen(); }
 
 function buildForm(){
   $('#f-puan').innerHTML=[1,2,3,4,5].map(n=>`<label class="segopt"><input type="radio" name="puan" value="${n}" ${n===1?'required':''}><span>${n}</span></label>`).join('');
@@ -9336,6 +9613,14 @@ document.addEventListener('click',e=>{
 });
 $('#sortSel').addEventListener('change',e=>{ state.sort=e.target.value; renderReviews(); });
 
+
+// Yapışkan bölüm menüsü: üst menünün yüksekliği kadar aşağıda durur, sayfa aşağı inince araç adını gösterir
+(function(){
+  const top=document.querySelector('header.top'), nav=$('#subnav');
+  const olc=()=>{ const st=top&&getComputedStyle(top).position; document.documentElement.style.setProperty('--ustH',(st==='sticky'||st==='fixed')?top.offsetHeight+'px':'0px'); };
+  olc(); addEventListener('resize',olc);
+  if('IntersectionObserver' in window){ new IntersectionObserver(es=>es.forEach(e=>nav.classList.toggle('yapisti',!e.isIntersecting&&e.boundingClientRect.top<0)),{threshold:0}).observe(document.querySelector('.dt2 .ust')); }
+})();
 (function(){
   const links=$$('#subnav a');
   const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
