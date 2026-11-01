@@ -262,6 +262,8 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 </section>
 
 <main class="wrap">
+  <section class="vitrin pist" id="pist" aria-label="Hazır karşılaştırmalar vitrini" aria-live="polite"></section>
+
   <section class="filters karsilastirma-kart" aria-label="Araç listesini daralt">
     <div class="field"><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div>
     <div class="field"><label for="fKasa">Kasa tipi</label><select id="fKasa"></select></div>
@@ -304,11 +306,8 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 
   <section class="presets karsilastirma-kart" aria-labelledby="presetsTitle">
     <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
-    <p class="sub">Aynı sınıftan hazır eşleşmeler. Pistte sırayla dönerler; birine tıklayınca yukarıda açılır.</p>
-    <div class="hazir-izgara">
-      <div class="pist" id="pist" aria-label="Hazır karşılaştırmalar" aria-live="polite"></div>
-      <div class="plist" id="presetList"></div>
-    </div>
+    <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
+    <div class="plist" id="presetList"></div>
   </section>
 
   <section class="sources karsilastirma-kart" aria-label="Kaynaklar">
@@ -2306,35 +2305,45 @@ const PIST_GOVDE = {
   spor: 'M22 70 L16 70 Q8 70 8 64 L8 58 Q10 52 22 50 L76 44 L112 26 Q120 22 132 22 L160 22 Q176 23 188 34 L198 44 L226 49 Q234 51 234 58 L234 64 Q234 70 228 70 L206 70 M162 70 L84 70 M40 70 L22 70 M116 30 L112 44 M150 24 L152 44 M110 45 L194 45'
 };
 const pistGovde = c => { const k = bodyCat(c.s.kasa); return k === 'suv' || k === 'pickup' || k === 'mpv' ? 'suv' : k === 'sedan' || k === 'sw' ? 'sedan' : k === 'coupe' ? 'spor' : 'hatchback'; };
-const pistSvg = (c, ters) => `<svg class="ps-arac" viewBox="0 0 240 92" aria-hidden="true"${ters ? ' style="transform:scaleX(-1)"' : ''}>
+const pistSvg = (c, ters) => `<svg class="ps-arac" viewBox="0 0 240 92" aria-hidden="true"><g${ters ? ' transform="translate(240 0) scale(-1 1)"' : ''}>
   <path d="${PIST_GOVDE[pistGovde(c)]}"/>
-  ${[62, 184].map(x => `<g class="ps-teker" style="transform-origin:${x}px 70px"><circle cx="${x}" cy="70" r="15"/><circle cx="${x}" cy="70" r="5"/><path d="M${x} 56 V84 M${x - 14} 70 H${x + 14}"/></g>`).join('')}
-</svg>`;
+  ${[62, 184].map(x => `<g class="ps-teker"><circle cx="${x}" cy="70" r="15"/><circle cx="${x}" cy="70" r="5"/></g>`).join('')}
+</g></svg>`;
 let pistSira = 0, pistZaman = null;
 const PIST_SURE = 6500;
-function pistCiz(gecis){
+function pistCiz(){
   const el = $('pist'); if (!el || !PRESETS.length) return;
-  const p = PRESETS[pistSira % PRESETS.length], [a, b] = p.ids.slice(0, 2).map(byId);
-  const mini = [['guc_hp', 'Güç', 'HP', 'high'], kEV(a) && kEV(b) ? ['menzil_km_wltp', 'Menzil', 'km', 'high'] : ['sifirYuz_sn', '0-100', 'sn', 'low'], ['bagaj_l', 'Bagaj', 'L', 'high']]
-    .filter(([k]) => typeof a.s[k] === 'number' && typeof b.s[k] === 'number');
-  const oranlar = (va, vb, iyi) => { const en = iyi === 'high' ? Math.max(va, vb) : Math.min(va, vb); const o = v => iyi === 'high' ? v / en : en / v; return [o(va), o(vb)]; };
+  const sira = pistSira % PRESETS.length, p = PRESETS[sira], [a, b] = p.ids.slice(0, 2).map(byId);
+  const olcu = [['guc_hp', 'Güç', 'HP', 'high'], kEV(a) && kEV(b) ? ['menzil_km_wltp', 'Menzil', 'km', 'high'] : ['sifirYuz_sn', '0-100', 'sn', 'low'], ['tork_nm', 'Tork', 'Nm', 'high'], ['bagaj_l', 'Bagaj', 'L', 'high']]
+    .filter(([k]) => typeof a.s[k] === 'number' && typeof b.s[k] === 'number').slice(0, 3);
+  // Rakamlar pano gibi tek tek döner: her karakter ayrı hücrede
+  let h = 0;
+  const pano = t => [...String(t)].map(ch => `<i style="--h:${h++}">${ch === ' ' ? '&nbsp;' : esc(ch)}</i>`).join('');
+  const garaj = (c, i) => `<div class="gj" style="--seri:var(--seri-${i + 1})">
+      <div class="gj-bolme">
+        <span class="gj-no">${i + 1}</span>
+        ${pistSvg(c, i === 1)}
+        <span class="gj-kepenk" aria-hidden="true"><span class="gj-kol"></span></span>
+      </div>
+      <div class="gj-ad"><small>${esc(c.marka)}</small><b>${esc(c.model)}</b><span>${esc(c.versiyon)}</span></div>
+    </div>`;
+  const satir = ([k, ad, birim, iyi]) => {
+    const va = a.s[k], vb = b.s[k], kz = va === vb ? '' : (iyi === 'high' ? va > vb : va < vb) ? 'a' : 'b';
+    return `<div class="tb-s"><span class="tb-l${kz === 'a' ? ' on' : ''}" style="--seri:var(--seri-1)"></span><span class="tb-d sol">${pano(num(va, decimals(va)))}</span><span class="tb-ad">${ad}<small>${birim}</small></span><span class="tb-d">${pano(num(vb, decimals(vb)))}</span><span class="tb-l${kz === 'b' ? ' on' : ''}" style="--seri:var(--seri-2)"></span></div>`;
+  };
   el.innerHTML = `
-    <div class="ps-ust"><span class="ps-seg">${esc(p.seg)}</span><span class="ps-say">${pistSira % PRESETS.length + 1} / ${PRESETS.length}</span></div>
-    <div class="ps-sahne">
-      <div class="ps-yol" aria-hidden="true"><span class="ps-serit"></span></div>
-      <div class="ps-taraf sol">${pistSvg(a, false)}<span class="ps-iz"></span></div>
-      <span class="ps-vs" aria-hidden="true"><b>VS</b></span>
-      <div class="ps-taraf sag">${pistSvg(b, true)}<span class="ps-iz"></span></div>
+    <div class="vt-ust"><span class="vt-seg">${esc(p.seg)}</span><span class="vt-say">Hazır karşılaştırma ${sira + 1} / ${PRESETS.length}</span></div>
+    <div class="vt-govde">
+      ${garaj(a, 0)}
+      <div class="tabela" aria-label="${esc(a.model + ' ve ' + b.model + ' kısa kıyas')}">
+        <div class="tb-bas"><span>${esc(a.model)}</span><b>skor</b><span>${esc(b.model)}</span></div>
+        ${olcu.map(satir).join('')}
+      </div>
+      ${garaj(b, 1)}
     </div>
-    <div class="ps-adlar">
-      <div><small>${esc(a.marka)}</small><b>${esc(a.model)}</b><span>${esc(a.versiyon)}</span></div>
-      <div><small>${esc(b.marka)}</small><b>${esc(b.model)}</b><span>${esc(b.versiyon)}</span></div>
-    </div>
-    <div class="ps-olcu">${mini.map(([k, ad, birim, iyi]) => { const [oa, ob] = oranlar(a.s[k], b.s[k], iyi); const kaz = oa === ob ? '' : oa > ob ? 'a' : 'b';
-      return `<div class="ps-o"><span class="${kaz === 'a' ? 'kz' : ''}">${num(a.s[k], decimals(a.s[k]))}</span><i class="ps-m sol"><em style="--w:${(oa * 100).toFixed(0)}%"></em></i><small>${ad}</small><i class="ps-m sag"><em style="--w:${(ob * 100).toFixed(0)}%"></em></i><span class="${kaz === 'b' ? 'kz' : ''}">${num(b.s[k], decimals(b.s[k]))} ${birim}</span></div>`; }).join('')}</div>
-    <div class="ps-alt">
-      <div class="ps-noktalar">${PRESETS.map((_, i) => `<button type="button" class="${i === pistSira % PRESETS.length ? 'on' : ''}" data-pist="${i}" aria-label="${i + 1}. karşılaştırma"></button>`).join('')}</div>
-      <button type="button" class="ps-ac" data-pist-ac="${pistSira % PRESETS.length}">Bu karşılaştırmayı aç →</button>
+    <div class="vt-alt">
+      <div class="ps-noktalar">${PRESETS.map((_, i) => `<button type="button" class="${i === sira ? 'on' : ''}" data-pist="${i}" aria-label="${i + 1}. karşılaştırma: ${esc(PRESETS[i].seg)}"></button>`).join('')}</div>
+      <button type="button" class="ps-ac" data-pist-ac="${sira}">Bu karşılaştırmayı aç ↓</button>
     </div>`;
   el.classList.remove('gir'); void el.offsetWidth; el.classList.add('gir');
 }
@@ -2343,7 +2352,7 @@ function pistIleri(n){
   clearTimeout(pistZaman);
   const sonraki = () => { pistSira = n != null ? n : pistSira + 1; pistCiz(); pistKur(); };
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return sonraki();
-  el.classList.add('cik'); setTimeout(() => { el.classList.remove('cik'); sonraki(); }, 520);
+  el.classList.add('cik'); setTimeout(() => { el.classList.remove('cik'); sonraki(); }, 650);
 }
 function pistKur(){ clearTimeout(pistZaman); if (!document.hidden) pistZaman = setTimeout(() => pistIleri(), PIST_SURE); }
 document.addEventListener('visibilitychange', pistKur);
