@@ -10,7 +10,7 @@ window.fotoFor = function(c){
   // Arka planı kaldırılmış kopya varsa (assets/kesit.js, tools/foto_kes.py) onu kullan
   // Uzaktan çekilmiş (araç karede çok küçük) fotoğraflar gösterilmez; yerine amblem kartı çıkar
   const red = f && window.KESIT && window.KESIT.red && window.KESIT.red[f.src];
-  if (red && /uzaktan|maske çok küçük/.test(red)) return null;
+  if (red && /uzaktan|maske çok küçük|eski kasa|yanlış nesil/.test(red)) return null;
   const k = f && window.KESIT && window.KESIT.dosya && window.KESIT.dosya[f.src];
   return k ? Object.assign({}, f, {src:'assets/kesit/'+k.ad, orijinal:f.src, kesit:true}) : f;
 };
