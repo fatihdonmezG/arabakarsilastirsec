@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 247 |
-| Fiat | devam ediyor | 129 |
+| Renault | devam ediyor | 261 |
+| Fiat | devam ediyor | 134 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -64,7 +64,8 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - Euro NCAP 2012 (5 yıldız); geri çağırma (HB ve ST): 2014-09 fren (2013–2014), 2017-11 arka koltuk sırtı (2013–2017), 2016-10 fren kaliperi (2016–2017), 2018-04 ön göbek (2017–2018), 2019-01 katalitik konvertör (2018), 2020-03 akü kutup başı (yalnız 0.9 TCe). Arka aks cıvatası kampanyası (Avusturya/Avustralya) tarihi bilinmediği için nota yazıldı
 - [x] Clio IV Sport Tourer (2013–2016) — 20 versiyon
   - [x] 1.2 16V 75, 0.9 TCe 90, 1.5 dCi 75, 1.5 dCi 90: 2013–2016; 1.5 dCi 90 EDC, 1.2 TCe 120 EDC: 2015–2016
-  - [ ] Makyajlı Sport Tourer (2017–2019): kasaya göre Türkiye listesi bulunamadı
+  - [x] Makyajlı Sport Tourer 2017: 1.2 16V 75, 1.5 dCi 75, 1.5 dCi 90 manuel (cnnturk.com Ekim 2016 makyajlı Clio HB/ST lansman haberi: https://www.cnnturk.com/otomobil/yeni-clio-hb-ve-sport-tourerin-fiyatlari-aciklandi-569436); teknik 2018 ST kayıtlarıyla aynı kaynak; geri çağırma 2017 HB ile aynı
+  - [ ] Makyajlı ST 1.5 dCi 90 EDC ve 1.2 TCe 120 EDC (2017–2018), 2019: teknik kaynak ya da liste yok
   - Kaynak: otomobil.com.tr Şubat 2013 Clio Sport Tourer listesi
 - [ ] Clio III HB / Sport Tourer (2010–2012)
 - [x] Clio V (2020–2025) — 21 versiyon
@@ -90,7 +91,12 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] Sport Tourer: 1.5 dCi 110, 1.5 dCi 110 EDC, 1.6 dCi 130: 2014–2016
   - Kaynaklar: haberturk.com Mart 2014 haberi, otopark.com Ocak 2016 listesi; teknik: auto-data.net Phase III sayfaları (1.6 CVT ve 1.5 dCi 90 için yalnızca güç ve boyut)
   - Euro NCAP 2008 (5 yıldız); geri çağırma: araştırıldı, Phase III'ü kapsayan kayıt yok ([])
-  - [ ] Megane III 2010–2013 (Phase I/II) ve Coupe: Türkiye listesi bulunamadı
+  - [ ] Megane III 2010–2013 Phase I, 2013 Phase II: Türkiye listesi bulunamadı
+- [x] Megane III makyajlı Phase II, 2012 model yılı — 11 versiyon
+  - [x] HB: 1.6 16V 110, 1.5 dCi 90, 1.5 dCi 110, 1.5 dCi 110 EDC, 1.6 Energy dCi 130; Sport Tourer ve Coupe: 1.5 dCi 110, 1.5 dCi 110 EDC, 1.6 Energy dCi 130
+  - Kaynak: otomobil.com.tr Haziran 2012 makyajlı Megane listesi (https://www.otomobil.com.tr/makyajli-yeni-renault-megane-turkiye-fiyatlari/, Megane 2012 Collection); teknik: auto-data.net Megane III (Phase II, 2012), Grandtour ve Coupe sayfaları (NEDC)
+  - Euro NCAP 2008 (5 yıldız); geri çağırma: İngiltere R/2014/038 bagaj rafı (2014-04, Mayıs 2010–Ekim 2013 üretimi); Eylül 2012 fren servosu kampanyası (yalnız 1.2 TCe H5Ft) hariç
+  - [ ] 1.6 16V 110 otomatik (CVT) ve 1.5 dCi 90 EDC (2012 listesinde var): auto-data Phase II sayfası yok
 - [x] Megane Sedan (Megane IV Sedan) 2020 ve makyajlı 2021–2025 — 18 versiyon
   - [x] Makyaj öncesi 2020: 1.3 TCe 140 manuel/EDC, 1.5 Blue dCi 115 manuel/EDC
   - [x] Makyajlı: 1.0 TCe 115: 2021; 1.3 TCe 140 manuel: 2021–2023; 1.3 TCe 140 EDC ve 1.5 Blue dCi 115 EDC: 2021–2025
@@ -241,4 +247,10 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
 - [x] 2020 model yılı (takvim.com.tr Kasım 2020 listesi) — 5 versiyon
   - [x] 500 makyajlı 1.2 69 Dualogic; 500L makyajlı 1.4 Fire 95 ve 1.3 MultiJet 95 Dualogic; Panda III 1.2 69 ve 4x4 0.9 TwinAir 85; teknik: auto-data.net
   - Euro NCAP: 500 2017 (3 yıldız, makyajlı), 500L 2012 (5), Panda 2011 (4); geri çağırma: üçü de araştırıldı, 2020 model yılını kapsayan kayıt yok ([])
-- [ ] Bravo, Tipo
+- [x] otopark.com Ocak 2016 Fiat listesi (https://otopark.com/2016/01/22/fiat-ocak-2016-fiyat-listesi/) — 5 versiyon
+  - [x] 500L makyaj öncesi 2016: 1.3 MultiJet 95 (Euro 6) manuel (topgear.com), 1.6 MultiJet 120 (auto-data.net 22160; tüketim ve emisyon normu Euro 5 sayfası olduğu için boş)
+  - [x] 500X makyaj öncesi 1.4 MultiAir 140 manuel: 2015–2016 (topgear.com Pop Star)
+  - [x] Panda III 0.9 TwinAir 85 Dualogic: 2016 (topgear.com Easy Dualogic)
+  - NCAP ve geri çağırma aynı neslin aynı yıl kayıtlarından (500L 2016 [], 500X manuel [], Panda 2016 hava yastığı kampanyaları)
+  - [ ] 500L 1.3 MultiJet 95 Dualogic, 500L Living, Panda Cross 1.3 MultiJet 80: tek kaynakta makyaj öncesi teknik veri yok
+- [ ] Bravo, Tipo (2010–2014 Fiat listesi bulunamadı; bigpara.hurriyet.com Ocak 2012 kampanya haberi yalnızca model adlarını veriyor)
