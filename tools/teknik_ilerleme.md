@@ -21,6 +21,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Mini | tamamlandı | 2026-10-20 |
 | Nissan | tamamlandı | 2026-10-31 |
 | Peugeot | tamamlandı | 2026-10-31 |
+| Ferrari | tamamlandı | 2026-11-01 |
+| Forthing | sürüyor | 2026-11-01 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -915,3 +917,24 @@ Not: Qashqai e-POWER 190 kaydındaki tüketim 4,5 l/100 km / 100 g/km; autotijd 
 - peugeot-5008-*-hybrid-2026, peugeot-e5008-*-2026 | bagaj_l | autotijd 259 L değerini 5 koltuk diye veriyor, 7 koltuklu kayıtla tutarsız — kullanılmadı
 Yasaklı kaynak kalan: 6.
 
+## 2026-11-01 — Kaynak temizliği: Land Rover, Tesla; Eksik veri: Forthing, Ferrari
+
+Temizlik belgelerinden doldurulan (teknik_yama): land-rover-range-rover-evoque-2026-s-p160.co2_gkm (177, ADAC — TR listesindeki 7,8 l/100 km'ye karşılık), .depo_l (67, Land Rover Belçika), .airbag_sayisi (7, Euro NCAP); tesla-model-y-2026-performance-awd.airbag_sayisi (10, Euro NCAP).
+Tüketim: satıştaki 15 eksiğin tamamı önceki çalışmalarda "araştırıldı, bulunamadı"; yeni tüketim girilmedi (kalan 15). Şanzıman: kalan 7 kaydın tamamı önceki çalışmalarda "araştırıldı, bulunamadı".
+Eksik veri — doldurulan: 75 alan (+2 bagaj yayma), 9 versiyon (Forthing 39, Ferrari 36).
+- Forthing T5 EVO ×3 (alVolante, aynı 1.5 turbo 130 kW / 285 Nm, 7 ileri DCT): cekis Önden Çekiş, kapi 5, silindir 4, agirlik_kg 1550, bagaj_l 480, emisyon_normu Euro 6e, depo_l 55
+- Forthing U-Tour ×2 (alVolante 7 koltuk otomatik): cekis, kapi 5, silindir 4, sifirYuz_sn 10,2, hiz_kmh 180, agirlik_kg 1715, bagaj_l 234, Euro 6e, depo_l 55
+- Ferrari Amalfi (auto-data): RWD, 4 koltuk, 2 kapı, 760 Nm, 320 km/s, 4660×1974×1301 mm, dingil 2670, bagaj 273 L, depo 80 L
+- Ferrari Purosangue (auto-data): 6496 cc, 4973×2028×1589 mm, dingil 3018, 2033 kg, depo 100 L
+- Ferrari 296 GTB (auto-data) / GTS (autodata1): RWD, 2 koltuk, 2 kapı, 2992 cc, 4565×1958×1187 (GTS 1191) mm, dingil 2600, depo 65 L; GTS bagaj 49 L
+Not: Forthing T5 EVO kaydında azami hız 200 km/s (TR basın); alVolante 180 km/s veriyor — elle kontrol önerilir.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- forthing-t5evo-2026-* (3) | co2_gkm | alVolante 166 g/km 7,1 l/100 km'ye ait; kayıttaki TR 6,6 l/100 km ile tutarsız — kullanılmadı
+- forthing-t5evo-2026-premium, forthing-m4utour-2026-* | airbag_sayisi | TR donanımında perde hava yastığı yalnız Executive'de; sayı bulunamadı
+- forthing-m4utour-2026-* | co2_gkm | alVolante 173 g/km 7,5 l/100 km'ye ait; TR 6,8 l/100 km ile tutarsız
+- forthing-* | ncap_yildiz, ncap_test_yili | araştırılmadı (sonraki çalışma)
+- ferrari-* | ncap_yildiz, ncap_test_yili | Euro NCAP Ferrari modellerini test etmiyor
+- ferrari-* | airbag_sayisi, emisyon_normu | auto-data sayfalarında yok
+- ferrari-296-2025-gtb, -gts | agirlik_kg | auto-data/autodata1 değeri (1470/1540 kg) Ferrari'nin kuru ağırlığı — boş ağırlık değil, kullanılmadı
+- ferrari-296-2025-gtb | bagaj_l | auto-data sayfasında yok
+Yasaklı kaynak kalan: 4.
