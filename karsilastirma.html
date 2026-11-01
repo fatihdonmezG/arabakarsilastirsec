@@ -2264,16 +2264,34 @@ function renderArena(cars){
   renderOzet(cars, oz);
 }
 function renderOzet(cars, oz){
-  $('ozetSub').textContent = 'Her başlıkta en iyi değer tam çubuktur; diğer araçlar ona oranla dolar. Fiyat yalnızca bütün araçlar satıştaysa kıyaslanır.';
-  $('ozetBody').innerHTML = oz.satirlar.map(s => {
-    const vals = s.e.filter(x => x.v != null).map(x => x.v);
-    return `<div class="oz-s"><div class="oz-ad">${esc(s.ad)}</div><div class="oz-cs">${s.e.map(({i, v}) => {
-      const c = cars[i];
-      const oran = v == null ? 0 : (s.iyi === 'high' ? v / s.en : s.en / v);
-      const deg = v == null ? '<span class="na">—</span>' : (s.k === 'liste_fiyati_tl' ? num(v) + ' TL' : s.k === 'sistem_puani_10' ? num(v, 1) + ' / 10' : num(v, decimals(v)) + ' ' + s.birim);
-      return `<div class="oz-c${s.kazan.length === 1 && s.kazan[0] === i ? ' kazan' : ''}" style="--seri:var(--seri-${i + 1})"><span class="oz-isim">${esc(c.model)}</span><span class="oz-iz"><i style="--w:${(Math.max(0, Math.min(1, oran)) * 100).toFixed(1)}%"></i></span><b>${deg}</b></div>`;
-    }).join('')}</div></div>`;
-  }).join('') || '<p class="sub">Seçili araçlarda kıyaslanabilir ortak başlık yok.</p>';
+  const deger = (k, v, birim) => v == null ? '—' : k === 'liste_fiyati_tl' ? num(v) + ' TL' : k === 'sistem_puani_10' ? num(v, 1) + ' / 10' : num(v, decimals(v)) + ' ' + birim;
+  const toplam = oz.satirlar.length, berabere = oz.satirlar.filter(s => s.kazan.length !== 1).length;
+  // Skor tabelası: her aracın kazandığı başlık sayısı tek bir şeritte
+  const parca = cars.map((c, i) => ({c, i, n: oz.puan[i]})).filter(x => x.n > 0);
+  const serit = parca.map(x => `<span class="sk-p" style="--seri:var(--seri-${x.i + 1});flex:${x.n}"><b>${x.n}</b> ${esc(x.c.model)}</span>`).join('')
+    + (berabere ? `<span class="sk-p sk-ber" style="flex:${berabere}"><b>${berabere}</b> berabere</span>` : '');
+  $('ozetSub').textContent = `${toplam} başlıkta kıyaslandı. Fiyat yalnızca bütün araçlar satıştaysa kıyaslanır; verisi olmayan araç o başlıkta yarışa girmez.`;
+  const kutu = (s, j) => {
+    const sirali = s.e.filter(x => x.v != null).sort((a, b) => s.iyi === 'high' ? b.v - a.v : a.v - b.v);
+    const tek = s.kazan.length === 1;
+    const kz = tek ? cars[s.kazan[0]] : null;
+    const ikinci = tek ? sirali.find(x => x.i !== s.kazan[0]) : null;
+    let fark = '';
+    if (tek && ikinci) {
+      const d = Math.abs(sirali[0].v - ikinci.v), dc = Math.max(decimals(sirali[0].v), decimals(ikinci.v));
+      const yuzde = Math.round(d / ikinci.v * 100);
+      fark = `<span class="ok-fark">${s.iyi === 'high' ? '+' : '−'}${s.k === 'liste_fiyati_tl' ? num(d) + ' TL' : num(+d.toFixed(dc), dc) + ' ' + (s.k === 'sistem_puani_10' ? 'puan' : s.birim)}${yuzde > 0 ? ` <small>(%${yuzde})</small>` : ''}</span>`;
+    }
+    const digerleri = s.e.filter(x => !(tek && x.i === s.kazan[0])).map(x => `<li style="--seri:var(--seri-${x.i + 1})"><span>${esc(cars[x.i].model)}</span><b>${deger(s.k, x.v, s.birim)}</b></li>`).join('');
+    return `<div class="ok${tek ? '' : ' ber'}" style="--j:${j};${tek ? `--seri:var(--seri-${s.kazan[0] + 1})` : ''}">
+      <div class="ok-ad">${esc(s.ad)}</div>
+      ${tek ? `<div class="ok-kz"><span class="ok-isim">${esc(kz.model)}</span><b>${deger(s.k, sirali[0].v, s.birim)}</b>${fark}</div>` : `<div class="ok-kz"><span class="ok-isim">Berabere</span><b>${deger(s.k, sirali[0].v, s.birim)}</b></div>`}
+      <ul class="ok-dig">${digerleri}</ul>
+    </div>`;
+  };
+  $('ozetBody').innerHTML = toplam
+    ? `<div class="skor" aria-label="Kazanılan başlık sayıları">${serit}</div><div class="ok-izgara">${oz.satirlar.map(kutu).join('')}</div>`
+    : '<p class="sub">Seçili araçlarda kıyaslanabilir ortak başlık yok.</p>';
   const el = $('ozet');
   el.classList.remove('gorundu');
   if (!('IntersectionObserver' in window)) { el.classList.add('gorundu'); return; }
