@@ -129,16 +129,16 @@ body .hero .scope{display:none}
 .ac-fiyat b{font-family:var(--display);font-size:1rem;color:var(--ink)}
 .ac-btn{margin-top:auto;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;min-height:36px}
 /* VS: köşeleri yuvarlatılmış eşkenar dörtgen */
-.vs{flex:none;align-self:center;display:grid;place-items:center;width:44px;height:44px;margin:0 -28px;z-index:4;border-radius:11px;transform:rotate(45deg);background:var(--ink);box-shadow:0 0 0 5px #fff,0 10px 22px -8px rgba(15,26,43,.6);color:#fff;font-family:var(--display);font-weight:900;font-size:.85rem}
-.vs b{transform:rotate(-45deg)}
-.ar-kartlar.n3 .vs,.ar-kartlar.n4 .vs{width:34px;height:34px;font-size:.7rem;margin:0 -22px}
+.ar-vs{flex:none;align-self:center;display:grid;place-items:center;width:44px;height:44px;margin:0 -28px;z-index:4;border-radius:11px;transform:rotate(45deg);background:var(--ink);box-shadow:0 0 0 5px #fff,0 10px 22px -8px rgba(15,26,43,.6);color:#fff;font-family:var(--display);font-weight:900;font-size:.85rem}
+.ar-vs b{transform:rotate(-45deg)}
+.ar-kartlar.n3 .ar-vs,.ar-kartlar.n4 .ar-vs{width:34px;height:34px;font-size:.7rem;margin:0 -22px}
 @media (prefers-reduced-motion:no-preference){
   .arena.giris .ar-ust>*{animation:arYuksel .6s cubic-bezier(.2,.8,.2,1) both}
   .arena.giris .ar-karar{animation-delay:1.05s}
   .arena.giris .ac{animation:acGir .95s cubic-bezier(.16,.9,.25,1.06) both;animation-delay:calc(.12s + var(--i)*.12s)}
   .arena.giris .ac-sahne img,.arena.giris .ac-sahne .amblem-kart{animation:acSurus 1.1s cubic-bezier(.16,.9,.25,1) both;animation-delay:calc(.12s + var(--i)*.12s)}
   .arena.giris .ac-iz{animation:acIz 1.1s ease-out both;animation-delay:calc(.12s + var(--i)*.12s)}
-  .arena.giris .vs{animation:vsDon .7s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(.75s + var(--i)*.1s)}
+  .arena.giris .ar-vs{animation:vsDon .7s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(.75s + var(--i)*.1s)}
   .arena.giris .ac-muhur{animation:muhurBas .55s cubic-bezier(.3,1.7,.5,1) 1.3s both}
   .arena.giris .ac-halka{animation:halkaDol 1.2s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.9s + var(--i)*.12s)}
 }
@@ -207,7 +207,7 @@ body .hero .scope{display:none}
   .ar-kartlar.n2 .ac-on{border-left:0;padding-left:0;justify-items:start;text-align:left;border-top:1px solid var(--line);padding-top:6px}
   .ar-kartlar.n2 .ac-fiyat{flex-direction:column;align-items:flex-start;gap:0}
   .ac-muhur{width:50px;height:50px}.ac-muhur b{font-size:.85rem}.ac-muhur small{font-size:.46rem}
-  .vs{width:34px;height:34px;font-size:.7rem;margin:0 -21px}
+  .ar-vs{width:34px;height:34px;font-size:.7rem;margin:0 -21px}
   .dz,.dz-bas{grid-template-columns:1fr 92px 1fr;gap:6px}
   .dz-d{font-size:.88rem}
   .dz-fark{display:block;margin:0}
@@ -218,3 +218,21 @@ body .hero .scope{display:none}
 .pickers .panel{border-top-color:var(--seri)!important;--sc:var(--seri)}
 @media (max-width:640px){.ps-yol{top:auto;bottom:-2px}}
 .ps-yol{bottom:5px!important}
+
+/* Hazır karşılaştırmalar: pist burada, koyu zeminde */
+.hazir-izgara{display:grid;gap:14px;margin-top:12px}
+.presets .pist{background:linear-gradient(135deg,var(--derin-1,#0E2A4F),var(--derin-2,#1A4A86));border-color:transparent;box-shadow:0 20px 40px -26px rgba(15,26,43,.7)}
+.presets .plist{align-content:start}
+@media (min-width:980px){.hazir-izgara{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start}.hazir-izgara .plist{grid-template-columns:1fr 1fr}}
+.presets .pcard .vs{color:var(--muted)}
+
+/* Boyutlar yan yana: sade tablo */
+.btablo-k{overflow-x:auto;max-width:760px}
+.btablo{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+.btablo th,.btablo td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+.btablo thead th{font-size:.82rem;font-weight:800;color:var(--ink);border-bottom:2px solid var(--line)}
+.btablo thead th:first-child,.btablo tbody th{text-align:left;font-weight:600;color:var(--muted)}
+.btablo tbody tr:last-child>*{border-bottom:0}
+.btablo .bno{display:inline-grid;place-items:center;width:20px;height:20px;margin-right:6px;border-radius:6px;background:var(--seri);color:#fff;font-size:.7rem;font-weight:900;vertical-align:1px}
+.btablo .bfark{color:var(--muted);font-size:.82rem}
+.btablo .bfark b{color:var(--ink)}

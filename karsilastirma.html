@@ -252,16 +252,12 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 </header>
 
 <section class="hero">
-  <div class="wrap hero-inner hero-pist">
-    <div class="hp-sol">
+  <div class="wrap hero-inner">
     <h1>Araç karşılaştırma</h1>
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
     <p class="scope" id="scope">Veritabanı, güncel Türkiye model gamı ve tarihsel referans amaçlı, satıştan kalkmış modellerden oluşuyor. Verisi olmayan satırlarda "—" görünür.</p>
-    <a class="btn primary hp-btn" href="#pickers">Kendi karşılaştırmanı kur ↓</a>
-    </div>
-    <div class="pist" id="pist" aria-label="Hazır karşılaştırmalar" aria-live="polite"></div>
   </div>
 </section>
 
@@ -302,14 +298,17 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 
   <section class="dims karsilastirma-kart" aria-labelledby="dimsTitle">
     <h2 id="dimsTitle">Boyutlar yan yana</h2>
-    <p class="sub">Her ölçüde çubuklar sıfırdan başlar ve en büyük değere göre ölçeklenir; küçük farklar bu yüzden görsel olarak da küçük görünür.</p>
+    <p class="sub">Dış ölçüler ve bagaj hacmi yan yana.</p>
     <div id="dimsBody"></div>
   </section>
 
   <section class="presets karsilastirma-kart" aria-labelledby="presetsTitle">
     <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
-    <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
-    <div class="plist" id="presetList"></div>
+    <p class="sub">Aynı sınıftan hazır eşleşmeler. Pistte sırayla dönerler; birine tıklayınca yukarıda açılır.</p>
+    <div class="hazir-izgara">
+      <div class="pist" id="pist" aria-label="Hazır karşılaştırmalar" aria-live="polite"></div>
+      <div class="plist" id="presetList"></div>
+    </div>
   </section>
 
   <section class="sources karsilastirma-kart" aria-label="Kaynaklar">
@@ -1989,18 +1988,16 @@ function renderPresets(){
 
 const DIM_ROWS = [['uzunluk_mm','Uzunluk'],['genislik_mm','Genişlik'],['yukseklik_mm','Yükseklik'],['dingil_mm','Dingil mesafesi'],['bagaj_l','Bagaj hacmi','L']];
 function renderDims(cars){
-  let out='';
-  DIM_ROWS.forEach(([key,label,unit])=>{
-    const vals = cars.map(c=>c.s[key]);
-    if(vals.every(v=>v==null)) return;
-    const max = Math.max(...vals.filter(v=>v!=null));
-    out += `<div class="dgrp"><div class="dname">${label}</div>` + cars.map((c,i)=>{
-      const v=c.s[key];
-      const bar = v==null ? '' : `<span class="dbar" style="width:${(v/max*100).toFixed(1)}%"></span>`;
-      return `<div class="drow"><span class="dcar">${esc(c.marka+' '+c.model)}</span><span class="dtrack">${bar}</span><span class="dv">${v==null?'veri yok':num(v)+' '+(unit||'mm')}</span></div>`;
-    }).join('') + '</div>';
-  });
-  $('dimsBody').innerHTML = out || '<p class="dnone">Seçili araçlar için ölçü verisi yok.</p>';
+  const satirlar = DIM_ROWS.filter(([key]) => cars.some(c => c.s[key] != null));
+  if (!satirlar.length) { $('dimsBody').innerHTML = '<p class="dnone">Seçili araçlar için ölçü verisi yok.</p>'; return; }
+  const iki = cars.length === 2;
+  const fark = (key, unit) => {
+    const [x, y] = cars.map(c => c.s[key]); if (x == null || y == null || x === y) return iki ? '<td class="bfark">—</td>' : '';
+    const d = Math.abs(x - y), uzun = x > y ? cars[0] : cars[1];
+    const t = unit ? `${num(d)} ${unit}` : (d >= 10 ? `${num(Math.round(d / 10))} cm` : `${num(d)} mm`);
+    return `<td class="bfark"><b>${esc(uzun.model)}</b> ${t} ${key === 'bagaj_l' ? 'daha geniş' : key === 'yukseklik_mm' ? 'daha yüksek' : key === 'genislik_mm' ? 'daha geniş' : 'daha uzun'}</td>`;
+  };
+  $('dimsBody').innerHTML = `<div class="btablo-k"><table class="btablo"><thead><tr><th></th>${cars.map((c, i) => `<th style="--seri:var(--seri-${i + 1})"><span class="bno">${i + 1}</span>${esc(c.model)}</th>`).join('')}${iki ? '<th>Fark</th>' : ''}</tr></thead><tbody>${satirlar.map(([key, label, unit]) => `<tr><th scope="row">${label}</th>${cars.map(c => `<td>${c.s[key] == null ? '<span class="na">—</span>' : num(c.s[key]) + ' ' + (unit || 'mm')}</td>`).join('')}${iki ? fark(key, unit) : ''}</tr>`).join('')}</tbody></table></div>`;
 }
 
 function placeStickyHead(){
@@ -2260,7 +2257,7 @@ function renderArena(cars){
       <h2 class="ar-baslik">${baslik}</h2>
       <p class="ar-karar">${karar}</p>
     </div>
-    <div class="ar-kartlar n${cars.length}">${cars.map((c, i) => kart(c, i) + (i < cars.length - 1 ? `<span class="vs" aria-hidden="true" style="--i:${i}"><b>VS</b></span>` : '')).join('')}</div>`;
+    <div class="ar-kartlar n${cars.length}">${cars.map((c, i) => kart(c, i) + (i < cars.length - 1 ? `<span class="ar-vs" aria-hidden="true" style="--i:${i}"><b>VS</b></span>` : '')).join('')}</div>`;
   const anahtar = cars.map(c => c.id).join(',');
   const ar = $('arena');
   if (anahtar !== arenaAnahtar) { ar.classList.remove('giris'); void ar.offsetWidth; ar.classList.add('giris'); arenaAnahtar = anahtar; }
