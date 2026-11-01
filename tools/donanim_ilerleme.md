@@ -7,7 +7,7 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 
 | Marka | Durum | Son çalışma | Kalan boş alan (satıştaki versiyonlar) |
 |---|---|---|---|
-| Renault | devam ediyor | 2026-10-17 | 231 |
+| Renault | devam ediyor | 2026-11-01 | 195 |
 | Fiat | devam ediyor | 2026-10-17 | 249 |
 | Toyota | devam ediyor | 2026-10-19 | 147 |
 | Hyundai | devam ediyor | 2026-10-31 | 95 |
@@ -32,6 +32,7 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Honda | devam ediyor | 2026-10-31 | 31 |
 | Alfa Romeo | devam ediyor | 2026-10-31 | 11 |
 | Jaecoo | devam ediyor | 2026-10-31 | 31 |
+| BYD | devam ediyor | 2026-11-01 | 46 |
 
 ## Çalışma günlüğü
 
@@ -242,3 +243,23 @@ Araştırıldı, bulunamadı:
 - Jaecoo Evolve 4x2 ve 4x4: "Gelişmiş Ses Sistemi" yok, SONY var; mevcut ses sistemi değerleri dolu olduğu için dokunulmadı.
 
 Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Junior (iki versiyon) acilir_tavan "Opsiyonel"; broşürde açılır tavan Speciale+ için standart. Jaecoo 7 hız sabitleyici sayfada "Akıllı Hız Sabitleme Sistemi" (adaptif ifadesi geçmiyor), sitede "Var".
+
+### 2026-11-01: Renault (59 alan, 8 versiyon), BYD (0 alan)
+
+Seçim notu: bu çalışmada yalnızca arama sonuçlarında çıkan resmi bağlantılar açılabildi; marka sitelerinin çoğu (omodajaecoo.com.tr, bydauto.com.tr sayfaları, tesla.com/tr_tr, Fiat, Volkswagen, Skoda, Seat, MG fiyat/donanım sayfaları) doğrudan açılamadı. Renault Türkiye teknik broşürleri (cdn.group.renault.com/ren/tr) aramada çıktığı için Renault işlendi; ikinci marka olarak BYD denendi.
+
+Kaynaklar: Renault Türkiye teknik broşürleri: Duster (15.01.2026; Evolution ve Techno sütunları), Scenic E-Tech (Nisan 2026; tek sütun Esprit Alpine), Renault 5 E-Tech (Haziran 2025; Techno), Rafale (tek sütun Esprit Alpine), Megane E-Tech (Techno ve Iconic sütunları).
+
+Doldurulan: Renault 59 alan (Duster Evolution Eco-G 120 ve üç Techno versiyonu, Scenic Esprit Alpine EV87, Rafale Esprit Alpine, Megane E-Tech Techno EV60, Renault 5 Techno EV40 2025). Klima tipiyle güncellenen ("Var" kayıtları): 3 (Duster Techno TCe 145, Scenic, Rafale); tipiyle doldurulan boş klima: 1 (Renault 5 EV40).
+
+Araştırıldı, bulunamadı:
+- BYD genel: bydauto.com.tr teknik özellikler ve donanım tablosu PDF'lerinde (Seal 21.01.2026) ●/— işaretleri metne satırlarla eşleşmeden geçiyor; Design ve Excellence sütunları ayırt edilemedi. Seal, Sealion 7, Han, Tang alanları boş kaldı; klima hâlâ yalnızca "Var". Bir sonraki denemede görsel okuma ya da model sayfası gerekli.
+- Renault Duster: arka havalandırma, elektrikli koltuk (yalnızca manuel ayarlı ön koltuklar), açılır tavan, elektrikli bagaj, start-stop, navigasyon tabloda yok. Techno döşeme yarı deri; deri olarak yazılmadı. Techno Full Hybrid ve Hybrid 4x4 klimaları "Var (otomatik)" olarak kayıtlı; dokunulmadı.
+- Renault Scenic: döşeme kumaş ve suni deri (yazılmadı); start-stop yok.
+- Renault Rafale: 360° kamera Gelişmiş Park Paketi'nde (paket adı sitede doğrulanamadı, yazılmadı).
+- Renault 5 EV40 2025: 360 kamera, arka havalandırma, cam tavan, elektrikli bagaj listede yok; elektrikli koltuk yalnızca elektrikli bel desteği; döşeme kumaş/denim. Renault 5 EV52 2026: broşür Haziran 2025 tarihli; 2026 için kullanılmadı.
+- Renault Captur: teknik broşür (Eylül 2024) mild hybrid 160 hp listeliyor, sitedeki kayıt 140 hp; kullanılmadı. Austral MY25 broşürü de mild hybrid 160 diyor (kayıt 150); kullanılmadı.
+- Megane Sedan Touch ve Icon, Clio (6. nesil): Türkiye broşürü aramada bulunamadı.
+- Toyota Corolla Katalog 2026 paket ayrımı yapmıyor; Lexus LBX broşürü Nisan 2023 tarihli; Citroën C4 X kataloğu tarihsiz ve Hybrid 145'i listelemiyor. Kullanılmadı.
+
+Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Duster teknik broşüründe kör nokta ve multiview kamera Techno'da opsiyonel, sitede Techno versiyonlarında "Var". Megane E-Tech Techno'da broşüre göre kör nokta ve yorgunluk tespiti yok (Yok yazıldı).
