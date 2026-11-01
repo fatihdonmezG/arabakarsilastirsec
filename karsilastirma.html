@@ -2314,11 +2314,13 @@ const PIST_SURE = 6500;
 function pistCiz(){
   const el = $('pist'); if (!el || !PRESETS.length) return;
   const sira = pistSira % PRESETS.length, p = PRESETS[sira], [a, b] = p.ids.slice(0, 2).map(byId);
-  const olcu = [['guc_hp', 'Güç', 'HP', 'high'], kEV(a) && kEV(b) ? ['menzil_km_wltp', 'Menzil', 'km', 'high'] : ['sifirYuz_sn', '0-100', 'sn', 'low'], ['tork_nm', 'Tork', 'Nm', 'high'], ['bagaj_l', 'Bagaj', 'L', 'high']]
-    .filter(([k]) => typeof a.s[k] === 'number' && typeof b.s[k] === 'number').slice(0, 3);
-  // Rakamlar pano gibi tek tek döner: her karakter ayrı hücrede
-  let h = 0;
-  const pano = t => [...String(t)].map(ch => `<i style="--h:${h++}">${ch === ' ' ? '&nbsp;' : esc(ch)}</i>`).join('');
+  const ikiEV = kEV(a) && kEV(b), ikiYakit = !kEV(a) && !kEV(b);
+  const olcu = [
+    ['sistem_puani_10', 'Sistem puanı', '/ 10', 'high'], ['guc_hp', 'Güç', 'HP', 'high'], ['tork_nm', 'Tork', 'Nm', 'high'], ['sifirYuz_sn', '0-100 km/s', 'sn', 'low'],
+    ikiEV ? ['menzil_km_wltp', 'Menzil', 'km', 'high'] : ikiYakit ? ['tuketim_l100km', 'Tüketim', 'l/100 km', 'low'] : null,
+    ['bagaj_l', 'Bagaj', 'L', 'high'], ['ncap_yildiz', 'Euro NCAP', '★', 'high'], ['garanti_yil', 'Garanti', 'yıl', 'high']
+  ].filter(x => x && typeof a.s[x[0]] === 'number' && typeof b.s[x[0]] === 'number').slice(0, 6);
+  const yaz = (k, v) => k === 'sistem_puani_10' ? num(v, 1) : num(v, decimals(v));
   const garaj = (c, i) => `<div class="gj" style="--seri:var(--seri-${i + 1})">
       <div class="gj-bolme">
         <span class="gj-no">${i + 1}</span>
@@ -2327,16 +2329,22 @@ function pistCiz(){
       </div>
       <div class="gj-ad"><small>${esc(c.marka)}</small><b>${esc(c.model)}</b><span>${esc(c.versiyon)}</span></div>
     </div>`;
-  const satir = ([k, ad, birim, iyi]) => {
-    const va = a.s[k], vb = b.s[k], kz = va === vb ? '' : (iyi === 'high' ? va > vb : va < vb) ? 'a' : 'b';
-    return `<div class="tb-s"><span class="tb-l${kz === 'a' ? ' on' : ''}" style="--seri:var(--seri-1)"></span><span class="tb-d sol">${pano(num(va, decimals(va)))}</span><span class="tb-ad">${ad}<small>${birim}</small></span><span class="tb-d">${pano(num(vb, decimals(vb)))}</span><span class="tb-l${kz === 'b' ? ' on' : ''}" style="--seri:var(--seri-2)"></span></div>`;
+  // Halat çekme: çubuk iki aracın payına göre bölünür (düşük olan iyiyse ters orantı)
+  const satir = ([k, ad, birim, iyi], j) => {
+    const va = a.s[k], vb = b.s[k], pa = iyi === 'high' ? va : 1 / va, pb = iyi === 'high' ? vb : 1 / vb;
+    const pay = pa / (pa + pb), kz = va === vb ? '' : pay > .5 ? 'a' : 'b';
+    return `<div class="ck" style="--j:${j};--pay:${(pay * 100).toFixed(1)}%">
+      <div class="ck-ad"><span>${ad}</span><small>${birim} · ${iyi === 'high' ? 'yüksek iyi' : 'düşük iyi'}</small></div>
+      <div class="ck-cubuk${kz ? ' kz-' + kz : ' esit'}"><span class="ck-a">${yaz(k, va)}</span><span class="ck-b">${yaz(k, vb)}</span><i class="ck-orta"></i></div>
+      <div class="ck-birim">${birim}</div>
+    </div>`;
   };
   el.innerHTML = `
     <div class="vt-ust"><span class="vt-seg">${esc(p.seg)}</span><span class="vt-say">Hazır karşılaştırma ${sira + 1} / ${PRESETS.length}</span></div>
     <div class="vt-govde">
       ${garaj(a, 0)}
-      <div class="tabela" aria-label="${esc(a.model + ' ve ' + b.model + ' kısa kıyas')}">
-        <div class="tb-bas"><span>${esc(a.model)}</span><b>skor</b><span>${esc(b.model)}</span></div>
+      <div class="cekis" aria-label="${esc(a.model + ' ve ' + b.model + ' kısa kıyas')}">
+        <div class="ck-bas"><span style="--seri:var(--seri-1)">${esc(a.model)}</span><span style="--seri:var(--seri-2)">${esc(b.model)}</span></div>
         ${olcu.map(satir).join('')}
       </div>
       ${garaj(b, 1)}
