@@ -228,6 +228,7 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
 <link rel="stylesheet" href="assets/tema-acik.css">
+<link rel="stylesheet" href="assets/karsilastir.css">
 <script src="assets/tema.js"></script>
 </head>
 <body>
@@ -268,13 +269,16 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <p class="fcount" id="fCount" aria-live="polite"></p>
   </section>
 
-  <section class="presets karsilastirma-kart" aria-labelledby="presetsTitle">
-    <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
-    <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
-    <div class="plist" id="presetList"></div>
-  </section>
 
   <section class="pickers" id="pickers" aria-label="Araç seçimi"></section>
+
+  <section class="arena" id="arena" aria-label="Karşılaştırılan araçlar"></section>
+
+  <section class="ozet karsilastirma-kart" id="ozet" aria-labelledby="ozetT">
+    <h2 id="ozetT">Başlık başlık kim önde?</h2>
+    <p class="sub" id="ozetSub"></p>
+    <div id="ozetBody"></div>
+  </section>
 
   <div class="tools">
     <label class="switch"><input type="checkbox" id="diff"> Sadece farkları göster</label>
@@ -296,6 +300,12 @@ footer{margin-block:80px 64px;padding-top:24px;border-top:1px solid var(--divide
     <h2 id="dimsTitle">Boyutlar yan yana</h2>
     <p class="sub">Her ölçüde çubuklar sıfırdan başlar ve en büyük değere göre ölçeklenir; küçük farklar bu yüzden görsel olarak da küçük görünür.</p>
     <div id="dimsBody"></div>
+  </section>
+
+  <section class="presets karsilastirma-kart" aria-labelledby="presetsTitle">
+    <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
+    <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
+    <div class="plist" id="presetList"></div>
   </section>
 
   <section class="sources karsilastirma-kart" aria-label="Kaynaklar">
@@ -2162,7 +2172,7 @@ function render(){
     ? `<a class="hsrc" href="${esc(c.fotoKaynakUrl)}" target="_blank" rel="noopener">Fotoğraf: ${esc(c.fotoKaynakAd||'Kaynak')} ↗</a>`
     : '';
 function kaynakSite(u){ try { return new URL(u).hostname.replace(/^www\./,''); } catch(e) { return 'kaynak'; } }
-  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader">${photoHtml(c)}<div class="hname">${esc(c.marka+' '+c.model)}</div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div>${c.durum?`<div class="hnote">⚠ ${esc(c.durum)}</div>`:''}<a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a>${fotoSrcHtml(c)?'<br>'+fotoSrcHtml(c):''}</div>`;
+  const head = (side,c)=>`<div class="hcell ${side}" role="columnheader">${photoHtml(c)}<div class="hname"><span class="mk">${esc(c.marka)}</span> <b>${esc(c.model)}</b></div><div class="hsub">${c.yil} model, ${esc(c.versiyon)}</div>${c.durum?`<div class="hnote">⚠ ${esc(c.durum)}</div>`:''}<a class="hsrc" href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener">Kaynak: ${esc(c.kaynakAd)} ↗</a>${fotoSrcHtml(c)?'<br>'+fotoSrcHtml(c):''}</div>`;
   $('head').innerHTML = '<div class="hgap" aria-hidden="true"></div>' + sides.map((s,i)=>head(s,cars[i])).join('');
   const ALL_KEYS = GROUPS.flatMap(g=>g.rows.map(r=>r[0]));
   $$('#head .hcell').forEach((el,i)=>{
@@ -2171,13 +2181,122 @@ function kaynakSite(u){ try { return new URL(u).hostname.replace(/^www\./,''); }
     if(window.markaLinkKisa) el.insertAdjacentHTML('beforeend', window.markaLinkKisa(c.marka, !isDiscontinued(c)));
   });
   renderDims(cars);
-  $('shead').innerHTML = '<div class="sgap">Karşılaştırılan</div>' + cars.map((c,i)=>`<div class="scell"><div class="snum">Araç ${i+1}</div><div class="sname">${esc(c.marka+' '+c.model)}</div><div class="ssub">${c.yil} · ${esc(c.versiyon)}</div></div>`).join('');
+  $('shead').innerHTML = '<div class="sgap">Karşılaştırılan</div>' + cars.map((c,i)=>`<div class="scell"><div class="snum">Araç ${i+1}</div><div class="sname"><span class="mk">${esc(c.marka)}</span> ${esc(c.model)}</div><div class="ssub">${c.yil} · ${esc(c.versiyon)}</div></div>`).join('');
   placeStickyHead();
   history.replaceState(null,'','#k='+cars.map(c=>encodeURIComponent(c.id)).join(','));
+  renderArena(cars);
 
   const seen = new Set();
   const list = cars.filter(c=>{ if(seen.has(c.id)) return false; seen.add(c.id); return true; });
   $('sourceList').innerHTML = list.map(c=>{ const ek=c.ekKaynak?[...new Map(Object.values(c.ekKaynak).map(x=>[x.url,x])).values()]:[]; return `<li>${esc(c.marka+' '+c.model+' '+c.versiyon)} — <a href="${esc(c.kaynakUrl)}" target="_blank" rel="noopener" title="${esc(c.kaynakAd||'')}">${esc(kaynakSite(c.kaynakUrl))}</a>${ek.length?' · ek veri: '+[...new Map(ek.map(x=>[kaynakSite(x.url),x])).values()].map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener" title="${esc(x.ad||'')}">${esc(kaynakSite(x.url))}</a>`).join(', '):''}</li>`; }).join('');
+}
+
+
+/* ---------- Arena: seçilen araçlar sahneye girer, başlık başlık kim önde ---------- */
+const K_KASA = k => { k = k || ''; if (/pick/i.test(k)) return 'pickup'; if (/MPV|Minivan|Van/i.test(k)) return 'mpv'; if (/SUV|Crossover|Arazi|Off-?Road/i.test(k)) return 'suv'; if (/Coupe|Coupé|Cabrio|Roadster|Targa|Spider|Spyder/i.test(k)) return 'spor'; return 'binek'; };
+const K_BOY = l => !l ? null : l < 4200 ? 'AB' : l < 4600 ? 'C' : l < 4900 ? 'D' : 'EF';
+const K_SINIF = {suv:{AB:'Küçük SUV',C:'Kompakt SUV',D:'Orta boy SUV',EF:'Büyük SUV'}, binek:{AB:'Küçük otomobil',C:'Kompakt otomobil',D:'Orta sınıf otomobil',EF:'Üst sınıf otomobil'}, mpv:{AB:'Küçük MPV',C:'Kompakt MPV',D:'Orta boy MPV',EF:'Büyük MPV'}, spor:{AB:'Spor otomobil',C:'Spor otomobil',D:'Spor otomobil',EF:'Büyük spor otomobil'}, pickup:{AB:'Pick-up',C:'Pick-up',D:'Pick-up',EF:'Pick-up'}};
+const kSinif = c => { const b = K_BOY(c.s.uzunluk_mm); return b ? K_SINIF[K_KASA(c.s.kasa)][b] : null; };
+const kEV = c => /^Elektrik/i.test(c.s.yakit || '');
+// Başlıklar: [alan, ad, birim, iyi yön]
+const OZET_BASLIK = [
+  ['sistem_puani_10', 'Sistem puanı', '/ 10', 'high'],
+  ['liste_fiyati_tl', 'Liste fiyatı', 'TL', 'low'],
+  ['guc_hp', 'Beygir gücü', 'HP', 'high'],
+  ['tork_nm', 'Azami tork', 'Nm', 'high'],
+  ['sifirYuz_sn', '0-100 km/s', 'sn', 'low'],
+  ['tuketim_l100km', 'Ortalama tüketim', 'l/100 km', 'low'],
+  ['menzil_km_wltp', 'Menzil (WLTP)', 'km', 'high'],
+  ['bagaj_l', 'Bagaj hacmi', 'L', 'high'],
+  ['ncap_yildiz', 'Euro NCAP', 'yıldız', 'high'],
+  ['garanti_yil', 'Araç garantisi', 'yıl', 'high']
+];
+function ozetHesap(cars){
+  const satirlar = [];
+  OZET_BASLIK.forEach(([k, ad, birim, iyi]) => {
+    const e = cars.map((c, i) => ({i, v: typeof c.s[k] === 'number' ? c.s[k] : null}));
+    const n = e.filter(x => x.v != null);
+    if (n.length < 2) return;
+    if (k === 'liste_fiyati_tl' && n.length < cars.length) return;  // fiyatı olmayan varsa fiyat başlığı kıyaslanmaz
+    const vs = n.map(x => x.v), en = iyi === 'high' ? Math.max(...vs) : Math.min(...vs);
+    const kazan = vs.every(v => v === vs[0]) ? [] : n.filter(x => x.v === en).map(x => x.i);
+    satirlar.push({k, ad, birim, iyi, e, en, kazan});
+  });
+  const puan = cars.map((_, i) => satirlar.filter(s => s.kazan.length === 1 && s.kazan[0] === i).length);
+  const enCok = Math.max(...puan), onde = puan.filter(p => p === enCok).length === 1 && enCok > 0 ? puan.indexOf(enCok) : -1;
+  return {satirlar, puan, onde};
+}
+let arenaAnahtar = '';
+function renderArena(cars){
+  const oz = ozetHesap(cars), P = window.PUANLAR || {};
+  const siniflar = uniq(cars.map(kSinif).filter(Boolean));
+  const tl = v => Number(v).toLocaleString('tr-TR') + ' TL';
+  const kart = (c, i) => {
+    const lg = MARKA_LOGO[c.marka], sp = P[c.id] || {};
+    const gorsel = c.foto ? `<img src="${esc(c.foto)}" alt="${esc(c.marka + ' ' + c.model)}" decoding="async">` : (window.amblemKart ? window.amblemKart(c, {versiyonYok: true}) : '');
+    const fiyat = (c.yil === 2026 && !isDiscontinued(c) && c.s.liste_fiyati_tl) ? `<div class="ac-fiyat"><span>Liste fiyatı</span><b>${tl(c.s.liste_fiyati_tl)}</b></div>` : (isDiscontinued(c) ? `<div class="ac-fiyat"><span>Durum</span><b>Satıştan kalktı</b></div>` : '');
+    return `<article class="ac${oz.onde === i ? ' onde' : ''}" style="--i:${i};--yon:${i < cars.length / 2 ? -1 : 1};--seri:var(--seri-${i + 1})">
+      ${oz.onde === i ? '<span class="ac-tac">Önde</span>' : ''}
+      <a class="ac-sahne${c.foto && /assets\/kesit\//.test(c.foto) ? ' kesit' : ''}" href="arac-detay.html#${encodeURIComponent(c.id)}" aria-label="${esc(c.marka + ' ' + c.model)} detay sayfası"><span class="ac-iz" aria-hidden="true"></span>${gorsel}</a>
+      <div class="ac-ad">${lg ? `<img class="ac-logo" src="assets/logos/${esc(lg)}" alt="">` : ''}<div><h3><span class="mk">${esc(c.marka)}</span> <b>${esc(c.model)}</b></h3><small>${c.yil} · ${esc(c.versiyon)}</small></div></div>
+      <div class="ac-say">
+        <div class="ac-sp"><div class="ac-halka" style="--p:${sp.toplam != null ? sp.toplam * 10 : 0}"><b>${sp.toplam != null ? num(sp.toplam, 1) : '?'}</b></div><span>Sistem<br>puanı</span></div>
+        <div class="ac-on"><b>${oz.puan[i]}<small> / ${oz.satirlar.length}</small></b><span>başlıkta önde</span></div>
+      </div>
+      ${fiyat}
+      <a class="btn small ac-btn" href="arac-detay.html#${encodeURIComponent(c.id)}">Detayı aç</a>
+    </article>`;
+  };
+  const baslik = cars.map(c => `<b>${esc(c.model)}</b>`).join('<i>vs</i>');
+  const karar = oz.onde >= 0
+    ? `<span class="ar-rozet" style="--seri:var(--seri-${oz.onde + 1})">Kıyasta önde</span> <b>${esc(cars[oz.onde].marka + ' ' + cars[oz.onde].model)}</b>, kıyaslanan ${oz.satirlar.length} başlığın ${oz.puan[oz.onde]} tanesinde önde.`
+    : `Kıyaslanan ${oz.satirlar.length} başlıkta açık bir önde olan yok; başlıklar araçlar arasında paylaşılıyor.`;
+  $('arena').innerHTML = `
+    <div class="ar-ust">
+      ${siniflar.length === 1 ? `<span class="ar-sinif">${esc(siniflar[0])}</span>` : ''}
+      <h2 class="ar-baslik">${baslik}</h2>
+      <p class="ar-karar">${karar}</p>
+    </div>
+    <div class="ar-kartlar n${cars.length}">${cars.map((c, i) => kart(c, i) + (i < cars.length - 1 ? `<span class="vs" aria-hidden="true" style="--i:${i}">VS</span>` : '')).join('')}</div>`;
+  const anahtar = cars.map(c => c.id).join(',');
+  const ar = $('arena');
+  if (anahtar !== arenaAnahtar) { ar.classList.remove('giris'); void ar.offsetWidth; ar.classList.add('giris'); arenaAnahtar = anahtar; }
+  renderOzet(cars, oz);
+}
+function renderOzet(cars, oz){
+  const deger = (k, v, birim) => v == null ? '—' : k === 'liste_fiyati_tl' ? num(v) + ' TL' : k === 'sistem_puani_10' ? num(v, 1) + ' / 10' : num(v, decimals(v)) + ' ' + birim;
+  const toplam = oz.satirlar.length, berabere = oz.satirlar.filter(s => s.kazan.length !== 1).length;
+  // Skor tabelası: her aracın kazandığı başlık sayısı tek bir şeritte
+  const parca = cars.map((c, i) => ({c, i, n: oz.puan[i]})).filter(x => x.n > 0);
+  const serit = parca.map(x => `<span class="sk-p" style="--seri:var(--seri-${x.i + 1});flex:${x.n}"><b>${x.n}</b> ${esc(x.c.model)}</span>`).join('')
+    + (berabere ? `<span class="sk-p sk-ber" style="flex:${berabere}"><b>${berabere}</b> berabere</span>` : '');
+  $('ozetSub').textContent = `${toplam} başlıkta kıyaslandı. Fiyat yalnızca bütün araçlar satıştaysa kıyaslanır; verisi olmayan araç o başlıkta yarışa girmez.`;
+  const kutu = (s, j) => {
+    const sirali = s.e.filter(x => x.v != null).sort((a, b) => s.iyi === 'high' ? b.v - a.v : a.v - b.v);
+    const tek = s.kazan.length === 1;
+    const kz = tek ? cars[s.kazan[0]] : null;
+    const ikinci = tek ? sirali.find(x => x.i !== s.kazan[0]) : null;
+    let fark = '';
+    if (tek && ikinci) {
+      const d = Math.abs(sirali[0].v - ikinci.v), dc = Math.max(decimals(sirali[0].v), decimals(ikinci.v));
+      const yuzde = Math.round(d / ikinci.v * 100);
+      fark = `<span class="ok-fark">${s.iyi === 'high' ? '+' : '−'}${s.k === 'liste_fiyati_tl' ? num(d) + ' TL' : num(+d.toFixed(dc), dc) + ' ' + (s.k === 'sistem_puani_10' ? 'puan' : s.birim)}${yuzde > 0 ? ` <small>(%${yuzde})</small>` : ''}</span>`;
+    }
+    const digerleri = s.e.filter(x => !(tek && x.i === s.kazan[0])).map(x => `<li style="--seri:var(--seri-${x.i + 1})"><span>${esc(cars[x.i].model)}</span><b>${deger(s.k, x.v, s.birim)}</b></li>`).join('');
+    return `<div class="ok${tek ? '' : ' ber'}" style="--j:${j};${tek ? `--seri:var(--seri-${s.kazan[0] + 1})` : ''}">
+      <div class="ok-ad">${esc(s.ad)}</div>
+      ${tek ? `<div class="ok-kz"><span class="ok-isim">${esc(kz.model)}</span><b>${deger(s.k, sirali[0].v, s.birim)}</b>${fark}</div>` : `<div class="ok-kz"><span class="ok-isim">Berabere</span><b>${deger(s.k, sirali[0].v, s.birim)}</b></div>`}
+      <ul class="ok-dig">${digerleri}</ul>
+    </div>`;
+  };
+  $('ozetBody').innerHTML = toplam
+    ? `<div class="skor" aria-label="Kazanılan başlık sayıları">${serit}</div><div class="ok-izgara">${oz.satirlar.map(kutu).join('')}</div>`
+    : '<p class="sub">Seçili araçlarda kıyaslanabilir ortak başlık yok.</p>';
+  const el = $('ozet');
+  el.classList.remove('gorundu');
+  if (!('IntersectionObserver' in window)) { el.classList.add('gorundu'); return; }
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { el.classList.add('gorundu'); io.disconnect(); } }), {threshold: .15});
+  io.observe(el);
 }
 
 $('diff').addEventListener('change',render);
