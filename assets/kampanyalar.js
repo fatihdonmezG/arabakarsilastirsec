@@ -6,7 +6,7 @@
 window.KAMPANYALAR = {
   guncelleme: '2026-10-29',
   liste: [
-    {marka:'Renault', modeller:['Clio','Boreal','Megane Sedan','Duster'], tur:'kredi', baslik:'200.000 TL, 6 ay, %0 faizli kredi',
+    {marka:'Renault', modeller:['Clio','Boreal','Megane','Duster'], tur:'kredi', baslik:'200.000 TL, 6 ay, %0 faizli kredi',
      kosul:'Bireysel müşterilere Renault Finans üzerinden. Sıfır faiz için Renault kasko ve Maxxi uzatılmış garanti alınması gerekiyor. Megane Sedan için koşulları yetkili satıcıya sorun.',
      musteri:'bireysel', bitis:'2026-10-31', tarihNot:'Ekim ayı için duyuruldu, bitiş tarihi açıklanmadı.',
      kaynak:[['Webtekno','https://www.webtekno.com/renault-ekim-2026-fiyat-indirim-kampanya-kredi-h226885.html']], kontrol:'2026-10-25'},

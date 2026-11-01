@@ -109,7 +109,7 @@ function render(){
   if(s==='puan') L=L.slice().sort((a,b)=>(b.puan??-1)-(a.puan??-1));
   else if(s==='marka') L=L.slice().sort((a,b)=>a.marka.localeCompare(b.marka,'tr')||a.model.localeCompare(b.model,'tr'));
   $('liste').innerHTML = L.slice(0,goster).map(x=>{
-    const c={marka:x.marka,model:x.model,yil:x.yil}; const f=window.fotoFor?window.fotoFor(c):null;
+    const c={marka:x.marka,model:x.model,yil:x.yil,s:{kasa:x.kasa}}; const f=window.fotoFor?window.fotoFor(c):null;
     const gor = f ? `<div class="gor"><img src="${esc(f.src)}" alt="${esc(x.marka+' '+x.model)}" loading="lazy" decoding="async"></div>` : `<div class="gor amb">${window.amblemKart?window.amblemKart(c,{versiyonYok:true}):''}</div>`;
     return `<article class="ikart">${gor}<div class="ic">
       <h3><span>${esc(x.marka)} ${esc(x.model)} <small>${x.yil}${x.satista?'':' · satıştan kalktı'}</small></span>${x.puan!=null?`<span class="puan" title="Sistem puanı (10 üzerinden)">${String(x.puan).replace('.',',')}</span>`:''}</h3>

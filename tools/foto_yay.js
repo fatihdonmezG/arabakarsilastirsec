@@ -18,8 +18,10 @@ const nesilAd = n => String(n || '').replace(/\s+(sport tourer|grandtour|sw|esta
 const rapor = [], atla = [];
 for (const [key, list] of Object.entries(F)) {
   const [marka, model] = key.split('|');
-  const L = CARS.filter(c => c.marka === marka && c.model === model);
+  const T = CARS.filter(c => c.marka === marka && c.model === model);
   for (const f of list) {
+    // fotoğraf belirli gövdelere aitse (f.kasa) yalnızca o gövdeler hesaba katılır
+    const L = f.kasa ? T.filter(c => f.kasa.includes(c.s.kasa)) : T;
     const kapsanan = L.filter(c => (f.yilMin == null || c.yil >= f.yilMin) && (f.yilMax == null || c.yil <= f.yilMax));
     const nesiller = [...new Set(kapsanan.map(c => c.nesil || ''))];
     if (!kapsanan.length) continue;
