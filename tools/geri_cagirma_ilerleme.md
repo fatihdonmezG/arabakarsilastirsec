@@ -13,6 +13,7 @@ Kaynak listesi: `node tools/geri_cagirma_yaz.js --liste --satista`
 | 2026-10-30 | Cadillac, Chevrolet, GMC, Porsche, Subaru, Honda, Lexus, Mini | Escalade (3: transfer kutusu 26V289, 24 inç jant göbek cıvatası 26V304, elektronik kılavuz 26V114), Tahoe (aynı 3), Sierra 1500 Duramax (2: 26V289, 26V114); Subaru Solterra 71.4 kWh (2: klima/buğu çözücü 25V577, 360 kamera 25V744), Forester 2.0i (2: 18 inç jant 25V033, çocuk koltuğu cıvatası 25V419); Mini Cooper 3 Kapı ve Cabrio (1: emniyet kemeri sarıcısı 25V616); Porsche 911, Macan Electric, Cayenne Electric, Honda Prelude, Lexus NX 350h kayıt yok. Üst sıradaki Avrupa markaları (Skoda, Renault, Opel, Peugeot, Ford, Citroën) KBA erişimi olmadığı için bu çalışmada atlandı; NHTSA'da birebir karşılığı olan modeller seçildi | 14 | 16 kayıt (8 ayrı kampanya) | 268 versiyon |
 | 2026-10-31 | Opel, Peugeot, Ford | Opel Frontera (4 kampanya: fren bağlantısı kaynağı DVSA R/2025/362, fren pedalı braketi pimi R/2025/513, ön kamera hız sınırı uyarısı R/2025/545, 48V BSG kutup kapağı R/2026/072 yalnızca hibrit); Opel Grandland, Corsa, Mokka; Peugeot 3008, e-3008, 5008, e-5008; Ford Kuga, Puma, Explorer, Capri araştırılamadı (kampanyalar KBA listelerinde görülüyor, resmi kayıt açılamadı) | 4 | 14 kayıt (4 ayrı kampanya) | 264 versiyon |
 | 2026-10-31 (2) | Toyota, Kia, Honda | Toyota C-HR (1: park asistanı/360 kamera R/2025/466), Yaris Cross (aynı 1), Kia EV3 (1: gösterge paneli R/2026/139); Toyota Corolla, Corolla Cross, Yaris, Hilux, Kia Stonic, XCeed, Picanto, Honda CR-V kayıt yok (DVSA 2025 ve 2026 sayfaları). Kia Sportage araştırılamadı | 20 | 5 kayıt (2 ayrı kampanya) | 244 versiyon |
+| 2026-11-01 | Renault | Renault 5 E-Tech 2026 (1: çekiş bataryası hücresi SR/00796/26, üretim 12.12.2025 - 28.01.2026); Renault 5 E-Tech 2025, Duster, Clio (Clio VI), Megane Sedan, Austral, Captur, Megane E-Tech, Rafale, Scenic E-Tech kayıt yok (Fransız RappelConso, AB Safety Gate kaynaklı kayıtlar). Boreal araştırılamadı | 16 | 1 kayıt (1 ayrı kampanya) | 228 versiyon |
 
 ## Araştırılamadı
 
@@ -48,6 +49,9 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Kia | Sportage | 2026 (2026-10-31): DVSA SPORTAGE 2024 ve 2025 sayfalarında kayıt yok, 2026 sayfası açılamadı. Aday: KBA 16442R / Kia 261026 gösterge paneli yazılımı (Sportage dahil 13 model, üretim 24.06.2025 - 18.12.2025, Nisan 2026; yalnızca car-recalls.eu'da görüldü; Avustralya REC-006557 tarih vermiyor, Kore üretimi). Ayrıca Polonya TDT kaynaklı Kia 250S54 (NQ5e, dış rotil bağlantı deliği) tarih ve üretim aralığı olmadan görüldü. KBA kaydı doğrulanınca yazılmalı.
 - Erişim notu (2026-10-31, 2. çalışma): DVSA model/yıl sayfaları WebFetch ile doğrudan açılabildi (Toyota için marka adı "TOYOTA (GB) PLC"). Stellantis ve Ford grupları da bu yolla yeniden denenebilir.
 
+- Renault | Boreal | 2026 (2026-11-01): AB'de satılmıyor (Brezilya ve Bursa üretimi); RappelConso/Safety Gate'te kayıt yok, Brezilya (Senacon) ve Türkiye Ticaret Bakanlığı kayıtları açılamadı.
+- Erişim notu (2026-11-01): Fransız RappelConso (rappel.conso.gouv.fr) fiche ve kategori sayfaları WebFetch ile açılabiliyor ama yalnızca arama sonuçlarında çıkan adresler; "Identification du produit dans RAPEX" tarih aralığı üretim aralığıyla örtüşüyor. DVSA adresleri bu çalışmada açılamadı. Stellantis ve Ford grupları için RappelConso aramasıyla devam edilebilir.
+
 ## Hariç tutulanlar (kayıt yok yazılan gruplar)
 
 - Taigo, T-Cross: VW 90V6 emniyet kemeri uyarısı yazılımı (2020-2022 üretimi); Taigo için ayrıca VW 69UK yolcu hava yastığı (üretim 05.2025'te bitiyor).
@@ -74,3 +78,10 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Kia Stonic, XCeed, Picanto 2026: EGR valfi (Stonic, Picanto, üretim 01-02.2024), Picanto ISLA (R/2024/367, üretim 04-05.2024) ve XCeed eski kampanyaları 2026 model yılından önce. DVSA 2025 ve 2026 sayfalarında kayıt yok.
 - Honda CR-V 2026 e:HEV: Safety Gate SR/01451/25 çeki demiri kablosu (üretim 04.2023 - 03.2024) hariç; NHTSA 26V366 lastik tamir kiti ABD tedarikçisine özgü, 25V378 yalnızca 6 ABD aracı.
 - Kia EV3 2026: NHTSA 26V046 / Transport Canada 2026032 EV3'ü kapsamıyor.
+- Renault Duster 2026: RappelConso 47818 / SR/01507/25 LPG valf bloğu contası (üretim 12.06.2024 - 23.10.2024), OR/00145/25 park freni aktüatör sensörü (üretim 12.04.2024 - 07.05.2025), Dacia A12/03197/24 R107 konnektörü (2023-2024) ve A12/02683/23 LPG deposu kaynağı (2023) hariç. Dacia SR/01939/26 arka yaylar (üretim 09.01.2026 - 25.02.2026) yalnızca Dacia Duster III ve Bigster tip onaylarını sayıyor; Renault Duster tip onayı (e19*2018/858*00001) listede yok.
+- Renault Austral 2026: SR/01910/26 ABS-ESP yazılımı (üretim 23.03.2023 - 23.01.2025), OR/00145/25 ve SR/03262/25 park freni (üretim 01.2025 ve 05.2025'te bitiyor), A11/00039/24 kolay erişim koltuğu (2022-2023), A12/00060/23 jant cıvataları (2022) hariç.
+- Renault Captur 2026 mild hybrid: SR/02849/26 çekiş bataryası bara bağlantısı (Symbioz ve Captur II, üretim 01.12.2025 - 06.02.2026) yalnızca çekiş bataryalı E-Tech tam hibriti kapsıyor; 47818 LPG ve park freni kampanyaları hariç.
+- Renault Megane E-Tech, Scenic E-Tech, Rafale 2026: park freni kampanyaları OR/00145/25 ve SR/03262/25 (üretim 05.2025'e kadar) hariç.
+- Renault Clio 2026 (Clio VI): SR/00746/26 salıncak rotil somunu ve önceki kampanyalar yalnızca Clio V tip onayını kapsıyor.
+- Renault Megane Sedan 2026: Megane IV Sedan kampanyaları 2023 ve 2024'te yayımlandı, 2026 model yılı üretiminden önce.
+- Renault 5 E-Tech 2025: SR/00796/26 batarya hücresi üretim aralığı 12.2025'te başlıyor.
