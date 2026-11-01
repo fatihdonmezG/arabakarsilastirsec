@@ -230,3 +230,27 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 
 ### Araştırıldı, bulunamadı (2026-10-31, 2. çalışma)
 - subaru-solterra-2025-e-xtreme-awd.bagaj_l, subaru-solterra-2025-e-xcellent-awd.bagaj_l — TR teknik föyde üç donanım için yalnız iki değer (452 / 441 L) var; hangi donanıma ait olduğu belirsiz. (452 yazılsaydı bagaj_yay e-Xcellent'e de yayardı.)
+
+## 2026-11-01
+
+- Önce: Toplam puanı olmayan 194 / 892 → Sonra: 187 / 892 (7 versiyon puanlandı).
+- Euro NCAP: yeni sonuç yok. Kalan nesil gruplarının tamamı Euro NCAP'te test edilmemiş ya da önceki listelerde (yeni eklenenler aşağıda).
+- Diğer alanlar (Fiat, Renault): 7 alan, 7 versiyon
+  - Fiat 500X makyajlı 1.0 FireFly 120 manuel: tüketim 6,55 (WLTP 6,2–6,9 ortası); 1.3 FireFly 150 DCT: 6,65 (WLTP 6,4–6,9 ortası) — autotijd.be.
+  - Fiat 500X makyaj öncesi 1.4 MultiAir 140 manuel ×2 (2015, 2016): tüketim 6,0 (NEDC, auto-data.net 22096; CO₂ 139 kayıtla aynı).
+  - Fiat 500L 2016 1.3 MultiJet 95: 4,1; 1.6 MultiJet 120: 4,2 (NEDC, Euro 6; car-emissions.com UK VCA verisi).
+  - Fiat Panda III 0.9 TwinAir 85 Dualogic: 4,2 (parkers.co.uk 68 mpg çevrildi; CO₂ 95 kayıtla aynı).
+  - Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 7.
+
+### Euro NCAP testi yok (2026-11-01)
+- KGM Musso Grand ve Musso EV — whatcar.com ("Musso'nun Euro NCAP sonucunu hâlâ bekliyoruz") ve Autotrader Musso EV incelemesi ("dizel sürüm hiç NCAP puanı almadı"). Güvenlik hava yastığı + sürüş destek ile açılmalı.
+- Renault Latitude, SWM G01 Pro — euroncap.com'da sonuç bulunamadı.
+- Fiat Linea (makyaj öncesi) — makyajlı Linea ile aynı durum; Euro NCAP sonucu yok.
+
+### Araştırıldı, bulunamadı (2026-11-01)
+- kgm-*.airbag_sayisi ve sürüş destek kalemleri — ssangyong.com.tr sayfalarına bu çalışmada erişilemedi; erişilebilen kaynaklar yasaklı karşılaştırma siteleri.
+- fiat-egea-*-1.6-multijet-130-dct, fiat-egea-*-1.5-hybrid-130-dct (sedan/HB) .tuketim_l100km, .sifirYuz_sn — erişilebilen kaynaklar yasaklı siteler; auto-data'da DCT sürümü yok.
+- fiat-500l-2020-*.bagaj_l — auto-data.net ve autodata1 makyajlı 500L sayfalarında bagaj yok; parkers açılamadı.
+- renault-kadjar-2021-1.3-tce-160-edc.tuketim_l100km — autotijd.be "resmi tüketim verisi yok".
+- renault-clio-201[78]-st-1.5-dci-90 .sifirYuz_sn, .agirlik_kg — auto-data/autodata1 Grandtour Faz II sayfalarında yok; cars-data.com açılamadı.
