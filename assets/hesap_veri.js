@@ -3,16 +3,95 @@
 window.HESAP_VERI = {
   // Pompa fiyatları, TL/litre
   yakit: {
-    tarih: '2026-11-02',
+    tarih: '2026-11-03',
+    // Benzin (Kurşunsuz 95) ve motorin (EcoForce): Opet il merkezi tavsiye fiyatları, 81 il. LPG: Opet satmadığı için 4 il, 02.11.2026.
     kaynaklar: [
-      {ad: 'doviz.com Yakıt & Şarj (dağıtıcı fiyatları, İstanbul Avrupa)', url: 'https://www.doviz.com/yakit-sarj'},
-      {ad: 'TV5, 2 Kasım 2026 akaryakıt fiyatları (il bazında)', url: 'https://www.tv5.com.tr/benzine-zam-ya-da-indirim-var-mi-iste-2-kasim-2026-guncel-benzin-motorin-ve-lpg-fiyatlari'}
+      {ad: 'Opet akaryakıt fiyatları (il merkezi, resmi)', url: 'https://www.opet.com.tr/akaryakit-fiyatlari'},
+      {ad: 'TV5, 2 Kasım 2026 LPG fiyatları', url: 'https://www.tv5.com.tr/benzine-zam-ya-da-indirim-var-mi-iste-2-kasim-2026-guncel-benzin-motorin-ve-lpg-fiyatlari'}
     ],
     iller: {
-      'İstanbul (Avrupa)': {benzin: 80.40, dizel: 100.50, lpg: 41.20},
-      'İstanbul (Anadolu)': {benzin: 80.30, dizel: 100.30, lpg: 40.60},
-      'Ankara': {benzin: 81.40, dizel: 101.60, lpg: 41.29},
-      'İzmir': {benzin: 81.70, dizel: 101.90, lpg: 41.20}
+      'Adana': {benzin: 82.35, dizel: 102.43, lpg: null},
+      'Adıyaman': {benzin: 82.69, dizel: 102.8, lpg: null},
+      'Afyonkarahisar': {benzin: 82.62, dizel: 102.85, lpg: null},
+      'Ağrı': {benzin: 83.06, dizel: 103.17, lpg: null},
+      'Aksaray': {benzin: 82.42, dizel: 102.5, lpg: null},
+      'Amasya': {benzin: 82.11, dizel: 102.18, lpg: null},
+      'Ankara': {benzin: 81.51, dizel: 101.6, lpg: 41.29},
+      'Antalya': {benzin: 82.76, dizel: 102.91, lpg: null},
+      'Ardahan': {benzin: 82.58, dizel: 102.7, lpg: null},
+      'Artvin': {benzin: 82.41, dizel: 102.51, lpg: null},
+      'Aydın': {benzin: 82.01, dizel: 102.14, lpg: null},
+      'Balıkesir': {benzin: 82.11, dizel: 102.23, lpg: null},
+      'Bartın': {benzin: 81.83, dizel: 101.73, lpg: null},
+      'Batman': {benzin: 82.99, dizel: 103.18, lpg: null},
+      'Bayburt': {benzin: 82.28, dizel: 102.39, lpg: null},
+      'Bilecik': {benzin: 81.48, dizel: 101.35, lpg: null},
+      'Bingöl': {benzin: 83.08, dizel: 103.27, lpg: null},
+      'Bitlis': {benzin: 83.13, dizel: 103.33, lpg: null},
+      'Bolu': {benzin: 81.6, dizel: 101.47, lpg: null},
+      'Burdur': {benzin: 82.57, dizel: 102.75, lpg: null},
+      'Bursa': {benzin: 81.6, dizel: 101.49, lpg: null},
+      'Çanakkale': {benzin: 82.17, dizel: 102.27, lpg: null},
+      'Çankırı': {benzin: 81.92, dizel: 102.01, lpg: null},
+      'Çorum': {benzin: 82.12, dizel: 102.18, lpg: null},
+      'Denizli': {benzin: 82.27, dizel: 102.42, lpg: null},
+      'Diyarbakır': {benzin: 82.98, dizel: 103.18, lpg: null},
+      'Düzce': {benzin: 81.44, dizel: 101.32, lpg: null},
+      'Edirne': {benzin: 81.64, dizel: 101.75, lpg: null},
+      'Elazığ': {benzin: 83.13, dizel: 103.31, lpg: null},
+      'Erzincan': {benzin: 82.52, dizel: 102.63, lpg: null},
+      'Erzurum': {benzin: 82.57, dizel: 102.69, lpg: null},
+      'Eskişehir': {benzin: 81.79, dizel: 101.68, lpg: null},
+      'Gaziantep': {benzin: 82.49, dizel: 102.56, lpg: null},
+      'Giresun': {benzin: 82.33, dizel: 102.45, lpg: null},
+      'Gümüşhane': {benzin: 82.29, dizel: 102.39, lpg: null},
+      'Hakkari': {benzin: 83.14, dizel: 103.33, lpg: null},
+      'Hatay': {benzin: 82.25, dizel: 102.35, lpg: null},
+      'Iğdır': {benzin: 83.06, dizel: 103.16, lpg: null},
+      'Isparta': {benzin: 82.62, dizel: 102.81, lpg: null},
+      'İstanbul (Anadolu)': {benzin: 80.36, dizel: 100.41, lpg: 40.6},
+      'İstanbul (Avrupa)': {benzin: 80.51, dizel: 100.53, lpg: 41.2},
+      'İzmir': {benzin: 81.8, dizel: 101.91, lpg: 41.2},
+      'Kahramanmaraş': {benzin: 82.47, dizel: 102.59, lpg: null},
+      'Karabük': {benzin: 81.85, dizel: 101.74, lpg: null},
+      'Karaman': {benzin: 82.4, dizel: 102.5, lpg: null},
+      'Kars': {benzin: 82.58, dizel: 102.69, lpg: null},
+      'Kastamonu': {benzin: 82.22, dizel: 102.28, lpg: null},
+      'Kayseri': {benzin: 82.52, dizel: 102.61, lpg: null},
+      'Kırıkkale': {benzin: 81.82, dizel: 101.9, lpg: null},
+      'Kırklareli': {benzin: 81.63, dizel: 101.73, lpg: null},
+      'Kırşehir': {benzin: 81.86, dizel: 101.96, lpg: null},
+      'Kilis': {benzin: 82.22, dizel: 102.33, lpg: null},
+      'Kocaeli': {benzin: 80.96, dizel: 100.85, lpg: null},
+      'Konya': {benzin: 82.53, dizel: 102.76, lpg: null},
+      'Kütahya': {benzin: 82.47, dizel: 102.36, lpg: null},
+      'Malatya': {benzin: 82.69, dizel: 102.79, lpg: null},
+      'Manisa': {benzin: 81.88, dizel: 101.98, lpg: null},
+      'Mardin': {benzin: 83, dizel: 103.19, lpg: null},
+      'Mersin': {benzin: 82.34, dizel: 102.42, lpg: null},
+      'Muğla': {benzin: 82.28, dizel: 102.41, lpg: null},
+      'Muş': {benzin: 83.13, dizel: 103.31, lpg: null},
+      'Nevşehir': {benzin: 82.42, dizel: 102.52, lpg: null},
+      'Niğde': {benzin: 82.34, dizel: 102.43, lpg: null},
+      'Ordu': {benzin: 82.13, dizel: 102.18, lpg: null},
+      'Osmaniye': {benzin: 82.23, dizel: 102.34, lpg: null},
+      'Rize': {benzin: 82.27, dizel: 102.37, lpg: null},
+      'Sakarya': {benzin: 81.28, dizel: 101.15, lpg: null},
+      'Samsun': {benzin: 82.1, dizel: 102.17, lpg: null},
+      'Siirt': {benzin: 83.03, dizel: 103.22, lpg: null},
+      'Sinop': {benzin: 82.16, dizel: 102.23, lpg: null},
+      'Sivas': {benzin: 82.52, dizel: 102.59, lpg: null},
+      'Şanlıurfa': {benzin: 82.67, dizel: 102.77, lpg: null},
+      'Şırnak': {benzin: 83.11, dizel: 103.31, lpg: null},
+      'Tekirdağ': {benzin: 81.23, dizel: 101.33, lpg: null},
+      'Tokat': {benzin: 82.16, dizel: 102.23, lpg: null},
+      'Trabzon': {benzin: 82.26, dizel: 102.36, lpg: null},
+      'Tunceli': {benzin: 83.11, dizel: 103.27, lpg: null},
+      'Uşak': {benzin: 82.28, dizel: 102.39, lpg: null},
+      'Van': {benzin: 83.1, dizel: 103.23, lpg: null},
+      'Yalova': {benzin: 81.24, dizel: 101.13, lpg: null},
+      'Yozgat': {benzin: 82.2, dizel: 102.29, lpg: null},
+      'Zonguldak': {benzin: 81.79, dizel: 101.68, lpg: null}
     },
     dagitici: [ // İstanbul Avrupa, 02.11.2026
       {ad: 'Petrol Ofisi', benzin: 80.40, dizel: 100.50, lpg: 41.20},
@@ -33,7 +112,7 @@ window.HESAP_VERI = {
   ev: {
     kademe1: 3.40, kademe2: 5.04, sinir_kwh_ay: 240,
     tarih: '2026-04-04', kaynak: 'EPDK 2026 2. çeyrek mesken tarifesi (akillitarife.com derlemesi)', url: 'https://akillitarife.com/enerji/rehber/tarife/elektrik',
-    not: 'Tarife üç ayda bir değişebilir. Faturanızdaki birim fiyatı yazarsanız hesap ona göre yapılır.'
+    not: 'Tarife üç ayda bir değişebilir. Ekim 2026 haberlerinde 250 kWh için yaklaşık 820 TL fatura verilmesi bu birim fiyatla uyumlu. Faturanızdaki birim fiyatı yazarsanız hesap ona göre yapılır.'
   },
   // Köprü, tünel ve otoyol ücretleri, 1. sınıf (otomobil), KDV dahil, tek yön
   gecis: {
@@ -59,9 +138,9 @@ window.HESAP_VERI = {
     kanun: '7574 sayılı Karayolları Trafik Kanununda Değişiklik Yapılmasına Dair Kanun',
     rg: '27.02.2026, sayı 33181',
     kaynaklar: [
+      {ad: 'Resmî Gazete, 27.02.2026, 7574 sayılı Kanun metni', url: 'https://www.resmigazete.gov.tr/eskiler/2026/02/20260227-0.htm'},
       {ad: 'TBB, 7574 sayılı Kanun karşılaştırma tablosu', url: 'https://www.tbb.gov.tr/sites/default/files/attachments/2026-02/karayollari-tk-karsilastirma-tablosu.pdf'},
-      {ad: 'TŞOF, 7574 sayılı Kanun metni özeti', url: 'https://www.tsof.org.tr/2026/11/11.pdf'},
-      {ad: 'Resmî Gazete, 27.02.2026', url: 'https://www.resmigazete.gov.tr/eskiler/2026/02/20260227.htm'}
+      {ad: 'TŞOF, 7574 sayılı Kanun metni özeti', url: 'https://www.tsof.org.tr/2026/11/11.pdf'}
     ],
     gruplar: [
       {ad: 'Hız (madde 51), yerleşim yeri içi', satir: [
@@ -84,11 +163,11 @@ window.HESAP_VERI = {
       {ad: 'Seyir halinde (madde 46, 55, 67, 73, 78)', satir: [
         ['Cep telefonu, ilk kez', 5000], ['Cep telefonu, bir yılda 2. kez', 10000], ['Cep telefonu, bir yılda 3. kez ve sonrası', 20000, 'Ehliyete 30 gün el konur'],
         ['Emniyet kemeri takmamak', 2500, 'Bir yılda 4. kezde ehliyete el konur'], ['15 yaş altı çocuğu güvenlik sistemi olmadan taşımak', 5000],
-        ['Geçiş üstünlüğü olan araca yol vermemek', 46000, 'Ehliyet ve araç 30 gün'], ['Otoyolda ya da şehirlerarası bölünmüş yolda ters yön', 90000, 'Ehliyet ve araç 60 gün'],
+        ['Ambulans ya da itfaiyeye yol vermemek', 46000, 'Ehliyet ve araç 30 gün'], ['Diğer geçiş üstünlüğü olan araçlara yol vermemek', 15000], ['Otoyolda ya da şehirlerarası bölünmüş yolda ters yön', 90000, 'Ehliyet ve araç 60 gün'],
         ['Konvoyla yol kapatmak', 90000, 'Ehliyet ve araç 60 gün'], ['Saldırmak amacıyla takip etmek ya da araçtan inmek', 180000, 'Ehliyet ve araç 60 gün'],
         ['Drift ve tehlikeli manevra (madde 67/1-d)', 140000, 'Ehliyet ve araç 60 gün']]},
       {ad: 'Diğer', satir: [
-        ['Kış lastiği kuralına uymamak', 6000], ['Gürültü yapan izinsiz değişiklik (sürücüye)', 16000, 'Araç 30 gün trafikten men'], ['İzinsiz teknik değişiklik (işletene)', 5000, 'Araç uygun hale gelene kadar men'],
+        ['Kış lastiği kuralına uymamak', 6000], ['Kurala aykırı ses, görüntü ya da ekran cihazı', 21000, 'Araç 30 gün trafikten men'], ['Gürültü yapan izinsiz değişiklik (sürücüye)', 16000, 'Araç 30 gün trafikten men'], ['İzinsiz teknik değişiklik (işletene)', 5000, 'Araç uygun hale gelene kadar men'],
         ['Radar dedektörü bulundurmak', 185000, 'Cihaz müsadere edilir'], ['Trafik ihlalini sosyal medyada paylaşmak ya da övmek', 25000],
         ['İzinsiz yarışa katılmak', 46000, 'Ehliyete 2 yıl el konur'], ['Kazalı yerden izinsiz ayrılmak (maddi hasarlı)', 46000]]}
     ],

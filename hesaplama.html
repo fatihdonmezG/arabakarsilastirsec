@@ -67,10 +67,10 @@
 const {$, esc, sayi} = H, V = HESAP_VERI, ist = V.yakit.iller['İstanbul (Avrupa)'];
 const dcOrt = V.sarj.reduce((t, o) => t + H.dcFiyat(o), 0) / V.sarj.length, acOrt = V.sarj.reduce((t, o) => t + o.ac, 0) / V.sarj.length;
 $('fiyatlar').innerHTML = [
-  ['Benzin', ist.benzin, 'TL/L', 'var(--benzin)', 'İstanbul Avrupa'], ['Motorin', ist.dizel, 'TL/L', 'var(--dizel)', 'İstanbul Avrupa'], ['LPG', ist.lpg, 'TL/L', 'var(--lpg)', 'İstanbul Avrupa'],
+  ['Benzin', ist.benzin, 'TL/L', 'var(--benzin)', 'İstanbul Avrupa'], ['Motorin', ist.dizel, 'TL/L', 'var(--dizel)', 'İstanbul Avrupa'], ['LPG', ist.lpg, 'TL/L', 'var(--lpg)', 'İstanbul Avrupa, 2.11.2026'],
   ['DC şarj', dcOrt, 'TL/kWh', 'var(--elektrik)', `${V.sarj.length} operatör ortalaması`], ['AC şarj', acOrt, 'TL/kWh', 'color-mix(in srgb,var(--elektrik) 55%,#fff)', `${V.sarj.length} operatör ortalaması`], ['Ev elektriği', V.ev.kademe1, 'TL/kWh', 'var(--hibrit)', 'konut, vergiler dahil']
 ].map(([ad, v, b, k, alt]) => `<div class="fy" style="--k:${k}"><span>${ad}</span><b>${sayi(v, 2)} <small>${b}</small></b><small>${esc(alt)}</small></div>`).join('');
-$('fiyatKaynak').innerHTML = `Pompa fiyatları ${H.tarih(V.yakit.tarih)}, şarj fiyatları operatörlerin sitelerinden, konut elektriği ${H.tarih(V.ev.tarih)} EPDK tarifesi. Ayrıntılı kaynaklar ilgili hesaplama sayfalarında.`;
+$('fiyatKaynak').innerHTML = `Benzin ve motorin Opet ${H.tarih(V.yakit.tarih)} tavsiye fiyatı, şarj fiyatları operatörlerin sitelerinden, konut elektriği ${H.tarih(V.ev.tarih)} EPDK tarifesi. Ayrıntılı kaynaklar ilgili hesaplama sayfalarında.`;
 })();
 </script>
 

@@ -161,9 +161,12 @@ $('nereye').innerHTML = ilSecenek(S.nereye);
 $('mesafeKaynak').innerHTML = `<a href="${esc(MESAFE_META.url)}" target="_blank" rel="noopener">${esc(MESAFE_META.kaynak)}</a>, ${H.tarih(MESAFE_META.tarih)}`;
 
 // Fiyat bölgeleri
-const iller = Object.keys(V.yakit.iller);
+const iller = Object.keys(V.yakit.iller).sort((a, b) => a.localeCompare(b, 'tr'));
 $('il').innerHTML = iller.map(k => `<option>${esc(k)}</option>`).join('') + '<option value="">Kendi fiyatım</option>';
-$('yakitKaynak').innerHTML = `Pompa fiyatları ${H.tarih(V.yakit.tarih)} tarihlidir. Kaynak: ${V.yakit.kaynaklar.map(k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.ad)}</a>`).join(', ')}.`;
+// Fiyat bölgesi çıkış iline göre seçilir
+const bolgeSec = () => { const ad = IL[S.nereden].ad, k = ad === 'İstanbul' ? 'İstanbul (Avrupa)' : ad; if (V.yakit.iller[k]) $('il').value = k; };
+bolgeSec();
+$('yakitKaynak').innerHTML = `Benzin ve motorin fiyatları ${H.tarih(V.yakit.tarih)} tarihli Opet il merkezi tavsiye fiyatlarıdır; LPG fiyatı yalnızca İstanbul, Ankara ve İzmir için var. Kaynak: ${V.yakit.kaynaklar.map(k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.ad)}</a>`).join(', ')}.`;
 $('op').innerHTML = V.sarj.map((o, i) => `<option value="${i}">${esc(o.ad)} (DC ${sayi(o.dc[0], 2)}${o.dc[1] !== o.dc[0] ? '–' + sayi(o.dc[1], 2) : ''} TL)</option>`).join('');
 $('dcTl').value = H.dcFiyat(V.sarj[0]).toFixed(2);
 $('evTl').value = V.ev.kademe1.toFixed(2);
@@ -207,7 +210,7 @@ function litreDoldur(){
   const p = profil(); if (!p || p.tur === 'elektrik') return;
   const il = $('il').value; if (!il) return;
   const t = p.tur === 'dizel' ? 'dizel' : (p.tur === 'lpg' && S.mod === 'el') ? 'lpg' : 'benzin';
-  $('litre').value = V.yakit.iller[il][t].toFixed(2);
+  const f = V.yakit.iller[il][t]; if (f != null) $('litre').value = f.toFixed(2);
 }
 
 // Bir araç için maliyet
@@ -308,7 +311,7 @@ function kiyasCiz(r){
     if (x.p.tur === 'elektrik') m = maliyet(x.p, r);
     else { // her araç kendi yakıt türünün fiyatıyla
       const il = $('il').value, t = x.p.tur === 'dizel' ? 'dizel' : 'benzin';
-      const f = il ? V.yakit.iller[il][t] : H.oku('litre', 0);
+      const f = (il && V.yakit.iller[il][t] != null) ? V.yakit.iller[il][t] : H.oku('litre', 0);
       const sakla = $('litre').value; $('litre').value = (x.ana ? H.oku('litre', f) : f); m = maliyet(x.p, r); $('litre').value = sakla;
     }
     return {...x, m};
@@ -326,9 +329,9 @@ function kiyasCiz(r){
 
 // Olaylar
 const basili = (grup, v) => grup.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
-$('nereden').addEventListener('change', e => { S.nereden = +e.target.value; hesapla(); });
+$('nereden').addEventListener('change', e => { S.nereden = +e.target.value; bolgeSec(); litreDoldur(); hesapla(); });
 $('nereye').addEventListener('change', e => { S.nereye = +e.target.value; hesapla(); });
-$('ters').addEventListener('click', () => { [S.nereden, S.nereye] = [S.nereye, S.nereden]; S.duraklar.reverse(); $('nereden').value = S.nereden; $('nereye').value = S.nereye; durakCiz(); hesapla(); });
+$('ters').addEventListener('click', () => { [S.nereden, S.nereye] = [S.nereye, S.nereden]; S.duraklar.reverse(); $('nereden').value = S.nereden; $('nereye').value = S.nereye; bolgeSec(); litreDoldur(); durakCiz(); hesapla(); });
 $('durakEkle').addEventListener('click', () => { if (S.duraklar.length >= 5) return; S.duraklar.push(ilIdx('Ankara')); durakCiz(); hesapla(); });
 $('duraklar').addEventListener('change', e => { const s = e.target.closest('[data-durak]'); if (s) { S.duraklar[+s.dataset.durak] = +s.value; hesapla(); } });
 $('duraklar').addEventListener('click', e => { const b = e.target.closest('[data-durak-sil]'); if (b) { S.duraklar.splice(+b.dataset.durakSil, 1); durakCiz(); hesapla(); } });
