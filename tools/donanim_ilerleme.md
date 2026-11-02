@@ -8,8 +8,8 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Marka | Durum | Son çalışma | Kalan boş alan (satıştaki versiyonlar) |
 |---|---|---|---|
 | Renault | devam ediyor | 2026-11-01 | 195 |
-| Fiat | devam ediyor | 2026-10-17 | 249 |
-| Toyota | devam ediyor | 2026-10-19 | 147 |
+| Fiat | devam ediyor | 2026-11-02 | 249 |
+| Toyota | devam ediyor | 2026-11-02 | 146 |
 | Hyundai | devam ediyor | 2026-10-31 | 95 |
 | Volkswagen | devam ediyor | 2026-10-20 | 425 |
 | Peugeot | devam ediyor | 2026-10-20 | 86 |
@@ -263,3 +263,16 @@ Araştırıldı, bulunamadı:
 - Toyota Corolla Katalog 2026 paket ayrımı yapmıyor; Lexus LBX broşürü Nisan 2023 tarihli; Citroën C4 X kataloğu tarihsiz ve Hybrid 145'i listelemiyor. Kullanılmadı.
 
 Kontrol edilmesi gereken mevcut değerler (dokunulmadı): Duster teknik broşüründe kör nokta ve multiview kamera Techno'da opsiyonel, sitede Techno versiyonlarında "Var". Megane E-Tech Techno'da broşüre göre kör nokta ve yorgunluk tespiti yok (Yok yazıldı).
+
+### 2026-11-02: Fiat (14 alan, 2 versiyon), Toyota (10 alan, 1 versiyon)
+
+Seçim notu: bu çalışmada yalnızca arama sonuçlarında doğrudan çıkan bağlantılar açılabildi. Volkswagen ve Skoda için resmi paket bazlı liste aramada çıkmadı (Skoda Kodiaq Eylül 2026 broşürü cdn.skoda.com.tr'de, bu ortamdan açılamadı). Citroën C5 Aircross basın bülteni (05.12.2025) donanımların çoğunu paket belirtmeden verdiği için kullanılmadı.
+
+Kaynaklar: Stellantis Türkiye basın bülteni, Fiat Grande Panda hibrit (26.12.2025; Icon ve La Prima ayrımı, La Prima "Icon'a ek olarak"); Toyota Türkiye basın bülteni, C-HR Hybrid GR SPORT (06.10.2025).
+
+Doldurulan: Fiat 14 alan (Grande Panda 1.2 MHEV Icon ve La Prima: acil fren, şerit takip, yorgunluk tespiti, park sensörü, geri görüş kamerası, kablosuz şarj, Icon manuel klima, La Prima Pixel LED far); Toyota 10 alan (C-HR GR Sport: acil fren, kör nokta, geri görüş ve 360 kamera, ısıtmalı ve elektrikli koltuk, elektrikli bagaj, LED far, kablosuz şarj, navigasyon). Klima tipiyle doldurulan: 1 (Grande Panda Icon, boştu).
+
+Araştırıldı, bulunamadı:
+- Grande Panda hibrit: ABS/ESP, adaptif hız sabitleyici (yalnızca hız sabitleyici), kör nokta, yokuş kalkış, 360 kamera, La Prima klima tipi, koltuk, döşeme, anahtarsız giriş, start-stop, CarPlay, navigasyon bültende yok.
+- Toyota C-HR: toyota.com.tr e-broşür sayfasında Ekim 2026 donanım tablosu (TOYOTA_CHR_TeknikDonanım_ekim_2026.pdf) listeleniyor ancak bu ortamdan açılamadı; Şubat 2026 teknik PDF'i hata verdi. Flame paketi için kaynak yok (2023 lansman bülteni Passion paketlerini anlatıyor). GR Sport: döşeme deri ve süet (yazılmadı), CarPlay paket bazında yok, yorgunluk tespiti (EDSS acil durdurma, yazılmadı).
+- Toyota Yaris Hybrid ve Hilux donanım tabloları e-broşür sayfasında listeleniyor, bu ortamdan açılamadı.
