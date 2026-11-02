@@ -3,6 +3,19 @@
  * lansman haberlerinde isteğe bağlı marka ve model (karsilastirma.html adlarıyla). */
 window.KAT = {lansman:'Lansman',uretim:'Üretim',geri:'Geri çağırma',pazar:'Pazar',mevzuat:'Mevzuat',odul:'Ödül'};
 window.NEWS = [
+  {tarih:'2026-10-30', kat:'uretim', baslik:'Doğuş ve Volkswagen, Türkiye\'de binek üretimi için niyet mektubu imzaladı',
+   ozet:'Doğuş Otomotiv, Volkswagen markalı binek otomobillerin Türkiye\'de üretilme seçeneklerini değerlendirmek için Volkswagen grubuyla niyet mektubu imzaladığını KAP\'a bildirdi. Model, tesis ve takvim açıklanmadı; bu aşama henüz bir yatırım kararı değil.',
+   kaynak:[['KAP bildirimi','https://kap.org.tr/tr/Bildirim/1689203'],['AA','https://www.aa.com.tr/tr/ekonomi/dogus-otomotiv-ile-volkswagen-arasinda-turkiyede-uretim-icin-niyet-mektubu-imzalandi/4105629'],['Motor1 Türkiye','https://tr.motor1.com/news/813826/dogus-otomotiv-volkswagen-uretim-aciklamasi/']]},
+  {tarih:'2026-10-28', kat:'geri', baslik:'Audi Q4 e-tron için batarya yangını riski geri çağırması',
+   ozet:'ABD\'de 2024-2025 model yılı 9.048 Q4 e-tron ve Q4 Sportback e-tron geri çağrıldı (NHTSA 26V698). KBA kaydına göre dünya genelinde 30 Kasım 2023 ile 26 Haziran 2025 arasında üretilen 12.734 araç kapsamda. Kalıcı çözüm gelene kadar şarj %80 ile sınırlanmalı.',
+   kaynak:[['Motor1','https://motor1.com/news/813371/audi-q4-e-tron-recall/'],['Motor1 Türkiye','https://tr.motor1.com/news/813413/audi-q4-batarya-cagirma/'],['Dr. Stoll & Kollegen (KBA kaydı)','https://www.dr-stoll-kollegen.de/news-urteile/e-mobilitaet/brandgefahr-beim-audi-q4-e-tron-jetzt-auch-kba-rueckruf']],
+   not:'Türkiye\'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın.'},
+  {tarih:'2026-10-26', kat:'uretim', baslik:'Tofaş\'ta K9 projesi seri üretime geçti, Doblò yeniden Bursa\'da',
+   ozet:'Yaklaşık 300 milyon dolarlık yatırımla Bursa\'da Fiat Doblò, Citroën Berlingo, Opel Combo, Peugeot Rifter ve Partner üretilecek. Yıllık kapasite 100 bin adet; üretimin yaklaşık %20\'si ihraç edilecek, yerlilik hedefi %50.',
+   kaynak:[['Koç Holding','https://www.koc.com.tr/medya-merkezi/haberler/2026/tofas-in-k9-yatirimi-uretime-basladi'],['Habertürk','https://www.haberturk.com/ekonomi/doblo-nun-yerli-uretimi-basladi-tofas-icin-yeni-model-aciklamasi-3922831']]},
+  {tarih:'2026-10-26', kat:'mevzuat', baslik:'ABD, sürücüsüz araçlar için turkuaz işaret lambası önerdi',
+   ozet:'NHTSA, FMVSS 108 aydınlatma standardında değişiklik taslağı yayımladı. Otonom sürüş sistemi aracı kullanırken yanacak turkuaz lambalar isteğe bağlı olacak; araç başına 4 ile 8 lamba öngörülüyor. Taslak 30 gün yoruma açık.',
+   kaynak:[['ABD Ulaştırma Bakanlığı','https://www.transportation.gov/regulations/federal-register-documents/2026-21794'],['Motor1 Türkiye','https://tr.motor1.com/news/813275/nhtsa-otonom-turkuaz-isaret/']]},
   {tarih:'2026-10-24', kat:'lansman', baslik:'Yeni DS N°7 Türkiye\'de satışa çıktı', marka:'DS', model:'N°7',
    ozet:'DS 7\'nin yerini alan model Pallas ve Étoile donanımlarıyla satışta. Lansmanda 145 hp sistem gücüne sahip, 21 kW elektrik motorlu hibrit ve altı ileri çift kavramalı şanzıman sunuluyor. Bagaj hacmi 560 litre.',
    kaynak:[['CNBC-e','https://www.cnbce.com/otomotiv/yeni-ds-n7-turkiyede-satisa-cikti-iste-fiyati-ve-ozellikleri-g40225']], ic:['Lansman takvimi →','lansmanlar.html']},
@@ -54,16 +67,4 @@ window.NEWS = [
   {tarih:'2026-10-06', kat:'geri', baslik:'Volkswagen ID.4 için ABD\'de batarya yangını riski geri çağırması',
    ozet:'ABD\'de 2023–2026 model yılı 22.524 ID.4 geri çağrıldı (NHTSA 26V630). Yüksek voltaj bataryası arızalanıp yangına yol açabilir. Kalıcı çözüm hazırlanana kadar sahiplere bataryayı en fazla %80 şarj etmeleri öneriliyor.',
    kaynak:[['NHTSA kaydı','https://static.nhtsa.gov/odi/rcl/2026/RCAK-26V630-3745.pdf'],['electrive','https://www.electrive.com/2026/10/09/vw-recalls-another-22524-id-4-vehicles-due-to-fire-risk/']], not:'Kampanya ABD araçlarını kapsıyor. Türkiye\'deki araçların kapsamı açıklanmadı; şasi numarasıyla yetkili serviste sorgulatın.'},
-  {tarih:'2026-10-02', kat:'geri', baslik:'Škoda dünya genelinde 1,7 milyon aracı direksiyon cıvatası için geri çağırdı',
-   ozet:'Octavia III ve IV, Superb III, Karoq ve Kodiaq I modellerinde (model yılı 2015–2026) direksiyon montaj cıvatası kırılabilir. Toplam 1.719.030 araçta cıvata, korozyona daha dayanıklı yenisiyle değiştirilecek. Almanya\'daki KBA referansı 17091R.',
-   kaynak:[['car-recalls.eu (KBA kaydı)','https://car-recalls.eu/skoda-recalls-cars-over-steering-failure-risk-kba/'],['anews','https://www.anews.com.tr/economy/2026/10/02/koda-recalls-17-million-vehicles-globally-over-steering-failure-risk/amp']], not:'Bu modeller Türkiye\'de de satıldı, ancak Türkiye\'deki araçların kapsamı açıklanmadı. Aracınızı Škoda yetkili servisinde şasi numarasıyla sorgulatın.'},
-  {tarih:'2026-10-02', kat:'pazar', baslik:'Eylül\'de otomobil ve hafif ticari pazarı %24 küçüldü',
-   ozet:'ODMD verilerine göre Eylül\'de 83.469 otomobil ve hafif ticari araç satıldı, geçen yılın aynı ayına göre %24,33 düşüş. Yılın ilk dokuz ayında satışlar %13,39 azalarak 803.465 adede indi.',
-   kaynak:[['ForInvest','https://www.foreks.com/haber/detay/6abf440d24008d7d4373ad6e/FRKS/tr/odmd-ocak-eylul-doneminde-otomobil-ve-hafif-ticari-arac-pazari-13-39-oraninda-daraldi-02-10-26/']], ic:['Pazar sayfasında ayrıntılar →','piyasa.html']},
-  {tarih:'2026-09-29', kat:'odul', baslik:'Dünyada Yılın Otomobili 2027 adaylarının yarısı Çinli',
-   ozet:'World Car Awards\'ın 2027 listesindeki 55 adaydan 27\'si Çinli markalara ait. İlk 10 finalist 5 Ocak 2027\'de açıklanacak, kazanan 24 Mart 2027\'de New York fuarında belli olacak.',
-   kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-yilin-otomobili-yarisinda-cin-etkisi-adaylarin-yarisi-cinli-1743931']]},
-  {tarih:'2026-09-29', kat:'lansman', baslik:'Elektrikli Volkswagen ID. Tiguan\'ın takvimi belli oldu',
-   ozet:'Volkswagen, ID.4 ve ID.5\'in yerini alacak modelin adının ID. Tiguan olacağını doğruladı. Dünya prömiyeri Ekim başında, Avrupa satışı 2027 başında planlanıyor.',
-   kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-bir-efsane-daha-elektrikleniyor-volkswagen-id-tiguan-icin-tarih-belli-oldu-1743932']]}
 ];;

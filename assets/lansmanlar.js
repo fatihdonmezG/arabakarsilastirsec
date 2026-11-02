@@ -5,7 +5,7 @@
  * cikanlar: Türkiye'de satışa çıkan yeni modeller (son 6 ay). tarih: satışa çıkış ya da duyuru tarihi.
  * marka/model karsilastirma.html'deki adlarla yazılırsa sayfa araç sayfasına bağlantı verir. Fiyat yazılmaz. */
 window.LANSMANLAR = {
-  guncelleme: '2026-10-26',
+  guncelleme: '2026-11-02',
   yakinda: [
     {marka:'Fiat', model:'Grizzlyz', beklenen:'2026-12', dayanak:'basin',
      ozet:'Egea\'nın yerini alacak B-SUV. Önce 145 hp\'lik hibrit versiyon, Fastback gövdeyle birlikte gelecek. Fiat, modelin Türkiye\'de test edildiğini açıkladı.',
@@ -27,7 +27,13 @@ window.LANSMANLAR = {
      kaynak:[['Yeni Asır','https://www.yeniasir.com.tr/ekonomi/2026/10/24/gunde-375-togg-uretiliyor']]},
     {marka:'Volkswagen', model:'ID. Tiguan', beklenen:'2027', dayanak:'marka',
      ozet:'ID.4 ve ID.5\'in yerini alacak elektrikli SUV. Volkswagen Avrupa satışını 2027 başı için planlıyor; Türkiye takvimi henüz açıklanmadı.',
-     kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-bir-efsane-daha-elektrikleniyor-volkswagen-id-tiguan-icin-tarih-belli-oldu-1743932']]}
+     kaynak:[['NTV','https://www.ntv.com.tr/otomobil/galeri-bir-efsane-daha-elektrikleniyor-volkswagen-id-tiguan-icin-tarih-belli-oldu-1743932']]},
+    {marka:'Volkswagen', model:'ID. Polo', beklenen:'2027', dayanak:'basin',
+     ozet:'Volkswagen\'in elektrikli küçük hatchback modeli. ID. Cross ve ID. Tiguan ile birlikte 2027\'de Türkiye\'ye gelmesi bekleniyor.',
+     kaynak:[['Webtekno','https://www.webtekno.com/volkswagen-2027-turkiye-3-yeni-elektrikli-otomobil-getirecek-h226333.html']]},
+    {marka:'Volkswagen', model:'ID. Cross', beklenen:'2027', dayanak:'basin',
+     ozet:'Volkswagen\'in elektrikli küçük SUV modeli. ID. Polo ve ID. Tiguan ile birlikte 2027\'de Türkiye\'ye gelmesi bekleniyor.',
+     kaynak:[['Webtekno','https://www.webtekno.com/volkswagen-2027-turkiye-3-yeni-elektrikli-otomobil-getirecek-h226333.html']]}
   ],
   cikanlar: [
     {marka:'DS', model:'N°7', tarih:'2026-10-24',
