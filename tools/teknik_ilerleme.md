@@ -23,6 +23,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Peugeot | tamamlandı | 2026-10-31 |
 | Ferrari | tamamlandı | 2026-11-01 |
 | Forthing | sürüyor | 2026-11-01 |
+| Toyota | sürüyor | 2026-11-02 |
+| Porsche | sürüyor | 2026-11-02 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -938,3 +940,23 @@ Not: Forthing T5 EVO kaydında azami hız 200 km/s (TR basın); alVolante 180 km
 - ferrari-296-2025-gtb, -gts | agirlik_kg | auto-data/autodata1 değeri (1470/1540 kg) Ferrari'nin kuru ağırlığı — boş ağırlık değil, kullanılmadı
 - ferrari-296-2025-gtb | bagaj_l | auto-data sayfasında yok
 Yasaklı kaynak kalan: 4.
+
+
+## 2026-11-02 — Kaynak temizliği: Leapmotor, Jaecoo; Eksik veri: Toyota, Porsche
+
+Temizlik belgelerinden doldurulan (teknik_yama): leapmotor-t03-2026-basic-400.dingil_mm (2400, auto-data), jaecoo-7-revive-2025.emisyon_normu (Euro 6e, auto-data).
+Tüketim: satıştaki 15 eksiğin tamamı önceki çalışmalarda "araştırıldı, bulunamadı"; yeni tüketim girilmedi (kalan 15). Şanzıman: kalan 7 kaydın tamamı önceki çalışmalarda "araştırıldı, bulunamadı" (Leapmotor T03 ve Jaecoo 7 şanzımanı temizlikte tip/vitesle düzeltildi).
+Eksik veri — doldurulan: 87 alan, 22 versiyon (Toyota 48, Porsche 39).
+- Toyota: segment (Euro NCAP sınıfı: Corolla 2019, Corolla Cross 2022, C-HR 2024, Yaris 2025, Yaris Cross 2025 veri sayfaları), ağırlık (Toyota UK/Polonya teknik PDF'leri, ADAC; aralık ortası), besleme, C-HR/Yaris emisyon Euro 6e-bis (ADAC), Yaris/Yaris Cross 8 hava yastığı (Toyota Finlandiya donanım listesi), Corolla Sedan 1.5 çekiş/koltuk (auto-data)
+- Porsche: Newsroom teknik veri sayfalarından ağırlık (DIN), depo, emisyon (EU6 EA/EB), besleme; Euro NCAP'ten hava yastığı sayısı, segment, Cayenne S test yılı 2017, Cayenne Electric test yılı 2025; menzil/DC şarj (porsche.com, EV Database, autotijd; aralık ortası, %10–80)
+Not: Corolla Sedan 1.5 ağırlığı (1283 kg) auto-data'nın geniş 1185–1380 kg aralığının ortası — elle kontrol önerilir.
+### Araştırıldı, bulunamadı (id | alan | neden)
+- leapmotor-t03-2026-basic-400 | elektrik_tuketim_kwh100km, sifirYuz_sn, ac_sarj_dk, dc_hizli_sarj_dk_20_80 | Avrupa resmi sayfası 37,3 kWh sürüm için; 41,3 kWh/109 HP sürüm için kaynak yok
+- toyota-chr-hybrid-1-8-* | airbag_sayisi | Toyota CZ 7, Toyota SK ve Euro NCAP 8 (orta hava yastığı) — tutarsız
+- toyota-land-cruiser-prado-2-8-power-2026 | segment | Euro NCAP sonucu yok
+- toyota-hilux-2-8-mildhybrid-invincible-2026 | segment, sifirYuz_sn, agirlik_kg, besleme | TR'de 2026'da satılan nesil (8./9.) belirsiz
+- porsche-911-2026-carrera, -turbo-s, porsche-panamera-2026-base | segment, airbag_sayisi, ncap_yildiz, ncap_test_yili | Euro NCAP testi bulunamadı; Porsche teknik verisinde yok
+- porsche-911-2026-turbo-s | koltuk | auto-data "2-4"; standart arka koltuk teyit edilemedi
+- porsche-taycan-2026-base, -4s | koltuk | kaynaklar 5 diyor ama Taycan standart 4 koltuklu (4+1 opsiyon) — kullanılmadı
+- porsche-cayenne-2026-s | segment | Euro NCAP 2017 sayfası yalnızca "SUV"
+Yasaklı kaynak kalan: 2.
