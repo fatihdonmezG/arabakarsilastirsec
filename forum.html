@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forum | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Araba forumu: satın alma tavsiyesi, arıza ve bakım, elektrikli araçlar, marka ve model kulüpleri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html">Hesaplama</a>
+      <a href="forum.html" aria-current="page">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › <a href="forum.html">Forum</a><span id="crumbKonu"></span></nav>
+  <div class="hs-bas" id="bas">
+    <span class="hs-etiket">Topluluk</span>
+    <h1>Araba <b>forumu</b></h1>
+    <p>Satın almadan önce soru sorun, aracınızla ilgili deneyiminizi paylaşın, arıza ve bakımda başkalarının tecrübesinden yararlanın. Konu açmak ve cevap yazmak için üye girişi gerekir; okumak herkese açık.</p>
+  </div>
+  <div class="not-kutu" id="kapali" hidden style="margin-bottom:16px"><b>Forum yakında açılıyor.</b> Üyelik sistemi devreye girdiğinde konu açabilir ve cevap yazabilirsiniz. Şimdilik kategorilere göz atabilirsiniz.</div>
+
+  <div id="listeGorunum">
+    <div class="fkat" id="kategoriler"></div>
+    <section class="hk" style="margin-top:16px">
+      <div class="farac">
+        <input type="search" id="ara" placeholder="Konu başlıklarında ara" aria-label="Konu ara">
+        <select id="markaFiltre" aria-label="Markaya göre"><option value="">Bütün markalar</option></select>
+        <button type="button" class="dugme" id="yeniBtn">+ Yeni konu</button>
+      </div>
+      <form class="fyeni" id="yeni" hidden>
+        <h2 style="margin-top:6px">Yeni konu</h2>
+        <div class="alanlar">
+          <div class="alan"><label for="yKat">Kategori</label><select id="yKat" required></select></div>
+          <div class="alan"><label for="yMarka">Marka (isteğe bağlı)</label><select id="yMarka"><option value="">Seçmeyin</option></select></div>
+          <div class="alan"><label for="yModel">Model (isteğe bağlı)</label><select id="yModel"><option value="">Seçmeyin</option></select></div>
+        </div>
+        <div class="alan"><label for="yBaslik">Başlık</label><input type="text" id="yBaslik" minlength="5" maxlength="120" required placeholder="Sorunuzu ya da konunuzu kısaca yazın"></div>
+        <div class="alan"><label for="yMetin">Mesaj</label><textarea id="yMetin" minlength="10" maxlength="8000" required placeholder="Ayrıntıları yazın: model yılı, kilometre, ne zaman başladığı gibi bilgiler cevap almanızı kolaylaştırır."></textarea></div>
+        <p class="kaynak">Kişisel bilgi (telefon, plaka, adres) paylaşmayın. Reklam ve hakaret içeren mesajlar üç şikayetle gizlenir.</p>
+        <div style="display:flex;gap:8px;margin-top:12px"><button type="submit" class="dugme">Konuyu aç</button><button type="button" class="dugme ikincil" id="yIptal">Vazgeç</button></div>
+        <p class="kaynak" id="yDurum" role="status"></p>
+      </form>
+      <div class="fliste" id="liste" aria-live="polite"></div>
+      <div style="display:flex;justify-content:center;margin-top:14px"><button type="button" class="dugme ikincil" id="dahaBtn" hidden>Daha fazla konu</button></div>
+    </section>
+  </div>
+
+  <div id="konuGorunum" hidden>
+    <section class="hk" id="konu"></section>
+    <div id="cevaplar"></div>
+    <section class="hk" id="cevapKutu">
+      <h2>Cevap yaz</h2>
+      <form id="cevapForm"><div class="alan"><label for="cMetin" class="sr">Cevabınız</label><textarea id="cMetin" minlength="2" maxlength="5000" required placeholder="Cevabınızı yazın"></textarea></div>
+      <div style="display:flex;gap:8px;margin-top:12px"><button type="submit" class="dugme">Gönder</button></div><p class="kaynak" id="cDurum" role="status"></p></form>
+    </section>
+  </div>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Forum mesajları üyelerin kendi görüşleridir; site tarafından doğrulanmaz.</div></footer>
+<style>
+.fkat{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.fk{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;padding:16px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);cursor:pointer;text-align:left;font:inherit;color:var(--ink);box-shadow:var(--golge);transition:border-color .2s,transform .2s}
+.fk:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--k) 50%,var(--line))}
+.fk[aria-pressed="true"]{border-color:var(--k);box-shadow:0 0 0 2px color-mix(in srgb,var(--k) 25%,transparent)}
+.fk .ik{grid-row:span 2;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--k) 13%,transparent);color:var(--k)}
+.fk .ik svg{width:22px;height:22px}
+.fk b{font-size:.98rem}
+.fk small{color:var(--muted);font-size:.8rem;line-height:1.35}
+.farac{display:grid;gap:10px;grid-template-columns:minmax(0,1fr) minmax(0,220px) auto}
+@media (max-width:700px){.farac{grid-template-columns:1fr}}
+.fyeni{margin-top:16px;padding-top:6px;border-top:1px solid var(--line)}
+.fliste{margin-top:14px;display:grid}
+.fs{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+.fs:last-child{border-bottom:0}
+.fs:hover .fb{color:var(--accent)}
+.fs .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--k,var(--accent))}
+.fs .fb{font-weight:700;display:block}
+.fs small{color:var(--muted);font-size:.8rem}
+.fs .say{text-align:center;min-width:64px}
+.fs .say b{display:block;font-family:var(--display);font-size:1.2rem}
+.fbos{padding:36px 12px;text-align:center;color:var(--muted)}
+.fbos b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:6px}
+.mesaj{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px}
+.mesaj .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--k,var(--accent))}
+.mesaj .ust{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.mesaj .ust small{color:var(--muted);font-size:.8rem}
+.mesaj .govde{margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}
+.mesaj .islem{display:flex;gap:12px;margin-top:10px}
+.mesaj .islem button{font:inherit;font-size:.8rem;border:0;background:none;color:var(--muted);cursor:pointer;padding:0}
+.mesaj .islem button:hover{color:var(--accent)}
+.etiketler{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.etiketler span{font-size:.74rem;font-weight:700;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--k,var(--accent)) 12%,transparent);color:var(--k,var(--accent))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+<script src="assets/modeller.js"></script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc} = H, U = window.Uyelik;
+const IK = {
+  sohbet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
+  sepet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>',
+  simsek: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+  anahtar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.8-.7-.7-2.8z"/></svg>',
+  kulup: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1-4 3-4.6"/></svg>',
+  pompa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M6 9h6M14 10h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-3-3"/></svg>',
+  levha: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg>',
+  lastik: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></svg>'
+};
+const KAT = [
+  {id: 'genel', ad: 'Genel sohbet', alt: 'Otomobil dünyasına dair her şey', ik: 'sohbet', k: '#2563EB'},
+  {id: 'satin-alma', ad: 'Satın alma tavsiyesi', alt: 'Hangisini almalıyım, bütçe ve seçenekler', ik: 'sepet', k: '#15803D'},
+  {id: 'elektrikli', ad: 'Elektrikli araçlar', alt: 'Menzil, batarya, ev ve yol şarjı', ik: 'simsek', k: '#0284C7'},
+  {id: 'ariza-bakim', ad: 'Arıza ve bakım', alt: 'Kronik sorunlar, servis ve bakım masrafı', ik: 'anahtar', k: '#C2410C'},
+  {id: 'marka-kulubu', ad: 'Marka ve model kulüpleri', alt: 'Sahiplerin buluşma noktası', ik: 'kulup', k: '#7C3AED'},
+  {id: 'yakit-sarj', ad: 'Yakıt ve şarj', alt: 'Tüketim, fiyatlar, istasyon deneyimleri', ik: 'pompa', k: '#E11D48'},
+  {id: 'trafik-mevzuat', ad: 'Trafik ve mevzuat', alt: 'Ceza, muayene, sigorta, vergi', ik: 'levha', k: '#B45309'},
+  {id: 'lastik-aksesuar', ad: 'Lastik ve aksesuar', alt: 'Lastik, jant, multimedya, bakım ürünleri', ik: 'lastik', k: '#0F766E'}
+];
+const katBul = id => KAT.find(k => k.id === id) || KAT[0];
+const zaman = iso => { const d = new Date(iso), fark = (Date.now() - d) / 1000; if (fark < 60) return 'az önce'; if (fark < 3600) return Math.floor(fark / 60) + ' dk önce'; if (fark < 86400) return Math.floor(fark / 3600) + ' sa önce'; if (fark < 86400 * 7) return Math.floor(fark / 86400) + ' gün önce'; return d.toLocaleDateString('tr-TR', {day: 'numeric', month: 'long', year: 'numeric'}); };
+const harf = ad => esc(String(ad || '?').trim().charAt(0).toLocaleUpperCase('tr'));
+const renk = ad => { let h = 0; for (const c of String(ad || '')) h = (h * 31 + c.charCodeAt(0)) % 360; return `hsl(${h} 55% 42%)`; };
+const S = {kategori: '', marka: '', ara: '', sayfa: 0};
+
+// Kategoriler
+$('kategoriler').innerHTML = KAT.map(k => `<button type="button" class="fk" data-kat="${k.id}" aria-pressed="false" style="--k:${k.k}"><span class="ik">${IK[k.ik]}</span><b>${esc(k.ad)}</b><small>${esc(k.alt)}</small></button>`).join('');
+$('yKat').innerHTML = KAT.map(k => `<option value="${k.id}">${esc(k.ad)}</option>`).join('');
+const markalar = Object.keys(window.MODELLER || {}).sort((a, b) => a.localeCompare(b, 'tr'));
+$('markaFiltre').innerHTML += markalar.map(m => `<option>${esc(m)}</option>`).join('');
+$('yMarka').innerHTML += markalar.map(m => `<option>${esc(m)}</option>`).join('');
+$('yMarka').addEventListener('change', () => { const m = (window.MODELLER || {})[$('yMarka').value] || {}; $('yModel').innerHTML = '<option value="">Seçmeyin</option>' + Object.keys(m).sort((a, b) => a.localeCompare(b, 'tr')).map(x => `<option>${esc(x)}</option>`).join(''); });
+
+const bos = (b, t) => `<div class="fbos"><b>${esc(b)}</b>${esc(t)}</div>`;
+async function listele(ekle){
+  if (!U || !U.acik) { $('liste').innerHTML = bos('Henüz konu yok', 'Forum açıldığında ilk konuyu siz açabilirsiniz.'); return; }
+  if (!ekle) { S.sayfa = 0; $('liste').innerHTML = bos('Yükleniyor', ''); }
+  try {
+    const r = await U.forumKonular({kategori: S.kategori, marka: S.marka, ara: S.ara, sayfa: S.sayfa});
+    const html = r.satirlar.map(k => { const kt = katBul(k.kategori); return `<a class="fs" href="?konu=${k.id}" style="--k:${kt.k}"><span class="av" style="--k:${renk(k.takma_ad)}">${harf(k.takma_ad)}</span><span><span class="fb">${esc(k.baslik)}</span><small>${esc(k.takma_ad || 'Üye')} · ${esc(kt.ad)}${k.marka ? ' · ' + esc(k.marka + (k.model ? ' ' + k.model : '')) : ''} · ${zaman(k.son_hareket)}</small></span><span class="say"><b>${k.cevap_sayisi}</b><small>cevap</small></span></a>`; }).join('');
+    $('liste').innerHTML = ekle ? $('liste').innerHTML + html : (html || bos('Bu filtrede konu yok', 'Aradığınızı bulamadıysanız yeni bir konu açın.'));
+    $('dahaBtn').hidden = (S.sayfa + 1) * 20 >= r.toplam;
+  } catch (e) { $('liste').innerHTML = bos('Konular yüklenemedi', e.message); }
+}
+
+async function konuAc(id){
+  $('listeGorunum').hidden = true; $('konuGorunum').hidden = false; $('bas').hidden = true;
+  if (!U || !U.acik) { $('konu').innerHTML = bos('Forum henüz açılmadı', ''); $('cevapKutu').hidden = true; return; }
+  try {
+    const [{konu, cevaplar}, o] = await Promise.all([U.forumKonu(id), U.oturum().catch(() => null)]);
+    if (!konu) { $('konu').innerHTML = bos('Konu bulunamadı', 'Silinmiş ya da gizlenmiş olabilir.') + '<p style="text-align:center"><a class="dugme ikincil" href="forum.html">Foruma dön</a></p>'; $('cevapKutu').hidden = true; return; }
+    const kt = katBul(konu.kategori);
+    document.title = konu.baslik + ' | Forum | Araba Karşılaştır ve Seç';
+    $('crumbKonu').innerHTML = ` › ${esc(kt.ad)}`;
+    const islem = (tur, x) => `<div class="islem">${o && o.id === x.user_id ? `<button type="button" data-sil="${tur}:${x.id}">Sil</button>` : o ? `<button type="button" data-sikayet="${tur}:${x.id}">Şikayet et</button>` : ''}</div>`;
+    $('konu').innerHTML = `<div class="mesaj"><span class="av" style="--k:${renk(konu.takma_ad)}">${harf(konu.takma_ad)}</span><div><h1 style="font-size:clamp(1.4rem,3.6vw,2rem);font-weight:800;line-height:1.15">${esc(konu.baslik)}</h1><div class="ust" style="margin-top:6px"><b>${esc(konu.takma_ad || 'Üye')}</b><small>${zaman(konu.olusturma)}</small></div><div class="etiketler" style="--k:${kt.k}"><span>${esc(kt.ad)}</span>${konu.marka ? `<span>${esc(konu.marka + (konu.model ? ' ' + konu.model : ''))}</span>` : ''}</div><div class="govde">${esc(konu.metin)}</div>${islem('konu', konu)}</div></div>`;
+    $('cevaplar').innerHTML = cevaplar.length ? `<section class="hk"><h2>${cevaplar.length} cevap</h2>${cevaplar.map(c => `<div class="mesaj" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line)"><span class="av" style="--k:${renk(c.takma_ad)}">${harf(c.takma_ad)}</span><div><div class="ust"><b>${esc(c.takma_ad || 'Üye')}</b><small>${zaman(c.olusturma)}${c.durum === 'gizli' ? ' · gizlendi' : ''}</small></div><div class="govde">${esc(c.metin)}</div>${islem('cevap', c)}</div></div>`).join('')}</section>` : '';
+    $('cevapKutu').hidden = false;
+    if (!o) $('cevapForm').innerHTML = `<p class="alt-yazi">Cevap yazmak için <a href="uye.html" style="color:var(--accent)">giriş yapın ya da üye olun</a>.</p>`;
+  } catch (e) { $('konu').innerHTML = bos('Konu yüklenemedi', e.message); }
+}
+
+// Olaylar
+$('kategoriler').addEventListener('click', e => { const b = e.target.closest('[data-kat]'); if (!b) return; S.kategori = S.kategori === b.dataset.kat ? '' : b.dataset.kat; document.querySelectorAll('.fk').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.kat === S.kategori))); listele(); });
+let zam; $('ara').addEventListener('input', () => { clearTimeout(zam); zam = setTimeout(() => { S.ara = $('ara').value.trim(); listele(); }, 300); });
+$('markaFiltre').addEventListener('change', () => { S.marka = $('markaFiltre').value; listele(); });
+$('dahaBtn').addEventListener('click', () => { S.sayfa++; listele(true); });
+$('yeniBtn').addEventListener('click', async () => {
+  if (!U || !U.acik) { $('kapali').hidden = false; $('kapali').scrollIntoView({behavior: 'smooth', block: 'center'}); return; }
+  const o = await U.oturum().catch(() => null);
+  if (!o) { location.href = 'uye.html'; return; }
+  if (S.kategori) $('yKat').value = S.kategori;
+  $('yeni').hidden = false; $('yBaslik').focus();
+});
+$('yIptal').addEventListener('click', () => { $('yeni').hidden = true; });
+$('yeni').addEventListener('submit', async e => {
+  e.preventDefault(); $('yDurum').textContent = 'Gönderiliyor…';
+  try { const r = await U.forumKonuAc({kategori: $('yKat').value, baslik: $('yBaslik').value.trim(), metin: $('yMetin').value.trim(), marka: $('yMarka').value || null, model: $('yModel').value || null}); location.href = '?konu=' + r.id; }
+  catch (err) { $('yDurum').textContent = err.message; }
+});
+$('cevapForm').addEventListener('submit', async e => {
+  e.preventDefault(); if (!$('cMetin')) return; $('cDurum').textContent = 'Gönderiliyor…';
+  try { await U.forumCevapla(+new URLSearchParams(location.search).get('konu'), $('cMetin').value.trim()); $('cMetin').value = ''; $('cDurum').textContent = ''; konuAc(+new URLSearchParams(location.search).get('konu')); }
+  catch (err) { $('cDurum').textContent = err.message; }
+});
+document.addEventListener('click', async e => {
+  const s = e.target.closest('[data-sil]'), k = e.target.closest('[data-sikayet]');
+  if (s) { const [tur, id] = s.dataset.sil.split(':'); s.textContent = 'Siliniyor…'; try { await U.forumSil(tur, +id); tur === 'konu' ? location.href = 'forum.html' : konuAc(+new URLSearchParams(location.search).get('konu')); } catch (err) { s.textContent = err.message; } }
+  if (k) {
+    const [tur, id] = k.dataset.sikayet.split(':');
+    const kutu = document.createElement('span');
+    kutu.innerHTML = `<select aria-label="Şikayet sebebi"><option value="reklam">Reklam</option><option value="hakaret">Hakaret</option><option value="yaniltici">Yanıltıcı bilgi</option><option value="kisisel-bilgi">Kişisel bilgi</option><option value="diger">Diğer</option></select> <button type="button">Gönder</button>`;
+    k.replaceWith(kutu);
+    kutu.querySelector('button').addEventListener('click', async () => { try { await U.forumSikayet(tur, +id, kutu.querySelector('select').value); kutu.textContent = 'Şikayetiniz alındı.'; } catch (err) { kutu.textContent = err.message; } });
+  }
+});
+
+const konuId = +new URLSearchParams(location.search).get('konu');
+if (!U || !U.acik) $('kapali').hidden = false;
+if (konuId) konuAc(konuId); else listele();
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>

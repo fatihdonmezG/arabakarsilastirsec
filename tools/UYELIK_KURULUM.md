@@ -19,3 +19,10 @@ Yeni yorumlar `bekliyor` durumunda gelir. Table Editor > `yorumlar` tablosunda `
 - Garaj en fazla 5 model. "Sahip yorumu" yalnızca garajdaki marka + model için; ay ve km zorunlu.
 - Diğer araçlara "Sürüş izlenimi" yazılır (test sürüşü, kiralama, yakının aracı, iş aracı, eski sahip, diğer).
   Kronik sorun istatistiği yalnızca sahip yorumlarından hesaplanır.
+
+## Forum
+`supabase_kurulum.sql` dosyasının 5. bölümü forum tablolarını kurar (dosyanın tamamını yeniden çalıştırmak güvenlidir).
+- Konu ve cevaplar hemen yayına girer. Üye başına günde en fazla 5 konu, 60 cevap.
+- Üç farklı üyenin şikayet ettiği konu ya da cevap otomatik olarak `gizli` olur.
+  Table Editor > `forum_konular` / `forum_cevaplar` > `durum` sütununu `yayinda` yaparak geri açabilir, `gizli` yaparak elle kapatabilirsiniz.
+- Şikayetler `forum_sikayet` tablosunda (sebep: reklam, hakaret, yaniltici, kisisel-bilgi, diger).

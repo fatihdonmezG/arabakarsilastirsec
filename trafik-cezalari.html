@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trafik Cezaları 2026 | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="7574 sayılı Kanun ile değişen 2026 trafik cezası tutarları, ehliyet ve araç men süreleri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html" aria-current="page">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › <a href="hesaplama.html">Hesaplama</a> › Trafik cezaları</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">7574 sayılı Kanun · 2026</span>
+    <h1>Trafik <b>cezaları</b></h1>
+    <p id="giris"></p>
+  </div>
+  <div class="hs-grid iki">
+    <div class="yapis">
+      <section class="hk" aria-live="polite">
+        <h2>Ceza hesapla</h2>
+        <p class="alt-yazi">İhlali seçin; erken ödeme indirimiyle ne kadar ödeyeceğinizi görün.</p>
+        <div class="alan"><label for="ara">İhlal ara</label><input type="search" id="ara" placeholder="ör. hız, kemer, telefon, kırmızı"></div>
+        <div class="alan"><label for="ihlal">İhlal</label><select id="ihlal"></select></div>
+        <div class="sonuc-ust" id="ozet"></div>
+        <div class="not-kutu" id="men" hidden></div>
+        <p class="kaynak" id="kural"></p>
+      </section>
+    </div>
+    <div id="gruplar"></div>
+  </div>
+  <section class="hk" style="margin-top:16px"><h2>Kaynaklar</h2><p class="kaynak" id="kaynaklar"></p></section>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Bu sayfa bilgilendirme amaçlıdır, hukuki danışmanlık değildir. Kesin tutar için tebliğ edilen ceza tutanağına bakın.</div></footer>
+<script src="assets/hesap_veri.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc, tl} = H, C = HESAP_VERI.ceza;
+$('giris').textContent = `${C.kanun} ile değişen ceza tutarları. Kanun ${C.rg} tarihli Resmî Gazete'de yayımlandı ve aynı gün yürürlüğe girdi. Tekrar eden ihlallerde ceza büyüyor, ağır ihlallerde ehliyete ve araca el konuyor.`;
+const tum = []; C.gruplar.forEach((g, gi) => g.satir.forEach((s, si) => tum.push({g: g.ad, ad: s[0], tl: s[1], men: s[2] || '', k: `${gi}-${si}`})));
+const secenek = liste => liste.map(x => `<option value="${x.k}">${esc(x.ad)} (${esc(x.g.replace(/ \(.*\)/, ''))})</option>`).join('');
+$('ihlal').innerHTML = secenek(tum);
+$('ara').addEventListener('input', () => { const q = $('ara').value.toLocaleLowerCase('tr'); const l = tum.filter(x => (x.ad + ' ' + x.g).toLocaleLowerCase('tr').includes(q)); $('ihlal').innerHTML = l.length ? secenek(l) : '<option value="">Eşleşen ihlal yok</option>'; goster(); });
+$('ihlal').addEventListener('change', goster);
+function goster(){
+  const x = tum.find(t => t.k === $('ihlal').value);
+  if (!x) { $('ozet').innerHTML = ''; $('men').hidden = true; return; }
+  $('ozet').innerHTML = `<div class="sk ana"><span>Ceza</span><b>${tl(x.tl)}</b><small>${esc(x.g)}</small></div><div class="sk"><span>15 günde öderseniz</span><b>${tl(x.tl * .75)}</b><small>%25 indirimli</small></div>`;
+  $('men').hidden = !x.men; $('men').innerHTML = x.men ? `<b>Ek yaptırım:</b> ${esc(x.men)}` : '';
+}
+$('kural').textContent = C.indirim + ' ' + C.itiraz;
+$('gruplar').innerHTML = C.gruplar.map(g => `<section class="hk"><h2>${esc(g.ad)}</h2><div class="tablo-sar"><table class="tablo"><thead><tr><th>İhlal</th><th class="sayi">Ceza</th><th>Ek yaptırım</th></tr></thead><tbody>${g.satir.map(s => `<tr><td>${esc(s[0])}</td><td class="sayi"><b>${tl(s[1])}</b></td><td><small>${esc(s[2] || '')}</small></td></tr>`).join('')}</tbody></table></div></section>`).join('');
+$('kaynaklar').innerHTML = C.kaynaklar.map(k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.ad)}</a>`).join(' · ') + '. Bu listede yalnızca 7574 sayılı Kanun ile tutarı yeniden belirlenen ihlaller yer alır. Park gibi tutarı değişmeyen ihlaller her yıl yeniden değerleme oranıyla artırılır.';
+goster();
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>

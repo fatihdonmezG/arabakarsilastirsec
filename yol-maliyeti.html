@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rota ve Yol Maliyeti Hesaplama | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="İki il arasındaki yolculuğun benzin, dizel ya da elektrik maliyetini, şarj duraklarını ve köprü otoyol ücretlerini veritabanındaki gerçek tüketim değerleriyle hesaplayın.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html" aria-current="page">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › <a href="hesaplama.html">Hesaplama</a> › Rota ve yol maliyeti</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">Benzin · Dizel · Elektrik</span>
+    <h1>Rota ve <b>yol maliyeti</b></h1>
+    <p>Nereden nereye gideceğinizi ve aracınızı seçin. Yakıt ya da şarj masrafını, şarj duraklarını, köprü ve otoyol ücretlerini tek yerde görün. Tüketim değerleri veritabanımızdaki resmi verilerden gelir.</p>
+  </div>
+
+  <div class="hs-grid iki">
+    <div class="yapis">
+      <section class="hk">
+        <h2><span class="no">1</span>Rota</h2>
+        <div class="alanlar" style="margin-top:4px">
+          <div class="alan"><label for="nereden">Nereden</label><select id="nereden"></select></div>
+          <div class="alan"><label for="nereye">Nereye</label><select id="nereye"></select></div>
+        </div>
+        <div id="duraklar"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <button type="button" class="dugme ikincil kucuk" id="durakEkle">+ Ara durak ekle</button>
+          <button type="button" class="dugme ikincil kucuk" id="ters">⇄ Yönü çevir</button>
+        </div>
+        <div class="alanlar">
+          <div class="alan"><span class="lbl" id="yonLbl">Yolculuk</span><div class="secim" role="group" aria-labelledby="yonLbl" id="yon"><button type="button" data-v="1" aria-pressed="true">Tek yön</button><button type="button" data-v="2" aria-pressed="false">Gidiş dönüş</button></div></div>
+          <div class="alan"><label for="kisi">Kişi sayısı</label><input type="number" id="kisi" min="1" max="9" value="1" inputmode="numeric"></div>
+        </div>
+        <div class="alan"><label for="ekKm">Şehir içi ek yol</label><div class="birimli"><input type="number" id="ekKm" min="0" step="5" value="0" inputmode="decimal"><span>km</span></div></div>
+      </section>
+
+      <section class="hk">
+        <h2><span class="no">2</span>Araç</h2>
+        <div class="secim" role="group" aria-label="Araç girişi" id="mod" style="margin-top:12px"><button type="button" data-v="db" aria-pressed="true">Veritabanından seç</button><button type="button" data-v="el" aria-pressed="false">Elle gir</button></div>
+        <div id="modDb">
+          <div class="alan"><span class="lbl">Araç</span><div id="aracAra"></div><div id="aracSecili"></div></div>
+        </div>
+        <div id="modEl" hidden>
+          <div class="alan"><span class="lbl" id="turLbl">Yakıt türü</span><div class="secim" role="group" aria-labelledby="turLbl" id="elTur"><button type="button" data-v="benzin" aria-pressed="true">Benzin</button><button type="button" data-v="dizel" aria-pressed="false">Dizel</button><button type="button" data-v="lpg" aria-pressed="false">LPG</button><button type="button" data-v="elektrik" aria-pressed="false">Elektrik</button></div></div>
+          <div class="alanlar">
+            <div class="alan"><label for="elTuk" id="elTukLbl">Ortalama tüketim</label><div class="birimli"><input type="number" id="elTuk" min="0" step="0.1" value="6.5" inputmode="decimal"><span id="elTukBirim">L/100 km</span></div></div>
+            <div class="alan" id="elDepoAlan"><label for="elDepo" id="elDepoLbl">Depo hacmi</label><div class="birimli"><input type="number" id="elDepo" min="0" step="1" value="50" inputmode="decimal"><span id="elDepoBirim">L</span></div></div>
+          </div>
+        </div>
+        <div class="alan"><label for="pay">Gerçek kullanım farkı</label><div class="birimli"><input type="number" id="pay" min="-30" max="80" step="1" value="0" inputmode="decimal"><span>% ek</span></div></div>
+        <p class="kaynak">Resmi tüketim değerleri WLTP test çevrimine göredir. Hızlı otoyol sürüşünde, klima ya da kış koşullarında gerçek tüketim yükselebilir; farkı buraya yüzde olarak yazabilirsiniz.</p>
+      </section>
+
+      <section class="hk" id="enerjiKart">
+        <h2><span class="no">3</span><span id="enerjiBaslik">Yakıt fiyatı</span></h2>
+        <div id="yakitAlan">
+          <div class="alanlar">
+            <div class="alan"><label for="il">Fiyat bölgesi</label><select id="il"></select></div>
+            <div class="alan"><label for="litre">Litre fiyatı</label><div class="birimli"><input type="number" id="litre" min="0" step="0.01" inputmode="decimal"><span>TL/L</span></div></div>
+          </div>
+          <p class="kaynak" id="yakitKaynak"></p>
+        </div>
+        <div id="sarjAlan" hidden>
+          <div class="alanlar">
+            <div class="alan"><label for="op">Yolda şarj operatörü</label><select id="op"></select></div>
+            <div class="alan"><label for="dcTl">DC fiyatı</label><div class="birimli"><input type="number" id="dcTl" min="0" step="0.01" inputmode="decimal"><span>TL/kWh</span></div></div>
+          </div>
+          <div class="alanlar">
+            <div class="alan"><label for="basSoc">Çıkışta şarj</label><div class="birimli"><input type="number" id="basSoc" min="5" max="100" value="90" inputmode="numeric"><span>%</span></div></div>
+            <div class="alan"><label for="minSoc">En az kalsın</label><div class="birimli"><input type="number" id="minSoc" min="0" max="50" value="10" inputmode="numeric"><span>%</span></div></div>
+            <div class="alan"><label for="ustSoc">Yolda şarj et</label><div class="birimli"><input type="number" id="ustSoc" min="30" max="100" value="80" inputmode="numeric"><span>%'ye</span></div></div>
+          </div>
+          <label class="kutu-onay"><input type="checkbox" id="evde" checked><span>Çıkıştaki şarjı evde yaptım (konut elektriği fiyatıyla hesaplansın)</span></label>
+          <div class="alan" id="evAlan"><label for="evTl">Konut elektriği</label><div class="birimli"><input type="number" id="evTl" min="0" step="0.01" inputmode="decimal"><span>TL/kWh</span></div></div>
+          <p class="kaynak" id="sarjKaynak"></p>
+        </div>
+      </section>
+
+      <section class="hk">
+        <h2><span class="no">4</span>Köprü ve otoyol</h2>
+        <p class="alt-yazi">Rotanızda geçeceğiniz ücretli yolları işaretleyin. Ücretler otomobil (1. sınıf), tek geçiş içindir.</p>
+        <div id="gecisler" style="margin-top:8px"></div>
+        <p class="kaynak">Tam tarife: <a href="gecis-ucretleri.html">Geçiş ücretleri sayfası</a></p>
+      </section>
+    </div>
+
+    <div>
+      <section class="hk" aria-live="polite">
+        <h2 id="sonucBaslik">Yolculuk özeti</h2>
+        <div class="rota-serit" id="serit" aria-hidden="true"></div>
+        <div class="sonuc-ust" id="ozet"></div>
+        <table class="dokum" id="dokum"></table>
+        <div class="not-kutu" id="uyari" hidden></div>
+      </section>
+
+      <section class="hk">
+        <h2>Aynı yolu başka araçlarla kıyasla</h2>
+        <p class="alt-yazi">Benzinli, dizel ve elektrikli araçları aynı rota ve aynı fiyatlarla yan yana görün. En fazla 4 araç ekleyebilirsiniz.</p>
+        <div class="alan"><div id="kiyasAra"></div></div>
+        <div class="kiyas" id="kiyas"></div>
+      </section>
+
+      <section class="hk">
+        <h2>Hesap nasıl yapılıyor?</h2>
+        <div class="kaynak" style="font-size:.86rem;color:var(--muted)">
+          <p><b>Mesafe ve süre:</b> İl merkezleri arasındaki karayolu mesafesi ve sürüş süresi OpenStreetMap yol ağı üzerinde en hızlı rotaya göre hesaplanmıştır (<span id="mesafeKaynak"></span>). Ara durak eklerseniz bacaklar toplanır. Mola ve trafik süreleri dahil değildir.</p>
+          <p style="margin-top:8px"><b>Benzin ve dizel:</b> Mesafe × resmi ortalama tüketim (L/100 km) × litre fiyatı. Depo hacmi biliniyorsa, depoda %10 yedek kalacak şekilde yakıt alım noktaları gösterilir.</p>
+          <p style="margin-top:8px"><b>Elektrik:</b> Mesafe × enerji tüketimi (kWh/100 km). Çıkıştaki şarj ile "en az kalsın" seviyesi arasındaki enerji kullanılır, gerisi yolda hızlı şarjla tamamlanır. Şarj süresi, üreticinin açıkladığı %20–80 hızlı şarj süresinden orantıyla bulunur. Tüketimi açıklanmamış elektriklilerde batarya ÷ WLTP menzil kullanılır ve sonuçta belirtilir. Şarj sırasındaki kayıplar dahil değildir.</p>
+          <p style="margin-top:8px"><b>Hibritler:</b> Resmi tüketim değeri kullanılır. Şarj edilebilir hibritlerde WLTP değeri dolu batarya ile yapılan kısa sürüşü de içerdiği için uzun yolda gerçek tüketim çok daha yüksek olur; kendi değerinizi elle girmenizi öneririz.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Sonuçlar tahminidir. Fiyatlar istasyona ve zamana göre değişir; yola çıkmadan önce güncel fiyatı kontrol edin.</div></footer>
+
+<script src="assets/arac_enerji.js"></script>
+<script src="assets/mesafeler.js"></script>
+<script src="assets/hesap_veri.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc, sayi, tl, sure} = H, V = HESAP_VERI, IL = window.ILLER, KM = window.MESAFE_KM, DK = window.MESAFE_DK;
+const ilIdx = ad => IL.findIndex(x => x.ad === ad);
+const ilSecenek = sec => IL.slice().sort((a, b) => a.ad.localeCompare(b.ad, 'tr')).map(x => `<option value="${IL.indexOf(x)}"${IL.indexOf(x) === sec ? ' selected' : ''}>${esc(x.ad)}</option>`).join('');
+const S = {nereden: ilIdx('İstanbul'), nereye: ilIdx('Ankara'), duraklar: [], yon: 1, mod: 'db', arac: null, elTur: 'benzin', kiyas: [], gecis: new Set()};
+
+// Başlangıç: adres satırından ya da varsayılan araç
+const q = new URLSearchParams(location.search);
+S.arac = H.arac(q.get('arac')) || H.ARACLAR.find(a => a.satista && a.marka === 'Fiat' && a.model === 'Egea' && a.tur === 'dizel') || H.ARACLAR.find(a => a.satista);
+if (q.get('nereden') && ilIdx(q.get('nereden')) >= 0) S.nereden = ilIdx(q.get('nereden'));
+if (q.get('nereye') && ilIdx(q.get('nereye')) >= 0) S.nereye = ilIdx(q.get('nereye'));
+$('nereden').innerHTML = ilSecenek(S.nereden);
+$('nereye').innerHTML = ilSecenek(S.nereye);
+$('mesafeKaynak').innerHTML = `<a href="${esc(MESAFE_META.url)}" target="_blank" rel="noopener">${esc(MESAFE_META.kaynak)}</a>, ${H.tarih(MESAFE_META.tarih)}`;
+
+// Fiyat bölgeleri
+const iller = Object.keys(V.yakit.iller);
+$('il').innerHTML = iller.map(k => `<option>${esc(k)}</option>`).join('') + '<option value="">Kendi fiyatım</option>';
+$('yakitKaynak').innerHTML = `Pompa fiyatları ${H.tarih(V.yakit.tarih)} tarihlidir. Kaynak: ${V.yakit.kaynaklar.map(k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.ad)}</a>`).join(', ')}.`;
+$('op').innerHTML = V.sarj.map((o, i) => `<option value="${i}">${esc(o.ad)} (DC ${sayi(o.dc[0], 2)}${o.dc[1] !== o.dc[0] ? '–' + sayi(o.dc[1], 2) : ''} TL)</option>`).join('');
+$('dcTl').value = H.dcFiyat(V.sarj[0]).toFixed(2);
+$('evTl').value = V.ev.kademe1.toFixed(2);
+const sarjKaynakYaz = () => { const o = V.sarj[+$('op').value]; $('sarjKaynak').innerHTML = `${esc(o.ad)} fiyatı: <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.kaynak)}</a>, ${H.tarih(o.tarih)}. Aralık verilen DC fiyatlarında orta değer kullanılır. Konut elektriği: <a href="${esc(V.ev.url)}" target="_blank" rel="noopener">${esc(V.ev.kaynak)}</a>, ${H.tarih(V.ev.tarih)}, aylık ${V.ev.sinir_kwh_ay} kWh'e kadar ${sayi(V.ev.kademe1, 2)} TL, üstü ${sayi(V.ev.kademe2, 2)} TL (vergiler dahil). ${esc(V.ev.not)}`; };
+sarjKaynakYaz();
+
+// Geçişler
+$('gecisler').innerHTML = V.gecis.kalemler.filter(g => g.id !== 'avrasyagece').map(g => `<label class="kutu-onay"><input type="checkbox" value="${g.id}"><span style="flex:1">${esc(g.ad)}${g.not ? `<br><small style="color:var(--muted)">${esc(g.not)}</small>` : ''}</span><b style="white-space:nowrap">${tl(g.tl)}</b></label>`).join('');
+
+// Ara duraklar
+const durakCiz = () => {
+  $('duraklar').innerHTML = S.duraklar.map((d, i) => `<div class="alan"><label for="durak${i}">Ara durak ${i + 1}</label><div style="display:flex;gap:8px"><select id="durak${i}" data-durak="${i}">${ilSecenek(d)}</select><button type="button" class="dugme ikincil kucuk" data-durak-sil="${i}" aria-label="Durağı kaldır">×</button></div></div>`).join('');
+};
+
+// Araç seçimi
+const aracCiz = () => { $('aracSecili').innerHTML = S.arac ? H.seciliKart(S.arac) : '<p class="kaynak">Henüz araç seçmediniz.</p>'; };
+H.aracAra($('aracAra'), {secince: a => { S.arac = a; aracCiz(); hesapla(); }});
+H.aracAra($('kiyasAra'), {yer: 'Kıyas için araç ekleyin', secince: a => { if (S.kiyas.length < 4 && !S.kiyas.some(x => x.id === a.id)) S.kiyas.push(a); hesapla(); }});
+aracCiz();
+
+// Aktif araç profili
+function profil(a){
+  if (S.mod === 'el' && !a) {
+    const t = S.elTur, tuk = H.oku('elTuk', 0), depo = H.oku('elDepo', 0);
+    return t === 'elektrik' ? {ad: 'Elle girilen elektrikli araç', tur: t, kwh100: tuk, batarya: depo || null, dc: null} : {ad: 'Elle girilen araç', tur: t, l100: tuk, depo: depo || null};
+  }
+  a = a || S.arac; if (!a) return null;
+  return {ad: `${a.marka} ${a.model}`, alt: `${a.yil} · ${a.versiyon}`, tur: a.tur, l100: a.l100, kwh100: a.kwh100, kwhTahmin: a.kwhTahmin, batarya: a.batarya, menzil: a.menzil, dc: a.dc, depo: a.depo, id: a.id};
+}
+
+// Rota bacakları
+function rota(){
+  const noktalar = [S.nereden, ...S.duraklar, S.nereye];
+  let km = 0, dk = 0; const bacak = [];
+  for (let i = 0; i < noktalar.length - 1; i++) { const a = noktalar[i], b = noktalar[i + 1]; const k = a === b ? 0 : KM[a][b], d = a === b ? 0 : DK[a][b]; bacak.push({a, b, km: k, dk: d}); km += k; dk += d; }
+  const ek = Math.max(0, H.oku('ekKm', 0));
+  return {noktalar, bacak, tekKm: km + ek, tekDk: dk, km: (km + ek) * S.yon, dk: dk * S.yon};
+}
+
+function litreDoldur(){
+  const p = profil(); if (!p || p.tur === 'elektrik') return;
+  const il = $('il').value; if (!il) return;
+  const t = p.tur === 'dizel' ? 'dizel' : (p.tur === 'lpg' && S.mod === 'el') ? 'lpg' : 'benzin';
+  $('litre').value = V.yakit.iller[il][t].toFixed(2);
+}
+
+// Bir araç için maliyet
+function maliyet(p, r){
+  const pay = 1 + H.oku('pay', 0) / 100, gecis = [...S.gecis].reduce((t, id) => t + (V.gecis.kalemler.find(g => g.id === id) || {tl: 0}).tl, 0) * S.yon;
+  if (p.tur === 'elektrik') {
+    if (!p.kwh100) return {hata: 'Bu aracın enerji tüketimi bilinmiyor.'};
+    const enerji = r.km * p.kwh100 / 100 * pay;
+    const bas = Math.min(100, H.oku('basSoc', 90)) / 100, min = Math.max(0, H.oku('minSoc', 10)) / 100, ust = Math.min(100, H.oku('ustSoc', 80)) / 100;
+    const dc = H.oku('dcTl', 0), ev = $('evde').checked ? H.oku('evTl', 0) : dc;
+    if (!p.batarya) { const t = enerji * dc; return {enerji, birim: 'kWh', yakitTl: t, gecis, toplam: t + gecis, duraklar: [], sarjDk: null, not: 'Batarya kapasitesi bilinmediği için şarj durağı hesaplanamadı; enerjinin tamamı yolda şarj fiyatıyla hesaplandı.'}; }
+    const ilk = Math.max(0, p.batarya * (bas - min)), her = Math.max(0.1, p.batarya * (ust - min));
+    const evEnerji = Math.min(enerji, ilk), yolEnerji = Math.max(0, enerji - ilk);
+    const duraklar = []; let kalan = yolEnerji, kmNokta = ilk / (p.kwh100 * pay) * 100, sarjDk = 0, dkBelli = !!p.dc;
+    while (kalan > 0.01 && duraklar.length < 40) {
+      const hedef = kalan <= her ? kalan : her; // son durakta yalnızca gereken kadar
+      const dk = p.dc ? p.dc * (hedef / p.batarya) / 0.6 : null;
+      duraklar.push({km: kmNokta, kwh: hedef, dk});
+      if (dk) sarjDk += dk;
+      kmNokta += hedef / (p.kwh100 * pay) * 100; kalan -= hedef;
+    }
+    const yakitTl = evEnerji * ev + yolEnerji * dc;
+    return {enerji, birim: 'kWh', evEnerji, yolEnerji, yakitTl, gecis, toplam: yakitTl + gecis, duraklar, sarjDk: dkBelli ? sarjDk : null, tur: 'sarj'};
+  }
+  if (!p.l100) return {hata: 'Bu aracın yakıt tüketimi bilinmiyor.'};
+  const fiyat = H.oku('litre', 0), litre = r.km * p.l100 / 100 * pay, yakitTl = litre * fiyat;
+  const duraklar = [];
+  if (p.depo) { const menzil = p.depo * 0.9 / (p.l100 * pay) * 100; for (let k = menzil; k < r.km - 1 && duraklar.length < 40; k += menzil) duraklar.push({km: k, litre: p.depo * 0.9}); }
+  return {enerji: litre, birim: 'L', yakitTl, gecis, toplam: yakitTl + gecis, duraklar, tur: 'yakit'};
+}
+
+function seritCiz(r, m){
+  const el = $('serit'), tk = r.km; if (!tk) { el.innerHTML = ''; return; }
+  const parts = [];
+  let acc = 0; const noktalar = [{km: 0, ad: IL[r.noktalar[0]].ad, tip: 'bas'}];
+  r.bacak.forEach((b, i) => { acc += b.km; noktalar.push({km: acc, ad: IL[b.b].ad, tip: i === r.bacak.length - 1 ? 'son' : 'durak'}); });
+  if (S.yon === 2) { const tek = acc; r.bacak.slice().reverse().forEach((b, i) => { acc += b.km; noktalar.push({km: acc, ad: IL[b.a].ad, tip: i === r.bacak.length - 1 ? 'son' : 'durak'}); }); noktalar[r.bacak.length].tip = 'donus'; }
+  const olc = Math.max(acc, 1);
+  noktalar.forEach((n, i) => {
+    const x = n.km / olc * 100, kenar = i === 0 ? ' sol' : i === noktalar.length - 1 ? ' sag' : '';
+    parts.push(`<span class="nokta${n.tip === 'durak' || n.tip === 'donus' ? ' durak' : ''}" style="left:${x}%"></span><span class="etiket ust${kenar}" style="left:${x}%"><b>${esc(n.ad)}</b><small>${sayi(n.km)} km</small></span>`);
+  });
+  (m.duraklar || []).forEach((d, i) => {
+    const x = Math.min(99, d.km / olc * 100);
+    parts.push(`<span class="nokta ${m.tur === 'sarj' ? 'sarj' : 'yakit'}" style="left:${x}%" title="${m.tur === 'sarj' ? 'Şarj' : 'Yakıt'} ${i + 1}">${m.tur === 'sarj' ? '⚡' : '⛽'}</span><span class="etiket alt" style="left:${x}%"><small>${sayi(d.km)}. km</small></span>`);
+  });
+  el.innerHTML = `<div class="yol"><span class="dolu"></span>${parts.join('')}</div>`;
+  requestAnimationFrame(() => requestAnimationFrame(() => { const d = el.querySelector('.dolu'); if (d) d.style.width = '100%'; }));
+}
+
+let sonTur = null;
+function hesapla(){
+  { const p0 = profil(); if (p0 && p0.tur !== 'elektrik') { const t = p0.tur === 'dizel' ? 'dizel' : (p0.tur === 'lpg' && S.mod === 'el') ? 'lpg' : 'benzin'; if (sonTur !== t) { sonTur = t; litreDoldur(); } } }
+  const r = rota(), p = profil(), kisi = Math.max(1, Math.round(H.oku('kisi', 1)));
+  const ev = p && p.tur === 'elektrik';
+  $('yakitAlan').hidden = !!ev; $('sarjAlan').hidden = !ev; $('enerjiBaslik').textContent = ev ? 'Şarj fiyatı' : 'Yakıt fiyatı';
+  $('evAlan').hidden = !$('evde').checked;
+  $('sonucBaslik').textContent = `${IL[S.nereden].ad} → ${IL[S.nereye].ad}${S.yon === 2 ? ' → ' + IL[S.nereden].ad : ''}`;
+  if (!p) { $('ozet').innerHTML = ''; $('dokum').innerHTML = ''; return; }
+  const m = maliyet(p, r);
+  seritCiz(r, m);
+  const uy = $('uyari');
+  if (m.hata) { $('ozet').innerHTML = ''; $('dokum').innerHTML = ''; uy.hidden = false; uy.innerHTML = esc(m.hata) + ' Tüketimi "Elle gir" bölümünden yazabilirsiniz.'; kiyasCiz(r); return; }
+  const top = m.toplam, sarjDk = m.sarjDk || 0;
+  $('ozet').innerHTML = `
+    <div class="sk ana"><span>Toplam masraf</span><b>${tl(top)}</b><small>${S.yon === 2 ? 'gidiş dönüş' : 'tek yön'}</small></div>
+    <div class="sk"><span>Kişi başı</span><b>${tl(top / kisi)}</b><small>${kisi} kişi</small></div>
+    <div class="sk"><span>Mesafe</span><b>${sayi(r.km)} km</b><small>${m.tur === 'sarj' ? sayi(m.enerji, 1) + ' kWh' : sayi(m.enerji, 1) + ' litre'}</small></div>
+    <div class="sk"><span>Süre</span><b>${sure(r.dk + sarjDk)}</b><small>${m.tur === 'sarj' && m.duraklar.length ? (m.sarjDk != null ? sure(sarjDk) + ' şarj dahil' : 'şarj süresi bilinmiyor') : 'mola hariç'}</small></div>
+    <div class="sk"><span>Kilometre başı</span><b>${sayi(m.yakitTl / Math.max(r.km, 1), 2)} TL</b><small>${m.tur === 'sarj' ? 'enerji' : 'yakıt'}, geçiş hariç</small></div>
+    <div class="sk"><span>${m.tur === 'sarj' ? 'Şarj durağı' : 'Yakıt alımı'}</span><b>${m.duraklar.length}</b><small>${m.tur === 'sarj' ? `%${H.oku('ustSoc', 80)}'e kadar` : p.depo ? 'tam depo ile' : 'depo hacmi yok'}</small></div>`;
+  const satir = [];
+  if (m.tur === 'sarj') {
+    if (m.evEnerji) satir.push([`Çıkıştaki şarj (${sayi(m.evEnerji, 1)} kWh × ${sayi($('evde').checked ? H.oku('evTl', 0) : H.oku('dcTl', 0), 2)} TL)`, tl(m.evEnerji * ($('evde').checked ? H.oku('evTl', 0) : H.oku('dcTl', 0)))]);
+    if (m.yolEnerji) satir.push([`Yolda hızlı şarj (${sayi(m.yolEnerji, 1)} kWh × ${sayi(H.oku('dcTl', 0), 2)} TL)`, tl(m.yolEnerji * H.oku('dcTl', 0))]);
+  } else satir.push([`Yakıt (${sayi(m.enerji, 1)} L × ${sayi(H.oku('litre', 0), 2)} TL)`, tl(m.yakitTl)]);
+  if (m.gecis) satir.push([`Köprü ve otoyol (${S.gecis.size} geçiş${S.yon === 2 ? ' × 2' : ''})`, tl(m.gecis)]);
+  satir.push(['<b>Toplam</b>', `<b>${tl(top)}</b>`]);
+  $('dokum').innerHTML = satir.map((s, i) => `<tr${i === satir.length - 1 ? ' class="top"' : ''}><td>${s[0]}</td><td>${s[1]}</td></tr>`).join('');
+  const notlar = [];
+  if (p.kwhTahmin) notlar.push('Bu aracın enerji tüketimi açıklanmadığı için batarya ÷ WLTP menzil ile bulundu.');
+  if (m.not) notlar.push(m.not);
+  if (p.tur === 'phev') notlar.push('Şarj edilebilir hibrit: resmi WLTP tüketimi uzun yolda gerçekçi değildir. "Elle gir" ile kendi tüketiminizi yazın.');
+  if (p.tur === 'lpg' && S.mod === 'db') notlar.push('Çift yakıtlı araç: LPG tüketimi açıklanmadığı için benzinli tüketim ve benzin fiyatı kullanıldı.');
+  if (m.tur === 'sarj' && m.duraklar.length && m.sarjDk == null) notlar.push('Üretici hızlı şarj süresini açıklamadığı için şarj süresi hesaplanamadı.');
+  if (S.yon === 2 && m.tur === 'sarj') notlar.push('Gidiş dönüşte varış noktasında şarj edilmediği varsayılır; duraklar dönüş yolunu da kapsar.');
+  uy.hidden = !notlar.length; uy.innerHTML = notlar.map(esc).join('<br>');
+  kiyasCiz(r);
+  try { history.replaceState(null, '', `?nereden=${encodeURIComponent(IL[S.nereden].ad)}&nereye=${encodeURIComponent(IL[S.nereye].ad)}${S.arac && S.mod === 'db' ? '&arac=' + encodeURIComponent(S.arac.id) : ''}`); } catch (e) {}
+}
+
+function kiyasCiz(r){
+  const liste = [];
+  const ana = profil(); if (ana) liste.push({p: ana, ana: true});
+  S.kiyas.forEach(a => liste.push({p: profil(a), a}));
+  const hesap = liste.map(x => {
+    let m;
+    if (x.p.tur === 'elektrik') m = maliyet(x.p, r);
+    else { // her araç kendi yakıt türünün fiyatıyla
+      const il = $('il').value, t = x.p.tur === 'dizel' ? 'dizel' : 'benzin';
+      const f = il ? V.yakit.iller[il][t] : H.oku('litre', 0);
+      const sakla = $('litre').value; $('litre').value = (x.ana ? H.oku('litre', f) : f); m = maliyet(x.p, r); $('litre').value = sakla;
+    }
+    return {...x, m};
+  });
+  const gecerli = hesap.filter(x => !x.m.hata), en = Math.max(...gecerli.map(x => x.m.toplam), 1), min = Math.min(...gecerli.map(x => x.m.toplam));
+  $('kiyas').innerHTML = hesap.map((x, i) => {
+    const renk = {benzin: 'var(--benzin)', dizel: 'var(--dizel)', elektrik: 'var(--elektrik)', lpg: 'var(--lpg)', hibrit: 'var(--hibrit)', phev: 'var(--hibrit)'}[x.p.tur];
+    const ucuz = !x.m.hata && gecerli.length > 1 && x.m.toplam === min;
+    return `<div class="ky${ucuz ? ' en-ucuz' : ''}" style="--k:${renk}"><div class="ad"><b>${esc(x.p.ad)}${ucuz ? '<span class="rozet">en ekonomik</span>' : ''}</b><small>${x.p.alt ? esc(x.p.alt) + ' · ' : ''}${H.TUR_AD[x.p.tur]}${x.ana ? ' · seçili araç' : ''}</small></div>
+      <div class="cubuk"><i style="--w:0%" data-w="${x.m.hata ? 0 : (x.m.toplam / en * 100).toFixed(1)}"></i></div>
+      <div class="tl">${x.m.hata ? '<small style="color:var(--muted)">veri yok</small>' : tl(x.m.toplam)}${x.ana ? '' : ` <button type="button" class="dugme ikincil kucuk" data-kiyas-sil="${i - 1}" aria-label="Kıyastan çıkar" style="min-height:28px;padding:0 8px">×</button>`}</div></div>`;
+  }).join('') + (S.kiyas.length ? '' : '<p class="kaynak">Örnek: aynı sınıftan bir benzinli, bir dizel ve bir elektrikli araç ekleyin.</p>');
+  requestAnimationFrame(() => requestAnimationFrame(() => $('kiyas').querySelectorAll('.cubuk i').forEach(i => i.style.setProperty('--w', i.dataset.w + '%'))));
+}
+
+// Olaylar
+const basili = (grup, v) => grup.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+$('nereden').addEventListener('change', e => { S.nereden = +e.target.value; hesapla(); });
+$('nereye').addEventListener('change', e => { S.nereye = +e.target.value; hesapla(); });
+$('ters').addEventListener('click', () => { [S.nereden, S.nereye] = [S.nereye, S.nereden]; S.duraklar.reverse(); $('nereden').value = S.nereden; $('nereye').value = S.nereye; durakCiz(); hesapla(); });
+$('durakEkle').addEventListener('click', () => { if (S.duraklar.length >= 5) return; S.duraklar.push(ilIdx('Ankara')); durakCiz(); hesapla(); });
+$('duraklar').addEventListener('change', e => { const s = e.target.closest('[data-durak]'); if (s) { S.duraklar[+s.dataset.durak] = +s.value; hesapla(); } });
+$('duraklar').addEventListener('click', e => { const b = e.target.closest('[data-durak-sil]'); if (b) { S.duraklar.splice(+b.dataset.durakSil, 1); durakCiz(); hesapla(); } });
+$('yon').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.yon = +b.dataset.v; basili($('yon'), b.dataset.v); hesapla(); });
+$('mod').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.mod = b.dataset.v; basili($('mod'), S.mod); $('modDb').hidden = S.mod !== 'db'; $('modEl').hidden = S.mod !== 'el'; litreDoldur(); hesapla(); });
+$('elTur').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.elTur = b.dataset.v; basili($('elTur'), S.elTur);
+  const ev = S.elTur === 'elektrik'; $('elTukBirim').textContent = ev ? 'kWh/100 km' : 'L/100 km'; $('elDepoLbl').textContent = ev ? 'Batarya (kullanılabilir)' : 'Depo hacmi'; $('elDepoBirim').textContent = ev ? 'kWh' : 'L';
+  $('elTuk').value = ev ? 17 : S.elTur === 'lpg' ? 8.5 : 6.5; $('elDepo').value = ev ? 60 : 50; litreDoldur(); hesapla(); });
+$('aracSecili').addEventListener('click', e => { if (e.target.closest('[data-kaldir]')) { S.arac = null; aracCiz(); hesapla(); } });
+$('kiyas').addEventListener('click', e => { const b = e.target.closest('[data-kiyas-sil]'); if (b) { S.kiyas.splice(+b.dataset.kiyasSil, 1); hesapla(); } });
+$('il').addEventListener('change', () => { litreDoldur(); hesapla(); });
+$('op').addEventListener('change', () => { $('dcTl').value = H.dcFiyat(V.sarj[+$('op').value]).toFixed(2); sarjKaynakYaz(); hesapla(); });
+$('gecisler').addEventListener('change', e => { const c = e.target.closest('input[type=checkbox]'); if (!c) return; c.checked ? S.gecis.add(c.value) : S.gecis.delete(c.value); hesapla(); });
+['kisi', 'ekKm', 'pay', 'litre', 'dcTl', 'evTl', 'basSoc', 'minSoc', 'ustSoc', 'elTuk', 'elDepo'].forEach(id => $(id).addEventListener('input', hesapla));
+$('evde').addEventListener('change', hesapla);
+litreDoldur(); hesapla();
+})();
+</script>
+<script src="assets/menu.js"></script>
+</body>
+</html>

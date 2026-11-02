@@ -15,6 +15,7 @@
     [/rate limit|too many/i, 'Çok fazla deneme yapıldı. Biraz sonra tekrar deneyin.'],
     [/duplicate key.*yorumlar|yorumlar_user_id_arac_id/i, 'Bu versiyon için zaten bir yorumunuz var.'],
     [/duplicate key.*garaj|garaj_tekil/i, 'Bu araç zaten garajınızda.'],
+    [/duplicate key.*forum_sikayet|forum_sikayet_tekil/i, 'Bunu zaten şikayet ettiniz.'],
     [/failed to fetch|network/i, 'Sunucuya ulaşılamadı. İnternet bağlantınızı kontrol edin.'],
   ];
   const turkce = e => {
@@ -149,6 +150,46 @@
       if (c.faydali) return c.faydali(id, ver);
       if (ver) kontrol(await c.from('faydali_oy').insert({ yorum_id: id }));
       else kontrol(await c.from('faydali_oy').delete().eq('yorum_id', id));
+    },
+    // Forum
+    async forumKonular(f) {
+      // f: {kategori, marka, ara, sayfa, adet}
+      f = f || {}; const c = await yukle();
+      if (c.forumKonular) return c.forumKonular(f);
+      const adet = f.adet || 20, bas = (f.sayfa || 0) * adet;
+      let q = c.from('forum_konular').select('id,takma_ad,kategori,baslik,marka,model,cevap_sayisi,son_hareket,olusturma', { count: 'exact' }).eq('durum', 'yayinda');
+      if (f.kategori) q = q.eq('kategori', f.kategori);
+      if (f.marka) q = q.eq('marka', f.marka);
+      if (f.ara) q = q.ilike('baslik', '%' + f.ara.replace(/[%_]/g, '') + '%');
+      const r = await q.order('son_hareket', { ascending: false }).range(bas, bas + adet - 1);
+      return { satirlar: kontrol(r) || [], toplam: r.count || 0 };
+    },
+    async forumKonu(id) {
+      const c = await yukle();
+      if (c.forumKonu) return c.forumKonu(id);
+      const k = kontrol(await c.from('forum_konular').select('*').eq('id', id).maybeSingle());
+      const cv = kontrol(await c.from('forum_cevaplar').select('id,user_id,takma_ad,metin,olusturma,durum').eq('konu_id', id).order('olusturma').limit(500)) || [];
+      return { konu: k, cevaplar: cv };
+    },
+    async forumKonuAc(k) {
+      const c = await yukle();
+      if (c.forumKonuAc) return c.forumKonuAc(k);
+      return kontrol(await c.from('forum_konular').insert(k).select('id').single());
+    },
+    async forumCevapla(konu_id, metin) {
+      const c = await yukle();
+      if (c.forumCevapla) return c.forumCevapla(konu_id, metin);
+      kontrol(await c.from('forum_cevaplar').insert({ konu_id, metin }));
+    },
+    async forumSil(tur, id) {
+      const c = await yukle();
+      if (c.forumSil) return c.forumSil(tur, id);
+      kontrol(await c.from(tur === 'konu' ? 'forum_konular' : 'forum_cevaplar').delete().eq('id', id));
+    },
+    async forumSikayet(tur, id, sebep) {
+      const c = await yukle();
+      if (c.forumSikayet) return c.forumSikayet(tur, id, sebep);
+      kontrol(await c.from('forum_sikayet').insert(tur === 'konu' ? { konu_id: id, sebep } : { cevap_id: id, sebep }));
     },
     degisti(f) { dinleyiciler.push(f); if (window.UYE_MOCK && window.UYE_MOCK.dinle) window.UYE_MOCK.dinle(f); },
   };

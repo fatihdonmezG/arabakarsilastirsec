@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Köprü ve Otoyol Geçiş Ücretleri 2026 | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="2026 köprü, tünel ve otoyol geçiş ücretleri, otomobil sınıfı, yürürlük tarihleri ve kaynaklarıyla.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html" aria-current="page">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › <a href="hesaplama.html">Hesaplama</a> › Geçiş ücretleri</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">HGS · OGS · 2026</span>
+    <h1>Köprü ve <b>otoyol ücretleri</b></h1>
+    <p>Otomobil (1. sınıf) için 2026 geçiş ücretleri. Geçeceğiniz yolları seçin, toplamı görün. Her ücretin yürürlük tarihi ve kaynağı satırında yazılı.</p>
+  </div>
+  <div class="hs-grid iki">
+    <div class="yapis">
+      <section class="hk" aria-live="polite">
+        <h2>Seçtiğiniz geçişler</h2>
+        <div class="secim" role="group" aria-label="Yön" id="yon" style="margin-top:12px"><button type="button" data-v="1" aria-pressed="true">Tek yön</button><button type="button" data-v="2" aria-pressed="false">Gidiş dönüş</button></div>
+        <div class="alan"><label for="ay">Ayda kaç kez</label><input type="number" id="ay" min="1" max="60" value="1" inputmode="numeric"></div>
+        <div class="sonuc-ust" id="ozet"></div>
+        <table class="dokum" id="dokum"></table>
+        <div class="not-kutu"><b>İhlalli geçiş:</b> HGS bakiyeniz yetersizken geçtiyseniz ücreti süresi içinde ödeyerek cezadan kurtulabilirsiniz. Süre ve tutarlar için KGM ihlalli geçiş sayfasını kontrol edin.</div>
+      </section>
+    </div>
+    <div>
+      <section class="hk">
+        <h2>Köprüler ve tüneller</h2>
+        <div class="tablo-sar"><table class="tablo" id="tKopru"></table></div>
+      </section>
+      <section class="hk">
+        <h2>Otoyollar</h2>
+        <p class="alt-yazi">Otoyollarda ücret giriş ve çıkış gişesine göre değişir. Burada tam geçiş ücretleri yer alır; ara gişeler için KGM tarifesine bakın.</p>
+        <div class="tablo-sar"><table class="tablo" id="tOtoyol"></table></div>
+        <p class="kaynak" id="resmi"></p>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Ücretler değişebilir; resmi tarife KGM ve işletmeci şirketlerin sitelerindedir.</div></footer>
+<script src="assets/hesap_veri.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc, tl} = H, G = HESAP_VERI.gecis; let yon = 1; const sec = new Set();
+const satir = g => `<tr><td style="width:36px"><input type="checkbox" value="${g.id}" aria-label="${esc(g.ad)} seç" style="width:18px;height:18px;accent-color:var(--accent)"></td><td><b>${esc(g.ad)}</b>${g.not ? `<br><small style="color:var(--muted)">${esc(g.not)}</small>` : ''}</td><td class="sayi"><b>${tl(g.tl)}</b></td><td><small>${g.gecerli.length > 4 ? H.tarih(g.gecerli) : g.gecerli}<br><a href="${esc(g.url)}" target="_blank" rel="noopener" style="color:var(--accent)">${esc(g.kaynak)}</a></small></td></tr>`;
+const bas = '<thead><tr><th></th><th>Geçiş</th><th class="sayi">Otomobil</th><th>Yürürlük ve kaynak</th></tr></thead>';
+$('tKopru').innerHTML = bas + '<tbody>' + G.kalemler.filter(g => g.tur !== 'otoyol').map(satir).join('') + '</tbody>';
+$('tOtoyol').innerHTML = bas + '<tbody>' + G.kalemler.filter(g => g.tur === 'otoyol').map(satir).join('') + '</tbody>';
+$('resmi').innerHTML = `Resmi tarife: <a href="${G.resmi.url}" target="_blank" rel="noopener">${esc(G.resmi.ad)}</a>. 1 Temmuz 2026'da yap-işlet-devret köprüleri, Avrasya Tüneli ve Ankara–Niğde Otoyolu zamlandı; devletin işlettiği 15 Temmuz ve FSM köprülerinde ücret değişmedi.`;
+function hesapla(){
+  const n = Math.max(1, Math.round(H.oku('ay', 1))), k = G.kalemler.filter(g => sec.has(g.id)), tek = k.reduce((t, g) => t + g.tl, 0), yol = tek * yon;
+  $('ozet').innerHTML = `<div class="sk ana"><span>Bir yolculuk</span><b>${tl(yol)}</b><small>${yon === 2 ? 'gidiş dönüş' : 'tek yön'}</small></div><div class="sk"><span>Aylık</span><b>${tl(yol * n)}</b><small>${n} yolculuk</small></div><div class="sk"><span>Yıllık</span><b>${tl(yol * n * 12)}</b><small>aynı sıklıkla</small></div>`;
+  $('dokum').innerHTML = k.length ? k.map(g => `<tr><td>${esc(g.ad)}${yon === 2 ? ' × 2' : ''}</td><td>${tl(g.tl * yon)}</td></tr>`).join('') : '<tr><td colspan="2" style="color:var(--muted)">Tablodan geçeceğiniz yolları işaretleyin.</td></tr>';
+}
+document.addEventListener('change', e => { const c = e.target.closest('.tablo input[type=checkbox]'); if (!c) return; c.checked ? sec.add(c.value) : sec.delete(c.value); hesapla(); });
+$('yon').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; yon = +b.dataset.v; $('yon').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); hesapla(); });
+$('ay').addEventListener('input', hesapla);
+hesapla();
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>

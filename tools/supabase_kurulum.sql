@@ -149,3 +149,123 @@ begin
 end $$;
 drop trigger if exists faydali_tetik on public.faydali_oy;
 create trigger faydali_tetik after insert or delete on public.faydali_oy for each row execute function public.faydali_say();
+
+-- 5) Forum ---------------------------------------------------------------------
+--   * Konu ve cevaplar giriş yapmış üyelerce yazılır ve hemen yayına girer.
+--   * Bir üye günde en fazla 5 konu ve 60 cevap yazabilir.
+--   * Üç farklı üyenin şikayet ettiği konu ya da cevap otomatik gizlenir; Table Editor'de durum = 'yayinda' yapılarak geri açılır.
+create table if not exists public.forum_konular (
+  id bigint generated always as identity primary key,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  takma_ad text,
+  kategori text not null check (kategori in ('genel','satin-alma','elektrikli','ariza-bakim','marka-kulubu','yakit-sarj','trafik-mevzuat','lastik-aksesuar')),
+  baslik text not null check (char_length(baslik) between 5 and 120),
+  metin text not null check (char_length(metin) between 10 and 8000),
+  marka text check (char_length(marka) <= 40),
+  model text check (char_length(model) <= 60),
+  cevap_sayisi int not null default 0,
+  son_hareket timestamptz not null default now(),
+  durum text not null default 'yayinda' check (durum in ('yayinda','gizli')),
+  olusturma timestamptz not null default now()
+);
+create index if not exists forum_konular_liste on public.forum_konular (kategori, durum, son_hareket desc);
+create index if not exists forum_konular_marka on public.forum_konular (marka, model);
+alter table public.forum_konular enable row level security;
+drop policy if exists "forum konu okunur" on public.forum_konular;
+create policy "forum konu okunur" on public.forum_konular for select using (durum = 'yayinda' or auth.uid() = user_id);
+drop policy if exists "forum konu ekler" on public.forum_konular;
+create policy "forum konu ekler" on public.forum_konular for insert to authenticated with check (auth.uid() = user_id);
+drop policy if exists "forum konu siler" on public.forum_konular;
+create policy "forum konu siler" on public.forum_konular for delete using (auth.uid() = user_id);
+
+create table if not exists public.forum_cevaplar (
+  id bigint generated always as identity primary key,
+  konu_id bigint not null references public.forum_konular(id) on delete cascade,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  takma_ad text,
+  metin text not null check (char_length(metin) between 2 and 5000),
+  durum text not null default 'yayinda' check (durum in ('yayinda','gizli')),
+  olusturma timestamptz not null default now()
+);
+create index if not exists forum_cevaplar_konu on public.forum_cevaplar (konu_id, olusturma);
+alter table public.forum_cevaplar enable row level security;
+drop policy if exists "forum cevap okunur" on public.forum_cevaplar;
+create policy "forum cevap okunur" on public.forum_cevaplar for select using (durum = 'yayinda' or auth.uid() = user_id);
+drop policy if exists "forum cevap ekler" on public.forum_cevaplar;
+create policy "forum cevap ekler" on public.forum_cevaplar for insert to authenticated with check (auth.uid() = user_id);
+drop policy if exists "forum cevap siler" on public.forum_cevaplar;
+create policy "forum cevap siler" on public.forum_cevaplar for delete using (auth.uid() = user_id);
+
+create or replace function public.forum_konu_kontrol() returns trigger
+language plpgsql security definer set search_path = public as $$
+begin
+  new.user_id := auth.uid();
+  if new.user_id is null then raise exception 'Konu açmak için giriş yapın.' using errcode = 'P0001'; end if;
+  if (select count(*) from public.forum_konular where user_id = new.user_id and olusturma > now() - interval '1 day') >= 5 then
+    raise exception 'Günde en fazla 5 konu açabilirsiniz.' using errcode = 'P0001';
+  end if;
+  select takma_ad into new.takma_ad from public.profiller where id = new.user_id;
+  new.durum := 'yayinda'; new.cevap_sayisi := 0; new.olusturma := now(); new.son_hareket := now();
+  return new;
+end $$;
+drop trigger if exists forum_konu_tetik on public.forum_konular;
+create trigger forum_konu_tetik before insert on public.forum_konular for each row execute function public.forum_konu_kontrol();
+
+create or replace function public.forum_cevap_kontrol() returns trigger
+language plpgsql security definer set search_path = public as $$
+begin
+  new.user_id := auth.uid();
+  if new.user_id is null then raise exception 'Cevap yazmak için giriş yapın.' using errcode = 'P0001'; end if;
+  if not exists (select 1 from public.forum_konular where id = new.konu_id and durum = 'yayinda') then
+    raise exception 'Bu konu kapalı.' using errcode = 'P0001';
+  end if;
+  if (select count(*) from public.forum_cevaplar where user_id = new.user_id and olusturma > now() - interval '1 day') >= 60 then
+    raise exception 'Günde en fazla 60 cevap yazabilirsiniz.' using errcode = 'P0001';
+  end if;
+  select takma_ad into new.takma_ad from public.profiller where id = new.user_id;
+  new.durum := 'yayinda'; new.olusturma := now();
+  return new;
+end $$;
+drop trigger if exists forum_cevap_tetik on public.forum_cevaplar;
+create trigger forum_cevap_tetik before insert on public.forum_cevaplar for each row execute function public.forum_cevap_kontrol();
+
+create or replace function public.forum_cevap_say() returns trigger
+language plpgsql security definer set search_path = public as $$
+declare k bigint := coalesce(new.konu_id, old.konu_id);
+begin
+  update public.forum_konular set
+    cevap_sayisi = (select count(*) from public.forum_cevaplar where konu_id = k and durum = 'yayinda'),
+    son_hareket = greatest(olusturma, coalesce((select max(olusturma) from public.forum_cevaplar where konu_id = k and durum = 'yayinda'), olusturma))
+  where id = k;
+  return null;
+end $$;
+drop trigger if exists forum_cevap_say_tetik on public.forum_cevaplar;
+create trigger forum_cevap_say_tetik after insert or delete or update of durum on public.forum_cevaplar for each row execute function public.forum_cevap_say();
+
+create table if not exists public.forum_sikayet (
+  id bigint generated always as identity primary key,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  konu_id bigint references public.forum_konular(id) on delete cascade,
+  cevap_id bigint references public.forum_cevaplar(id) on delete cascade,
+  sebep text not null check (sebep in ('reklam','hakaret','yaniltici','kisisel-bilgi','diger')),
+  olusturma timestamptz not null default now(),
+  check ((konu_id is null) <> (cevap_id is null))
+);
+create unique index if not exists forum_sikayet_tekil on public.forum_sikayet (user_id, coalesce(konu_id, 0), coalesce(cevap_id, 0));
+alter table public.forum_sikayet enable row level security;
+drop policy if exists "sikayet uye ekler" on public.forum_sikayet;
+create policy "sikayet uye ekler" on public.forum_sikayet for insert to authenticated with check (auth.uid() = user_id);
+
+create or replace function public.forum_sikayet_isle() returns trigger
+language plpgsql security definer set search_path = public as $$
+begin
+  if new.konu_id is not null and (select count(distinct user_id) from public.forum_sikayet where konu_id = new.konu_id) >= 3 then
+    update public.forum_konular set durum = 'gizli' where id = new.konu_id;
+  end if;
+  if new.cevap_id is not null and (select count(distinct user_id) from public.forum_sikayet where cevap_id = new.cevap_id) >= 3 then
+    update public.forum_cevaplar set durum = 'gizli' where id = new.cevap_id;
+  end if;
+  return null;
+end $$;
+drop trigger if exists forum_sikayet_tetik on public.forum_sikayet;
+create trigger forum_sikayet_tetik after insert on public.forum_sikayet for each row execute function public.forum_sikayet_isle();

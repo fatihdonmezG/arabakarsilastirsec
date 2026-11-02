@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hesaplama ve Araçlar | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Yol maliyeti, şarj, köprü otoyol ücretleri, trafik cezaları, ÖTV muafiyeti ve MTV hesaplama araçları.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html" aria-current="page">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › Hesaplama</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">Hesaplama ve araçlar</span>
+    <h1>Hesapla, <b>karar ver</b></h1>
+    <p>Yol masrafından şarj süresine, köprü ücretinden trafik cezasına kadar araç sahibinin sorduğu soruların cevabı. Bütün tutarlar kaynağı ve tarihiyle birlikte.</p>
+  </div>
+  <section class="hk fiyat-serit" aria-label="Güncel fiyatlar">
+    <div id="fiyatlar" class="fs-grid"></div>
+    <p class="kaynak" id="fiyatKaynak"></p>
+  </section>
+  <div class="arac-kartlar" style="margin-top:16px">
+    <a class="ak" href="yol-maliyeti.html" style="--k:var(--accent)"><span class="ik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H16"/></svg></span><h3>Rota ve yol maliyeti</h3><p>İki il arasında benzin, dizel ya da elektrikle yolculuğun masrafı, şarj durakları ve geçiş ücretleri.</p><span class="ok">Hesapla →</span></a>
+    <a class="ak" href="sarj-hesaplama.html" style="--k:var(--elektrik)"><span class="ik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2M11 9l-2 3h4l-2 3"/></svg></span><h3>Şarj hesaplayıcı</h3><p>Kaç kWh, kaç dakika, kaç lira. Evde ve operatörlerde şarj maliyetini yan yana görün.</p><span class="ok">Hesapla →</span></a>
+    <a class="ak" href="gecis-ucretleri.html" style="--k:var(--dizel)"><span class="ik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20M4 18V9M20 18V9M2 9c4-4 16-4 20 0M8 18v-6M12 18v-7M16 18v-6"/></svg></span><h3>Köprü ve otoyol ücretleri</h3><p>2026 otomobil tarifeleri, yürürlük tarihleriyle. Geçişleri seçin, aylık ve yıllık toplamı görün.</p><span class="ok">Tarifeyi aç →</span></a>
+    <a class="ak" href="trafik-cezalari.html" style="--k:var(--benzin)"><span class="ik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg></span><h3>Trafik cezaları</h3><p>7574 sayılı Kanun ile gelen yeni tutarlar, ehliyet ve araç men süreleri, erken ödeme indirimi.</p><span class="ok">Listeyi aç →</span></a>
+    <a class="ak" href="otv-muafiyet.html" style="--k:var(--hibrit)"><span class="ik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M10 8h4l-1 6h4l2 6M11 14a5 5 0 1 0 5 5"/></svg></span><h3>ÖTV muafiyetli araçlar</h3><p>Engelli ÖTV istisnasının 2026 fiyat sınırı, şartları ve sınırın altında kalan yerli üretim araçlar.</p><span class="ok">Araçları gör →</span></a>
+    <a class="ak" href="mtv-hesaplama.html" style="--k:var(--lpg)"><span class="ik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg></span><h3>MTV hesaplama</h3><p>2026 Motorlu Taşıtlar Vergisi: motor hacmi, taşıt değeri ve yaşa göre yıllık tutar.</p><span class="ok">Hesapla →</span></a>
+  </div>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Hesaplamalar tahmini bilgi verir; resmi beyan yerine geçmez.</div></footer>
+<style>
+.fs-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.fy{display:grid;gap:2px;padding:12px 14px;border-radius:12px;background:var(--bg);border-left:4px solid var(--k)}
+.fy span{font-size:.74rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.fy b{font-family:var(--display);font-size:1.35rem;font-weight:900;font-variant-numeric:tabular-nums}
+.fy small{color:var(--muted);font-size:.78rem}
+</style>
+<script src="assets/hesap_veri.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc, sayi} = H, V = HESAP_VERI, ist = V.yakit.iller['İstanbul (Avrupa)'];
+const dcOrt = V.sarj.reduce((t, o) => t + H.dcFiyat(o), 0) / V.sarj.length, acOrt = V.sarj.reduce((t, o) => t + o.ac, 0) / V.sarj.length;
+$('fiyatlar').innerHTML = [
+  ['Benzin', ist.benzin, 'TL/L', 'var(--benzin)', 'İstanbul Avrupa'], ['Motorin', ist.dizel, 'TL/L', 'var(--dizel)', 'İstanbul Avrupa'], ['LPG', ist.lpg, 'TL/L', 'var(--lpg)', 'İstanbul Avrupa'],
+  ['DC şarj', dcOrt, 'TL/kWh', 'var(--elektrik)', `${V.sarj.length} operatör ortalaması`], ['AC şarj', acOrt, 'TL/kWh', 'color-mix(in srgb,var(--elektrik) 55%,#fff)', `${V.sarj.length} operatör ortalaması`], ['Ev elektriği', V.ev.kademe1, 'TL/kWh', 'var(--hibrit)', 'konut, vergiler dahil']
+].map(([ad, v, b, k, alt]) => `<div class="fy" style="--k:${k}"><span>${ad}</span><b>${sayi(v, 2)} <small>${b}</small></b><small>${esc(alt)}</small></div>`).join('');
+$('fiyatKaynak').innerHTML = `Pompa fiyatları ${H.tarih(V.yakit.tarih)}, şarj fiyatları operatörlerin sitelerinden, konut elektriği ${H.tarih(V.ev.tarih)} EPDK tarifesi. Ayrıntılı kaynaklar ilgili hesaplama sayfalarında.`;
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>

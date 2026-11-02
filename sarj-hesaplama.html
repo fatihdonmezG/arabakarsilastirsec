@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Şarj Hesaplayıcı | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Elektrikli aracınızın şarj süresini, gereken kWh miktarını ve evde ya da istasyonda şarj maliyetini hesaplayın.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html" aria-current="page">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › <a href="hesaplama.html">Hesaplama</a> › Şarj hesaplayıcı</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">Elektrikli araç</span>
+    <h1>Şarj <b>hesaplayıcı</b></h1>
+    <p>Aracınızı ve şarj seviyesini seçin; kaç kWh gerektiğini, ne kadar süreceğini ve evde ya da istasyonda kaça mal olacağını görün. Aylık kullanımınıza göre benzinli ve dizel araçla da karşılaştırın.</p>
+  </div>
+  <div class="hs-grid iki">
+    <div class="yapis">
+      <section class="hk">
+        <h2><span class="no">1</span>Araç</h2>
+        <div class="alan"><span class="lbl">Elektrikli araç</span><div id="aracAra"></div><div id="aracSecili"></div></div>
+        <div class="alanlar">
+          <div class="alan"><label for="batarya">Batarya</label><div class="birimli"><input type="number" id="batarya" min="5" step="0.1" inputmode="decimal"><span>kWh</span></div></div>
+          <div class="alan"><label for="tuk">Tüketim</label><div class="birimli"><input type="number" id="tuk" min="5" step="0.1" inputmode="decimal"><span>kWh/100</span></div></div>
+        </div>
+      </section>
+      <section class="hk">
+        <h2><span class="no">2</span>Şarj</h2>
+        <div class="alanlar">
+          <div class="alan"><label for="simdi">Şu anki şarj</label><div class="birimli"><input type="number" id="simdi" min="0" max="99" value="20" inputmode="numeric"><span>%</span></div></div>
+          <div class="alan"><label for="hedef">Hedef</label><div class="birimli"><input type="number" id="hedef" min="1" max="100" value="80" inputmode="numeric"><span>%</span></div></div>
+        </div>
+        <div class="alan"><span class="lbl" id="cihazLbl">Şarj cihazı</span><div class="secim" role="group" aria-labelledby="cihazLbl" id="cihaz">
+          <button type="button" data-kw="2.3" aria-pressed="false">Priz 2,3 kW</button><button type="button" data-kw="7.4" aria-pressed="false">Duvar 7,4 kW</button><button type="button" data-kw="11" aria-pressed="true">AC 11 kW</button><button type="button" data-kw="22" aria-pressed="false">AC 22 kW</button><button type="button" data-kw="dc" aria-pressed="false">DC hızlı</button>
+        </div></div>
+        <div class="alan" id="aracAcAlan"><label for="aracAc">Aracın AC şarj gücü</label><div class="birimli"><input type="number" id="aracAc" min="1" max="22" step="0.1" value="11" inputmode="decimal"><span>kW</span></div></div>
+        <p class="kaynak">AC şarjda süre, cihazın ve aracın gücünden düşük olanla hesaplanır; dönüşüm kayıpları için %10 eklenir. DC'de üreticinin açıkladığı %20–80 süresi kullanılır.</p>
+      </section>
+      <section class="hk">
+        <h2><span class="no">3</span>Aylık kullanım</h2>
+        <div class="alan"><label for="aylik">Ayda kaç km</label><div class="birimli"><input type="number" id="aylik" min="0" step="50" value="1500" inputmode="numeric"><span>km</span></div></div>
+        <div class="alan"><label for="evOran">Şarjın ne kadarı evde</label><div class="birimli"><input type="number" id="evOran" min="0" max="100" value="80" inputmode="numeric"><span>%</span></div></div>
+        <div class="alan"><label for="evTl">Konut elektriği</label><div class="birimli"><input type="number" id="evTl" min="0" step="0.01" inputmode="decimal"><span>TL/kWh</span></div></div>
+        <p class="kaynak" id="evKaynak"></p>
+      </section>
+    </div>
+    <div>
+      <section class="hk" aria-live="polite">
+        <h2 id="baslik">Bu şarj</h2>
+        <div class="pil" id="pil" aria-hidden="true"><div class="pil-ic"><span class="pil-eski"></span><span class="pil-yeni"></span></div><b id="pilYazi"></b></div>
+        <div class="sonuc-ust" id="ozet"></div>
+        <h3 style="font-size:1rem;margin-top:22px">Nerede şarj etsem kaça mal olur?</h3>
+        <div class="kiyas" id="yerler"></div>
+        <p class="kaynak" id="opKaynak"></p>
+      </section>
+      <section class="hk">
+        <h2>Aylık masraf</h2>
+        <p class="alt-yazi" id="aylikAlt"></p>
+        <div class="sonuc-ust" id="aylikOzet"></div>
+        <h3 style="font-size:1rem;margin-top:22px">Aynı kilometre benzinli ve dizel araçla</h3>
+        <div class="alanlar">
+          <div class="alan"><label for="bTuk">Benzinli tüketim</label><div class="birimli"><input type="number" id="bTuk" min="1" step="0.1" value="6.5" inputmode="decimal"><span>L/100</span></div></div>
+          <div class="alan"><label for="dTuk">Dizel tüketim</label><div class="birimli"><input type="number" id="dTuk" min="1" step="0.1" value="5.0" inputmode="decimal"><span>L/100</span></div></div>
+        </div>
+        <div class="kiyas" id="yakitKiyas"></div>
+        <p class="kaynak" id="yakitKaynak"></p>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Sonuçlar tahminidir. Şarj süresi sıcaklığa, bataryanın durumuna ve istasyonun gücüne göre değişir.</div></footer>
+<style>
+.pil{display:flex;align-items:center;gap:14px;margin-top:16px}
+.pil-ic{position:relative;flex:1;height:46px;border-radius:12px;border:3px solid var(--ink);overflow:hidden;background:color-mix(in srgb,var(--ink) 5%,transparent)}
+.pil-ic::after{content:"";position:absolute;right:-12px;top:50%;transform:translateY(-50%);width:8px;height:18px;border-radius:0 4px 4px 0;background:var(--ink)}
+.pil-eski,.pil-yeni{position:absolute;top:0;bottom:0;left:0}
+.pil-eski{background:color-mix(in srgb,var(--elektrik) 35%,transparent);z-index:1}
+.pil-yeni{background:repeating-linear-gradient(135deg,var(--elektrik) 0 14px,color-mix(in srgb,var(--elektrik) 80%,#fff) 14px 28px);background-size:40px 40px;animation:pilAk 1.2s linear infinite;transition:left .8s,width .8s}
+@keyframes pilAk{to{background-position:40px 0}}
+.pil b{font-family:var(--display);font-size:1.3rem;font-weight:900;min-width:90px;text-align:right}
+</style>
+<script src="assets/arac_enerji.js"></script>
+<script src="assets/hesap_veri.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc, sayi, tl, sure} = H, V = HESAP_VERI;
+const evler = H.ARACLAR.filter(a => a.tur === 'elektrik');
+const q = new URLSearchParams(location.search);
+let arac = H.arac(q.get('arac')) || evler.find(a => a.satista && a.model === 'T10X') || evler[0], kw = '11';
+$('evTl').value = V.ev.kademe1.toFixed(2);
+$('evKaynak').innerHTML = `<a href="${esc(V.ev.url)}" target="_blank" rel="noopener">${esc(V.ev.kaynak)}</a>, ${H.tarih(V.ev.tarih)}. Aylık ${V.ev.sinir_kwh_ay} kWh'i aşan tüketim ${sayi(V.ev.kademe2, 2)} TL/kWh'ten faturalanır. ${esc(V.ev.not)}`;
+$('opKaynak').innerHTML = 'Fiyat kaynakları: ' + V.sarj.map(o => `<a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.ad)}</a> (${H.tarih(o.tarih)})`).join(', ') + '. Aralık verilen DC fiyatlarında orta değer gösterilir.';
+const il = V.yakit.iller['İstanbul (Avrupa)'];
+$('yakitKaynak').innerHTML = `Yakıt fiyatı İstanbul (Avrupa), ${H.tarih(V.yakit.tarih)}: benzin ${sayi(il.benzin, 2)} TL, motorin ${sayi(il.dizel, 2)} TL. Kaynak: ${V.yakit.kaynaklar.map(k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.ad)}</a>`).join(', ')}.`;
+
+const aracYaz = () => {
+  $('aracSecili').innerHTML = arac ? H.seciliKart(arac) : '';
+  if (arac) { $('batarya').value = arac.batarya || ''; $('tuk').value = arac.kwh100 || ''; if (arac.ac && arac.batarya) $('aracAc').value = Math.min(22, +(arac.batarya / (arac.ac / 60) * 1.1).toFixed(1)); }
+};
+H.aracAra($('aracAra'), {yer: 'Elektrikli araç arayın', filtre: a => a.tur === 'elektrik', secince: a => { arac = a; aracYaz(); hesapla(); }});
+$('aracSecili').addEventListener('click', e => { if (e.target.closest('[data-kaldir]')) { arac = null; aracYaz(); hesapla(); } });
+
+function hesapla(){
+  const bat = H.oku('batarya', 0), tuk = H.oku('tuk', 0), s0 = Math.max(0, Math.min(99, H.oku('simdi', 20))), s1 = Math.max(s0 + 1, Math.min(100, H.oku('hedef', 80)));
+  const kwh = bat * (s1 - s0) / 100, km = tuk ? kwh / tuk * 100 : 0;
+  let dk = null, gucYazi = '';
+  if (kw === 'dc') {
+    if (arac && arac.dc) { dk = arac.dc * (s1 - s0) / 60; if (s1 > 80) dk += arac.dc * (s1 - Math.max(80, s0)) / 60 * 1.5; gucYazi = `üretici %20–80: ${arac.dc} dk`; }
+    else gucYazi = 'hızlı şarj süresi açıklanmamış';
+  } else { const g = Math.min(+kw, H.oku('aracAc', 11)); dk = kwh * 1.1 / g * 60; gucYazi = `${sayi(g, 1)} kW ile`; }
+  $('baslik').textContent = `%${s0} → %${s1}`;
+  $('pilYazi').textContent = `%${s1}`;
+  const e = $('pil').querySelector('.pil-eski'), y = $('pil').querySelector('.pil-yeni');
+  e.style.width = s0 + '%'; y.style.left = s0 + '%'; y.style.width = (s1 - s0) + '%';
+  const evMal = kwh * 1.1 * H.oku('evTl', 0);
+  $('ozet').innerHTML = `
+    <div class="sk ana"><span>Gereken enerji</span><b>${sayi(kwh, 1)} kWh</b><small>batarya ${sayi(bat, 1)} kWh</small></div>
+    <div class="sk"><span>Süre</span><b>${dk == null ? '?' : sure(dk)}</b><small>${esc(gucYazi)}</small></div>
+    <div class="sk"><span>Kazanılan menzil</span><b>${sayi(km)} km</b><small>${sayi(tuk, 1)} kWh/100 km ile</small></div>
+    <div class="sk"><span>Evde</span><b>${tl(evMal)}</b><small>%10 kayıp dahil</small></div>`;
+  const yerler = [{ad: 'Ev (konut tarifesi)', alt: `${sayi(H.oku('evTl', 0), 2)} TL/kWh, %10 kayıp dahil`, tl: evMal, k: 'var(--hibrit)'}];
+  V.sarj.forEach(o => { yerler.push({ad: `${o.ad} AC`, alt: `${sayi(o.ac, 2)} TL/kWh`, tl: kwh * o.ac, k: 'color-mix(in srgb,var(--elektrik) 60%,#fff)'}); yerler.push({ad: `${o.ad} DC`, alt: `${sayi(o.dc[0], 2)}${o.dc[1] !== o.dc[0] ? '–' + sayi(o.dc[1], 2) : ''} TL/kWh`, tl: kwh * H.dcFiyat(o), k: 'var(--elektrik)'}); });
+  const en = Math.max(...yerler.map(x => x.tl), 1), min = Math.min(...yerler.map(x => x.tl));
+  $('yerler').innerHTML = yerler.map(x => `<div class="ky${x.tl === min ? ' en-ucuz' : ''}" style="--k:${x.k}"><div class="ad"><b>${esc(x.ad)}${x.tl === min ? '<span class="rozet">en ucuz</span>' : ''}</b><small>${esc(x.alt)}</small></div><div class="cubuk"><i data-w="${(x.tl / en * 100).toFixed(1)}"></i></div><div class="tl">${tl(x.tl)}</div></div>`).join('');
+  // Aylık
+  const ay = Math.max(0, H.oku('aylik', 0)), evPay = Math.max(0, Math.min(100, H.oku('evOran', 80))) / 100;
+  const ayKwh = ay * tuk / 100, evKwh = ayKwh * evPay * 1.1, dcOrt = V.sarj.reduce((t, o) => t + H.dcFiyat(o), 0) / V.sarj.length, disKwh = ayKwh * (1 - evPay);
+  const evTl = evKwh <= V.ev.sinir_kwh_ay ? evKwh * H.oku('evTl', 0) : V.ev.sinir_kwh_ay * H.oku('evTl', 0) + (evKwh - V.ev.sinir_kwh_ay) * V.ev.kademe2;
+  const ayTl = evTl + disKwh * dcOrt;
+  $('aylikAlt').textContent = `Ayda ${sayi(ay)} km, şarjın %${Math.round(evPay * 100)}'i evde, gerisi operatörlerin DC fiyat ortalamasıyla (${sayi(dcOrt, 2)} TL/kWh). Evdeki şarj konuttaki diğer tüketiminizden ayrı düşünülmüştür.`;
+  $('aylikOzet').innerHTML = `<div class="sk ana"><span>Aylık şarj</span><b>${tl(ayTl)}</b><small>${sayi(ayKwh)} kWh</small></div><div class="sk"><span>Km başı</span><b>${sayi(ay ? ayTl / ay : 0, 2)} TL</b><small>elektrik</small></div><div class="sk"><span>Yıllık</span><b>${tl(ayTl * 12)}</b><small>aynı kullanımla</small></div>`;
+  const bTl = ay * H.oku('bTuk', 6.5) / 100 * il.benzin, dTl = ay * H.oku('dTuk', 5) / 100 * il.dizel;
+  const k = [{ad: arac ? `${arac.marka} ${arac.model}` : 'Elektrikli', alt: 'Elektrik', tl: ayTl, k: 'var(--elektrik)'}, {ad: 'Benzinli araç', alt: `${sayi(H.oku('bTuk', 6.5), 1)} L/100 km`, tl: bTl, k: 'var(--benzin)'}, {ad: 'Dizel araç', alt: `${sayi(H.oku('dTuk', 5), 1)} L/100 km`, tl: dTl, k: 'var(--dizel)'}];
+  const en2 = Math.max(...k.map(x => x.tl), 1), min2 = Math.min(...k.map(x => x.tl));
+  $('yakitKiyas').innerHTML = k.map(x => `<div class="ky${x.tl === min2 ? ' en-ucuz' : ''}" style="--k:${x.k}"><div class="ad"><b>${esc(x.ad)}${x.tl === min2 ? '<span class="rozet">en ekonomik</span>' : ''}</b><small>${esc(x.alt)} · aylık</small></div><div class="cubuk"><i data-w="${(x.tl / en2 * 100).toFixed(1)}"></i></div><div class="tl">${tl(x.tl)}</div></div>`).join('');
+  requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll('.cubuk i[data-w]').forEach(i => i.style.setProperty('--w', i.dataset.w + '%'))));
+  $('aracAcAlan').hidden = kw === 'dc';
+}
+$('cihaz').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; kw = b.dataset.kw; $('cihaz').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); hesapla(); });
+['batarya', 'tuk', 'simdi', 'hedef', 'aracAc', 'aylik', 'evOran', 'evTl', 'bTuk', 'dTuk'].forEach(id => $(id).addEventListener('input', hesapla));
+aracYaz(); hesapla();
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>

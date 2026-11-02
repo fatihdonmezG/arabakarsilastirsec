@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ÖTV Muafiyetli Araçlar 2026 | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Engelli ÖTV istisnası 2026 fiyat sınırı, şartları ve sınırın altında kalan yerli üretim araçlar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html" aria-current="page">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › <a href="hesaplama.html">Hesaplama</a> › ÖTV muafiyetli araçlar</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">Engelli ÖTV istisnası · 2026</span>
+    <h1>ÖTV muafiyetli <b>araçlar</b></h1>
+    <p id="giris"></p>
+  </div>
+  <div class="hs-grid iki">
+    <div class="yapis">
+      <section class="hk">
+        <h2>Şartlar</h2>
+        <ul class="kosul" id="kosul"></ul>
+        <p class="kaynak" id="kosulKaynak"></p>
+      </section>
+      <section class="hk" aria-live="polite">
+        <h2>Fiyat sınırını kontrol et</h2>
+        <div class="alan"><label for="fiyat">Vergiler dahil liste fiyatı</label><div class="birimli"><input type="number" id="fiyat" min="0" step="1000" value="1899000" inputmode="numeric"><span>TL</span></div></div>
+        <div class="alan"><label for="oran">ÖTV oranı (bayi fiyat listesinde yazar)</label><div class="birimli"><input type="number" id="oran" min="0" max="250" step="1" placeholder="ör. 80" inputmode="numeric"><span>%</span></div></div>
+        <div class="sonuc-ust" id="ozet"></div>
+        <p class="kaynak">ÖTV'siz fiyat = liste fiyatı ÷ (1 + ÖTV oranı). KDV ödenmeye devam eder. Kesin fiyatı markanın engelli fiyat listesinden alın.</p>
+      </section>
+    </div>
+    <div>
+      <section class="hk">
+        <h2>Sınırın altındaki yerli üretim araçlar</h2>
+        <p class="alt-yazi" id="listeAlt"></p>
+        <div class="secim" role="group" aria-label="Yakıt" id="filtre" style="margin-top:12px"><button type="button" data-v="" aria-pressed="true">Tümü</button><button type="button" data-v="benzin" aria-pressed="false">Benzin</button><button type="button" data-v="dizel" aria-pressed="false">Dizel</button><button type="button" data-v="hibrit" aria-pressed="false">Hibrit</button><button type="button" data-v="elektrik" aria-pressed="false">Elektrik</button></div>
+        <div class="tablo-sar"><table class="tablo" id="liste"></table></div>
+        <p class="kaynak" id="listeKaynak"></p>
+      </section>
+      <section class="hk">
+        <h2>Sınırın altında ama ithal</h2>
+        <p class="alt-yazi">Bu araçların fiyatı sınırın altında, ancak Türkiye'de üretilmedikleri için %40 yerlilik şartını karşılamazlar. Marka aksini açıklarsa listeyi güncelleriz.</p>
+        <div class="tablo-sar"><table class="tablo" id="ithal"></table></div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Bu sayfa bilgilendirme amaçlıdır. Hak sahipliği ve araç uygunluğu için vergi dairesine ve yetkili satıcıya danışın.</div></footer>
+<style>.kosul{margin:12px 0 0;padding-left:18px;display:grid;gap:8px;font-size:.9rem}.kosul b{color:var(--ink)}</style>
+<script src="assets/arac_enerji.js"></script>
+<script src="assets/hesap_veri.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc, tl, sayi} = H, O = HESAP_VERI.otv, kay = k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.ad)}</a>`;
+$('giris').textContent = `Engelli bireyler ilk kez aldıkları ve vergiler dahil fiyatı ${tl(O.sinir)}'yi geçmeyen yerli üretim otomobilde ÖTV ödemez. Aşağıda veritabanımızdaki satıştaki ${O.yil} araçlarından bu sınırın altında kalanları bulabilirsiniz.`;
+$('kosul').innerHTML = [
+  `<b>Fiyat sınırı:</b> ${O.yil} için ${tl(O.sinir)}. Sınır, ÖTV ve KDV dahil satış fiyatına uygulanır. Fiat Türkiye sayfasında sınır ${tl(2873972)} olarak geçiyor.`,
+  `<b>Yerlilik:</b> Aracın yerlilik oranı en az %40 olmalı.`,
+  `<b>%90 ve üzeri engelli:</b> Özel donanım şartı yok; araç yakınlar ya da şoför tarafından kullanılabilir.`,
+  `<b>%90'ın altında:</b> Sağlık raporunda özel donanımlı araç kullanması gerektiği yazmalı; araç bu donanımla alınır.`,
+  `<b>Yeni hak (22.04.2026):</b> Ortopedik engeli en az %40 olup bu nedenle ehliyet alamayanlar da yararlanabilir (17 Seri No.lu ÖTV Tebliği).`,
+  `<b>Sıklık:</b> İstisna 10 yılda bir kullanılır. Kaza, yangın ya da afetle kullanılamaz hale gelen aracın yerine süre beklenmez.`,
+  `<b>Satış:</b> Araç süresinden önce satılırsa ÖTV ödenmesi gerekebilir; güncel süreyi vergi dairesinden teyit edin.`
+].map(x => `<li>${x}</li>`).join('');
+$('kosulKaynak').innerHTML = 'Kaynak: ' + [O.sinir_kaynak, O.marka_kaynak, O.teblig_kaynak].map(kay).join(' · ');
+const yerliMi = a => O.yerli.find(y => y[0] === a.marka && y[1] === a.model && (!y[3] || new RegExp(y[3], 'i').test(a.kasa)));
+const aday = H.ARACLAR.filter(a => a.satista && a.yil === O.yil && a.fiyat && a.fiyat <= O.sinir);
+const yerli = aday.filter(yerliMi), ithal = aday.filter(a => !yerliMi(a));
+const bas = '<thead><tr><th>Araç</th><th>Yakıt</th><th class="sayi">Liste fiyatı</th><th class="sayi">Sınıra kalan</th></tr></thead>';
+const satir = a => { const y = yerliMi(a); return `<tr data-tur="${a.tur}"><td><a href="arac-detay.html#${encodeURIComponent(a.id)}" style="text-decoration:none"><b>${esc(a.marka)} ${esc(a.model)}</b></a><br><small style="color:var(--muted)">${esc(a.versiyon)}${y ? ' · ' + esc(y[2]) : ''}</small></td><td>${H.yk(a.tur)}</td><td class="sayi">${tl(a.fiyat)}</td><td class="sayi">${tl(O.sinir - a.fiyat)}</td></tr>`; };
+const ciz = t => { const f = a => !t || a.tur === t || (t === 'hibrit' && a.tur === 'phev'); $('liste').innerHTML = bas + '<tbody>' + (yerli.filter(f).sort((a, b) => a.fiyat - b.fiyat).map(satir).join('') || '<tr><td colspan="4">Bu yakıt türünde araç yok.</td></tr>') + '</tbody>'; };
+ciz('');
+$('ithal').innerHTML = bas + '<tbody>' + ithal.sort((a, b) => a.fiyat - b.fiyat).map(satir).join('') + '</tbody>';
+$('listeAlt').textContent = `${yerli.length} versiyon. Fiyatlar vergiler dahil liste fiyatıdır; kampanya ve opsiyonlar fiyatı sınırın üstüne çıkarabilir.`;
+$('listeKaynak').innerHTML = 'Üretim yeri: ' + kay(O.uretim_kaynak) + '. Liste fiyatları markaların resmi fiyat listelerinden, araç detay sayfalarında kaynaklarıyla birlikte.';
+$('filtre').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $('filtre').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); ciz(b.dataset.v); });
+function hesapla(){
+  const f = H.oku('fiyat', 0), o = H.oku('oran', NaN), alt = f <= O.sinir;
+  $('ozet').innerHTML = `<div class="sk ${alt ? 'ana' : ''}"><span>Sınır</span><b>${alt ? 'Altında' : 'Üstünde'}</b><small>${alt ? tl(O.sinir - f) + ' pay var' : tl(f - O.sinir) + ' fazla'}</small></div>` + (isFinite(o) ? `<div class="sk"><span>ÖTV'siz fiyat</span><b>${tl(f / (1 + o / 100))}</b><small>%${sayi(o)} ÖTV düşülünce</small></div><div class="sk"><span>Kazanç</span><b>${tl(f - f / (1 + o / 100))}</b><small>ödenmeyen ÖTV</small></div>` : '');
+}
+['fiyat', 'oran'].forEach(id => $(id).addEventListener('input', hesapla)); hesapla();
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>
