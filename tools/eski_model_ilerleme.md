@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 261 |
-| Fiat | devam ediyor | 134 |
+| Renault | devam ediyor | 262 |
+| Fiat | devam ediyor | 139 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -159,7 +159,11 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [ ] 2018–2020 model yılları: Türkiye listesi bulunamadı
 - [ ] Koleos I
 - [ ] Zoe (ZE50 R110, Türkiye lansmanı Aralık 2020, haberturk.com/webtekno): model yılı teyit edilemedi, eklenmedi
-- [ ] Zoe, Fluence Z.E., Twizy
+- [x] Fluence Z.E. — 1 versiyon
+  - [x] Z.E. 95 HP (22 kWh): 2012 (timeturk.com 2 Mayıs 2012 satış haberi); teknik: auto-data.net Fluence Z.E. 22 kWh
+  - Euro NCAP 2011 (4 yıldız); geri çağırma: araştırıldı, kayıt yok ([]); Ağustos 2010'a kadar üretilen Fluence hava yastığı kampanyası hariç
+  - [ ] 2013–2014 model yılları: Türkiye listesi bulunamadı
+- [ ] Zoe, Twizy
 - [ ] Kangoo Multix (binek)
 
 ## Fiat
@@ -253,4 +257,8 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - [x] Panda III 0.9 TwinAir 85 Dualogic: 2016 (topgear.com Easy Dualogic)
   - NCAP ve geri çağırma aynı neslin aynı yıl kayıtlarından (500L 2016 [], 500X manuel [], Panda 2016 hava yastığı kampanyaları)
   - [ ] 500L 1.3 MultiJet 95 Dualogic, 500L Living, Panda Cross 1.3 MultiJet 80: tek kaynakta makyaj öncesi teknik veri yok
-- [ ] Bravo, Tipo (2010–2014 Fiat listesi bulunamadı; bigpara.hurriyet.com Ocak 2012 kampanya haberi yalnızca model adlarını veriyor)
+- [x] Bravo II — 5 versiyon
+  - [x] 1.4 16V 90, 1.4 T-Jet 120, 1.6 Multijet 105, 1.6 Multijet 120 manuel ve Dualogic: 2010 (sondakika.com Nisan 2010 yenilenen Bravo Türkiye lansman haberi); teknik: auto-data.net Bravo II (198) sayfaları (NEDC; 1.4 90 için tüketim yazılmadı)
+  - Euro NCAP 2007 (5 yıldız); geri çağırma: araştırıldı, Avrupa Bravo II kaydı yok ([]); Brezilya üretimi hava yastığı kampanyası hariç
+  - [ ] 1.4 T-Jet 120 Dualogic (2010; teknik sayfa açılamadı), 2011–2014 model yılları: model yıllı liste bulunamadı (otogazete.com 2013 Fiat listesi robots engelli)
+- [ ] Tipo (2010–2014 Fiat listesi bulunamadı; bigpara.hurriyet.com Ocak 2012 kampanya haberi yalnızca model adlarını veriyor)
