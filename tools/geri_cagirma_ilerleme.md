@@ -14,6 +14,7 @@ Kaynak listesi: `node tools/geri_cagirma_yaz.js --liste --satista`
 | 2026-10-31 | Opel, Peugeot, Ford | Opel Frontera (4 kampanya: fren bağlantısı kaynağı DVSA R/2025/362, fren pedalı braketi pimi R/2025/513, ön kamera hız sınırı uyarısı R/2025/545, 48V BSG kutup kapağı R/2026/072 yalnızca hibrit); Opel Grandland, Corsa, Mokka; Peugeot 3008, e-3008, 5008, e-5008; Ford Kuga, Puma, Explorer, Capri araştırılamadı (kampanyalar KBA listelerinde görülüyor, resmi kayıt açılamadı) | 4 | 14 kayıt (4 ayrı kampanya) | 264 versiyon |
 | 2026-10-31 (2) | Toyota, Kia, Honda | Toyota C-HR (1: park asistanı/360 kamera R/2025/466), Yaris Cross (aynı 1), Kia EV3 (1: gösterge paneli R/2026/139); Toyota Corolla, Corolla Cross, Yaris, Hilux, Kia Stonic, XCeed, Picanto, Honda CR-V kayıt yok (DVSA 2025 ve 2026 sayfaları). Kia Sportage araştırılamadı | 20 | 5 kayıt (2 ayrı kampanya) | 244 versiyon |
 | 2026-11-01 | Renault | Renault 5 E-Tech 2026 (1: çekiş bataryası hücresi SR/00796/26, üretim 12.12.2025 - 28.01.2026); Renault 5 E-Tech 2025, Duster, Clio (Clio VI), Megane Sedan, Austral, Captur, Megane E-Tech, Rafale, Scenic E-Tech kayıt yok (Fransız RappelConso, AB Safety Gate kaynaklı kayıtlar). Boreal araştırılamadı | 16 | 1 kayıt (1 ayrı kampanya) | 228 versiyon |
+| 2026-11-02 | Mercedes-Benz, Land Rover, BMW, Lamborghini, Ferrari, Mitsubishi, BYD, Omoda, Jaecoo | Mercedes C-Serisi C200 (1: multimedya ünitesi yazılımı, NHTSA 26V281 / TC 2026218), Range Rover Evoque P160 (1: vites seçici modülü 25V705 / TC 2025565, 13 araç); BMW 3 Serisi 320i, Lamborghini Temerario, Ferrari Amalfi, Mitsubishi L200 2026 ve 2025 grupları, BYD Seal, Sealion 7, Omoda 5 kayıt yok. Jaecoo 7 2026 ve 2025 araştırılamadı (kampanya tarihleri resmi kaynakta yok). Peugeot, Ford, Citroën, Opel ve Suzuki için KBA, DVSA, RappelConso ve Safety Gate sayfaları yine açılamadı; NHTSA, Transport Canada ve Avustralya kaynağı olan gruplar seçildi | 10 | 2 kayıt (2 ayrı kampanya) | 218 versiyon |
 
 ## Araştırılamadı
 
@@ -52,6 +53,10 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Renault | Boreal | 2026 (2026-11-01): AB'de satılmıyor (Brezilya ve Bursa üretimi); RappelConso/Safety Gate'te kayıt yok, Brezilya (Senacon) ve Türkiye Ticaret Bakanlığı kayıtları açılamadı.
 - Erişim notu (2026-11-01): Fransız RappelConso (rappel.conso.gouv.fr) fiche ve kategori sayfaları WebFetch ile açılabiliyor ama yalnızca arama sonuçlarında çıkan adresler; "Identification du produit dans RAPEX" tarih aralığı üretim aralığıyla örtüşüyor. DVSA adresleri bu çalışmada açılamadı. Stellantis ve Ford grupları için RappelConso aramasıyla devam edilebilir.
 
+- Jaecoo | Jaecoo 7 | 2026 ve 2025 (2026-11-02): A) ECU kablo demeti, yalnızca 1.6 TGDI benzinli, üretim 01.04.2025 - 08.12.2025 (Avustralya REC-006534, sayfada model adı "Jaecoo T35", yayın tarihi boş; DVSA R/2026/069 Mart 2026 ve KBA 16221R Nisan 2026 yalnızca ikincil kaynaklarda görüldü); B) ön koltuk altı kablo demeti, 2025-2026 model yılı, tüm versiyonlar (Avustralya REC-006694, yayın tarihi boş; basına göre Ağustos 2026). İkisi de kapsıyor görünüyor; resmi kaynakta ay doğrulanınca yazılmalı.
+- Suzuki | Vitara, S-Cross | 2026 (2026-11-02, yalnızca ön kontrol): KBA 15521R / Suzuki 97DS direksiyon kontrol ünitesi yazılımı (2024 üretimi, Kasım 2025) yalnızca car-recalls.eu'da görüldü; Avustralya REC-006212 (sol arka fren borusu) tarih ve yıl vermiyor. Gruplar null bırakıldı.
+- Erişim notu (2026-11-02): DVSA model/yıl sayfaları WebFetch'te izin isteğine takıldı; RappelConso fiche sayfaları arama sonuçlarında çıkmadı; Safety Gate SR/01735/26 PDF'i bulunamadı. Avustralya vehiclerecalls.gov.au sayfaları açılıyor ama "Original published date" alanı boş.
+
 ## Hariç tutulanlar (kayıt yok yazılan gruplar)
 
 - Taigo, T-Cross: VW 90V6 emniyet kemeri uyarısı yazılımı (2020-2022 üretimi); Taigo için ayrıca VW 69UK yolcu hava yastığı (üretim 05.2025'te bitiyor).
@@ -85,3 +90,11 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Renault Clio 2026 (Clio VI): SR/00746/26 salıncak rotil somunu ve önceki kampanyalar yalnızca Clio V tip onayını kapsıyor.
 - Renault Megane Sedan 2026: Megane IV Sedan kampanyaları 2023 ve 2024'te yayımlandı, 2026 model yılı üretiminden önce.
 - Renault 5 E-Tech 2025: SR/00796/26 batarya hücresi üretim aralığı 12.2025'te başlıyor.
+- Mercedes C-Serisi 2026 C200: NHTSA 26V481 / TC 2026364 sürücü kapısı kilit mikro anahtarı ABD'de C-Serisi için yalnızca 2022-2023; KBA 15473R direksiyon bağlantı cıvatası (üretim 23.07.2025'e kadar, resmi sayfa açılamadı; ABD karşılığı 25V533 C-Serisi'ni kapsamıyor) hariç.
+- Range Rover Evoque 2026 P160: 26V248 / TC 2026442 DC-DC dönüştürücü (Evoque için 2020-2024), 25V454 yolcu hava yastığı (üretim 07.10.2024'e kadar) hariç.
+- BMW 3 Serisi 2026 320i: 25V202 marş jeneratörü bağlantısı (üretim 02.2025'e kadar), 26V056 / 26V438 / TC 2026331 marş motoru (3 Serisi için 2021-2024) hariç.
+- Ferrari Amalfi 2026: Roma kampanyaları (TC 2024661 şaft vidaları, 2023-2024; 22V536) Amalfi'yi kapsamıyor; 26V152 yalnızca 12Cilindri.
+- Lamborghini Temerario 2026: 2025-2026 Lamborghini kampanyaları (25V633, 25V903, TC 2025388, 26V053) yalnızca Urus ve Revuelto.
+- Mitsubishi L200 2026 (yeni nesil, Triton MV): Avustralya Triton kampanyaları (REC-005048 ve öncekiler) önceki nesilleri kapsıyor.
+- Omoda 5 2026: Avustralya REC-005891 fren borusu rakor cıvatası (2022-2023), DVSA R/2026/013 aks somunu (üretim 30.06.2025'e kadar, yalnızca ikincil kaynakta görüldü) hariç.
+- BYD Seal 2025: Hindistan batarya hücresi kontrolü (Ocak 2026) resmi kayıt ve üretim aralığı olmadan yalnızca basında görüldü; Çin SAMR S2025M0165I/0166I Tang ve Yuan Pro.
