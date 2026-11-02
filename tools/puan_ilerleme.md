@@ -254,3 +254,20 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - fiat-500l-2020-*.bagaj_l — auto-data.net ve autodata1 makyajlı 500L sayfalarında bagaj yok; parkers açılamadı.
 - renault-kadjar-2021-1.3-tce-160-edc.tuketim_l100km — autotijd.be "resmi tüketim verisi yok".
 - renault-clio-201[78]-st-1.5-dci-90 .sifirYuz_sn, .agirlik_kg — auto-data/autodata1 Grandtour Faz II sayfalarında yok; cars-data.com açılamadı.
+
+## 2026-11-02
+
+- Önce: Toplam puanı olmayan 188 / 898 → Sonra: 187 / 898 (1 versiyon puanlandı).
+- Euro NCAP: yeni sonuç yok. Euro NCAP'i eksik nesil gruplarının tamamı önceki "Euro NCAP testi yok" / "bulunamadı" listelerinde ya da Euro NCAP'in test etmediği markalarda (Ferrari, Lamborghini, Bentley, Rolls-Royce, Aston Martin, Maserati, GM).
+- Diğer alanlar (Fiat, Renault): 1 alan, 1 versiyon
+  - Fiat Bravo II 1.4 90 (2010): tüketim 6,7 (NEDC karma; auto-data.net 7174, 2007–2010; 0-100 12,5 / 1205 kg kayıtla aynı).
+  - Bagaj yayılımı: yeni değer yok.
+- Eklenen alan: 1.
+
+### Euro NCAP testi yok (2026-11-02)
+- Yeni ekleme yok (Fiat Topolino/Citroën Ami dörtlü; Linea, Grande Panda, Frontera vb. önceki listelerde).
+
+### Araştırıldı, bulunamadı (2026-11-02)
+- renault-megane-201[4-6]-st-1.6-dci-130 .tuketim_l100km, .sifirYuz_sn — auto-data/autodata1 Grandtour Faz III'te yalnız "1.5 Energy dCi 130" var; 1.6 dCi 130 yalnız Faz II (2012) sayfasında (farklı model yılı, yazılmadı).
+- renault-clio-201[78]-st-1.5-dci-90 .sifirYuz_sn, .agirlik_kg — carsart Grandtour Faz II sayfasında da yok; cars-data.com yine açılamadı.
+- maserati-grecale-2025-*.(sürüş destek kalemleri) — motor1 Türkiye haberinde donanım listesi yok; erişilen diğer kaynaklar ABD/Avustralya pazarı ya da ilan siteleri.
