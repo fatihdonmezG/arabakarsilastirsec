@@ -15,6 +15,7 @@ Kaynak listesi: `node tools/geri_cagirma_yaz.js --liste --satista`
 | 2026-10-31 (2) | Toyota, Kia, Honda | Toyota C-HR (1: park asistanı/360 kamera R/2025/466), Yaris Cross (aynı 1), Kia EV3 (1: gösterge paneli R/2026/139); Toyota Corolla, Corolla Cross, Yaris, Hilux, Kia Stonic, XCeed, Picanto, Honda CR-V kayıt yok (DVSA 2025 ve 2026 sayfaları). Kia Sportage araştırılamadı | 20 | 5 kayıt (2 ayrı kampanya) | 244 versiyon |
 | 2026-11-01 | Renault | Renault 5 E-Tech 2026 (1: çekiş bataryası hücresi SR/00796/26, üretim 12.12.2025 - 28.01.2026); Renault 5 E-Tech 2025, Duster, Clio (Clio VI), Megane Sedan, Austral, Captur, Megane E-Tech, Rafale, Scenic E-Tech kayıt yok (Fransız RappelConso, AB Safety Gate kaynaklı kayıtlar). Boreal araştırılamadı | 16 | 1 kayıt (1 ayrı kampanya) | 228 versiyon |
 | 2026-11-02 | Mercedes-Benz, Land Rover, BMW, Lamborghini, Ferrari, Mitsubishi, BYD, Omoda, Jaecoo | Mercedes C-Serisi C200 (1: multimedya ünitesi yazılımı, NHTSA 26V281 / TC 2026218), Range Rover Evoque P160 (1: vites seçici modülü 25V705 / TC 2025565, 13 araç); BMW 3 Serisi 320i, Lamborghini Temerario, Ferrari Amalfi, Mitsubishi L200 2026 ve 2025 grupları, BYD Seal, Sealion 7, Omoda 5 kayıt yok. Jaecoo 7 2026 ve 2025 araştırılamadı (kampanya tarihleri resmi kaynakta yok). Peugeot, Ford, Citroën, Opel ve Suzuki için KBA, DVSA, RappelConso ve Safety Gate sayfaları yine açılamadı; NHTSA, Transport Canada ve Avustralya kaynağı olan gruplar seçildi | 10 | 2 kayıt (2 ayrı kampanya) | 218 versiyon |
+| 2026-11-03 | Dacia, Citroën | Citroën C3 Aircross hibrit (2: 48V marş jeneratörü SR/00841/26, e-DCT invertörü SR/01382/26), C4 ve C4X hibrit (1: SR/00841/26), C5 Aircross hibrit (1: SR/01382/26), Berlingo 1.5 BlueHDi (3: common rail SR/00368/26, devirdaim kasnağı SR/00969/26, NOx sensörü SR/01175/26); Dacia Logan, Sandero, Sandero Stepway, Jogger ile Citroën ë-C3, ë-C3 Aircross, ë-C5 Aircross kayıt yok (RappelConso Dacia ve Citroën listeleri, AB Safety Gate kaynaklı kayıtlar) | 22 | 12 kayıt (5 ayrı kampanya) | 196 versiyon |
 
 ## Araştırılamadı
 
@@ -57,6 +58,9 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Suzuki | Vitara, S-Cross | 2026 (2026-11-02, yalnızca ön kontrol): KBA 15521R / Suzuki 97DS direksiyon kontrol ünitesi yazılımı (2024 üretimi, Kasım 2025) yalnızca car-recalls.eu'da görüldü; Avustralya REC-006212 (sol arka fren borusu) tarih ve yıl vermiyor. Gruplar null bırakıldı.
 - Erişim notu (2026-11-02): DVSA model/yıl sayfaları WebFetch'te izin isteğine takıldı; RappelConso fiche sayfaları arama sonuçlarında çıkmadı; Safety Gate SR/01735/26 PDF'i bulunamadı. Avustralya vehiclerecalls.gov.au sayfaları açılıyor ama "Original published date" alanı boş.
 
+- Citroën | ë-C4, C4 (EBS) | 2026 (2026-11-03): ë-C4 bu çalışmada işlenmedi. RappelConso 47799 (C4 III/C4X EBS valf bloğu dökümü, Temmuz 2025) fiche sayfası açılamadı; üretim aralığı doğrulanınca C4/C4X ve ë-C4'e bakılmalı.
+- Erişim notu (2026-11-03): RappelConso marka listeleri (rappel.conso.gouv.fr/categorie/0/<sayfa>/<marka>) ve fiche sayfaları yalnızca arama sonucunda çıkan adreslerle açılıyor; bazı eski biçimli fiche numaraları ana sayfaya yönleniyor. Stellantis grupları için en verimli yol model adıyla allowed_domains=rappel.conso.gouv.fr araması.
+
 ## Hariç tutulanlar (kayıt yok yazılan gruplar)
 
 - Taigo, T-Cross: VW 90V6 emniyet kemeri uyarısı yazılımı (2020-2022 üretimi); Taigo için ayrıca VW 69UK yolcu hava yastığı (üretim 05.2025'te bitiyor).
@@ -98,3 +102,7 @@ Bu gruplar null bırakıldı. Ortak neden: KBA Rückrufdatenbank (kba-online.de/
 - Mitsubishi L200 2026 (yeni nesil, Triton MV): Avustralya Triton kampanyaları (REC-005048 ve öncekiler) önceki nesilleri kapsıyor.
 - Omoda 5 2026: Avustralya REC-005891 fren borusu rakor cıvatası (2022-2023), DVSA R/2026/013 aks somunu (üretim 30.06.2025'e kadar, yalnızca ikincil kaynakta görüldü) hariç.
 - BYD Seal 2025: Hindistan batarya hücresi kontrolü (Ocak 2026) resmi kayıt ve üretim aralığı olmadan yalnızca basında görüldü; Çin SAMR S2025M0165I/0166I Tang ve Yuan Pro.
+- Dacia Logan, Sandero, Sandero Stepway 2026: RappelConso Dacia listesinde Logan III/Sandero III için yalnızca A12/02683/23 LPG deposu kaynağı (2023 üretimi), yüksek basınçlı yakıt sistemi ve kaput kilidi teli (2021) var; 2026 model yılını kapsamıyor.
+- Dacia Jogger 2026: RappelConso 47864 arka aks cıvatası sıkma torku (üretim 11.01.2024 - 14.10.2024) makyajlı 2026 üretimini kapsamıyor.
+- Citroën ë-C3, ë-C3 Aircross 2026: SR/00905/26 elektrikli direksiyon kablo demeti (C3 21.02.2025 - 21.05.2025, C3 Aircross 24.02.2025 - 21.05.2025) 2026 model yılından önce bitiyor; SR/02935/25 yüksek basınç yakıt borusu somunu yalnızca içten yanmalı motorlar ve 04.2025'e kadar.
+- Citroën C3 Aircross, C4, C4X, C5 Aircross 2026 hibrit: SR/00905/26 (05.2025'e kadar), SR/02935/25 yakıt borusu somunu (04.2025'e kadar), SR/00174/26 C4/C4X arka aks (2023), SR/01423/25 motor durma yazılımı (2022-2023), SR/02655/25 eksantrik zinciri (2023 başına kadar), SR/00426/25 ve SR/03583/25 önceki nesil C5 Aircross hariç.
