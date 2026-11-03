@@ -25,6 +25,8 @@ Aşağıda "araştırıldı, bulunamadı" altında listelenen alanlar tekrar ara
 | Forthing | sürüyor | 2026-11-01 |
 | Toyota | sürüyor | 2026-11-02 |
 | Porsche | sürüyor | 2026-11-02 |
+| Citroën | tamamlandı | 2026-11-03 |
+| Aston Martin | tamamlandı | 2026-11-03 |
 
 ## 2026-10-14 — Mercedes-Benz, Volkswagen
 
@@ -960,3 +962,22 @@ Not: Corolla Sedan 1.5 ağırlığı (1283 kg) auto-data'nın geniş 1185–1380
 - porsche-taycan-2026-base, -4s | koltuk | kaynaklar 5 diyor ama Taycan standart 4 koltuklu (4+1 opsiyon) — kullanılmadı
 - porsche-cayenne-2026-s | segment | Euro NCAP 2017 sayfası yalnızca "SUV"
 Yasaklı kaynak kalan: 2.
+
+
+## 2026-11-03 — Kaynak temizliği: Alfa Romeo, SWM; Eksik veri: Citroën, Aston Martin
+
+Tüketim: satıştaki 15 eksiğin tamamı önceki çalışmalarda "araştırıldı, bulunamadı"; yeni tüketim girilmedi (kalan 15). Şanzıman: boş ya da yalnız "Otomatik" kalan 7 kaydın tamamı önceki çalışmalarda "araştırıldı, bulunamadı". Temizlikte Alfa Romeo Giulia Veloce Q4 tüketim/CO₂ WLTP'ye (7,9 l/100 km, 178 g/km; auto-data aralık ortası) ve şanzıman "Otomatik (8 ileri, ZF tork konvertörlü)" olarak düzeltildi.
+Eksik veri — doldurulan: 39 alan, 22 versiyon (Citroën 21, Aston Martin 18). Ek olarak: bagaj_yay ile Alfa Romeo Giulia Competizione Q4 bagaj 480 L; SWM G01 Pro garanti 5 yıl/150.000 km (DonanımHaber).
+- Citroën: hava yastığı sayısı (Euro NCAP C4 2021, C5 Aircross 2025, Berlingo 2018 donanım tabloları), segment (C5 Aircross Small SUV, Berlingo Small MPV), C5 Aircross Hybrid 145 boş ağırlık 1554 kg (Citroën Fas teknik föyü), C3 Aircross Hybrid depo 44 L / Euro 6 (Parkers), ë-C3 Aircross Extended 0-100 11,7 sn / 143 km/s (fiches-auto), Ami dingil 1730 mm (fiches-auto)
+- Aston Martin: silindir hacmi (Vantage/DB12 3982 cc, Vanquish 5204 cc), emisyon (Vantage Euro 6, Vanquish Euro 6e, DBX 707 Euro 6d), Vantage Coupé/S bagaj 346 L, DBX depo 85 L (automoto.it, alVolante)
+### Araştırıldı, bulunamadı (id | alan | neden)
+- citroen-c4-*, citroen-c4x-*, citroen-e-c4-* | segment | Euro NCAP sayfası sınıf yerine yalnız "Hatchback" gösteriyor
+- citroen-e-c3-*, citroen-c3-aircross-*, citroen-e-c3-aircross-*, citroen-ami-6kw-base-2026 | segment, ncap_yildiz, ncap_test_yili | yeni nesil C3/ë-C3/C3 Aircross Euro NCAP'te test edilmedi (yalnız Global/Latin NCAP); Ami kuadrisikl
+- citroen-c5-aircross-1.2-hybrid-145-*, citroen-e-c5-aircross-electric-plus-2026 | genislik_mm | ultimatespecs 1870, TopGear 1936 mm — tutarsız
+- citroen-ami-6kw-base-2026 | sifirYuz_sn, bagaj_l, airbag_sayisi, dc_hizli_sarj_dk_20_80 | azami hız 45 km/s (0-100 yok), DC şarj yok; bagaj ve hava yastığı kaynaklarda yok
+- aston-martin-* | ncap_yildiz, ncap_test_yili | Euro NCAP Aston Martin modellerini test etmiyor
+- aston-martin-* | airbag_sayisi | auto-data, automoto, alVolante sayfalarında yok
+- aston-martin-db12-2026-* | emisyon_normu | automoto "Euro 6D TEMP" 2023 model için güvenilir değil; başka kaynak yok
+- aston-martin-dbx-2026-s | emisyon_normu | alVolante yalnız DBX 707 için
+- aston-martin-vantage-2026-roadster | bagaj_l | automoto Roadster sayfası coupé değerini (346 L) tekrarlıyor — kullanılmadı
+Yasaklı kaynak kalan: 0.
