@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 262 |
-| Fiat | devam ediyor | 139 |
+| Renault | devam ediyor | 265 |
+| Fiat | devam ediyor | 151 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -74,7 +74,10 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - Kaynaklar: donanimhaber.com/tr.motor1.com Ocak 2020, timeturk.com Mart 2021 (model yıllı), gazetebirlik.com Mart 2023, istiklal.com.tr Ocak 2024, iscihaber.net Nisan 2025; teknik: auto-data.net Phase I/II, TCe 90 için ultimatespecs
   - Euro NCAP 2019 (5 yıldız); geri çağırma: 2020-02 direksiyon motoru (2020), 2020-02 vites kolu anahtarı (2020 otomatik), 2023-06 arka koltuk sırtı (2022–2023); LPG tankı kampanyası (2023 üretimi) hariç
   - [ ] 1.0 SCe 72 (2020): tek kaynakta 72 HP teknik verisi yok; 1.0 TCe 90 manuel (2024–2025) ve E-Tech 140 (Phase I): Türkiye listesinde teyit edilemedi
-- [ ] Symbol II (2010–2012)
+- [x] Symbol II (2012) — 3 versiyon
+  - [x] 1.2 16V 75, 1.5 dCi 65, 1.5 dCi 85: 2012 (otometre.com Mart 2012 Symbol versiyon haberi: https://www.otometre.com/2012/03/lpgli-renault-symbol.html); teknik: auto-data.net Symbol II sayfaları (NEDC)
+  - Euro NCAP: test edilmedi; geri çağırma: araştırıldı, kayıt yok ([])
+  - [ ] Fabrika LPG'li 1.2 16V (kaynakta 70 HP), 2010–2011 model yılları: model yıllı liste yok
 - [x] Symbol III (2013–2020) — 14 versiyon
   - [x] 1.2 16V 75: 2013–2016; 0.9 TCe 90: 2013 ve 2020 (makyajlı); 1.5 dCi 75: 2013
   - [x] 1.5 dCi 90: 2015–2016, 2017–2018 (makyajlı); 1.5 dCi 90 Easy-R ve 1.0 SCe 75: 2018; 1.5 Blue dCi 95: 2020
@@ -261,4 +264,12 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - [x] 1.4 16V 90, 1.4 T-Jet 120, 1.6 Multijet 105, 1.6 Multijet 120 manuel ve Dualogic: 2010 (sondakika.com Nisan 2010 yenilenen Bravo Türkiye lansman haberi); teknik: auto-data.net Bravo II (198) sayfaları (NEDC; 1.4 90 için tüketim yazılmadı)
   - Euro NCAP 2007 (5 yıldız); geri çağırma: araştırıldı, Avrupa Bravo II kaydı yok ([]); Brezilya üretimi hava yastığı kampanyası hariç
   - [ ] 1.4 T-Jet 120 Dualogic (2010; teknik sayfa açılamadı), 2011–2014 model yılları: model yıllı liste bulunamadı (otogazete.com 2013 Fiat listesi robots engelli)
+- [x] Punto Evo (2010–2011) — 8 versiyon
+  - [x] 1.4 Fire 77 manuel ve Dualogic, 1.4 MultiAir 105, 1.3 Multijet 75: 2010–2011 (lojiport.com Ekim 2009 Türkiye motor gamı, otoguncel.com Mayıs 2011 2010 model incelemesi, milliyet.com.tr Nisan 2011 My Life haberi); teknik: auto-data.net Punto Evo (199)
+  - Euro NCAP 2017 (aynı nesil 199, 0 yıldız); geri çağırma: 2011-04 ABS sensör kablosu (Temmuz 2009–Şubat 2010 üretimi) ve 2010-06 yolcu hava yastığı (Ekim–Kasım 2009 üretimi) 2010'a; 2011 için []
+  - [ ] 1.3 Multijet 95 ve Dualogic dizel: Türkiye teyidi yok
+- [x] Punto makyajlı 2012 nesli, 2012–2013 — 4 versiyon
+  - [x] 1.4 Fire 77 ve 1.3 Multijet 95: 2012–2013 (milliyet.com.tr Ocak 2012 lansman haberi ile ototeknikveri.com Ocak 2014 listesi arası); teknik: 2014 kayıtlarıyla aynı kaynak
+  - Geri çağırma: []; 2017 kemer gergisi kampanyası hariç
+  - [ ] 1.4 MultiAir 105 ve 1.3 Multijet 75 (2012): tek kaynakta teknik veri yok
 - [ ] Tipo (2010–2014 Fiat listesi bulunamadı; bigpara.hurriyet.com Ocak 2012 kampanya haberi yalnızca model adlarını veriyor)
