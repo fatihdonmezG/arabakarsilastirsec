@@ -137,7 +137,7 @@ console.log(`Puan hesaplandı: ${n} / ${CARS.length} versiyon`);
     if (c.yil >= (CARS.find(k => k.id === x.id) || {}).yil) x.id = c.id;   // en yeni yılın bir versiyonu (detay bağlantısı)
   }
   for (const m of Object.values(M)) for (const x of Object.values(m)) x.yillar.sort((a, b) => b - a);
-  fs.writeFileSync(path.join(ROOT, 'assets', 'modeller.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. */\nwindow.MODELLER=${JSON.stringify(M)};\n`);
+  fs.writeFileSync(path.join(ROOT, 'assets', 'modeller.js'), `/* tools/puan_hesapla.js tarafından üretilir, elle düzenlemeyin. */\nwindow.MODELLER=${JSON.stringify(M)};\nwindow.VERI_OZET=${JSON.stringify({versiyon: CARS.length, satista: CARS.filter(c => !c.durum).length, marka: Object.keys(M).length, model: Object.values(M).reduce((t, x) => t + Object.keys(x).length, 0)})};\n`);
 }
 
 // İncelemeler sayfası için model bazında basın artı/eksi özeti (assets/incelemeler.js).
