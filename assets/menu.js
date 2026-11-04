@@ -1,37 +1,44 @@
-/* Telefon ve tablette üst menü: hamburger düğmesi + açılır panel. "Karşılaştır" düğmesi çubukta kalır. */
+/* Üst menü: masaüstünde beş ana bağlantı; diğer bölümler, site rengi ve üyelik "Menü" panelinde. Telefonda yalnızca Menü ve Karşılaştır. */
+window.SITE_HARITA = [
+  ['Araçlar', [['araclar.html', 'Tüm araçlar'], ['karsilastirma.html', 'Karşılaştır'], ['sistem-puani.html', 'Sistem puanı'], ['brosurler.html', 'Broşürler'], ['kampanyalar.html', 'Kampanyalar']]],
+  ['Hesaplama', [['hesaplama.html', 'Bütün hesaplamalar'], ['yol-maliyeti.html', 'Rota ve yol maliyeti'], ['sarj-hesaplama.html', 'Şarj hesaplayıcı'], ['gecis-ucretleri.html', 'Köprü ve otoyol'], ['trafik-cezalari.html', 'Trafik cezaları'], ['otv-muafiyet.html', 'ÖTV muafiyeti'], ['mtv-hesaplama.html', 'MTV']]],
+  ['Gündem', [['haberler.html', 'Haberler'], ['lansmanlar.html', 'Lansmanlar'], ['incelemeler.html', 'İncelemeler'], ['oduller.html', 'Ödüller'], ['piyasa.html', 'Pazar verisi']]],
+  ['Topluluk ve rehber', [['yorumlar.html', 'Sahip yorumları'], ['forum.html', 'Forum'], ['rehber.html', 'El kitabı'], ['ehliyet.html', 'Ehliyet'], ['sozluk.html', 'Teknik sözlük']]]
+];
 (function () {
+  const ANA = ['araclar.html', 'kampanyalar.html', 'haberler.html', 'hesaplama.html', 'forum.html'];
+  const sayfa = (location.pathname.split('/').pop() || 'index.html');
   function kur() {
     const top = document.querySelector('header.top'), nav = top && top.querySelector('.nav');
-    if (!nav || top.querySelector('.menu-btn')) return;
-    const wrap = nav.parentElement;
-    if (!nav.id) nav.id = 'siteMenu';
-    const cta = nav.querySelector('a.cta');
-    if (cta) { const c = cta.cloneNode(true); c.classList.add('cta-mobil'); c.removeAttribute('aria-current'); wrap.insertBefore(c, nav); }
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'menu-btn'; b.setAttribute('aria-controls', nav.id); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Menüyü aç');
-    b.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="m1" d="M4 7h16"/><path class="m2" d="M4 12h16"/><path class="m3" d="M4 17h16"/></svg>';
-    wrap.insertBefore(b, nav);
-    const kapat = () => { top.classList.remove('menu-acik'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Menüyü aç'); };
-    b.addEventListener('click', e => {
-      e.stopPropagation();
-      const acik = top.classList.toggle('menu-acik');
-      b.setAttribute('aria-expanded', String(acik)); b.setAttribute('aria-label', acik ? 'Menüyü kapat' : 'Menüyü aç');
+    if (!nav || top.querySelector('.ust-sag')) return;
+    nav.querySelectorAll('a').forEach(a => {
+      const h = (a.getAttribute('href') || '').split('#')[0];
+      if (!a.classList.contains('cta') && !a.classList.contains('uye-link') && !ANA.includes(h)) a.classList.add('ikincil');
     });
-    document.addEventListener('click', e => { if (top.classList.contains('menu-acik') && !nav.contains(e.target)) kapat(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && top.classList.contains('menu-acik')) { kapat(); b.focus(); } });
-    nav.addEventListener('click', e => { if (e.target.closest('a')) kapat(); });
+    const sag = document.createElement('div');
+    sag.className = 'ust-sag';
+    sag.innerHTML = '<button type="button" class="menu-ac" aria-expanded="false" aria-controls="menuPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menü</span></button><a class="kiyas" href="karsilastirma.html">Karşılaştır</a>';
+    nav.parentElement.appendChild(sag);
+    const panel = document.createElement('div');
+    panel.className = 'menu-panel'; panel.id = 'menuPanel'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Site menüsü');
+    panel.innerHTML = '<div class="wrap">' + window.SITE_HARITA.map(([b, l]) => `<nav aria-label="${b}"><h4>${b}</h4><ul>${l.map(([h, t]) => `<li><a href="${h}"${h === sayfa ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul></nav>`).join('') + '<div class="mp-alt"><a href="uye.html">Üyelik ve garajım</a><a href="index.html">Ana sayfa</a></div></div>';
+    const perde = document.createElement('div'); perde.className = 'menu-perde';
+    document.body.appendChild(perde); document.body.appendChild(panel);
+    const rs = nav.querySelector('.renk-sec'); if (rs) panel.querySelector('.mp-alt').prepend(rs);
+    const btn = sag.querySelector('.menu-ac');
+    const ac = v => { panel.classList.toggle('acik', v); perde.classList.toggle('acik', v); btn.setAttribute('aria-expanded', String(v)); btn.querySelector('span').textContent = v ? 'Kapat' : 'Menü'; };
+    btn.addEventListener('click', e => { e.stopPropagation(); ac(!panel.classList.contains('acik')); });
+    perde.addEventListener('click', () => ac(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('acik')) { ac(false); btn.focus(); } });
+    // tema.js renk seçiciyi sonradan eklerse panele taşı
+    new MutationObserver(() => { const r = nav.querySelector('.renk-sec'); if (r) panel.querySelector('.mp-alt').prepend(r); }).observe(nav, {childList: true});
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', kur); else kur();
 })();
 
 /* Alt bilgi: her sayfada aynı bağlantı sütunları. Sayfanın kendi notu altta kalır. */
 (function () {
-  const S = [
-    ['Araçlar', [['araclar.html', 'Tüm araçlar'], ['karsilastirma.html', 'Karşılaştır'], ['sistem-puani.html', 'Sistem puanı'], ['brosurler.html', 'Broşürler'], ['kampanyalar.html', 'Kampanyalar']]],
-    ['Hesaplama', [['yol-maliyeti.html', 'Rota ve yol maliyeti'], ['sarj-hesaplama.html', 'Şarj hesaplayıcı'], ['gecis-ucretleri.html', 'Köprü ve otoyol'], ['trafik-cezalari.html', 'Trafik cezaları'], ['otv-muafiyet.html', 'ÖTV muafiyeti'], ['mtv-hesaplama.html', 'MTV']]],
-    ['Gündem', [['haberler.html', 'Haberler'], ['lansmanlar.html', 'Lansmanlar'], ['incelemeler.html', 'İncelemeler'], ['oduller.html', 'Ödüller'], ['piyasa.html', 'Pazar verisi']]],
-    ['Topluluk ve rehber', [['yorumlar.html', 'Sahip yorumları'], ['forum.html', 'Forum'], ['rehber.html', 'El kitabı'], ['ehliyet.html', 'Ehliyet'], ['sozluk.html', 'Teknik sözlük']]]
-  ];
+  const S = window.SITE_HARITA;
   function kur() {
     const f = document.querySelector('footer');
     if (!f || f.querySelector('.alt-menu')) return;

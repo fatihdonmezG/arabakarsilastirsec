@@ -15,7 +15,7 @@
   H.yk = t => `<span class="yk ${t}">${H.TUR_AD[t]}</span>`;
 
   // Araç kayıtları
-  const A = (window.ARAC_ENERJI || []).map(r => ({id: r[0], marka: r[1], model: r[2], versiyon: r[3], yil: r[4], yakit: r[5], l100: r[6], kwh100: r[7], batarya: r[8], menzil: r[9], dc: r[10], ac: r[11], depo: r[12], fiyat: r[13], satista: !!r[14], kasa: r[15] || ''}));
+  const A = (window.ARAC_ENERJI || []).map(r => ({id: r[0], marka: r[1], model: r[2], versiyon: r[3], yil: r[4], yakit: r[5], l100: r[6], kwh100: r[7], batarya: r[8], menzil: r[9], dc: r[10], ac: r[11], depo: r[12], fiyat: r[13], satista: !!r[14], kasa: r[15] || '', hp: r[16], sifirYuz: r[17], sanziman: r[18] || '', cekis: r[19] || '', hiz: r[20]}));
   A.forEach(a => { a.tur = H.tur(a.yakit); if (a.tur === 'elektrik' && !a.kwh100 && a.batarya && a.menzil) { a.kwh100 = +(a.batarya / a.menzil * 100).toFixed(1); a.kwhTahmin = true; } });
   H.ARACLAR = A;
   H.arac = id => A.find(a => a.id === id);

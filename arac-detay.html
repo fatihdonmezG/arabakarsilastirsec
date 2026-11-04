@@ -414,6 +414,8 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     </figure>
   </section>
 
+  <dl class="keystats" id="keystats"></dl>
+
   <section class="secili" aria-labelledby="seciliT">
     <div class="secili-ust">
       <div>
@@ -436,7 +438,6 @@ dialog::backdrop{background:rgba(8,9,11,.7)}
     <div class="kampkutu mlkutu" id="linkKutu" hidden></div>
   </section>
 
-  <dl class="keystats" id="keystats"></dl>
 
   <nav class="subnav" aria-label="Sayfa bölümleri" id="subnav">
     <span class="subnav-ad" id="subnavAd" aria-hidden="true"></span>
@@ -9438,6 +9439,7 @@ function renderUst(){
   $('#markaLogo').innerHTML = lg ? `<img src="assets/logos/${esc(lg)}" alt="${esc(c.marka)} amblemi">` : `<span>${esc(c.marka.slice(0, 2))}</span>`;
   $('#markaLogo').href = 'araclar.html#marka=' + encodeURIComponent(c.marka);
   $('#title').innerHTML = `<span class="mk">${esc(c.marka)}</span> <b>${esc(c.model)}</b>`;
+  $('#sahne').dataset.ad = c.model;
   const vers = Object.values(CARS).filter(x => x.marka === c.marka && x.model === c.model && x.yil === c.yil);
   const sa = sinifAdi(c);
   const parca = [sa || s.kasa || 'Otomobil', `${c.yil} model`];

@@ -136,43 +136,36 @@ footer p{color:var(--muted);font-size:.85rem;max-width:64ch;line-height:1.6}
 </header>
 
 <section class="hero giris">
-  <div class="wrap hero-inner">
-    <div>
-      <a class="duyuru" href="hesaplama.html"><b>Yeni</b><span>Rota ve yol maliyeti, şarj hesaplayıcı, trafik cezaları ve forum açıldı</span></a>
-      <h1>Doğru arabayı <em>verilerle</em> seç.</h1>
-      <p class="biz">Araba Karşılaştır ve Seç, Türkiye'de satılan ve geçmişte satılmış otomobilleri tek bir yerde toplayan bağımsız bir karşılaştırma sitesi. Teknik özellikleri yan yana koyuyor, her aracı aynı ölçekle puanlıyor, geri çağırmaları ve Euro NCAP sonuçlarını gösteriyoruz. Her rakamın kaynağı yanında yazıyor; bulamadığımız değere tahmin yazmıyoruz.</p>
-      <ul class="ilkeler">
-        <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg>Resmi kaynaklı veri</li>
-        <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg>Araç satmıyoruz</li>
-        <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg>Ücretsiz</li>
-      </ul>
+  <div class="wrap gi">
+    <div class="gi-yazi">
+      <a class="duyuru" href="hesaplama.html"><b>Yeni</b><span>Yol maliyeti, şarj hesaplayıcı ve forum açıldı</span></a>
+      <h1>Doğru arabayı<br>verilerle seç.</h1>
+      <p class="biz">Türkiye'de satılan otomobilleri resmi kaynaklarıyla yan yana koyuyor, aynı ölçekle puanlıyoruz. Her rakamın kaynağı yanında.</p>
+      <div class="ara" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m14 14 4 4"/></svg><input type="search" id="hizliAra" placeholder="Model ara: Egea, T10X, Corolla" autocomplete="off" aria-label="Marka ya da model ara"><div class="oneri" id="hizliOneri" role="listbox"></div></div>
       <div class="cta-row">
-        <a class="btn primary" href="karsilastirma.html"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h12M4 10h8M4 14h4"/></svg>Karşılaştırmaya başla</a>
-        <a class="btn" href="araclar.html">Bütün araçlara göz at</a>
+        <a class="btn primary" href="karsilastirma.html">Karşılaştırmaya başla</a>
+        <a class="btn" href="araclar.html">Bütün araçlar</a>
       </div>
+      <p class="populer" id="hizliKiyas"></p>
     </div>
-    <div class="hizli">
-      <div class="ust"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i><div><h2>Hızlı başla</h2><p>Model adını yazın, aracın sayfasına gidin.</p></div></div>
-      <div class="ara"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m14 14 4 4"/></svg><input type="search" id="hizliAra" placeholder="ör. Egea, T10X, Corolla" autocomplete="off" aria-label="Marka ya da model ara"><div class="oneri" id="hizliOneri" role="listbox"></div></div>
-      <h3>Çok bakılan karşılaştırmalar</h3>
-      <div class="kiyaslar" id="hizliKiyas"></div>
-    </div>
-    <div class="sayilar" id="sayilar" aria-label="Veritabanı özeti"></div>
+    <a class="gi-sahne" id="sahne" href="araclar.html" aria-label="Öne çıkan model"></a>
   </div>
+  <div class="wrap"><div class="sayilar" id="sayilar" aria-label="Veritabanı özeti"></div></div>
 </section>
 
-<div class="wrap ozellikler">
-  <div class="bas"><div><small>Bölümler</small><h2>Sitede neler yapabilirsin?</h2></div><p>Araç seçmekten yol masrafını hesaplamaya kadar ihtiyacın olan her şey üç başlık altında.</p></div>
-  <div class="oz-grid" id="ozGrid"></div>
-</div>
+<main class="wrap ana">
+  <section class="blok">
+    <div class="blok-bas"><h2>Öne çıkan modeller</h2><a href="araclar.html">Bütün araçlar →</a></div>
+    <div class="mkart-serit" id="cards"></div>
+  </section>
 
-<main class="wrap">
-  <section class="section">
-    <div class="section-head">
-      <span class="eyebrow">Neden Araba Karşılaştır ve Seç</span>
-      <h2>Kağıt üstündeki rakamlar yetmez</h2>
-      <p class="section-lead">Katalog değerlerinin yanında aracın kullanımda nasıl davrandığını da gösteriyoruz.</p>
-    </div>
+  <section class="blok ozellikler">
+    <div class="blok-bas"><h2>Sitede neler var?</h2><p>Araç seçmekten yol masrafını hesaplamaya kadar.</p></div>
+    <div class="oz-gruplar" id="ozGrid"></div>
+  </section>
+
+  <section class="blok neden">
+    <div class="blok-bas"><h2>Neden bize güvenebilirsin?</h2></div>
     <div class="features">
       <div class="feature f1">
         <div class="ficon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h12M4 10h8M4 14h4"/></svg></div>
@@ -191,35 +184,6 @@ footer p{color:var(--muted);font-size:.85rem;max-width:64ch;line-height:1.6}
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="section-head">
-      <span class="eyebrow">Veritabanı</span>
-      <h2>Çok incelenen modeller</h2>
-      <p class="section-lead">Türkiye'de en çok bakılan modellerden bazıları. Liste her hafta büyüyor.</p>
-    </div>
-    <div class="cards" id="cards"></div>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <span class="eyebrow">Araç almadan önce</span>
-      <h2>Pazar, haberler ve bilmeniz gerekenler</h2>
-      <p class="section-lead">Pazar verisi, haberler, ehliyet ve araç sahipliğiyle ilgili pratik bilgiler.</p>
-    </div>
-    <div class="cards">
-      <a class="car-card" href="piyasa.html"><div class="cc-name">Türkiye otomotiv pazarı</div><div class="cc-ver">2026 aylık satışlar, marka sıralaması, yakıt türü dağılımı (ODMD, OSD)</div><div class="cc-cta">Pazar verisine git →</div></a>
-      <a class="car-card" href="haberler.html"><div class="cc-name">Haftalık haber akışı</div><div class="cc-ver">Lansmanlar, geri çağırmalar, mevzuat; kısa özet ve kaynak linkiyle</div><div class="cc-cta">Haberleri oku →</div></a>
-      <a class="car-card" href="oduller.html"><div class="cc-name">Ödüllü araçlar</div><div class="cc-ver">Yılın Otomobili, basın, güvenlik ve tasarım ödülleri tek tabloda</div><div class="cc-cta">Ödülleri gör →</div></a>
-      <a class="car-card" href="ehliyet.html"><div class="cc-name">Ehliyet ve sınav</div><div class="cc-ver">Sınıflar ve yaşlar, başvuru belgeleri, e-sınav kuralları, 2026 harçları</div><div class="cc-cta">Ehliyet rehberi →</div></a>
-      <a class="car-card" href="rehber.html"><div class="cc-name">Araç sahibinin el kitabı</div><div class="cc-ver">İkinci el alım, muayene, sigorta, kaza tutanağı, 2026 trafik cezaları, MTV</div><div class="cc-cta">El kitabını aç →</div></a>
-    </div>
-  </section>
-
-  <div class="scope-box">
-    <p><strong>Kapsam:</strong> <span id="kapsamSay">56 marka, 898 versiyon</span>. Bilgiler marka sitelerinden ve resmi fiyat listelerinden derleniyor; artık satılmayan modeller ayrıca işaretli.</p>
-    <a class="btn" href="karsilastirma.html">Tüm başlıkları gör →</a>
-  </div>
 </main>
 
 <footer>
@@ -234,13 +198,14 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 const CMP_URL = 'karsilastirma.html';
 const DETAY_URL = 'arac-detay.html';
 
-const POPULER = [['Fiat','Egea'],['Renault','Clio'],['Toyota','Corolla'],['Togg','T10X'],['Volkswagen','Golf'],['Hyundai','i20'],['Peugeot','2008'],['Renault','Duster']];
-const M = window.MODELLER || {};
-document.getElementById('cards').innerHTML = POPULER.filter(([m, o]) => M[m] && M[m][o]).map(([m, o]) => { const x = M[m][o], y = x.yillar;
-  return `<a class="car-card" href="${DETAY_URL}#${encodeURIComponent(x.id)}"><div class="cc-top"><div><div class="cc-name">${esc(m + ' ' + o)}</div><div class="cc-ver">${y.length > 1 ? y[y.length - 1] + '–' + y[0] + ' model yılları' : y[0] + ' model yılı'}</div></div></div><div class="cc-cta">Detayları gör →</div></a>`; }).join('');
+const POPULER = [['Togg','T10X'],['Fiat','Egea'],['Renault','Clio'],['Volkswagen','Golf'],['Hyundai','i20'],['Renault','Boreal'],['Toyota','Corolla Cross'],['Skoda','Kodiaq']];
+window.ONE_CIKAN = POPULER;
 </script>
 
 <script src="assets/kampanyalar.js"></script>
+<script src="assets/kesit.js"></script>
+<script src="assets/fotolar.js"></script>
+<script src="assets/arac_enerji.js"></script>
 <script src="assets/giris.js"></script>
 <script src="assets/uye-ayar.js"></script>
 <script src="assets/uyelik.js"></script>

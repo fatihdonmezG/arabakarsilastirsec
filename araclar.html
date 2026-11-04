@@ -57,6 +57,53 @@
 .vcredit a{color:var(--muted)}
 .empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px solid var(--divider);margin-top:16px}
 .bdg.fp{border-color:color-mix(in srgb,#0F766E 45%,transparent);color:#0F766E;font-weight:800}
+
+/* Sade düzen: solda filtreler, sağda fotoğraflı kartlar */
+.ar-duzen{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:8px;align-items:start}
+@media (min-width:1000px){.ar-duzen{grid-template-columns:260px minmax(0,1fr)}.ar-filtre{position:sticky;top:84px;max-height:calc(100vh - 100px);overflow:auto}.ar-filtre>summary{display:none}}
+.ar-filtre{background:var(--surface);border-radius:24px;padding:20px}
+.ar-filtre>summary{cursor:pointer;font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.ar-filtre>summary::after{content:"+";font-size:1.3rem;color:var(--muted)}
+.ar-filtre[open]>summary::after{content:"–"}
+.af-ic{display:grid;gap:14px}
+.ar-filtre[open]>summary+.af-ic{margin-top:14px}
+@media (min-width:1000px){.ar-filtre[open]>summary+.af-ic{margin-top:0}}
+.af-ic label{display:block;font-size:.76rem;font-weight:600;color:var(--muted);margin-bottom:6px}
+.af-ic input[type=search],.af-ic select{width:100%;height:44px;padding-inline:12px;font:inherit;font-size:.92rem;color:var(--ink)}
+.af-ic .checks{display:grid;gap:2px;padding-top:6px;border-top:1px solid var(--line)}
+.af-ic .switch{min-height:34px;font-size:.88rem}
+.ar-ust{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:0 4px}
+.ar-ust>div{display:flex;align-items:center;gap:10px}
+.ar-ust label{font-size:.82rem;color:var(--muted)}
+.ar-ust select{height:40px;padding-inline:12px;font:inherit;font-size:.88rem;min-width:220px}
+.ar-liste .list{display:grid;grid-template-columns:1fr;gap:18px;margin-top:44px;row-gap:56px}
+@media (min-width:700px){.ar-liste .list{grid-template-columns:1fr 1fr}}
+@media (min-width:1280px){.ar-liste .list{grid-template-columns:1fr 1fr 1fr}}
+.vcard{position:relative;display:flex;flex-direction:column;gap:0;padding:0 22px 20px!important}
+.vcard.sel{box-shadow:0 0 0 2px var(--ink)!important}
+.vcard .vphoto{display:block;height:150px;margin:-40px -8px 0;background:none!important;overflow:visible;aspect-ratio:auto}
+.vcard .vphoto img{width:100%;height:100%;object-fit:contain!important;object-position:center bottom!important;padding:0!important;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.vcard:not(.kesitli) .vphoto{margin:16px 0 0;height:160px;border-radius:16px;overflow:hidden}
+.vcard:not(.kesitli) .vphoto img{object-fit:cover!important;object-position:center 58%!important}
+.vcard .vphoto-amblem{background:var(--surface2)!important}
+.vcard:hover .vphoto img{transform:translateY(-3px) scale(1.015)}
+.vcard .vtop{margin-top:16px}
+.vmarka{font-size:.8rem;color:var(--muted)}
+.vcard .vname{font-family:var(--display);font-size:1.4rem;font-weight:500;letter-spacing:-.02em;line-height:1.15}
+.vcard .vver{font-size:.8rem;color:var(--muted);margin-top:4px}
+.vcard .badges{margin-top:12px}
+.vcard .bdg{font-size:.72rem;font-weight:500;padding:3px 9px}
+.vcard .bdg.ana{background:var(--ink)!important;color:#fff!important}
+.vcard .vnums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 0}
+.vcard .vnums div{display:flex;flex-direction:column}
+.vcard .vnums dd{margin:0;font-family:var(--display);font-size:1.3rem;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.vcard .vnums dd small{font-family:var(--body);font-size:.76rem;color:var(--muted);margin-left:3px;font-weight:400}
+.vcard .vnums dt{font-size:.72rem;color:var(--muted)}
+.vcard .vcredit{margin-top:12px;font-size:.62rem}
+.vcard .vact{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:16px}
+.vcard .sbtn{min-height:42px;font-size:.86rem}
+.vcard .sbtn.birincil{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.score{border-radius:999px!important;min-width:42px;font-size:.9rem!important;font-weight:600!important;background:var(--surface2)!important;color:var(--ink)!important;border:0!important}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -94,13 +141,24 @@
 </section>
 
 <main class="wrap">
-  <section class="section" style="padding-top:20px">
-    <div class="fbar" role="search">
-      <div><label for="q">Ara</label><input id="q" type="search" placeholder="Marka, model ya da versiyon" autocomplete="off"></div>
-      <div><label for="fMarka">Marka</label><select id="fMarka"></select></div>
-      <div><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div>
-      <div><label for="fKasa">Kasa tipi</label><select id="fKasa"></select></div>
-      <div><label for="fSirala">Sırala</label><select id="fSirala">
+  <div class="ar-duzen">
+    <details class="ar-filtre" id="arFiltre" open>
+      <summary>Filtreler</summary>
+      <div class="af-ic" role="search">
+        <div><label for="q">Ara</label><input id="q" type="search" placeholder="Marka, model ya da versiyon" autocomplete="off"></div>
+        <div><label for="fMarka">Marka</label><select id="fMarka"></select></div><div><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div><div><label for="fKasa">Kasa tipi</label><select id="fKasa"></select></div><div><label for="fYil">Model yılı</label><select id="fYil"></select></div><div><label for="fSanziman">Şanzıman</label><select id="fSanziman"><option value="">Tümü</option><option value="otomatik">Tam otomatik (tork konvertörlü)</option><option value="dct">Çift kavramalı (DCT / DSG / EDC)</option><option value="cvt">CVT / e-CVT</option><option value="tek">Tek vitesli (elektrikli)</option><option value="amt">Otomatikleştirilmiş manuel (AMT)</option><option value="manuel">Manuel</option><option value="belirsiz">Otomatik (tipi belirtilmemiş)</option></select></div><div><label for="fCekis">Çekiş</label><select id="fCekis"><option value="">Tümü</option><option value="onden">Önden çekiş</option><option value="arkadan">Arkadan itiş</option><option value="4x4">4x4 / AWD</option></select></div><div><label for="fKoltuk">Koltuk</label><select id="fKoltuk"><option value="">Tümü</option><option value="2">2 koltuk</option><option value="4">4–5 koltuk</option><option value="6">6 ve üstü</option></select></div><div><label for="fGuc">Güç</label><select id="fGuc"><option value="">Tümü</option><option value="0-99">100 HP altı</option><option value="100-149">100–149 HP</option><option value="150-199">150–199 HP</option><option value="200-299">200–299 HP</option><option value="300-9999">300 HP ve üstü</option></select></div><div><label for="fFiyat">Liste fiyatı</label><select id="fFiyat"><option value="">Tümü</option><option value="0-1500000">1,5 milyon TL altı</option><option value="1500000-2500000">1,5–2,5 milyon TL</option><option value="2500000-4000000">2,5–4 milyon TL</option><option value="4000000-7000000">4–7 milyon TL</option><option value="7000000-1e12">7 milyon TL üstü</option></select></div><div><label for="fPuan">Sistem puanı</label><select id="fPuan"><option value="">Tümü</option><option value="8">8 ve üstü</option><option value="7">7 ve üstü</option><option value="6">6 ve üstü</option></select></div>
+        <div class="checks">
+        <label class="switch"><input type="checkbox" id="fSatis"> Sadece Türkiye'de satıştaki araçlar</label>
+        <label class="switch"><input type="checkbox" id="fFoto"> Fotoğraflı olanlar</label>
+        <label class="switch"><input type="checkbox" id="fDetay"> Detay sayfası olanlar</label>
+        <label class="switch"><input type="checkbox" id="fTek"> Her versiyonu ayrı göster</label>
+      </div>
+        <button type="button" class="sbtn" id="clearF" hidden>Filtreleri temizle</button>
+      </div>
+    </details>
+    <section class="ar-liste" aria-label="Araçlar">
+      <div class="ar-ust"><span class="count" id="count" aria-live="polite">Yükleniyor…</span><div><label for="fSirala">Sırala</label><select id="fSirala">
+        <option value="oneri">Önerilen (satıştaki, fotoğraflı)</option>
         <option value="marka">Marka ve model (A–Z)</option>
         <option value="puan">Sistem puanı (yüksekten düşüğe)</option>
         <option value="fp">Fiyat/performans (satıştaki 2026)</option>
@@ -112,32 +170,15 @@
         <option value="bagaj">Bagaj (büyükten küçüğe)</option>
         <option value="menzil">Elektrikli menzil (uzundan kısaya)</option>
         <option value="yil">Model yılı (yeniden eskiye)</option>
-      </select></div>
-    </div>
-    <div class="fbar2">
-      <div><label for="fYil">Model yılı</label><select id="fYil"></select></div>
-      <div><label for="fSanziman">Şanzıman</label><select id="fSanziman"><option value="">Tümü</option><option value="otomatik">Tam otomatik (tork konvertörlü)</option><option value="dct">Çift kavramalı (DCT / DSG / EDC)</option><option value="cvt">CVT / e-CVT</option><option value="tek">Tek vitesli (elektrikli)</option><option value="amt">Otomatikleştirilmiş manuel (AMT)</option><option value="manuel">Manuel</option><option value="belirsiz">Otomatik (tipi belirtilmemiş)</option></select></div>
-      <div><label for="fCekis">Çekiş</label><select id="fCekis"><option value="">Tümü</option><option value="onden">Önden çekiş</option><option value="arkadan">Arkadan itiş</option><option value="4x4">4x4 / AWD</option></select></div>
-      <div><label for="fKoltuk">Koltuk</label><select id="fKoltuk"><option value="">Tümü</option><option value="2">2 koltuk</option><option value="4">4–5 koltuk</option><option value="6">6 ve üstü</option></select></div>
-      <div><label for="fGuc">Güç</label><select id="fGuc"><option value="">Tümü</option><option value="0-99">100 HP altı</option><option value="100-149">100–149 HP</option><option value="150-199">150–199 HP</option><option value="200-299">200–299 HP</option><option value="300-9999">300 HP ve üstü</option></select></div>
-      <div><label for="fFiyat">Liste fiyatı</label><select id="fFiyat"><option value="">Tümü</option><option value="0-1500000">1,5 milyon TL altı</option><option value="1500000-2500000">1,5–2,5 milyon TL</option><option value="2500000-4000000">2,5–4 milyon TL</option><option value="4000000-7000000">4–7 milyon TL</option><option value="7000000-1e12">7 milyon TL üstü</option></select></div>
-      <div><label for="fPuan">Sistem puanı</label><select id="fPuan"><option value="">Tümü</option><option value="8">8 ve üstü</option><option value="7">7 ve üstü</option><option value="6">6 ve üstü</option></select></div>
-    </div>
-    <div class="frow">
-      <div class="checks">
-        <label class="switch"><input type="checkbox" id="fSatis"> Sadece Türkiye'de satıştaki araçlar</label>
-        <label class="switch"><input type="checkbox" id="fFoto"> Fotoğraflı olanlar</label>
-        <label class="switch"><input type="checkbox" id="fDetay"> Detay sayfası olanlar</label>
-      </div>
-      <span><span class="count" id="count" aria-live="polite">Yükleniyor…</span> <button type="button" class="sbtn" id="clearF" hidden style="min-height:32px;margin-left:8px">Filtreleri temizle</button></span>
-    </div>
-    <div class="list" id="list"></div>
-    <div class="more"><button type="button" class="sbtn" id="more" hidden>Daha fazla göster</button></div>
-    <div class="tray" id="tray" hidden>
+      </select></div></div>
+      <div class="list" id="list"></div>
+      <div class="more"><button type="button" class="sbtn" id="more" hidden>Daha fazla göster</button></div>
+      <div class="tray" id="tray" hidden>
       <span class="names" id="trayNames"></span>
       <span><button type="button" class="sbtn" id="clearSel">Seçimi temizle</button> <a class="sbtn go" id="goCmp" href="karsilastirma.html">Seçilenleri karşılaştır</a></span>
     </div>
-  </section>
+    </section>
+  </div>
 </main>
 
 <footer>
@@ -197,7 +238,7 @@ async function load(){
   render();
 }
 
-const FMAP={q:'q',marka:'fMarka',yakit:'fYakit',kasa:'fKasa',sirala:'fSirala',yil:'fYil',sanziman:'fSanziman',cekis:'fCekis',koltuk:'fKoltuk',guc:'fGuc',fiyat:'fFiyat',puan:'fPuan',satis:'fSatis',foto:'fFoto',detay:'fDetay'};
+const FMAP={q:'q',marka:'fMarka',yakit:'fYakit',kasa:'fKasa',sirala:'fSirala',yil:'fYil',sanziman:'fSanziman',cekis:'fCekis',koltuk:'fKoltuk',guc:'fGuc',fiyat:'fFiyat',puan:'fPuan',satis:'fSatis',foto:'fFoto',detay:'fDetay',tek:'fTek'};
 const range=v=>{ if(!v) return null; const [a,b]=v.split('-').map(Number); return [a,b]; };
 function filtered(){
   const q=$('q').value.trim().toLocaleLowerCase('tr'), m=$('fMarka').value, f=$('fYakit').value, b=$('fKasa').value, sat=$('fSatis').checked;
@@ -210,7 +251,9 @@ function filtered(){
     &&(!fy||(c.s.liste_fiyati_tl!=null&&!c._off&&c.s.liste_fiyati_tl>=fy[0]&&c.s.liste_fiyati_tl<fy[1]))
     &&(!pu||(c._p!=null&&c._p>=pu))&&(!foto||c._foto)&&(!det||DETAY.has(c.id)));
   const srt=$('fSirala').value;
+  const kes=c=>{ const f=window.fotoFor&&window.fotoFor(c); return f&&f.kesit?2:f?1:0; };
   const cmp={
+    oneri:(a,b)=>(a._off-b._off)||(kes(b)-kes(a))||((b._p??-1)-(a._p??-1))||a.marka.localeCompare(b.marka,'tr'),
     marka:(a,b)=>a.marka.localeCompare(b.marka,'tr')||a.model.localeCompare(b.model,'tr')||b.yil-a.yil||a.versiyon.localeCompare(b.versiyon,'tr'),
     gucDesc:(a,b)=>(b.s.guc_hp??-1)-(a.s.guc_hp??-1),
     tuketim:(a,b)=>(a.s.tuketim_l100km??1e9)-(b.s.tuketim_l100km??1e9),
@@ -228,31 +271,44 @@ function filtered(){
 
 function card(c){
   const on=sel.includes(c.id), full=sel.length>=4&&!on;
-  const nums=[];
-  if(c.s.guc_hp!=null) nums.push(`<span><b>${nf(c.s.guc_hp)}</b> HP</span>`);
-  if(c._f==='elektrik'){ if(c.s.menzil_km_wltp!=null) nums.push(`<span><b>${nf(c.s.menzil_km_wltp)}</b> km menzil</span>`); }
-  else if(c.s.tuketim_l100km!=null) nums.push(`<span><b>${nf(c.s.tuketim_l100km,1)}</b> l/100 km</span>`);
-  if(c.s.bagaj_l!=null) nums.push(`<span><b>${nf(c.s.bagaj_l)}</b> L bagaj</span>`);
+  const deg=[];
+  if(c.s.guc_hp!=null) deg.push([nf(c.s.guc_hp),'HP','Güç']);
+  if(c.s.sifirYuz_sn!=null) deg.push([nf(c.s.sifirYuz_sn,1),'sn','0-100 km/s']);
+  if(c._f==='elektrik'){ if(c.s.menzil_km_wltp!=null) deg.push([nf(c.s.menzil_km_wltp),'km','WLTP menzil']); }
+  else if(c.s.tuketim_l100km!=null) deg.push([nf(c.s.tuketim_l100km,1),'L','100 km tüketim']);
+  if(deg.length<3&&c.s.bagaj_l!=null) deg.push([nf(c.s.bagaj_l),'L','Bagaj']);
   const ph=window.fotoFor?window.fotoFor(c):null;
-  return `<article class="vcard${on?' sel':''}">${ph?`<div class="vphoto"><img src="${esc(ph.src)}" alt="${esc(c.marka+' '+c.model)}" loading="lazy" decoding="async"></div><div class="vcredit">${window.fotoKredi(ph)}</div>`:(window.amblemKart?`<div class="vphoto vphoto-amblem">${window.amblemKart(c,{versiyonYok:true})}</div><div class="vcredit">&nbsp;</div>`:'')}
-    <div class="vtop"><div><div class="vname">${esc(c.marka+' '+c.model)}</div><div class="vver">${c.yil} · ${esc(c.versiyon)}${c.donem?` · <span title="Türkiye\'de satıldığı yıllar">${esc(c.donem)}</span>`:''}</div></div>${c._p!=null?`<a class="score" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)">${nf(c._p,1)}</a>`:''}</div>
-    <div class="badges">${c.s.yakit?`<span class="bdg">${esc(c.s.yakit)}</span>`:''}${c.s.kasa?`<span class="bdg">${esc(c.s.kasa)}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}${c._fp!=null?`<span class="bdg fp" title="Fiyat/performans puanı: aynı sınıftaki 2026 araçlara göre sistem puanı başına fiyat">F/P ${nf(c._fp,1)}</span>`:''}</div>
-    <div class="vnums">${nums.join('')||'<span>Temel değerler henüz eklenmedi</span>'}</div>
+  const y=c.s.yakit||'', yk=/^Elektrik/i.test(y)?'Elektrikli':/plug-?in/i.test(y)?'Şarj edilebilir hibrit':/hibrit|hybrid|e-POWER/i.test(y)?'Hibrit':/LPG/.test(y)?'Benzin/LPG':/^Dizel/i.test(y)?'Dizel':y?'Benzin':'';
+  const sz=c.s.sanziman?(/manuel/i.test(c.s.sanziman)?'Manuel':'Otomatik'):'';
+  const ck=c.s.cekis?(/4|dört|AWD|4x4|xDrive|quattro|4MOTION|ALL4/i.test(c.s.cekis)?'Dört çeker':/arka|RWD/i.test(c.s.cekis)?'Arkadan itiş':'Önden çekiş'):'';
+  const det=DETAY.has(c.id);
+  return `<article class="vcard${on?' sel':''}${ph&&ph.kesit?' kesitli':''}">
+    <a class="vphoto${ph?'':' vphoto-amblem'}"${det?` href="arac-detay.html#${encodeURIComponent(c.id)}"`:''} aria-label="${esc(c.marka+' '+c.model)}">${ph?`<img src="${esc(ph.src)}" alt="" loading="lazy" decoding="async">`:(window.amblemKart?window.amblemKart(c,{versiyonYok:true}):'')}</a>
+    <div class="vtop"><div><div class="vmarka">${esc(c.marka)}</div><div class="vname">${esc(c.model)}</div></div>${c._p!=null?`<a class="score" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)">${nf(c._p,1)}</a>`:''}</div>
+    <div class="vver">${c.yil} · ${esc(c.versiyon)}${c.donem?` · ${esc(c.donem)}`:''}${c._n>1?` · <button type="button" class="vdiger" data-model="${esc(c.marka+' '+c.model)}">${c._n-1} versiyon daha</button>`:''}</div>
+    <div class="badges">${yk?`<span class="bdg ana">${esc(yk)}</span>`:''}${ck?`<span class="bdg">${ck}</span>`:''}${sz?`<span class="bdg">${sz}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}${c._fp!=null?`<span class="bdg fp" title="Fiyat/performans puanı: aynı sınıftaki 2026 araçlara göre sistem puanı başına fiyat">F/P ${nf(c._fp,1)}</span>`:''}</div>
+    <dl class="vnums">${deg.slice(0,3).map(([v,b,l])=>`<div><dd>${v}<small>${b}</small></dd><dt>${l}</dt></div>`).join('')||'<div><dt>Temel değerler henüz eklenmedi</dt></div>'}</dl>
+    ${ph?`<div class="vcredit">${window.fotoKredi(ph)}</div>`:''}
     <div class="vact">
-      <button type="button" class="sbtn" data-sel="${esc(c.id)}" aria-pressed="${on}"${full?' aria-disabled="true"':''}>${on?'Seçildi':'Karşılaştırmaya ekle'}</button>
-      ${DETAY.has(c.id)?`<a class="sbtn" href="arac-detay.html#${encodeURIComponent(c.id)}">Detay</a>`:'<span class="sbtn" aria-disabled="true" title="Detay sayfası hazırlanıyor">Detay hazırlanıyor</span>'}
+      ${det?`<a class="sbtn birincil" href="arac-detay.html#${encodeURIComponent(c.id)}">İncele</a>`:'<span class="sbtn" aria-disabled="true" title="Detay sayfası hazırlanıyor">Hazırlanıyor</span>'}
+      <button type="button" class="sbtn" data-sel="${esc(c.id)}" aria-pressed="${on}"${full?' aria-disabled="true"':''}>${on?'Seçildi ✓':'Karşılaştır'}</button>
     </div>
   </article>`;
 }
 
 function render(){
-  const r=filtered();
+  const ham=filtered();
+  // Modele göre: her model ve model yılı için tek kart (sıralamadaki ilk versiyon), diğer versiyonların sayısı kartta
+  let r=ham;
+  if(!$('fTek').checked){ const g=new Map(); ham.forEach(c=>{ const k=c.marka+'|'+c.model+'|'+c.yil; if(!g.has(k)) g.set(k,{c,n:0}); g.get(k).n++; }); r=[...g.values()].map(x=>{ x.c._n=x.n; return x.c; }); }
+  else ham.forEach(c=>{ c._n=0; });
   const n=Math.min(shown,r.length);
-  $('count').textContent= r.length>n ? `${nf(r.length)} versiyondan ${nf(n)} tanesi gösteriliyor` : `${nf(r.length)} versiyon`;
+  const birim=$('fTek').checked?'versiyon':'model';
+  $('count').textContent= r.length>n ? `${nf(r.length)} ${birim} içinden ${nf(n)} tanesi` : `${nf(r.length)} ${birim}${$('fTek').checked?'':` · ${nf(ham.length)} versiyon`}`;
   const act=Object.entries(FMAP).filter(([k,id])=>k!=='sirala'&&($(id).type==='checkbox'?$(id).checked:$(id).value));
   $('clearF').hidden=!act.length;
   Object.values(FMAP).forEach(id=>{ const el=$(id); if(el.tagName==='SELECT') el.classList.toggle('on', !!el.value && id!=='fSirala'); });
-  const hp=new URLSearchParams(); Object.entries(FMAP).forEach(([k,id])=>{ const el=$(id); const v=el.type==='checkbox'?(el.checked?'1':''):el.value; if(v&&!(k==='sirala'&&v==='marka')) hp.set(k,v); });
+  const hp=new URLSearchParams(); Object.entries(FMAP).forEach(([k,id])=>{ const el=$(id); const v=el.type==='checkbox'?(el.checked?'1':''):el.value; if(v&&!(k==='sirala'&&v==='oneri')) hp.set(k,v); });
   history.replaceState(null,'',hp.toString()?'#'+hp.toString():location.pathname);
   $('list').innerHTML = r.length ? r.slice(0,shown).map(card).join('') : '';
   if(!r.length) $('list').innerHTML='<div class="empty" style="grid-column:1/-1">Bu filtrelere uyan araç yok.</div>';
@@ -275,11 +331,13 @@ document.addEventListener('click',e=>{
 $('more').addEventListener('click',()=>{ shown+=PAGE; render(); });
 $('clearSel').addEventListener('click',()=>{ sel=[]; render(); });
 Object.values(FMAP).forEach(id=>$(id).addEventListener(id==='q'?'input':'change',()=>{ shown=PAGE; render(); }));
-$('clearF').addEventListener('click',()=>{ Object.values(FMAP).forEach(id=>{ const el=$(id); if(el.type==='checkbox') el.checked=false; else if(id==='fSirala') el.value='marka'; else el.value=''; }); shown=PAGE; render(); });
+$('clearF').addEventListener('click',()=>{ Object.values(FMAP).forEach(id=>{ const el=$(id); if(el.type==='checkbox') el.checked=false; else if(id==='fSirala') el.value='oneri'; else el.value=''; }); shown=PAGE; render(); });
 load();
 </script>
 <script>
 // Filtreler için sitenin kendi seçim paneli
+document.addEventListener('click',e=>{ const b=e.target.closest('.vdiger'); if(!b) return; $('q').value=b.dataset.model; $('fTek').checked=true; shown=PAGE; render(); $('list').scrollIntoView({behavior:'smooth',block:'start'}); });
+if (matchMedia('(max-width:999px)').matches) document.getElementById('arFiltre').removeAttribute('open');
 if (window.Secici) [['fMarka','Marka seç',true],['fYakit','Yakıt / enerji',false],['fKasa','Kasa tipi',false],['fSirala','Sırala',false],['fYil','Model yılı',false],['fSanziman','Şanzıman tipi',false],['fCekis','Çekiş',false],['fKoltuk','Koltuk sayısı',false],['fGuc','Güç',false],['fFiyat','Liste fiyatı',false],['fPuan','Sistem puanı',false]]
   .forEach(([id,b,logo])=>Secici.bagla(document.getElementById(id),{baslik:b,adim:()=>id==='fSirala'?'Sıralama':'Filtre',logo}));
 if (window.Secici) { Secici.yenile(); window.addEventListener('hashchange',()=>setTimeout(Secici.yenile,0)); document.addEventListener('click',e=>{ if(e.target.closest('button,a')) setTimeout(Secici.yenile,0); }); }

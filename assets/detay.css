@@ -282,3 +282,54 @@
 @media (min-width:1100px){.dt2 .aracsec .carpicker .fields{grid-template-columns:1.5fr 1.3fr 2.2fr .9fr .9fr .9fr 1fr}}
 .dt2 .sahne .amblemli img{width:auto!important;height:auto!important;max-width:40%!important;max-height:100%!important;object-fit:contain!important}
 .dt2 .brlink{margin-top:8px;font-size:.88rem}.dt2 .brlink a{color:var(--accent);font-weight:700;text-decoration:none}
+
+/* ---------- Sade tasarım (2026-11): ortada büyük fotoğraf, arkasında soluk model adı, altında başlık ve özet ---------- */
+.dt2 .aracsec h2{display:none}
+html:not([data-renk="koyu"]) .dt2 .carpicker{background:#fff!important;border:0!important;border-radius:20px!important;box-shadow:none!important;padding:14px 18px!important}
+.dt2 .carpicker .pl{display:none}
+.dt2 .carpicker .field label{font-size:.7rem!important;letter-spacing:.04em!important;text-transform:none!important;color:var(--muted)!important;font-weight:500!important}
+.dt2 .ust{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"sahne" "ad" "cip" "puan" "durum"!important;justify-items:center;text-align:center;row-gap:16px!important;padding-top:8px!important}
+.dt2 .adbaslik{flex-direction:column;align-items:center;gap:10px}
+.dt2 .marka-logo{width:44px!important;height:44px!important;border-radius:12px!important;border:0!important;box-shadow:none!important}
+.dt2 h1{font-size:clamp(2.4rem,5.6vw,4rem)!important;font-weight:400!important;letter-spacing:-.035em!important}
+.dt2 h1 .mk{font-weight:400!important}
+.dt2 h1 b{font-weight:500!important}
+.dt2 .tanim{max-width:60ch;margin-inline:auto}
+.dt2 .ciplar{justify-content:center}
+html:not([data-renk="koyu"]) .dt2 .ciplar li{background:#fff;border:0}
+.dt2 .puanserit{grid-template-columns:repeat(auto-fit,minmax(220px,260px))!important;justify-content:center;width:100%}
+html:not([data-renk="koyu"]) .dt2 .ps{background:#fff!important;border:0!important;box-shadow:none!important;border-radius:18px!important;text-align:left}
+.dt2 .sahne{width:100%;max-width:1060px;border:0!important;background:none!important;border-radius:0!important;overflow:visible!important}
+.dt2 .sahne::before{content:attr(data-ad);position:absolute;left:0;right:0;top:4%;z-index:0;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(4.5rem,15vw,12rem);line-height:1;letter-spacing:-.045em;color:#E1E4E8;white-space:nowrap;overflow:hidden;pointer-events:none;height:auto;background:none!important}
+html[data-renk="koyu"] .dt2 .sahne::before{color:rgba(255,255,255,.05)}
+.dt2 .sahne .carphoto{position:relative;z-index:1;aspect-ratio:21/9!important}
+.dt2 .sahne .carphoto img[src^="assets/kesit/"]{padding:4% 8% 4%!important;object-position:center 80%!important;filter:drop-shadow(0 26px 20px rgba(14,17,22,.22)) drop-shadow(0 4px 4px rgba(14,17,22,.18))!important}
+.dt2 .sahne .carphoto:not(:has(img[src^="assets/kesit/"])){border-radius:24px!important;overflow:hidden}
+.dt2 .sahne figcaption{position:relative;z-index:1;text-align:center;font-size:.72rem}
+.dt2 .rozetler{z-index:2}
+html:not([data-renk="koyu"]) .dt2 .secili,html:not([data-renk="koyu"]) .dt2 .sec{background:#fff!important;border:0!important;box-shadow:none!important;border-radius:24px!important}
+.dt2 .secili{padding:26px 28px!important;margin-top:24px!important}
+.dt2 .keystats{gap:0!important;margin-top:36px!important;padding:8px 0!important;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:720px){.dt2 .keystats{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.dt2 .keystats .ks{border:0!important;border-left:1px solid var(--line)!important;border-radius:0!important;background:none!important;padding:6px 20px!important;display:flex;flex-direction:column-reverse}
+.dt2 .keystats .ks:first-child{border-left:0!important;padding-left:0!important}
+.dt2 .keystats .ks dt{text-transform:none!important;letter-spacing:0!important;font-size:.8rem!important;margin-top:4px}
+.dt2 .keystats .ks dd{font-weight:400!important;font-size:clamp(1.6rem,3vw,2.3rem)!important;letter-spacing:-.03em;line-height:1.1}
+.dt2 .keystats .ks dd small{font-size:.85rem!important}
+@media (max-width:719px){.dt2 .keystats .ks:nth-child(3n+1){border-left:0!important;padding-left:0!important}.dt2 .keystats{row-gap:16px!important}}
+.dt2 .sec h2,.dt2 .sbas h2{font-weight:500!important;letter-spacing:-.02em}
+.dt2 .sbas .no{color:var(--muted)!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+.dt2 .subnav{border-radius:0!important}
+.dt2 .sahne::before{top:-2%}
+.dt2 .sahne .carphoto img[src^="assets/kesit/"]{padding:9% 8% 3%!important}
+.dt2 .keystats{margin:28px auto 8px!important;max-width:1060px}
+@media (max-width:640px){
+  .dt2 .carpicker .field:not(.f-marka):not(.f-model):not(.f-ver),.dt2 .carpicker .pfoot{display:none!important}
+  .dt2 .carpicker .fields{grid-template-columns:1fr 1fr!important}
+  .dt2 .carpicker .f-ver{grid-column:1/-1}
+  .dt2 .puanserit{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px}
+  .dt2 .ps{flex-direction:column;justify-content:flex-start;padding:12px 8px!important;text-align:center;gap:6px}
+  .dt2 .ps small,.dt2 .ps .btn{display:none}
+  .dt2 .ps b{font-size:.78rem}
+}
+@media (max-width:640px){.dt2 .keystats .ks dd{font-size:1.45rem!important}.dt2 .keystats .ks dd small{display:inline!important;margin-left:2px!important}}

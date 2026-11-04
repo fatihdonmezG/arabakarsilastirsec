@@ -47,13 +47,48 @@
     document.addEventListener('click', e => { if (!e.target.closest('.ara')) kutu.classList.remove('acik'); });
   }
 
+  // Öne çıkan modeller: fotoğraf, çipler, üç değer (Porsche'nin model kartlarındaki sadelikte)
+  const E = window.ARAC_ENERJI || [];
+  const satir = id => { const r = E.find(x => x[0] === id); return r && {id: r[0], marka: r[1], model: r[2], versiyon: r[3], yil: r[4], yakit: r[5], l100: r[6], kwh100: r[7], menzil: r[9], kasa: r[15] || '', hp: r[16], sn: r[17], sanziman: r[18] || '', cekis: r[19] || ''}; };
+  const foto = a => window.fotoFor ? window.fotoFor({marka: a.marka, model: a.model, yil: a.yil, s: {kasa: a.kasa}}) : null;
+  const kisa = {yakit: y => /^Elektrik/i.test(y) ? 'Elektrikli' : /plug-?in/i.test(y) ? 'Şarj edilebilir hibrit' : /hibrit|hybrid/i.test(y) ? 'Hibrit' : /LPG/.test(y) ? 'Benzin/LPG' : /^Dizel/i.test(y) ? 'Dizel' : 'Benzin',
+    sanz: t => /manuel/i.test(t) ? 'Manuel' : t ? 'Otomatik' : '', cekis: t => /4|dört|AWD|4x4|xDrive|quattro|4MOTION/i.test(t) ? 'Dört çeker' : /arka|RWD/i.test(t) ? 'Arkadan itiş' : t ? 'Önden çekiş' : ''};
+  const nf = (v, d = 0) => Number(v).toLocaleString('tr-TR', {minimumFractionDigits: d, maximumFractionDigits: d});
+  const modeller = (window.ONE_CIKAN || []).map(([m, o]) => M[m] && M[m][o] && satir(M[m][o].id)).filter(Boolean);
+  const degerler = a => {
+    const ev = /^Elektrik/i.test(a.yakit), d = [];
+    if (a.hp) d.push([nf(a.hp), 'HP', 'Güç']);
+    if (a.sn) d.push([nf(a.sn, 1), 'sn', '0-100 km/s']);
+    if (ev && a.menzil) d.push([nf(a.menzil), 'km', 'WLTP menzil']); else if (a.l100) d.push([nf(a.l100, 1), 'L', '100 km tüketim']);
+    return d.slice(0, 3);
+  };
+  if ($('cards')) $('cards').innerHTML = modeller.map(a => { const f = foto(a);
+    return `<article class="mkart"><a class="mk-foto" href="arac-detay.html#${encodeURIComponent(a.id)}">${f ? `<img src="${esc(f.src)}" alt="${esc(a.marka + ' ' + a.model)}" loading="lazy" decoding="async">` : `<span class="mk-yok">${esc(a.marka)}</span>`}</a>
+      <div class="mk-govde"><h3><small>${esc(a.marka)}</small>${esc(a.model)}</h3>
+      <div class="mk-cip">${[kisa.yakit(a.yakit), kisa.cekis(a.cekis), kisa.sanz(a.sanziman)].filter(Boolean).map((t, i) => `<span${i === 0 ? ' class="on"' : ''}>${esc(t)}</span>`).join('')}</div>
+      <dl>${degerler(a).map(([v, b, l]) => `<div><dt>${esc(l)}</dt><dd>${v}<small>${b}</small></dd></div>`).join('')}</dl>
+      <p class="mk-ver">${esc(a.versiyon)} için</p>
+      <div class="mk-dugme"><a class="btn primary" href="arac-detay.html#${encodeURIComponent(a.id)}">İncele</a><a class="btn" href="karsilastirma.html#k=${encodeURIComponent(a.id)}">Karşılaştır</a></div></div></article>`; }).join('');
+
+  // Giriş sahnesi: öne çıkan modellerin fotoğrafları sırayla, arkada soluk model adı
+  const sahne = $('sahne'), fotolu = modeller.filter(a => { const f = foto(a); return f && f.kesit; });
+  if (sahne && fotolu.length) {
+    let i = 0;
+    const ciz = () => { const a = fotolu[i % fotolu.length], f = foto(a);
+      sahne.href = 'arac-detay.html#' + encodeURIComponent(a.id);
+      sahne.innerHTML = `<span class="gs-ad" aria-hidden="true">${esc(a.model)}</span><img src="${esc(f.src)}" alt="${esc(a.marka + ' ' + a.model)}"><span class="gs-alt"><b>${esc(a.marka)} ${esc(a.model)}</b><span>İncele →</span></span><span class="gs-nokta">${fotolu.map((_, j) => `<i${j === i % fotolu.length ? ' class="on"' : ''}></i>`).join('')}</span>`;
+      sahne.classList.remove('gir'); void sahne.offsetWidth; sahne.classList.add('gir'); };
+    ciz();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { if (!document.hidden) { i++; ciz(); } }, 5500);
+  }
+
   // Çok bakılan karşılaştırmalar (karsilastirma.html hazır karşılaştırmalarından)
   const KIYAS = [
     ['Elektrikli SUV', 'Togg T10X', 'Tesla Model Y', 'togg-t10x-2026-v1-rwd-standart,tesla-model-y-2026-premium-long-range-rwd'],
     ['Kompakt sedan', 'Fiat Egea', 'Toyota Corolla', 'egea-sedan-2026-1.4-fire-95,toyota-corolla-sedan-1-5-vision-plus-2026'],
     ['Küçük hatchback', 'Renault Clio', 'Hyundai i20', 'renault-clio-evolution-plus-tce-edc-115-2026,hyundai-i20-elite-gsr-dct-2026']
   ];
-  if ($('hizliKiyas')) $('hizliKiyas').innerHTML = KIYAS.map(([s, a, b, ids]) => `<a href="karsilastirma.html#k=${ids}"><span>${esc(a)}<em>ile</em>${esc(b)}</span><small>${esc(s)}</small></a>`).join('');
+  if ($('hizliKiyas')) $('hizliKiyas').innerHTML = '<span>Çok bakılanlar:</span> ' + KIYAS.map(([s, a, b, ids]) => `<a href="karsilastirma.html#k=${ids}">${esc(a)} ile ${esc(b)}</a>`).join('');
 
   // Özellik kutucukları
   const ik = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;

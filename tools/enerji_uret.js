@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* Hesaplama sayfaları için araç enerji verisini üretir: assets/arac_enerji.js
    Kaynak: karsilastirma.html içindeki kaynaklı CARS verisi. Veri değişince yeniden çalıştırılır.
-   Satır: [id, marka, model, versiyon, yil, yakit, l/100km, kWh/100km, batarya kWh, WLTP menzil, DC %20-80 dk, AC dk, depo L, liste fiyatı TL, satışta mı, kasa] */
+   Satır: [id, marka, model, versiyon, yil, yakit, l/100km, kWh/100km, batarya kWh, WLTP menzil, DC %20-80 dk, AC dk, depo L, liste fiyatı TL, satışta mı, kasa, HP, 0-100 sn, şanzıman, çekiş, azami hız] */
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..');
 const k = fs.readFileSync(path.join(ROOT, 'karsilastirma.html'), 'utf8');
@@ -12,7 +12,7 @@ const satirlar = CARS.filter(c => c.s && (n(c.s.liste_fiyati_tl) || n(c.s.tuketi
   .map(c => {
     const s = c.s;
     return [c.id, c.marka, c.model, c.versiyon, c.yil, s.yakit || '', n(s.tuketim_l100km), n(s.elektrik_tuketim_kwh100km), n(s.batarya_kwh),
-      n(s.menzil_km_wltp), n(s.dc_hizli_sarj_dk_20_80), n(s.ac_sarj_dk), n(s.depo_l), (c.yil === 2026 && !c.durum) ? n(s.liste_fiyati_tl) : null, c.durum ? 0 : 1, s.kasa || ''];
+      n(s.menzil_km_wltp), n(s.dc_hizli_sarj_dk_20_80), n(s.ac_sarj_dk), n(s.depo_l), (c.yil === 2026 && !c.durum) ? n(s.liste_fiyati_tl) : null, c.durum ? 0 : 1, s.kasa || '', n(s.guc_hp), n(s.sifirYuz_sn), s.sanziman || '', s.cekis || '', n(s.hiz_kmh)];
   })
   .sort((a, b) => a[1].localeCompare(b[1], 'tr') || a[2].localeCompare(b[2], 'tr') || b[4] - a[4] || a[3].localeCompare(b[3], 'tr'));
 const out = `/* tools/enerji_uret.js tarafından üretilir, elle düzenlemeyin. */
