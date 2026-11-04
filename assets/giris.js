@@ -85,7 +85,7 @@
     g.innerHTML = GRUP.map(([ad, alt, hs], gi) => `<section class="og" style="--i:${gi}" aria-label="${esc(ad)}"><div class="og-bas"><span>${gi + 1}</span><div><h3>${esc(ad)}</h3><p>${esc(alt)}</p></div></div><ul>${hs.map(h => OZ.find(x => x[0] === h)).filter(Boolean).map(([h, b, s, , i, yeni]) =>
       `<li><a class="oz" href="${h}"><span class="ik">${i}</span><b>${esc(b)}${yeni ? '<span class="yeni">Yeni</span>' : ''}</b><small>${esc(s)}</small>${ok}</a></li>`).join('')}</ul></section>`).join('');
     const ac = () => g.querySelectorAll('.og').forEach(x => x.classList.add('gorundu'));
-    setTimeout(ac, 1500);
+    setTimeout(ac, 500);
     if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { ac(); io.disconnect(); } }, {threshold: .1}); io.observe(g); } else ac();
   }
 })();
