@@ -67,13 +67,14 @@
     ['gecis-ucretleri.html', 'Köprü ve otoyol', '2026 geçiş ücretleri, tarihleriyle', '#0F766E', ik('<path d="M2 18h20M4 18V9M20 18V9M2 9c4-4 16-4 20 0M8 18v-6M12 18v-7M16 18v-6"/>'), 1],
     ['trafik-cezalari.html', 'Trafik cezaları', '7574 sayılı Kanun ile yeni tutarlar', '#C2410C', ik('<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/>'), 1],
     ['otv-muafiyet.html', 'ÖTV muafiyetli araçlar', '2026 sınırı ve uygun yerli modeller', '#B45309', ik('<circle cx="12" cy="4.5" r="2"/><path d="M10 8h4l-1 6h4l2 6M11 14a5 5 0 1 0 5 5"/>'), 1],
+    ['brosurler.html', 'Broşürler', 'Resmi broşür, fiyat ve donanım listeleri', '#B91C1C', ik('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>'), 1],
     ['yorumlar.html', 'Sahip yorumları', 'Aracı kullananların deneyimi', '#9333EA', ik('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>')],
     ['forum.html', 'Forum', 'Soru sor, deneyimini paylaş', '#DB2777', ik('<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1-4 3-4.6"/>'), 1],
     ['rehber.html', 'Araç sahibinin el kitabı', 'İkinci el, muayene, sigorta, kaza', '#4D7C0F', ik('<path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M18 20a2 2 0 0 0 2-2V6"/>')]
   ];
   // Üç grup: seç, hesapla, topluluk
   const GRUP = [
-    ['Araç seç', 'Karşılaştır, puanla, fırsatları gör', ['karsilastirma.html', 'araclar.html', 'sistem-puani.html', 'kampanyalar.html']],
+    ['Araç seç', 'Karşılaştır, puanla, fırsatları gör', ['karsilastirma.html', 'araclar.html', 'sistem-puani.html', 'kampanyalar.html', 'brosurler.html']],
     ['Hesapla', 'Yol, şarj, vergi ve ceza', ['yol-maliyeti.html', 'sarj-hesaplama.html', 'gecis-ucretleri.html', 'trafik-cezalari.html', 'otv-muafiyet.html']],
     ['Topluluk ve rehber', 'Deneyimler ve pratik bilgi', ['yorumlar.html', 'forum.html', 'rehber.html']]
   ];

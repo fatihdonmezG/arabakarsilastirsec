@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Broşürler ve Fiyat Listeleri | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Otomobil markalarının resmi broşürleri, fiyat ve donanım listeleri, teknik veri belgeleri ve Euro NCAP raporları tek sayfada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hesap.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+</head>
+<body class="hs">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="piyasa.html">Pazar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="yorumlar.html">Yorumlar</a>
+      <a href="oduller.html">Ödüller</a>
+      <a href="rehber.html">El kitabı</a>
+      <a href="hesaplama.html">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="hs-crumbs" aria-label="Konum"><a href="index.html">Ana sayfa</a> › Broşürler</nav>
+  <div class="hs-bas">
+    <span class="hs-etiket">Broşür · Fiyat listesi · Teknik veri</span>
+    <h1>Broşürler ve <b>resmi belgeler</b></h1>
+    <p id="giris"></p>
+  </div>
+
+  <section class="hk br-filtre">
+    <div class="br-ust">
+      <div class="alan" style="margin:0"><label for="ara">Ara</label><input type="search" id="ara" placeholder="Marka ya da model, ör. Clio, Tucson, Octavia"></div>
+      <div class="alan" style="margin:0"><label for="marka">Marka</label><select id="marka"><option value="">Bütün markalar</option></select></div>
+    </div>
+    <div class="br-alt">
+      <div class="secim" role="group" aria-label="Belge türü" id="tur"></div>
+      <label class="kutu-onay" style="padding:0"><input type="checkbox" id="trSadece"><span>Yalnızca Türkiye resmi belgeleri</span></label>
+    </div>
+  </section>
+
+  <p class="br-sonuc" id="sonuc" aria-live="polite"></p>
+  <div id="liste"></div>
+
+  <section class="hk" style="margin-top:24px">
+    <h2>Bu belgeler nereden geliyor?</h2>
+    <p class="kaynak" style="font-size:.88rem">Listede yalnızca araç sayfalarımızda kaynak olarak kullandığımız belgeler var: markaların Türkiye sitelerindeki broşür, fiyat ve donanım listeleri; Türkiye'de yayımlanmamışsa üreticinin Avrupa sitesindeki ya da basın odasındaki teknik veri belgeleri; Euro NCAP test raporları. Dosyaları kendi sunucumuzda tutmuyoruz, "PDF'i aç" düğmesi sizi belgenin markanın sitesindeki resmi kopyasına götürür. Marka belgeyi yenilediğinde ya da kaldırdığında bağlantı değişebilir; böyle bir durumda bize forumdan haber verebilirsiniz. Bayi, ilan ve karşılaştırma sitelerindeki kopyalar listeye alınmaz.</p>
+  </section>
+</main>
+<footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Belgeler markalara aittir. Fiyat ve donanım bilgisini satın almadan önce yetkili satıcıdan teyit edin.</div></footer>
+<style>
+.br-ust{display:grid;gap:12px;grid-template-columns:minmax(0,1fr) minmax(0,260px)}
+@media (max-width:640px){.br-ust{grid-template-columns:1fr}}
+.br-alt{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-top:14px}
+.br-sonuc{margin:18px 2px 10px;color:var(--muted);font-size:.9rem}
+.br-marka{margin-top:22px}
+.br-marka>h2{display:flex;align-items:center;gap:12px;font-size:1.25rem;font-weight:800;margin-bottom:12px}
+.br-marka>h2 .lg{width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.br-marka>h2 .lg img{max-width:72%;max-height:72%;object-fit:contain}
+.br-marka>h2 small{font-family:var(--body);font-size:.82rem;font-weight:500;color:var(--muted)}
+.br-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.bm{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--golge);overflow:hidden;display:flex;flex-direction:column}
+.bm-bas{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:16px 18px 12px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 5%,var(--surface)) 0%,var(--surface) 100%)}
+.bm-bas b{display:block;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.bm-bas small{color:var(--muted);font-size:.8rem}
+.bm-bas a{flex:none;font-size:.8rem;font-weight:700;color:var(--accent);text-decoration:none;white-space:nowrap}
+.bm-bas a:hover{text-decoration:underline}
+.bm ul{list-style:none;margin:0;padding:6px 8px 8px;display:grid}
+.bd{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 12px;align-items:center;padding:10px;border-radius:10px}
+.bd:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.bd .ik{grid-row:span 2;width:38px;height:44px;border-radius:7px;position:relative;display:grid;place-items:end center;padding-bottom:6px;font-size:.58rem;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--k,#B91C1C)}
+.bd .ik::before{content:"";position:absolute;top:0;right:0;width:11px;height:11px;background:linear-gradient(225deg,var(--surface) 50%,color-mix(in srgb,var(--k,#B91C1C) 70%,#000) 50%);border-bottom-left-radius:3px}
+.bd b{font-size:.9rem;font-weight:700}
+.bd small{grid-column:2;color:var(--muted);font-size:.78rem;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.bd .tr{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:999px;color:var(--hibrit);background:color-mix(in srgb,var(--hibrit) 10%,transparent)}
+.bd .ab{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:999px;color:var(--muted);background:color-mix(in srgb,var(--ink) 7%,transparent)}
+.bd .ac{grid-row:1/3;grid-column:3}
+.br-bos{padding:40px 12px;text-align:center;color:var(--muted)}
+</style>
+<script src="assets/brosurler.js"></script>
+<script src="assets/logolar.js"></script>
+<script src="assets/hesap.js"></script>
+<script>
+(function(){
+const {$, esc} = H, B = window.BROSURLER || [], LOGO = window.MARKA_LOGO || {};
+const TUR = {brosur: ['Broşür', '#B91C1C'], fiyat: ['Fiyat listesi', '#15803D'], donanim: ['Donanım listesi', '#0E7490'], teknik: ['Teknik veri', '#1D4ED8'], ncap: ['Euro NCAP raporu', '#B45309'], bakim: ['Bakım kapsamı', '#6D28D9'], belge: ['Belge', '#475569']};
+const SIRA = ['brosur', 'fiyat', 'donanim', 'teknik', 'ncap', 'bakim', 'belge'];
+const AY = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+const tarihYaz = t => { if (!t) return ''; const [y, a, g] = t.split('-'); return g ? `${+g} ${AY[+a - 1]} ${y}` : `${AY[+a - 1]} ${y}`; };
+// Belge × model satırları
+const satir = [];
+B.forEach(b => b.araclar.forEach(a => satir.push({...b, marka: a.marka, model: a.model, yillar: a.yillar, id: a.id, q: (a.marka + ' ' + a.model + ' ' + b.ad).toLocaleLowerCase('tr')})));
+const markalar = [...new Set(satir.map(s => s.marka))].sort((a, b) => a.localeCompare(b, 'tr'));
+const modelSay = new Set(satir.map(s => s.marka + '|' + s.model)).size;
+$('giris').textContent = `${markalar.length} markanın ${modelSay} modeline ait ${B.length} resmi belge: broşürler, fiyat ve donanım listeleri, teknik veri belgeleri ve Euro NCAP raporları. Belgeler markaların kendi sitelerinden açılır.`;
+$('marka').innerHTML += markalar.map(m => `<option>${esc(m)}</option>`).join('');
+const sayTur = t => satir.filter(s => !t || s.tur === t).length;
+const turlar = SIRA.filter(t => sayTur(t));
+$('tur').innerHTML = `<button type="button" data-v="" aria-pressed="true">Hepsi</button>` + turlar.map(t => `<button type="button" data-v="${t}" aria-pressed="false">${TUR[t][0]}</button>`).join('');
+const S = {ara: '', marka: '', tur: '', tr: false};
+const q = new URLSearchParams(location.search); if (q.get('marka') && markalar.includes(q.get('marka'))) { S.marka = q.get('marka'); $('marka').value = S.marka; } if (q.get('q')) { S.ara = q.get('q'); $('ara').value = S.ara; }
+
+function ciz(){
+  const p = S.ara.toLocaleLowerCase('tr').split(/\s+/).filter(Boolean);
+  const f = satir.filter(s => (!S.marka || s.marka === S.marka) && (!S.tur || s.tur === S.tur) && (!S.tr || s.tr) && p.every(x => s.q.includes(x)));
+  const belgeSay = new Set(f.map(s => s.url)).size;
+  $('sonuc').textContent = f.length ? `${belgeSay} belge, ${new Set(f.map(s => s.marka + '|' + s.model)).size} model` : '';
+  if (!f.length) { $('liste').innerHTML = '<div class="br-bos"><b>Bu filtrede belge yok.</b><br>Aradığınız broşürü bulamadıysanız markanın Türkiye sitesine bakabilir ya da forumda sorabilirsiniz.</div>'; return; }
+  const gm = {}; f.forEach(s => { ((gm[s.marka] = gm[s.marka] || {})[s.model] = gm[s.marka][s.model] || []).push(s); });
+  $('liste').innerHTML = Object.keys(gm).sort((a, b) => a.localeCompare(b, 'tr')).map(m => {
+    const lg = LOGO[m], modeller = gm[m];
+    return `<section class="br-marka"><h2><span class="lg">${lg ? `<img src="assets/logos/${esc(lg)}" alt="">` : ''}</span>${esc(m)} <small>${Object.keys(modeller).length} model</small></h2><div class="br-grid">${Object.keys(modeller).sort((a, b) => a.localeCompare(b, 'tr')).map(md => {
+      const d = modeller[md].sort((a, b) => (b.tr - a.tr) || (SIRA.indexOf(a.tur) - SIRA.indexOf(b.tur)) || String(b.tarih || '').localeCompare(String(a.tarih || '')));
+      const y = [...new Set(d.flatMap(x => x.yillar))].sort((a, b) => b - a), id = (d.find(x => x.id) || {}).id;
+      return `<article class="bm"><div class="bm-bas"><div><b>${esc(m)} ${esc(md)}</b><small>${y.length > 1 ? y[y.length - 1] + '–' + y[0] : y[0]} model yılı · ${d.length} belge</small></div>${id ? `<a href="arac-detay.html#${encodeURIComponent(id)}">Aracı incele →</a>` : ''}</div><ul>${d.map(x => `<li class="bd" style="--k:${TUR[x.tur][1]}"><span class="ik" aria-hidden="true">PDF</span><b>${TUR[x.tur][0]}</b><small>${x.tur === 'ncap' ? '<span class="ab">Bağımsız test</span>' : x.tr ? '<span class="tr">Türkiye resmi</span>' : '<span class="ab">Üretici · yurt dışı</span>'}${x.tarih ? `<span>${tarihYaz(x.tarih)}</span>` : ''}<span>${esc(x.alan)}</span></small><a class="dugme ikincil kucuk ac" href="${esc(x.url)}" target="_blank" rel="noopener" aria-label="${esc(m + ' ' + md + ' ' + TUR[x.tur][0])} PDF'ini aç">PDF'i aç ↗</a></li>`).join('')}</ul></article>`;
+    }).join('')}</div></section>`;
+  }).join('');
+}
+let z; $('ara').addEventListener('input', () => { clearTimeout(z); z = setTimeout(() => { S.ara = $('ara').value.trim(); ciz(); }, 200); });
+$('marka').addEventListener('change', () => { S.marka = $('marka').value; ciz(); });
+$('trSadece').addEventListener('change', () => { S.tr = $('trSadece').checked; ciz(); });
+$('tur').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.tur = b.dataset.v; $('tur').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); ciz(); });
+ciz();
+})();
+</script>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>
