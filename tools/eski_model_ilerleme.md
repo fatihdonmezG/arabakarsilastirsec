@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 265 |
-| Fiat | devam ediyor | 151 |
+| Renault | devam ediyor | 269 |
+| Fiat | devam ediyor | 155 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -155,6 +155,12 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] Clio IV makyajlı Sport Tourer 2018: 1.2 16V 75, 1.5 dCi 75, 1.5 dCi 90 manuel (auto-data.net Clio IV Grandtour Phase II); Clio HB 2018 kampanyaları (2018-04 göbek, 2019-01 katalizör)
   - Captur 2018 kayıtlarına 2018-04 ön göbek kampanyası (Clio, Captur, Zoe) eklendi
   - [ ] Kalanlar: Clio ST 1.5 dCi 90 EDC ve 1.2 TCe 120 EDC (auto-data'da Phase II Grandtour EDC sayfası yok), Megane HB 1.6 16V 115 ve 1.2 TCe 130 EDC, Talisman 1.6 dCi 130 manuel/EDC
+- [x] donanimhaber.com Kasım 2022 Renault listesi (2022 model yılı: https://www.donanimhaber.com/renault-2022-fiyat-listesini-acikladi-iste-yeni-fiyatlar--143622) — 4 versiyon
+  - [x] Kadjar makyajlı 1.3 TCe 160 EDC: 2022, ayrıca 2020 (2019 ve 2021 listeleri arası); teknik 2021 kaydıyla aynı kaynak; geri çağırma []
+  - [x] Koleos II makyajlı 1.3 TCe 160 EDC: 2022; teknik: auto-data.net Koleos II (Phase II, 2019) 1.3 TCe 158 EDC (WLTP); Euro NCAP 2017 (5); geri çağırma: Safety Gate A12/01657/23 kaput (2023-07, Eylül 2021–Kasım 2023 üretimi); KBA 15294R yakıt hattı (Eylül 2019–Eylül 2023, 1.3 TCe) ayı bilinmediği için nota
+  - [x] Zoe makyajlı R110 (52 kWh, 80 kW): 2022; teknik: auto-data.net Zoe I Phase II R110; Euro NCAP 2021 (0 yıldız); geri çağırma: 2023-06 arka koltuk sırtlığı (2022 MY); 2021 ve 2023 akü kampanyaları hariç
+  - [ ] Captur Mild Hybrid 140/155 EDC (2022), Koleos 2019–2021, Zoe 2021: tek kaynakta teknik veri ya da model yıllı liste yok
+- [ ] shiftdelete.net Kasım 2021 Renault listesi (Captur 1.3 TCe 155 EDC dahil) model yılı belirtmiyor; kullanılmadı
 - [ ] Laguna III
 - [x] Koleos II — 2 versiyon
   - [x] 1.6 dCi 130 X-Tronic 4x2 ve 2.0 dCi 175 X-Tronic 4x4: 2017 (sozcu.com.tr Haziran 2017 lansman haberi); teknik: auto-data.net Koleos II CVT sayfaları (NEDC)
@@ -273,3 +279,6 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
   - Geri çağırma: []; 2017 kemer gergisi kampanyası hariç
   - [ ] 1.4 MultiAir 105 ve 1.3 Multijet 75 (2012): tek kaynakta teknik veri yok
 - [ ] Tipo (2010–2014 Fiat listesi bulunamadı; bigpara.hurriyet.com Ocak 2012 kampanya haberi yalnızca model adlarını veriyor)
+- [x] 2024 model yılı (gazetebirlik.com Ocak 2024 Fiat listesi, "2024 model": https://www.gazetebirlik.com/otomobil/fiat-2024-ocak-fiyatlari-sifir-egea-egea-cross-egea-hatchback-cross-wagon-500-500e-ne-kadar-kac-bin-tl/155378) — 4 versiyon
+  - [x] Egea Sedan ve Egea Cross: 1.3 Multijet 95 ve 1.5 T4 Hybrid 130 DCT; teknik 2023 kayıtlarıyla aynı kaynak; geri çağırma [] (jant/lastik 2021–2023, geri vites lambası 2023 ve 48V akü Kasım 2022–Mayıs 2023 üretimi hariç)
+  - [ ] Aynı listedeki Cross Wagon (1.6 MJ DCT, Hybrid, 1.0 FireFly 100) ve 500 1.0 Hybrid 70: tek kaynakta teknik veri yok
