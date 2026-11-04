@@ -64,7 +64,7 @@
 .dt2 .picks{display:grid;gap:12px;margin-top:16px}
 .dt2 .pl{margin-bottom:6px}
 .dt2 .chip{border-radius:999px;min-height:36px;font-size:.86rem;background:#fff}
-.dt2 .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dt2 .chip[aria-pressed="true"]{background:var(--vurgu,var(--ink));color:#fff;border-color:var(--vurgu,var(--ink))}
 .dt2 .eylemler{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .dt2 .eylemler .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:12px;width:auto;margin:0;flex:1 1 180px}
 .dt2 .btn{border-radius:10px}

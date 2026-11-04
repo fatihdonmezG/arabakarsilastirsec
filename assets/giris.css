@@ -4,7 +4,7 @@ html .hero.giris{background:transparent!important;border:0!important;color:var(-
 .gi{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:center;padding-block:48px 8px}
 @media (min-width:980px){.gi{grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:32px;padding-block:64px 12px}}
 .duyuru{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:5px 14px 5px 5px;border-radius:999px;background:#fff;color:var(--ink)!important;text-decoration:none;font-size:.84rem}
-.duyuru b{flex:none;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--ink);color:#fff}
+.duyuru b{flex:none;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--vurgu,var(--ink));color:#fff}
 html[data-renk="koyu"] .duyuru{background:var(--surface)}
 .duyuru span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)}
 .duyuru::after{content:"→";flex:none;color:var(--muted)}
@@ -40,7 +40,7 @@ html[data-renk="koyu"] .gs-ad{color:rgba(255,255,255,.05)}
 .gi-sahne:hover .gs-alt span{color:var(--ink)}
 .gs-nokta{position:absolute;right:0;top:0;display:flex;gap:6px}
 .gs-nokta i{width:6px;height:6px;border-radius:50%;background:var(--line-strong)}
-.gs-nokta i.on{background:var(--ink);width:18px;border-radius:3px}
+.gs-nokta i.on{background:var(--vurgu,var(--ink));width:18px;border-radius:3px}
 .gi-sahne.gir img{animation:gsGir .9s cubic-bezier(.2,.8,.2,1) both}
 .gi-sahne.gir .gs-ad{animation:gsAd 1.1s ease both}
 @keyframes gsGir{from{opacity:0;transform:translateX(6%)}to{opacity:1;transform:none}}
@@ -76,7 +76,7 @@ html[data-renk="koyu"] .gs-ad{color:rgba(255,255,255,.05)}
 .mkart h3 small{display:block;font-family:var(--body);font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:0;margin-bottom:2px}
 .mk-cip{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .mk-cip span{font-size:.72rem;padding:3px 9px;border-radius:999px;background:var(--surface2);color:#3A404A}
-.mk-cip span.on{background:var(--ink);color:#fff}
+.mk-cip span.on{background:var(--vurgu,var(--ink));color:#fff}
 html[data-renk="koyu"] .mk-cip span{color:var(--ink)}
 .mkart dl{margin:18px 0 0;display:grid;gap:12px}
 .mkart dl div{display:flex;flex-direction:column-reverse}

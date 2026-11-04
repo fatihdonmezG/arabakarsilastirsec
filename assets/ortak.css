@@ -2,6 +2,7 @@
    İlke: açık gri zemin, çerçevesiz beyaz kartlar, ince ve büyük başlıklar, koyu ana düğme, tema rengi yalnızca vurgu.
    Koyu temada (html[data-renk="koyu"]) yalnızca ölçüler uygulanır, renkler temanın kendisinden gelir. */
 :root{--r-kart:24px;--r-ic:16px;--r-dugme:10px;--sayfa:#F2F3F5;--murekkep:#0E1116;--ikincil:#5F6672;--cizgi:#E3E5E9}
+:root{--vurgu:var(--accent,#1E5BD8)}
 html:not([data-renk="koyu"]){--ink:#0E1116;--muted:#5F6672;--line:#E3E5E9;--line-strong:#CDD1D8;--surface:#FFFFFF;--surface2:#F6F7F9;--golge:none}
 html:not([data-renk="koyu"]) body{background:var(--sayfa)!important;color:var(--ink)}
 .wrap{max-width:1200px!important}
@@ -12,21 +13,27 @@ html:not([data-renk="koyu"]) .top{background:rgba(255,255,255,.94)!important;bac
 .top .wrap{min-height:64px!important}
 .brand{font-weight:700!important;letter-spacing:-.01em;font-size:1rem!important}
 .brandmark{border-radius:8px!important;width:28px!important;height:28px!important;font-size:13px!important}
-html:not([data-renk="koyu"]) .brandmark{background:var(--murekkep)!important;box-shadow:none!important}
+html:not([data-renk="koyu"]) .brandmark{background:var(--vurgu)!important;box-shadow:none!important}
 .nav a{border-radius:0!important;padding:8px 12px!important;font-size:.88rem!important;font-weight:450;background:none!important;box-shadow:none!important}
 html:not([data-renk="koyu"]) .nav a:not(.cta){color:#4A505B!important}
 html:not([data-renk="koyu"]) .nav a:not(.cta):hover{color:var(--murekkep)!important}
 .nav a[aria-current]:not(.cta){font-weight:600!important;position:relative}
 html:not([data-renk="koyu"]) .nav a[aria-current]:not(.cta){color:var(--murekkep)!important}
-.nav a[aria-current]:not(.cta)::after{content:"";position:absolute;left:12px;right:12px;bottom:-12px;height:2px;background:currentColor}
+.nav a[aria-current]:not(.cta)::after{content:"";position:absolute;left:12px;right:12px;bottom:-12px;height:2px;background:var(--vurgu,currentColor)}
 .nav a.ikincil{display:none!important}
 .nav a.cta,.top .cta-mobil{display:none!important}
 .nav .renk-sec{display:none!important}
+.ust-sag .renk-sec{display:inline-flex!important;margin:0 4px 0 0!important;padding:0 10px 0 0!important;border:0!important;border-right:1px solid var(--cizgi)!important;gap:6px}
+.ust-sag .renk-sec .ad{display:none!important}
+.ust-sag .renk-sec button{width:20px!important;height:20px!important}
+.ust-sag>*{margin-top:0!important;margin-bottom:0!important;line-height:1!important;box-sizing:border-box}
+.ust-sag .kiyas{border:1px solid transparent}
+body{margin:0}
 .ust-sag{display:flex;align-items:center;gap:8px;margin-left:8px;flex:none}
 .ust-sag .menu-ac{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:.88rem;font-weight:500;height:40px;padding:0 14px;border-radius:var(--r-dugme);border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer}
 .ust-sag .menu-ac:hover{border-color:var(--ink)}
 .ust-sag .menu-ac svg{width:18px;height:18px}
-.ust-sag .kiyas{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:var(--r-dugme);font-size:.88rem;font-weight:600;text-decoration:none;color:#fff!important;background:var(--murekkep)}
+.ust-sag .kiyas{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:var(--r-dugme);font-size:.88rem;font-weight:600;text-decoration:none;color:#fff!important;background:var(--vurgu)}
 html[data-renk="koyu"] .ust-sag .kiyas{background:var(--accent-grad);color:var(--on-accent)!important}
 .ust-sag .kiyas:hover{filter:brightness(1.25)}
 .menu-btn{display:none!important}
@@ -103,7 +110,7 @@ html:not([data-renk="koyu"]) .tablo th{background:transparent!important}
 
 /* ---------- Düğmeler: koyu ana düğme, çerçeveli ikincil ---------- */
 .btn,.dugme,.sbtn{border-radius:var(--r-dugme)!important;text-transform:none!important;letter-spacing:0!important;font-weight:600!important;box-shadow:none!important}
-html:not([data-renk="koyu"]) .btn.primary,html:not([data-renk="koyu"]) .dugme:not(.ikincil),html:not([data-renk="koyu"]) .sbtn[aria-pressed="true"],html:not([data-renk="koyu"]) .tray .go,html:not([data-renk="koyu"]) #hesaplaBtn{background:var(--murekkep)!important;color:#fff!important;border-color:var(--murekkep)!important}
+html:not([data-renk="koyu"]) .btn.primary,html:not([data-renk="koyu"]) .dugme:not(.ikincil),html:not([data-renk="koyu"]) .sbtn[aria-pressed="true"],html:not([data-renk="koyu"]) .tray .go,html:not([data-renk="koyu"]) #hesaplaBtn{background:var(--vurgu)!important;color:#fff!important;border-color:var(--vurgu)!important}
 html:not([data-renk="koyu"]) .btn.primary:hover,html:not([data-renk="koyu"]) .dugme:not(.ikincil):hover{background:#2A2F38!important;filter:none!important}
 html:not([data-renk="koyu"]) .btn:not(.primary),html:not([data-renk="koyu"]) .dugme.ikincil,html:not([data-renk="koyu"]) .sbtn:not([aria-pressed="true"]){background:transparent!important;border:1px solid var(--line-strong)!important;color:var(--ink)!important}
 html:not([data-renk="koyu"]) .btn:not(.primary):hover,html:not([data-renk="koyu"]) .dugme.ikincil:hover,html:not([data-renk="koyu"]) .sbtn:not([aria-pressed="true"]):hover{border-color:var(--ink)!important}
@@ -111,7 +118,7 @@ html:not([data-renk="koyu"]) .btn:not(.primary):hover,html:not([data-renk="koyu"
 /* Seçim çipleri */
 .fbtn,.chip,.segbtn,.carbtn,.bt,.pchip span,.segopt span,.cipler button,.secim button,.activefilter,.activefilter button{border-radius:999px!important;text-transform:none!important;letter-spacing:0!important}
 html:not([data-renk="koyu"]) .fbtn,html:not([data-renk="koyu"]) .chip,html:not([data-renk="koyu"]) .segbtn,html:not([data-renk="koyu"]) .secim button,html:not([data-renk="koyu"]) .cipler button{background:#fff!important;border:1px solid var(--line-strong)!important;color:#3A404A!important;font-weight:500!important}
-html:not([data-renk="koyu"]) .fbtn[aria-pressed="true"],html:not([data-renk="koyu"]) .chip[aria-pressed="true"],html:not([data-renk="koyu"]) .segbtn[aria-pressed="true"],html:not([data-renk="koyu"]) .secim button[aria-pressed="true"],html:not([data-renk="koyu"]) .cipler button[aria-pressed="true"]{background:var(--murekkep)!important;border-color:var(--murekkep)!important;color:#fff!important}
+html:not([data-renk="koyu"]) .fbtn[aria-pressed="true"],html:not([data-renk="koyu"]) .chip[aria-pressed="true"],html:not([data-renk="koyu"]) .segbtn[aria-pressed="true"],html:not([data-renk="koyu"]) .secim button[aria-pressed="true"],html:not([data-renk="koyu"]) .cipler button[aria-pressed="true"]{background:var(--vurgu)!important;border-color:var(--vurgu)!important;color:#fff!important}
 .tag,.bdg,.tur,.zaman,.tag-new,.cc-fuel,.yk{border-radius:999px!important}
 html:not([data-renk="koyu"]) .bdg:not(.off):not(.fp){background:#EEF0F3!important;border-color:transparent!important;color:#3A404A!important}
 .score,.puan,.ficon,.meter,.bar,.dtrack,.wbar,.wbar .t,.rm,.toast,.pending{border-radius:var(--r-ic)!important}
@@ -151,16 +158,16 @@ footer:not(.alt){padding-block:0 36px!important}
 /* ---------- Simgeler tek renk ---------- */
 .ak .ik,.fk .ik,.oz .ik{color:var(--ink)!important;background:var(--surface2)!important;border:0!important}
 .ak,.fk{--k:var(--ink)!important}
-.oz:hover .ik{background:var(--murekkep)!important;color:#fff!important}
+.oz:hover .ik{background:var(--vurgu)!important;color:#fff!important}
 .top{position:sticky!important;top:0;z-index:60}
 @media (max-width:420px){.top .brand{font-size:.88rem!important}}
-.vcard .sbtn.birincil,.vcard .sbtn.birincil:hover{background:var(--murekkep)!important;color:#fff!important;border-color:var(--murekkep)!important}
+.vcard .sbtn.birincil,.vcard .sbtn.birincil:hover{background:var(--vurgu)!important;color:#fff!important;border-color:var(--vurgu)!important}
 .vcard .amblem-kart a,.vcard .vphoto-amblem a{text-decoration:none}
 .vcard a.vphoto{text-decoration:none;color:var(--ink)}
-html:not([data-renk="koyu"]) .vcard .sbtn.birincil{background:var(--murekkep)!important;color:#fff!important;border-color:var(--murekkep)!important}
+html:not([data-renk="koyu"]) .vcard .sbtn.birincil{background:var(--vurgu)!important;color:#fff!important;border-color:var(--vurgu)!important}
 .vcard .vcredit{opacity:.7}
 .vdiger{font:inherit;font-size:inherit;border:0;background:none;padding:0;color:var(--ink);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
-html:not([data-renk="koyu"]) .sk.ana{background:var(--murekkep)!important;color:#fff!important}
+html:not([data-renk="koyu"]) .sk.ana{background:var(--vurgu)!important;color:#fff!important}
 html:not([data-renk="koyu"]) .sk.ana span,html:not([data-renk="koyu"]) .sk.ana small{color:rgba(255,255,255,.72)!important}
 footer{max-width:none!important}
 html:not([data-renk="koyu"]) .hero:not(.giris) .badge,html:not([data-renk="koyu"]) .hero:not(.giris) .badge *,html:not([data-renk="koyu"]) .hero:not(.giris) .stamp *{color:var(--ink)!important;background:transparent!important;border-color:var(--line-strong)!important}
@@ -177,7 +184,7 @@ html:not([data-renk="koyu"]) .nitem,html:not([data-renk="koyu"]) .lkart,html:not
 html:not([data-renk="koyu"]) .filters,html:not([data-renk="koyu"]) .ifil,html:not([data-renk="koyu"]) .kfil,html:not([data-renk="koyu"]) .yfil{background:transparent!important;border:0!important;box-shadow:none!important;padding-inline:0!important}
 /* Durum ve tür etiketleri nötr */
 html:not([data-renk="koyu"]) .tag,html:not([data-renk="koyu"]) .tur,html:not([data-renk="koyu"]) .zaman,html:not([data-renk="koyu"]) .tag-new{background:#EEF0F3!important;color:#3A404A!important;border:0!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important}
-html:not([data-renk="koyu"]) .zaman.kesin,html:not([data-renk="koyu"]) .zaman.on,html:not([data-renk="koyu"]) .tur.kredi{background:var(--murekkep)!important;color:#fff!important}
+html:not([data-renk="koyu"]) .zaman.kesin,html:not([data-renk="koyu"]) .zaman.on,html:not([data-renk="koyu"]) .tur.kredi{background:var(--vurgu)!important;color:#fff!important}
 /* Bilgi notları */
 html:not([data-renk="koyu"]) .note,html:not([data-renk="koyu"]) .caution,html:not([data-renk="koyu"]) .pending,html:not([data-renk="koyu"]) .not-kutu{background:var(--surface2)!important;border:0!important;border-radius:14px!important;color:var(--ink)!important;box-shadow:none!important}
 /* Sayı kutuları ve özet panoları */
@@ -208,3 +215,11 @@ main .section-head .section-lead,main .section .sub{color:var(--muted)!important
 /* Kapalı durum kutuları */
 html:not([data-renk="koyu"]) #kapali.kapali,html:not([data-renk="koyu"]) .uye #kapali.kart{background:#fff!important;border:0!important;border-radius:20px!important;box-shadow:none!important;padding:24px!important}
 .uye #kapali.kart{margin-left:0!important;margin-right:0!important}
+/* Tema rengi vurguları: mavi ve kırmızı seçimi sayfada görünür olsun */
+html:not([data-renk="koyu"]){--sayfa:#F1F4F9}
+html[data-renk="kirmizi"]{--sayfa:#F7F2F2}
+.gi-yazi h1 .vurgu,.hero h1 .vurgu{color:var(--vurgu)}
+html:not([data-renk="koyu"]) .hs-bas .kicker,html:not([data-renk="koyu"]) .hero .kicker,html:not([data-renk="koyu"]) .eyebrow,html:not([data-renk="koyu"]) .hs-etiket{color:var(--vurgu)!important}
+html:not([data-renk="koyu"]) main a:not([class]){color:var(--vurgu)}
+html:not([data-renk="koyu"]) .ust-sag .menu-ac:hover{border-color:var(--vurgu);color:var(--vurgu)}
+html:not([data-renk="koyu"]) .duyuru{border-color:color-mix(in srgb,var(--vurgu) 25%,transparent)!important}

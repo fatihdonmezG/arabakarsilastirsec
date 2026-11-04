@@ -24,14 +24,17 @@ window.SITE_HARITA = [
     panel.innerHTML = '<div class="wrap">' + window.SITE_HARITA.map(([b, l]) => `<nav aria-label="${b}"><h4>${b}</h4><ul>${l.map(([h, t]) => `<li><a href="${h}"${h === sayfa ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul></nav>`).join('') + '<div class="mp-alt"><a href="uye.html">Üyelik ve garajım</a><a href="index.html">Ana sayfa</a></div></div>';
     const perde = document.createElement('div'); perde.className = 'menu-perde';
     document.body.appendChild(perde); document.body.appendChild(panel);
-    const rs = nav.querySelector('.renk-sec'); if (rs) panel.querySelector('.mp-alt').prepend(rs);
+    // Renk seçici: geniş ekranda üst çubukta, dar ekranda menü panelinde
+    const dar = window.matchMedia('(max-width:640px)');
+    const yerlestir = () => { const r = top.querySelector('.renk-sec') || panel.querySelector('.renk-sec'); if (!r) return; if (dar.matches) panel.querySelector('.mp-alt').prepend(r); else sag.prepend(r); };
+    yerlestir(); dar.addEventListener ? dar.addEventListener('change', yerlestir) : dar.addListener(yerlestir);
     const btn = sag.querySelector('.menu-ac');
     const ac = v => { panel.classList.toggle('acik', v); perde.classList.toggle('acik', v); btn.setAttribute('aria-expanded', String(v)); btn.querySelector('span').textContent = v ? 'Kapat' : 'Menü'; };
     btn.addEventListener('click', e => { e.stopPropagation(); ac(!panel.classList.contains('acik')); });
     perde.addEventListener('click', () => ac(false));
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('acik')) { ac(false); btn.focus(); } });
-    // tema.js renk seçiciyi sonradan eklerse panele taşı
-    new MutationObserver(() => { const r = nav.querySelector('.renk-sec'); if (r) panel.querySelector('.mp-alt').prepend(r); }).observe(nav, {childList: true});
+    // tema.js renk seçiciyi sonradan eklerse yerine taşı
+    new MutationObserver(() => { if (nav.querySelector('.renk-sec')) yerlestir(); }).observe(nav, {childList: true});
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', kur); else kur();
 })();
