@@ -960,3 +960,10 @@ Not: Corolla Sedan 1.5 ağırlığı (1283 kg) auto-data'nın geniş 1185–1380
 - porsche-taycan-2026-base, -4s | koltuk | kaynaklar 5 diyor ama Taycan standart 4 koltuklu (4+1 opsiyon) — kullanılmadı
 - porsche-cayenne-2026-s | segment | Euro NCAP 2017 sayfası yalnızca "SUV"
 Yasaklı kaynak kalan: 2.
+
+## 2026-11-05 — Kullanıcının gönderdiği PDF'ler (285 dosya)
+
+- Doldurulan alan: 303, 140 versiyon. Eksik alan 974'ten 671'e indi (316 versiyon).
+- Kaynak: kullanıcının marka sitelerinden indirdiği resmi broşür, teknik föy ve kullanım kılavuzları. Her alanın ekKaynak kaydında belge adı yazıyor.
+- Aralık verilen ağırlık ve bagajda orta değer alındı. Başka pazar belgelerinde (ABD, AB, Avustralya) yalnızca pazara göre değişmeyen alanlar kullanıldı.
+- Kullanılamayanlar: metni okunamayan Cupra Leon/Terramar katalogları; versiyonu Türkiye'dekinden farklı olan belgeler (ör. ABD Golf GTI, eski nesil Ghost Black Badge, Hindistan Swift); sütun eşleşmesi kesin olmayan tablolar.
