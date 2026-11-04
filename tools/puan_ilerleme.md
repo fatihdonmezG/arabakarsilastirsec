@@ -294,3 +294,15 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - toyota-hilux-2-8-mildhybrid-invincible-2026 .sifirYuz_sn, .agirlik_kg — Toyota UK basın kiti yalnız 2.8 AT aralığı (2.170–2.250 kg) veriyor, 48V hibrite ayrı değer yok; Toyota TR PDF açılamadı.
 - fiat-fullback-2016-*.ncap_yildiz — euroncap.com sayfası açılamadı; tekrar denenebilir.
 - mazda-3-2020-sedan-15-skyactiv-g-soul — Avrupa kaynaklarında yalnız 2.0 Skyactiv-G sedan var (1.5 yok).
+
+## 2026-11-04
+
+- Önce: Toplam puanı olmayan 188 / 921 → Sonra: 188 / 921 (puan açılmadı; Fullback'in diğer eksik alanları kullanıcının PDF çalışmasında).
+- Euro NCAP (1 kayıt, 2 alan; yayılacak başka versiyon yok):
+  - Fiat Fullback 2016 (1): 4★, 2015 — Euro NCAP 2015 Mitsubishi L200 sonucu (Fullback, L200'ün aynı nesil Fiat ikizi: autoblog.com.uy; yıldız/yıl: carbuyer.co.uk L200 2015–2019, diariomotor 02.09.2015). Test 11 yıldan eski.
+
+### Euro NCAP testi yok (2026-11-04)
+- Mercedes-Benz GLB (X244, 2026) — whatcar.com ve carwow.co.uk: Euro NCAP henüz test etmedi.
+- Forthing M4 U-Tour — Forthing markası Euro NCAP'te test edilmedi (T5 Evo ile aynı durum).
+- Mercedes-Benz GLC (Elektrikli) — tekrar kontrol edildi, hâlâ sonuç yok.
+- Kalan tüm gruplar önceki listelerde ya da Euro NCAP'in test etmediği markalarda (Ferrari, Lamborghini, Bentley, Rolls-Royce, Aston Martin, Maserati, GM).
