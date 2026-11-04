@@ -53,7 +53,7 @@
     ['Kompakt sedan', 'Fiat Egea', 'Toyota Corolla', 'egea-sedan-2026-1.4-fire-95,toyota-corolla-sedan-1-5-vision-plus-2026'],
     ['Küçük hatchback', 'Renault Clio', 'Hyundai i20', 'renault-clio-evolution-plus-tce-edc-115-2026,hyundai-i20-elite-gsr-dct-2026']
   ];
-  if ($('hizliKiyas')) $('hizliKiyas').innerHTML = KIYAS.map(([s, a, b, ids]) => `<a href="karsilastirma.html#k=${ids}"><span>${esc(a)} <i>VS</i> ${esc(b)}</span><small style="color:var(--muted)">${esc(s)}</small></a>`).join('');
+  if ($('hizliKiyas')) $('hizliKiyas').innerHTML = KIYAS.map(([s, a, b, ids]) => `<a href="karsilastirma.html#k=${ids}"><span>${esc(a)}<em>ile</em>${esc(b)}</span><small>${esc(s)}</small></a>`).join('');
 
   // Özellik kutucukları
   const ik = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -71,10 +71,19 @@
     ['forum.html', 'Forum', 'Soru sor, deneyimini paylaş', '#DB2777', ik('<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1-4 3-4.6"/>'), 1],
     ['rehber.html', 'Araç sahibinin el kitabı', 'İkinci el, muayene, sigorta, kaza', '#4D7C0F', ik('<path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M18 20a2 2 0 0 0 2-2V6"/>')]
   ];
+  // Üç grup: seç, hesapla, topluluk
+  const GRUP = [
+    ['Araç seç', 'Karşılaştır, puanla, fırsatları gör', ['karsilastirma.html', 'araclar.html', 'sistem-puani.html', 'kampanyalar.html']],
+    ['Hesapla', 'Yol, şarj, vergi ve ceza', ['yol-maliyeti.html', 'sarj-hesaplama.html', 'gecis-ucretleri.html', 'trafik-cezalari.html', 'otv-muafiyet.html']],
+    ['Topluluk ve rehber', 'Deneyimler ve pratik bilgi', ['yorumlar.html', 'forum.html', 'rehber.html']]
+  ];
+  const ok = '<svg class="ok" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>';
   const g = $('ozGrid');
   if (g) {
-    g.innerHTML = OZ.map(([h, b, s, k, i, yeni], n) => `<a class="oz" href="${h}" style="--k:${k};--i:${n}"><span class="ik">${i}</span><b>${esc(b)}${yeni ? ' <span class="yeni">Yeni</span>' : ''}</b><small>${esc(s)}</small></a>`).join('');
-    const ac = () => g.querySelectorAll('.oz').forEach(x => x.classList.add('gorundu'));
+    g.className = 'oz-gruplar';
+    g.innerHTML = GRUP.map(([ad, alt, hs], gi) => `<section class="og" style="--i:${gi}" aria-label="${esc(ad)}"><div class="og-bas"><span>${gi + 1}</span><div><h3>${esc(ad)}</h3><p>${esc(alt)}</p></div></div><ul>${hs.map(h => OZ.find(x => x[0] === h)).filter(Boolean).map(([h, b, s, , i, yeni]) =>
+      `<li><a class="oz" href="${h}"><span class="ik">${i}</span><b>${esc(b)}${yeni ? '<span class="yeni">Yeni</span>' : ''}</b><small>${esc(s)}</small>${ok}</a></li>`).join('')}</ul></section>`).join('');
+    const ac = () => g.querySelectorAll('.og').forEach(x => x.classList.add('gorundu'));
     setTimeout(ac, 1500);
     if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { ac(); io.disconnect(); } }, {threshold: .1}); io.observe(g); } else ac();
   }
