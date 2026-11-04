@@ -164,3 +164,47 @@ html:not([data-renk="koyu"]) .sk.ana{background:var(--murekkep)!important;color:
 html:not([data-renk="koyu"]) .sk.ana span,html:not([data-renk="koyu"]) .sk.ana small{color:rgba(255,255,255,.72)!important}
 footer{max-width:none!important}
 html:not([data-renk="koyu"]) .hero:not(.giris) .badge,html:not([data-renk="koyu"]) .hero:not(.giris) .badge *,html:not([data-renk="koyu"]) .hero:not(.giris) .stamp *{color:var(--ink)!important;background:transparent!important;border-color:var(--line-strong)!important}
+
+/* =================== İç sayfalar: kart içinde kart yok; liste öğeleri gri zeminde tek başına beyaz kart =================== */
+html:not([data-renk="koyu"]){--series-2:#0E1116}
+html:not([data-renk="koyu"]) main .section:has(.nitem,.lkart,.kkart,.ikart,.ykart,.terim){background:transparent!important;padding:0!important;box-shadow:none!important;margin-top:28px!important}
+html:not([data-renk="koyu"]) .nitem,html:not([data-renk="koyu"]) .lkart,html:not([data-renk="koyu"]) .kkart,html:not([data-renk="koyu"]) .ikart,html:not([data-renk="koyu"]) .ykart,html:not([data-renk="koyu"]) .terim{
+  background:#fff!important;border:0!important;border-radius:20px!important;box-shadow:none!important}
+.nitem,.lkart,.kkart,.terim,.ykart{padding:24px!important}
+.nitem h3,.lkart h3,.kkart h3,.terim h3,.ikart h3{font-weight:600!important;letter-spacing:-.01em}
+.nitem+.nitem{margin-top:12px!important}
+/* Filtre ve sekme satırları kartsız */
+html:not([data-renk="koyu"]) .filters,html:not([data-renk="koyu"]) .ifil,html:not([data-renk="koyu"]) .kfil,html:not([data-renk="koyu"]) .yfil{background:transparent!important;border:0!important;box-shadow:none!important;padding-inline:0!important}
+/* Durum ve tür etiketleri nötr */
+html:not([data-renk="koyu"]) .tag,html:not([data-renk="koyu"]) .tur,html:not([data-renk="koyu"]) .zaman,html:not([data-renk="koyu"]) .tag-new{background:#EEF0F3!important;color:#3A404A!important;border:0!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important}
+html:not([data-renk="koyu"]) .zaman.kesin,html:not([data-renk="koyu"]) .zaman.on,html:not([data-renk="koyu"]) .tur.kredi{background:var(--murekkep)!important;color:#fff!important}
+/* Bilgi notları */
+html:not([data-renk="koyu"]) .note,html:not([data-renk="koyu"]) .caution,html:not([data-renk="koyu"]) .pending,html:not([data-renk="koyu"]) .not-kutu{background:var(--surface2)!important;border:0!important;border-radius:14px!important;color:var(--ink)!important;box-shadow:none!important}
+/* Sayı kutuları ve özet panoları */
+html:not([data-renk="koyu"]) .tile,html:not([data-renk="koyu"]) .stat,html:not([data-renk="koyu"]) .fy{background:var(--surface2)!important;border:0!important;border-radius:16px!important;box-shadow:none!important}
+.tile b,.stat b,.stat .n,.tile .n{font-weight:500!important;letter-spacing:-.025em}
+html:not([data-renk="koyu"]) .stat b,html:not([data-renk="koyu"]) .stat .n,html:not([data-renk="koyu"]) .tile .n{color:var(--ink)!important}
+/* Tablolar: ince çizgi, sade başlık */
+html:not([data-renk="koyu"]) main table th{color:var(--muted)!important;font-weight:500!important;text-transform:none!important;letter-spacing:0!important;font-size:.8rem!important;background:transparent!important}
+html:not([data-renk="koyu"]) main table td,html:not([data-renk="koyu"]) main table th{border-color:var(--cizgi)!important}
+/* Sekmeler */
+.sekmeler a,.sekmeler button{font-weight:500!important}
+/* Hesaplama hub fiyat şeridi */
+.fy{border-left:0!important}
+/* Broşür PDF simgeleri nötr */
+html:not([data-renk="koyu"]) .bd .ik{background:#E9EBEE!important;color:var(--ink)!important}
+html:not([data-renk="koyu"]) .bd .ik::before{background:linear-gradient(225deg,#fff 50%,#D5D9DF 50%)!important}
+html:not([data-renk="koyu"]) .bm-bas{background:#fff!important}
+/* Forum kategorileri */
+html:not([data-renk="koyu"]) .fk .ik{background:var(--surface2)!important}
+/* Karşılaştırma vitrini ve arena: iki araç rengi vurgu ve mürekkep */
+html:not([data-renk="koyu"]) .cekis{background:#fff!important;border:0!important}
+html:not([data-renk="koyu"]) .ac{border:0!important;border-radius:22px!important}
+html:not([data-renk="koyu"]) .gj-bolme{background:#fff!important}
+/* İnceleme ve yorum kartlarındaki amblem alanı */
+html:not([data-renk="koyu"]) .ikart>*:first-child{background:var(--surface2)!important;border:0!important}
+/* Bölüm alt başlıkları */
+main .section-head .section-lead,main .section .sub{color:var(--muted)!important}
+/* Kapalı durum kutuları */
+html:not([data-renk="koyu"]) #kapali.kapali,html:not([data-renk="koyu"]) .uye #kapali.kart{background:#fff!important;border:0!important;border-radius:20px!important;box-shadow:none!important;padding:24px!important}
+.uye #kapali.kart{margin-left:0!important;margin-right:0!important}
