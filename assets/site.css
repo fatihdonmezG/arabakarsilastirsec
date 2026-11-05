@@ -7,7 +7,7 @@
   --focus:#C9A961; --good-tint:rgba(201,169,97,.12);
   --series-1:#c98500; --series-2:#3987e5;
   --warn:#E7A15A;
-  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --display:"Sora","Helvetica Neue",Arial,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
