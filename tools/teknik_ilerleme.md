@@ -967,3 +967,6 @@ Yasaklı kaynak kalan: 2.
 - Kaynak: kullanıcının marka sitelerinden indirdiği resmi broşür, teknik föy ve kullanım kılavuzları. Her alanın ekKaynak kaydında belge adı yazıyor.
 - Aralık verilen ağırlık ve bagajda orta değer alındı. Başka pazar belgelerinde (ABD, AB, Avustralya) yalnızca pazara göre değişmeyen alanlar kullanıldı.
 - Kullanılamayanlar: metni okunamayan Cupra Leon/Terramar katalogları; versiyonu Türkiye'dekinden farklı olan belgeler (ör. ABD Golf GTI, eski nesil Ghost Black Badge, Hindistan Swift); sütun eşleşmesi kesin olmayan tablolar.
+
+## 2026-11-05 donanım (PDF)
+Kullanıcının indirdiği Türkçe broşür/teknik föy donanım tablolarından 249 boş donanım alanı dolduruldu (37 versiyon). Yalnız "var" değerleri yazıldı; dolu alanlara dokunulmadı. Kılavuzlar, yabancı pazar belgeleri ve eski model yılı kataloglar hariç tutuldu.
