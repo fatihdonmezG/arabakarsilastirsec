@@ -182,7 +182,7 @@
         <option value="tuketim">Tüketim (düşükten yükseğe)</option>
         <option value="fiyatAsc">Fiyat (düşükten yükseğe)</option>
         <option value="fiyatDesc">Fiyat (yüksekten düşüğe)</option>
-        <option value="hiz">0-100 km/s (hızlıdan yavaşa)</option>
+        <option value="hiz">0-100 km/sa (hızlıdan yavaşa)</option>
         <option value="bagaj">Bagaj (büyükten küçüğe)</option>
         <option value="menzil">Elektrikli menzil (uzundan kısaya)</option>
         <option value="yil">Model yılı (yeniden eskiye)</option>
@@ -205,6 +205,7 @@
 
 <script src="assets/logolar.js"></script>
 <script src="assets/secici.js"></script>
+<script src="assets/normal.js"></script>
 <script src="assets/puanlar.js"></script>
 <script src="assets/kesit.js"></script>
 <script src="assets/fotolar.js"></script>
@@ -226,7 +227,7 @@ function gearCat(t,yakit){
   if(/^\s*otomatik\s*$/i.test(t)) return 'belirsiz';
   return 'otomatik';
 }
-function driveCat(t){ t=t||''; if(/4x4|AWD|4WD|quattro|4MATIC|xDrive|ALL4|dört|4 tekerlek|tüm tekerlek/i.test(t)) return '4x4'; if(/arka/i.test(t)) return 'arkadan'; if(/ön|on(den)? ?ce|FWD/i.test(t)) return 'onden'; return null; }
+function driveCat(t){ return ({AWD:'4x4',RWD:'arkadan',FWD:'onden'})[window.NORMAL.cekisKod(t)]||null; }
 function bodyCat(k){ k=k||''; if(/pick-?up/i.test(k)) return 'pickup'; if(/MPV|Minivan/i.test(k)) return 'mpv'; if(/Station|Estate/i.test(k)) return 'sw'; if(/SUV|Crossover/i.test(k)) return 'suv'; if(/Coupe|Cabrio|Roadster|Targa|Fastback/i.test(k)) return 'coupe'; if(/Sedan|Sportback/i.test(k)) return 'sedan'; if(/Hatchback/i.test(k)) return 'hatchback'; return 'diger'; }
 const $ = id => document.getElementById(id);
 let CARS=[], DETAY=new Set(), shown=60, sel=[];
@@ -289,18 +290,18 @@ function card(c){
   const on=sel.includes(c.id), full=sel.length>=4&&!on;
   const deg=[];
   if(c.s.guc_hp!=null) deg.push([nf(c.s.guc_hp),'HP','Güç']);
-  if(c.s.sifirYuz_sn!=null) deg.push([nf(c.s.sifirYuz_sn,1),'sn','0-100 km/s']);
+  if(c.s.sifirYuz_sn!=null) deg.push([nf(c.s.sifirYuz_sn,1),'sn','0-100 km/sa']);
   if(c._f==='elektrik'){ if(c.s.menzil_km_wltp!=null) deg.push([nf(c.s.menzil_km_wltp),'km','WLTP menzil']); }
   else if(c.s.tuketim_l100km!=null) deg.push([nf(c.s.tuketim_l100km,1),'L','100 km tüketim']);
   if(deg.length<3&&c.s.bagaj_l!=null) deg.push([nf(c.s.bagaj_l),'L','Bagaj']);
   const ph=window.fotoFor?window.fotoFor(c):null;
   const y=c.s.yakit||'', yk=/^Elektrik/i.test(y)?'Elektrikli':/plug-?in/i.test(y)?'Şarj edilebilir hibrit':/hibrit|hybrid|e-POWER/i.test(y)?'Hibrit':/LPG/.test(y)?'Benzin/LPG':/^Dizel/i.test(y)?'Dizel':y?'Benzin':'';
   const sz=c.s.sanziman?(/manuel/i.test(c.s.sanziman)?'Manuel':'Otomatik'):'';
-  const ck=c.s.cekis?(/4|dört|AWD|4x4|xDrive|quattro|4MOTION|ALL4/i.test(c.s.cekis)?'Dört çeker':/arka|RWD/i.test(c.s.cekis)?'Arkadan itiş':'Önden çekiş'):'';
+  const ck=({AWD:'Dört çeker',RWD:'Arkadan itiş',FWD:'Önden çekiş'})[window.NORMAL.cekisKod(c.s.cekis)]||'';
   const det=DETAY.has(c.id);
   return `<article class="vcard${on?' sel':''}${ph&&ph.kesit?' kesitli':''}">
     <a class="vphoto${ph?'':' vphoto-amblem'}"${det?` href="arac-detay.html#${encodeURIComponent(c.id)}"`:''} aria-label="${esc(c.marka+' '+c.model)}">${ph?`<img src="${esc(ph.src)}" alt="" loading="lazy" decoding="async">`:(window.amblemKart?window.amblemKart(c,{versiyonYok:true}):'')}</a>
-    <div class="vtop"><div><div class="vmarka">${esc(c.marka)}</div><div class="vname">${esc(c.model)}</div></div>${c._p!=null?`<a class="score" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)">${nf(c._p,1)}</a>`:''}</div>
+    <div class="vtop"><div><div class="vmarka">${esc(c.marka)}</div><div class="vname">${esc(c.model)}</div></div>${c._p!=null?(()=>{const pk=window.NORMAL.puanKapsam(window.PUANLAR&&window.PUANLAR[c.id]);return `<a class="score${pk?' guvp-'+pk.guven:''}" href="sistem-puani.html" title="Sistem puanı (10 üzerinden)${pk?`. ${pk.guvenAd}: ${pk.toplam} kriterin ${pk.hesaplanan} tanesi hesaplandı (ağırlığın %${Math.round(pk.agirlik*100)}'i)`:''}">${nf(c._p,1)}${pk&&pk.guven!=='yuksek'?`<i class="guvn" aria-label="${pk.guvenAd}"></i>`:''}</a>`})():''}</div>
     <div class="vver">${c.yil} · ${esc(c.versiyon)}${c.donem?` · ${esc(c.donem)}`:''}${c._n>1?` · <button type="button" class="vdiger" data-model="${esc(c.marka+' '+c.model)}">${c._n-1} versiyon daha</button>`:''}</div>
     <div class="badges">${yk?`<span class="bdg ana">${esc(yk)}</span>`:''}${ck?`<span class="bdg">${ck}</span>`:''}${sz?`<span class="bdg">${sz}</span>`:''}${c._off?'<span class="bdg off">Satıştan kalktı</span>':''}${c._fp!=null?`<span class="bdg fp" title="Fiyat/performans puanı: aynı sınıftaki 2026 araçlara göre sistem puanı başına fiyat">F/P ${nf(c._fp,1)}</span>`:''}</div>
     <dl class="vnums">${deg.slice(0,3).map(([v,b,l])=>`<div><dd>${v}<small>${b}</small></dd><dt>${l}</dt></div>`).join('')||'<div><dt>Temel değerler henüz eklenmedi</dt></div>'}</dl>

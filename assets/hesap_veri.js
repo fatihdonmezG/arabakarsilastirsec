@@ -144,11 +144,11 @@ window.HESAP_VERI = {
     ],
     gruplar: [
       {ad: 'Hız (madde 51), yerleşim yeri içi', satir: [
-        ['6–10 km/s fazla', 2000], ['11–15 km/s fazla', 4000], ['16–20 km/s fazla', 6000], ['21–25 km/s fazla', 8000], ['26–35 km/s fazla', 12000],
-        ['36–45 km/s fazla', 15000], ['46–55 km/s fazla', 20000, 'Ehliyete 30 gün el konur'], ['56–65 km/s fazla', 25000, 'Ehliyete 60 gün el konur'], ['66 km/s ve üzeri', 30000, 'Ehliyete 90 gün el konur']]},
+        ['6–10 km/sa fazla', 2000], ['11–15 km/sa fazla', 4000], ['16–20 km/sa fazla', 6000], ['21–25 km/sa fazla', 8000], ['26–35 km/sa fazla', 12000],
+        ['36–45 km/sa fazla', 15000], ['46–55 km/sa fazla', 20000, 'Ehliyete 30 gün el konur'], ['56–65 km/sa fazla', 25000, 'Ehliyete 60 gün el konur'], ['66 km/sa ve üzeri', 30000, 'Ehliyete 90 gün el konur']]},
       {ad: 'Hız (madde 51), yerleşim yeri dışı', satir: [
-        ['11–15 km/s fazla', 2000], ['16–20 km/s fazla', 4000], ['21–25 km/s fazla', 6000], ['26–30 km/s fazla', 8000], ['31–40 km/s fazla', 12000],
-        ['41–50 km/s fazla', 15000], ['51–60 km/s fazla', 20000, 'Ehliyete 30 gün el konur'], ['61–70 km/s fazla', 25000, 'Ehliyete 60 gün el konur'], ['71 km/s ve üzeri', 30000, 'Ehliyete 90 gün el konur']]},
+        ['11–15 km/sa fazla', 2000], ['16–20 km/sa fazla', 4000], ['21–25 km/sa fazla', 6000], ['26–30 km/sa fazla', 8000], ['31–40 km/sa fazla', 12000],
+        ['41–50 km/sa fazla', 15000], ['51–60 km/sa fazla', 20000, 'Ehliyete 30 gün el konur'], ['61–70 km/sa fazla', 25000, 'Ehliyete 60 gün el konur'], ['71 km/sa ve üzeri', 30000, 'Ehliyete 90 gün el konur']]},
       {ad: 'Kırmızı ışık (madde 47), bir yıl içindeki tekrarlar', satir: [
         ['1. ihlal', 5000], ['2. ihlal', 10000], ['3. ihlal', 15000, 'Ehliyete 30 gün el konur'], ['4. ihlal', 20000, 'Ehliyete 60 gün el konur'],
         ['5. ihlal', 30000, 'Ehliyete 90 gün el konur'], ['6. ihlal', 80000, 'Ehliyet iptal'], ['Dur ihtarına uymayıp kaçmak', 200000, 'Ehliyet ve araç 60 gün']]},

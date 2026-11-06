@@ -52,13 +52,13 @@
   const satir = id => { const r = E.find(x => x[0] === id); return r && {id: r[0], marka: r[1], model: r[2], versiyon: r[3], yil: r[4], yakit: r[5], l100: r[6], kwh100: r[7], menzil: r[9], kasa: r[15] || '', hp: r[16], sn: r[17], sanziman: r[18] || '', cekis: r[19] || ''}; };
   const foto = a => window.fotoFor ? window.fotoFor({marka: a.marka, model: a.model, yil: a.yil, s: {kasa: a.kasa}}) : null;
   const kisa = {yakit: y => /^Elektrik/i.test(y) ? 'Elektrikli' : /plug-?in/i.test(y) ? 'Şarj edilebilir hibrit' : /hibrit|hybrid/i.test(y) ? 'Hibrit' : /LPG/.test(y) ? 'Benzin/LPG' : /^Dizel/i.test(y) ? 'Dizel' : 'Benzin',
-    sanz: t => /manuel/i.test(t) ? 'Manuel' : t ? 'Otomatik' : '', cekis: t => /4|dört|AWD|4x4|xDrive|quattro|4MOTION/i.test(t) ? 'Dört çeker' : /arka|RWD/i.test(t) ? 'Arkadan itiş' : t ? 'Önden çekiş' : ''};
+    sanz: t => /manuel/i.test(t) ? 'Manuel' : t ? 'Otomatik' : '', cekis: t => window.NORMAL ? (({AWD:'Dört çeker',RWD:'Arkadan itiş',FWD:'Önden çekiş'})[window.NORMAL.cekisKod(t)] || '') : /4x4|dört|AWD|xDrive|quattro|4MOTION/i.test(t) ? 'Dört çeker' : /arka|RWD/i.test(t) ? 'Arkadan itiş' : t ? 'Önden çekiş' : ''};
   const nf = (v, d = 0) => Number(v).toLocaleString('tr-TR', {minimumFractionDigits: d, maximumFractionDigits: d});
   const modeller = (window.ONE_CIKAN || []).map(([m, o]) => M[m] && M[m][o] && satir(M[m][o].id)).filter(Boolean);
   const degerler = a => {
     const ev = /^Elektrik/i.test(a.yakit), d = [];
     if (a.hp) d.push([nf(a.hp), 'HP', 'Güç']);
-    if (a.sn) d.push([nf(a.sn, 1), 'sn', '0-100 km/s']);
+    if (a.sn) d.push([nf(a.sn, 1), 'sn', '0-100 km/sa']);
     if (ev && a.menzil) d.push([nf(a.menzil), 'km', 'WLTP menzil']); else if (a.l100) d.push([nf(a.l100, 1), 'L', '100 km tüketim']);
     return d.slice(0, 3);
   };

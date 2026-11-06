@@ -236,3 +236,29 @@ html:not([data-renk="koyu"]) .duyuru{border-color:color-mix(in srgb,var(--vurgu)
   .menu-perde{inset:75.3px 0 0 0}
 }
 @media (min-width:1000px){.ar-duzen{grid-template-columns:306px minmax(0,1fr)!important}.ar-filtre{top:72px!important;max-height:calc(85vh - 90px)!important}}
+
+/* Veri niteliği rozetleri (assets/normal.js) */
+.nit{display:inline-block;margin-left:5px;padding:1px 6px;border-radius:999px;font-size:.66rem;font-weight:600;line-height:1.5;letter-spacing:.01em;white-space:nowrap;vertical-align:1px;background:var(--surface2,#EEF1F5);color:var(--muted)}
+.nit-tr{background:#E3F4EA;color:#17663A}
+.nit-pazar{background:#FFF1DB;color:#8A5300}
+.nit-ort{background:#E8EEFF;color:#2747A8}
+.nit-bag{background:#EEF0F3;color:#4B5563}
+.nit-bos{background:transparent;color:#9A3B3B;border:1px dashed #E2B4B4;margin-left:0}
+.nit-yok{background:transparent;color:#8A919C;border:1px solid #E3E6EA;margin-left:0}
+html[data-renk="koyu"] .nit-tr{background:rgba(52,168,83,.18);color:#8FE0A8}
+html[data-renk="koyu"] .nit-pazar{background:rgba(245,166,35,.16);color:#F5C37A}
+html[data-renk="koyu"] .nit-ort{background:rgba(99,132,255,.18);color:#A9BBFF}
+html[data-renk="koyu"] .nit-bag{background:rgba(255,255,255,.08);color:#C4C9D1}
+.nit-aciklama{margin:10px 0 12px;font-size:.78rem;line-height:1.9;color:var(--muted)}
+.nit-aciklama .nit{margin-left:0}
+.kpbar{display:flex;gap:1px;height:5px;margin-top:6px;border-radius:3px;overflow:hidden;max-width:220px}
+.kpbar i{display:block}
+.nitb-tr{background:#34A853}.nitb-pazar{background:#F5A623}.nitb-ort{background:#5B7BF0}.nitb-bag{background:#9AA3AE}.nitb-bos{background:#E8C4C4}
+.kpdetay{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}.kpdetay .nit{margin-left:0}
+.hpuan{display:block;margin-top:7px;font-size:.74rem;line-height:1.45;color:var(--muted)}.hpuan b{color:var(--ink)}
+.guv{display:inline-block;padding:0 6px;border-radius:999px;font-weight:700;font-size:.68rem}
+.guv-yuksek{background:#E3F4EA;color:#17663A}.guv-orta{background:#FFF1DB;color:#8A5300}.guv-dusuk{background:#FBE4E4;color:#9A3B3B}
+.bnot{display:block;font-size:.7rem;color:var(--muted);font-weight:400;margin-top:2px;max-width:30ch}
+.score{position:relative}
+.score .guvn{position:absolute;top:-2px;right:-2px;width:8px;height:8px;border-radius:50%;border:2px solid var(--surface,#fff)}
+.guvp-orta .guvn{background:#F5A623}.guvp-dusuk .guvn{background:#D9534F}

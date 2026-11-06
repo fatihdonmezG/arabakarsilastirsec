@@ -11,6 +11,8 @@
  */
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..');
+// Önce karşılaştırma ve detay kayıtlarını eşitle (tek kayıt ilkesi)
+if (!process.env.ESITLEME_YOK) require('child_process').execFileSync('node', [path.join(__dirname, 'veri_esitle.js')], {stdio: 'inherit'});
 const k = fs.readFileSync(path.join(ROOT, 'karsilastirma.html'), 'utf8');
 const s0 = k.indexOf('const CARS = ['), e0 = k.indexOf('\n];', s0) + 3;
 const CARS = new Function(k.slice(s0, e0) + ';return CARS;')();
@@ -64,7 +66,7 @@ function verimlilik(c){
 }
 function performans(c){
   const s=c.s;
-  if (num(s.sifirYuz_sn)!=null){ const p=olcek(s.sifirYuz_sn,...O.sifirYuz); return {puan:p,notes:[],aciklama:`0-100 km/s ${nf(s.sifirYuz_sn)} sn (14 sn = 0, 4,5 sn ve altı = 10)`}; }
+  if (num(s.sifirYuz_sn)!=null){ const p=olcek(s.sifirYuz_sn,...O.sifirYuz); return {puan:p,notes:[],aciklama:`0-100 km/sa ${nf(s.sifirYuz_sn)} sn (14 sn = 0, 4,5 sn ve altı = 10)`}; }
   if (num(s.guc_hp)!=null && num(s.agirlik_kg)!=null){ const g=s.guc_hp/s.agirlik_kg*1000, p=olcek(g,...O.gucAgirlik);
     return {puan:p,notes:['0-100 süresi olmadığı için güç/ağırlık oranı kullanıldı'],aciklama:`${nf(s.guc_hp,0)} HP / ${nf(s.agirlik_kg,0)} kg = ton başına ${nf(g,0)} HP (45 = 0, 160 ve üstü = 10)`}; }
   return null;

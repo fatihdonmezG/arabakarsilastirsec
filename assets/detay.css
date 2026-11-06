@@ -459,3 +459,8 @@ html:not([data-renk="koyu"]) .dt2 .kunye .ciplar li{background:var(--surface2)}
 .dt2 .rivals .note{margin-top:8px}
 .dt2 .content,.dt2 .content>.sec,.dt2 .rivals,.dt2 .rivals>li{min-width:0;max-width:100%}
 .dt2 .sinif .sira>*{min-width:0}
+.dt2 .specbos{margin:0;padding:6px 11px;font-size:.78rem;color:var(--muted);line-height:1.6}
+.dt2 .specbos .nit{margin-right:6px}
+.dt2 .equip .v .nit{font-size:.6rem}
+.dt2 .g-kapsam{grid-column:1/-1;margin:10px 0 0;font-size:.76rem;line-height:1.55;color:var(--muted)}
+.dt2 .g-kapsam .guv{margin-right:4px}

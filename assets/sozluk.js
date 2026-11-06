@@ -349,9 +349,9 @@ window.SOZLUK = [
     arti: ['Uzun dingil mesafesi arka diz mesafesini, düz yolda denge ve konforu artırır'],
     eksi: ['Dönüş çapı büyür, dar sokaklarda manevra zorlaşır'],
     k: W('Wheelbase') },
-  { id: 'sifirYuz_sn', kat: 'olcu', ad: '0-100 km/s hızlanma', diger: 'sıfırdan yüze, hızlanma',
-    ne: 'Aracın duruştan 100 km/s hıza kaç saniyede ulaştığıdır. Üretici tarafından, ideal koşullarda ölçülerek verilir.',
+  { id: 'sifirYuz_sn', kat: 'olcu', ad: '0-100 km/sa hızlanma', diger: 'sıfırdan yüze, hızlanma',
+    ne: 'Aracın duruştan 100 km/sa hıza kaç saniyede ulaştığıdır. Üretici tarafından, ideal koşullarda ölçülerek verilir.',
     arti: ['Farklı modellerin çevikliğini kıyaslamanın basit bir yoludur'],
-    eksi: ['Ara hızlanma (ör. 80-120 km/s) gerçek sollama performansını daha iyi gösterir'],
+    eksi: ['Ara hızlanma (ör. 80-120 km/sa) gerçek sollama performansını daha iyi gösterir'],
     k: W('0_to_60_mph') },
 ];
