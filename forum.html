@@ -80,38 +80,38 @@
 </main>
 <footer class="alt"><div class="wrap">Araba Karşılaştır ve Seç · Forum mesajları üyelerin kendi görüşleridir; site tarafından doğrulanmaz.</div></footer>
 <style>
-.fkat{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-.fk{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;padding:16px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);cursor:pointer;text-align:left;font:inherit;color:var(--ink);box-shadow:var(--golge);transition:border-color .2s,transform .2s}
+.fkat{display:grid;gap:9.5px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.fk{display:grid;grid-template-columns:auto 1fr;gap:3px 9.5px;align-items:center;padding:13px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);cursor:pointer;text-align:left;font:inherit;color:var(--ink);box-shadow:var(--golge);transition:border-color .2s,transform .2s}
 .fk:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--k) 50%,var(--line))}
 .fk[aria-pressed="true"]{border-color:var(--k);box-shadow:0 0 0 2px color-mix(in srgb,var(--k) 25%,transparent)}
-.fk .ik{grid-row:span 2;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--k) 13%,transparent);color:var(--k)}
-.fk .ik svg{width:22px;height:22px}
+.fk .ik{grid-row:span 2;width:39.5px;height:39.5px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--k) 13%,transparent);color:var(--k)}
+.fk .ik svg{width:20px;height:20px}
 .fk b{font-size:.98rem}
 .fk small{color:var(--muted);font-size:.8rem;line-height:1.35}
-.farac{display:grid;gap:10px;grid-template-columns:minmax(0,1fr) minmax(0,220px) auto}
+.farac{display:grid;gap:8px;grid-template-columns:minmax(0,1fr) minmax(0,220px) auto}
 @media (max-width:700px){.farac{grid-template-columns:1fr}}
-.fyeni{margin-top:16px;padding-top:6px;border-top:1px solid var(--line)}
-.fliste{margin-top:14px;display:grid}
-.fs{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+.fyeni{margin-top:13px;padding-top:5px;border-top:1px solid var(--line)}
+.fliste{margin-top:11px;display:grid}
+.fs{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:11px;align-items:center;padding:11px 3px;border-bottom:1px solid var(--line);text-decoration:none}
 .fs:last-child{border-bottom:0}
 .fs:hover .fb{color:var(--accent)}
-.fs .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--k,var(--accent))}
+.fs .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--k,var(--accent))}
 .fs .fb{font-weight:700;display:block}
 .fs small{color:var(--muted);font-size:.8rem}
 .fs .say{text-align:center;min-width:64px}
 .fs .say b{display:block;font-family:var(--display);font-size:1.2rem}
-.fbos{padding:36px 12px;text-align:center;color:var(--muted)}
+.fbos{padding:29px 9.5px;text-align:center;color:var(--muted)}
 .fbos b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:6px}
 .mesaj{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px}
-.mesaj .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--k,var(--accent))}
-.mesaj .ust{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.mesaj .av{width:39.5px;height:39.5px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--k,var(--accent))}
+.mesaj .ust{display:flex;flex-wrap:wrap;gap:6.5px;align-items:baseline}
 .mesaj .ust small{color:var(--muted);font-size:.8rem}
-.mesaj .govde{margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}
-.mesaj .islem{display:flex;gap:12px;margin-top:10px}
+.mesaj .govde{margin-top:6.5px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}
+.mesaj .islem{display:flex;gap:9.5px;margin-top:10px}
 .mesaj .islem button{font:inherit;font-size:.8rem;border:0;background:none;color:var(--muted);cursor:pointer;padding:0}
 .mesaj .islem button:hover{color:var(--accent)}
-.etiketler{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.etiketler span{font-size:.74rem;font-weight:700;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--k,var(--accent)) 12%,transparent);color:var(--k,var(--accent))}
+.etiketler{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.etiketler span{font-size:.74rem;font-weight:700;padding:3px 7px;border-radius:999px;background:color-mix(in srgb,var(--k,var(--accent)) 12%,transparent);color:var(--k,var(--accent))}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 <script src="assets/modeller.js"></script>

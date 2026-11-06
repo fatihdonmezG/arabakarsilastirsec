@@ -12,41 +12,41 @@
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
 <style>
-.arama{position:sticky;top:0;z-index:20;margin-top:8px;padding:14px 0 12px;background:linear-gradient(180deg,#2B2E34 85%,rgba(43,46,52,0))}
+.arama{position:sticky;top:0;z-index:20;margin-top:6.5px;padding:11px 0 9.5px;background:linear-gradient(180deg,#2B2E34 85%,rgba(43,46,52,0))}
 .arama .kutu{position:relative}
-.arama input{width:100%;height:54px;padding:0 48px 0 50px;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:12px}
+.arama input{width:100%;height:46px;padding:0 38.5px 0 40px;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:12px}
 .arama input:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,169,97,.2)}
-.arama .ikon{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.arama .ikon{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
 .arama input::-webkit-search-cancel-button{display:none}
-.arama .temizle{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.arama .temizle{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
 .arama .temizle:hover{color:var(--ink);background:var(--surface2)}
-.cipler{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:thin}
-.cipler button{flex:none;font:inherit;font-size:.84rem;font-weight:600;min-height:38px;padding:0 14px;border-radius:99px;border:1px solid var(--line-strong);background:transparent;color:var(--muted);cursor:pointer}
+.cipler{display:flex;gap:6.5px;overflow-x:auto;margin-top:8px;padding-bottom:2px;scrollbar-width:thin}
+.cipler button{flex:none;font:inherit;font-size:.84rem;font-weight:600;min-height:32.5px;padding:0 11px;border-radius:99px;border:1px solid var(--line-strong);background:transparent;color:var(--muted);cursor:pointer}
 .cipler button[aria-pressed="true"]{background:var(--accent-grad);color:var(--on-accent);border-color:transparent}
-.cipler button span{opacity:.7;margin-left:4px;font-weight:500}
-.sonuc{font-size:.84rem;color:var(--muted);margin-top:8px;min-height:1.3em}
-.terimler{display:grid;gap:12px;margin-top:16px}
-.terim{padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.14);scroll-margin-top:170px}
+.cipler button span{opacity:.7;margin-left:3px;font-weight:500}
+.sonuc{font-size:.84rem;color:var(--muted);margin-top:6.5px;min-height:1.3em}
+.terimler{display:grid;gap:9.5px;margin-top:16px}
+.terim{padding:14.5px 16px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.14);scroll-margin-top:170px}
 .terim:target,.terim.vurgu{border-color:var(--sc);box-shadow:0 0 0 2px color-mix(in srgb,var(--sc) 40%,transparent)}
 .terim h3{font-size:1.12rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
 .terim h3 a.bag{font-size:.78rem;font-weight:500;color:var(--muted);text-decoration:none;font-family:var(--body)}
 .terim h3 a.bag:hover{color:var(--accent-soft)}
 .terim .diger{font-size:.8rem;color:var(--muted);margin-top:4px}
-.terim .ne{margin-top:10px;line-height:1.65;max-width:78ch}
-.ae{display:grid;gap:10px 22px;margin-top:12px}
+.terim .ne{margin-top:8px;line-height:1.65;max-width:78ch}
+.ae{display:grid;gap:8px 17.5px;margin-top:12px}
 @media (min-width:760px){.ae{grid-template-columns:1fr 1fr}}
-.ae h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;font-family:var(--body)}
+.ae h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 5px;font-family:var(--body)}
 .ae .a h4{color:#A8DDBA}.ae .e h4{color:#F3B4A8}
-.ae ul{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:.92rem}
-.ae li{position:relative;padding-left:20px;line-height:1.5}
+.ae ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-size:.92rem}
+.ae li{position:relative;padding-left:16px;line-height:1.5}
 .ae .a li::before{content:"+";position:absolute;left:2px;color:#A8DDBA;font-weight:800}
 .ae .e li::before{content:"−";position:absolute;left:2px;color:#F3B4A8;font-weight:800}
-.terim .kay{margin-top:12px;font-size:.78rem;color:var(--muted)}
+.terim .kay{margin-top:9.5px;font-size:.78rem;color:var(--muted)}
 .terim .kay a{color:var(--accent-soft)}
 mark{background:rgba(233,196,106,.35);color:inherit;border-radius:2px;padding:0 1px}
-.bos{margin-top:24px;padding:22px;border:1px dashed var(--line-strong);border-radius:10px;color:var(--muted)}
+.bos{margin-top:19px;padding:17.5px;border:1px dashed var(--line-strong);border-radius:10px;color:var(--muted)}
 [hidden]{display:none!important}
-@media (max-width:640px){.terim{padding:12px;scroll-margin-top:170px}.terim h3{font-size:.98rem}.terim .ne{font-size:.88rem;line-height:1.6}.ae ul{font-size:.84rem}.ae h4{font-size:.68rem}.terim .diger{font-size:.74rem}.arama{padding:10px 0 8px}.arama input{height:44px;font-size:.9rem;padding-left:42px;border-radius:10px}.arama .ikon{left:13px;width:18px;height:18px}.cipler button{font-size:.76rem;min-height:32px;padding:0 11px}.sonuc{font-size:.76rem}}
+@media (max-width:640px){.terim{padding:9.5px;scroll-margin-top:170px}.terim h3{font-size:.98rem}.terim .ne{font-size:.88rem;line-height:1.6}.ae ul{font-size:.84rem}.ae h4{font-size:.68rem}.terim .diger{font-size:.74rem}.arama{padding:10px 0 8px}.arama input{height:37.5px;font-size:.9rem;padding-left:33.5px;border-radius:10px}.arama .ikon{left:13px;width:16px;height:16px}.cipler button{font-size:.76rem;min-height:27px;padding:0 11px}.sonuc{font-size:.76rem}}
 </style>
 <link rel="stylesheet" href="assets/tema-acik.css">
 <script src="assets/tema.js"></script>
