@@ -63,7 +63,7 @@ html[data-renk="koyu"] .gs-ad{color:rgba(255,255,255,.05)}
 .blok-bas p{color:var(--muted);font-size:.95rem}
 
 /* Model kartları: fotoğraf kartın üst kenarına taşar */
-.mkart-serit{display:grid;gap:14.5px;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:40px}
+.mkart-serit{display:grid;gap:60px 14.5px;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:40px}
 @media (max-width:1100px){.mkart-serit{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.mkart-serit{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:9.5px;margin-inline:-13px;padding-inline:13px;padding-bottom:6px}.mkart{flex:0 0 82%;scroll-snap-align:start}}
 .mkart{position:relative;display:flex;flex-direction:column;background:var(--surface);border-radius:24px;padding:0 17.5px 17.5px;margin-top:0}
