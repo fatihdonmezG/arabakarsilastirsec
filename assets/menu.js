@@ -1,10 +1,11 @@
 /* Üst menü: masaüstünde beş ana bağlantı; diğer bölümler, site rengi ve üyelik "Menü" panelinde. Telefonda yalnızca Menü ve Karşılaştır. */
 window.SITE_HARITA = [
-  ['Araçlar', [['araclar.html', 'Tüm araçlar'], ['karsilastirma.html', 'Karşılaştır'], ['sistem-puani.html', 'Sistem puanı'], ['brosurler.html', 'Broşürler'], ['kampanyalar.html', 'Kampanyalar']]],
+  ['Araçlar', [['araclar.html', 'Tüm araçlar'], ['arac/index.html', 'Araç sayfaları A-Z'], ['karsilastirma.html', 'Karşılaştır'], ['sistem-puani.html', 'Sistem puanı'], ['brosurler.html', 'Broşürler'], ['kampanyalar.html', 'Kampanyalar']]],
   ['Hesaplama', [['hesaplama.html', 'Bütün hesaplamalar'], ['yol-maliyeti.html', 'Rota ve yol maliyeti'], ['sarj-hesaplama.html', 'Şarj hesaplayıcı'], ['gecis-ucretleri.html', 'Köprü ve otoyol'], ['trafik-cezalari.html', 'Trafik cezaları'], ['otv-muafiyet.html', 'ÖTV muafiyeti'], ['mtv-hesaplama.html', 'MTV']]],
   ['Gündem', [['haberler.html', 'Haberler'], ['lansmanlar.html', 'Lansmanlar'], ['incelemeler.html', 'İncelemeler'], ['oduller.html', 'Ödüller'], ['piyasa.html', 'Pazar verisi']]],
   ['Topluluk ve rehber', [['yorumlar.html', 'Sahip yorumları'], ['forum.html', 'Forum'], ['rehber.html', 'El kitabı'], ['ehliyet.html', 'Ehliyet'], ['sozluk.html', 'Teknik sözlük']]]
 ];
+window.SITE_KOK = /\/arac\//.test(location.pathname) ? '../' : '';
 (function () {
   const ANA = ['araclar.html', 'kampanyalar.html', 'haberler.html', 'hesaplama.html', 'forum.html'];
   const sayfa = (location.pathname.split('/').pop() || 'index.html');
@@ -17,11 +18,11 @@ window.SITE_HARITA = [
     });
     const sag = document.createElement('div');
     sag.className = 'ust-sag';
-    sag.innerHTML = '<button type="button" class="menu-ac" aria-expanded="false" aria-controls="menuPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menü</span></button><a class="kiyas" href="karsilastirma.html">Karşılaştır</a>';
+    sag.innerHTML = '<button type="button" class="menu-ac" aria-expanded="false" aria-controls="menuPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menü</span></button><a class="kiyas" href="' + window.SITE_KOK + 'karsilastirma.html">Karşılaştır</a>';
     nav.parentElement.appendChild(sag);
     const panel = document.createElement('div');
     panel.className = 'menu-panel'; panel.id = 'menuPanel'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Site menüsü');
-    panel.innerHTML = '<div class="wrap">' + window.SITE_HARITA.map(([b, l]) => `<nav aria-label="${b}"><h4>${b}</h4><ul>${l.map(([h, t]) => `<li><a href="${h}"${h === sayfa ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul></nav>`).join('') + '<div class="mp-alt"><a href="uye.html">Üyelik ve garajım</a><a href="index.html">Ana sayfa</a></div></div>';
+    panel.innerHTML = '<div class="wrap">' + window.SITE_HARITA.map(([b, l]) => `<nav aria-label="${b}"><h4>${b}</h4><ul>${l.map(([h, t]) => `<li><a href="${window.SITE_KOK + h}"${h === sayfa ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul></nav>`).join('') + '<div class="mp-alt"><a href="' + window.SITE_KOK + 'uye.html">Üyelik ve garajım</a><a href="' + window.SITE_KOK + 'index.html">Ana sayfa</a></div></div>';
     const perde = document.createElement('div'); perde.className = 'menu-perde';
     document.body.appendChild(perde); document.body.appendChild(panel);
     // Renk seçici: geniş ekranda üst çubukta, dar ekranda menü panelinde
@@ -51,7 +52,7 @@ window.SITE_HARITA = [
     const m = document.createElement('div');
     m.className = 'alt-menu';
     m.innerHTML = '<div class="am-marka"><b><i>A</i>Araba Karşılaştır ve Seç</b><p>Türkiye\'de satılan otomobilleri resmi kaynaklarıyla karşılaştıran bağımsız site. Araç satmıyoruz.</p></div>' +
-      S.map(([b, l]) => `<nav aria-label="${b}"><h4>${b}</h4><ul>${l.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></nav>`).join('');
+      S.map(([b, l]) => `<nav aria-label="${b}"><h4>${b}</h4><ul>${l.map(([h, t]) => `<li><a href="${(window.SITE_KOK || '') + h}">${t}</a></li>`).join('')}</ul></nav>`).join('');
     w.insertBefore(m, w.firstChild);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', kur); else kur();

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /research/
+Sitemap: https://arabakarsilastirsec.netlify.app/sitemap.xml

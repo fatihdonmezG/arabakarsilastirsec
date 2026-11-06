@@ -9157,6 +9157,16 @@ function renderHero(){
   $('#crumbModel').textContent=c.model;
   $('#crumbYear').textContent=c.yil;
   document.title=c.marka+' '+c.model+' '+c.yil+' | Araba Karşılaştır ve Seç';
+  // Arama motorları için: bu versiyonun ayrı adresi (arac/<id>) canonical; açıklama veriden üretilir
+  (()=>{ const kur=(sel,tag,attr,val)=>{ let el=document.head.querySelector(sel); if(!el){ el=document.createElement(tag); document.head.appendChild(el); } Object.entries(attr).forEach(([k,v])=>el.setAttribute(k,v)); if(val!=null) el.textContent=val; return el; };
+    const url='https://arabakarsilastirsec.netlify.app/arac/'+c.id, s2=c.s, p=[];
+    if(s2.guc_hp) p.push(s2.guc_hp+' HP'); if(s2.sifirYuz_sn) p.push('0-100 km/sa '+nf(s2.sifirYuz_sn,dec(s2.sifirYuz_sn))+' sn'); if(s2.bagaj_l) p.push(s2.bagaj_l+' L bagaj'); if(s2.ncap_yildiz) p.push('Euro NCAP '+s2.ncap_yildiz+' yıldız');
+    const desc=`${c.marka} ${c.model} ${c.versiyon} (${c.yil})${p.length?': '+p.join(', '):''}. Kaynaklı teknik veriler, sistem puanı ve rakiplerle karşılaştırma.`;
+    kur('link[rel=canonical]','link',{rel:'canonical',href:url}); kur('meta[name=description]','meta',{name:'description',content:desc});
+    kur('meta[property="og:title"]','meta',{property:'og:title',content:document.title}); kur('meta[property="og:description"]','meta',{property:'og:description',content:desc}); kur('meta[property="og:url"]','meta',{property:'og:url',content:url});
+    const f=window.fotoFor&&window.fotoFor(c); if(f&&f.src) kur('meta[property="og:image"]','meta',{property:'og:image',content:/^https?:/.test(f.src)?f.src:'https://arabakarsilastirsec.netlify.app/'+f.src});
+    kur('script[type="application/ld+json"]#arac-ld','script',{type:'application/ld+json',id:'arac-ld'},JSON.stringify({'@context':'https://schema.org','@type':'Car',name:c.marka+' '+c.model+' '+c.versiyon,url,brand:{'@type':'Brand',name:c.marka},model:c.model,vehicleModelDate:String(c.yil),description:desc}));
+  })();
   renderCarPicker();
   const years=[...new Set(Object.values(CARS).filter(x=>x.marka===c.marka && x.model===c.model).map(x=>x.yil))].sort((a,b)=>b-a);
   $('#years').innerHTML=years.map(y=>`<button type="button" class="chip" data-year="${y}" aria-pressed="${y===c.yil}">${y}</button>`).join('');

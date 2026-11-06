@@ -2,4 +2,7 @@
 # Yayın yalnızca Netlify build hook'u ile tetiklenen derlemelerde yapılır (INCOMING_HOOK_URL dolu olur).
 # ignore komutu 0 ile biterse derleme atlanır, 1 ile biterse yapılır.
 [build]
+  # Her yayında araç sayfaları, sitemap.xml ve robots.txt güncel veriden yeniden üretilir
+  command = "node tools/sayfa_uret.js"
+  publish = "."
   ignore = "if [ -n \"$INCOMING_HOOK_URL\" ]; then exit 1; else exit 0; fi"

@@ -262,3 +262,15 @@ html[data-renk="koyu"] .nit-bag{background:rgba(255,255,255,.08);color:#C4C9D1}
 .score{position:relative}
 .score .guvn{position:absolute;top:-2px;right:-2px;width:8px;height:8px;border-radius:50%;border:2px solid var(--surface,#fff)}
 .guvp-orta .guvn{background:#F5A623}.guvp-dusuk .guvn{background:#D9534F}
+/* Telefonda tablo hücrelerinde nitelik rozeti renkli noktaya dönüşür (anlamı üstteki açıklamada ve dokunma/üzerine gelme başlığında) */
+@media (max-width:640px){
+  .sheet .cell .nit:not(.nit-bos):not(.nit-yok){font-size:0;width:9px;height:9px;padding:0;margin-left:5px;border-radius:50%;vertical-align:1px}
+  .sheet .cell .nit-tr{background:#34A853}.sheet .cell .nit-pazar{background:#F5A623}.sheet .cell .nit-ort{background:#5B7BF0}.sheet .cell .nit-bag{background:#9AA3AE}
+  .sheet .cell .nit-bos,.sheet .cell .nit-yok{font-size:.6rem;padding:1px 5px}
+  [data-cols="3"] .cell .nit-bos,[data-cols="4"] .cell .nit-bos{font-size:0;padding:0;border:0}
+  [data-cols="3"] .cell .nit-bos::after,[data-cols="4"] .cell .nit-bos::after{content:"?";font-size:.8rem;color:#9A3B3B;font-weight:700}
+  [data-cols="3"] .cell .nit-yok,[data-cols="4"] .cell .nit-yok{font-size:0;padding:0;border:0}
+  [data-cols="3"] .cell .nit-yok::after,[data-cols="4"] .cell .nit-yok::after{content:"yok";font-size:.7rem;color:#8A919C}
+  .nit-aciklama{font-size:.74rem}
+}
+@media (max-width:640px){[data-cols="3"] .kpdetay,[data-cols="4"] .kpdetay,[data-cols="3"] .hpuan,[data-cols="4"] .hpuan{display:none}.kpdetay .nit{font-size:.6rem}}

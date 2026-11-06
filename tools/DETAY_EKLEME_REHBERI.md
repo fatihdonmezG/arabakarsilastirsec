@@ -218,3 +218,13 @@ Toplam sistem puanı için Güvenlik kriteri zorunlu, en az 4 kriter ve toplam a
 - Giriş (üyelik) isteyen, mobilde açılmayan ya da sık değişen PDF bağlantıları eklenmez. Bulunamayan tür boş bırakılır; düğme görünmez.
 - Yeni marka eklerken sayfayı açıp türünü doğrula (ör. "bilgi talep formu" `teklif`tir, `test` değil).
 - Kontrol: `node tools/link_kontrol.js` (normal internet erişimi olan bir makinede). 4xx/5xx ya da bağlantı hatası verenleri yeniden bul ya da kaldır.
+
+## Tek kayıt, veri niteliği ve arama motoru sayfaları (Kasım 2026)
+
+- **Tek kayıt:** Teknik ve donanım değerlerinin ana kaydı `karsilastirma.html` içindeki `CARS` dizisidir. `node tools/veri_esitle.js` bu değerleri ve alan kaynaklarını `arac-detay.html` kayıtlarına yazar; `puan_hesapla.js` her çalışmada bunu önce çağırır. İki tarafta farklı dolu değer varsa karşılaştırma kaydı esas alınır; Euro NCAP alanlarında detaydaki `ncapKaynak` varsa detay esas alınır. `--ayrinti` çakışmaları listeler.
+- **Standart kodlar:** Çekiş (FWD/RWD/AWD) ve şanzıman (MT/AT/DCT/CVT/AMT/TEK + vites sayısı) `assets/normal.js` ile koda çevrilir; "sadece farkları göster" ve filtreler bu kodları kullanır. Yazılış farkı (ör. "Arkadan çekiş" / "Arkadan İtiş (RWD)") fark sayılmaz.
+- **Veri niteliği rozetleri:** Her değerin yanında kaynağından türetilen rozet görünür: TR resmî (markanın Türkiye belgesi), Farklı pazar (üreticinin başka ülke belgesi ya da notunda pazar farkı yazan değer), Ortalama (aralığın ortası, hesaplanmış ya da türetilmiş değer), Bağımsız (teknik veritabanı, Euro NCAP, basın), Doğrulanamadı (henüz bulunamadı), Uygulanamaz (ör. elektrikli araçta motor hacmi). Kaynak adına "aralığının ortası", "başka pazar referansı" gibi ifadeleri doğru yazmak rozetin doğru çıkması için gereklidir.
+- **Bagaj:** Bagaj hacmi ölçüm yöntemi üreticiye göre değiştiği için karşılaştırmada kazanan işaretlenmez ve fark "daha geniş" diye sunulmaz.
+- **Açıklama ile veri tutarlılığı:** `node tools/tutarlilik.js` artılar/dikkat edilecekler metninde geçen bir donanımın (CarPlay, 360° kamera, cam tavan vb.) alanı boş ya da tersi yazıyorsa listeler. Liste yabancı inceleme metinlerinden de gelebilir; alanı yalnızca kaynaklı veriyle doldurun.
+- **Araç sayfaları:** `node tools/sayfa_uret.js` her versiyon için `arac/<id>.html`, her model için `arac/<marka-model>.html`, dizin `arac/index.html`, `sitemap.xml` ve `robots.txt` üretir (özgün açıklama, canonical, Open Graph görseli, JSON-LD Car). Netlify her yayında bunu çalıştırır.
+- **Bölüm durumu:** Yayında / hazırlanıyor bilgisi ve "Yeni" etiketleri `assets/durum.js` içinde tek yerde tutulur.
