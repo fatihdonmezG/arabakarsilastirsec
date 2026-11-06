@@ -101,7 +101,8 @@ const bugun = new Date().toISOString().slice(0,10);
 const K = (window.KAMPANYALAR.liste||[]).filter(k=>k.bitis>=bugun);
 let tur = '';
 const p = new URLSearchParams(location.hash.slice(1));
-document.getElementById('stamp').textContent = 'Son güncelleme: ' + fdate(window.KAMPANYALAR.guncelleme) + ' · ' + K.length + ' kampanya';
+const yasGun = Math.round((new Date(bugun) - new Date(window.KAMPANYALAR.guncelleme)) / 864e5);
+document.getElementById('stamp').textContent = 'Son kontrol: ' + fdate(window.KAMPANYALAR.guncelleme) + ' · ' + K.length + ' geçerli kampanya' + (yasGun > 8 ? ' · liste güncellenmeyi bekliyor' : '');
 const markalar = [...new Set(K.map(k=>k.marka))].sort((a,b)=>a.localeCompare(b,'tr'));
 const fM = document.getElementById('fMarka'), fU = document.getElementById('fMusteri');
 fM.innerHTML = '<option value="">Tüm markalar</option>' + markalar.map(m=>`<option>${esc(m)}</option>`).join('');
@@ -125,7 +126,8 @@ function render(){
       ${k.kosul?`<p>${esc(k.kosul)}</p>`:''}
       ${k.tarihNot?`<p>${esc(k.tarihNot)}</p>`:''}
       <div class="alt"><span class="bitis${g<=3?' yakin':''}">Son gün: ${fdate(k.bitis)}${g<=3?(g<=0?' (bugün)':` (${g} gün kaldı)`):''}</span><span>${MUS[k.musteri]}</span><span>Kaynak: ${k.kaynak.map(([a,url])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(a)}</a>`).join(' · ')}</span></div>
-    </article>`; }).join('') : '<p class="bos">Bu seçime uyan güncel kampanya yok.</p>';
+    </article>`; }).join('') : (K.length ? '<p class="bos">Bu seçime uyan güncel kampanya yok. Filtreleri temizleyip bütün kampanyalara bakabilirsiniz.</p>'
+    : `<div class="bos"><b>Şu an listede geçerli kampanya yok.</b> Bir önceki kontroldeki (${fdate(window.KAMPANYALAR.guncelleme)}) kampanyaların süresi doldu. Liste her hafta perşembe ve her ayın ilk günlerinde markaların Türkiye sitelerinden yenileniyor; yeni ayın kampanyaları açıklanınca burada görünür. Bu arada markaların güncel fiyatları için <a href="araclar.html">araç listesine</a> bakabilirsiniz.</div>`);
   const hp = new URLSearchParams(); if (m) hp.set('marka', m); if (tur) hp.set('tur', tur);
   history.replaceState(null, '', hp.toString() ? '#'+hp : location.pathname);
 }

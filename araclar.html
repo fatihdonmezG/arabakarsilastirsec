@@ -238,7 +238,7 @@ async function load(){
     const [k,d] = await Promise.all([fetch('karsilastirma.html').then(r=>r.text()), fetch('arac-detay.html').then(r=>r.text())]);
     const s=k.indexOf('const CARS = ['), e=k.indexOf('\n];',s)+3;
     CARS = new Function(k.slice(s,e)+';return CARS;')();
-    for(const m of d.matchAll(/'([a-zA-Z0-9.\-]+)':\{id:'\1'/g)) DETAY.add(m[1]);
+    for(const m of d.matchAll(/'([a-zA-Z0-9.\-]+)':\{\s*"?id"?:\s*["']\1["']/g)) DETAY.add(m[1]);
   }catch(err){
     $('count').textContent='Araç listesi yüklenemedi. Sayfayı bir web sunucusu üzerinden açın.'; return;
   }

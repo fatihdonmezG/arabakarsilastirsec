@@ -131,3 +131,4 @@ html[data-renk="koyu"] .gs-ad{color:rgba(255,255,255,.06)!important}
 /* Vitrindeki model adı: fotoğrafın arkasında kaybolmasın, sol üstteki boş alanda küçük ve okunur */
 .gi-sahne .gs-ad{left:0!important;right:auto!important;top:0!important;text-align:left!important;font-size:clamp(1.15rem,1.7vw,1.6rem)!important;font-weight:700!important;letter-spacing:-.02em!important;color:color-mix(in srgb,var(--ink) 62%,transparent)!important;z-index:2}
 html[data-renk="koyu"] .gi-sahne .gs-ad{color:rgba(255,255,255,.6)!important}
+.oz .yeni.yakinda{background:#FFF1DB;color:#8A5300}

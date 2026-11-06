@@ -224,6 +224,9 @@ footer{margin-block:64px 51px;padding-top:19px;border-top:1px solid var(--divide
   [data-cols="3"] .cell{padding:11px 17.5px;font-size:.96rem}
 }
 .hml{margin-top:5px;font-size:.78rem}.hml a{color:inherit;font-weight:600}
+#arena{scroll-margin-top:84px}
+.pist-baslik{margin:28px 0 10px;font-size:1.3rem}
+.ac-sp .guv{display:block;margin-top:3px;font-style:normal;width:max-content}
 </style>
 <link rel="stylesheet" href="assets/mobil.css">
 <link rel="stylesheet" href="assets/kartlar.css">
@@ -259,12 +262,11 @@ footer{margin-block:64px 51px;padding-top:19px;border-top:1px solid var(--divide
     <div class="rule" aria-hidden="true"></div>
     <p class="lead">Marka, model ve versiyon seç. Teknik özellikler satır satır yan yana gelir, her rakamın kaynağı altında görünür.</p>
     <span class="badge"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.3 13.3 4.7 9.7l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4z"/></svg>Gerçek, kaynaklı veri</span>
-    <p class="scope" id="scope">Veritabanı, güncel Türkiye model gamı ve tarihsel referans amaçlı, satıştan kalkmış modellerden oluşuyor. Verisi olmayan satırlarda "—" görünür.</p>
+    <p class="scope" id="scope">Veritabanı, güncel Türkiye model gamı ve tarihsel referans amaçlı, satıştan kalkmış modellerden oluşuyor. Verisi olmayan satırlarda "Doğrulanamadı" ya da "Uygulanamaz" yazar.</p>
   </div>
 </section>
 
 <main class="wrap">
-  <section class="vitrin pist" id="pist" aria-label="Hazır karşılaştırmalar vitrini" aria-live="polite"></section>
 
   <section class="filters karsilastirma-kart" aria-label="Araç listesini daralt">
     <div class="field"><label for="fYakit">Yakıt / enerji</label><select id="fYakit"></select></div>
@@ -299,7 +301,7 @@ footer{margin-block:64px 51px;padding-top:19px;border-top:1px solid var(--divide
     <div class="head" role="row" id="head"></div>
     <div id="rows"></div>
   </section>
-  <p class="legend">İşaretli (✓) değer, o satırda daha iyi olan araca aittir. Veri henüz bulunmayan satırlarda "—" görünür.</p>
+  <p class="legend">İşaretli (✓) değer, o satırda daha iyi olan araca aittir. Boş satırlarda değerin doğrulanamadığı ya da bu araç için uygulanamadığı yazar. Bagajda kazanan işaretlenmez.</p>
 
   <section class="dims karsilastirma-kart" aria-labelledby="dimsTitle">
     <h2 id="dimsTitle">Boyutlar yan yana</h2>
@@ -307,6 +309,8 @@ footer{margin-block:64px 51px;padding-top:19px;border-top:1px solid var(--divide
     <div id="dimsBody"></div>
   </section>
 
+  <h2 class="pist-baslik">Hazır karşılaştırmalar vitrini</h2>
+  <section class="vitrin pist" id="pist" aria-label="Hazır karşılaştırmalar vitrini" aria-live="polite"></section>
   <section class="presets karsilastirma-kart" aria-labelledby="presetsTitle">
     <h2 id="presetsTitle">Hazır karşılaştırmalar</h2>
     <p class="sub">Aynı sınıftan hazır eşleşmeler.</p>
@@ -2286,7 +2290,7 @@ function renderArena(cars){
       <a class="ac-sahne${c.foto && /assets\/kesit\//.test(c.foto) ? ' kesit' : ''}" href="arac-detay.html#${encodeURIComponent(c.id)}" aria-label="${esc(c.marka + ' ' + c.model)} detay sayfası"><span class="ac-iz" aria-hidden="true"></span><span class="ac-no" aria-hidden="true">${i + 1}</span>${oz.onde === i ? `<span class="ac-muhur"><b>${oz.puan[i]}/${oz.satirlar.length}</b><small>kıyas<br>lideri</small></span>` : ''}${gorsel}</a>
       <div class="ac-ad">${lg ? `<img class="ac-logo" src="assets/logos/${esc(lg)}" alt="">` : ''}<div><h3><span class="mk">${esc(c.marka)}</span> <b>${esc(c.model)}</b></h3><small>${c.yil} · ${esc(c.versiyon)}</small></div></div>
       <div class="ac-say">
-        <div class="ac-sp"><div class="ac-halka" style="--p:${sp.toplam != null ? sp.toplam * 10 : 0}"><b>${sp.toplam != null ? num(sp.toplam, 1) : '?'}</b></div><span>Sistem<br>puanı</span></div>
+        <div class="ac-sp"><div class="ac-halka" style="--p:${sp.toplam != null ? sp.toplam * 10 : 0}"><b>${sp.toplam != null ? num(sp.toplam, 1) : '?'}</b></div><span>Sistem<br>puanı${(()=>{const pk=window.NORMAL.puanKapsam(sp);return pk?`<em class="guv guv-${pk.guven}" title="${pk.toplam} kriterin ${pk.hesaplanan} tanesi hesaplandı, ağırlığın %${Math.round(pk.agirlik*100)}'i">${pk.guvenAd}</em>`:''})()}</span></div>
         <div class="ac-on"><b>${oz.puan[i]}<small> / ${oz.satirlar.length}</small></b><span>başlıkta önde</span></div>
       </div>
       ${fiyat}
@@ -2430,12 +2434,15 @@ $('share').addEventListener('click',async()=>{
 });
 window.addEventListener('hashchange',()=>{ readHash(); render(); });
 
-$('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Verisi olmayan satırlarda "—" görünür.`;
+$('scope').textContent = `Veritabanı şu an ${num(uniq(CARS.map(c=>c.marka)).length)} marka ve ${num(CARS.length)} versiyonu kapsıyor; ${num(CARS.filter(isDiscontinued).length)} versiyon artık Türkiye'de satılmayan, tarihsel referans amaçlı modeldir ve ayrıca işaretlenir. Verisi olmayan satırlarda "Doğrulanamadı" ya da "Uygulanamaz" yazar.`;
 CARS.forEach(c=>{ const f=window.fotoFor?window.fotoFor(c):null; if(f){ c.foto=f.src; c._fotoKredi=window.fotoKredi(f); } const p=(window.PUANLAR||{})[c.id]; c.s.sistem_puani_10 = p&&p.toplam!=null ? p.toplam : null; c.s.fiyat_performans_10 = p&&p.fiyatPerformans ? p.fiyatPerformans.puan : null; });
+const ilkHash = /k=/.test(location.hash);
 readHash();
 renderPresets();
 render();
 pistCiz(); pistKur();
+// Bağlantıyla iki araç seçilmiş geldiyse doğrudan onların özetine in
+if (ilkHash) requestAnimationFrame(() => { const a = $('arena'); if (a) a.scrollIntoView({block: 'start'}); });
 </script>
 
 <script src="assets/uye-ayar.js"></script>

@@ -40,7 +40,7 @@
     <h1>Araba <b>forumu</b></h1>
     <p>Satın almadan önce soru sorun, aracınızla ilgili deneyiminizi paylaşın, arıza ve bakımda başkalarının tecrübesinden yararlanın. Konu açmak ve cevap yazmak için üye girişi gerekir; okumak herkese açık.</p>
   </div>
-  <div class="not-kutu" id="kapali" hidden style="margin-bottom:16px"><b>Forum yakında açılıyor.</b> Üyelik sistemi devreye girdiğinde konu açabilir ve cevap yazabilirsiniz. Şimdilik kategorilere göz atabilirsiniz.</div>
+  <div class="not-kutu" id="kapali" hidden style="margin-bottom:16px"><b>Forum hazırlanıyor.</b> Üyelik sistemi devreye girdiğinde konu açabilir ve cevap yazabilirsiniz. Şimdilik kategorilere göz atabilirsiniz.</div>
 
   <div id="listeGorunum">
     <div class="fkat" id="kategoriler"></div>
@@ -116,6 +116,7 @@
 </style>
 <script src="assets/modeller.js"></script>
 <script src="assets/uye-ayar.js"></script>
+<script src="assets/durum.js"></script>
 <script src="assets/uyelik.js"></script>
 <script src="assets/hesap.js"></script>
 <script>
@@ -220,7 +221,7 @@ document.addEventListener('click', async e => {
 });
 
 const konuId = +new URLSearchParams(location.search).get('konu');
-if (!U || !U.acik) $('kapali').hidden = false;
+if ((window.BOLUM && window.BOLUM.durum('forum.html') === 'hazirlaniyor') || !U || !U.acik) $('kapali').hidden = false;
 if (konuId) konuAc(konuId); else listele();
 })();
 </script>
