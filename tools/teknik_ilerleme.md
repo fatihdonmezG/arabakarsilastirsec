@@ -970,3 +970,6 @@ Yasaklı kaynak kalan: 2.
 
 ## 2026-11-05 donanım (PDF)
 Kullanıcının indirdiği Türkçe broşür/teknik föy donanım tablolarından 249 boş donanım alanı dolduruldu (37 versiyon). Yalnız "var" değerleri yazıldı; dolu alanlara dokunulmadı. Kılavuzlar, yabancı pazar belgeleri ve eski model yılı kataloglar hariç tutuldu.
+
+## 2026-11-06 kullanıcı Excel revizyonu
+Kullanıcının "Teknik-veriler-revize.xlsx" dosyasındaki kaynaklı (yeşil) hücrelerden 216 alan işlendi. Mavi (yaklaşık/pazar referansı) 172 hücre, bayi veya ilan kaynaklı 30 hücre, Türkiye donanımından farklı olabileceği notlanan 13 hücre ve dosya içi türetilmiş 1 hücre işlenmedi.
