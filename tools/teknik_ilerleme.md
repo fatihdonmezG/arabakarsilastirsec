@@ -994,3 +994,6 @@ Eksik veri — doldurulan: 39 alan, 22 versiyon (Citroën 21, Aston Martin 18). 
 - aston-martin-dbx-2026-s | emisyon_normu | alVolante yalnız DBX 707 için
 - aston-martin-vantage-2026-roadster | bagaj_l | automoto Roadster sayfası coupé değerini (346 L) tekrarlıyor — kullanılmadı
 Yasaklı kaynak kalan: 0.
+
+## 2026-11-07 Togg T10X
+Togg Türkiye T10X kataloğundan (15.06.2026) V1 RWD Standart Menzil kaydı tamamlandı (güvenlik, konfor, multimedya; elektrik tüketimi 19,5 kWh, DC 26,5 dk, ağırlık aralık ortası). V1 RWD Uzun Menzil, V2 RWD Uzun Menzil ve V2 4More Obsidyen eklendi; fiyatlar Togg fiyat listesinden (15.06.2026). ABS, ESP, koltuk havalandırma ve arka klima çıkışı katalogda geçmediği için boş.
