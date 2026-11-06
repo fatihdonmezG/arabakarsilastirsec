@@ -94,6 +94,7 @@
   const ik = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
   const OZ = [
     ['karsilastirma.html', 'Yan yana karşılaştır', '4 araca kadar 74 başlıkta, farkları vurgulayarak', '#1E5BD8', ik('<path d="M4 6h16M4 12h10M4 18h6"/>')],
+    ['butce.html', 'Bütçeme göre bul', 'Bütçe ve kullanım amacına göre sıralı öneriler', '#0369A1', ik('<circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.1 1.1-2 2.5-2s2.5.9 2.5 2-1.1 1.7-2.5 2-2.5.9-2.5 2 1.1 2 2.5 2 2.5-.9 2.5-2"/>')],
     ['araclar.html', 'Bütün araçlar', `${O.marka || ''} marka, filtrele ve sırala`.trim(), '#0E7490', ik('<rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>')],
     ['sistem-puani.html', 'Sistem puanı', 'Her araç aynı ölçekle 10 üzerinden', '#7C3AED', ik('<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/>')],
     ['yol-maliyeti.html', 'Rota ve yol maliyeti', 'Benzin, dizel ve elektrikle yolculuk masrafı', '#E11D48', ik('<circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H16"/>'), 1],
@@ -109,7 +110,7 @@
   ];
   // Üç grup: seç, hesapla, topluluk
   const GRUP = [
-    ['Araç seç', 'Karşılaştır, puanla, fırsatları gör', ['karsilastirma.html', 'araclar.html', 'sistem-puani.html', 'kampanyalar.html', 'brosurler.html']],
+    ['Araç seç', 'Karşılaştır, puanla, fırsatları gör', ['butce.html', 'karsilastirma.html', 'araclar.html', 'sistem-puani.html', 'kampanyalar.html', 'brosurler.html']],
     ['Hesapla', 'Yol, şarj, vergi ve ceza', ['yol-maliyeti.html', 'sarj-hesaplama.html', 'gecis-ucretleri.html', 'trafik-cezalari.html', 'otv-muafiyet.html']],
     ['Topluluk ve rehber', 'Deneyimler ve pratik bilgi', ['yorumlar.html', 'forum.html', 'rehber.html']]
   ];

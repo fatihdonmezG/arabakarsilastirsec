@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bütçeme Göre Araç Bul | Araba Karşılaştır ve Seç</title>
+<meta name="description" content="Bütçeni ve kullanım amacını seç; Türkiye'de satıştaki 2026 model otomobiller arasından sana uyanları liste fiyatı, sistem puanı, aylık yakıt ya da şarj maliyeti ve güvenliğe göre sıralayalım.">
+<link rel="canonical" href="https://arabakarsilastirsec.netlify.app/butce">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/mobil.css">
+<link rel="stylesheet" href="assets/kartlar.css">
+<link rel="stylesheet" href="assets/tema-acik.css">
+<script src="assets/tema.js"></script>
+<style>
+.bf{display:grid;gap:14px;margin-top:6px}
+@media (min-width:980px){.bf{grid-template-columns:330px minmax(0,1fr);align-items:start}.bf-form{position:sticky;top:84px}}
+.bf-form{background:var(--surface);border-radius:22px;padding:18px}
+.bf-form h2{font-size:1.05rem;margin-bottom:10px}
+.bf-alan{margin-top:14px}
+.bf-alan>label,.bf-alan>.et{display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:6px}
+.bf-butce{display:flex;align-items:baseline;gap:6px;font-family:var(--display);font-size:1.6rem;font-weight:600;color:var(--ink)}
+.bf-butce small{font-size:.85rem;color:var(--muted);font-family:var(--body);font-weight:400}
+.bf input[type=range]{width:100%;accent-color:var(--vurgu,#1E5BD8)}
+.bf-hizli{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.bf-hizli button,.amac button,.cips button{font:inherit;font-size:.8rem;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.bf-hizli button[aria-pressed=true],.amac button[aria-pressed=true],.cips button[aria-pressed=true]{background:var(--vurgu,#1E5BD8);border-color:transparent;color:#fff}
+.amac{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.amac button{border-radius:14px;text-align:left;padding:9px 11px;display:flex;flex-direction:column;gap:2px}
+.amac button small{font-size:.7rem;color:inherit;opacity:.75}
+.cips{display:flex;flex-wrap:wrap;gap:5px}
+.bf select,.bf input[type=number]{font:inherit;font-size:.9rem;width:100%;min-height:38px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.bf-not{font-size:.74rem;color:var(--muted);margin-top:12px;line-height:1.55}
+.bf-ust{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+.bf-ust p{color:var(--muted);font-size:.9rem;margin:0}
+.bf-liste{display:grid;gap:12px;margin-top:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+.bk{background:var(--surface);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:8px;position:relative}
+.bk .sira{position:absolute;top:12px;left:12px;font-weight:700;font-size:.75rem;background:var(--ink);color:#fff;border-radius:999px;padding:2px 8px;z-index:1}
+.bk .ft{height:120px;border-radius:14px;overflow:hidden;background:var(--surface2,#F2F4F7);display:block}
+.bk .ft img{width:100%;height:100%;object-fit:contain}
+.bk .ad small{display:block;color:var(--muted);font-size:.78rem}
+.bk .ad b{font-family:var(--display);font-size:1.15rem;font-weight:600}
+.bk .ver{font-size:.78rem;color:var(--muted)}
+.bk .fiyat{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-top:1px solid var(--line);padding-top:8px}
+.bk .fiyat b{font-size:1.05rem}
+.bk .fiyat span{font-size:.75rem;color:var(--muted)}
+.bk dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0}
+.bk dl div{display:flex;flex-direction:column}
+.bk dd{margin:0;font-weight:600;font-size:.95rem}
+.bk dt{font-size:.7rem;color:var(--muted)}
+.bk .neden{display:flex;flex-wrap:wrap;gap:4px}
+.bk .neden span{font-size:.7rem;padding:2px 7px;border-radius:999px;background:#E3F4EA;color:#17663A}
+.bk .neden span.uy{background:#FFF1DB;color:#8A5300}
+.bk .eylem{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto}
+.bk .eylem a,.bk .eylem button{font:inherit;font-size:.82rem;font-weight:600;text-align:center;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer}
+.bk .eylem a.ana{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bk .eylem button[aria-pressed=true]{background:var(--vurgu,#1E5BD8);color:#fff;border-color:transparent}
+.bk .diger{font-size:.74rem;color:var(--muted)}
+.bk .kmp{font-size:.74rem;color:#15803D;font-weight:600}
+.bf-secim{position:sticky;bottom:12px;margin-top:14px;display:none;justify-content:space-between;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:16px;padding:10px 14px;z-index:5}
+.bf-secim.on{display:flex}
+.bf-secim a,.bf-secim a:visited{color:#fff!important;font-weight:700;background:var(--vurgu,#1E5BD8);padding:8px 14px;border-radius:10px;text-decoration:none}
+.bf-git{display:none;margin-top:16px;text-align:center;padding:11px;border-radius:12px;background:var(--ink);color:#fff!important;font-weight:700;text-decoration:none}
+@media (max-width:979px){.bf-git{display:block}}
+#sonucT{scroll-margin-top:80px}
+.bf-bos{background:var(--surface);border-radius:20px;padding:24px;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="assets/ortak.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">A</span>Araba Karşılaştır ve Seç</a>
+    <nav class="nav" aria-label="Site">
+      <a href="araclar.html">Tüm araçlar</a>
+      <a href="kampanyalar.html">Kampanyalar</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="hesaplama.html">Hesaplama</a>
+      <a href="forum.html">Forum</a>
+      <a class="cta" href="karsilastirma.html">Karşılaştır</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Araç bul</span>
+    <h1>Bütçene ve kullanımına <span class="vurgu">uyan araçlar</span></h1>
+    <p class="lead">Ne kadar ayırabileceğini ve aracı en çok ne için kullanacağını seç. Satıştaki 2026 model otomobiller arasından sana uyanları liste fiyatı, sistem puanı, aylık yakıt ya da şarj maliyeti ve güvenlik verisine göre sıralıyoruz.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="bf">
+    <form class="bf-form" id="form" onsubmit="return false" aria-label="Arama ölçütleri">
+      <h2>Ölçütlerin</h2>
+      <div class="bf-alan">
+        <label for="butce">En fazla bütçe</label>
+        <div class="bf-butce"><span id="butceYaz"></span><small>TL</small></div>
+        <input type="range" id="butce" min="1000000" max="10000000" step="50000" value="2000000">
+        <div class="bf-hizli" id="hizli"></div>
+      </div>
+      <div class="bf-alan">
+        <span class="et">En çok ne için kullanacaksın?</span>
+        <div class="amac" id="amac" role="group" aria-label="Kullanım amacı"></div>
+      </div>
+      <div class="bf-alan">
+        <span class="et">Yakıt ya da enerji</span>
+        <div class="cips" id="yakit" role="group" aria-label="Yakıt"></div>
+      </div>
+      <div class="bf-alan">
+        <span class="et">Kasa</span>
+        <div class="cips" id="kasa" role="group" aria-label="Kasa"></div>
+      </div>
+      <div class="bf-alan">
+        <label for="km">Ayda kaç km yapıyorsun?</label>
+        <input type="number" id="km" min="100" max="10000" step="100" value="1500" inputmode="numeric">
+      </div>
+      <div class="bf-alan">
+        <label for="vites">Vites</label>
+        <select id="vites"><option value="">Fark etmez</option><option value="oto">Yalnızca otomatik</option><option value="manuel">Yalnızca manuel</option></select>
+      </div>
+      <a class="bf-git" id="git" href="#sonucT">Sonuçları gör</a>
+      <p class="bf-not" id="yontem"></p>
+    </form>
+
+    <section aria-labelledby="sonucT">
+      <div class="bf-ust"><h2 id="sonucT" style="font-size:1.25rem">Sana uyanlar</h2><p id="ozet" aria-live="polite"></p></div>
+      <div class="bf-liste" id="liste"></div>
+      <div class="bf-secim" id="secim"><span id="secimYaz"></span><a id="secimLink" href="karsilastirma.html">Seçilenleri karşılaştır</a></div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Liste fiyatları markaların Türkiye fiyat listelerinden alınır; kampanya ve bayiye göre değişebilir. Aylık enerji maliyeti WLTP tüketimi ve güncel pompa ya da ev elektriği fiyatıyla yapılan bir tahmindir.</p>
+  </div>
+</footer>
+
+<script src="assets/logolar.js"></script>
+<script src="assets/normal.js"></script>
+<script src="assets/puanlar.js"></script>
+<script src="assets/kampanyalar.js"></script>
+<script src="assets/kesit.js"></script>
+<script src="assets/fotolar.js"></script>
+<script src="assets/hesap_veri.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nf = (v, d = 0) => Number(v).toLocaleString('tr-TR', {minimumFractionDigits: d, maximumFractionDigits: d});
+const N = window.NORMAL, P = window.PUANLAR || {};
+const AMAC = [
+  ['dengeli', 'Her işe', 'Genel puan ve maliyet dengesi'],
+  ['aile', 'Aile', 'Güvenlik, iç hacim, bagaj'],
+  ['sehir', 'Şehir içi', 'Kısa boy, düşük tüketim'],
+  ['uzun', 'Uzun yol', 'Menzil, konfor, güvenlik'],
+  ['ekonomi', 'En ekonomik', 'Fiyat ve aylık maliyet'],
+  ['perf', 'Performans', 'Hızlanma ve güç']
+];
+// Her amaç için ölçüt ağırlıkları (toplam 1). Ölçütler sınıf içinde 0-1 arası sıralanır.
+const AGIRLIK = {
+  dengeli: {puan: .45, maliyet: .25, fp: .2, guven: .1},
+  aile:    {guven: .35, ichacim: .2, bagaj: .15, puan: .2, maliyet: .1},
+  sehir:   {kisa: .3, maliyet: .35, puan: .25, fiyat: .1},
+  uzun:    {menzil: .3, guven: .25, puan: .25, maliyet: .1, guc: .1},
+  ekonomi: {fiyat: .35, maliyet: .4, fp: .15, puan: .1},
+  perf:    {hizlanma: .45, guc: .3, puan: .25}
+};
+const YAKIT = [['', 'Hepsi'], ['benzin', 'Benzin'], ['dizel', 'Dizel'], ['hibrit', 'Hibrit'], ['elektrik', 'Elektrikli']];
+const KASA = [['', 'Hepsi'], ['suv', 'SUV / crossover'], ['hb', 'Hatchback'], ['sedan', 'Sedan'], ['diger', 'Diğer']];
+const st = {butce: 2000000, amac: 'dengeli', yakit: '', kasa: '', km: 1500, vites: '', sec: []};
+try { Object.assign(st, JSON.parse(localStorage.getItem('butceSecim') || '{}'), {sec: []}); } catch (e) {}
+(function hashOku() { const p = new URLSearchParams(location.hash.slice(1)); if (p.get('butce')) st.butce = +p.get('butce'); ['amac', 'yakit', 'kasa', 'vites'].forEach(k => { if (p.has(k)) st[k] = p.get(k); }); if (p.get('km')) st.km = +p.get('km'); })();
+
+const yakitKat = y => { y = y || ''; if (/^elektrik/i.test(y)) return 'elektrik'; if (/hibrit|hybrid/i.test(y)) return 'hibrit'; if (/dizel|diesel/i.test(y)) return 'dizel'; if (/benzin/i.test(y)) return 'benzin'; return 'diger'; };
+const kasaKat = k => { k = k || ''; if (/SUV|Crossover|Arazi/i.test(k)) return 'suv'; if (/Hatch/i.test(k)) return 'hb'; if (/Sedan|Fastback|Liftback/i.test(k)) return 'sedan'; return 'diger'; };
+const otomatik = c => { const k = N.sanzimanKod(c.s.sanziman); return k ? !/^MT/.test(k) : /^elektrik/i.test(c.s.yakit || ''); };
+const VERI = window.HESAP_VERI || {}, IST = ((VERI.yakit || {}).iller || {})['İstanbul'] || {}, EVT = (VERI.ev || {}).kademe2 || 5.04;
+function aylikMaliyet(c) {
+  const s = c.s, km = st.km, y = yakitKat(s.yakit);
+  if (y === 'elektrik') return s.elektrik_tuketim_kwh100km ? s.elektrik_tuketim_kwh100km * km / 100 * EVT : null;
+  if (!s.tuketim_l100km) return null;
+  const fy = y === 'dizel' ? IST.dizel : IST.benzin;
+  return fy ? s.tuketim_l100km * km / 100 * fy : null;
+}
+function menzil(c) { const s = c.s; if (s.menzil_km_wltp) return s.menzil_km_wltp; if (s.depo_l && s.tuketim_l100km) return s.depo_l / s.tuketim_l100km * 100; return null; }
+function guvenlik(c) { const p = P[c.id]; const k = p && (p.kriterler || []).find(x => x.ad === 'Güvenlik'); return k ? k.puan : null; }
+const OLCU = {
+  puan: [c => P[c.id] && P[c.id].toplam, 'high'],
+  fp: [c => P[c.id] && P[c.id].fiyatPerformans && P[c.id].fiyatPerformans.puan, 'high'],
+  maliyet: [aylikMaliyet, 'low'],
+  fiyat: [c => c.s.liste_fiyati_tl, 'low'],
+  guven: [guvenlik, 'high'],
+  bagaj: [c => c.s.bagaj_l, 'high'],
+  ichacim: [c => c.s.dingil_mm, 'high'],
+  kisa: [c => c.s.uzunluk_mm, 'low'],
+  menzil: [menzil, 'high'],
+  guc: [c => c.s.guc_hp, 'high'],
+  hizlanma: [c => c.s.sifirYuz_sn, 'low']
+};
+const OLCU_AD = {puan: 'Sistem puanı yüksek', fp: 'Fiyatına göre güçlü', maliyet: 'Aylık maliyeti düşük', fiyat: 'Fiyatı uygun', guven: 'Güvenlik puanı yüksek', bagaj: 'Bagajı geniş', ichacim: 'Dingil mesafesi uzun', kisa: 'Şehirde kullanışlı boy', menzil: 'Menzili uzun', guc: 'Güçlü motor', hizlanma: 'Hızlı'};
+
+let CARS = [];
+async function yukle() {
+  try {
+    const k = await fetch('karsilastirma.html').then(r => r.text());
+    const s = k.indexOf('const CARS = ['), e = k.indexOf('\n];', s) + 3;
+    CARS = new Function(k.slice(s, e) + ';return CARS;')().filter(c => !c.durum && c.yil === 2026 && typeof c.s.liste_fiyati_tl === 'number' && c.s.liste_fiyati_tl > 0);
+  } catch (err) { $('liste').innerHTML = '<div class="bf-bos">Araç verisi yüklenemedi. Sayfayı bir web sunucusu üzerinden açın.</div>'; return; }
+  const fy = CARS.map(c => c.s.liste_fiyati_tl).sort((a, b) => a - b);
+  const r = $('butce'); r.min = Math.floor(fy[0] / 100000) * 100000; r.max = Math.ceil(Math.min(fy[fy.length - 1], 15000000) / 500000) * 500000;
+  st.butce = Math.min(Math.max(st.butce, +r.min), +r.max); r.value = st.butce;
+  kur(); hesapla();
+}
+function kur() {
+  $('hizli').innerHTML = [1500000, 2000000, 2500000, 3000000, 4000000].filter(v => v >= +$('butce').min && v <= +$('butce').max).map(v => `<button type="button" data-v="${v}">${nf(v / 1e6, v % 1e6 ? 1 : 0)} milyon</button>`).join('');
+  $('amac').innerHTML = AMAC.map(([k, a, b]) => `<button type="button" data-k="${k}"><b>${a}</b><small>${b}</small></button>`).join('');
+  $('yakit').innerHTML = YAKIT.map(([k, a]) => `<button type="button" data-k="${k}">${a}</button>`).join('');
+  $('kasa').innerHTML = KASA.map(([k, a]) => `<button type="button" data-k="${k}">${a}</button>`).join('');
+  $('km').value = st.km; $('vites').value = st.vites;
+  $('butce').addEventListener('input', e => { st.butce = +e.target.value; hesapla(); });
+  $('hizli').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; st.butce = +b.dataset.v; $('butce').value = st.butce; hesapla(); });
+  [['amac', 'amac'], ['yakit', 'yakit'], ['kasa', 'kasa']].forEach(([id, k]) => $(id).addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; st[k] = b.dataset.k; hesapla(); }));
+  $('km').addEventListener('input', e => { st.km = Math.max(100, +e.target.value || 1500); hesapla(); });
+  $('vites').addEventListener('change', e => { st.vites = e.target.value; hesapla(); });
+}
+function siralaPuani(havuz) {
+  const w = AGIRLIK[st.amac], aralik = {};
+  for (const k of Object.keys(w)) { const v = havuz.map(c => OLCU[k][0](c)).filter(x => typeof x === 'number' && isFinite(x)); aralik[k] = v.length ? [Math.min(...v), Math.max(...v)] : null; }
+  return havuz.map(c => {
+    let t = 0; const iyi = [], eksik = [];
+    for (const [k, a] of Object.entries(w)) {
+      const v = OLCU[k][0](c), r = aralik[k];
+      let n;
+      if (typeof v !== 'number' || !isFinite(v) || !r) { n = .35; eksik.push(k); }
+      else { n = r[1] === r[0] ? .5 : (v - r[0]) / (r[1] - r[0]); if (OLCU[k][1] === 'low') n = 1 - n; if (n >= .8 && a >= .15) iyi.push(k); }
+      t += a * n;
+    }
+    return {c, skor: t, iyi, eksik};
+  });
+}
+function hesapla() {
+  $('butceYaz').textContent = nf(st.butce);
+  $$('#hizli button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === st.butce)));
+  $$('#amac button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === st.amac)));
+  $$('#yakit button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === st.yakit)));
+  $$('#kasa button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === st.kasa)));
+  try { localStorage.setItem('butceSecim', JSON.stringify({butce: st.butce, amac: st.amac, yakit: st.yakit, kasa: st.kasa, km: st.km, vites: st.vites})); } catch (e) {}
+  history.replaceState(null, '', '#' + new URLSearchParams({butce: st.butce, amac: st.amac, yakit: st.yakit, kasa: st.kasa, km: st.km, vites: st.vites}).toString());
+  let havuz = CARS.filter(c => c.s.liste_fiyati_tl <= st.butce && (!st.yakit || yakitKat(c.s.yakit) === st.yakit) && (!st.kasa || kasaKat(c.s.kasa) === st.kasa)
+    && (!st.vites || (st.vites === 'oto' ? otomatik(c) : !otomatik(c))) && (st.amac !== 'aile' || (c.s.koltuk || 5) >= 5));
+  const skorlu = siralaPuani(havuz).sort((a, b) => b.skor - a.skor);
+  // Aynı modelden en iyi versiyon gösterilir; diğerleri sayılır
+  const model = new Map();
+  skorlu.forEach(x => { const k = x.c.marka + '|' + x.c.model; if (!model.has(k)) model.set(k, {...x, digerler: 0}); else model.get(k).digerler++; });
+  const liste = [...model.values()].slice(0, 24);
+  $('git').textContent = model.size ? `${nf(model.size)} modeli gör` : 'Sonuçları gör';
+  $('ozet').textContent = havuz.length ? `${nf(havuz.length)} versiyon, ${nf(model.size)} model bütçende. En uygun ${Math.min(24, model.size)} model gösteriliyor.` : '';
+  $('yontem').textContent = `Sıralama: ${AMAC.find(a => a[0] === st.amac)[1]} için ${Object.entries(AGIRLIK[st.amac]).map(([k, a]) => `${{puan: 'sistem puanı', fp: 'fiyat/performans', maliyet: 'aylık maliyet', fiyat: 'fiyat', guven: 'güvenlik', bagaj: 'bagaj', ichacim: 'iç hacim (dingil)', kisa: 'kısa boy', menzil: 'menzil', guc: 'güç', hizlanma: '0-100 hızlanma'}[k]} %${Math.round(a * 100)}`).join(', ')}. Her ölçüt bütçendeki araçlar arasında karşılaştırılır; verisi olmayan ölçüt ortalamanın altında sayılır. Aylık maliyet İstanbul pompa fiyatı ya da ev elektriği (${nf(EVT, 2)} TL/kWh) ile hesaplanır. Bagaj hacmi üreticiye göre farklı yöntemle ölçülür.`;
+  if (!liste.length) { $('liste').innerHTML = `<div class="bf-bos"><b>Bu ölçütlere uyan araç bulamadık.</b> Bütçeyi biraz artırmayı ya da yakıt ve kasa seçimini "Hepsi" yapmayı deneyin. Bütçendeki en ucuz 2026 model ${nf(Math.min(...CARS.map(c => c.s.liste_fiyati_tl)))} TL.</div>`; secimCiz(); return; }
+  $('liste').innerHTML = liste.map((x, i) => kart(x, i)).join('');
+  $$('#liste [data-sec]').forEach(b => b.addEventListener('click', () => { const id = b.dataset.sec; st.sec = st.sec.includes(id) ? st.sec.filter(v => v !== id) : st.sec.concat(id).slice(-4); hesapla(); }));
+  secimCiz();
+}
+function kart({c, iyi, eksik, digerler}, i) {
+  const s = c.s, f = window.fotoFor && window.fotoFor(c), p = P[c.id], m = aylikMaliyet(c), kmp = window.kampanyalarFor ? window.kampanyalarFor(c.marka, c.model) : [];
+  const ev = yakitKat(s.yakit) === 'elektrik', pk = N.puanKapsam(p), on = st.sec.includes(c.id);
+  const pay = s.liste_fiyati_tl / st.butce;
+  const nedenler = iyi.map(k => `<span>${OLCU_AD[k]}</span>`).concat(eksik.filter(k => AGIRLIK[st.amac][k] >= .2).map(k => `<span class="uy">${OLCU_AD[k].replace(/ (yüksek|düşük|uzun|geniş|uygun)$/, '')}: veri yok</span>`));
+  return `<article class="bk"><span class="sira">${i + 1}</span>
+    <a class="ft" href="arac-detay.html#${encodeURIComponent(c.id)}" aria-label="${esc(c.marka + ' ' + c.model)}">${f ? `<img src="${esc(f.src)}" alt="" loading="lazy">` : (window.amblemKart ? window.amblemKart(c, {versiyonYok: true}) : '')}</a>
+    <div class="ad"><small>${esc(c.marka)}</small><b>${esc(c.model)}</b></div>
+    <div class="ver">${esc(c.versiyon)}${digerler ? ` <span class="diger">· ${digerler} versiyon daha bütçende</span>` : ''}</div>
+    ${kmp.length ? `<div class="kmp">Kampanya var: ${esc(kmp[0].baslik)}</div>` : ''}
+    <dl>
+      <div><dd>${p && p.toplam != null ? nf(p.toplam, 1) : '–'}</dd><dt>Puan${pk && pk.guven !== 'yuksek' ? ` (${pk.guven === 'orta' ? 'orta' : 'düşük'} güven)` : ''}</dt></div>
+      <div><dd>${m != null ? nf(Math.round(m / 50) * 50) + ' TL' : '–'}</dd><dt>Aylık ${ev ? 'şarj' : 'yakıt'}</dt></div>
+      <div><dd>${ev ? (s.menzil_km_wltp ? s.menzil_km_wltp + ' km' : '–') : (s.tuketim_l100km ? nf(s.tuketim_l100km, 1) + ' l' : '–')}</dd><dt>${ev ? 'Menzil' : 'Tüketim /100 km'}</dt></div>
+    </dl>
+    ${nedenler.length ? `<div class="neden">${nedenler.join('')}</div>` : ''}
+    <div class="fiyat"><b>${nf(s.liste_fiyati_tl)} TL</b><span>bütçenin %${Math.round(pay * 100)}'i</span></div>
+    <div class="eylem"><a class="ana" href="arac-detay.html#${encodeURIComponent(c.id)}">İncele</a><button type="button" data-sec="${esc(c.id)}" aria-pressed="${on}">${on ? 'Seçildi ✓' : 'Karşılaştır'}</button></div>
+  </article>`;
+}
+function secimCiz() {
+  const n = st.sec.length;
+  $('secim').classList.toggle('on', n > 0);
+  $('secimYaz').textContent = n === 1 ? '1 araç seçildi, bir tane daha seç' : `${n} araç seçildi`;
+  $('secimLink').href = 'karsilastirma.html#k=' + st.sec.map(encodeURIComponent).join(',');
+  $('secimLink').style.visibility = n >= 2 ? 'visible' : 'hidden';
+}
+const $$ = s => [...document.querySelectorAll(s)];
+yukle();
+</script>
+<script src="assets/uye-ayar.js"></script>
+<script src="assets/uyelik.js"></script>
+<script src="assets/menu.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@
 (function () {
   const uyelikAcik = () => !!(window.UYE_AYAR && window.UYE_AYAR.url && window.UYE_AYAR.anonKey);
   const B = {
+    'butce.html':           { ad: 'Bütçeme göre araç bul', durum: 'yayinda', yeni: '2026-11-07' },
     'yol-maliyeti.html':    { ad: 'Rota ve yol maliyeti', durum: 'yayinda', yeni: '2026-10-28' },
     'sarj-hesaplama.html':  { ad: 'Şarj hesaplayıcı', durum: 'yayinda', yeni: '2026-10-28' },
     'gecis-ucretleri.html': { ad: 'Köprü ve otoyol', durum: 'yayinda', yeni: '2026-10-28' },
