@@ -3,6 +3,8 @@
    Koyu temada (html[data-renk="koyu"]) yalnızca ölçüler uygulanır, renkler temanın kendisinden gelir. */
 /* Genel ölçek: rem ile tanımlı yazı ve boşluklar %90 */
 html{font-size:90%}
+/* Geniş ekranda her şey (yazı, fotoğraf, kart) %15 küçük; içerik genişliği aynı kalsın diye kap genişliği büyütüldü */
+@media (min-width:900px){html{zoom:.85;font-size:100%}body{font-size:16px}html body .wrap{max-width:1412px!important}html body .wrap.dar{max-width:1035px!important}}
 :root{--r-kart:24px;--r-ic:16px;--r-dugme:10px;--sayfa:#F2F3F5;--murekkep:#0E1116;--ikincil:#5F6672;--cizgi:#E3E5E9}
 :root{--vurgu:var(--accent,#1E5BD8)}
 html:not([data-renk="koyu"]){--ink:#0E1116;--muted:#5F6672;--line:#E3E5E9;--line-strong:#CDD1D8;--surface:#FFFFFF;--surface2:#F6F7F9;--golge:none}

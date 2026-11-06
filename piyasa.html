@@ -223,7 +223,7 @@ function drawMonthly(){
   const tip=tipFor(el);
   el.querySelectorAll('.hit').forEach(r=>{
     r.addEventListener('mousemove',e=>{ const d=D.aylik[+r.dataset.i], b=el.getBoundingClientRect();
-      tip.show(`<b>${d.ay} 2026</b><br>Otomobil: <b>${n(d.oto)}</b><br>Hafif ticari: <b>${n(d.hta)}</b><br>Toplam: <b>${n(d.oto+d.hta)}</b><br>Geçen yılın aynı ayına göre: ${pct(d.yoy)}`, e.clientX-b.left, e.clientY-b.top); });
+      tip.show(`<b>${d.ay} 2026</b><br>Otomobil: <b>${n(d.oto)}</b><br>Hafif ticari: <b>${n(d.hta)}</b><br>Toplam: <b>${n(d.oto+d.hta)}</b><br>Geçen yılın aynı ayına göre: ${pct(d.yoy)}`, (e.clientX-b.left)/(parseFloat(getComputedStyle(document.documentElement).zoom)||1), (e.clientY-b.top)/(parseFloat(getComputedStyle(document.documentElement).zoom)||1)); });
     r.addEventListener('mouseleave',()=>tip.hide());
   });
   document.getElementById('tMonthly').innerHTML = '<thead><tr><th>Ay</th><th class="n">Otomobil</th><th class="n">Hafif ticari</th><th class="n">Toplam</th><th class="n">Yıllık değişim</th><th>Kaynak</th></tr></thead><tbody>' +
@@ -290,7 +290,7 @@ function drawYears(){
   const tip=tipFor(el);
   el.querySelectorAll('.hit').forEach(r=>{
     r.addEventListener('mousemove',e=>{ const d=Y[+r.dataset.i], b=el.getBoundingClientRect();
-      tip.show(`<b>${d.yil}</b><br>Otomobil: <b>${n(d.oto)}</b><br>Hafif ticari: <b>${n(d.hta)}</b><br>Toplam: <b>${n(d.oto+d.hta)}</b>`, e.clientX-b.left, e.clientY-b.top); });
+      tip.show(`<b>${d.yil}</b><br>Otomobil: <b>${n(d.oto)}</b><br>Hafif ticari: <b>${n(d.hta)}</b><br>Toplam: <b>${n(d.oto+d.hta)}</b>`, (e.clientX-b.left)/(parseFloat(getComputedStyle(document.documentElement).zoom)||1), (e.clientY-b.top)/(parseFloat(getComputedStyle(document.documentElement).zoom)||1)); });
     r.addEventListener('mouseleave',()=>tip.hide());
   });
 }

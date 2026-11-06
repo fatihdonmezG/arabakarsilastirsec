@@ -2009,7 +2009,7 @@ function placeStickyHead(){
   const hr=$('head').getBoundingClientRect(), sr=sheet.getBoundingClientRect();
   const show = hr.bottom < off && sr.bottom > off + sh.offsetHeight + 24;
   sh.classList.toggle('on', show);
-  if(show){ sh.style.top=off+'px'; sh.style.left=sr.left+'px'; sh.style.width=sr.width+'px'; }
+  if(show){ const Z=parseFloat(getComputedStyle(document.documentElement).zoom)||1; sh.style.top=(off/Z)+'px'; sh.style.left=(sr.left/Z)+'px'; sh.style.width=(sr.width/Z)+'px'; }
 }
 window.addEventListener('scroll', placeStickyHead, {passive:true});
 window.addEventListener('resize', placeStickyHead);
