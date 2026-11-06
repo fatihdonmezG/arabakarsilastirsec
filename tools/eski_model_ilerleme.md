@@ -6,8 +6,8 @@ Kurallar: `tools/DETAY_EKLEME_REHBERI.md` → "Eski modelleri (2010–2025) ekle
 
 | Marka | Durum | Eklenen versiyon |
 |---|---|---|
-| Renault | devam ediyor | 269 |
-| Fiat | devam ediyor | 155 |
+| Renault | devam ediyor | 276 |
+| Fiat | devam ediyor | 166 |
 | Volkswagen | bekliyor | 0 |
 | Hyundai | bekliyor | 0 |
 | Toyota | bekliyor | 0 |
@@ -161,7 +161,17 @@ Sıra (çok satandan aza): Clio, Symbol, Fluence, Megane, Captur, Kadjar, Talism
   - [x] Zoe makyajlı R110 (52 kWh, 80 kW): 2022; teknik: auto-data.net Zoe I Phase II R110; Euro NCAP 2021 (0 yıldız); geri çağırma: 2023-06 arka koltuk sırtlığı (2022 MY); 2021 ve 2023 akü kampanyaları hariç
   - [ ] Captur Mild Hybrid 140/155 EDC (2022), Koleos 2019–2021, Zoe 2021: tek kaynakta teknik veri ya da model yıllı liste yok
 - [ ] shiftdelete.net Kasım 2021 Renault listesi (Captur 1.3 TCe 155 EDC dahil) model yılı belirtmiyor; kullanılmadı
-- [ ] Laguna III
+- [x] Scenic III 2012 makyajı (Phase II) ve Phase III 2013–2014, Grand Scenic III makyajlı 2013 — 6 versiyon
+  - [x] Scenic 1.5 dCi 110 manuel: 2012 (Phase II), 2013; 1.5 dCi 110 EDC: 2013–2014 (2015 listesine kadar); Grand Scenic 1.5 dCi 110 manuel ve EDC: 2013
+  - Kaynaklar: otomobil.com.tr Nisan 2012 (https://www.otomobil.com.tr/makyajli-renault-scenic-grand-scenic-2012-fiyat-teknik-ozellik/) ve Şubat 2013 (https://www.otomobil.com.tr/yeni-2013-renault-scenic-turkiye/); teknik: auto-data.net Phase II/III sayfaları (NEDC)
+  - Euro NCAP 2009 (Grand Scenic, 5 yıldız); geri çağırma: 2016-10 ön koltuk rayı Scenic'lere; Grand Scenic [] (kapsam notta); 1.2 TCe fren servosu hariç
+  - [ ] Scenic EDC ve Grand Scenic 2012 (Phase II auto-data sayfası yok), 1.6 16V 110 (2013, gövde/şanzıman belirsiz), Grand Scenic 7 koltuk teyidi
+- [x] Koleos I makyajlı — 1 versiyon
+  - [x] 2.0 dCi 150 4x4 BVA: 2012 (otomobil.com.tr Nisan 2012 Türkiye testi: https://www.otomobil.com.tr/video-test-renault-koleos-2-0-dci-150-hp-4x4-bva-otomatik-makyaj-yeni-yuz/); teknik: auto-data.net Koleos Phase II
+  - Euro NCAP 2008 (5 yıldız); geri çağırma: Safety Gate A12/0112/13 sağ ön salıncak (Ocak–Kasım 2011 üretimi, ay bilinmiyor) nota; []
+  - [ ] Koleos I 2010–2011, 2013–2015: Türkiye listesi yok
+- [ ] Laguna III: yalnızca 2008–2009 lansman haberleri (hurriyet.com.tr) bulundu; 2010+ model yılı teyidi yok
+- [ ] Clio III 2010–2012: motor gamlı Türkiye kaynağı bulunamadı (tr.motor1.com sayfası açılmadı)
 - [x] Koleos II — 2 versiyon
   - [x] 1.6 dCi 130 X-Tronic 4x2 ve 2.0 dCi 175 X-Tronic 4x4: 2017 (sozcu.com.tr Haziran 2017 lansman haberi); teknik: auto-data.net Koleos II CVT sayfaları (NEDC)
   - Euro NCAP 2017 (5 yıldız); geri çağırma: araştırıldı, 2017'yi kapsayan kayıt yok ([]); İngiltere Ağustos 2018 direksiyon somunu kampanyası (kapsam açıklanmadı) nota yazıldı; 2019–2023 yakıt hattı ve 2021–2023 kaput kampanyaları hariç
@@ -282,3 +292,12 @@ Türkiye satış teyidi için marka geneli listeler (yalnızca versiyon adları)
 - [x] 2024 model yılı (gazetebirlik.com Ocak 2024 Fiat listesi, "2024 model": https://www.gazetebirlik.com/otomobil/fiat-2024-ocak-fiyatlari-sifir-egea-egea-cross-egea-hatchback-cross-wagon-500-500e-ne-kadar-kac-bin-tl/155378) — 4 versiyon
   - [x] Egea Sedan ve Egea Cross: 1.3 Multijet 95 ve 1.5 T4 Hybrid 130 DCT; teknik 2023 kayıtlarıyla aynı kaynak; geri çağırma [] (jant/lastik 2021–2023, geri vites lambası 2023 ve 48V akü Kasım 2022–Mayıs 2023 üretimi hariç)
   - [ ] Aynı listedeki Cross Wagon (1.6 MJ DCT, Hybrid, 1.0 FireFly 100) ve 500 1.0 Hybrid 70: tek kaynakta teknik veri yok
+- [x] Egea Hatchback makyaj öncesi (2016–2018) — 10 versiyon
+  - [x] 1.4 Fire 95 ve 1.3 Multijet 95: 2016–2018; 1.6 Multijet 120: 2016, 2018; 1.6 Multijet 120 DCT ve 1.6 E-Torq 110 AT6: 2018
+  - Kaynaklar: sozcu.com.tr Mayıs 2016 satış haberi (https://www.sozcu.com.tr/fiat-egea-hatchback-satisa-sunuldu-iste-fiyati-wp1241730), yenimodelarabalar.com Aralık 2017 Egea HB 2018 listesi; teknik: auto-data.net Egea Hatchback (357), MJ 120 için 2017 kayıtlarıyla aynı kaynak (karar.com)
+  - Euro NCAP 2016 (Tipo, 3 yıldız); geri çağırma: sedan (356) kampanyaları hariç, []
+  - [ ] 1.4 T-Jet 120 (2016), 2019–2020: teknik veri ya da model yıllı liste yok
+- [x] Egea Sedan makyaj öncesi 1.6 E-Torq 110 AT6: 2018 — 1 versiyon (yenimodelarabalar.com Aralık 2018 listesi; auto-data.net Egea 356); geri çağırma []
+  - [ ] Sedan 1.6 Multijet 120 DCT 2018 (listede var): tek kaynakta teknik veri yok
+- [ ] Doblo Combi II makyaj öncesi 2010 (hurriyet.com.tr Mart 2010: 1.4 95, 1.3 MJ 90, 1.6 MJ 105, 2.0 MJ 135; teknik auto-data.net): İngiltere DVSA kampanyaları (R/2010/092, R/2011/095, R/2012/031, R/2012/139) resmi kaynaktan doğrulanamadığı için eklenmedi
+- [ ] Fiorino Combi makyaj öncesi 2014 (yenimodelarabalar.com Kasım 2014: 1.4 73, 1.3 MJ 75, 1.3 MJ 95): DVSA R/2015/035 hava yastığı kampanyası doğrulanamadı; 1.4 ve MJ 95 için teknik sayfa açılamadı
