@@ -88,7 +88,7 @@ html[data-renk="koyu"] .mk-cip span{color:var(--ink)}
 .mk-dugme .btn{justify-content:center;padding:9px 8px!important;font-size:.86rem!important}
 
 /* Bölüm grupları */
-.oz-gruplar{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.oz-gruplar{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
 .og{opacity:0;transform:translateY(10px);overflow:hidden}
 .og.gorundu{opacity:1;transform:none;transition:opacity .5s calc(var(--i)*80ms) ease,transform .5s calc(var(--i)*80ms) ease}
 .og-bas{display:flex;align-items:center;gap:9.5px;padding:22px 24px 10px}
@@ -96,15 +96,15 @@ html[data-renk="koyu"] .mk-cip span{color:var(--ink)}
 .og-bas h3{font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
 .og-bas p{font-size:.84rem;color:var(--muted);margin-top:2px}
 .og ul{list-style:none;margin:0;padding:6px 10px 12px}
-.oz{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 11px;align-items:center;padding:9px 11px;border-radius:14px;text-decoration:none;color:var(--ink)}
+.oz{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 14px;align-items:center;padding:11px 14px;border-radius:14px;text-decoration:none;color:var(--ink)}
 .oz:hover{background:var(--surface2)}
-.oz .ik{grid-row:span 2;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;transition:background .2s,color .2s}
-.oz .ik svg{width:18px;height:18px}
+.oz .ik{grid-row:span 2;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;transition:background .2s,color .2s}
+.oz .ik svg{width:20px;height:20px}
 .oz b{font-size:.95rem;font-weight:600;line-height:1.25}
 .oz small{grid-column:2;color:var(--muted);font-size:.82rem;line-height:1.4}
 .oz .ok{grid-row:1/3;grid-column:3;color:var(--line-strong);transition:transform .2s,color .2s}
 .oz:hover .ok{color:var(--ink);transform:translateX(3px)}
-.oz .yeni{display:inline-block;vertical-align:2px;margin-left:5px;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 5.5px;border-radius:999px;color:var(--ink);background:var(--surface2)}
+.oz .yeni{display:inline-block;vertical-align:2px;margin-left:6px;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;color:var(--ink);background:var(--surface2)}
 @media (prefers-reduced-motion:reduce){.og{opacity:1;transform:none}}
 
 /* Neden */
@@ -127,3 +127,7 @@ html[data-renk="koyu"] .mk-cip span{color:var(--ink)}
 .gs-ad{color:#DEE1E6!important;top:10%}
 html[data-renk="koyu"] .gs-ad{color:rgba(255,255,255,.06)!important}
 @media (max-width:640px){.mkart-serit{scroll-padding-inline:16px}}
+
+/* Vitrindeki model adı: fotoğrafın arkasında kaybolmasın, sol üstteki boş alanda küçük ve okunur */
+.gi-sahne .gs-ad{left:0!important;right:auto!important;top:0!important;text-align:left!important;font-size:clamp(1.15rem,1.7vw,1.6rem)!important;font-weight:700!important;letter-spacing:-.02em!important;color:color-mix(in srgb,var(--ink) 62%,transparent)!important;z-index:2}
+html[data-renk="koyu"] .gi-sahne .gs-ad{color:rgba(255,255,255,.6)!important}

@@ -18,7 +18,7 @@ html:not([data-renk="koyu"]) .top{background:rgba(255,255,255,.94)!important;bac
 .brand{font-weight:700!important;letter-spacing:-.01em;font-size:1rem!important}
 .brandmark{border-radius:8px!important;width:25px!important;height:25px!important;font-size:13px!important}
 html:not([data-renk="koyu"]) .brandmark{background:var(--vurgu)!important;box-shadow:none!important}
-.nav a{border-radius:0!important;padding:6.5px 9.5px!important;font-size:.88rem!important;font-weight:450;background:none!important;box-shadow:none!important}
+.nav a{border-radius:0!important;padding:8px 12px!important;font-size:.88rem!important;font-weight:450;background:none!important;box-shadow:none!important}
 html:not([data-renk="koyu"]) .nav a:not(.cta){color:#4A505B!important}
 html:not([data-renk="koyu"]) .nav a:not(.cta):hover{color:var(--murekkep)!important}
 .nav a[aria-current]:not(.cta){font-weight:600!important;position:relative}
@@ -27,17 +27,17 @@ html:not([data-renk="koyu"]) .nav a[aria-current]:not(.cta){color:var(--murekkep
 .nav a.ikincil{display:none!important}
 .nav a.cta,.top .cta-mobil{display:none!important}
 .nav .renk-sec{display:none!important}
-.ust-sag .renk-sec{display:inline-flex!important;margin:0 3px 0 0!important;padding:0 8px 0 0!important;border:0!important;border-right:1px solid var(--cizgi)!important;gap:6px}
+.ust-sag .renk-sec{display:inline-flex!important;margin:0 4px 0 0!important;padding:0 10px 0 0!important;border:0!important;border-right:1px solid var(--cizgi)!important;gap:6px}
 .ust-sag .renk-sec .ad{display:none!important}
-.ust-sag .renk-sec button{width:18px!important;height:18px!important}
+.ust-sag .renk-sec button{width:20px!important;height:20px!important}
 .ust-sag>*{margin-top:0!important;margin-bottom:0!important;line-height:1!important;box-sizing:border-box}
 .ust-sag .kiyas{border:1px solid transparent}
 body{margin:0}
-.ust-sag{display:flex;align-items:center;gap:6.5px;margin-left:6.5px;flex:none}
-.ust-sag .menu-ac{display:inline-flex;align-items:center;gap:6.5px;font:inherit;font-size:.88rem;font-weight:500;height:34px;padding:0 11px;border-radius:var(--r-dugme);border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer}
+.ust-sag{display:flex;align-items:center;gap:8px;margin-left:8px;flex:none}
+.ust-sag .menu-ac{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:.88rem;font-weight:500;height:40px;padding:0 14px;border-radius:var(--r-dugme);border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer}
 .ust-sag .menu-ac:hover{border-color:var(--ink)}
-.ust-sag .menu-ac svg{width:16px;height:16px}
-.ust-sag .kiyas{display:inline-flex;align-items:center;height:34px;padding:0 13px;border-radius:var(--r-dugme);font-size:.88rem;font-weight:600;text-decoration:none;color:#fff!important;background:var(--vurgu)}
+.ust-sag .menu-ac svg{width:18px;height:18px}
+.ust-sag .kiyas{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:var(--r-dugme);font-size:.88rem;font-weight:600;text-decoration:none;color:#fff!important;background:var(--vurgu)}
 html[data-renk="koyu"] .ust-sag .kiyas{background:var(--accent-grad);color:var(--on-accent)!important}
 .ust-sag .kiyas:hover{filter:brightness(1.25)}
 .menu-btn{display:none!important}
@@ -45,7 +45,7 @@ html[data-renk="koyu"] .ust-sag .kiyas{background:var(--accent-grad);color:var(-
   .top .nav{display:none!important}
   .top .wrap{justify-content:space-between}
 }
-@media (max-width:420px){.ust-sag .menu-ac span{display:none}.ust-sag .menu-ac{padding:0 11px}.ust-sag .kiyas{padding:0 9.5px;font-size:.82rem}}
+@media (max-width:420px){.ust-sag .menu-ac span{display:none}.ust-sag .menu-ac{padding:0 11px}.ust-sag .kiyas{padding:0 12px;font-size:.82rem}}
 
 /* Menü paneli */
 .menu-panel{position:fixed;inset:64px 0 auto 0;z-index:70;max-height:calc(100vh - 64px);overflow:auto;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(14,17,22,.35);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .18s,transform .18s}
@@ -227,3 +227,12 @@ html:not([data-renk="koyu"]) .hs-bas .kicker,html:not([data-renk="koyu"]) .hero 
 html:not([data-renk="koyu"]) main a:not([class]){color:var(--vurgu)}
 html:not([data-renk="koyu"]) .ust-sag .menu-ac:hover{border-color:var(--vurgu);color:var(--vurgu)}
 html:not([data-renk="koyu"]) .duyuru{border-color:color-mix(in srgb,var(--vurgu) 25%,transparent)!important}
+
+/* Geniş ekran ölçeğinden muaf tutulan bölümler: üst çubuk, ana sayfadaki "Sitede neler var?", araç filtreleri ve forum kategorileri eski boyutunda */
+@media (min-width:900px){
+  header.top,.ozellikler,.ar-filtre,.fkat{zoom:1.17647}
+  html body header.top .wrap{max-width:1200px!important}
+  .menu-panel{inset:75.3px 0 auto 0;max-height:calc(100vh - 75.3px)}
+  .menu-perde{inset:75.3px 0 0 0}
+}
+@media (min-width:1000px){.ar-duzen{grid-template-columns:306px minmax(0,1fr)!important}.ar-filtre{top:72px!important;max-height:calc(85vh - 90px)!important}}

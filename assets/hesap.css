@@ -18,13 +18,13 @@ p{margin:0}
 @media (max-width:520px){.wrap{padding:0 16px}}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .top{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--divider);background:var(--bg)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:61px;gap:12px}
-.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:1.08rem;text-decoration:none;white-space:nowrap}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:12px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.08rem;text-decoration:none;white-space:nowrap}
 .brandmark{flex:none;width:27px;height:27px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:12.5px;color:var(--on-accent);background:var(--accent-grad)}
 .nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-.nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:7px 9.5px;border-radius:8px;color:var(--muted)}
+.nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:9px 12px;border-radius:8px;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
-.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:14.5px;margin-left:8px}
+.nav a.cta{color:var(--on-accent);background:var(--accent-grad);font-weight:700;padding-inline:18px;margin-left:8px}
 .nav a[aria-current]:not(.cta){color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
 footer.alt{margin-top:45px;padding:22.5px 0 38.5px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 
@@ -110,7 +110,7 @@ footer.alt{margin-top:45px;padding:22.5px 0 38.5px;border-top:1px solid var(--li
 .sk small{color:var(--muted);font-size:.8rem}
 .sk.ana{background:var(--accent-grad);border-color:transparent;color:var(--on-accent)}
 .sk.ana span,.sk.ana small{color:color-mix(in srgb,var(--on-accent) 80%,transparent)}
-.kiyas{display:grid;gap:8px;margin-top:16px}
+.kiyas{display:grid;gap:10px;margin-top:16px}
 .ky{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) auto;gap:9.5px;align-items:center;padding:9.5px 11px;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
 .ky .ad b{display:block;font-size:.92rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ky .ad small{color:var(--muted);font-size:.78rem}
