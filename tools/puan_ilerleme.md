@@ -271,3 +271,38 @@ Kaynak kuralları: tools/DETAY_EKLEME_REHBERI.md ("Puanı açan eksik veriler", 
 - renault-megane-201[4-6]-st-1.6-dci-130 .tuketim_l100km, .sifirYuz_sn — auto-data/autodata1 Grandtour Faz III'te yalnız "1.5 Energy dCi 130" var; 1.6 dCi 130 yalnız Faz II (2012) sayfasında (farklı model yılı, yazılmadı).
 - renault-clio-201[78]-st-1.5-dci-90 .sifirYuz_sn, .agirlik_kg — carsart Grandtour Faz II sayfasında da yok; cars-data.com yine açılamadı.
 - maserati-grecale-2025-*.(sürüş destek kalemleri) — motor1 Türkiye haberinde donanım listesi yok; erişilen diğer kaynaklar ABD/Avustralya pazarı ya da ilan siteleri.
+
+## 2026-11-03
+
+- Önce: Toplam puanı olmayan 190 / 913 → Sonra: 185 / 913 (5 versiyon puanlandı).
+- Euro NCAP: yeni sonuç yok. Kalan nesil gruplarının tamamı Euro NCAP'te test edilmemiş ya da önceki listelerde (yeni eklenenler aşağıda).
+- Diğer alanlar: Renault ve Fiat'ın kalan eksiklerinin tamamı önceki "bulunamadı / Euro NCAP testi yok" listelerinde; Alfa Romeo ve Peugeot işlendi. 14 alan (2'si bagaj yayılımı), 5 versiyon
+  - Alfa Romeo Giulia 2023 2.0 Turbo 280 Q4 Competizione: tüketim 7,9 (WLTP 7,7–8,1 ortası), 0-100 5,2 (autodata1, makyajlı 952).
+  - Alfa Romeo Stelvio 2023 2.0 Turbo 280 Q4 Veloce + Competizione: tüketim 8,65 (WLTP 8,4–8,9 ortası), 0-100 5,7; bagaj 525 L (auto-data.net 47329, makyajlı 949).
+  - Peugeot 508 2025 1.5 BlueHDi 130 EAT8 Allure + GT: tüketim 5,2 (WLTP 5,0–5,4 ortası), 0-100 11,1; bagaj 487 L (autotijd.be, 2024).
+  - Bagaj yayılımı: Stelvio Competizione (525 L), 508 GT (487 L).
+- Eklenen alan: 14.
+
+### Euro NCAP testi yok (2026-11-03)
+- Skywell ET5 — yalnız C-NCAP sonucu var (kolesa.ru: C-NCAP 1 yıldız); euroncap.com'da sonuç yok.
+- Renault Symbol II (2012) — euroncap.com'da Symbol/Thalia II sonucu bulunamadı; autocentrum Thalia II sayfasında Euro NCAP puanı yok.
+- Hyundai Elantra (CN7, 2023–2024), Kia Cerato (2024) — Avrupa'da satılmadı; carsales: i30 Sedan (Elantra CN7) ANCAP/Euro NCAP puanı yok.
+- Cadillac Escalade / Escalade ESV, Chevrolet Tahoe / Suburban (2026) — Euro NCAP'te sonuç yok (yalnız ABD NHTSA).
+
+### Araştırıldı, bulunamadı (2026-11-03)
+- hyundai-tucson-comfort-4x2-2026.tuketim_l100km — Hyundai Türkiye e-broşürü (Eylül 2025) 1.6 T-GDi 4x2 DCT için 160 PS (7,4 l/100 km) veriyor; kayıt 180 PS, güç uyuşmadığı için yazılmadı.
+- toyota-hilux-2-8-mildhybrid-invincible-2026 .sifirYuz_sn, .agirlik_kg — Toyota UK basın kiti yalnız 2.8 AT aralığı (2.170–2.250 kg) veriyor, 48V hibrite ayrı değer yok; Toyota TR PDF açılamadı.
+- fiat-fullback-2016-*.ncap_yildiz — euroncap.com sayfası açılamadı; tekrar denenebilir.
+- mazda-3-2020-sedan-15-skyactiv-g-soul — Avrupa kaynaklarında yalnız 2.0 Skyactiv-G sedan var (1.5 yok).
+
+## 2026-11-04
+
+- Önce: Toplam puanı olmayan 188 / 921 → Sonra: 188 / 921 (puan açılmadı; Fullback'in diğer eksik alanları kullanıcının PDF çalışmasında).
+- Euro NCAP (1 kayıt, 2 alan; yayılacak başka versiyon yok):
+  - Fiat Fullback 2016 (1): 4★, 2015 — Euro NCAP 2015 Mitsubishi L200 sonucu (Fullback, L200'ün aynı nesil Fiat ikizi: autoblog.com.uy; yıldız/yıl: carbuyer.co.uk L200 2015–2019, diariomotor 02.09.2015). Test 11 yıldan eski.
+
+### Euro NCAP testi yok (2026-11-04)
+- Mercedes-Benz GLB (X244, 2026) — whatcar.com ve carwow.co.uk: Euro NCAP henüz test etmedi.
+- Forthing M4 U-Tour — Forthing markası Euro NCAP'te test edilmedi (T5 Evo ile aynı durum).
+- Mercedes-Benz GLC (Elektrikli) — tekrar kontrol edildi, hâlâ sonuç yok.
+- Kalan tüm gruplar önceki listelerde ya da Euro NCAP'in test etmediği markalarda (Ferrari, Lamborghini, Bentley, Rolls-Royce, Aston Martin, Maserati, GM).

@@ -13,11 +13,11 @@ Durumlar: "tamamlandı" yazan markalar atlanır; "araştırıldı, bulunamadı" 
 | Hyundai | devam ediyor | 2026-10-31 | 95 |
 | Volkswagen | devam ediyor | 2026-10-20 | 425 |
 | Peugeot | devam ediyor | 2026-10-20 | 86 |
-| Ford | devam ediyor | 2026-10-21 | 176 |
+| Ford | devam ediyor | 2026-11-03 | 213 |
 | Skoda | devam ediyor | 2026-10-21 | 401 |
 | Dacia | devam ediyor | 2026-10-22 | 71 |
 | Opel | devam ediyor | 2026-10-22 | 392 |
-| Citroën | devam ediyor | 2026-10-26 | 237 |
+| Citroën | devam ediyor | 2026-11-03 | 200 |
 | Kia | devam ediyor | 2026-10-26 | 107 |
 | Nissan | devam ediyor | 2026-10-27 | 151 |
 | Togg | devam ediyor | 2026-10-27 | 14 |
@@ -276,3 +276,22 @@ Araştırıldı, bulunamadı:
 - Grande Panda hibrit: ABS/ESP, adaptif hız sabitleyici (yalnızca hız sabitleyici), kör nokta, yokuş kalkış, 360 kamera, La Prima klima tipi, koltuk, döşeme, anahtarsız giriş, start-stop, CarPlay, navigasyon bültende yok.
 - Toyota C-HR: toyota.com.tr e-broşür sayfasında Ekim 2026 donanım tablosu (TOYOTA_CHR_TeknikDonanım_ekim_2026.pdf) listeleniyor ancak bu ortamdan açılamadı; Şubat 2026 teknik PDF'i hata verdi. Flame paketi için kaynak yok (2023 lansman bülteni Passion paketlerini anlatıyor). GR Sport: döşeme deri ve süet (yazılmadı), CarPlay paket bazında yok, yorgunluk tespiti (EDSS acil durdurma, yazılmadı).
 - Toyota Yaris Hybrid ve Hilux donanım tabloları e-broşür sayfasında listeleniyor, bu ortamdan açılamadı.
+
+### 2026-11-03: Citroën (41 alan, 7 versiyon), Ford (3 alan, 1 versiyon)
+
+Seçim notu: Volkswagen (en çok boş alan) yeniden denendi: binekarac.vw.com.tr Taigo sayfasında L/ST/R işaretleri metne geçmiyor, fiyat listesi sayfasında donanım yok, arac-fiyatlari uygulaması ve binekarac2.vw.com.tr PDF'leri bu ortamdan açılamadı (binekarac2'deki Tiguan kataloğu 2018 tarihli). Kia Stonic fiyat listesi sayfası donanım vermiyor; Opel Corsa için yalnızca 2023 lansman haberi var. citroen.com.tr model sayfalarında paket bazlı listeler okunabildiği için Citroën, ford.com.tr model sayfaları için Ford işlendi.
+
+Kaynaklar: citroen.com.tr model sayfaları: C5 Aircross Hibrit (Plus ve "Plus donanımına ek olarak" Max), ë-C5 Aircross (Plus), ë-C3 (Plus ve Max ekleri), ë-C4 (tek paket Max), Ami; ford.com.tr Puma model sayfası (ST-Line X listesi).
+
+Doldurulan: Citroën 41 alan (C5 Aircross Hybrid 145 Plus ve Max, ë-C5 Aircross Plus, ë-C3 Plus ve Max, ë-C4 Max, Ami); Ford 3 alan (Puma ST-Line X: gelişmiş adaptif hız kontrolü, anahtarsız giriş, B&O ses sistemi). Klima tipiyle güncellenen ("Var" kayıtları): 4 (C5 Aircross Plus ve Max, ë-C5 Aircross Plus çift bölgeli; ë-C3 Max otomatik).
+
+Araştırıldı, bulunamadı:
+- Citroën C5 Aircross ve ë-C5 Aircross: sürüş destek sistemleri (yalnızca genel "ADAS" ifadesi), arka havalandırma, açılır tavan, CarPlay, dijital gösterge, ses sistemi paket bazında yok. Döşeme kumaş ve TEP (deri yazılmadı). Plus far tipi ve ë-C5 Max versiyonu sayfada belirtilmiyor. ë-C5 Plus park sensörü satırı yalnızca "ön park sensörleri" diyor; "Var" yazıldı.
+- Citroën ë-C3: adaptif hız sabitleyici, kör nokta, park sensörü, koltuk, tavan, anahtarsız giriş, ses sistemi paket bazında yok; Plus klima tipi belirtilmiyor (yalnızca Max'te otomatik).
+- Citroën ë-C4: park sensörü, kamera, klima tipi, navigasyon, kablosuz şarj sayfada yok. C4 ve C4 X Hybrid 145 için model sayfası yok (yalnızca elektrikli sayfalar); Stellantis bülteni (09.02.2025) 136 HP hibrit ve 2025 donanımı için, kullanılmadı.
+- Citroën Ami: ABS/ESP, klima (yalnızca ısıtma ve havalandırma), kamera, park sensörü sayfada yok; cam tavan açılır değil (yazılmadı).
+- Citroën ë-C3 Aircross: sayfadaki Max ve Collection listelerinde kalan alanlar yok.
+- Ford Puma: Ekim 2026 teknik föy (cdnepws.azureedge.net) ve Mayıs 2026 broşür bu ortamdan açılamadı. Titanium listesinde yeni alan yok; ST-Line X listesinin Titanium'a ek olduğu belirtilmediği için park sensörü, kamera, koltuk ısıtma aktarılmadı.
+- Ford Kuga: Active X ve ST-Line X klima tipi sayfada yok (çift bölgeli dijital klima yalnızca Titanium listesinde); Kuga teknik föyü (Ekim 2026) açılamadı.
+
+Kontrol edilmesi gereken mevcut değerler (dokunulmadı): C5 Aircross Hybrid Plus koltuk ısıtma "Var"; sayfaya göre ısıtmalı koltuklar Max ile geliyor. C5 Aircross ve ë-C5 Aircross ekran_inch 10; sayfada 13 inç dikey multimedya ekranı.
