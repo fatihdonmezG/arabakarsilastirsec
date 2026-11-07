@@ -14,6 +14,26 @@
 <link rel="stylesheet" href="assets/tema-acik.css">
 <script src="assets/tema.js"></script>
 <link rel="stylesheet" href="assets/ortak.css">
+<style>
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px;margin-top:20px}
+.kkart{display:flex;flex-direction:column;gap:7px;background:var(--surface);border:1px solid var(--line);padding:14px 16px;border-top:3px solid var(--accent);border-radius:var(--r-kart,20px)}
+.kkart .ust{display:flex;align-items:center;gap:10px}
+.kkart .ust img{width:36px;height:36px;object-fit:contain}
+.kkart .marka{font-weight:800;font-size:.95rem}
+.kkart .mod{font-size:.85rem;color:var(--muted)}.kkart .mod a{color:inherit}
+.kkart h3{font-size:1.05rem;line-height:1.35;margin:0}
+.kkart p{font-size:.9rem;color:var(--muted);margin:0}
+.kkart .note{font-size:.82rem}
+.kkart .alt{margin-top:auto;display:flex;flex-wrap:wrap;gap:5px 10px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.kkart .alt a{overflow-wrap:anywhere}
+.tur{display:inline-block;padding:2px 7px;font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:3px;background:var(--accent);color:#fff}
+.haber-geri{background:#B42318}.haber-pazar{background:#0F766E}.haber-mevzuat{background:#7C3AED}.haber-uretim{background:#B45309}.haber-odul{background:#A16207}
+.kkart.kat-geri{border-top-color:#B42318}
+.htarih{font-size:.78rem;color:var(--muted);margin-left:4px}
+.kat-ikon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 36px;width:36px;height:36px;border-radius:10px;background:var(--surface2,#EEF1F5);color:var(--ink);font-weight:800}
+.kat-ikon svg{width:20px;height:20px}
+</style>
+
 </head>
 <body>
 
@@ -49,7 +69,7 @@
   <nav class="sekmeler" aria-label="Haber bölümleri"><a href="haberler.html" aria-current="page">Haberler</a><a href="lansmanlar.html">Lansmanlar</a><a href="incelemeler.html">İncelemeler</a></nav>
   <section class="section">
     <div class="filters" role="group" aria-label="Kategoriye göre süz" id="filters"></div>
-    <div class="news" id="news"></div>
+    <div class="kgrid" id="news"></div>
   </section>
 
   <section class="section">
@@ -68,24 +88,54 @@
 </footer>
 
 <script src="assets/haberler.js"></script>
+<script src="assets/logolar.js"></script>
+<script src="assets/modeller.js"></script>
 <script>
 const KAT = window.KAT, NEWS = window.NEWS;
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const AY = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
 const fdate = t => { const [y,m,d]=t.split('-').map(Number); return `${d} ${AY[m-1]} ${y}`; };
 let aktif = '';
+const logoDosya = mk => { const L = window.MARKA_LOGO || {}; return L[mk] || L[mk + ' Automobiles'] || L[Object.keys(L).find(k => k.startsWith(mk + ' ')) || '']; };
+const logo = mk => logoDosya(mk) ? `<img src="assets/logos/${esc(logoDosya(mk))}" alt="${esc(mk)} amblemi" loading="lazy">` : `<span class="kat-ikon" aria-hidden="true">${esc(mk.slice(0,2))}</span>`;
+const IKON = {
+  pazar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
+  mevzuat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg>',
+  uretim: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21V10l6 4V10l6 4V6l6 4v11z"/></svg>',
+  geri: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>',
+  odul: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="m9 14-2 7 5-3 5 3-2-7"/></svg>',
+  lansman: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 17h14l-1.5-5h-11zM7 12l1.5-4h7L17 12M7 20v-3M17 20v-3"/></svg>'
+};
+// Haberin ilgili markası ve modelleri: haber kaydında yazılıysa o, değilse başlık ve özetten
+const MARKALAR = [...new Set(Object.keys(window.MODELLER||{}).concat(Object.keys(window.MARKA_LOGO||{})))].sort((a,b)=>b.length-a.length);
+const sinir = (t, w) => new RegExp('(^|[^\\p{L}\\p{N}])' + w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '(?=$|[^\\p{L}\\p{N}])', 'iu').test(t);
+function ilgili(n){
+  const bas = n.baslik || '', tum = bas + ' ' + (n.ozet || '');
+  const TAKMA = {'Range Rover':'Land Rover','Defender':'Land Rover','Mercedes':'Mercedes-Benz','VW':'Volkswagen','Tofaş':'Fiat'};
+  const takma = t => Object.keys(TAKMA).find(k => sinir(t, k));
+  const mk = n.marka || MARKALAR.find(m => sinir(bas, m)) || TAKMA[takma(bas)] || MARKALAR.find(m => sinir(tum, m)) || TAKMA[takma(tum)];
+  if (!mk) return null;
+  const mods = Object.keys((window.MODELLER||{})[mk]||{}).sort((a,b)=>b.length-a.length);
+  const bulunan = []; let kalan = tum;
+  for (const m of (n.model ? [n.model] : mods)) if (sinir(kalan, m) && (m.length > 2 || /\D/.test(m) || sinir(tum, mk + ' ' + m))) { bulunan.push(m); kalan = kalan.split(m).join(' '); }
+  return {marka: mk, modeller: bulunan.slice(0, 4)};
+}
 function render(){
   const cats = [...new Set(NEWS.map(n=>n.kat))];
   document.getElementById('filters').innerHTML = [['','Tümü']].concat(cats.map(c=>[c,KAT[c]])).map(([k,t])=>`<button type="button" class="fbtn" data-k="${k}" aria-pressed="${k===aktif}">${t}</button>`).join('');
   document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{ aktif=b.dataset.k; render(); }));
-  document.getElementById('news').innerHTML = NEWS.filter(n=>!aktif||n.kat===aktif).map(n=>`
-    <article class="nitem">
-      <div class="nmeta"><span class="chip">${KAT[n.kat]}</span><time datetime="${n.tarih}">${fdate(n.tarih)}</time></div>
+  document.getElementById('news').innerHTML = NEWS.filter(n=>!aktif||n.kat===aktif).map(n=>{
+    const ilgi = ilgili(n);
+    const ust = ilgi ? `${logo(ilgi.marka)}<div><div class="marka">${esc(ilgi.marka)}</div>${ilgi.modeller.length?`<div class="mod">${ilgi.modeller.map(m=>{ const id=((window.MODELLER||{})[ilgi.marka]||{})[m]; return id&&id.id?`<a href="arac-detay.html#${encodeURIComponent(id.id)}">${esc(m)}</a>`:esc(m); }).join(', ')}</div>`:''}</div>`
+      : `<span class="kat-ikon kat-${n.kat}" aria-hidden="true">${IKON[n.kat]||IKON.pazar}</span><div><div class="marka">${KAT[n.kat]}</div><div class="mod">Genel</div></div>`;
+    return `<article class="kkart kat-${n.kat}">
+      <div class="ust">${ust}</div>
+      <div><span class="tur haber-${n.kat}">${KAT[n.kat]}</span> <time datetime="${n.tarih}" class="htarih">${fdate(n.tarih)}</time></div>
       <h3>${esc(n.baslik)}</h3>
       <p>${esc(n.ozet)}</p>
       ${n.not?`<p class="note">${esc(n.not)}</p>`:''}
-      <p class="src">Kaynak: ${n.kaynak.map(([a,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(a)}</a>`).join(' · ')}${n.ic?` · <a href="${esc(n.ic[1])}">${esc(n.ic[0])}</a>`:''}</p>
-    </article>`).join('');
+      <div class="alt"><span>Kaynak: ${n.kaynak.map(([a,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(a)}</a>`).join(' · ')}</span>${n.ic?`<span><a href="${esc(n.ic[1])}">${esc(n.ic[0])}</a></span>`:''}</div>
+    </article>`; }).join('');
 }
 render();
 </script>
