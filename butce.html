@@ -66,6 +66,20 @@
 @media (max-width:979px){.bf-git{display:block}}
 #sonucT{scroll-margin-top:80px}
 .bf-bos{background:var(--surface);border-radius:20px;padding:24px;color:var(--muted)}
+/* Okunabilirlik: form yazıları büyük */
+.bf-form h2{font-size:1.25rem}
+.bf-alan{margin-top:18px}
+.bf-alan>label,.bf-alan>.et{font-size:1rem;color:var(--ink);margin-bottom:8px}
+.bf-butce{font-size:1.9rem}
+.bf-hizli button,.amac button,.cips button{font-size:.98rem;padding:8px 13px}
+.amac button{padding:11px 13px}
+.amac button b{font-size:1rem}
+.amac button small{font-size:.84rem;opacity:.85}
+.bf select,.bf input[type=number]{font-size:1.02rem;min-height:44px}
+.bf-not{font-size:.88rem}
+.bf input[type=range]{height:28px}
+@media (min-width:900px){.bf-form{zoom:1.17647}}
+@media (min-width:980px){.bf{grid-template-columns:360px minmax(0,1fr)}}
 </style>
 <link rel="stylesheet" href="assets/ortak.css">
 </head>
@@ -179,7 +193,7 @@ try { Object.assign(st, JSON.parse(localStorage.getItem('butceSecim') || '{}'), 
 const yakitKat = y => { y = y || ''; if (/^elektrik/i.test(y)) return 'elektrik'; if (/hibrit|hybrid/i.test(y)) return 'hibrit'; if (/dizel|diesel/i.test(y)) return 'dizel'; if (/benzin/i.test(y)) return 'benzin'; return 'diger'; };
 const kasaKat = k => { k = k || ''; if (/SUV|Crossover|Arazi/i.test(k)) return 'suv'; if (/Hatch/i.test(k)) return 'hb'; if (/Sedan|Fastback|Liftback/i.test(k)) return 'sedan'; return 'diger'; };
 const otomatik = c => { const k = N.sanzimanKod(c.s.sanziman); return k ? !/^MT/.test(k) : /^elektrik/i.test(c.s.yakit || ''); };
-const VERI = window.HESAP_VERI || {}, IST = ((VERI.yakit || {}).iller || {})['İstanbul'] || {}, EVT = (VERI.ev || {}).kademe2 || 5.04;
+const VERI = window.HESAP_VERI || {}, IST = ((VERI.yakit || {}).iller || {})['İstanbul (Avrupa)'] || {}, EVT = (VERI.ev || {}).kademe2 || 5.04;
 function aylikMaliyet(c) {
   const s = c.s, km = st.km, y = yakitKat(s.yakit);
   if (y === 'elektrik') return s.elektrik_tuketim_kwh100km ? s.elektrik_tuketim_kwh100km * km / 100 * EVT : null;
@@ -260,7 +274,7 @@ function hesapla() {
   const liste = [...model.values()].slice(0, 24);
   $('git').textContent = model.size ? `${nf(model.size)} modeli gör` : 'Sonuçları gör';
   $('ozet').textContent = havuz.length ? `${nf(havuz.length)} versiyon, ${nf(model.size)} model bütçende. En uygun ${Math.min(24, model.size)} model gösteriliyor.` : '';
-  $('yontem').textContent = `Sıralama: ${AMAC.find(a => a[0] === st.amac)[1]} için ${Object.entries(AGIRLIK[st.amac]).map(([k, a]) => `${{puan: 'sistem puanı', fp: 'fiyat/performans', maliyet: 'aylık maliyet', fiyat: 'fiyat', guven: 'güvenlik', bagaj: 'bagaj', ichacim: 'iç hacim (dingil)', kisa: 'kısa boy', menzil: 'menzil', guc: 'güç', hizlanma: '0-100 hızlanma'}[k]} %${Math.round(a * 100)}`).join(', ')}. Her ölçüt bütçendeki araçlar arasında karşılaştırılır; verisi olmayan ölçüt ortalamanın altında sayılır. Aylık maliyet İstanbul pompa fiyatı ya da ev elektriği (${nf(EVT, 2)} TL/kWh) ile hesaplanır. Bagaj hacmi üreticiye göre farklı yöntemle ölçülür.`;
+  $('yontem').textContent = `Sıralama: ${AMAC.find(a => a[0] === st.amac)[1]} için ${Object.entries(AGIRLIK[st.amac]).map(([k, a]) => `${{puan: 'sistem puanı', fp: 'fiyat/performans', maliyet: 'aylık maliyet', fiyat: 'fiyat', guven: 'güvenlik', bagaj: 'bagaj', ichacim: 'iç hacim (dingil)', kisa: 'kısa boy', menzil: 'menzil', guc: 'güç', hizlanma: '0-100 hızlanma'}[k]} %${Math.round(a * 100)}`).join(', ')}. Her ölçüt bütçendeki araçlar arasında karşılaştırılır; verisi olmayan ölçüt ortalamanın altında sayılır. Aylık maliyet İstanbul (Avrupa yakası) pompa fiyatı ya da ev elektriği (${nf(EVT, 2)} TL/kWh) ile hesaplanır. Bagaj hacmi üreticiye göre farklı yöntemle ölçülür.`;
   if (!liste.length) { $('liste').innerHTML = `<div class="bf-bos"><b>Bu ölçütlere uyan araç bulamadık.</b> Bütçeyi biraz artırmayı ya da yakıt ve kasa seçimini "Hepsi" yapmayı deneyin. Bütçendeki en ucuz 2026 model ${nf(Math.min(...CARS.map(c => c.s.liste_fiyati_tl)))} TL.</div>`; secimCiz(); return; }
   $('liste').innerHTML = liste.map((x, i) => kart(x, i)).join('');
   $$('#liste [data-sec]').forEach(b => b.addEventListener('click', () => { const id = b.dataset.sec; st.sec = st.sec.includes(id) ? st.sec.filter(v => v !== id) : st.sec.concat(id).slice(-4); hesapla(); }));
