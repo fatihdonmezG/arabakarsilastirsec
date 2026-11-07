@@ -1,10 +1,8 @@
 /* Ortak görünüm katmanı (sade tasarım). Bütün sayfalarda en son yüklenir.
    İlke: açık gri zemin, çerçevesiz beyaz kartlar, ince ve büyük başlıklar, koyu ana düğme, tema rengi yalnızca vurgu.
    Koyu temada (html[data-renk="koyu"]) yalnızca ölçüler uygulanır, renkler temanın kendisinden gelir. */
-/* Genel ölçek: rem ile tanımlı yazı ve boşluklar %90 */
-html{font-size:90%}
-/* Geniş ekranda her şey (yazı, fotoğraf, kart) %15 küçük; içerik genişliği aynı kalsın diye kap genişliği büyütüldü */
-@media (min-width:900px){html{zoom:.85;font-size:100%}body{font-size:16px}html body .wrap{max-width:1412px!important}html body .wrap.dar{max-width:1035px!important}}
+/* Yazı boyutu tarayıcı varsayılanı (16 px); boşluklar sıkılaştırıldı */
+html{font-size:100%}
 :root{--r-kart:24px;--r-ic:16px;--r-dugme:10px;--sayfa:#F2F3F5;--murekkep:#0E1116;--ikincil:#5F6672;--cizgi:#E3E5E9}
 :root{--vurgu:var(--accent,#1E5BD8)}
 html:not([data-renk="koyu"]){--ink:#0E1116;--muted:#5F6672;--line:#E3E5E9;--line-strong:#CDD1D8;--surface:#FFFFFF;--surface2:#F6F7F9;--golge:none}
@@ -227,15 +225,6 @@ html:not([data-renk="koyu"]) .hs-bas .kicker,html:not([data-renk="koyu"]) .hero 
 html:not([data-renk="koyu"]) main a:not([class]){color:var(--vurgu)}
 html:not([data-renk="koyu"]) .ust-sag .menu-ac:hover{border-color:var(--vurgu);color:var(--vurgu)}
 html:not([data-renk="koyu"]) .duyuru{border-color:color-mix(in srgb,var(--vurgu) 25%,transparent)!important}
-
-/* Geniş ekran ölçeğinden muaf tutulan bölümler: üst çubuk, ana sayfadaki "Sitede neler var?", araç filtreleri ve forum kategorileri eski boyutunda */
-@media (min-width:900px){
-  header.top,.ozellikler,.ar-filtre,.fkat{zoom:1.17647}
-  html body header.top .wrap{max-width:1200px!important}
-  .menu-panel{inset:75.3px 0 auto 0;max-height:calc(100vh - 75.3px)}
-  .menu-perde{inset:75.3px 0 0 0}
-}
-@media (min-width:1000px){.ar-duzen{grid-template-columns:306px minmax(0,1fr)!important}.ar-filtre{top:72px!important;max-height:calc(85vh - 90px)!important}}
 
 /* Veri niteliği rozetleri (assets/normal.js) */
 .nit{display:inline-block;margin-left:5px;padding:1px 6px;border-radius:999px;font-size:.66rem;font-weight:600;line-height:1.5;letter-spacing:.01em;white-space:nowrap;vertical-align:1px;background:var(--surface2,#EEF1F5);color:var(--muted)}

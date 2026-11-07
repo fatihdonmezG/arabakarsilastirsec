@@ -464,3 +464,22 @@ html:not([data-renk="koyu"]) .dt2 .kunye .ciplar li{background:var(--surface2)}
 .dt2 .equip .v .nit{font-size:.6rem}
 .dt2 .g-kapsam{grid-column:1/-1;margin:10px 0 0;font-size:.76rem;line-height:1.55;color:var(--muted)}
 .dt2 .g-kapsam .guv{margin-right:4px}
+
+/* Stüdyo sahnesi: açık gri fon, ufuk çizgisi ve aydınlık zemin. Kesilmiş (arka planı kaldırılmış) fotoğraflar için. */
+.dt2 .dosya .sahne:has(img[src^="assets/kesit/"]){
+  background:
+    radial-gradient(55% 30% at 50% 74%, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 70%),
+    radial-gradient(70% 50% at 50% 30%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 70%),
+    linear-gradient(180deg,#F6F7F9 0%,#E9ECF1 57%,#D9DEE5 57.15%,#E3E7EC 68%,#D2D8E0 100%) !important;
+}
+.dt2 .dosya .sahne:has(img[src^="assets/kesit/"])::before{display:none}
+.dt2 .sahne .carphoto:has(img[src^="assets/kesit/"])::before,.dt2 .sahne .carphoto:has(img[src^="assets/kesit/"])::after{display:none!important}
+.dt2 .sahne .carphoto img[src^="assets/kesit/"]{padding:6% 5% 8%!important;object-position:center 64%!important;filter:drop-shadow(0 16px 10px rgba(15,26,43,.28)) drop-shadow(0 3px 3px rgba(15,26,43,.25))!important}
+html[data-renk="koyu"] .dt2 .dosya .sahne:has(img[src^="assets/kesit/"]){background:radial-gradient(60% 34% at 50% 80%,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 70%),linear-gradient(180deg,#232930 0%,#1B2027 57%,#12161B 57.15%,#171B21 70%,#0E1115 100%)!important}
+
+/* Fotoğraf galerisi: ön ve arka görünüm geçişi */
+.dt2 .sahne .galeri{position:absolute;right:12px;bottom:44px;display:flex;gap:6px;z-index:3}
+.dt2 .sahne .galeri button{display:flex;flex-direction:column;align-items:center;gap:2px;width:78px;padding:4px 4px 3px;border-radius:12px;border:2px solid transparent;background:rgba(255,255,255,.88);cursor:pointer;font:inherit;font-size:.72rem;font-weight:600;color:var(--ink);box-shadow:0 2px 8px rgba(15,26,43,.12)}
+.dt2 .sahne .galeri button img{width:100%;height:40px;object-fit:contain;padding:0!important;filter:none!important}
+.dt2 .sahne .galeri button[aria-pressed=true]{border-color:var(--vurgu,#1E5BD8)}
+@media (max-width:640px){.dt2 .sahne .galeri{right:8px;bottom:38px}.dt2 .sahne .galeri button{width:62px}.dt2 .sahne .galeri button img{height:30px}}

@@ -1,6 +1,6 @@
 /* Telefon ve küçük ekranlar için ortak ayarlar. Her sayfada en son yüklenir. */
 @media (max-width:640px){
-  body{font-size:13.5px;line-height:1.5}
+  body{font-size:15px;line-height:1.5}
   .wrap{padding-inline:16px}
 
   /* Menü */
@@ -57,7 +57,7 @@
 
 /* Telefon: daha küçük yazılar */
 @media (max-width:640px){
-  body{font-size:12.5px;line-height:1.5}
+  body{font-size:14px;line-height:1.5}
   h1{font-size:1.5rem}
   h2,.sec > h2{font-size:1.1rem}
   h3{font-size:.95rem}

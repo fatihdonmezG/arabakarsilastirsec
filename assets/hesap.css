@@ -10,7 +10,7 @@
   box-sizing:border-box
 }
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14.5px;line-height:1.55;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.015em}
 p{margin:0}
@@ -20,7 +20,7 @@ p{margin:0}
 .top{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--divider);background:var(--bg)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:12px}
 .brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.08rem;text-decoration:none;white-space:nowrap}
-.brandmark{flex:none;width:27px;height:27px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:12.5px;color:var(--on-accent);background:var(--accent-grad)}
+.brandmark{flex:none;width:27px;height:27px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:14px;color:var(--on-accent);background:var(--accent-grad)}
 .nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .nav a{font-size:.86rem;font-weight:500;text-decoration:none;padding:9px 12px;border-radius:8px;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
