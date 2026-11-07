@@ -105,7 +105,7 @@
 
       <section class="hk">
         <h2><span class="no">4</span>Köprü ve otoyol</h2>
-        <p class="alt-yazi">Rotanızda geçeceğiniz ücretli yolları işaretleyin. Ücretler otomobil (1. sınıf), tek geçiş içindir.</p>
+        <p class="alt-yazi">Seçtiğiniz rotada kullanabileceğiniz ücretli geçişleri öneriyoruz; kullanacaklarınızı işaretleyin. Ücretler otomobil (1. sınıf), tek geçiş içindir.</p>
         <div id="gecisler" style="margin-top:8px"></div>
         <p class="kaynak">Tam tarife: <a href="gecis-ucretleri.html">Geçiş ücretleri sayfası</a></p>
       </section>
@@ -143,6 +143,7 @@
 
 <script src="assets/arac_enerji.js"></script>
 <script src="assets/mesafeler.js"></script>
+<script src="assets/gecis_rota.js"></script>
 <script src="assets/hesap_veri.js"></script>
 <script src="assets/hesap.js"></script>
 <script>
@@ -175,7 +176,26 @@ const sarjKaynakYaz = () => { const o = V.sarj[+$('op').value]; $('sarjKaynak').
 sarjKaynakYaz();
 
 // Geçişler
-$('gecisler').innerHTML = V.gecis.kalemler.filter(g => g.id !== 'avrasyagece').map(g => `<label class="kutu-onay"><input type="checkbox" value="${g.id}"><span style="flex:1">${esc(g.ad)}${g.not ? `<br><small style="color:var(--muted)">${esc(g.not)}</small>` : ''}</span><b style="white-space:nowrap">${tl(g.tl)}</b></label>`).join('');
+const BOGAZ = ['temmuz15', 'fsm', 'yss', 'avrasya'];
+const gecisSatir = (g, not) => `<label class="kutu-onay"><input type="checkbox" value="${g.id}"${S.gecis.has(g.id) ? ' checked' : ''}><span style="flex:1">${esc(g.ad)}${(not || g.not) ? `<br><small style="color:var(--muted)">${esc([not, g.not].filter(Boolean).join('. '))}</small>` : ''}</span><b style="white-space:nowrap">${tl(g.tl)}</b></label>`;
+let gecisAnahtar = '';
+function gecisCiz(){
+  const iller = [S.nereden, ...S.duraklar, S.nereye].map(i => IL[i].ad), anahtar = iller.join('>');
+  if (anahtar === gecisAnahtar) return; gecisAnahtar = anahtar;
+  const oneri = window.rotaGecisleri ? window.rotaGecisleri(iller) : [];
+  const K = V.gecis.kalemler.filter(g => g.id !== 'avrasyagece'), bul = id => K.find(g => g.id === id);
+  const ids = new Set(); let html = '';
+  for (const o of oneri) {
+    if (o.id === 'bogaz') { html += `<p class="gecis-grup">${esc(o.not)}</p>` + BOGAZ.map(id => { ids.add(id); return gecisSatir(bul(id)); }).join(''); continue; }
+    const g = bul(o.id); if (!g) continue; ids.add(o.id); html += gecisSatir(g, o.not);
+    if (o.alt && bul(o.alt) && !ids.has(o.alt)) { ids.add(o.alt); html += gecisSatir(bul(o.alt), 'İstanbul–İzmir Otoyolu yerine yalnızca köprü'); }
+  }
+  // Rotada olmayan seçimler kaldırılır
+  [...S.gecis].forEach(id => { if (!ids.has(id)) S.gecis.delete(id); });
+  const diger = K.filter(g => !ids.has(g.id));
+  $('gecisler').innerHTML = (html || '<p class="kaynak">Bu rotada bildiğimiz ücretli köprü, tünel ya da otoyol yok.</p>')
+    + (diger.length ? `<details class="gecis-diger"><summary>Rotada görünmeyen diğer geçişler (${diger.length})</summary>${diger.map(g => gecisSatir(g)).join('')}</details>` : '');
+}
 
 // Ara duraklar
 const durakCiz = () => {
@@ -264,6 +284,7 @@ function seritCiz(r, m){
 
 let sonTur = null;
 function hesapla(){
+  gecisCiz();
   { const p0 = profil(); if (p0 && p0.tur !== 'elektrik') { const t = p0.tur === 'dizel' ? 'dizel' : (p0.tur === 'lpg' && S.mod === 'el') ? 'lpg' : 'benzin'; if (sonTur !== t) { sonTur = t; litreDoldur(); } } }
   const r = rota(), p = profil(), kisi = Math.max(1, Math.round(H.oku('kisi', 1)));
   const ev = p && p.tur === 'elektrik';
