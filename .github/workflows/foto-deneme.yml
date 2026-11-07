@@ -1,0 +1,24 @@
+name: Fotoğraf deneme (siteye uygulanmaz)
+on:
+  push:
+    branches: [foto-deneme]
+    paths: ['tools/foto_deneme.py', '.github/workflows/foto-deneme.yml', 'deneme/liste.txt']
+permissions:
+  contents: write
+jobs:
+  deneme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install "rembg[cpu]==2.0.86" scipy pillow numpy
+      - run: |
+          while read -r u ad; do [ -n "$u" ] && python tools/foto_deneme.py "$u" "$ad"; done < deneme/liste.txt
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add deneme
+          git diff --cached --quiet || git commit -m "Fotoğraf deneme sonuçları"
+          git push origin HEAD:foto-deneme
