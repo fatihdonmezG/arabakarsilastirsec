@@ -90,5 +90,53 @@ def main():
         yeni = rgb.copy(); yeni.putalpha(yeni_a); yeni = kirp(yeni)
         yeni.save(os.path.join(OUT, f'{ad}-{model}.webp'), 'WEBP', quality=90)
         sahne(yeni, f'{ad}-2-{model}.jpg')
+        if model == 'birefnet-general':
+            studyo(yeni, f'{ad}-3-studyo-acik.jpg', 'acik'); studyo(yeni, f'{ad}-4-studyo-koyu.jpg', 'koyu')
         print(model, round(time.time() - t, 1), 's')
+
+def studyo(o, ad, tema='acik'):
+    """Stüdyo çekimi görünümü: kavisli fon, spot ışık, yuvarlak platform, zeminde hafif yansıma ve temas gölgesi."""
+    w, h = o.size; W = int(w * 1.32); H = int(W * 0.66)
+    sc = min(1.0, (W * 0.78) / w); o = o.resize((int(w * sc), int(h * sc)), Image.LANCZOS); w, h = o.size
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32); u = xx / W; v = yy / H
+    if tema == 'acik':
+        duvar_ust, duvar_alt, zemin_on, zemin_arka, spot, plat, kenar = [252,252,253], [228,231,236], [204,209,216], [222,226,232], [255,255,255], [238,240,244], [255,255,255]
+    else:
+        duvar_ust, duvar_alt, zemin_on, zemin_arka, spot, plat, kenar = [58,63,72], [34,38,45], [22,25,30], [40,44,52], [120,128,140], [52,57,66], [150,160,175]
+    duvar_ust, duvar_alt, zemin_on, zemin_arka, spot, plat, kenar = [np.array(c, np.float32) for c in (duvar_ust, duvar_alt, zemin_on, zemin_arka, spot, plat, kenar)]
+    ufuk = 0.60
+    # kavisli geçiş: duvar ile zemin arasında sert çizgi yok (cyclorama)
+    t = np.clip((v - ufuk + 0.06) / 0.12, 0, 1); t = t * t * (3 - 2 * t)
+    duvar = duvar_ust + (duvar_alt - duvar_ust) * np.clip(v / ufuk, 0, 1)[..., None]
+    zemin = zemin_arka + (zemin_on - zemin_arka) * np.clip((v - ufuk) / (1 - ufuk), 0, 1)[..., None]
+    img = duvar * (1 - t[..., None]) + zemin * t[..., None]
+    # tepeden spot ışık ve kenar kararması
+    s1 = np.exp(-(((u - .5) / .34) ** 2 + ((v - .30) / .42) ** 2))
+    img = img + (spot - img) * (s1 * (.55 if tema == 'acik' else .35))[..., None]
+    vin = np.clip(((u - .5) / .62) ** 2 + ((v - .48) / .75) ** 2, 0, 1)
+    img = img * (1 - .16 * vin ** 1.6)[..., None]
+    # platform
+    cx = W / 2; taban = int(H * 0.79); pw = w * 0.56; ph = h * 0.16
+    d = ((xx - cx) / pw) ** 2 + ((yy - taban) / ph) ** 2
+    disk = np.clip(1 - d, 0, 1) ** .35 * (d < 1)
+    img = img + (plat - img) * (disk * .75)[..., None]
+    halka = np.exp(-((np.sqrt(d) - 1) / .018) ** 2) * (yy > taban - ph * .2)
+    img = img + (kenar - img) * (halka * (.35 if tema == 'acik' else .30))[..., None]
+    bg = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert('RGBA')
+    sx = int(cx - w / 2); sy = int(taban + ph * .42) - h
+    # temas gölgesi
+    al = np.array(o.getchannel('A')) > 128; sh = np.zeros((H, W), np.float32)
+    for x in range(w):
+        col = np.where(al[:, x])[0]
+        if col.size and col.max() > h * .75:
+            y0 = sy + col.max()
+            if 0 <= y0 < H: sh[max(0, y0 - 2):min(H, y0 + 3), sx + x] = 1
+    temas = ndimage.gaussian_filter(sh, (h * .008, h * .018)); temas = temas / (temas.max() or 1)
+    yumusak = ndimage.gaussian_filter(sh, (h * .03, h * .06)); yumusak = yumusak / (yumusak.max() or 1)
+    genis = np.exp(-(((xx - cx) / (w * .46)) ** 2 + ((yy - (sy + h * .95)) / (h * .07)) ** 2))
+    g = np.clip(temas * .9 + yumusak * .45 + genis * .30, 0, 1)
+    arr = np.array(bg).astype(np.float32); arr[..., :3] = arr[..., :3] * (1 - g[..., None] * (.85 if tema == 'acik' else .9))
+    bg = Image.fromarray(arr.astype(np.uint8)); bg.alpha_composite(o, (sx, sy))
+    bg.convert('RGB').save(os.path.join(OUT, ad), quality=92)
+
 if __name__ == '__main__': main()
