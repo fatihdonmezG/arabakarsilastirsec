@@ -48,14 +48,25 @@ def sahne(o, ad):
     ufuk = 0.62
     col = np.where(y < ufuk, ust + (orta - ust) * (y / ufuk), zemin + (alt - zemin) * ((y - ufuk) / (1 - ufuk)))
     bg = Image.fromarray(np.repeat(col[:, None, :].astype(np.uint8), W, axis=1).reshape(H, W, 3))
-    # gölge
-    sh = Image.new('L', (W, H), 0); al = np.array(o.getchannel('A'))
-    sx = (W - w) // 2; sy = int(H * 0.86) - h
-    g = Image.new('L', (w, h), 0); alt_satir = np.where(al.any(axis=1))[0].max()
-    g = Image.fromarray(((al > 128) * 255).astype(np.uint8)).resize((w, max(1, int(h * 0.12))))
-    sh.paste(g, (sx, sy + alt_satir - int(h * 0.06)))
-    sh = sh.filter(ImageFilter.GaussianBlur(int(h * 0.04)))
-    bg.paste((60, 68, 80), (0, 0), sh.point(lambda v: int(v * 0.45)))
+    # gölge: aracın alt kenarına yapışık temas gölgesi + geniş yumuşak gölge
+    sx = (W - w) // 2; sy = int(H * 0.88) - h
+    al = np.array(o.getchannel('A')) > 128
+    sh = np.zeros((H, W), np.float32)
+    alt = np.zeros(w, int) - 1
+    for x in range(w):
+        col = np.where(al[:, x])[0]
+        if col.size: alt[x] = col.max()
+    for x in range(w):
+        if alt[x] >= 0 and alt[x] > h * 0.75:
+            y0 = sy + alt[x]; sh[max(0, y0 - 3):min(H, y0 + 4), sx + x] = 1.0
+    temas = ndimage.gaussian_filter(sh, (h * 0.012, h * 0.03))
+    genis = np.zeros((H, W), np.float32); yy, xx = np.ogrid[:H, :W]
+    cx, cy = sx + w / 2, sy + h - h * 0.02
+    genis = np.exp(-(((xx - cx) / (w * 0.52)) ** 2 + ((yy - cy) / (h * 0.07)) ** 2))
+    g = np.clip(temas / (temas.max() or 1) * 0.75 + genis * 0.32, 0, 1)
+    arr = np.array(bg).astype(np.float32)
+    arr = arr * (1 - g[..., None]) + np.array([52, 60, 72]) * g[..., None]
+    bg = Image.fromarray(arr.astype(np.uint8))
     bg = bg.convert('RGBA'); bg.alpha_composite(o, (sx, sy)); bg.convert('RGB').save(os.path.join(OUT, ad), quality=92)
 def kirp(o):
     a = np.array(o.getchannel('A')); ys, xs = np.where(a > 10)
