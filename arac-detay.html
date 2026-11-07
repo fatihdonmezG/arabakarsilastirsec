@@ -9719,7 +9719,7 @@ function renderSinif(){
   const c = car(), h = sinifHavuzu(c);
   const list = SINIF_OLCU.map(m => konum(c, m[0])).filter(Boolean);
   $('#sinifLead').textContent = list.length
-    ? `${h.guncel ? 'Satıştaki' : c.yil + ' civarı model yıllarındaki'} ${h.ad} sınıfında ${h.havuz.length} versiyon var. Her satırda gri noktalar sınıftaki araçlar, büyük işaret bu versiyon. Sağ taraf her zaman daha iyi olan uçtur.`
+    ? `${h.guncel ? 'Satıştaki' : c.yil + ' civarı model yıllarındaki'} ${h.ad} sınıfında ${h.havuz.length} versiyon var. Her satırda noktalar sınıftaki araçlar, büyük işaret bu versiyon. Çizgi soldaki zayıf uçtan (kırmızı) sağdaki güçlü uca (yeşil) gider; çubuk sınıf ortalaması.`
     : '';
   if (!list.length) { $('#sinifBody').innerHTML = '<div class="emptystate">Bu versiyonu sınıfıyla kıyaslamaya yetecek veri henüz yok.</div>'; return; }
   const f = (v, b) => nf(v, dec(Math.round(v * 10) / 10) ? 1 : 0) + (b ? ' ' + b : '');
@@ -9730,16 +9730,19 @@ function renderSinif(){
     const lo = Math.min(...vals), hi = Math.max(...vals), span = hi - lo || 1;
     const pos = n => az ? (hi - n) / span : (n - lo) / span;  // sağ uç iyi
     const sira = vals.filter(n => az ? n < k.v : n > k.v).length + 1;
-    const nokta = [...new Set(vals)].map(n => `<i style="left:${(pos(n) * 100).toFixed(1)}%"></i>`).join('');
+    const ton = q => Math.round(Math.max(0, Math.min(1, q)) * 135);  // 0 kırmızı, 135 yeşil
+    const nokta = [...new Set(vals)].map(n => `<i style="left:${(pos(n) * 100).toFixed(1)}%;--h:${ton(pos(n))}"></i>`).join('');
     const [et, cls] = konumEtiket(k);
-    return `<div class="sira ${cls}">
+    const yuzde = (sira - 1) / Math.max(1, vals.length - 1), dilim = yuzde <= .25 ? 'ust' : yuzde <= .6 ? 'orta' : 'alt';
+    const dilimAd = vals.length < 4 ? '' : yuzde <= .25 ? `İlk %${Math.max(5, Math.round(sira / vals.length * 100 / 5) * 5)}` : yuzde <= .6 ? 'Ortalarda' : 'Son sıralarda';
+    return `<div class="sira ${cls} d-${dilim}" style="--h:${ton(pos(k.v))}">
       <span class="s-ad">${esc(k.ad)}</span>
       <b class="s-v">${f(k.v, k.birim)}</b>
       <div class="s-dag" role="img" aria-label="${esc(k.ad)}: ${esc(et)}. Sınıfta ${vals.length} araç arasında ${sira}. sırada.">
-        <span class="s-cizgi">${nokta}<i class="s-ort" style="left:${(pos(k.ort) * 100).toFixed(1)}%" title="Sınıf ortalaması"></i><i class="s-bu" style="left:${(pos(k.v) * 100).toFixed(1)}%"></i></span>
+        <span class="s-cizgi">${nokta}<i class="s-ort" style="left:${(pos(k.ort) * 100).toFixed(1)}%" title="Sınıf ortalaması"></i><i class="s-bu" style="left:${(pos(k.v) * 100).toFixed(1)}%"><span>${f(k.v, '')}</span></i></span>
         <span class="s-uc"><small>${f(az ? hi : lo, '')}</small><em>${esc(et)}</em><small>${f(az ? lo : hi, '')}</small></span>
       </div>
-      <span class="s-sira"><b>${sira}.</b><small>/ ${vals.length}</small></span>
+      <span class="s-sira"><b>${sira}.</b><small>/ ${vals.length}</small>${dilimAd ? `<em>${dilimAd}</em>` : ''}</span>
     </div>`;
   }).join('');
   animasyonIzle($('#sinifBody'));
